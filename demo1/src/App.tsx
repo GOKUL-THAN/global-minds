@@ -21,6 +21,7 @@ import MockInterviewPage from './pages/career/MockInterviewPage';
 import InternshipsPage from './pages/InternshipsPage';
 import InternshipDetailPage from './pages/internships/InternshipDetailPage';
 import CorporateTrainingPage from './pages/CorporateTrainingPage';
+import CollegesPage from './pages/CollegesPage';
 import TrainersPage from './pages/TrainersPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -76,6 +77,7 @@ import AdminSettingsPage from './pages/admin/AdminSettingsPage';
 import AdminGenericPage from './pages/admin/AdminGenericPage';
 import AdminActivityPage from './pages/admin/AdminActivityPage';
 import AdminContentStudioPage from './pages/admin/AdminContentStudioPage';
+import AdminNavigationPage from './pages/admin/AdminNavigationPage';
 
 // ── Payment placeholder pages ───────────────────────────────
 function CheckoutPage() {
@@ -256,6 +258,7 @@ const router = createBrowserRouter([
           { path: 'certificates', element: <AdminCertificatesPage /> },
           { path: 'payments', element: <AdminPaymentsPage /> },
           { path: 'settings', element: <AdminSettingsPage /> },
+          { path: 'navigation', element: <AdminNavigationPage /> },
           { path: '*', element: <AdminGenericPage title="Page Not Found" description="This admin page doesn't exist." /> },
         ],
       },

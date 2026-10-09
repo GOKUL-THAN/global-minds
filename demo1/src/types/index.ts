@@ -177,6 +177,7 @@ export interface Testimonial {
   type: 'text' | 'video';
   videoUrl?: string;
   source?: string;
+  hidden?: boolean;
 }
 
 // ── Location ─────────────────────────────────────────────────
@@ -216,6 +217,8 @@ export interface BlogPost {
   publishedAt: string;
   readTime: string;
   featured: boolean;
+  status?: 'published' | 'draft';
+  hidden?: boolean;
   metaTitle?: string;
   metaDescription?: string;
 }
@@ -246,6 +249,7 @@ export interface FAQ {
   question: string;
   answer: string;
   category?: string;
+  hidden?: boolean;
 }
 
 // ── Stat ─────────────────────────────────────────────────────

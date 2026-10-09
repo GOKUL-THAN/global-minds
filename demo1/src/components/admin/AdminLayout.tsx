@@ -7,6 +7,7 @@ import {
   LogOut, Shield, Activity, TrendingUp,
   BarChart2,
   PenTool,
+  Navigation2,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { authService } from '../../services/authService';
@@ -30,6 +31,7 @@ const navGroups: NavGroup[] = [
     items: [
       { icon: BookOpen, label: 'Courses', href: '/admin/courses' },
       { icon: PenTool, label: 'Website Menu', href: '/admin/website/website-menu' },
+      { icon: Navigation2, label: 'Navigation Menu', href: '/admin/navigation' },
       { icon: Briefcase, label: 'Live Projects', href: '/admin/website/live-projects' },
       { icon: Calendar, label: 'Events & Webinars', href: '/admin/website/events' },
       { icon: Award, label: 'Scholarships', href: '/admin/website/scholarships' },
@@ -130,7 +132,7 @@ export function AdminLayout() {
     ? new Set([
       '/admin', '/admin/courses', '/admin/categories', '/admin/master-programs',
       '/admin/blog', '/admin/faqs', '/admin/testimonials', '/admin/studio',
-      '/admin/instructors', '/account/security',
+      '/admin/instructors', '/admin/navigation', '/account/security',
     ])
     : user.role === 'TRAINER'
       ? new Set(['/admin', '/admin/batches', '/admin/attendance', '/admin/students', '/account/security'])
