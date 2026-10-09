@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Star, Search, Plus, Edit2, Trash2, Eye, EyeOff, X } from 'lucide-react';
-import { testimonials as seedTestimonials } from '../../data/testimonials';
 import { Badge } from '../../components/ui/Badge';
 import type { Testimonial } from '../../types';
 
@@ -18,9 +17,7 @@ const emptyForm = {
 };
 
 export default function AdminTestimonialsPage() {
-  const [items, setItems] = useState<LocalT[]>(() =>
-    seedTestimonials.map(t => ({ ...t, hidden: t.hidden ?? false }))
-  );
+  const [items, setItems] = useState<LocalT[]>([]);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<'all' | 'featured'>('all');
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);

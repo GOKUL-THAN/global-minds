@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, Plus, Edit2, Trash2, Eye, EyeOff, Search, X } from 'lucide-react';
-import { globalFAQs } from '../../data/faqs';
 import { Badge } from '../../components/ui/Badge';
 import type { FAQ } from '../../types';
 
@@ -9,9 +8,7 @@ type LocalFAQ = FAQ & { hidden: boolean };
 const emptyForm = { question: '', answer: '', category: '' };
 
 export default function AdminFAQsPage() {
-  const [items, setItems] = useState<LocalFAQ[]>(() =>
-    globalFAQs.map(faq => ({ ...faq, hidden: faq.hidden ?? false }))
-  );
+  const [items, setItems] = useState<LocalFAQ[]>([]);
   const [openId, setOpenId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const [catFilter, setCatFilter] = useState('all');
@@ -129,8 +126,8 @@ export default function AdminFAQsPage() {
             </thead>
             <tbody className="divide-y divide-surface-100">
               {filtered.map(faq => (
-                <>
-                  <tr key={faq.id} className="hover:bg-surface-50 transition-colors">
+                <React.Fragment key={faq.id}>
+                  <tr className="hover:bg-surface-50 transition-colors">
                     <td className="px-4 py-3 hidden sm:table-cell">
                       <Badge variant="brand">{faq.category ?? 'General'}</Badge>
                     </td>
@@ -203,7 +200,7 @@ export default function AdminFAQsPage() {
                       </td>
                     </tr>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Eye, EyeOff, Plus, Edit2, Trash2, Search, Calendar, X } from 'lucide-react';
-import { blogPosts } from '../../data/blogs';
 import { Badge } from '../../components/ui/Badge';
 import { formatDate } from '../../utils/formatters';
 import type { BlogPost } from '../../types';
@@ -24,9 +23,7 @@ function deriveSlug(title: string) {
 }
 
 export default function AdminBlogPage() {
-  const [items, setItems] = useState<LocalPost[]>(() =>
-    blogPosts.map(p => ({ ...p, status: (p.status ?? 'published') as 'published' | 'draft' }))
-  );
+  const [items, setItems] = useState<LocalPost[]>([]);
   const [search, setSearch] = useState('');
   const [catFilter, setCatFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
@@ -86,17 +83,20 @@ export default function AdminBlogPage() {
         )
       );
     } else {
-      const seed = blogPosts[0];
       const newPost: LocalPost = {
-        ...seed,
         id: crypto.randomUUID(),
         slug,
         title: form.title,
         category: form.category,
-        author: { ...seed.author, name: form.authorName },
+        author: { name: form.authorName, photo: '', role: '' },
         excerpt: form.excerpt,
-        status: form.status,
+        content: '',
+        tags: [],
+        featuredImage: '',
+        readTime: '',
+        featured: false,
         publishedAt: new Date().toISOString().split('T')[0],
+        status: form.status,
       };
       setItems(prev => [newPost, ...prev]);
     }

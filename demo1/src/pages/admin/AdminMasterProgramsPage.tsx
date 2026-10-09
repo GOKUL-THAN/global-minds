@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Eye, EyeOff, Plus, Edit2, Trash2, Clock, Users, Search, X } from 'lucide-react';
-import { masterPrograms } from '../../data/masterPrograms';
+import { Eye, EyeOff, Plus, Edit2, Trash2, Clock, Search, X } from 'lucide-react';
 import { formatPrice } from '../../utils/formatters';
 import { Badge } from '../../components/ui/Badge';
 import type { MasterProgram } from '../../types';
@@ -18,9 +17,7 @@ const emptyForm = {
 };
 
 export default function AdminMasterProgramsPage() {
-  const [items, setItems] = useState<LocalMP[]>(() =>
-    masterPrograms.map(mp => ({ ...mp, hidden: false }))
-  );
+  const [items, setItems] = useState<LocalMP[]>([]);
   const [search, setSearch] = useState('');
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -62,10 +59,36 @@ export default function AdminMasterProgramsPage() {
       );
     } else {
       const newItem: LocalMP = {
-        ...masterPrograms[0],
         id: crypto.randomUUID(),
         slug: form.title.toLowerCase().replace(/\s+/g, '-'),
-        ...form,
+        title: form.title,
+        tagline: form.tagline,
+        shortDescription: '',
+        longDescription: '',
+        duration: form.duration,
+        totalHours: 0,
+        modules: [],
+        skills: [],
+        tools: [],
+        projects: 0,
+        certification: '',
+        careerOutcomes: [],
+        jobRoles: [],
+        targetAudience: [],
+        prerequisites: [],
+        level: 'Intermediate',
+        price: form.price,
+        discountPrice: form.discountPrice,
+        currency: 'INR',
+        thumbnail: '',
+        banner: '',
+        featured: false,
+        learnerCount: 0,
+        rating: 0,
+        reviewCount: 0,
+        placementSupport: false,
+        faqs: [],
+        status: form.status,
         hidden: false,
       };
       setItems(prev => [...prev, newItem]);
@@ -131,8 +154,8 @@ export default function AdminMasterProgramsPage() {
             </thead>
             <tbody className="divide-y divide-surface-100">
               {filtered.map(mp => (
-                <>
-                  <tr key={mp.id} className="hover:bg-surface-50 transition-colors">
+                <React.Fragment key={mp.id}>
+                  <tr className="hover:bg-surface-50 transition-colors">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         <img
@@ -217,18 +240,7 @@ export default function AdminMasterProgramsPage() {
                       )}
                     </td>
                   </tr>
-                  {/* Learner count row (supplemental info) */}
-                  {false && (
-                    <tr>
-                      <td colSpan={5}>
-                        <span className="flex items-center gap-1">
-                          <Users className="w-3 h-3" />
-                          {mp.learnerCount.toLocaleString()}
-                        </span>
-                      </td>
-                    </tr>
-                  )}
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>
