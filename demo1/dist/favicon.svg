@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="ga-favicon" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F7CF6"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#ga-favicon)"/>
+  <path d="M21 31.5C21 26.252 25.253 22 30.5 22H41.5C46.747 22 51 26.253 51 31.5V33.5C51 38.747 46.747 43 41.5 43H33.5V50.5H46V54.5H33.5V64H29.5V54.5H21V50.5H29.5V43H30.5C25.253 43 21 38.747 21 33.5V31.5Z" fill="white"/>
+  <path d="M39 32H51L45 50H33L39 32Z" fill="white" opacity="0.9"/>
+  <path d="M43 24L55 25.5L49 41H37L43 24Z" fill="white" opacity="0.8"/>
+</svg>

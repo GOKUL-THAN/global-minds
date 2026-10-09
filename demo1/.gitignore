@@ -1,0 +1,9 @@
+node_modules
+.env
+.env.*
+!.env.example
+server/.env
+server/dist
+server/node_modules
+server/data/*.sqlite
+server/data/*.sqlite-journal
