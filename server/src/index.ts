@@ -70,7 +70,15 @@ import { EmailDeliveryConfigurationError, sendAccountEmail } from './email.js';
 const app = express();
 app.disable('x-powered-by');
 app.use(helmet());
-app.use(express.json({ limit: '128kb' }));
+if (process.env.VERCEL === '1') app.set('trust proxy', 1);
+const jsonParser = express.json({ limit: '128kb' });
+app.use((req, res, next) => {
+  if (process.env.VERCEL === '1' && req.body !== undefined) {
+    next();
+    return;
+  }
+  jsonParser(req, res, next);
+});
 app.use(cookieParser());
 
 const allowedOrigins = new Set([
@@ -2840,32 +2848,36 @@ if (existsSync(clientDistPath)) {
   console.log(`[static] Serving front-end from ${clientDistPath}`);
 }
 
-async function start(): Promise<void> {
-  await initializeDatabase();
-  const server = app.listen(config.port, () => {
-    console.log(`Auth API listening on port ${config.port}`);
-  });
+export default app;
 
-  let shuttingDown = false;
-  const shutdown = (): void => {
-    if (shuttingDown) return;
-    shuttingDown = true;
-    server.close(error => {
-      if (error) {
-        console.error('[shutdown] HTTP server failed to close cleanly:', error);
-        process.exitCode = 1;
-      }
-      void closeDataDatabase().catch(databaseError => {
-        console.error('[shutdown] Database connection failed to close cleanly:', databaseError);
-        process.exitCode = 1;
-      });
+if (process.env.VERCEL !== '1') {
+  async function start(): Promise<void> {
+    await initializeDatabase();
+    const server = app.listen(config.port, () => {
+      console.log(`Auth API listening on port ${config.port}`);
     });
-  };
-  process.once('SIGINT', shutdown);
-  process.once('SIGTERM', shutdown);
-}
 
-start().catch(async error => {
-  console.error('[startup] Authentication service failed to start:', error);
-  process.exitCode = 1;
-});
+    let shuttingDown = false;
+    const shutdown = (): void => {
+      if (shuttingDown) return;
+      shuttingDown = true;
+      server.close(error => {
+        if (error) {
+          console.error('[shutdown] HTTP server failed to close cleanly:', error);
+          process.exitCode = 1;
+        }
+        void closeDataDatabase().catch(databaseError => {
+          console.error('[shutdown] Database connection failed to close cleanly:', databaseError);
+          process.exitCode = 1;
+        });
+      });
+    };
+    process.once('SIGINT', shutdown);
+    process.once('SIGTERM', shutdown);
+  }
+
+  start().catch(error => {
+    console.error('[startup] Authentication service failed to start:', error);
+    process.exitCode = 1;
+  });
+}
