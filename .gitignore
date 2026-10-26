@@ -1,0 +1,21 @@
+# Root-level gitignore
+# Exclude the old .git backup that was accidentally committed
+.git_backup/
+WEBSITE GLOBALMINDS/demo1/.git_backup/
+WEBSITE GLOBALMINDS/demo1/.git_backup
+
+# Node
+node_modules/
+WEBSITE GLOBALMINDS/demo1/node_modules/
+
+# Build outputs
+dist/
+WEBSITE GLOBALMINDS/demo1/dist/
+WEBSITE GLOBALMINDS/demo1/server/dist/
+
+# Secrets
+.env
+WEBSITE GLOBALMINDS/demo1/.env
+WEBSITE GLOBALMINDS/demo1/server/.env
+WEBSITE GLOBALMINDS/demo1/server/data/*.sqlite
+WEBSITE GLOBALMINDS/demo1/server/data/*.sqlite-journal

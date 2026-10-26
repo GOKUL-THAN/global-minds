@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 774333f1a9c0835fbb4034864c8c305715170c68 GOKUL T <gokultthangvel@gmail.com> 1791526616 +0530	commit (initial): add file
-774333f1a9c0835fbb4034864c8c305715170c68 dad35a145d0a26301b62e254e8f3af078ebbc766 GOKUL T <gokultthangvel@gmail.com> 1791530539 +0530	commit: feat: add 9 courses data and redesign CoursesPage search/filter UI
-dad35a145d0a26301b62e254e8f3af078ebbc766 5ae441e3375d6e9e8071fb9120e788b6e1fcc818 GOKUL T <gokultthangvel@gmail.com> 1791533370 +0530	commit: feat: add full CRUD to admin pages and new AdminNavigationPage
-5ae441e3375d6e9e8071fb9120e788b6e1fcc818 e0f0fff2d4b16f9311d823b9435ed1125706b02c GOKUL T <gokultthangvel@gmail.com> 1791534482 +0530	commit: refactor: initialize admin pages with empty state instead of seed data
-e0f0fff2d4b16f9311d823b9435ed1125706b02c 809680ac9f694e163ba7c9d34fdbf7618d2dc325 GOKUL T <gokultthangvel@gmail.com> 1792956269 +0530	commit: Add free-tier deploy config + verified bug fixes
-809680ac9f694e163ba7c9d34fdbf7618d2dc325 dbd4016d178e7b92912a169efad448939b6bf8d2 YOUR_NEW_GITHUB_USERNAME <YOUR_NEW_GITHUB_EMAIL> 1792999097 +0530	commit: Add static file serving for production and update Render config for full-stack deployment
