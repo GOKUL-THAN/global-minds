@@ -1,0 +1,71 @@
+# Render Blueprint — Global Minds Academy (full-stack, free tier)
+#
+# How to use:
+#   1. Push this repo to GitHub.
+#   2. Sign in to https://render.com (free account).
+#   3. New → Blueprint → select this repo. Render reads this file and creates
+#      one PostgreSQL database + one web service that serves BOTH the Express API
+#      and the built React frontend on a single URL.
+#
+# Free-tier notes:
+#   - The web service sleeps after 15 minutes of inactivity and wakes on the
+#     next request (first request after sleep takes ~30s).
+#   - The free PostgreSQL expires after 90 days. Back up data before then, or
+#     upgrade to a paid instance for long-term use.
+#
+# Environment groups:
+#   - "secrets" below are placeholders. Set them in the Render dashboard under
+#     Environment, OR use `render env:set` / the dashboard UI. Never commit real
+#     secrets to the repo.
+
+databases:
+  - name: global-minds-db
+    plan: free
+    databaseName: global_minds
+    user: gma
+
+services:
+  - type: web
+    name: global-minds-academy
+    plan: free
+    region: oregon        # change if you prefer a region closer to your users
+    runtime: node
+    branch: main
+    rootDir: WEBSITE GLOBALMINDS/demo1
+    buildCommand: npm install && npm --prefix server install && npm run build && npm --prefix server run build
+    startCommand: node server/dist/index.js
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      # Runtime
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000        # Render injects its own port; this is a safe fallback
+      # The public URL of this service (Render assigns it on first deploy).
+      # Update APP_ORIGIN to the real https://<service-name>.onrender.com once created.
+      - key: APP_ORIGIN
+        sync: false         # set manually after first deploy (see DEPLOY.md)
+      # Database — Render injects the internal DATABASE_URL from the database above
+      - key: DATABASE_DRIVER
+        value: postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: global-minds-db
+          property: connectionString
+      # Secrets — generate strong values and set them in the Render dashboard.
+      - key: JWT_SECRET
+        sync: false         # generate: 32+ random characters
+      - key: ADMIN_EMAIL
+        value: admin@local.test
+      - key: ADMIN_PASSWORD
+        sync: false         # min 14 chars
+      - key: SUPER_ADMIN_EMAIL
+        value: globalminds@gmail.com
+      - key: SUPER_ADMIN_PASSWORD
+        sync: false         # min 14 chars, different from ADMIN_PASSWORD
+      # Optional — enable email verification + password recovery
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false

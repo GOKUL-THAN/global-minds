@@ -1,0 +1,1470 @@
+{
+  "license": "Unsplash License",
+  "attributionRequired": false,
+  "items": [
+    {
+      "slug": "aws-training",
+      "type": "course",
+      "image": "/images/courses/aws-training.jpg",
+      "source": "https://unsplash.com/photos/pgdaAwf6IJg",
+      "description": "Black ImgIX server system",
+      "bytes": 66833
+    },
+    {
+      "slug": "aws-online-training",
+      "type": "course",
+      "image": "/images/courses/aws-online-training.jpg",
+      "source": "https://unsplash.com/photos/8zB4P0eafrs",
+      "description": "A blue glass cloud icon with data layers above a silver padlock",
+      "bytes": 29065
+    },
+    {
+      "slug": "python-training",
+      "type": "course",
+      "image": "/images/courses/python-training.jpg",
+      "source": "https://unsplash.com/photos/OqtafYT5kTw",
+      "description": "monitor showing Java programming",
+      "bytes": 66697
+    },
+    {
+      "slug": "java-training",
+      "type": "course",
+      "image": "/images/courses/java-training.jpg",
+      "source": "https://unsplash.com/photos/koOdUvfGr4c",
+      "description": "A computer monitor and laptop displaying Swift code and a programming tutorial",
+      "bytes": 61580
+    },
+    {
+      "slug": "full-stack-development",
+      "type": "course",
+      "image": "/images/courses/full-stack-development.jpg",
+      "source": "https://unsplash.com/photos/m_HRfLhgABo",
+      "description": "A MacBook with lines of code on its screen on a busy desk",
+      "bytes": 59282
+    },
+    {
+      "slug": "react-js",
+      "type": "course",
+      "image": "/images/courses/react-js.jpg",
+      "source": "https://unsplash.com/photos/mZnx9429i94",
+      "description": "code editor displaying react source code",
+      "bytes": 75234
+    },
+    {
+      "slug": "data-science",
+      "type": "course",
+      "image": "/images/courses/data-science.jpg",
+      "source": "https://unsplash.com/photos/JKUTrJ4vK00",
+      "description": "graphs of performance analytics on a laptop screen",
+      "bytes": 57852
+    },
+    {
+      "slug": "devops-training",
+      "type": "course",
+      "image": "/images/courses/devops-training.jpg",
+      "source": "https://unsplash.com/photos/wLknZfsKmxQ",
+      "description": "a robot with a light saber",
+      "bytes": 24731
+    },
+    {
+      "slug": "kubernetes",
+      "type": "course",
+      "image": "/images/courses/kubernetes.jpg",
+      "source": "https://unsplash.com/photos/jbzNp079OS4",
+      "description": "a man is typing on a laptop computer",
+      "bytes": 56729
+    },
+    {
+      "slug": "machine-learning",
+      "type": "course",
+      "image": "/images/courses/machine-learning.jpg",
+      "source": "https://unsplash.com/photos/CjWsslYVnPI",
+      "description": "A white robot is standing in front of a black background",
+      "bytes": 56571
+    },
+    {
+      "slug": "generative-ai",
+      "type": "course",
+      "image": "/images/courses/generative-ai.jpg",
+      "source": "https://unsplash.com/photos/_0iV9LmPDn0",
+      "description": "a computer circuit board with a brain on it",
+      "bytes": 95491
+    },
+    {
+      "slug": "software-testing",
+      "type": "course",
+      "image": "/images/courses/software-testing.jpg",
+      "source": "https://unsplash.com/photos/oYzjGQ7LCVE",
+      "description": "Laptop and phone on a desk with coding software open",
+      "bytes": 67252
+    },
+    {
+      "slug": "cyber-security",
+      "type": "course",
+      "image": "/images/courses/cyber-security.jpg",
+      "source": "https://unsplash.com/photos/UA8PwPht1Vw",
+      "description": "a red security sign and a blue security sign",
+      "bytes": 72470
+    },
+    {
+      "slug": "microsoft-azure",
+      "type": "course",
+      "image": "/images/courses/microsoft-azure.jpg",
+      "source": "https://unsplash.com/photos/M5tzZtFCOfs",
+      "description": "cable network",
+      "bytes": 98031
+    },
+    {
+      "slug": "google-cloud",
+      "type": "course",
+      "image": "/images/courses/google-cloud.jpg",
+      "source": "https://unsplash.com/photos/2JJ3wBHu4_0",
+      "description": "a rack of servers in a server room",
+      "bytes": 65818
+    },
+    {
+      "slug": "data-analytics",
+      "type": "course",
+      "image": "/images/courses/data-analytics.jpg",
+      "source": "https://unsplash.com/photos/bMWHu8wU1Vk",
+      "description": "a computer screen with a bunch of data on it",
+      "bytes": 25578
+    },
+    {
+      "slug": "power-bi",
+      "type": "course",
+      "image": "/images/courses/power-bi.jpg",
+      "source": "https://unsplash.com/photos/bf9sZBcGQl4",
+      "description": "a computer screen with a bunch of data on it",
+      "bytes": 24387
+    },
+    {
+      "slug": "aws-devops",
+      "type": "course",
+      "image": "/images/courses/aws-devops.jpg",
+      "source": "https://unsplash.com/photos/KniBt27bEsc",
+      "description": "a man sitting in front of a computer on a desk",
+      "bytes": 64066
+    },
+    {
+      "slug": "cloud-computing",
+      "type": "course",
+      "image": "/images/courses/cloud-computing.jpg",
+      "source": "https://unsplash.com/photos/iYnpYeyu57k",
+      "description": "a very large array of electronic equipment in a room",
+      "bytes": 45573
+    },
+    {
+      "slug": "cloud-security",
+      "type": "course",
+      "image": "/images/courses/cloud-security.jpg",
+      "source": "https://unsplash.com/photos/VHmBX7FnXw0",
+      "description": "Server rack with blinking green lights",
+      "bytes": 57263
+    },
+    {
+      "slug": "docker",
+      "type": "course",
+      "image": "/images/courses/docker.jpg",
+      "source": "https://unsplash.com/photos/42qDooTUc4A",
+      "description": "a man sitting in front of a computer on a desk",
+      "bytes": 55863
+    },
+    {
+      "slug": "jenkins",
+      "type": "course",
+      "image": "/images/courses/jenkins.jpg",
+      "source": "https://unsplash.com/photos/PYyPeCHonnc",
+      "description": "a close-up of a computer mouse",
+      "bytes": 40534
+    },
+    {
+      "slug": "terraform",
+      "type": "course",
+      "image": "/images/courses/terraform.jpg",
+      "source": "https://unsplash.com/photos/p6YWrjhmjhM",
+      "description": "a person sitting at a desk with a laptop and a computer monitor",
+      "bytes": 60162
+    },
+    {
+      "slug": "ansible",
+      "type": "course",
+      "image": "/images/courses/ansible.jpg",
+      "source": "https://unsplash.com/photos/CPvnvwfBU_o",
+      "description": "a few small metal objects",
+      "bytes": 34753
+    },
+    {
+      "slug": "javascript",
+      "type": "course",
+      "image": "/images/courses/javascript.jpg",
+      "source": "https://unsplash.com/photos/xrVDYZRGdw4",
+      "description": "MacBook Pro showing programming language",
+      "bytes": 43397
+    },
+    {
+      "slug": "typescript",
+      "type": "course",
+      "image": "/images/courses/typescript.jpg",
+      "source": "https://unsplash.com/photos/f77Bh3inUpE",
+      "description": "turned-on MacBook Pro wit programming codes display",
+      "bytes": 45872
+    },
+    {
+      "slug": "c-programming",
+      "type": "course",
+      "image": "/images/courses/c-programming.jpg",
+      "source": "https://unsplash.com/photos/FCHlYvR5gJI",
+      "description": "man programming using laptop",
+      "bytes": 62866
+    },
+    {
+      "slug": "cpp-programming",
+      "type": "course",
+      "image": "/images/courses/cpp-programming.jpg",
+      "source": "https://unsplash.com/photos/4hbJ-eymZ1o",
+      "description": "lines of HTML codes",
+      "bytes": 54348
+    },
+    {
+      "slug": "sql",
+      "type": "course",
+      "image": "/images/courses/sql.jpg",
+      "source": "https://unsplash.com/photos/oZPwn40zCK4",
+      "description": "photo of computer cables",
+      "bytes": 90046
+    },
+    {
+      "slug": "html-css",
+      "type": "course",
+      "image": "/images/courses/html-css.jpg",
+      "source": "https://unsplash.com/photos/oXlXu2qukGE",
+      "description": "Computer screen displaying HTML code for a web development project",
+      "bytes": 53008
+    },
+    {
+      "slug": "angular",
+      "type": "course",
+      "image": "/images/courses/angular.jpg",
+      "source": "https://unsplash.com/photos/XopauR-Nagk",
+      "description": "PHP code displayed on a laptop screen in a dark workspace",
+      "bytes": 73525
+    },
+    {
+      "slug": "node-js",
+      "type": "course",
+      "image": "/images/courses/node-js.jpg",
+      "source": "https://unsplash.com/photos/lzh3hPtJz9c",
+      "description": "A laptop with a vibrant colorful screen glowing on a dark wooden desk",
+      "bytes": 44352
+    },
+    {
+      "slug": "mern-stack",
+      "type": "course",
+      "image": "/images/courses/mern-stack.jpg",
+      "source": "https://unsplash.com/photos/DuHKoV44prg",
+      "description": "black computer keyboard",
+      "bytes": 48620
+    },
+    {
+      "slug": "mean-stack",
+      "type": "course",
+      "image": "/images/courses/mean-stack.jpg",
+      "source": "https://unsplash.com/photos/UcYBL5V0xWQ",
+      "description": "A person typing code on a laptop beside a potted plant and mug",
+      "bytes": 70451
+    },
+    {
+      "slug": "java-full-stack",
+      "type": "course",
+      "image": "/images/courses/java-full-stack.jpg",
+      "source": "https://unsplash.com/photos/k-rKfqSm4L4",
+      "description": "macbook pro beside white ceramic mug on brown wooden table",
+      "bytes": 86516
+    },
+    {
+      "slug": "python-full-stack",
+      "type": "course",
+      "image": "/images/courses/python-full-stack.jpg",
+      "source": "https://unsplash.com/photos/FO7kUmBYVi0",
+      "description": "macbook pro on brown wooden table",
+      "bytes": 81926
+    },
+    {
+      "slug": "deep-learning",
+      "type": "course",
+      "image": "/images/courses/deep-learning.jpg",
+      "source": "https://unsplash.com/photos/gVQLAbGVB6Q",
+      "description": "two hands touching each other in front of a pink background",
+      "bytes": 49357
+    },
+    {
+      "slug": "artificial-intelligence",
+      "type": "course",
+      "image": "/images/courses/artificial-intelligence.jpg",
+      "source": "https://unsplash.com/photos/FHgWFzDDAOs",
+      "description": "robot and human hands reaching toward ai text",
+      "bytes": 64677
+    },
+    {
+      "slug": "nlp",
+      "type": "course",
+      "image": "/images/courses/nlp.jpg",
+      "source": "https://unsplash.com/photos/zwd435-ewb4",
+      "description": "black and white robot toy on red wooden table",
+      "bytes": 117921
+    },
+    {
+      "slug": "computer-vision",
+      "type": "course",
+      "image": "/images/courses/computer-vision.jpg",
+      "source": "https://unsplash.com/photos/BBqVpTE4vw4",
+      "description": "a female mannequin is looking at a computer screen",
+      "bytes": 64491
+    },
+    {
+      "slug": "tableau",
+      "type": "course",
+      "image": "/images/courses/tableau.jpg",
+      "source": "https://unsplash.com/photos/VxLhYXuLQN8",
+      "description": "a computer screen with a bunch of data on it",
+      "bytes": 50110
+    },
+    {
+      "slug": "big-data",
+      "type": "course",
+      "image": "/images/courses/big-data.jpg",
+      "source": "https://unsplash.com/photos/dBI_My696Rk",
+      "description": "A computer screen displaying a white line graph of financial market data",
+      "bytes": 79586
+    },
+    {
+      "slug": "data-engineering",
+      "type": "course",
+      "image": "/images/courses/data-engineering.jpg",
+      "source": "https://unsplash.com/photos/cGot2jFpKIM",
+      "description": "a computer screen with a bunch of data on it",
+      "bytes": 67925
+    },
+    {
+      "slug": "business-intelligence",
+      "type": "course",
+      "image": "/images/courses/business-intelligence.jpg",
+      "source": "https://unsplash.com/photos/hTtK6tvTRY0",
+      "description": "A line graph with rising yellow and flat blue data points on a dark background",
+      "bytes": 34213
+    },
+    {
+      "slug": "automation-testing",
+      "type": "course",
+      "image": "/images/courses/automation-testing.jpg",
+      "source": "https://unsplash.com/photos/64YrPKiguAE",
+      "description": "woman in green shirt sitting in front of computer",
+      "bytes": 73952
+    },
+    {
+      "slug": "selenium",
+      "type": "course",
+      "image": "/images/courses/selenium.jpg",
+      "source": "https://unsplash.com/photos/QUHuwyNgSA0",
+      "description": "a computer monitor sitting on top of a wooden desk",
+      "bytes": 53131
+    },
+    {
+      "slug": "api-testing",
+      "type": "course",
+      "image": "/images/courses/api-testing.jpg",
+      "source": "https://unsplash.com/photos/vJP-wZ6hGBg",
+      "description": "boy in front of computer monitor",
+      "bytes": 39313
+    },
+    {
+      "slug": "performance-testing",
+      "type": "course",
+      "image": "/images/courses/performance-testing.jpg",
+      "source": "https://unsplash.com/photos/Fa9b57hffnM",
+      "description": "people sitting on chair in front of computer monitor",
+      "bytes": 46790
+    },
+    {
+      "slug": "etl-testing",
+      "type": "course",
+      "image": "/images/courses/etl-testing.jpg",
+      "source": "https://unsplash.com/photos/Im_cQ6hQo10",
+      "description": "Two people working on computer code at monitors in a bright office workspace",
+      "bytes": 50208
+    },
+    {
+      "slug": "ethical-hacking",
+      "type": "course",
+      "image": "/images/courses/ethical-hacking.jpg",
+      "source": "https://unsplash.com/photos/-nBClEqKKVM",
+      "description": "A security and privacy dashboard with its status",
+      "bytes": 31506
+    },
+    {
+      "slug": "mysql",
+      "type": "course",
+      "image": "/images/courses/mysql.jpg",
+      "source": "https://unsplash.com/photos/i_JUAdanGH0",
+      "description": "a close up of a server's nameplates on the side of a",
+      "bytes": 73779
+    },
+    {
+      "slug": "postgresql",
+      "type": "course",
+      "image": "/images/courses/postgresql.jpg",
+      "source": "https://unsplash.com/photos/9WnjxT1NCoY",
+      "description": "a computer with a keyboard and mouse",
+      "bytes": 45295
+    },
+    {
+      "slug": "oracle",
+      "type": "course",
+      "image": "/images/courses/oracle.jpg",
+      "source": "https://unsplash.com/photos/wtpTL_SzmhM",
+      "description": "a screen shot of a computer",
+      "bytes": 57209
+    },
+    {
+      "slug": "ui-ux-design",
+      "type": "course",
+      "image": "/images/courses/ui-ux-design.jpg",
+      "source": "https://unsplash.com/photos/xPjsMamUBK4",
+      "description": "a woman is looking at a computer screen",
+      "bytes": 37665
+    },
+    {
+      "slug": "figma",
+      "type": "course",
+      "image": "/images/courses/figma.jpg",
+      "source": "https://unsplash.com/photos/UTk9cXzYWAg",
+      "description": "person holding black and white ceramic mug",
+      "bytes": 59381
+    },
+    {
+      "slug": "digital-marketing",
+      "type": "course",
+      "image": "/images/courses/digital-marketing.jpg",
+      "source": "https://unsplash.com/photos/fVi9Ipk7f60",
+      "description": "black digital device at 19 00",
+      "bytes": 46010
+    },
+    {
+      "slug": "seo",
+      "type": "course",
+      "image": "/images/courses/seo.jpg",
+      "source": "https://unsplash.com/photos/OZNGkvw0keQ",
+      "description": "A person pointing at a digital kanban board on a tablet screen",
+      "bytes": 92790
+    },
+    {
+      "slug": "rpa-uipath",
+      "type": "course",
+      "image": "/images/courses/rpa-uipath.jpg",
+      "source": "https://unsplash.com/photos/8gr6bObQLOI",
+      "description": "a factory filled with lots of orange machines",
+      "bytes": 90478
+    },
+    {
+      "slug": "uipath",
+      "type": "course",
+      "image": "/images/courses/uipath.jpg",
+      "source": "https://unsplash.com/photos/sz1CHL7Pky0",
+      "description": "blue industrial robot arm in factory",
+      "bytes": 98871
+    },
+    {
+      "slug": "iot-training",
+      "type": "course",
+      "image": "/images/courses/iot-training.jpg",
+      "source": "https://unsplash.com/photos/jXd2FSvcRr8",
+      "description": "blue circuit board",
+      "bytes": 119926
+    },
+    {
+      "slug": "project-management",
+      "type": "course",
+      "image": "/images/courses/project-management.jpg",
+      "source": "https://unsplash.com/photos/zXA0jx1vrVk",
+      "description": "A tablet displaying a project management board with task cards on a desk",
+      "bytes": 66520
+    },
+    {
+      "slug": "agile-scrum",
+      "type": "course",
+      "image": "/images/courses/agile-scrum.jpg",
+      "source": "https://unsplash.com/photos/PSksbOVDhWk",
+      "description": "Diverse team collaborating on a project in an office",
+      "bytes": 72446
+    },
+    {
+      "slug": "azure-devops",
+      "type": "course",
+      "image": "/images/courses/azure-devops.jpg",
+      "source": "https://unsplash.com/photos/f7uCQxhucw4",
+      "description": "diagram",
+      "bytes": 64410
+    },
+    {
+      "slug": "spring-boot",
+      "type": "course",
+      "image": "/images/courses/spring-boot.jpg",
+      "source": "https://unsplash.com/photos/8qEB0fTe9Vw",
+      "description": "laptop screen displaying colorful code",
+      "bytes": 33451
+    },
+    {
+      "slug": "django",
+      "type": "course",
+      "image": "/images/courses/django.jpg",
+      "source": "https://unsplash.com/photos/ieic5Tq8YMk",
+      "description": "a computer screen with a bunch of code on it",
+      "bytes": 62545
+    },
+    {
+      "slug": "salesforce",
+      "type": "course",
+      "image": "/images/courses/salesforce.jpg",
+      "source": "https://unsplash.com/photos/5KxA53UU6Yo",
+      "description": "black flat screen tv showing game",
+      "bytes": 44521
+    },
+    {
+      "slug": "flutter",
+      "type": "course",
+      "image": "/images/courses/flutter.jpg",
+      "source": "https://unsplash.com/photos/WecngmAT-KY",
+      "description": "photo of half-flipped laptop",
+      "bytes": 42636
+    },
+    {
+      "slug": "react-native",
+      "type": "course",
+      "image": "/images/courses/react-native.jpg",
+      "source": "https://unsplash.com/photos/U0tBTn8UR8I",
+      "description": "laptop computer turn on",
+      "bytes": 49876
+    },
+    {
+      "slug": "android-development",
+      "type": "course",
+      "image": "/images/courses/android-development.jpg",
+      "source": "https://unsplash.com/photos/RDolnHtjVCY",
+      "description": "turned-on laptop computer",
+      "bytes": 71441
+    },
+    {
+      "slug": "ios-development",
+      "type": "course",
+      "image": "/images/courses/ios-development.jpg",
+      "source": "https://unsplash.com/photos/FQ3lFA4Zi58",
+      "description": "a computer on a desk",
+      "bytes": 54108
+    },
+    {
+      "slug": "kotlin",
+      "type": "course",
+      "image": "/images/courses/kotlin.jpg",
+      "source": "https://unsplash.com/photos/vpOeXr5wmR4",
+      "description": "black laptop computer turned on on table",
+      "bytes": 60201
+    },
+    {
+      "slug": "swift",
+      "type": "course",
+      "image": "/images/courses/swift.jpg",
+      "source": "https://unsplash.com/photos/_Fx34KeqIEw",
+      "description": "man in black long sleeve shirt using computer",
+      "bytes": 37114
+    },
+    {
+      "slug": "go-programming",
+      "type": "course",
+      "image": "/images/courses/go-programming.jpg",
+      "source": "https://unsplash.com/photos/w7ZyuGYNpRQ",
+      "description": "closeup photo of eyeglasses",
+      "bytes": 57719
+    },
+    {
+      "slug": "rust-programming",
+      "type": "course",
+      "image": "/images/courses/rust-programming.jpg",
+      "source": "https://unsplash.com/photos/cYyqhdbJ9TI",
+      "description": "black flat screen computer monitor",
+      "bytes": 97752
+    },
+    {
+      "slug": "data-structures-algorithms",
+      "type": "course",
+      "image": "/images/courses/data-structures-algorithms.jpg",
+      "source": "https://unsplash.com/photos/G1N9kDHqBrQ",
+      "description": "A person in a plaid shirt coding on a computer in a workspace",
+      "bytes": 59836
+    },
+    {
+      "slug": "system-design",
+      "type": "course",
+      "image": "/images/courses/system-design.jpg",
+      "source": "https://unsplash.com/photos/Fi-GJaLRGKc",
+      "description": "display monitor turning on",
+      "bytes": 43206
+    },
+    {
+      "slug": "operating-systems",
+      "type": "course",
+      "image": "/images/courses/operating-systems.jpg",
+      "source": "https://unsplash.com/photos/N5bT5RctFZ8",
+      "description": "black laptop computer turned on displaying blue screen",
+      "bytes": 28600
+    },
+    {
+      "slug": "computer-networks",
+      "type": "course",
+      "image": "/images/courses/computer-networks.jpg",
+      "source": "https://unsplash.com/photos/vE5AKQRUs7c",
+      "description": "A network switch with ethernet cables connected",
+      "bytes": 53808
+    },
+    {
+      "slug": "linux-administration",
+      "type": "course",
+      "image": "/images/courses/linux-administration.jpg",
+      "source": "https://unsplash.com/photos/g5jpH62pwes",
+      "description": "JavaScript code displayed on a dark screen with colorful syntax highlighting",
+      "bytes": 57941
+    },
+    {
+      "slug": "blockchain",
+      "type": "course",
+      "image": "/images/courses/blockchain.jpg",
+      "source": "https://unsplash.com/photos/PNbDkQ2DDgM",
+      "description": "macbook pro on black wooden table",
+      "bytes": 63901
+    },
+    {
+      "slug": "web3",
+      "type": "course",
+      "image": "/images/courses/web3.jpg",
+      "source": "https://unsplash.com/photos/Bj6ENZDMSDY",
+      "description": "blue elephant figurine on macbook pro",
+      "bytes": 55272
+    },
+    {
+      "slug": "microservices",
+      "type": "course",
+      "image": "/images/courses/microservices.jpg",
+      "source": "https://unsplash.com/photos/Jmvam25JkbE",
+      "description": "a man wearing headphones sitting in front of a computer",
+      "bytes": 62828
+    },
+    {
+      "slug": "graphql",
+      "type": "course",
+      "image": "/images/courses/graphql.jpg",
+      "source": "https://unsplash.com/photos/DErxVSSQNdM",
+      "description": "MacBOok Pro beside brown mug",
+      "bytes": 35409
+    },
+    {
+      "slug": "redis",
+      "type": "course",
+      "image": "/images/courses/redis.jpg",
+      "source": "https://unsplash.com/photos/1iVKwElWrPA",
+      "description": "photo of optical disc drive",
+      "bytes": 51918
+    },
+    {
+      "slug": "mongodb",
+      "type": "course",
+      "image": "/images/courses/mongodb.jpg",
+      "source": "https://unsplash.com/photos/ISP9CdRYS28",
+      "description": "Servers illuminate a futuristic cityscape with a data center",
+      "bytes": 98626
+    },
+    {
+      "slug": "unity-game-development",
+      "type": "course",
+      "image": "/images/courses/unity-game-development.jpg",
+      "source": "https://unsplash.com/photos/D9Zow2REm8U",
+      "description": "person holding sticky note",
+      "bytes": 41601
+    },
+    {
+      "slug": "unreal-engine",
+      "type": "course",
+      "image": "/images/courses/unreal-engine.jpg",
+      "source": "https://unsplash.com/photos/FoTs3ntRoIs",
+      "description": "macbook pro on white table",
+      "bytes": 65953
+    },
+    {
+      "slug": "embedded-systems",
+      "type": "course",
+      "image": "/images/courses/embedded-systems.jpg",
+      "source": "https://unsplash.com/photos/FO7JIlwjOtU",
+      "description": "macro photography of black circuit board",
+      "bytes": 73620
+    },
+    {
+      "slug": "vr-ar-development",
+      "type": "course",
+      "image": "/images/courses/vr-ar-development.jpg",
+      "source": "https://unsplash.com/photos/dC6Pb2JdAqs",
+      "description": "turned on laptop computer",
+      "bytes": 50294
+    },
+    {
+      "slug": "apache-spark",
+      "type": "course",
+      "image": "/images/courses/apache-spark.jpg",
+      "source": "https://unsplash.com/photos/ktmQBr5hNd8",
+      "description": "a close up of a computer screen with a lot of data on it",
+      "bytes": 104336
+    },
+    {
+      "slug": "kafka",
+      "type": "course",
+      "image": "/images/courses/kafka.jpg",
+      "source": "https://unsplash.com/photos/7wLQNYKL3Rw",
+      "description": "a man sitting at a computer with headphones on",
+      "bytes": 71875
+    },
+    {
+      "slug": "github-actions",
+      "type": "course",
+      "image": "/images/courses/github-actions.jpg",
+      "source": "https://unsplash.com/photos/TKAg3WignSw",
+      "description": "diagram",
+      "bytes": 35615
+    },
+    {
+      "slug": "prometheus-grafana",
+      "type": "course",
+      "image": "/images/courses/prometheus-grafana.jpg",
+      "source": "https://unsplash.com/photos/WfA5r0JyUWs",
+      "description": "Two dark skyscrapers against a hazy sky",
+      "bytes": 36020
+    },
+    {
+      "slug": "next-js",
+      "type": "course",
+      "image": "/images/courses/next-js.jpg",
+      "source": "https://unsplash.com/photos/yyiF1GV5QZk",
+      "description": "An orange cat sits next to a laptop",
+      "bytes": 73453
+    },
+    {
+      "slug": "vue-js",
+      "type": "course",
+      "image": "/images/courses/vue-js.jpg",
+      "source": "https://unsplash.com/photos/yGQmjh2uOTg",
+      "description": "a computer with a keyboard and mouse",
+      "bytes": 55838
+    },
+    {
+      "slug": "nest-js",
+      "type": "course",
+      "image": "/images/courses/nest-js.jpg",
+      "source": "https://unsplash.com/photos/FkjaN-7gWC0",
+      "description": "MacBook Pro on brown wooden surface",
+      "bytes": 66719
+    },
+    {
+      "slug": "webassembly",
+      "type": "course",
+      "image": "/images/courses/webassembly.jpg",
+      "source": "https://unsplash.com/photos/XJXWbfSo2f0",
+      "description": "turned on gray laptop computer",
+      "bytes": 53251
+    },
+    {
+      "slug": "pwa",
+      "type": "course",
+      "image": "/images/courses/pwa.jpg",
+      "source": "https://unsplash.com/photos/e_MdMMKrgdY",
+      "description": "black and silver laptop computer beside black computer mouse",
+      "bytes": 72647
+    },
+    {
+      "slug": "competitive-programming",
+      "type": "course",
+      "image": "/images/courses/competitive-programming.jpg",
+      "source": "https://unsplash.com/photos/g5_rxRjvKmg",
+      "description": "black flat screen computer monitor",
+      "bytes": 74546
+    },
+    {
+      "slug": "ccna",
+      "type": "course",
+      "image": "/images/courses/ccna.jpg",
+      "source": "https://unsplash.com/photos/40XgDxBfYXM",
+      "description": "blue UTP cord",
+      "bytes": 56994
+    },
+    {
+      "slug": "ccnp",
+      "type": "course",
+      "image": "/images/courses/ccnp.jpg",
+      "source": "https://unsplash.com/photos/dyUp7WPu5q4",
+      "description": "a close up of a network with wires connected to it",
+      "bytes": 56020
+    },
+    {
+      "slug": "comptia-network-plus",
+      "type": "course",
+      "image": "/images/courses/comptia-network-plus.jpg",
+      "source": "https://unsplash.com/photos/hXVVNB6Qctg",
+      "description": "white router on white table",
+      "bytes": 27216
+    },
+    {
+      "slug": "comptia-security-plus",
+      "type": "course",
+      "image": "/images/courses/comptia-security-plus.jpg",
+      "source": "https://unsplash.com/photos/7Og0reGku4M",
+      "description": "Security, privacy, and performance status with fix options",
+      "bytes": 32123
+    },
+    {
+      "slug": "comptia-a-plus",
+      "type": "course",
+      "image": "/images/courses/comptia-a-plus.jpg",
+      "source": "https://unsplash.com/photos/1LLh8k2_YFk",
+      "description": "a computer screen with a bunch of text on it",
+      "bytes": 38452
+    },
+    {
+      "slug": "sap-abap",
+      "type": "course",
+      "image": "/images/courses/sap-abap.jpg",
+      "source": "https://unsplash.com/photos/qwtCeJ5cLYs",
+      "description": "turned on monitoring screen",
+      "bytes": 51854
+    },
+    {
+      "slug": "sap-fico",
+      "type": "course",
+      "image": "/images/courses/sap-fico.jpg",
+      "source": "https://unsplash.com/photos/drwpcjkvxuU",
+      "description": "The ChatGPT interface showing examples, capabilities, and limitations on a dark blue screen",
+      "bytes": 38157
+    },
+    {
+      "slug": "sap-sd",
+      "type": "course",
+      "image": "/images/courses/sap-sd.jpg",
+      "source": "https://unsplash.com/photos/1peUWo68Hg4",
+      "description": "a close up of a screen with numbers on it",
+      "bytes": 57944
+    },
+    {
+      "slug": "sap-mm",
+      "type": "course",
+      "image": "/images/courses/sap-mm.jpg",
+      "source": "https://unsplash.com/photos/yo5wIVapll0",
+      "description": "white red and blue calendar",
+      "bytes": 40413
+    },
+    {
+      "slug": "sap-basis",
+      "type": "course",
+      "image": "/images/courses/sap-basis.jpg",
+      "source": "https://unsplash.com/photos/_rAKDw1Fd54",
+      "description": "Laptop and phone displaying financial data",
+      "bytes": 49231
+    },
+    {
+      "slug": "dotnet-core",
+      "type": "course",
+      "image": "/images/courses/dotnet-core.jpg",
+      "source": "https://unsplash.com/photos/9SoCnyQmkzI",
+      "description": "person using laptop computers",
+      "bytes": 25621
+    },
+    {
+      "slug": "csharp",
+      "type": "course",
+      "image": "/images/courses/csharp.jpg",
+      "source": "https://unsplash.com/photos/cvBBO4PzWPg",
+      "description": "Lines of colorful JavaScript code displayed on a dark screen",
+      "bytes": 113114
+    },
+    {
+      "slug": "powershell",
+      "type": "course",
+      "image": "/images/courses/powershell.jpg",
+      "source": "https://unsplash.com/photos/pjAH2Ax4uWk",
+      "description": "person facing computer desktop",
+      "bytes": 43390
+    },
+    {
+      "slug": "power-apps",
+      "type": "course",
+      "image": "/images/courses/power-apps.jpg",
+      "source": "https://unsplash.com/photos/9fZuqBYlV1w",
+      "description": "Hands typing on a laptop displaying a data spreadsheet",
+      "bytes": 81692
+    },
+    {
+      "slug": "sharepoint",
+      "type": "course",
+      "image": "/images/courses/sharepoint.jpg",
+      "source": "https://unsplash.com/photos/yoBuglDQKMw",
+      "description": "black and white number 5 sign",
+      "bytes": 42738
+    },
+    {
+      "slug": "snowflake",
+      "type": "course",
+      "image": "/images/courses/snowflake.jpg",
+      "source": "https://unsplash.com/photos/wkF6GXEgn0s",
+      "description": "A scrabble block spelling out the word data breach",
+      "bytes": 38871
+    },
+    {
+      "slug": "dbt",
+      "type": "course",
+      "image": "/images/courses/dbt.jpg",
+      "source": "https://unsplash.com/photos/LLJXqhxZgs0",
+      "description": "A man presenting data on a vertical monitor to colleagues in a workspace",
+      "bytes": 60796
+    },
+    {
+      "slug": "databricks",
+      "type": "course",
+      "image": "/images/courses/databricks.jpg",
+      "source": "https://unsplash.com/photos/-WXQm_NTK0U",
+      "description": "graphical user interface",
+      "bytes": 46313
+    },
+    {
+      "slug": "sql-server",
+      "type": "course",
+      "image": "/images/courses/sql-server.jpg",
+      "source": "https://unsplash.com/photos/5FS9ci4eHg0",
+      "description": "A hand adjusting components in a glowing server rack",
+      "bytes": 70537
+    },
+    {
+      "slug": "cassandra",
+      "type": "course",
+      "image": "/images/courses/cassandra.jpg",
+      "source": "https://unsplash.com/photos/XXMA-8fBB-g",
+      "description": "a close up of a computer screen with a bunch of text on it",
+      "bytes": 42236
+    },
+    {
+      "slug": "cypress",
+      "type": "course",
+      "image": "/images/courses/cypress.jpg",
+      "source": "https://unsplash.com/photos/VzJjPuk53sk",
+      "description": "man using laptop",
+      "bytes": 70748
+    },
+    {
+      "slug": "playwright",
+      "type": "course",
+      "image": "/images/courses/playwright.jpg",
+      "source": "https://unsplash.com/photos/uyfohHiTxho",
+      "description": "person using macbook pro on white table",
+      "bytes": 64306
+    },
+    {
+      "slug": "appium",
+      "type": "course",
+      "image": "/images/courses/appium.jpg",
+      "source": "https://unsplash.com/photos/6Dv3pe-JnSg",
+      "description": "shallow focus photo of person using MacBook",
+      "bytes": 63004
+    },
+    {
+      "slug": "k6-performance-testing",
+      "type": "course",
+      "image": "/images/courses/k6-performance-testing.jpg",
+      "source": "https://unsplash.com/photos/kwzWjTnDPLk",
+      "description": "man using black laptop computer",
+      "bytes": 73297
+    },
+    {
+      "slug": "argocd",
+      "type": "course",
+      "image": "/images/courses/argocd.jpg",
+      "source": "https://unsplash.com/photos/ytZ2SJvNAxs",
+      "description": "a computer screen with a bunch of code on it",
+      "bytes": 63228
+    },
+    {
+      "slug": "hashicorp-vault",
+      "type": "course",
+      "image": "/images/courses/hashicorp-vault.jpg",
+      "source": "https://unsplash.com/photos/4r8qIQSwNiU",
+      "description": "A repeating pattern of blue digital folders on a dark grey background",
+      "bytes": 47425
+    },
+    {
+      "slug": "istio",
+      "type": "course",
+      "image": "/images/courses/istio.jpg",
+      "source": "https://unsplash.com/photos/zUHrrsjEyeM",
+      "description": "diagram",
+      "bytes": 28026
+    },
+    {
+      "slug": "php",
+      "type": "course",
+      "image": "/images/courses/php.jpg",
+      "source": "https://unsplash.com/photos/cOkpTiJMGzA",
+      "description": "turned on gray laptop computer",
+      "bytes": 48905
+    },
+    {
+      "slug": "ruby-on-rails",
+      "type": "course",
+      "image": "/images/courses/ruby-on-rails.jpg",
+      "source": "https://unsplash.com/photos/gA396xahf-Q",
+      "description": "black flat screen computer monitor",
+      "bytes": 29078
+    },
+    {
+      "slug": "scala",
+      "type": "course",
+      "image": "/images/courses/scala.jpg",
+      "source": "https://unsplash.com/photos/JpF58ANavoc",
+      "description": "a computer screen with a program running on it",
+      "bytes": 58624
+    },
+    {
+      "slug": "r-programming",
+      "type": "course",
+      "image": "/images/courses/r-programming.jpg",
+      "source": "https://unsplash.com/photos/shr_Xn8S8QU",
+      "description": "monitor screengrab",
+      "bytes": 52246
+    },
+    {
+      "slug": "matlab",
+      "type": "course",
+      "image": "/images/courses/matlab.jpg",
+      "source": "https://unsplash.com/photos/XMFZqrGyV-Q",
+      "description": "silver MacBook turned on",
+      "bytes": 76075
+    },
+    {
+      "slug": "mlops",
+      "type": "course",
+      "image": "/images/courses/mlops.jpg",
+      "source": "https://unsplash.com/photos/2EJCSULRwC8",
+      "description": "white robot near brown wall",
+      "bytes": 44205
+    },
+    {
+      "slug": "llmops",
+      "type": "course",
+      "image": "/images/courses/llmops.jpg",
+      "source": "https://unsplash.com/photos/K21Dn4OVxNw",
+      "description": "A white humanoid robot with a tablet screen displaying colorful bokeh lights",
+      "bytes": 35304
+    },
+    {
+      "slug": "reinforcement-learning",
+      "type": "course",
+      "image": "/images/courses/reinforcement-learning.jpg",
+      "source": "https://unsplash.com/photos/kE0JmtbvXxM",
+      "description": "white robotic arm in display showroom",
+      "bytes": 61767
+    },
+    {
+      "slug": "servicenow",
+      "type": "course",
+      "image": "/images/courses/servicenow.jpg",
+      "source": "https://unsplash.com/photos/gvVYUMkBuw4",
+      "description": "Acer flat screen monitor",
+      "bytes": 59943
+    },
+    {
+      "slug": "dynamics-365",
+      "type": "course",
+      "image": "/images/courses/dynamics-365.jpg",
+      "source": "https://unsplash.com/photos/2G4naJvRozk",
+      "description": "a close up of a computer screen with numbers on it",
+      "bytes": 45786
+    },
+    {
+      "slug": "opencv",
+      "type": "course",
+      "image": "/images/courses/opencv.jpg",
+      "source": "https://unsplash.com/photos/5NM32v14n6M",
+      "description": "a laptop computer sitting on top of a desk",
+      "bytes": 60619
+    },
+    {
+      "slug": "hugging-face",
+      "type": "course",
+      "image": "/images/courses/hugging-face.jpg",
+      "source": "https://unsplash.com/photos/llNtovr7ctk",
+      "description": "The letters AI in white 3D block font on a dark teal circuit board",
+      "bytes": 52637
+    },
+    {
+      "slug": "aws-solutions-architect",
+      "type": "course",
+      "image": "/images/courses/aws-solutions-architect.jpg",
+      "source": "https://unsplash.com/photos/qaedPly-Uro",
+      "description": "graphical user interface",
+      "bytes": 30727
+    },
+    {
+      "slug": "aws-devops-professional",
+      "type": "course",
+      "image": "/images/courses/aws-devops-professional.jpg",
+      "source": "https://unsplash.com/photos/k5AxNUn4c5o",
+      "description": "diagram",
+      "bytes": 43897
+    },
+    {
+      "slug": "pmp-certification",
+      "type": "course",
+      "image": "/images/courses/pmp-certification.jpg",
+      "source": "https://unsplash.com/photos/3QzMBrvCeyQ",
+      "description": "people reviewing architectural blueprints on desk",
+      "bytes": 62200
+    },
+    {
+      "slug": "prince2",
+      "type": "course",
+      "image": "/images/courses/prince2.jpg",
+      "source": "https://unsplash.com/photos/3V8xo5Gbusk",
+      "description": "man wearing gray polo shirt beside dry-erase board",
+      "bytes": 57390
+    },
+    {
+      "slug": "itil",
+      "type": "course",
+      "image": "/images/courses/itil.jpg",
+      "source": "https://unsplash.com/photos/qh-mar1Tzo8",
+      "description": "person wearing grey dress shirt beside table",
+      "bytes": 50666
+    },
+    {
+      "slug": "tableau-advanced",
+      "type": "course",
+      "image": "/images/courses/tableau-advanced.jpg",
+      "source": "https://unsplash.com/photos/Wb63zqJ5gnE",
+      "description": "close-up photo of monitor displaying graph",
+      "bytes": 43391
+    },
+    {
+      "slug": "excel-advanced",
+      "type": "course",
+      "image": "/images/courses/excel-advanced.jpg",
+      "source": "https://unsplash.com/photos/yqaskj8lQBE",
+      "description": "a computer screen with a bar chart on it",
+      "bytes": 28248
+    },
+    {
+      "slug": "hadoop",
+      "type": "course",
+      "image": "/images/courses/hadoop.jpg",
+      "source": "https://unsplash.com/photos/_Jb1TF3kvsA",
+      "description": "black flat screen computer monitor",
+      "bytes": 71445
+    },
+    {
+      "slug": "sas",
+      "type": "course",
+      "image": "/images/courses/sas.jpg",
+      "source": "https://unsplash.com/photos/jgOkEjVw-KM",
+      "description": "A green line graph showing stock market trends on a digital screen",
+      "bytes": 20458
+    },
+    {
+      "slug": "splunk",
+      "type": "course",
+      "image": "/images/courses/splunk.jpg",
+      "source": "https://unsplash.com/photos/3G03lBTzjA8",
+      "description": "A glass object with a blue background",
+      "bytes": 42607
+    },
+    {
+      "slug": "palo-alto",
+      "type": "course",
+      "image": "/images/courses/palo-alto.jpg",
+      "source": "https://unsplash.com/photos/DHfc9moQv7I",
+      "description": "macbook pro on black table",
+      "bytes": 34818
+    },
+    {
+      "slug": "vmware-vsphere",
+      "type": "course",
+      "image": "/images/courses/vmware-vsphere.jpg",
+      "source": "https://unsplash.com/photos/ebMFfR2uuJ0",
+      "description": "a couple of pieces of luggage sitting on top of each other",
+      "bytes": 97481
+    },
+    {
+      "slug": "sap-hcm",
+      "type": "course",
+      "image": "/images/courses/sap-hcm.jpg",
+      "source": "https://unsplash.com/photos/tR0jvlsmCuQ",
+      "description": "black and silver laptop computer",
+      "bytes": 69373
+    },
+    {
+      "slug": "workday",
+      "type": "course",
+      "image": "/images/courses/workday.jpg",
+      "source": "https://unsplash.com/photos/GLbkzAnZwm8",
+      "description": "a man sitting at a desk working on a computer",
+      "bytes": 59678
+    },
+    {
+      "slug": "penetration-testing",
+      "type": "course",
+      "image": "/images/courses/penetration-testing.jpg",
+      "source": "https://unsplash.com/photos/Iqi0Rm6gBkQ",
+      "description": "graphical user interface, website",
+      "bytes": 28088
+    },
+    {
+      "slug": "digital-forensics",
+      "type": "course",
+      "image": "/images/courses/digital-forensics.jpg",
+      "source": "https://unsplash.com/photos/C5pXRFEjq3w",
+      "description": "padlock on laptop with light trails",
+      "bytes": 87849
+    },
+    {
+      "slug": "aws-security",
+      "type": "course",
+      "image": "/images/courses/aws-security.jpg",
+      "source": "https://unsplash.com/photos/YOEHA0Ou8ZY",
+      "description": "a computer screen with a keyboard and a box with a logo",
+      "bytes": 50785
+    },
+    {
+      "slug": "terraform-advanced",
+      "type": "course",
+      "image": "/images/courses/terraform-advanced.jpg",
+      "source": "https://unsplash.com/photos/CbLBoHDyaBk",
+      "description": "a desktop computer sitting on top of a map",
+      "bytes": 71770
+    },
+    {
+      "slug": "sre",
+      "type": "course",
+      "image": "/images/courses/sre.jpg",
+      "source": "https://unsplash.com/photos/fhAfLtHToCs",
+      "description": "computer screen displaying files",
+      "bytes": 41830
+    },
+    {
+      "slug": "devsecops",
+      "type": "course",
+      "image": "/images/courses/devsecops.jpg",
+      "source": "https://unsplash.com/photos/yEq2pm7UD78",
+      "description": "macbook pro on brown wooden table",
+      "bytes": 44638
+    },
+    {
+      "slug": "looker",
+      "type": "course",
+      "image": "/images/courses/looker.jpg",
+      "source": "https://unsplash.com/photos/ynllMMWBdi0",
+      "description": "A tablet displaying a rising stock market graph on a desk with a keyboard",
+      "bytes": 49776
+    },
+    {
+      "slug": "apache-flink",
+      "type": "course",
+      "image": "/images/courses/apache-flink.jpg",
+      "source": "https://unsplash.com/photos/1-3zWhYFNhc",
+      "description": "a computer screen with a line graph on it",
+      "bytes": 42451
+    },
+    {
+      "slug": "airbyte",
+      "type": "course",
+      "image": "/images/courses/airbyte.jpg",
+      "source": "https://unsplash.com/photos/Q_Swg0rZouw",
+      "description": "black flat screen computer monitor",
+      "bytes": 44668
+    },
+    {
+      "slug": "apache-airflow",
+      "type": "course",
+      "image": "/images/courses/apache-airflow.jpg",
+      "source": "https://unsplash.com/photos/Nph1oyRsHm4",
+      "description": "black flat screen computer monitor",
+      "bytes": 28428
+    },
+    {
+      "slug": "cks-kubernetes-security",
+      "type": "course",
+      "image": "/images/courses/cks-kubernetes-security.jpg",
+      "source": "https://unsplash.com/photos/fzPusoj22AY",
+      "description": "a padlock on top of a circuit board",
+      "bytes": 73795
+    },
+    {
+      "slug": "rest-api",
+      "type": "course",
+      "image": "/images/courses/rest-api.jpg",
+      "source": "https://unsplash.com/photos/7oBmQz4bfrQ",
+      "description": "man in black and red plaid shirt using black and gray laptop computer",
+      "bytes": 42632
+    },
+    {
+      "slug": "web-scraping",
+      "type": "course",
+      "image": "/images/courses/web-scraping.jpg",
+      "source": "https://unsplash.com/photos/B3l0g6HLxr8",
+      "description": "MacBook Pro inside gray room",
+      "bytes": 33953
+    },
+    {
+      "slug": "computer-architecture",
+      "type": "course",
+      "image": "/images/courses/computer-architecture.jpg",
+      "source": "https://unsplash.com/photos/FJ5e_2f96h4",
+      "description": "black and silver laptop computer",
+      "bytes": 69610
+    },
+    {
+      "slug": "database-design",
+      "type": "course",
+      "image": "/images/courses/database-design.jpg",
+      "source": "https://unsplash.com/photos/AzNc9g-gJxA",
+      "description": "a close-up of a laptop",
+      "bytes": 40623
+    },
+    {
+      "slug": "prompt-engineering",
+      "type": "course",
+      "image": "/images/courses/prompt-engineering.jpg",
+      "source": "https://unsplash.com/photos/OYzbqk2y26c",
+      "description": "A white humanoid robot in a lotus position against a large circular disc",
+      "bytes": 66413
+    },
+    {
+      "slug": "network-security",
+      "type": "course",
+      "image": "/images/courses/network-security.jpg",
+      "source": "https://unsplash.com/photos/EoxXApH1UKI",
+      "description": "a black and white photo of a network of dots",
+      "bytes": 36853
+    },
+    {
+      "slug": "typescript-advanced",
+      "type": "course",
+      "image": "/images/courses/typescript-advanced.jpg",
+      "source": "https://unsplash.com/photos/iacpoKgpBAM",
+      "description": "MacBook Air on gray armchair",
+      "bytes": 89691
+    },
+    {
+      "slug": "statistics-for-data-science",
+      "type": "course",
+      "image": "/images/courses/statistics-for-data-science.jpg",
+      "source": "https://unsplash.com/photos/TzWuSdXMWuk",
+      "description": "text",
+      "bytes": 52630
+    },
+    {
+      "slug": "jira",
+      "type": "course",
+      "image": "/images/courses/jira.jpg",
+      "source": "https://unsplash.com/photos/qC2n6RQU4Vw",
+      "description": "person writing on white paper",
+      "bytes": 74517
+    },
+    {
+      "slug": "git-github",
+      "type": "course",
+      "image": "/images/courses/git-github.jpg",
+      "source": "https://unsplash.com/photos/gAe1pHGc6ms",
+      "description": "blue elephant plush toy on black laptop computer",
+      "bytes": 48102
+    },
+    {
+      "slug": "ckad",
+      "type": "course",
+      "image": "/images/courses/ckad.jpg",
+      "source": "https://unsplash.com/photos/0Z6gQ0p9hVI",
+      "description": "a desk with two monitors and a laptop",
+      "bytes": 82027
+    },
+    {
+      "slug": "web-development-foundations",
+      "type": "course",
+      "image": "/images/courses/web-development-foundations.jpg",
+      "source": "https://unsplash.com/photos/dMUt0X3f59Q",
+      "description": "MacBook Pro",
+      "bytes": 62685
+    },
+    {
+      "slug": "freshers-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/freshers-master-program.jpg",
+      "source": "https://unsplash.com/photos/kp7qkHTgSKc",
+      "description": "Diverse group of students gathered around laptop",
+      "bytes": 67259
+    },
+    {
+      "slug": "full-stack-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/full-stack-master-program.jpg",
+      "source": "https://unsplash.com/photos/FBNxmwEVpAc",
+      "description": "turned-on grey laptop computer",
+      "bytes": 42146
+    },
+    {
+      "slug": "cloud-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/cloud-master-program.jpg",
+      "source": "https://unsplash.com/photos/FocSgUZ10JM",
+      "description": "A white cloud icon on a glass square with floating data charts and cylinders",
+      "bytes": 22860
+    },
+    {
+      "slug": "devops-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/devops-master-program.jpg",
+      "source": "https://unsplash.com/photos/e0SP7dk0dTw",
+      "description": "Laptop screen displaying code with orange glow",
+      "bytes": 53546
+    },
+    {
+      "slug": "data-science-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/data-science-master-program.jpg",
+      "source": "https://unsplash.com/photos/nGoCBxiaRO0",
+      "description": "an abstract image of a sphere with dots and lines",
+      "bytes": 75925
+    },
+    {
+      "slug": "software-testing-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/software-testing-master-program.jpg",
+      "source": "https://unsplash.com/photos/yBEUD8SWABc",
+      "description": "person using computer and two Rubik's Cube near monitor",
+      "bytes": 57581
+    },
+    {
+      "slug": "business-intelligence-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/business-intelligence-master-program.jpg",
+      "source": "https://unsplash.com/photos/vWkwul5Bpbs",
+      "description": "Person using stylus on tablet with charts",
+      "bytes": 47079
+    },
+    {
+      "slug": "big-data-master-program",
+      "type": "master-program",
+      "image": "/images/master-programs/big-data-master-program.jpg",
+      "source": "https://unsplash.com/photos/klWUhr-wPJ8",
+      "description": "Rows of black server racks with white logos in a data center",
+      "bytes": 83901
+    }
+  ]
+}

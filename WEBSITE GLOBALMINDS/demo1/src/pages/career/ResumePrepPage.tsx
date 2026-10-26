@@ -1,0 +1,148 @@
+import { Link } from 'react-router-dom';
+import { FileText, Linkedin, Github, Star, ArrowRight } from 'lucide-react';
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+import { CTASection } from '../../components/home/CTASection';
+import { EnquiryForm } from '../../components/ui/EnquiryForm';
+import { usePageMeta } from '../../hooks/usePageMeta';
+
+const resumeTips = [
+  'Use a clean, ATS-friendly template with clear section headings',
+  'Quantify achievements — use numbers and impact statements',
+  'Tailor each resume to the specific job description',
+  'Include a strong technical skills section relevant to the role',
+  'Lead with your strongest experience or projects',
+  'Keep it to 1–2 pages maximum',
+  'Include links to your GitHub portfolio and LinkedIn profile',
+  'Proofread carefully — one error can cost an interview',
+];
+
+const sections = [
+  { title: 'Professional Summary', desc: 'A 2–3 sentence summary tailored to the target role that immediately communicates your value.' },
+  { title: 'Technical Skills', desc: 'Clearly organised skills section — languages, frameworks, tools, cloud platforms, certifications.' },
+  { title: 'Work Experience', desc: 'Role-based experience with bullet points using action verbs and quantified achievements.' },
+  { title: 'Projects', desc: 'Real-world projects with tech stack, your contribution, and measurable outcomes.' },
+  { title: 'Education & Certifications', desc: 'Degrees, relevant certifications (AWS, Azure, ISTQB etc.) and training completed.' },
+  { title: 'Links', desc: 'GitHub portfolio, LinkedIn profile, personal website, deployed project URLs.' },
+];
+
+export default function ResumePrepPage() {
+  usePageMeta({
+    title: 'Resume Preparation & ATS Optimisation',
+    description: 'Build an ATS-friendly, recruiter-ready IT resume with Global Minds Academy career support — tailored to your target role.',
+  });
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-14">
+        <div className="container-xl">
+          <Breadcrumbs
+            items={[{ label: 'Career', href: '/career' }, { label: 'Resume Preparation' }]}
+            className="text-white/50 mb-4"
+          />
+          <h1 className="display-lg text-white mb-4">Resume Preparation</h1>
+          <p className="text-white/70 text-xl max-w-2xl">
+            Build a strong, ATS-optimised resume that gets you noticed by recruiters and hiring managers in the IT industry.
+          </p>
+        </div>
+      </div>
+
+      {/* Resume sections */}
+      <section className="section">
+        <div className="container-xl">
+          <div className="text-center mb-12">
+            <h2 className="display-md mb-4">Key Resume Sections</h2>
+            <p className="text-surface-500 max-w-xl mx-auto">
+              A strong IT resume needs the right structure. Here's what every section should accomplish.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sections.map((s, i) => (
+              <div key={s.title} className="p-6 rounded-2xl border border-surface-100 hover:shadow-card-md transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
+                  <span className="font-bold text-brand-600 text-sm">{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
+                <p className="text-surface-500 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tips + Profile */}
+      <section className="section bg-surface-50">
+        <div className="container-xl">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Tips */}
+            <div>
+              <h2 className="display-md mb-6">Resume Tips</h2>
+              <ul className="space-y-3">
+                {resumeTips.map((tip, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Star className="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-surface-700 text-sm">{tip}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Profile links */}
+              <div className="mt-8 space-y-4">
+                <h3 className="font-semibold text-surface-900">Build Your Online Presence</h3>
+                <div className="flex gap-4">
+                  <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-surface-100 flex-1">
+                    <Linkedin className="w-6 h-6 text-blue-600" />
+                    <div>
+                      <p className="font-semibold text-sm text-surface-900">LinkedIn</p>
+                      <p className="text-xs text-surface-500">Professional profile</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-surface-100 flex-1">
+                    <Github className="w-6 h-6 text-surface-900" />
+                    <div>
+                      <p className="font-semibold text-sm text-surface-900">GitHub</p>
+                      <p className="text-xs text-surface-500">Project portfolio</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link to="/career/interview-preparation">
+                  <button className="btn-primary btn flex items-center gap-2">
+                    Interview Prep <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+                <Link to="/career/mock-interview">
+                  <button className="btn-secondary btn">Mock Interview</button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="bg-white rounded-3xl p-8 shadow-card">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-brand-600" />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-surface-900">Resume Review</h3>
+                  <p className="text-surface-500 text-sm">Get feedback on your existing resume</p>
+                </div>
+              </div>
+              <EnquiryForm title="" subtitle="Submit your details and our career team will review your resume and provide actionable feedback." compact />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Build a Resume That Gets Interviews"
+        subtitle="Expert guidance on crafting an IT resume that stands out in a competitive market."
+        primaryLabel="Get Resume Help"
+        primaryHref="/contact"
+        secondaryLabel="View Courses"
+        secondaryHref="/courses"
+      />
+    </div>
+  );
+}

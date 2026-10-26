@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER SITEMAP — regenerate with real domain before publishing -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
+  <url><loc>https://globalmindsacademy.in/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/online-training</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/classroom-training</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/certifications</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/career</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/internships</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://globalmindsacademy.in/corporate-training</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://globalmindsacademy.in/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://globalmindsacademy.in/blog</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://globalmindsacademy.in/locations</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Course pages -->
+  <url><loc>https://globalmindsacademy.in/courses/aws-training</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/aws-online-training</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/python-training</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/java-training</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/full-stack-development</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/react-js</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/data-science</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/devops-training</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/kubernetes</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/machine-learning</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/generative-ai</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/software-testing</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/cyber-security</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/microsoft-azure</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/google-cloud</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/data-analytics</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/courses/power-bi</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Master Program pages -->
+  <url><loc>https://globalmindsacademy.in/master-programs/freshers-master-program</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/full-stack-master-program</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/cloud-master-program</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/devops-master-program</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/data-science-master-program</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/software-testing-master-program</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/business-intelligence-master-program</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/master-programs/big-data-master-program</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Category pages -->
+  <url><loc>https://globalmindsacademy.in/categories/cloud-computing</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/devops</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/artificial-intelligence</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/full-stack-development</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/data-science-analytics</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/software-testing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/programming</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://globalmindsacademy.in/categories/cyber-security</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Legal pages -->
+  <url><loc>https://globalmindsacademy.in/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://globalmindsacademy.in/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://globalmindsacademy.in/refund-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://globalmindsacademy.in/cookie-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

@@ -1,0 +1,14 @@
+# Netlify config — FRONTEND-ONLY preview deploy.
+# This builds and serves just the React app. There is no backend on Netlify,
+# so login, admin portal, registration, and form submissions will NOT work.
+# For a fully working site (auth, admin, CMS, forms) use the Render blueprint
+# (render.yaml) instead — see DEPLOY.md.
+
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

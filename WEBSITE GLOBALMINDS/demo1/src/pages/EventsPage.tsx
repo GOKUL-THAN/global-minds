@@ -1,0 +1,440 @@
+import { useState } from 'react';
+import { Calendar, Clock, Monitor, MapPin, Users, ExternalLink, ChevronDown } from 'lucide-react';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs';
+import { Button } from '../components/ui/Button';
+import { CTASection } from '../components/home/CTASection';
+import { usePageMeta } from '../hooks/usePageMeta';
+import { useCmsCollection } from '../hooks/useCmsCollection';
+import { siteConfig } from '../data/siteConfig';
+
+type EventType = 'All' | 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
+
+interface Event {
+  id: string;
+  title: string;
+  type: 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
+  date: string;
+  time: string;
+  duration: string;
+  speaker: string;
+  speakerRole: string;
+  mode: 'Online' | 'Offline' | 'Hybrid';
+  seats: number;
+  seatsLeft: number;
+  fee: string;
+  description: string;
+  topics: string[];
+  badge?: string;
+}
+
+const defaultEvents: Event[] = [
+  {
+    id: 'e1',
+    title: 'Cloud Architecture Masterclass: Designing Scalable AWS Solutions',
+    type: 'Webinar',
+    date: '2026-10-14',
+    time: '7:00 PM – 9:00 PM IST',
+    duration: '2 Hours',
+    speaker: 'Rajesh Kumar',
+    speakerRole: 'AWS Solutions Architect, 12 yrs exp',
+    mode: 'Online',
+    seats: 200,
+    seatsLeft: 47,
+    fee: 'Free',
+    description: 'Deep-dive into designing fault-tolerant, highly available and cost-optimised AWS architectures. Includes live Q&A.',
+    topics: ['Multi-AZ architecture', 'Cost optimisation', 'High availability patterns', 'Security best practices'],
+    badge: 'Filling Fast',
+  },
+  {
+    id: 'e2',
+    title: 'Hands-on DevOps Workshop: CI/CD Pipeline from Scratch',
+    type: 'Workshop',
+    date: '2026-10-18',
+    time: '10:00 AM – 4:00 PM IST',
+    duration: '6 Hours',
+    speaker: 'Suresh Anand',
+    speakerRole: 'DevOps Lead, Ex-Google',
+    mode: 'Hybrid',
+    seats: 50,
+    seatsLeft: 12,
+    fee: '₹499',
+    description: 'Build a complete CI/CD pipeline using GitHub Actions, Docker, and Kubernetes. Hands-on lab with guided exercises.',
+    topics: ['GitHub Actions', 'Docker containerisation', 'Kubernetes deployment', 'Monitoring with Grafana'],
+    badge: 'Last 12 Seats',
+  },
+  {
+    id: 'e4',
+    title: '48-Hour Full Stack Hackathon',
+    type: 'Hackathon',
+    date: '2026-10-24',
+    time: '9:00 AM IST (48 hrs)',
+    duration: '48 Hours',
+    speaker: 'Global Minds Academy Mentors',
+    speakerRole: 'Industry Expert Panel',
+    mode: 'Hybrid',
+    seats: 100,
+    seatsLeft: 35,
+    fee: 'Free',
+    description: 'Build a full-stack web application in 48 hours. Top 3 teams win prizes worth ₹1 lakh. Open to all skill levels.',
+    topics: ['React / Next.js', 'Node.js / Python backend', 'Database design', 'UI/UX fundamentals'],
+    badge: 'Prize: ₹1 Lakh',
+  },
+  {
+    id: 'e5',
+    title: 'Data Science Bootcamp: From Zero to Hero',
+    type: 'Workshop',
+    date: '2026-11-01',
+    time: '10:00 AM – 5:00 PM IST',
+    duration: '7 Hours',
+    speaker: 'Anitha Reddy',
+    speakerRole: 'Principal Data Scientist, Infosys',
+    mode: 'Online',
+    seats: 80,
+    seatsLeft: 62,
+    fee: '₹299',
+    description: 'A comprehensive one-day workshop covering Python for data science, Pandas, Matplotlib, Scikit-learn and building your first ML model.',
+    topics: ['Python for data science', 'EDA with Pandas', 'Visualisation', 'Building ML models'],
+    badge: 'New',
+  },
+  {
+    id: 'e6',
+    title: 'Resume & LinkedIn Masterclass for IT Professionals',
+    type: 'Webinar',
+    date: '2026-11-07',
+    time: '7:00 PM – 8:30 PM IST',
+    duration: '1.5 Hours',
+    speaker: 'Meena Pillai',
+    speakerRole: 'HR Manager, TCS | Career Coach',
+    mode: 'Online',
+    seats: 250,
+    seatsLeft: 210,
+    fee: 'Free',
+    description: 'Learn what hiring managers actually look for. Build an ATS-proof resume and a standout LinkedIn profile live during the session.',
+    topics: ['ATS-friendly resume structure', 'LinkedIn profile optimisation', 'Personal branding', 'Common resume mistakes'],
+  },
+  {
+    id: 'e7',
+    title: 'Cyber Security Awareness Workshop',
+    type: 'Workshop',
+    date: '2026-11-12',
+    time: '10:00 AM – 1:00 PM IST',
+    duration: '3 Hours',
+    speaker: 'Venkat Rao',
+    speakerRole: 'CISSP | Cyber Security Lead',
+    mode: 'Offline',
+    seats: 40,
+    seatsLeft: 22,
+    fee: '₹199',
+    description: 'Practical session on ethical hacking fundamentals, common vulnerabilities, and how to protect applications. Includes hands-on CTF challenge.',
+    topics: ['OWASP Top 10', 'Ethical hacking basics', 'CTF challenge', 'Security careers'],
+  },
+  {
+    id: 'e8',
+    title: 'Freshers Career Panel: Landing Your First IT Job',
+    type: 'Seminar',
+    date: '2026-11-18',
+    time: '5:00 PM – 7:00 PM IST',
+    duration: '2 Hours',
+    speaker: 'Panel of 5 Industry Experts',
+    speakerRole: 'HR Leaders from Top MNCs',
+    mode: 'Hybrid',
+    seats: 300,
+    seatsLeft: 245,
+    fee: 'Free',
+    description: 'A candid panel discussion with HR leaders and senior developers on what it takes to land your first IT job as a fresher in 2026.',
+    topics: ['What recruiters want', 'Interview tips', 'Package negotiation', 'Career growth paths'],
+  },
+];
+
+const pastEvents = [
+  { title: 'Kubernetes Deep Dive Workshop', date: 'Sep 2026', attendees: 87, rating: 4.9 },
+  { title: 'Full Stack Hackathon Summer 2026', date: 'Jul 2026', attendees: 96, rating: 4.9 },
+  { title: 'Power BI Masterclass', date: 'Jul 2026', attendees: 143, rating: 4.7 },
+  { title: 'Career Fair – IT Placements 2026', date: 'Jun 2026', attendees: 320, rating: 4.8 },
+];
+
+function typeBadgeColor(type: Event['type']) {
+  switch (type) {
+    case 'Webinar': return 'bg-brand-100 text-brand-700';
+    case 'Workshop': return 'bg-orange-100 text-orange-700';
+    case 'Hackathon': return 'bg-purple-100 text-purple-700';
+    case 'Seminar': return 'bg-green-100 text-green-700';
+  }
+}
+
+function feeBadge(fee: string) {
+  return fee === 'Free'
+    ? <span className="text-green-700 font-bold text-sm">Free</span>
+    : <span className="text-surface-900 font-bold text-sm">{fee}</span>;
+}
+
+interface RegisterForm { name: string; email: string; phone: string }
+
+export default function EventsPage() {
+  const events = useCmsCollection<Event>('events', defaultEvents);
+
+  usePageMeta({
+    title: 'Events, Webinars & Workshops',
+    description: 'Attend free and paid webinars, workshops, hackathons and seminars at Global Minds Academy. Build skills, network with experts and accelerate your career.',
+  });
+
+  const [filter, setFilter] = useState<EventType>('All');
+  const [registering, setRegistering] = useState<string | null>(null);
+  const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
+  const [regForm, setRegForm] = useState<RegisterForm>({ name: '', email: '', phone: '' });
+
+  const filtered = events.filter(e => filter === 'All' || e.type === filter);
+
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!registering) return;
+
+    const event = events.find(item => item.id === registering);
+    if (!event) return;
+
+    const subject = `Event registration request: ${event.title}`;
+    const body = [
+      `Event: ${event.title}`,
+      `Name: ${regForm.name}`,
+      `Email: ${regForm.email}`,
+      `Phone: ${regForm.phone}`,
+    ].join('\n');
+
+    window.location.href = `mailto:${siteConfig.admissionsEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setRegistering(null);
+    setRegForm({ name: '', email: '', phone: '' });
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
+        <div className="container-xl">
+          <Breadcrumbs items={[{ label: 'Events & Webinars' }]} className="text-white/50 mb-4" />
+          <h1 className="display-lg text-white mb-4">Events, Webinars &amp; Workshops</h1>
+          <p className="text-white/70 text-xl max-w-2xl">
+            Learn from industry experts, build skills through hands-on workshops, and connect with the tech community — most events are free.
+          </p>
+        </div>
+      </div>
+
+      {/* Filter Tabs */}
+      <div className="sticky top-16 z-30 bg-white border-b border-surface-100 shadow-sm">
+        <div className="container-xl">
+          <div className="flex overflow-x-auto py-3 gap-2 no-scrollbar">
+            {(['All', 'Webinar', 'Workshop', 'Hackathon', 'Seminar'] as EventType[]).map(t => (
+              <button
+                key={t}
+                onClick={() => setFilter(t)}
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0 ${
+                  filter === t ? 'bg-brand-600 text-white' : 'bg-surface-100 text-surface-600 hover:bg-surface-200'
+                }`}
+              >
+                {t}
+              </button>
+            ))}
+            <span className="ml-auto text-sm text-surface-400 self-center whitespace-nowrap flex-shrink-0">
+              {filtered.length} event{filtered.length !== 1 ? 's' : ''}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Events Grid */}
+      <section className="section bg-surface-50">
+        <div className="container-xl">
+          <div className="grid md:grid-cols-2 gap-6">
+            {filtered.map(event => {
+              const isExpanded = expandedEvents.has(event.id);
+              return (
+                <article
+                  key={event.id}
+                  className="bg-white rounded-2xl border border-surface-100 overflow-hidden hover:shadow-card-lg transition-shadow"
+                >
+                  {/* Top accent bar by type */}
+                  <div className={`h-1 w-full ${
+                    event.type === 'Webinar' ? 'bg-brand-500' :
+                    event.type === 'Workshop' ? 'bg-orange-400' :
+                    event.type === 'Hackathon' ? 'bg-purple-500' : 'bg-green-500'
+                  }`} />
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className="flex-1">
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${typeBadgeColor(event.type)}`}>{event.type}</span>
+                          {event.badge && (
+                            <span className="text-xs px-2.5 py-1 rounded-full font-medium bg-red-100 text-red-700">{event.badge}</span>
+                          )}
+                        </div>
+                        <h3 className="font-display font-bold text-surface-900 leading-snug">{event.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-sm text-surface-500 mb-4">{event.description}</p>
+
+                    {/* Meta */}
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      <div className="flex items-center gap-2 text-xs text-surface-600">
+                        <Calendar className="w-3.5 h-3.5 text-brand-500" />
+                        {new Date(event.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-surface-600">
+                        <Clock className="w-3.5 h-3.5 text-brand-500" />
+                        {event.time}
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-surface-600">
+                        {event.mode === 'Offline'
+                          ? <MapPin className="w-3.5 h-3.5 text-brand-500" />
+                          : <Monitor className="w-3.5 h-3.5 text-brand-500" />
+                        }
+                        {event.mode}
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-surface-600">
+                        <Users className="w-3.5 h-3.5 text-brand-500" />
+                        <span className={event.seatsLeft <= 20 ? 'text-red-600 font-medium' : ''}>
+                          {event.seatsLeft} seats left
+                        </span>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      aria-expanded={isExpanded}
+                      aria-controls={`event-details-${event.id}`}
+                      onClick={e => {
+                        e.stopPropagation();
+                        setExpandedEvents(current => {
+                          const next = new Set(current);
+                          if (next.has(event.id)) next.delete(event.id);
+                          else next.add(event.id);
+                          return next;
+                        });
+                      }}
+                      className="mb-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                    >
+                      {isExpanded ? 'Show less' : 'More event details'}
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                    </button>
+                    <div id={`event-details-${event.id}`} hidden={!isExpanded} className="mb-4 rounded-xl bg-brand-50 p-4 text-sm text-surface-700">
+                      <p><span className="font-semibold">Duration:</span> {event.duration}</p>
+                      <p className="mt-1"><span className="font-semibold">Capacity:</span> {event.seats} attendees ({event.seatsLeft} seats remaining)</p>
+                    </div>
+
+                    {/* Speaker */}
+                    <div className="flex items-center gap-3 p-3 bg-surface-50 rounded-xl mb-4">
+                      <div className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                        {event.speaker.split(' ').map(w => w[0]).join('').slice(0, 2)}
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-surface-900">{event.speaker}</p>
+                        <p className="text-xs text-surface-500">{event.speakerRole}</p>
+                      </div>
+                    </div>
+
+                    {/* Topics */}
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {event.topics.map(t => (
+                        <span key={t} className="text-xs bg-surface-100 text-surface-600 px-2 py-0.5 rounded-full">{t}</span>
+                      ))}
+                    </div>
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between pt-3 border-t border-surface-100">
+                      <div>{feeBadge(event.fee)}</div>
+                      <button
+                        type="button"
+                        onClick={() => setRegistering(event.id)}
+                        className="inline-flex items-center rounded-xl bg-brand-600 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                      >
+                        Register Now
+                        <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Past Events */}
+      <section className="section bg-white">
+        <div className="container-xl">
+          <div className="text-center mb-10">
+            <h2 className="display-sm mb-3">Past Events</h2>
+            <p className="text-surface-500">Request a past-event recording by email; access depends on availability.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {pastEvents.map(e => {
+              const subject = `Past event recording request: ${e.title}`;
+              const body = `Hello, I would like to request access to the recording for "${e.title}".`;
+              return (
+                <article key={e.title} className="block bg-surface-50 rounded-2xl p-4 text-center hover:shadow-card-md hover:-translate-y-0.5 transition-all">
+                  <p className="font-semibold text-surface-900 text-sm mb-1">{e.title}</p>
+                  <p className="text-xs text-surface-500 mb-2">{e.date}</p>
+                  <div className="flex items-center justify-center gap-3 text-xs text-surface-500 mb-3">
+                    <span>👥 {e.attendees}</span>
+                    <span>⭐ {e.rating}</span>
+                  </div>
+                  <a
+                    href={`mailto:${siteConfig.admissionsEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
+                    className="text-xs font-semibold text-brand-700 hover:text-brand-800 underline"
+                  >
+                    Request recording
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Host an event CTA */}
+      <section className="section bg-brand-50">
+        <div className="container-xl text-center max-w-2xl">
+          <h2 className="display-sm mb-4">Want to Speak at Our Events?</h2>
+          <p className="text-surface-600 mb-8">
+            Are you an industry expert or practitioner? We welcome guest speakers for webinars, workshops and panel discussions.
+          </p>
+          <a
+            href={`mailto:${siteConfig.admissionsEmail}?subject=${encodeURIComponent('Guest speaker application')}`}
+            className="btn-primary btn inline-flex"
+          >
+            Apply as a Speaker
+          </a>
+        </div>
+      </section>
+
+      {/* Registration Modal */}
+      {registering && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl">
+            <h3 className="font-display font-bold text-xl mb-2">Register for Event</h3>
+            <p className="text-sm text-surface-500 mb-6">
+              {events.find(e => e.id === registering)?.title}. Submitting opens an email draft to admissions; send it to request registration.
+            </p>
+            <form onSubmit={handleRegister} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-surface-700 mb-1">Full Name *</label>
+                <input required value={regForm.name} onChange={e => setRegForm(p => ({ ...p, name: e.target.value }))} className="w-full border border-surface-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-300" placeholder="Your name" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-surface-700 mb-1">Email *</label>
+                <input type="email" required value={regForm.email} onChange={e => setRegForm(p => ({ ...p, email: e.target.value }))} className="w-full border border-surface-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-300" placeholder="you@email.com" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-surface-700 mb-1">Phone *</label>
+                <input required value={regForm.phone} onChange={e => setRegForm(p => ({ ...p, phone: e.target.value }))} className="w-full border border-surface-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-300" placeholder="+91 99999 00000" />
+              </div>
+              <div className="flex gap-3">
+                <Button type="submit" className="flex-1">Confirm Registration</Button>
+                <Button type="button" variant="secondary" onClick={() => setRegistering(null)}>Cancel</Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      <CTASection />
+    </div>
+  );
+}
