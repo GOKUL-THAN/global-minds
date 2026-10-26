@@ -23,7 +23,7 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-const techOptions = ['AWS', 'Azure', 'GCP', 'DevOps', 'Kubernetes', 'Docker', 'Terraform', 'AI/ML', 'Generative AI', 'Data Science', 'Python', 'Java', 'Full Stack', 'Software Testing', 'Cyber Security', 'Power BI', 'Tableau', 'Other'];
+const techOptions = ['AWS', 'Azure', 'GCP', 'DevOps', 'Kubernetes', 'Docker', 'Terraform', 'AI/ML', 'Data Science', 'Python', 'Java', 'Full Stack', 'Software Testing', 'Cyber Security', 'Power BI', 'Tableau', 'Other'];
 
 const benefits = [
   { icon: Target, title: 'Customised Curriculum', desc: 'Training designed around your team\'s specific technology stack and goals.' },

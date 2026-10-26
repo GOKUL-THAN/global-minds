@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { Send, Loader2, CheckCircle } from 'lucide-react';
 import { enquiryService } from '../../services/enquiryService';
 import { useCourseCatalog } from '../../hooks/useCourseCatalog';
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { cn } from '../../utils/cn';
 
 const schema = z.object({
@@ -36,6 +36,7 @@ export function EnquiryForm({
   className,
   compact = false,
 }: EnquiryFormProps) {
+  const siteConfig = useSiteConfig();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const { courses, loading: coursesLoading, error: coursesError } = useCourseCatalog();

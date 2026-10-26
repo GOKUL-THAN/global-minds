@@ -98,19 +98,19 @@ export const mockStudents: Student[] = [
   {
     id: 'st1', name: 'Priya Sharma', email: 'priya.sharma@email.com', phone: '+91 98765 43210',
     avatar: 'PS', avatarColor: 'bg-brand-500', status: 'active',
-    enrolledCourses: ['AWS Training', 'DevOps Training'],
-    activeCourse: 'AWS Training', batchId: 'bt1', batchName: 'AWS Oct 2026 Weekday',
+    enrolledCourses: ['AWS / Cloud', 'DevOps Training'],
+    activeCourse: 'AWS / Cloud', batchId: 'bt1', batchName: 'AWS Oct 2026 Weekday',
     progress: 72, attendance: 88, assignmentsSubmitted: 8, assignmentsTotal: 10,
     quizzesPassed: 5, quizzesTotal: 6, lastActive: '2026-10-06T09:15:00',
     joinedDate: '2026-09-01', location: 'Chennai', source: 'google',
     feePaid: 18999, feePending: 0, certificateEarned: false,
     notes: 'High performer, consistently submits work on time.',
     activityLog: [
-      { id: 'a1', type: 'lesson', description: 'Completed Module 5: VPC Networking', timestamp: '2026-10-06T09:15:00', meta: 'AWS Training' },
+      { id: 'a1', type: 'lesson', description: 'Completed Module 5: VPC Networking', timestamp: '2026-10-06T09:15:00', meta: 'AWS / Cloud' },
       { id: 'a2', type: 'quiz', description: 'Passed Quiz: EC2 & Auto Scaling (9/10)', timestamp: '2026-10-05T18:30:00', meta: 'Score: 90%' },
       { id: 'a3', type: 'login', description: 'Student logged in', timestamp: '2026-10-05T18:00:00' },
-      { id: 'a4', type: 'assignment', description: 'Submitted Assignment 8: S3 Bucket Policy', timestamp: '2026-10-04T21:10:00', meta: 'AWS Training' },
-      { id: 'a5', type: 'lesson', description: 'Completed Module 4: Storage Services', timestamp: '2026-10-04T20:00:00', meta: 'AWS Training' },
+      { id: 'a4', type: 'assignment', description: 'Submitted Assignment 8: S3 Bucket Policy', timestamp: '2026-10-04T21:10:00', meta: 'AWS / Cloud' },
+      { id: 'a5', type: 'lesson', description: 'Completed Module 4: Storage Services', timestamp: '2026-10-04T20:00:00', meta: 'AWS / Cloud' },
       { id: 'a6', type: 'login', description: 'Student logged in', timestamp: '2026-10-04T19:45:00' },
     ],
   },
@@ -216,7 +216,7 @@ export const mockStudents: Student[] = [
   {
     id: 'st8', name: 'Vikram Sharma', email: 'vikram.sharma@email.com', phone: '+91 21098 76543',
     avatar: 'VS', avatarColor: 'bg-red-500', status: 'active',
-    enrolledCourses: ['Machine Learning', 'Generative AI'],
+    enrolledCourses: ['Machine Learning'],
     activeCourse: 'Machine Learning', batchId: 'bt7', batchName: 'ML Oct 2026 Weekend',
     progress: 55, attendance: 82, assignmentsSubmitted: 6, assignmentsTotal: 10,
     quizzesPassed: 4, quizzesTotal: 6, lastActive: '2026-10-06T07:30:00',
@@ -234,7 +234,7 @@ export const mockStudents: Student[] = [
 // ── Enquiries ──────────────────────────────────────────────
 export const mockEnquiries: Enquiry[] = [
   { id: 'eq1', name: 'Deepa Krishnan', email: 'deepa.k@email.com', phone: '+91 99887 76655', course: 'DevOps Training', message: 'I am a 2-year experienced developer looking to transition into DevOps. Is this course suitable for me?', status: 'new', source: 'Website Form', assignedTo: 'Counsellor A', createdAt: '2026-10-06T08:30:00', updatedAt: '2026-10-06T08:30:00', notes: '' },
-  { id: 'eq2', name: 'Ramesh Babu', email: 'ramesh.b@email.com', phone: '+91 88776 65544', course: 'AWS Training', message: 'What is the batch timing for the weekend AWS batch? I am working professional.', status: 'contacted', source: 'WhatsApp', assignedTo: 'Counsellor B', createdAt: '2026-10-05T14:00:00', updatedAt: '2026-10-06T09:00:00', followUpDate: '2026-10-08', notes: 'Called on Oct 6 — interested in weekend batch. Needs EMI option.' },
+  { id: 'eq2', name: 'Ramesh Babu', email: 'ramesh.b@email.com', phone: '+91 88776 65544', course: 'AWS / Cloud', message: 'What is the batch timing for the weekend AWS batch? I am working professional.', status: 'contacted', source: 'WhatsApp', assignedTo: 'Counsellor B', createdAt: '2026-10-05T14:00:00', updatedAt: '2026-10-06T09:00:00', followUpDate: '2026-10-08', notes: 'Called on Oct 6 — interested in weekend batch. Needs EMI option.' },
   { id: 'eq3', name: 'Lakshmi Priya', email: 'lakshmi.p@email.com', phone: '+91 77665 54433', course: 'Data Science & AI', message: 'I am a non-IT background student. Can I join the Data Science course?', status: 'enrolled', source: 'Google Ad', assignedTo: 'Counsellor A', createdAt: '2026-10-04T10:00:00', updatedAt: '2026-10-06T11:00:00', notes: 'Enrolled in the Oct 22 batch. Fee paid in full.' },
   { id: 'eq4', name: 'Naveen Kumar', email: 'naveen.k@email.com', phone: '+91 66554 43322', course: 'Full Stack Development', message: 'Do you provide job guarantee after this course?', status: 'follow-up', source: 'Instagram', assignedTo: 'Counsellor C', createdAt: '2026-10-03T16:30:00', updatedAt: '2026-10-05T10:00:00', followUpDate: '2026-10-07', notes: 'Clarified no guarantee policy. Interested but wants to think. Follow up on Oct 7.' },
   { id: 'eq5', name: 'Santosh Rao', email: 'santosh.r@email.com', phone: '+91 55443 32211', course: 'Cyber Security Training', message: 'What certifications will I receive after completing this course?', status: 'contacted', source: 'LinkedIn', assignedTo: 'Counsellor B', createdAt: '2026-10-03T09:00:00', updatedAt: '2026-10-04T14:00:00', notes: 'Sent certification details via email.' },
@@ -245,7 +245,7 @@ export const mockEnquiries: Enquiry[] = [
 
 // ── Batches ────────────────────────────────────────────────
 export const mockBatches: AdminBatch[] = [
-  { id: 'bt1', name: 'AWS Oct 2026 Weekday', course: 'AWS Training', category: 'Cloud', instructor: 'Rajesh Kumar', startDate: '2026-10-15', endDate: '2026-12-15', schedule: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming', capacity: 25, enrolled: 18, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 18999 },
+  { id: 'bt1', name: 'AWS Oct 2026 Weekday', course: 'AWS / Cloud', category: 'Cloud', instructor: 'Rajesh Kumar', startDate: '2026-10-15', endDate: '2026-12-15', schedule: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming', capacity: 25, enrolled: 18, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 18999 },
   { id: 'bt2', name: 'Full Stack Oct 2026 Weekend', course: 'Full Stack Development', category: 'Full Stack', instructor: 'Priya Nair', startDate: '2026-10-18', endDate: '2027-01-18', schedule: 'Sat / Sun', time: '10:00 AM – 1:00 PM', mode: 'Hybrid', status: 'upcoming', capacity: 20, enrolled: 14, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 22999 },
   { id: 'bt3', name: 'Data Science Sep 2026', course: 'Data Science & AI', category: 'AI / ML', instructor: 'Anitha Reddy', startDate: '2026-09-01', endDate: '2026-11-30', schedule: 'Mon / Wed / Fri', time: '8:00 AM – 10:00 AM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 19, completed: 4, avgProgress: 68, avgAttendance: 87, fee: 24999 },
   { id: 'bt4', name: 'Testing Oct 2026 Weekend', course: 'Software Testing', category: 'QA', instructor: 'Kiran Babu', startDate: '2026-10-04', endDate: '2026-12-01', schedule: 'Sat / Sun', time: '2:00 PM – 5:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 22, completed: 0, avgProgress: 24, avgAttendance: 71, fee: 12999 },
@@ -261,7 +261,7 @@ export const mockSiteActivity: SiteActivity[] = [
   { id: 'sa2', type: 'enquiry', actor: 'Pooja Iyer', actorRole: 'student', description: 'New enquiry submitted for Python Training', timestamp: '2026-10-06T11:00:00', module: 'Enquiries' },
   { id: 'sa3', type: 'enrollment', actor: 'Kavitha Reddy', actorRole: 'student', description: 'Enrolled in Python Training — Oct Weekday Batch', timestamp: '2026-10-06T10:30:00', module: 'Enrollments' },
   { id: 'sa4', type: 'payment', actor: 'Vikram Sharma', actorRole: 'student', description: 'Payment received ₹27,999 for Machine Learning', timestamp: '2026-10-06T08:00:00', module: 'Payments' },
-  { id: 'sa5', type: 'lesson', actor: 'Priya Sharma', actorRole: 'student', description: 'Completed Module 5: VPC Networking (AWS Training)', timestamp: '2026-10-06T09:15:00', module: 'Learning' },
+  { id: 'sa5', type: 'lesson', actor: 'Priya Sharma', actorRole: 'student', description: 'Completed Module 5: VPC Networking (AWS / Cloud)', timestamp: '2026-10-06T09:15:00', module: 'Learning' },
   { id: 'sa6', type: 'quiz', actor: 'Priya Sharma', actorRole: 'student', description: 'Passed EC2 & Auto Scaling quiz — Score: 90%', timestamp: '2026-10-05T18:30:00', module: 'Assessments' },
   { id: 'sa7', type: 'enquiry', actor: 'Ananya Krishnamurthy', actorRole: 'student', description: 'New enquiry submitted for Microsoft Azure', timestamp: '2026-10-06T12:00:00', module: 'Enquiries' },
   { id: 'sa8', type: 'login', actor: 'Admin User', actorRole: 'admin', description: 'Admin logged in', timestamp: '2026-10-06T08:00:00', ip: '192.168.x.x', module: 'Auth' },
@@ -310,7 +310,7 @@ export const enrollmentTrend = [
 // Top courses by enrollment
 export const topCourses = [
   { course: 'Full Stack Development', enrollments: 145, revenue: 3334855, completion: 68 },
-  { course: 'AWS Training', enrollments: 128, revenue: 2431872, completion: 72 },
+  { course: 'AWS / Cloud', enrollments: 128, revenue: 2431872, completion: 72 },
   { course: 'Data Science & AI', enrollments: 112, revenue: 2799888, completion: 61 },
   { course: 'Python Training', enrollments: 98, revenue: 979902, completion: 79 },
   { course: 'DevOps Training', enrollments: 87, revenue: 1478913, completion: 65 },

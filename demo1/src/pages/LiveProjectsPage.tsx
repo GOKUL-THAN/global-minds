@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Code2, Star, Trophy, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { useCmsCollection } from '../hooks/useCmsCollection';
 
 // ── Project Categories ─────────────────────────────────────
-const projectCategories = [
+export const projectCategories = [
   {
     id: 'fullstack',
     title: 'Full Stack Projects',
@@ -14,7 +16,7 @@ const projectCategories = [
     color: 'bg-brand-50 border-brand-200',
     iconBg: 'bg-brand-100',
     iconColor: 'text-brand-600',
-    count: 45,
+    count: 50,
     projects: [
       {
         title: 'E-Commerce Platform',
@@ -46,7 +48,7 @@ const projectCategories = [
     color: 'bg-orange-50 border-orange-200',
     iconBg: 'bg-orange-100',
     iconColor: 'text-orange-600',
-    count: 30,
+    count: 50,
     projects: [
       {
         title: 'CI/CD Pipeline on AWS',
@@ -78,7 +80,7 @@ const projectCategories = [
     color: 'bg-purple-50 border-purple-200',
     iconBg: 'bg-purple-100',
     iconColor: 'text-purple-600',
-    count: 35,
+    count: 50,
     projects: [
       {
         title: 'Customer Churn Prediction',
@@ -110,7 +112,7 @@ const projectCategories = [
     color: 'bg-green-50 border-green-200',
     iconBg: 'bg-green-100',
     iconColor: 'text-green-600',
-    count: 20,
+    count: 50,
     projects: [
       {
         title: 'Selenium Test Automation Framework',
@@ -187,6 +189,9 @@ const difficultyColor = (level: string) => {
 };
 
 export default function LiveProjectsPage() {
+  const [activeCategory, setActiveCategory] = useState('all');
+  const visibleProjectCategories = useCmsCollection('live-projects', projectCategories);
+
   usePageMeta({
     title: 'Live Industry Projects',
     description: 'Work on real-world live projects at Global Minds Academy. Build your portfolio with full-stack, DevOps, data science and testing projects that impress employers.',
@@ -198,39 +203,37 @@ export default function LiveProjectsPage() {
       <div className="bg-gradient-to-br from-surface-950 to-brand-950 text-white py-20">
         <div className="container-xl">
           <Breadcrumbs items={[{ label: 'Live Projects' }]} className="text-white/50 mb-4" />
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm font-medium text-white/90 mb-6">
+          <div className="mx-auto max-w-4xl text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-2 text-sm font-semibold text-brand-700 shadow-sm mb-6">
                 <Trophy className="w-4 h-4 text-yellow-400" />
-                130+ Industry-Grade Projects
+                50+ Industry-Grade Projects
               </div>
-              <h1 className="display-lg text-white mb-6">
+              <h1 className="display-lg mb-5">
                 Build Real Projects.<br />
                 <span className="text-gradient-light">Impress Employers.</span>
               </h1>
-              <p className="text-white/70 text-xl mb-8">
+              <p className="mx-auto max-w-3xl text-surface-600 text-lg sm:text-xl mb-8">
                 Every course includes live, industry-grade projects designed to fill your GitHub portfolio and give you the practical experience that gets you hired.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
                 <Link to="/courses"><Button>Explore Courses</Button></Link>
-                <Link to="/demo-class"><Button variant="secondary" className="bg-white/10 border-white/20 text-white hover:bg-white/20">Book Free Demo</Button></Link>
+                <Link to="/demo-class"><Button variant="secondary">Book Free Demo</Button></Link>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+          </div>
+            <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
               {[
-                { value: '130+', label: 'Project Templates', icon: '📁' },
-                { value: '500+', label: 'Portfolio Builds', icon: '🚀' },
+                { value: '50+', label: 'Project Templates', icon: '📁' },
+                { value: '120+', label: 'Portfolio Builds', icon: '🚀' },
                 { value: '95%', label: 'Hire Rate (with project)', icon: '🎯' },
                 { value: '4.8★', label: 'Average Rating', icon: '⭐' },
               ].map(s => (
-                <div key={s.label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center">
-                  <div className="text-2xl mb-2">{s.icon}</div>
-                  <div className="font-display font-bold text-2xl text-white">{s.value}</div>
-                  <div className="text-xs text-white/60 mt-1">{s.label}</div>
+                <div key={s.label} className="rounded-2xl border border-surface-100 bg-white p-4 text-center shadow-card sm:p-5">
+                  <div className="text-2xl mb-2" aria-hidden="true">{s.icon}</div>
+                  <div className="font-display font-bold text-2xl text-brand-800">{s.value}</div>
+                  <div className="text-xs text-surface-500 mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
-          </div>
         </div>
       </div>
 
@@ -261,11 +264,34 @@ export default function LiveProjectsPage() {
             <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Project Library</span>
             <h2 className="display-md mb-4">Projects by Domain</h2>
             <p className="text-surface-500 max-w-2xl mx-auto">
-              Choose from 130+ real-world project templates across all tech domains. Each project comes with guided instructions, starter code, and a review session.
+              Choose from 50+ real-world project templates across all tech domains. Each project comes with guided instructions, starter code, and a review session.
             </p>
           </div>
+          <div className="mb-10 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter projects by domain">
+            {[
+              { id: 'all', label: 'All domains' },
+              { id: 'fullstack', label: 'Full Stack & Web' },
+              { id: 'datascience', label: 'AI & Data Science' },
+              { id: 'devops', label: 'Cloud & DevOps' },
+              { id: 'testing', label: 'Testing & QA' },
+            ].map(filter => (
+              <button
+                key={filter.id}
+                type="button"
+                onClick={() => setActiveCategory(filter.id)}
+                aria-pressed={activeCategory === filter.id}
+                className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
+                  activeCategory === filter.id
+                    ? 'border-accent-500 bg-accent-500 text-surface-900 shadow-sm'
+                    : 'border-surface-200 bg-white text-brand-700 hover:border-brand-300 hover:bg-brand-50'
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
           <div className="space-y-10">
-            {projectCategories.map(cat => (
+            {visibleProjectCategories.filter(cat => activeCategory === 'all' || cat.id === activeCategory).map(cat => (
               <div key={cat.id}>
                 <div className="flex items-center gap-3 mb-5">
                   <div className={`w-10 h-10 ${cat.iconBg} rounded-xl flex items-center justify-center`}>

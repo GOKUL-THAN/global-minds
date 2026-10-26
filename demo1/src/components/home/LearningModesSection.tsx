@@ -18,7 +18,7 @@ const modes = [
     icon: MapPin,
     title: 'Classroom Training',
     href: '/classroom-training',
-    description: 'Hands-on classroom training at our dedicated learning centres with fully equipped computer labs.',
+    description: 'Hands-on classroom training at our Chennai centre with fully equipped computer labs.',
     features: ['Physical labs', 'Face-to-face mentoring', 'Group projects', 'Networking events', 'Placement support'],
     color: 'from-green-600 to-green-500',
     lightColor: 'bg-green-50',
@@ -52,7 +52,7 @@ export function LearningModesSection() {
             <span className="text-gradient">Learning Modes</span>
           </h2>
           <p className="text-surface-500 mt-4 max-w-xl mx-auto">
-            Whether you prefer learning online from home, attending in-person classes, or one-to-one personal training, we have you covered.
+            Learn online from anywhere, attend in-person classes at our Chennai centre, or choose one-to-one personal training.
           </p>
         </div>
 

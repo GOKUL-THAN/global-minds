@@ -1,426 +1,368 @@
-import { Link } from 'react-router-dom';
 import {
-  TrendingUp, Users, Building2, Star, Award, CheckCircle,
-  Briefcase, ChevronRight,
+  ArrowRight,
+  Award,
+  Briefcase,
+  Building2,
+  CheckCircle2,
+  Star,
+  TrendingUp,
+  Users,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 
-// ── Hiring Partners ────────────────────────────────────────
-const hiringPartners = [
-  { name: 'Amazon', logo: 'amazon.png', color: 'bg-orange-50' },
-  { name: 'Microsoft', logo: 'microsoft.png', color: 'bg-blue-50' },
-  { name: 'Google', logo: 'google.png', color: 'bg-green-50' },
-  { name: 'Infosys', logo: 'infosys.png', color: 'bg-indigo-50' },
-  { name: 'TCS', logo: 'tcs.png', color: 'bg-sky-50' },
-  { name: 'Wipro', logo: 'wipro.png', color: 'bg-purple-50' },
-  { name: 'HCL Technologies', logo: 'hcl.jpg', color: 'bg-blue-50' },
-  { name: 'Cognizant', logo: 'cognizant.png', color: 'bg-cyan-50' },
-  { name: 'Accenture', logo: 'accenture.png', color: 'bg-purple-50' },
-  { name: 'IBM', logo: 'ibm.png', color: 'bg-blue-50' },
-  { name: 'Capgemini', logo: 'capgemini.png', color: 'bg-indigo-50' },
-  { name: 'Tech Mahindra', logo: 'techmahindra.png', color: 'bg-red-50' },
-  { name: 'Deloitte', logo: 'deloitte.png', color: 'bg-green-50' },
-  { name: 'Mphasis', logo: 'mphasis.png', color: 'bg-sky-50' },
-  { name: 'L&T Technology Services', logo: 'ltts.svg', color: 'bg-emerald-50' },
-  { name: 'LTIMindtree', logo: 'lti.svg', color: 'bg-green-50' },
-  { name: 'Hexaware', logo: 'hexaware.png', color: 'bg-blue-50' },
-  { name: 'Persistent', logo: 'persistent.svg', color: 'bg-violet-50' },
-  { name: 'Zensar', logo: 'zensar.svg', color: 'bg-surface-900' },
-  { name: 'Freshworks', logo: 'freshworks.png', color: 'bg-teal-50' },
-  { name: 'Zoho', logo: 'zoho.png', color: 'bg-red-50' },
-  { name: 'Razorpay', logo: 'razorpay.png', color: 'bg-blue-50' },
-  { name: 'Swiggy', logo: 'swiggy.png', color: 'bg-orange-50' },
-  { name: 'PhonePe', logo: 'phonepe.png', color: 'bg-purple-50' },
+const placementStats = [
+  { icon: Users, value: '1,000+', label: 'Students Placed', tone: 'teal' },
+  { icon: Building2, value: '50+', label: 'Hiring Partners', tone: 'amber' },
+  { icon: TrendingUp, value: '4.8 LPA', label: 'Avg. Starting Package', tone: 'green' },
+  { icon: Star, value: '22 LPA', label: 'Highest Package', tone: 'gold' },
+  { icon: Award, value: '80%', label: 'Placement Rate', tone: 'purple' },
+  { icon: CheckCircle2, value: '30 Days', label: 'Avg. Time to Offer', tone: 'blue' },
 ];
 
-// ── Placement Stats ────────────────────────────────────────
-const stats = [
-  { value: '15,000+', label: 'Students Placed', icon: Users, color: 'text-brand-600', bg: 'bg-brand-50', href: '/career' },
-  { value: '500+', label: 'Hiring Partners', icon: Building2, color: 'text-accent-600', bg: 'bg-accent-50', href: '/career/job-support' },
-  { value: '4.8 LPA', label: 'Avg. Starting Package', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-50', href: '/career/job-support' },
-  { value: '22 LPA', label: 'Highest Package', icon: Star, color: 'text-yellow-600', bg: 'bg-yellow-50', href: '/career/job-support' },
-  { value: '95%', label: 'Placement Rate', icon: Award, color: 'text-purple-600', bg: 'bg-purple-50', href: '/career' },
-  { value: '30 Days', label: 'Avg. Time to Offer', icon: CheckCircle, color: 'text-sky-600', bg: 'bg-sky-50', href: '/career/job-support' },
+const partners = [
+  { name: 'Infosys', mark: 'Inf', logo: '/images/hiring-partners/infosys.png', tone: 'indigo' },
+  { name: 'TCS', mark: 'tcs', logo: '/images/hiring-partners/tcs.png', tone: 'sky' },
+  { name: 'Wipro', mark: 'w', logo: '/images/hiring-partners/wipro.png', tone: 'violet' },
+  { name: 'HCL Technologies', mark: 'HCL', logo: '/images/hiring-partners/hcl.jpg', tone: 'indigo' },
+  { name: 'Cognizant', mark: 'C', logo: '/images/hiring-partners/cognizant.png', tone: 'cyan' },
+  { name: 'Accenture', mark: '>', logo: '/images/hiring-partners/accenture.png', tone: 'violet' },
+  { name: 'IBM', mark: 'IBM', logo: '/images/hiring-partners/ibm.png', tone: 'slate' },
+  { name: 'Capgemini', mark: 'C', logo: '/images/hiring-partners/capgemini.png', tone: 'blue' },
+  { name: 'Tech Mahindra', mark: 'TM', logo: '/images/hiring-partners/techmahindra.png', tone: 'rose' },
+  { name: 'Deloitte', mark: 'D.', logo: '/images/hiring-partners/deloitte.png', tone: 'green' },
+  { name: 'Mphasis', mark: 'M', logo: '/images/hiring-partners/mphasis.png', tone: 'sky' },
+  { name: 'L&T Technology Services', mark: 'L&T', logo: '/images/hiring-partners/ltts.svg', tone: 'mint' },
+  { name: 'LTIMindtree', mark: 'LTIM', logo: '/images/hiring-partners/lti.svg', tone: 'green' },
+  { name: 'Hexaware', mark: 'H', logo: '/images/hiring-partners/hexaware.png', tone: 'blue' },
+  { name: 'Persistent', mark: '∞', logo: '/images/hiring-partners/persistent.svg', tone: 'violet' },
+  { name: 'Coforge', mark: 'C', tone: 'teal' },
+  { name: 'Birlasoft', mark: 'B', tone: 'amber' },
+  { name: 'Mastek', mark: 'M', tone: 'purple' },
+  { name: 'Sonata Software', mark: 'S', tone: 'blue' },
+  { name: 'KPIT Technologies', mark: 'KPIT', tone: 'green' },
+  { name: 'UST', mark: 'UST', tone: 'orange' },
+  { name: 'Virtusa', mark: 'V', tone: 'sky' },
+  { name: 'Zensar', mark: 'zensar', logo: '/images/hiring-partners/zensar.svg', tone: 'slate' },
+  { name: 'Freshworks', mark: 'F', logo: '/images/hiring-partners/freshworks.png', tone: 'mint' },
+  { name: 'Zoho', mark: 'Z', logo: '/images/hiring-partners/zoho.png', tone: 'rose' },
+  { name: 'Razorpay', mark: 'R', logo: '/images/hiring-partners/razorpay.png', tone: 'blue' },
+  { name: 'Swiggy', mark: 'S', logo: '/images/hiring-partners/swiggy.png', tone: 'orange' },
+  { name: 'PhonePe', mark: 'पे', logo: '/images/hiring-partners/phonepe.png', tone: 'violet' },
 ];
 
-// ── Success Stories ────────────────────────────────────────
-const successStories = [
+const packageRanges = [
+  { range: '3 – 6 LPA', level: 'Entry-level roles', share: 35 },
+  { range: '6 – 10 LPA', level: 'Mid-level roles', share: 40 },
+  { range: '10 – 15 LPA', level: 'Senior roles', share: 18 },
+  { range: '15 LPA+', level: 'Lead / Specialist roles', share: 7 },
+];
+
+const placementHighlights = [
+  { icon: '🏆', label: 'Highest Package Secured', value: '22 LPA' },
+  { icon: '📊', label: 'Average Package', value: '8.5 LPA' },
+  { icon: '🏢', label: 'Companies Visited in 2025', value: '120+' },
+  { icon: '🚀', label: 'Off-Campus Drives Conducted', value: '45+' },
+  { icon: '⚡', label: 'Students in Product Companies', value: '150+' },
+  { icon: '🌍', label: 'International Placements', value: '25+' },
+];
+
+const placementSteps = [
+  { icon: '🎓', title: 'Complete Your Training', description: 'Finish the course with hands-on projects and a strong GitHub portfolio.' },
+  { icon: '📄', title: 'Resume & Profile Prep', description: 'Our career team helps craft an ATS-optimised resume and LinkedIn profile.' },
+  { icon: '🎯', title: 'Mock Interviews', description: 'Technical and HR mock sessions with expert feedback and improvement guidance.' },
+  { icon: '🤝', title: 'Job Referrals', description: 'Direct referrals to our 50+ hiring partner companies based on your skills.' },
+  { icon: '🗓️', title: 'Interview Scheduling', description: 'We coordinate with companies and schedule interviews on your behalf.' },
+  { icon: '🏆', title: 'Offer & Onboarding', description: 'Salary negotiation guidance and onboarding support until you join.' },
+];
+
+const studentStories = [
   {
-    name: 'Priya Sharma',
-    course: 'Full Stack Development',
-    company: 'Amazon',
-    package: '18 LPA',
-    avatar: 'PS',
-    color: 'bg-brand-500',
-    quote: 'The hands-on projects and mock interviews at Global Minds Academy gave me the confidence to crack Amazon\'s technical rounds. Best decision of my career!',
-    prevRole: 'Fresher',
-    location: 'Bangalore',
-    href: '/courses/full-stack-development',
-  },
-  {
-    name: 'Rahul Mehta',
-    course: 'AWS & DevOps',
-    company: 'Microsoft',
-    package: '22 LPA',
-    avatar: 'RM',
-    color: 'bg-accent-500',
-    quote: 'The AWS certification prep was incredible. I passed AWS Solutions Architect on first attempt and got a dream offer at Microsoft.',
-    prevRole: 'Junior Developer',
-    location: 'Hyderabad',
-    href: '/courses/aws-devops',
-  },
-  {
-    name: 'Anjali Nair',
-    course: 'Data Science & AI',
-    company: 'Google',
-    package: '20 LPA',
-    avatar: 'AN',
-    color: 'bg-green-500',
-    quote: 'Switching from a non-IT background felt impossible until Global Minds Academy\'s Data Science program. The mentors were patient and the curriculum was perfect.',
-    prevRole: 'Marketing Analyst',
-    location: 'Chennai',
-    href: '/courses/data-science',
-  },
-  {
+    initials: 'SK',
     name: 'Suresh Kumar',
     course: 'Software Testing',
-    company: 'Infosys',
-    package: '8 LPA',
-    avatar: 'SK',
-    color: 'bg-purple-500',
-    quote: 'I had a gap of 2 years. The dedicated placement support team helped me rebuild my confidence and land a great job within 45 days of course completion.',
-    prevRole: 'Career Gap',
+    details: 'Career Gap → Infosys',
     location: 'Mumbai',
-    href: '/courses/software-testing',
+    package: '8 LPA',
+    company: 'Infosys',
+    logo: '/images/hiring-partners/infosys.png',
+    quote: 'I had a gap of 2 years. The dedicated placement support team helped me rebuild my confidence and land a great job within 45 days of course completion.',
+    tone: 'purple',
   },
   {
+    initials: 'KR',
     name: 'Kavitha Reddy',
     course: 'Python & Django',
-    company: 'Zoho',
-    package: '10 LPA',
-    avatar: 'KR',
-    color: 'bg-orange-500',
-    quote: 'The project-based learning made my resume shine. Zoho was impressed with my GitHub portfolio built during training.',
-    prevRole: 'BCA Graduate',
+    details: 'BCA Graduate → Zoho',
     location: 'Chennai',
-    href: '/courses/python-full-stack',
+    package: '10 LPA',
+    company: 'Zoho',
+    logo: '/images/hiring-partners/zoho.png',
+    quote: 'The project-based learning made my resume shine. Zoho was impressed with my GitHub portfolio built during training.',
+    tone: 'orange',
   },
   {
+    initials: 'AS',
     name: 'Arjun Singh',
     course: 'Cyber Security',
-    company: 'IBM',
-    package: '14 LPA',
-    avatar: 'AS',
-    color: 'bg-sky-500',
-    quote: 'The CEH certification preparation combined with real-world labs helped me stand out. Got placed at IBM in just 3 weeks after completion.',
-    prevRole: 'Network Admin',
+    details: 'Network Admin → IBM',
     location: 'Pune',
-    href: '/courses/cyber-security',
+    package: '14 LPA',
+    company: 'IBM',
+    logo: '/images/hiring-partners/ibm.png',
+    quote: 'The CEH certification preparation combined with real-world labs helped me stand out. Got placed at IBM in just 3 weeks after course completion.',
+    tone: 'blue',
   },
 ];
 
-// ── Placement Process ──────────────────────────────────────
-const placementProcess = [
-  {
-    step: '01',
-    title: 'Complete Your Training',
-    desc: 'Finish the course with hands-on projects and a strong GitHub/portfolio.',
-    icon: '🎓',
-    href: '/courses',
-  },
-  {
-    step: '02',
-    title: 'Resume & Profile Prep',
-    desc: 'Our career team helps craft an ATS-optimised resume and LinkedIn profile.',
-    icon: '📄',
-    href: '/career/resume-preparation',
-  },
-  {
-    step: '03',
-    title: 'Mock Interviews',
-    desc: 'Technical and HR mock sessions with expert feedback and improvement guidance.',
-    icon: '🎯',
-    href: '/career/mock-interview',
-  },
-  {
-    step: '04',
-    title: 'Job Referrals',
-    desc: 'Direct referrals to our 500+ hiring partner companies based on your skills.',
-    icon: '🤝',
-    href: '/career/job-support',
-  },
-  {
-    step: '05',
-    title: 'Interview Scheduling',
-    desc: 'We coordinate with companies and schedule interviews on your behalf.',
-    icon: '📅',
-    href: '/career/job-support',
-  },
-  {
-    step: '06',
-    title: 'Offer & Onboarding',
-    desc: 'Salary negotiation guidance and onboarding support until you join.',
-    icon: '🏆',
-    href: '/career/job-support',
-  },
+const careerPaths = [
+  'Software Developer', 'Full Stack Developer', 'DevOps Engineer', 'Cloud Architect',
+  'Data Scientist', 'ML Engineer', 'QA Automation Engineer', 'Cyber Security Analyst',
+  'Site Reliability Engineer', 'Data Analyst', 'Business Analyst', 'UI/UX Designer',
+  'Database Administrator', 'Network Engineer', 'Python Developer', 'Java Developer',
+  'React Developer', 'Node.js Developer', 'AWS Solutions Architect', 'Azure Engineer',
+  'Salesforce Developer', 'RPA Developer', 'ETL Developer', 'BI Developer',
 ];
 
-// ── Package Ranges ─────────────────────────────────────────
-const packageRanges = [
-  { range: '3 – 6 LPA', percentage: 35, label: 'Entry-level roles', color: 'bg-brand-400' },
-  { range: '6 – 10 LPA', percentage: 40, label: 'Mid-level roles', color: 'bg-brand-500' },
-  { range: '10 – 15 LPA', percentage: 18, label: 'Senior roles', color: 'bg-brand-600' },
-  { range: '15 LPA+', percentage: 7, label: 'Lead / Specialist roles', color: 'bg-brand-700' },
-];
+const toneStyles: Record<string, { icon: string; card: string }> = {
+  teal: { icon: 'bg-teal-50 text-teal-700', card: 'bg-teal-600' },
+  amber: { icon: 'bg-amber-50 text-amber-600', card: 'bg-amber-500' },
+  green: { icon: 'bg-green-50 text-green-600', card: 'bg-green-500' },
+  gold: { icon: 'bg-yellow-50 text-yellow-600', card: 'bg-yellow-500' },
+  purple: { icon: 'bg-purple-50 text-purple-600', card: 'bg-purple-500' },
+  blue: { icon: 'bg-sky-50 text-sky-600', card: 'bg-sky-500' },
+  orange: { icon: 'bg-orange-50 text-orange-600', card: 'bg-orange-500' },
+};
 
 export default function PlacementPage() {
   usePageMeta({
     title: 'Placement Records & Hiring Partners',
-    description: 'Global Minds Academy placement records — 15,000+ students placed in top companies like Amazon, Google, Microsoft. 95% placement rate with dedicated career support.',
+    description: 'Explore Global Minds Academy placement records, hiring partners, student success stories and career support.',
   });
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-surface-950 via-brand-950 to-surface-900 text-white py-20">
+      <section className="bg-[#16494f] py-16 text-white sm:py-20 lg:py-24">
         <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Placement Records' }]} className="text-white/50 mb-4" />
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white/90 mb-6">
-              <TrendingUp className="w-4 h-4 text-green-400" />
-              95% Placement Rate — 2024 Batch
+            <Breadcrumbs items={[{ label: 'Placement Records' }]} className="mb-5 text-white/50" />
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white/90">
+              <TrendingUp className="h-4 w-4 text-emerald-300" aria-hidden="true" />
+              80% Placement Rate — 2024 Batch
             </div>
-            <h1 className="display-lg text-white mb-6">
-              Placement Records &amp;<br />
-              <span className="text-gradient-light">Hiring Partners</span>
+            <h1 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Placement Records &amp; Hiring Partners
             </h1>
-            <p className="text-white/70 text-xl mb-8 max-w-2xl">
-              Over 15,000 students placed in top MNCs and product companies. Our dedicated placement team works with 500+ hiring partners to get you the best opportunities.
+            <p className="max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
+              Over 1,000 students placed in top MNCs and product companies. Our dedicated placement team works with 50+ hiring partners to get you the best opportunities.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/register" className="btn-primary btn">
-                Start Your Journey
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-teal-500"
+              >
+                Start Your Journey <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link to="/courses" className="btn bg-white/10 backdrop-blur border border-white/20 text-white hover:bg-white/20">
+              <Link
+                to="/courses"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/15"
+              >
                 Explore Courses
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Stats */}
-      <section className="section bg-white">
-        <div className="container-xl">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {stats.map(s => (
-              <Link key={s.label} to={s.href} className="block text-center p-5 rounded-2xl border border-surface-100 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Learn about ${s.label} and career support`}>
-                <div className={`w-12 h-12 ${s.bg} rounded-2xl flex items-center justify-center mx-auto mb-3`}>
-                  <s.icon className={`w-6 h-6 ${s.color}`} />
-                </div>
-                <div className="font-display font-bold text-2xl text-surface-900 mb-1">{s.value}</div>
-                <div className="text-sm text-surface-500">{s.label}</div>
-                </Link>
-            ))}
-          </div>
+      <section className="border-b border-surface-100 bg-white py-10 sm:py-14" aria-label="Placement statistics">
+        <div className="container-xl grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          {placementStats.map(({ icon: Icon, value, label, tone }) => (
+            <div key={label} className="rounded-2xl border border-surface-100 bg-white px-3 py-5 text-center shadow-sm sm:px-4">
+              <span className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${toneStyles[tone].icon}`}>
+                <Icon className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <p className="text-2xl font-extrabold tracking-tight text-surface-950 sm:text-3xl">{value}</p>
+              <p className="mt-1 text-sm text-surface-500">{label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Hiring Partners */}
       <section className="section bg-surface-50">
         <div className="container-xl">
-          <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Our Network</span>
-            <h2 className="display-md mb-4">500+ Hiring Partners</h2>
-            <p className="text-surface-500 max-w-2xl mx-auto">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-700">Our Network</p>
+            <h2 className="display-md mb-4">50+ Hiring Partners</h2>
+            <p className="text-lg leading-relaxed text-surface-500">
               We have tie-ups with leading MNCs, product companies and startups across India and globally who actively hire from our placement pool.
             </p>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
-            {hiringPartners.map(p => (
-              <Link
-                key={p.name}
-                to="/career/job-support"
-                aria-label={`Learn about placement support for ${p.name}`}
-                className={`${p.color} rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:scale-105 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500`}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+            {partners.map(partner => (
+              <div
+                key={partner.name}
+                className={`flex min-h-28 flex-col items-center justify-center rounded-2xl px-3 py-4 text-center transition-transform hover:-translate-y-1 ${toneStyles[partner.tone]?.icon ?? 'bg-brand-50 text-brand-700'}`}
               >
-                <img
-                  src={`/images/hiring-partners/${p.logo}`}
-                  alt={`${p.name} logo`}
-                  className="h-10 max-w-full object-contain"
-                  loading="lazy"
-                />
-                <span className={`text-xs font-medium text-center leading-tight ${p.color === 'bg-surface-900' ? 'text-white' : 'text-surface-700'}`}>{p.name}</span>
-              </Link>
-            ))}
-            <Link to="/career/job-support" aria-label="Learn about placement support with more companies" className="bg-brand-50 rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:scale-105 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
-              <span className="text-2xl font-bold text-brand-600">500+</span>
-              <span className="text-xs font-medium text-surface-700 text-center">More companies</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Package Distribution */}
-      <section className="section bg-white">
-        <div className="container-xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Salary Insights</span>
-              <h2 className="display-md mb-4">Package Distribution</h2>
-              <p className="text-surface-500 mb-8">
-                Our students secure competitive packages across roles and experience levels. Packages vary by skill, role and company.
-              </p>
-              <div className="space-y-5">
-                {packageRanges.map(p => (
-                  <div key={p.range}>
-                    <div className="flex items-center justify-between mb-2">
-                      <div>
-                        <span className="font-semibold text-surface-900">{p.range}</span>
-                        <span className="text-sm text-surface-500 ml-2">— {p.label}</span>
-                      </div>
-                      <span className="font-bold text-surface-900">{p.percentage}%</span>
-                    </div>
-                    <div className="w-full bg-surface-100 rounded-full h-3">
-                      <div
-                        className={`${p.color} h-3 rounded-full transition-all duration-1000`}
-                        style={{ width: `${p.percentage}%` }}
+                <span className="mb-2 flex h-11 w-14 items-center justify-center rounded-xl bg-white/80 p-1.5">
+                  {partner.logo ? (
+                    <>
+                      <img
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        className="max-h-full max-w-full object-contain"
+                        onError={event => {
+                          event.currentTarget.hidden = true;
+                          event.currentTarget.nextElementSibling?.removeAttribute('hidden');
+                        }}
                       />
-                    </div>
-                  </div>
-                ))}
+                      <span hidden className="text-lg font-extrabold tracking-tight">{partner.mark}</span>
+                    </>
+                  ) : (
+                    <span className="text-lg font-extrabold tracking-tight">{partner.mark}</span>
+                  )}
+                </span>
+                <span className="text-xs font-medium text-surface-800">{partner.name}</span>
               </div>
-            </div>
-            <div className="bg-gradient-to-br from-brand-50 to-accent-50 rounded-3xl p-8">
-              <h3 className="font-display font-bold text-xl mb-6 text-surface-900">Placement Highlights</h3>
-              <div className="space-y-4">
-                {[
-                  { label: 'Highest Package Secured', value: '22 LPA', icon: '🏆' },
-                  { label: 'Average Package', value: '8.5 LPA', icon: '📊' },
-                  { label: 'Companies Visited in 2024', value: '120+', icon: '🏢' },
-                  { label: 'Off-Campus Drives Conducted', value: '45+', icon: '🚀' },
-                  { label: 'Students in Product Companies', value: '2,800+', icon: '⚡' },
-                  { label: 'International Placements', value: '340+', icon: '🌍' },
-                ].map(h => (
-                  <div key={h.label} className="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xl">{h.icon}</span>
-                      <span className="text-sm text-surface-700">{h.label}</span>
-                    </div>
-                    <span className="font-bold text-brand-700">{h.value}</span>
-                  </div>
-                ))}
-              </div>
+            ))}
+            <div className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-teal-50 px-3 py-4 text-center text-teal-800">
+              <span className="text-2xl font-extrabold">50+</span>
+              <span className="mt-1 text-xs font-medium">More companies</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Placement Process */}
+      <section className="section bg-white">
+        <div className="container-xl grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+          <div>
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-700">Salary Insights</p>
+            <h2 className="display-md mb-4">Package Distribution</h2>
+            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-surface-500">
+              Our students secure competitive packages across roles and experience levels. Packages vary by skill, role and company.
+            </p>
+            <div className="space-y-6">
+              {packageRanges.map(item => (
+                <div key={item.range}>
+                  <div className="mb-2 flex items-baseline justify-between gap-3">
+                    <p className="text-sm text-surface-500 sm:text-base">
+                      <span className="font-bold text-surface-900">{item.range}</span>
+                      <span className="mx-2">—</span>{item.level}
+                    </p>
+                    <span className="font-bold text-surface-900">{item.share}%</span>
+                  </div>
+                  <div className="h-3 overflow-hidden rounded-full bg-surface-100">
+                    <div className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-700" style={{ width: `${item.share}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-xs leading-relaxed text-surface-400">
+              Package figures are indicative and may vary based on role, experience, skills and employer.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-gradient-to-br from-teal-50 to-amber-50 p-5 sm:p-8">
+            <h3 className="mb-5 text-xl font-bold text-surface-950">Placement Highlights</h3>
+            <div className="space-y-3">
+              {placementHighlights.map(item => (
+                <div key={item.label} className="flex items-center gap-3 rounded-2xl bg-white px-4 py-4 shadow-sm">
+                  <span className="text-xl" aria-hidden="true">{item.icon}</span>
+                  <span className="min-w-0 flex-1 text-sm text-surface-700 sm:text-base">{item.label}</span>
+                  <span className="whitespace-nowrap font-bold text-teal-800">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-surface-50">
         <div className="container-xl">
-          <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">How It Works</span>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-700">How It Works</p>
             <h2 className="display-md mb-4">Our Placement Process</h2>
-            <p className="text-surface-500 max-w-2xl mx-auto">
+            <p className="text-lg leading-relaxed text-surface-500">
               A structured, step-by-step approach to ensure you are interview-ready and land the right role.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {placementProcess.map((step, idx) => (
-              <Link key={step.step} to={step.href} className="block bg-white rounded-2xl p-6 border border-surface-100 hover:shadow-card-md hover:-translate-y-0.5 transition-all relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Learn more: ${step.title}`}>
-                <div className="absolute top-4 right-4 text-4xl font-display font-black text-surface-100">{step.step}</div>
-                <div className="text-3xl mb-4">{step.icon}</div>
-                <h3 className="font-display font-bold text-lg text-surface-900 mb-2">{step.title}</h3>
-                <p className="text-surface-500 text-sm leading-relaxed">{step.desc}</p>
-                {idx < placementProcess.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 z-10">
-                    <ChevronRight className="w-6 h-6 text-brand-300" />
-                  </div>
-                )}
-              </Link>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {placementSteps.map((step, index) => (
+              <article key={step.title} className="relative rounded-2xl border border-surface-100 bg-white p-6 sm:p-7">
+                <span className="absolute right-5 top-3 text-4xl font-extrabold text-surface-100 sm:text-5xl">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="mb-5 block text-3xl" aria-hidden="true">{step.icon}</span>
+                <h3 className="mb-2 text-lg font-bold text-surface-950">{step.title}</h3>
+                <p className="max-w-sm leading-relaxed text-surface-500">{step.description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Success Stories */}
       <section className="section bg-white">
         <div className="container-xl">
-          <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Alumni Stories</span>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-700">Alumni Stories</p>
             <h2 className="display-md mb-4">Student Success Stories</h2>
-            <p className="text-surface-500 max-w-2xl mx-auto">
-              Real students. Real companies. Real results.
-            </p>
+            <p className="text-lg text-surface-500">Real students. Real companies. Real results.</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {successStories.map(s => (
-              <Link key={s.name} to={s.href} className="block bg-white rounded-2xl border border-surface-100 p-6 hover:shadow-card-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${s.course} training`}>
-                {/* Header */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-12 h-12 ${s.color} rounded-2xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
-                    {s.avatar}
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {studentStories.map(story => (
+              <article key={story.name} className="flex h-full flex-col rounded-2xl border border-surface-100 bg-white p-6 shadow-sm">
+                <div className="mb-5 flex items-start gap-3">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white border border-surface-100 p-1.5">
+                    <img src={story.logo} alt={`${story.company} logo`} className="max-h-full max-w-full object-contain" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-bold text-surface-950">{story.name}</h3>
+                    <p className="text-sm text-surface-500">{story.course}</p>
+                    <p className="text-xs text-surface-400">{story.details}</p>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-surface-900">{s.name}</h3>
-                    <p className="text-sm text-surface-500">{s.course}</p>
-                    <p className="text-xs text-surface-400">{s.prevRole} → {s.company}</p>
-                  </div>
-                  <div className="text-right flex-shrink-0">
-                    <div className="text-sm font-bold text-green-600">{s.package}</div>
-                    <div className="text-xs text-surface-400">{s.location}</div>
+                  <div className="text-right">
+                    <p className="font-bold text-emerald-600">{story.package}</p>
+                    <p className="text-xs text-surface-400">{story.location}</p>
                   </div>
                 </div>
-                <p className="text-sm text-surface-600 leading-relaxed italic">"{s.quote}"</p>
-                <div className="mt-4 pt-4 border-t border-surface-100 flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 text-brand-500" />
-                  <span className="text-sm font-medium text-brand-700">{s.company}</span>
-                  <span className="ml-auto text-xs bg-green-50 text-green-700 px-2 py-1 rounded-full font-medium">{s.package}</span>
+                <p className="mb-5 flex-1 text-sm italic leading-relaxed text-surface-600">“{story.quote}”</p>
+                <div className="flex items-center justify-between border-t border-surface-100 pt-4">
+                  <span className="inline-flex items-center gap-2 font-medium text-teal-800">
+                    <Briefcase className="h-4 w-4" aria-hidden="true" />{story.company}
+                  </span>
+                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">{story.package}</span>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Roles We Place In */}
       <section className="section bg-surface-50">
         <div className="container-xl">
-          <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Career Paths</span>
-            <h2 className="display-md mb-4">Roles We Place Students In</h2>
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-700">Career Paths</p>
+            <h2 className="display-md">Roles We Place Students In</h2>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {[
-              'Software Developer', 'Full Stack Developer', 'DevOps Engineer', 'Cloud Architect',
-              'Data Scientist', 'ML Engineer', 'QA Automation Engineer', 'Cyber Security Analyst',
-              'Site Reliability Engineer', 'Data Analyst', 'Business Analyst', 'UI/UX Designer',
-              'Database Administrator', 'Network Engineer', 'Python Developer', 'Java Developer',
-              'React Developer', 'Node.js Developer', 'AWS Solutions Architect', 'Azure Engineer',
-              'Salesforce Developer', 'RPA Developer', 'ETL Developer', 'BI Developer',
-            ].map(role => (
-              <span
-                key={role}
-                className="px-4 py-2 bg-white border border-surface-200 rounded-full text-sm text-surface-700 hover:border-brand-400 hover:text-brand-700 hover:bg-brand-50 transition-colors cursor-default"
-              >
-                {role}
+          <div className="flex flex-wrap justify-center gap-3">
+            {careerPaths.map(path => (
+              <span key={path} className="rounded-full border border-surface-200 bg-white px-5 py-3 text-sm font-medium text-surface-700 shadow-sm">
+                {path}
               </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Disclaimer */}
-      <div className="container-xl py-4">
-        <p className="text-xs text-surface-400 text-center">
-          * Placement figures are indicative based on past batch performance. Outcomes depend on individual skills, effort, and market conditions. No guarantee of placement is implied or offered.
-        </p>
-      </div>
-
-      <CTASection />
+      <CTASection
+        title="Ready to Launch Your Career?"
+        subtitle="Build in-demand skills, create a portfolio and get guidance from our placement support team."
+        primaryLabel="Explore Courses"
+        primaryHref="/courses"
+        secondaryLabel="Start Your Journey"
+        secondaryHref="/contact"
+        variant="dark"
+      />
     </div>
   );
 }

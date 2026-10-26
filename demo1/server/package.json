@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
+    "seed:site-content": "tsx scripts/generate-site-content-seed.ts",
     "test": "npm run build && node --test test/database.test.mjs test/auth.integration.test.mjs",
     "start": "node dist/index.js"
   },

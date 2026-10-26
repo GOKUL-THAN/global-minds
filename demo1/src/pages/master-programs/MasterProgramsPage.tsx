@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Clock, BookOpen, Users, Award, ArrowRight, CheckCircle } from 'lucide-react';
+import { Clock, BookOpen, Award, ArrowRight, CheckCircle } from 'lucide-react';
 import { masterPrograms } from '../../data/masterPrograms';
 import { formatPrice } from '../../utils/formatters';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
-import { StarRating } from '../../components/ui/StarRating';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
 
@@ -45,14 +44,13 @@ export default function MasterProgramsPage() {
                 aria-label={`View ${program.title} details`}
               >
                 {/* Banner */}
-                <div className="relative overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden bg-surface-100">
                   <img
                     src={program.thumbnail}
                     alt={program.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
-                  <div className="master-program-image-overlay absolute inset-0" />
                   <div className="absolute bottom-4 left-4">
                     <span className="bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">
                       {program.duration}
@@ -76,11 +74,6 @@ export default function MasterProgramsPage() {
                       <Clock className="w-4 h-4 text-brand-400" />
                       {program.totalHours} hours
                     </span>
-                    <span className="flex items-center gap-1.5">
-                      <Users className="w-4 h-4 text-brand-400" />
-                      {program.learnerCount.toLocaleString()} learners
-                    </span>
-                    <StarRating rating={program.rating} showValue size="sm" reviewCount={program.reviewCount} />
                   </div>
 
                   {/* Skills preview */}

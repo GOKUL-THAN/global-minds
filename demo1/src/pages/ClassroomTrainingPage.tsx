@@ -6,7 +6,8 @@ import { locations } from '../data/locations';
 import { useCmsCollection } from '../hooks/useCmsCollection';
 
 export default function ClassroomTrainingPage() {
-  const active = useCmsCollection('locations', locations).filter(location => location.active);
+  const active = useCmsCollection('locations', locations)
+    .filter(location => location.slug === 'chennai' && location.active);
 
   return (
     <div className="min-h-screen bg-white">
@@ -15,7 +16,7 @@ export default function ClassroomTrainingPage() {
           <Breadcrumbs items={[{ label: 'Classroom Training' }]} className="text-white/50 mb-4" />
           <h1 className="display-lg text-white mb-4">Classroom Training</h1>
           <p className="text-white/80 text-xl max-w-2xl">
-            Immersive, hands-on classroom training at our dedicated learning centres with expert instructors and fully equipped labs.
+            Immersive, hands-on classroom training at our Chennai centre with expert instructors and fully equipped labs.
           </p>
         </div>
       </div>
@@ -23,8 +24,8 @@ export default function ClassroomTrainingPage() {
       <section className="section">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <h2 className="display-md mb-4">Our Training Centres</h2>
-            <p className="text-surface-500">Placeholder locations — contact us to confirm availability and addresses.</p>
+            <h2 className="display-md mb-4">Our Chennai Training Centre</h2>
+            <p className="text-surface-500">In-person classes are available in Chennai. Contact us to confirm availability and the address.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {active.map(loc => (
@@ -71,8 +72,8 @@ export default function ClassroomTrainingPage() {
       </section>
 
       <CTASection
-        title="Visit Our Training Centre"
-        subtitle="Contact us to schedule a campus visit or enquire about the next classroom batch."
+        title="Visit Our Chennai Training Centre"
+        subtitle="Contact us to schedule a campus visit or enquire about the next classroom batch in Chennai."
         primaryLabel="Enquire Now"
         primaryHref="/contact"
         secondaryLabel="View Locations"

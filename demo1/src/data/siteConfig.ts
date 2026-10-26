@@ -3,12 +3,14 @@
 // Real data sourced from globalmindsacademy.in
 // ============================================================
 
+const configuredApiBaseUrl = import.meta.env?.VITE_API_BASE_URL;
+
 export const siteConfig = {
   // ── Brand ──────────────────────────────────────────────────
   brandName: 'Global Minds Academy',
   brandShortName: 'GMA',
   tagline: 'Build Skills Today for Tomorrow\'s Leaders',
-  subTagline: 'Industry-accredited full-stack development, AI & Data Science bootcamps, and enterprise cloud solutions engineered to accelerate career growth.',
+  subTagline: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
   logoText: 'Global Minds Academy',
   logoUrl: '/logo.png',
   faviconUrl: '/logo.png',
@@ -50,25 +52,25 @@ export const siteConfig = {
 
   // ── URLs ───────────────────────────────────────────────────
   siteUrl: 'https://globalmindsacademy.in',
-  apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'https://api.globalmindsacademy.in/v1',
+  apiBaseUrl: configuredApiBaseUrl || 'https://api.globalmindsacademy.in/v1',
 
   // ── SEO Defaults ──────────────────────────────────────────
   seo: {
     defaultTitle: 'Global Minds Academy | Build Skills. Own the Future.',
     titleTemplate: '%s | Global Minds Academy',
-    defaultDescription: 'Global Minds Academy delivers industry-accredited full-stack development, AI & Data Science bootcamps, and enterprise cloud solutions. 15,000+ graduates trained across 25+ countries. 98.4% placement success.',
+    defaultDescription: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Academy. 50+ hiring partners.',
     defaultOgImage: 'https://globalmindsacademy.in/og-image.jpg',
     twitterHandle: '@globalmindsacad',
   },
 
-  // ── Real Stats from globalmindsacademy.in ─────────────────
+  // ── Stats ──────────────────────────────────────────────────
   stats: [
     { id: 's1', label: 'Graduates Trained', value: '15,000+', numericValue: 15000, suffix: '+', icon: 'users', description: 'Across 25+ countries' },
-    { id: 's2', label: 'Hiring Partners', value: '350+', numericValue: 350, suffix: '+', icon: 'briefcase', description: 'Top tech enterprises' },
+    { id: 's2', label: 'Hiring Partners', value: '50+', numericValue: 50, suffix: '+', icon: 'briefcase', description: 'Top tech enterprises' },
     { id: 's3', label: 'Student Rating', value: '4.9/5.0', numericValue: 4.9, suffix: '', icon: 'star', description: 'From 8,000+ reviews' },
     { id: 's4', label: 'Placement Success', value: '98.4%', numericValue: 98.4, suffix: '%', icon: 'award', description: 'Within 6 months' },
     { id: 's5', label: 'Countries Reached', value: '25+', numericValue: 25, suffix: '+', icon: 'globe', description: 'India, US, Europe, Asia' },
-    { id: 's6', label: 'Courses Available', value: '175+', numericValue: 175, suffix: '+', icon: 'book-open', description: 'Industry-accredited programs' },
+    { id: 's6', label: 'Master Programs', value: '5', numericValue: 5, suffix: '', icon: 'book-open', description: 'Comprehensive career tracks' },
   ],
 
   // ── Countries (for global reach section & forms) ───────────
@@ -107,7 +109,7 @@ export const siteConfig = {
     {
       icon: 'graduation-cap',
       title: 'Global Certification',
-      description: 'Industry-accredited certificates recognised by 350+ top tech enterprises worldwide.',
+      description: '50+ hiring partners.',
     },
     {
       icon: 'user',
@@ -116,8 +118,8 @@ export const siteConfig = {
     },
     {
       icon: 'briefcase',
-      title: '98.4% Placement Success',
-      description: '98.4% of graduates land roles within 6 months, backed by our 350+ hiring partner network.',
+      title: '50+ Hiring Partners',
+      description: 'Global Minds Academy has 50+ hiring partners.',
     },
     {
       icon: 'layers',
@@ -126,15 +128,15 @@ export const siteConfig = {
     },
     {
       icon: 'globe',
-      title: '25+ Countries, 15,000+ Graduates',
-      description: 'Join a global alumni network of 15,000+ tech professionals across India, US, Europe and Asia Pacific.',
+      title: 'Courses',
+      description: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
     },
   ],
 
   // ── Announcement Bar ───────────────────────────────────────
   announcementBar: {
     enabled: true,
-    message: '🚀 New batches starting — Java Full Stack, AI/ML Masterclass & AWS Cloud Architect. 98.4% Placement | 350+ Hiring Partners!',
+    message: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing. 50+ Hiring Partners.',
     cta: 'Register Now',
     ctaHref: '/batch-schedule',
     dismissible: true,
@@ -150,6 +152,6 @@ export const siteConfig = {
     newsletter: true,
     blog: true,
   },
-} as const;
+};
 
 export type SiteConfig = typeof siteConfig;

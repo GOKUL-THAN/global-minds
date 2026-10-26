@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { siteConfig } from '../../data/siteConfig';
-import { EnquiryForm } from '../ui/EnquiryForm';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
+import { HomeContactForm } from './HomeContactForm';
 
 export function HomeContactSection() {
+  const siteConfig = useSiteConfig();
   const address = `${siteConfig.address.line1}, ${siteConfig.address.line2}`;
 
   return (
@@ -48,11 +49,8 @@ export function HomeContactSection() {
             </div>
           </div>
 
-          <div className="home-contact-form rounded-2xl border bg-white p-5 shadow-sm sm:p-7">
-            <h3 className="font-display text-xl font-bold text-surface-900">Send Us a Message</h3>
-            <p className="mt-1 text-sm text-surface-600">Share your question and tell us which course interests you.</p>
-            <p className="mt-2 text-xs text-surface-500">Your enquiry is saved securely so our admissions team can follow up.</p>
-            <EnquiryForm compact className="mt-5" title="" subtitle="" />
+          <div className="home-contact-form">
+            <HomeContactForm />
           </div>
         </div>
       </div>

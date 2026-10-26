@@ -11,7 +11,7 @@ const certTypes = [
 ];
 
 const vendorCerts = [
-  { name: 'AWS', credential: 'AWS Certified Solutions Architect – Associate', courses: ['AWS Training', 'AWS DevOps', 'Cloud Master Program'], logo: 'aws', href: '/courses/aws-training' },
+  { name: 'AWS', credential: 'AWS Certified Solutions Architect – Associate', courses: ['AWS / Cloud', 'AWS DevOps', 'Cloud Master Program'], logo: 'aws', href: '/courses/aws-training' },
   { name: 'Microsoft', credential: 'Microsoft Certified: Azure Administrator Associate', courses: ['Azure Training', 'Cloud Master Program'], logo: 'microsoft', href: '/courses/microsoft-azure' },
   { name: 'Google Cloud', credential: 'Professional Cloud Architect', courses: ['GCP Training', 'Cloud Master Program'], logo: 'google-cloud', href: '/courses/google-cloud' },
   { name: 'Kubernetes', credential: 'Certified Kubernetes Administrator (CKA)', courses: ['Kubernetes', 'DevOps Master Program'], logo: 'kubernetes', href: '/courses/kubernetes' },

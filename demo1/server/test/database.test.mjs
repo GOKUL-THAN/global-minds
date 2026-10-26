@@ -174,6 +174,11 @@ test('applies versioned migrations and preserves existing SQLite records', async
     '004_course_hierarchy_and_cms_roles',
     '005_database_course_catalog',
     '006_backfill_catalog_course_details',
+    '007_operational_modules',
+    '008_student_portal',
+    '009_student_profile_photo',
+    '010_seed_static_site_content',
+    '011_payment_records',
   ]);
 
   const identity = await database.findIdentityByEmail('admin@example.test');
@@ -181,6 +186,10 @@ test('applies versioned migrations and preserves existing SQLite records', async
   assert.equal(identity?.role, 'ADMIN');
   assert.equal(identity?.email_verified, 1);
   assert.ok((await database.listIdentityPermissions('ADMIN')).includes('enquiries.read'));
+  assert.ok((await database.listIdentityPermissions('ADMIN')).includes('students.archive'));
+  assert.equal((await database.listIdentityPermissions('ADMIN')).includes('students.delete'), false);
+  assert.ok((await database.listIdentityPermissions('SUPER_ADMIN')).includes('students.delete'));
+  assert.ok((await database.listIdentityPermissions('SUPER_ADMIN')).includes('payments.manage'));
   const migratedCourse = await database.findCmsRecord('courses', 'legacy-course');
   assert.equal(migratedCourse?.id, 'legacy-course-record');
   const migratedStructure = await database.getCourseStructure('legacy-course-record');
@@ -237,6 +246,30 @@ test('applies versioned migrations and preserves existing SQLite records', async
     ),
     false,
   );
+
+  const seededSiteContent = await dataLayer.getDataDatabase().query(
+    `SELECT section, COUNT(*) AS count FROM cms_records
+     WHERE created_by = 'system-content-seed' GROUP BY section ORDER BY section`,
+  );
+  assert.deepEqual(
+    seededSiteContent.rows.map(row => [row.section, Number(row.count)]),
+    [
+      ['blog', 5],
+      ['categories', 7],
+      ['events', 7],
+      ['faqs', 2],
+      ['instructors', 6],
+      ['internships', 6],
+      ['live-projects', 4],
+      ['locations', 1],
+      ['master-programs', 5],
+      ['scholarships', 6],
+      ['settings', 1],
+      ['testimonials', 10],
+      ['website-menu', 1],
+    ],
+  );
+  assert.ok(await dataLayer.getDataDatabase().hasColumn('payment_records', 'provider_order_id'));
 
   const legacyEnquiry = (await database.listEnquiries())
     .find(enquiry => enquiry.id === 'legacy-enquiry');
@@ -352,7 +385,7 @@ test('verification tokens are single-use and password reset revokes existing ses
       role: 'CONTENT_MANAGER',
       ipAddress: '127.0.0.1',
     }),
-    true,
+    false,
   );
   const changedSession = await auth.createSessionToken(userId, 'test-agent', '127.0.0.1');
   assert.equal(

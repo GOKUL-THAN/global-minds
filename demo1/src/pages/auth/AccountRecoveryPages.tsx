@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { CheckCircle, GraduationCap, Loader2 } from 'lucide-react';
+import { CheckCircle, Loader2 } from 'lucide-react';
 import { authService } from '../../services/authService';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 
 function AuthPageShell({ title, children }: { title: string; children: React.ReactNode }) {
+  const siteConfig = useSiteConfig();
   return (
     <main className="min-h-screen bg-surface-50 flex items-center justify-center p-4">
       <section className="bg-white rounded-3xl p-8 max-w-md w-full shadow-card-xl">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-4" aria-label="Global Minds Academy home">
-            <span className="w-10 h-10 rounded-xl bg-gradient-brand flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </span>
+            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
           </Link>
           <h1 className="font-display font-bold text-2xl">{title}</h1>
         </div>

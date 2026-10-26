@@ -107,9 +107,9 @@ function CourseRecommendation({ topicId, score, total }: { topicId: string; scor
   const pct = (score / total) * 100;
   const topic = quizTopics.find(t => t.id === topicId);
   const courseMap: Record<string, { title: string; href: string }> = {
-    cloud: { title: 'AWS Training', href: '/courses/aws-training' },
-    python: { title: 'Python Training', href: '/courses/python-training' },
-    devops: { title: 'DevOps Training', href: '/courses/devops-training' },
+    cloud: { title: 'AWS / Cloud', href: '/courses/aws-training' },
+    python: { title: 'Python (Data Science)', href: '/courses/data-science' },
+    devops: { title: 'Full Stack Development', href: '/courses/full-stack-development' },
     webdev: { title: 'Full Stack Development', href: '/courses/full-stack-development' },
     datasci: { title: 'Data Science', href: '/courses/data-science' },
     testing: { title: 'Software Testing', href: '/courses/software-testing' },

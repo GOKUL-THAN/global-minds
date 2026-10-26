@@ -27,21 +27,16 @@ interface Batch {
 }
 
 const upcomingBatches: Batch[] = [
-  { id: 'b1', course: 'AWS Solutions Architect', category: 'Cloud Computing', instructor: 'Rajesh Kumar', startDate: '2026-10-15', days: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', duration: '60 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 8, fee: '₹18,999', badge: 'Filling Fast' },
-  { id: 'b2', course: 'Full Stack Development (MERN)', category: 'Full Stack', instructor: 'Priya Nair', startDate: '2026-10-18', days: 'Sat / Sun', time: '10:00 AM – 1:00 PM', duration: '90 Hrs', mode: 'Both', type: 'Weekend', seatsTotal: 20, seatsLeft: 14, fee: '₹22,999', badge: 'New Batch' },
-  { id: 'b3', course: 'DevOps with Kubernetes', category: 'DevOps', instructor: 'Suresh Anand', startDate: '2026-10-20', days: 'Tue / Thu', time: '7:00 PM – 9:00 PM', duration: '50 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 30, seatsLeft: 20, fee: '₹16,999' },
-  { id: 'b4', course: 'Data Science & Machine Learning', category: 'AI / ML', instructor: 'Anitha Reddy', startDate: '2026-10-22', days: 'Mon – Fri', time: '10:00 AM – 4:00 PM', duration: '80 Hrs', mode: 'Classroom', type: 'Fast-Track', seatsTotal: 15, seatsLeft: 5, fee: '₹24,999', badge: 'Last 5 Seats' },
-  { id: 'b5', course: 'Selenium Automation Testing', category: 'Software Testing', instructor: 'Kiran Babu', startDate: '2026-10-25', days: 'Sat / Sun', time: '2:00 PM – 5:00 PM', duration: '40 Hrs', mode: 'Online', type: 'Weekend', seatsTotal: 25, seatsLeft: 18, fee: '₹12,999' },
-  { id: 'b6', course: 'Microsoft Azure Administrator', category: 'Cloud Computing', instructor: 'Meena Pillai', startDate: '2026-11-01', days: 'Mon / Wed / Fri', time: '8:00 AM – 10:00 AM', duration: '55 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 22, fee: '₹17,999', badge: 'New Batch' },
-  { id: 'b7', course: 'Python Full Stack', category: 'Full Stack', instructor: 'Arjun Singh', startDate: '2026-11-05', days: 'Mon – Fri', time: '9:00 AM – 12:00 PM', duration: '70 Hrs', mode: 'Classroom', type: 'Fast-Track', seatsTotal: 15, seatsLeft: 11, fee: '₹20,999' },
-  { id: 'b8', course: 'Generative AI & Prompt Engineering', category: 'AI / ML', instructor: 'Deepa Krishnan', startDate: '2026-11-08', days: 'Sat / Sun', time: '11:00 AM – 2:00 PM', duration: '30 Hrs', mode: 'Online', type: 'Weekend', seatsTotal: 30, seatsLeft: 24, fee: '₹9,999', badge: 'Trending' },
-  { id: 'b9', course: 'Cyber Security Fundamentals', category: 'Cyber Security', instructor: 'Venkat Rao', startDate: '2026-11-12', days: 'Tue / Thu', time: '6:00 PM – 8:00 PM', duration: '45 Hrs', mode: 'Hybrid', type: 'Weekday', seatsTotal: 20, seatsLeft: 15, fee: '₹15,999' },
-  { id: 'b10', course: 'React JS + Next.js', category: 'Full Stack', instructor: 'Priya Nair', startDate: '2026-11-15', days: 'Sat / Sun', time: '9:00 AM – 12:00 PM', duration: '45 Hrs', mode: 'Online', type: 'Weekend', seatsTotal: 25, seatsLeft: 20, fee: '₹13,999', badge: 'New Batch' },
-  { id: 'b11', course: 'Data Analytics with Power BI', category: 'Data & BI', instructor: 'Ramya Subramanian', startDate: '2026-11-18', days: 'Mon / Wed / Fri', time: '7:00 PM – 9:00 PM', duration: '40 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 19, fee: '₹11,999' },
-  { id: 'b12', course: 'Java Full Stack Development', category: 'Full Stack', instructor: 'Vikram Sharma', startDate: '2026-11-20', days: 'Mon – Fri', time: '2:00 PM – 6:00 PM', duration: '100 Hrs', mode: 'Classroom', type: 'Fast-Track', seatsTotal: 15, seatsLeft: 9, fee: '₹26,999', badge: 'Filling Fast' },
+  { id: 'b1', course: 'AWS / Cloud', category: 'AWS / Cloud', instructor: 'Rajesh Kumar', startDate: '2026-10-15', days: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', duration: '60 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 8, fee: '₹18,999', badge: 'Filling Fast' },
+  { id: 'b2', course: 'Full Stack Development', category: 'Full Stack Development', instructor: 'Priya Nair', startDate: '2026-10-18', days: 'Sat / Sun', time: '10:00 AM – 1:00 PM', duration: '90 Hrs', mode: 'Both', type: 'Weekend', seatsTotal: 20, seatsLeft: 14, fee: '₹22,999', badge: 'New Batch' },
+  { id: 'b3', course: 'Machine Learning', category: 'Machine Learning', instructor: 'Suresh Anand', startDate: '2026-10-20', days: 'Tue / Thu', time: '7:00 PM – 9:00 PM', duration: '50 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 30, seatsLeft: 20, fee: '₹16,999' },
+  { id: 'b4', course: 'Data Science', category: 'Data Science', instructor: 'Anitha Reddy', startDate: '2026-10-22', days: 'Mon – Fri', time: '10:00 AM – 4:00 PM', duration: '80 Hrs', mode: 'Classroom', type: 'Fast-Track', seatsTotal: 15, seatsLeft: 5, fee: '₹24,999', badge: 'Last 5 Seats' },
+  { id: 'b5', course: 'Automation Testing', category: 'Automation Testing', instructor: 'Kiran Babu', startDate: '2026-10-25', days: 'Sat / Sun', time: '2:00 PM – 5:00 PM', duration: '40 Hrs', mode: 'Online', type: 'Weekend', seatsTotal: 25, seatsLeft: 18, fee: '₹12,999' },
+  { id: 'b9', course: 'Cyber Security', category: 'Cyber Security', instructor: 'Venkat Rao', startDate: '2026-11-12', days: 'Tue / Thu', time: '6:00 PM – 8:00 PM', duration: '45 Hrs', mode: 'Hybrid', type: 'Weekday', seatsTotal: 20, seatsLeft: 15, fee: '₹15,999' },
+  { id: 'b11', course: 'Software Testing', category: 'Software Testing', instructor: 'Ramya Subramanian', startDate: '2026-11-18', days: 'Mon / Wed / Fri', time: '7:00 PM – 9:00 PM', duration: '40 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 19, fee: '₹11,999' },
 ];
 
-const categories = ['All', 'Cloud Computing', 'Full Stack', 'DevOps', 'AI / ML', 'Software Testing', 'Cyber Security', 'Data & BI'];
+const categories = ['All', 'AWS / Cloud', 'Data Science', 'Machine Learning', 'Full Stack Development', 'Cyber Security', 'Software Testing', 'Automation Testing'];
 
 function seatColor(left: number, total: number) {
   const pct = left / total;

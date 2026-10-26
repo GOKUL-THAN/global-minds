@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Clock, Briefcase, CheckCircle, Calendar, ArrowRight, Users } from 'lucide-react';
-import { internships } from '../../data/internships';
+import { allowedInternshipCategories, internships } from '../../data/internships';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { Badge } from '../../components/ui/Badge';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
@@ -11,7 +11,8 @@ import { useCmsCollection } from '../../hooks/useCmsCollection';
 
 export default function InternshipDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const visibleInternships = useCmsCollection('internships', internships);
+  const visibleInternships = useCmsCollection('internships', internships)
+    .filter(item => allowedInternshipCategories.includes(item.category));
   const internship = visibleInternships.find(item => item.slug === (slug || ''));
 
   usePageMeta({

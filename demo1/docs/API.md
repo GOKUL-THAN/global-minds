@@ -46,7 +46,7 @@ server-side permissions.
 | Unpublish CMS record | `POST /api/admin/content/:section/:slug/unpublish` | Section-specific `*.publish` permission | Course list, Content Studio | Moves a published record to draft and removes its public snapshot; audited |
 | Archive CMS record | `POST /api/admin/content/:section/:slug/archive` | Section-specific `*.archive` permission | Courses, Content Studio | Reversible; archived public course records are hidden |
 | Restore CMS record | `POST /api/admin/content/:section/:slug/restore` | Section-specific `*.archive` permission | Content Studio | Restores prior draft/published status |
-| Permanently delete CMS record | `DELETE /api/admin/content/:section/:slug` | `content.delete` | Content Studio | Working; seeded only for `SUPER_ADMIN` |
+| Permanently delete CMS record | `DELETE /api/admin/content/:section/:slug` | `ADMIN` role or `content.delete` | Content Studio | Working; Admins can delete CMS records across sections |
 
 CMS lifecycle mutations write metadata-only audit events (`cms.record.*`) with
 the acting identity, section, slug, resource id, and request IP. Content bodies

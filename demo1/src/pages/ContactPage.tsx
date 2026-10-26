@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Phone, Mail, MapPin, MessageSquare, Clock, CheckCircle, Loader2, Send } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
-import { siteConfig } from '../data/siteConfig';
+import { useSiteConfig } from '../contexts/SiteConfigContext';
 import { enquiryService } from '../services/enquiryService';
 import { cn } from '../utils/cn';
 
@@ -19,6 +19,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function ContactPage() {
+  const siteConfig = useSiteConfig();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({ resolver: zodResolver(schema) });

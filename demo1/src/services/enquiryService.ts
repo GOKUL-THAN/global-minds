@@ -65,6 +65,36 @@ class EnquiryService {
     });
   }
 
+  async submitCollegeEnquiry(data: {
+    institutionName: string;
+    contactName: string;
+    designation: string;
+    email: string;
+    phone: string;
+    city: string;
+    studentStrength: string;
+    enquiryType: string;
+    programs: string[];
+    message: string;
+  }): Promise<EnquirySubmissionResult> {
+    return this.saveEnquiry({
+      name: data.contactName,
+      email: data.email,
+      phone: data.phone,
+      course: `College enquiry: ${data.institutionName}`,
+      message: [
+        data.message,
+        `Institution: ${data.institutionName}`,
+        `Designation: ${data.designation}`,
+        `City: ${data.city}`,
+        `Student strength: ${data.studentStrength}`,
+        `Enquiry type: ${data.enquiryType}`,
+        `Programs of interest: ${data.programs.join(', ')}`,
+      ].filter(Boolean).join('\n'),
+      source: 'College Enquiry Form',
+    });
+  }
+
   async createAdminEnquiry(data: Pick<Enquiry, 'name' | 'email' | 'phone' | 'course' | 'message'>): Promise<Enquiry> {
     const result = await this.saveEnquiry({ ...data, source: 'Admin Dashboard' });
     if (!result.success || !result.enquiry) {

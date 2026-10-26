@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Phone, Mail, Monitor, ChevronDown } from 'lucide-react';
 import { locations } from '../../data/locations';
+import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { Badge } from '../../components/ui/Badge';
@@ -9,7 +10,8 @@ import { useCmsCollection } from '../../hooks/useCmsCollection';
 
 export default function LocationsPage() {
   const [expandedLocations, setExpandedLocations] = useState<Set<string>>(new Set());
-  const visibleLocations = useCmsCollection('locations', locations);
+  const visibleLocations = useCmsCollection('locations', locations)
+    .filter(location => location.slug === 'chennai');
 
   return (
     <div className="min-h-screen bg-white">
@@ -17,14 +19,14 @@ export default function LocationsPage() {
         <div className="container-xl">
           <Breadcrumbs items={[{ label: 'Locations' }]} className="text-white/50 mb-4" />
           <h1 className="display-lg text-white mb-4">Training Centres</h1>
-          <p className="text-white/70">Classroom training centres across India. Online training available globally.</p>
-          <p className="text-white/40 text-sm mt-2">* Placeholder addresses — to be updated with real locations.</p>
+          <p className="text-white/70">In-person classroom training is available in Chennai. Online training is available globally.</p>
+          <p className="text-white/40 text-sm mt-2">Contact us to confirm the Chennai centre address.</p>
         </div>
       </div>
 
       <section className="section">
         <div className="container-xl">
-          <h2 className="heading-xl mb-8">India Centres</h2>
+          <h2 className="heading-xl mb-8">Chennai Centre</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {visibleLocations.map(loc => (
               <div key={loc.id} className={`card-hover overflow-hidden ${!loc.active ? 'opacity-60' : ''}`}>
@@ -70,9 +72,9 @@ export default function LocationsPage() {
                   <div id={`location-details-${loc.id}`} hidden={!expandedLocations.has(loc.id)} className="mt-4 border-t border-surface-100 pt-4">
                     <p className="text-xs font-semibold text-surface-500 mb-1">Courses available at this centre</p>
                     <ul className="flex flex-wrap gap-1.5">
-                      {loc.courses.map(course => (
-                        <li key={course} className="text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-lg">
-                          {course.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                      {publicCourseCatalog.filter(course => loc.courses.includes(course.sourceSlug)).map(course => (
+                        <li key={course.sourceSlug} className="text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-lg">
+                          {course.title}
                         </li>
                       ))}
                     </ul>
@@ -95,8 +97,8 @@ export default function LocationsPage() {
       </section>
 
       <CTASection
-        title="Visit a Global Minds Academy Centre"
-        subtitle="Come visit us and speak with our career counselors in person."
+        title="Visit Our Chennai Centre"
+        subtitle="Visit our Chennai centre and speak with our career counselors in person."
         primaryLabel="Enquire Now"
         primaryHref="/contact"
       />

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Clock, Users, BarChart2, Monitor, MapPin, BadgeCheck, BookOpen } from 'lucide-react';
-import { StarRating } from '../ui/StarRating';
+import { Clock, BarChart2, Monitor, MapPin, BadgeCheck, BookOpen } from 'lucide-react';
 import { Badge } from '../ui/Badge';
 import { formatPrice } from '../../utils/formatters';
 import { cn } from '../../utils/cn';
 import type { Course } from '../../types';
+import { SpotlightCard } from '../ui/SpotlightCard';
+import { TiltedCard } from '../ui/TiltedCard';
 
 interface CourseCardProps {
   course: Course;
@@ -27,12 +28,14 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
         )}
         aria-label={`View ${course.title} course details`}
       >
-        <img
-          src={course.thumbnail}
-          alt={`${course.title} course thumbnail`}
-          className="w-full sm:w-40 h-44 sm:h-28 rounded-xl object-cover flex-shrink-0"
-          loading="lazy"
-        />
+        <TiltedCard className="w-full flex-shrink-0 sm:w-40">
+          <img
+            src={course.thumbnail}
+            alt={`${course.title} course thumbnail`}
+            className="h-44 w-full rounded-xl object-cover sm:h-28"
+            loading="lazy"
+          />
+        </TiltedCard>
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-3 mb-2">
             <div>
@@ -56,32 +59,32 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
             <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{course.duration}</span>
             <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" />{course.modules.length} modules</span>
             <span className="flex items-center gap-1"><BarChart2 className="w-3.5 h-3.5" />{course.level}</span>
-            <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{course.learnerCount.toLocaleString()} learners</span>
-            <StarRating rating={course.rating} showValue reviewCount={course.reviewCount} />
           </div>
-          <p className="text-xs text-surface-500 mt-3">Instructor: <span className="font-medium text-surface-700">{course.instructor.name}</span></p>
         </div>
       </Link>
     );
   }
 
   return (
-    <Link
-      to={`/courses/${course.slug}`}
-      className={cn(
-        'course-card block bg-white overflow-hidden group',
-        className,
-      )}
-      aria-label={`View ${course.title} course details`}
-    >
+    <SpotlightCard>
+      <Link
+        to={`/courses/${course.slug}`}
+        className={cn(
+          'course-card block bg-white overflow-hidden group',
+          className,
+        )}
+        aria-label={`View ${course.title} course details`}
+      >
       {/* Thumbnail */}
       <div className="relative overflow-hidden">
-        <img
-          src={course.thumbnail}
-          alt={`${course.title} course thumbnail`}
-          className="w-full h-44 object-cover transition-transform duration-200 group-hover:scale-[1.02]"
-          loading="lazy"
-        />
+        <TiltedCard>
+          <img
+            src={course.thumbnail}
+            alt={`${course.title} course thumbnail`}
+            className="h-44 w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </TiltedCard>
 
         {/* Badges overlay */}
         <div className="absolute top-3 left-3 flex gap-1.5">
@@ -105,7 +108,7 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
           )}
           {course.classroomAvailable && (
             <span className="flex items-center gap-1 text-xs bg-black/60 text-white px-2 py-1 rounded-lg backdrop-blur-sm">
-              <MapPin className="w-3 h-3" /> Classroom
+              <MapPin className="w-3 h-3" /> Chennai Classroom
             </span>
           )}
         </div>
@@ -148,15 +151,6 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
           </span>
         </div>
 
-        <p className="text-xs text-surface-500 mb-3">Instructor: <span className="font-medium text-surface-700">{course.instructor.name}</span></p>
-
-        {/* Rating */}
-        <div className="flex items-center gap-2 mb-4 mt-auto flex-wrap">
-          <StarRating rating={course.rating} showValue size="sm" />
-          <span className="text-xs text-surface-400">({course.reviewCount.toLocaleString()} reviews)</span>
-          <span className="text-xs text-surface-400 ml-auto">{course.learnerCount.toLocaleString()} learners</span>
-        </div>
-
         {/* Price */}
         <div className="flex items-center justify-between pt-3 border-t border-surface-100">
           <div className="flex items-baseline gap-2">
@@ -174,6 +168,7 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
           </span>
         </div>
       </div>
-    </Link>
+      </Link>
+    </SpotlightCard>
   );
 }

@@ -1,218 +1,97 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  Menu, X, ChevronDown, Search, User, Phone,
-  Cloud, GitBranch, Cpu, Layers, BarChart2, Shield,
-  Code2, Database, PenTool, TrendingUp, Kanban, Wifi, Zap,
-  Award, BookOpen, Briefcase,
-} from 'lucide-react';
+import { ChevronDown, Home, Menu, Search, User, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { siteConfig } from '../../data/siteConfig';
-import { categories } from '../../data/categories';
+import { readNavigationContent, type MenuItem, type NavigationContent } from '../../data/navigationMenu';
+import { cmsService } from '../../services/cmsService';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { Button } from '../ui/Button';
 
-const categoryIcons: Record<string, React.ElementType> = {
-  'cloud-computing': Cloud,
-  'devops': GitBranch,
-  'artificial-intelligence': Cpu,
-  'full-stack-development': Layers,
-  'data-science-analytics': BarChart2,
-  'software-testing': Shield,
-  'programming': Code2,
-  'cyber-security': Shield,
-  'database': Database,
-  'ui-ux-design': PenTool,
-  'digital-marketing': TrendingUp,
-  'project-management': Kanban,
-  'iot': Wifi,
-  'automation-rpa': Zap,
-};
+const navigationSlug = 'site-navigation';
+const emptyNavigation: NavigationContent = { primary: [], more: [] };
 
-const megaMenuData = [
-  {
-    categorySlug: 'cloud-computing',
-    title: 'Cloud Computing',
-    courses: [
-      { title: 'AWS Training', href: '/courses/aws-training', badge: 'Popular' },
-      { title: 'Microsoft Azure', href: '/courses/microsoft-azure' },
-      { title: 'Google Cloud (GCP)', href: '/courses/google-cloud' },
-      { title: 'Cloud Computing', href: '/courses/cloud-computing' },
-      { title: 'AWS DevOps', href: '/courses/aws-devops' },
-      { title: 'Cloud Security', href: '/courses/cloud-security' },
-      { title: 'Azure DevOps', href: '/courses/azure-devops' },
-    ],
-  },
-  {
-    categorySlug: 'devops',
-    title: 'DevOps',
-    courses: [
-      { title: 'DevOps Training', href: '/courses/devops-training', badge: 'Trending' },
-      { title: 'Kubernetes', href: '/courses/kubernetes' },
-      { title: 'Docker', href: '/courses/docker' },
-      { title: 'Jenkins', href: '/courses/jenkins' },
-      { title: 'Terraform', href: '/courses/terraform' },
-      { title: 'Ansible', href: '/courses/ansible' },
-      { title: 'CI/CD Pipeline', href: '/courses/devops-training' },
-    ],
-  },
-  {
-    categorySlug: 'artificial-intelligence',
-    title: 'AI & Machine Learning',
-    courses: [
-      { title: 'Data Science', href: '/courses/data-science', badge: 'Hot' },
-      { title: 'Machine Learning', href: '/courses/machine-learning' },
-      { title: 'Generative AI', href: '/courses/generative-ai', badge: 'New' },
-      { title: 'Deep Learning', href: '/courses/deep-learning' },
-      { title: 'Artificial Intelligence', href: '/courses/artificial-intelligence' },
-      { title: 'NLP', href: '/courses/nlp' },
-      { title: 'Computer Vision', href: '/courses/computer-vision' },
-    ],
-  },
-  {
-    categorySlug: 'full-stack-development',
-    title: 'Full Stack Dev',
-    courses: [
-      { title: 'Full Stack Development', href: '/courses/full-stack-development', badge: 'Popular' },
-      { title: 'React JS', href: '/courses/react-js' },
-      { title: 'Next.js', href: '/courses/next-js', badge: 'New' },
-      { title: 'Node.js', href: '/courses/node-js' },
-      { title: 'NestJS', href: '/courses/nest-js', badge: 'New' },
-      { title: 'Vue.js', href: '/courses/vue-js' },
-      { title: 'MERN Stack', href: '/courses/mern-stack' },
-      { title: 'GraphQL', href: '/courses/graphql' },
-    ],
-  },
-  {
-    categorySlug: 'data-science-analytics',
-    title: 'Data & BI',
-    courses: [
-      { title: 'Data Science', href: '/courses/data-science' },
-      { title: 'Data Analytics', href: '/courses/data-analytics' },
-      { title: 'Power BI', href: '/courses/power-bi' },
-      { title: 'Tableau', href: '/courses/tableau' },
-      { title: 'Big Data', href: '/courses/big-data' },
-      { title: 'Data Engineering', href: '/courses/data-engineering' },
-      { title: 'Business Intelligence', href: '/courses/business-intelligence' },
-    ],
-  },
-  {
-    categorySlug: 'software-testing',
-    title: 'Software Testing',
-    courses: [
-      { title: 'Software Testing', href: '/courses/software-testing', badge: 'Popular' },
-      { title: 'Automation Testing', href: '/courses/automation-testing' },
-      { title: 'Selenium', href: '/courses/selenium' },
-      { title: 'API Testing', href: '/courses/api-testing' },
-      { title: 'Performance Testing', href: '/courses/performance-testing' },
-      { title: 'ETL Testing', href: '/courses/etl-testing' },
-    ],
-  },
-  {
-    categorySlug: 'cyber-security',
-    title: 'Cyber Security',
-    courses: [
-      { title: 'Cyber Security', href: '/courses/cyber-security', badge: 'Trending' },
-      { title: 'Ethical Hacking', href: '/courses/ethical-hacking' },
-      { title: 'Cloud Security', href: '/courses/cloud-security' },
-      { title: 'CompTIA Security+', href: '/courses/comptia-security-plus', badge: 'New' },
-      { title: 'SOC Analyst', href: '/courses/splunk' },
-    ],
-  },
-  {
-    categorySlug: 'programming',
-    title: 'Programming',
-    courses: [
-      { title: 'Python', href: '/courses/python-training', badge: 'Popular' },
-      { title: 'Java', href: '/courses/java-training' },
-      { title: 'JavaScript', href: '/courses/javascript' },
-      { title: 'Spring Boot', href: '/courses/spring-boot' },
-      { title: 'Django', href: '/courses/django' },
-      { title: 'Go (Golang)', href: '/courses/go-programming', badge: 'New' },
-      { title: 'Rust', href: '/courses/rust-programming', badge: 'New' },
-      { title: 'Salesforce', href: '/courses/salesforce' },
-      { title: 'DSA', href: '/courses/data-structures-algorithms', badge: 'Hot' },
-      { title: 'System Design', href: '/courses/system-design', badge: 'New' },
-    ],
-  },
-  {
-    categorySlug: 'full-stack-development',
-    title: 'Mobile Dev',
-    courses: [
-      { title: 'Flutter', href: '/courses/flutter', badge: 'Popular' },
-      { title: 'React Native', href: '/courses/react-native' },
-      { title: 'Android (Kotlin)', href: '/courses/android-development' },
-      { title: 'iOS (Swift)', href: '/courses/ios-development' },
-      { title: 'Kotlin', href: '/courses/kotlin' },
-      { title: 'Swift', href: '/courses/swift' },
-    ],
-  },
-  {
-    categorySlug: 'database',
-    title: 'Database',
-    courses: [
-      { title: 'SQL', href: '/courses/sql' },
-      { title: 'MySQL', href: '/courses/mysql' },
-      { title: 'PostgreSQL', href: '/courses/postgresql' },
-      { title: 'SQL Server (MSSQL)', href: '/courses/sql-server', badge: 'New' },
-      { title: 'MongoDB', href: '/courses/mongodb' },
-      { title: 'Redis', href: '/courses/redis' },
-      { title: 'Oracle', href: '/courses/oracle' },
-      { title: 'Cassandra', href: '/courses/cassandra' },
-      { title: 'Snowflake', href: '/courses/snowflake', badge: 'New' },
-    ],
-  },
-  {
-    categorySlug: 'ui-ux-design',
-    title: 'Design & Others',
-    courses: [
-      { title: 'UI/UX Design', href: '/courses/ui-ux-design' },
-      { title: 'Figma', href: '/courses/figma' },
-      { title: 'Digital Marketing', href: '/courses/digital-marketing' },
-      { title: 'Advanced Excel', href: '/courses/excel-advanced', badge: 'New' },
-      { title: 'SAP ABAP', href: '/courses/sap-abap', badge: 'New' },
-      { title: 'SAP FICO', href: '/courses/sap-fico', badge: 'New' },
-      { title: 'ServiceNow', href: '/courses/servicenow', badge: 'New' },
-      { title: 'PMP Certification', href: '/courses/pmp-certification', badge: 'New' },
-      { title: 'ITIL 4', href: '/courses/itil', badge: 'New' },
-    ],
-  },
-  {
-    categorySlug: 'devops',
-    title: 'Networking',
-    courses: [
-      { title: 'CCNA', href: '/courses/ccna', badge: 'Popular' },
-      { title: 'CCNP', href: '/courses/ccnp' },
-      { title: 'CompTIA A+', href: '/courses/comptia-a-plus' },
-      { title: 'CompTIA Network+', href: '/courses/comptia-network-plus' },
-      { title: 'Computer Networks', href: '/courses/computer-networks' },
-    ],
-  },
-];
+function SiteLink({
+  href,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  className?: string;
+  onClick?: () => void;
+  children: ReactNode;
+}) {
+  if (/^https:\/\//i.test(href)) {
+    return <a href={href} target="_blank" rel="noreferrer" className={className} onClick={onClick}>{children}</a>;
+  }
+  return <Link to={href} className={className} onClick={onClick}>{children}</Link>;
+}
+
+function MenuImage({ src, className }: { src: string; className?: string }) {
+  if (!src.startsWith('data:image/')) return null;
+  return <img src={src} alt="" className={className} />;
+}
+
+function ordered<T extends { order: number }>(items: T[]): T[] {
+  return [...items].sort((left, right) => left.order - right.order);
+}
 
 export function Navbar() {
+  const [navigation, setNavigation] = useState<NavigationContent>(emptyNavigation);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-  const [selectedMegaCategory, setSelectedMegaCategory] = useState(megaMenuData[0].title);
-  const megaRef = useRef<HTMLDivElement>(null);
-  const megaMenuPanelRef = useRef<HTMLDivElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const siteConfig = useSiteConfig();
+  const headerRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const location = useLocation();
 
-  // Close mobile menu on route change
+  const primaryItems = ordered(navigation.primary.filter(item => item.visible));
+  const moreItems = ordered(navigation.more.filter(item => item.visible));
+
+  useEffect(() => {
+    let active = true;
+    void cmsService.getPublic('website-menu').then(records => {
+      const record = records.find(item => item.slug === navigationSlug);
+      if (!record || record.status !== 'published') {
+        if (active) setNavigation(emptyNavigation);
+        return;
+      }
+      const content = readNavigationContent(record.content);
+      if (!content) {
+        console.error('The published website navigation record has an invalid structure.');
+        return;
+      }
+      // Force Colleges to be a simple direct link (no dropdown)
+      content.primary = content.primary.map(item =>
+        item.id === 'colleges' ? { ...item, children: [] } : item,
+      );
+      if (active) setNavigation(content);
+    }).catch(cause => {
+      console.error('Unable to load the published website navigation.', cause);
+    });
+    return () => { active = false; };
+  }, []);
+
   useEffect(() => {
     setMobileOpen(false);
-    setMegaMenuOpen(false);
+    setMobileExpanded(null);
+    setOpenDropdown(null);
+    setMoreMenuOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key !== 'Escape') return;
+      setOpenDropdown(null);
+      setMoreMenuOpen(false);
+      if (mobileOpen) {
         setMobileOpen(false);
-        setMegaMenuOpen(false);
-        if (mobileOpen) menuButtonRef.current?.focus();
+        menuButtonRef.current?.focus();
       }
     };
     document.addEventListener('keydown', handleKeyDown);
@@ -220,464 +99,403 @@ export function Navbar() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    if (!mobileOpen) return;
-    mobileMenuRef.current?.querySelector<HTMLElement>('a, button')?.focus();
-  }, [mobileOpen]);
-
-  // Scroll detection
-  useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  // Close mega menu when clicking outside
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      const target = e.target as Node;
-      if (
-        megaRef.current &&
-        !megaRef.current.contains(target) &&
-        !megaMenuPanelRef.current?.contains(target)
-      ) {
-        setMegaMenuOpen(false);
+    if (!mobileOpen) return;
+    mobileMenuRef.current?.querySelector<HTMLElement>('a, button')?.focus();
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const handler = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+        setMoreMenuOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
-  const navLinks = [
-    { label: 'Courses', href: '/courses', hasMega: true },
-    { label: 'Master Programs', href: '/master-programs' },
-    { label: 'Batch Schedule', href: '/batch-schedule' },
-    { label: 'Certifications', href: '/certifications' },
-    { label: 'Placement', href: '/placement-records' },
-    { label: 'Events', href: '/events' },
-    { label: 'Corporate', href: '/corporate-training' },
-    { label: 'About', href: '/about' },
-  ];
-  const isRouteActive = (href: string) =>
-    location.pathname === href || location.pathname.startsWith(`${href}/`)
-      || (href === '/courses' && location.pathname.startsWith('/categories/'));
+  const isRouteActive = (href: string) => href.startsWith('/')
+    && (location.pathname === href || location.pathname.startsWith(`${href}/`)
+      || (href === '/courses' && location.pathname.startsWith('/categories/')));
+
+  const renderDesktopItem = (item: MenuItem) => {
+    const active = isRouteActive(item.href);
+    const hasChildren = item.children.some(child => child.visible);
+    const buttonStyle = item.id === 'courses'
+      ? 'bg-brand-600 text-white shadow-sm hover:bg-brand-700'
+      : 'text-surface-700 hover:text-brand-600 hover:bg-brand-50';
+    if (!hasChildren) {
+      return (
+        <SiteLink
+          key={item.id}
+          href={item.href}
+          className={cn('flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors', buttonStyle, active && 'text-brand-700 bg-brand-50')}
+        >
+          <MenuImage src={item.icon} className="h-5 w-5 rounded object-contain" />
+          {item.label}
+        </SiteLink>
+      );
+    }
+
+    const isOpen = openDropdown === item.id;
+    return (
+      <div key={item.id} className="relative flex items-center">
+        {/* Label + chevron as one unified button — no navigation, just toggles dropdown */}
+        <button
+          type="button"
+          onClick={() => { setOpenDropdown(isOpen ? null : item.id); setMoreMenuOpen(false); }}
+          onMouseEnter={() => { setOpenDropdown(item.id); setMoreMenuOpen(false); }}
+          className={cn('flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors', buttonStyle, (isOpen || active) && (item.id === 'courses' ? 'bg-brand-700' : 'text-brand-700 bg-brand-50'))}
+          aria-label={`Open ${item.label} submenu`}
+          aria-expanded={isOpen}
+          aria-haspopup="true"
+          aria-controls={`submenu-${item.id}`}
+        >
+          <MenuImage src={item.icon} className="h-5 w-5 rounded object-contain" />
+          {item.label}
+          <ChevronDown className={cn('h-4 w-4 transition-transform', isOpen && 'rotate-180')} />
+        </button>
+        {isOpen && (() => {
+          const visibleChildren = ordered(item.children.filter(child => child.visible));
+          // Check if children have group labels for mega-menu layout
+          const groups = new Map<string, typeof visibleChildren>();
+          const hasGroups = visibleChildren.some(child => child.group);
+          if (hasGroups) {
+            for (const child of visibleChildren) {
+              const groupName = child.group || 'Other';
+              if (!groups.has(groupName)) groups.set(groupName, []);
+              groups.get(groupName)!.push(child);
+            }
+          }
+          return hasGroups ? (
+            <div
+              id={`submenu-${item.id}`}
+              className="absolute right-0 top-full z-50 mt-2 max-h-[min(70vh,40rem)] overflow-y-auto rounded-xl border border-surface-100 bg-white p-4 shadow-card-lg"
+              style={{ width: `${Math.min(groups.size, 4) * 210 + 32}px`, maxWidth: '90vw' }}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <div className={`grid gap-4`} style={{ gridTemplateColumns: `repeat(${Math.min(groups.size, 4)}, 1fr)` }}>
+                {Array.from(groups.entries()).map(([groupName, groupChildren]) => (
+                  <div key={groupName}>
+                    <p className="mb-2 px-2 text-[11px] font-bold uppercase tracking-wider text-brand-600">{groupName}</p>
+                    <div className="space-y-0.5">
+                      {groupChildren.map(child => (
+                        <SiteLink
+                          key={child.id}
+                          href={child.href}
+                          onClick={() => setOpenDropdown(null)}
+                          className="flex items-center gap-2 rounded-lg px-2 py-2 text-[13px] text-surface-700 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                        >
+                          <MenuImage src={child.icon} className="h-4 w-4 rounded object-contain" />
+                          {child.label}
+                        </SiteLink>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div
+              id={`submenu-${item.id}`}
+              className="absolute left-0 top-full z-50 mt-2 max-h-[min(70vh,36rem)] w-80 max-w-[90vw] overflow-y-auto rounded-xl border border-surface-100 bg-white p-2 shadow-card-lg"
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <p className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-surface-500">{item.label}</p>
+              {visibleChildren.map(child => (
+                <SiteLink
+                  key={child.id}
+                  href={child.href}
+                  onClick={() => setOpenDropdown(null)}
+                  className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-surface-700 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                >
+                  <MenuImage src={child.icon} className="h-5 w-5 rounded object-contain" />
+                  {child.label}
+                </SiteLink>
+              ))}
+            </div>
+          );
+        })()}
+      </div>
+    );
+  };
+
+  const renderMobileItem = (item: MenuItem) => {
+    const active = isRouteActive(item.href);
+    const children = ordered(item.children.filter(child => child.visible));
+    const expanded = mobileExpanded === item.id;
+    return (
+      <div key={item.id}>
+        <div className="flex items-center">
+          <SiteLink
+            href={item.href}
+            onClick={() => setMobileOpen(false)}
+            className={cn(
+              'flex flex-1 items-center gap-2 rounded-xl p-3 font-semibold hover:bg-surface-50',
+              active ? 'bg-brand-50 text-brand-700' : 'text-surface-900',
+            )}
+            aria-current={active ? 'page' : undefined}
+          >
+            <MenuImage src={item.icon} className="h-5 w-5 rounded object-contain" />
+            {item.label}
+          </SiteLink>
+          {children.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setMobileExpanded(expanded ? null : item.id)}
+              className="rounded-xl p-3 text-surface-600 hover:bg-surface-50"
+              aria-label={`${expanded ? 'Collapse' : 'Expand'} ${item.label} submenu`}
+              aria-expanded={expanded}
+            >
+              <ChevronDown className={cn('h-5 w-5 transition-transform', expanded && 'rotate-180')} />
+            </button>
+          )}
+        </div>
+        {expanded && children.length > 0 && (() => {
+          const hasGroups = children.some(child => child.group);
+          if (hasGroups) {
+            const groups = new Map<string, typeof children>();
+            for (const child of children) {
+              const groupName = child.group || 'Other';
+              if (!groups.has(groupName)) groups.set(groupName, []);
+              groups.get(groupName)!.push(child);
+            }
+            return (
+              <div className="ml-4 mt-1 space-y-3 border-l-2 border-brand-100 pl-4">
+                {Array.from(groups.entries()).map(([groupName, groupChildren]) => (
+                  <div key={groupName}>
+                    <p className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-600">{groupName}</p>
+                    <div className="space-y-0.5">
+                      {groupChildren.map(child => (
+                        <SiteLink
+                          key={child.id}
+                          href={child.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-2 rounded-lg p-2.5 text-sm text-surface-700 hover:bg-brand-50 hover:text-brand-600"
+                        >
+                          <MenuImage src={child.icon} className="h-4 w-4 rounded object-contain" />
+                          {child.label}
+                        </SiteLink>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          }
+          return (
+            <div className="ml-4 mt-1 space-y-1 border-l-2 border-brand-100 pl-4">
+              {children.map(child => (
+                <SiteLink
+                  key={child.id}
+                  href={child.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 rounded-lg p-2.5 text-sm text-surface-700 hover:bg-brand-50 hover:text-brand-600"
+                >
+                  <MenuImage src={child.icon} className="h-4 w-4 rounded object-contain" />
+                  {child.label}
+                </SiteLink>
+              ))}
+            </div>
+          );
+        })()}
+      </div>
+    );
+  };
+
   return (
     <header
+      ref={headerRef}
       className={cn(
-        'sticky top-0 z-50 transition-colors duration-200',
+        'sticky top-0 z-50 border-b border-surface-100 transition-colors duration-200',
         location.pathname === '/' && 'home-navbar',
-        scrolled
-          ? 'bg-white shadow-card border-b border-surface-100'
-          : 'bg-white border-b border-surface-100',
+        mobileOpen && 'mobile-menu-open',
+        scrolled ? 'bg-white shadow-card' : 'bg-white',
       )}
     >
       <div className="container-xl">
-        <div className="flex items-center justify-between h-16 lg:h-18">
-          {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0" aria-label="Global Minds Academy home">
+        <div className="flex h-16 items-center justify-between lg:h-18">
+          <Link to="/" className="-ml-1 flex shrink-0 items-center gap-2.5" aria-label="Global Minds Academy home">
             <img
               src={siteConfig.logoUrl}
               alt="Global Minds Academy logo"
-              className="h-14 w-14 sm:h-16 sm:w-16 lg:h-[4.5rem] lg:w-[4.5rem] object-contain"
+              className="h-14 w-14 shrink-0 object-contain"
+              onError={e => { e.currentTarget.style.display = 'none'; }}
             />
+            <span className="whitespace-nowrap font-display text-base font-extrabold tracking-tight sm:text-lg">
+              <span className="text-[#164e59]">Global</span>{' '}
+              <span className="text-[#53b5ba]">Minds Academy</span>
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" aria-label="Main navigation">
-            {navLinks.map(link => {
-              const active = link.hasMega
-                ? location.pathname === '/courses' || location.pathname.startsWith('/courses/') || location.pathname.startsWith('/categories/')
-                : location.pathname === link.href || location.pathname.startsWith(`${link.href}/`);
-              return (
-              link.hasMega ? (
-                <div key={link.label} ref={megaRef} className="relative">
-                  <button
-                    onClick={() => setMegaMenuOpen(prev => !prev)}
-                    onMouseEnter={() => setMegaMenuOpen(true)}
-                    className={cn(
-                      'flex items-center gap-1 px-4 py-2 rounded-full text-sm font-semibold',
-                      'bg-brand-600 text-white shadow-sm hover:bg-brand-700 hover:text-white',
-                      'transition-colors duration-200',
-                      (megaMenuOpen || active) && 'bg-brand-700 shadow-md',
-                    )}
-                    aria-expanded={megaMenuOpen}
-                    aria-haspopup="true"
-                    aria-controls="course-mega-menu"
-                    aria-current={active ? 'page' : undefined}
-                  >
-                    {link.label}
-                    <ChevronDown className={cn('w-4 h-4 transition-transform duration-200', megaMenuOpen && 'rotate-180')} />
-                  </button>
-                </div>
-              ) : (
-                <Link
-                  key={link.label}
-                  to={link.href}
+          <nav className="hidden items-center gap-2 xl:flex 2xl:gap-3 ml-8" aria-label="Main navigation">
+            <Link
+              to="/"
+              className={cn(
+                'flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                location.pathname === '/'
+                  ? 'text-brand-700 bg-brand-50'
+                  : 'text-surface-700 hover:text-brand-600 hover:bg-brand-50',
+              )}
+              aria-current={location.pathname === '/' ? 'page' : undefined}
+            >
+              <Home className="h-4 w-4" />
+              Home
+            </Link>
+            {primaryItems.map(renderDesktopItem)}
+            {moreItems.length > 0 && (
+              <div className="relative flex items-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMoreMenuOpen(value => !value);
+                    setOpenDropdown(null);
+                  }}
                   className={cn(
-                    'px-3 py-2 rounded-lg text-sm font-medium',
-                    'text-surface-700 hover:text-brand-600 hover:bg-brand-50',
-                    'transition-colors duration-200',
-                    active && 'text-brand-700 bg-brand-50',
+                    'flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-surface-700 transition-colors hover:bg-brand-50 hover:text-brand-600',
+                    moreMenuOpen && 'bg-brand-50 text-brand-700',
                   )}
-                  aria-current={active ? 'page' : undefined}
+                  aria-expanded={moreMenuOpen}
+                  aria-haspopup="true"
+                  aria-controls="submenu-more"
                 >
-                  {link.label}
-                </Link>
-              )
-              );
-            })}
+                  More
+                  <ChevronDown className={cn('h-4 w-4 transition-transform', moreMenuOpen && 'rotate-180')} />
+                </button>
+                {moreMenuOpen && (
+                  <div
+                    id="submenu-more"
+                    className="absolute right-0 top-full z-50 mt-2 max-h-[min(70vh,36rem)] w-64 max-w-[90vw] overflow-y-auto rounded-xl border border-surface-100 bg-white p-2 shadow-card-lg"
+                    onMouseLeave={() => setMoreMenuOpen(false)}
+                  >
+                    {ordered(moreItems).map(item => (
+                      <SiteLink
+                        key={item.id}
+                        href={item.href}
+                        onClick={() => setMoreMenuOpen(false)}
+                        className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-surface-700 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                      >
+                        <MenuImage src={item.icon} className="h-5 w-5 rounded object-contain" />
+                        {item.label}
+                      </SiteLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden xl:flex items-center gap-2 2xl:gap-3">
+          {/* Desktop CTA — Search + Login */}
+          <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
             <Link
               to="/courses"
-              className="inline-flex items-center gap-1.5 rounded-lg p-2 text-surface-500 hover:bg-brand-50 hover:text-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              className="inline-flex items-center gap-1.5 rounded-lg p-2 text-surface-500 transition-colors hover:bg-brand-50 hover:text-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
               aria-label="Search courses"
             >
-              <Search className="w-5 h-5" />
-              <span className="hidden 2xl:inline text-sm">Search</span>
+              <Search className="h-5 w-5" />
+              <span className="hidden text-sm 2xl:inline">Search</span>
             </Link>
-
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-1.5 text-sm text-surface-600 hover:text-brand-600 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="font-medium hidden 2xl:block">{siteConfig.phone}</span>
-            </a>
-
             <Link to="/login">
-              <Button variant="ghost" size="sm" leftIcon={<User className="w-4 h-4" />}>
-                Login
-              </Button>
-            </Link>
-
-            <Link to="/register">
-              <Button size="sm">Enroll Now</Button>
+              <Button variant="ghost" size="sm" leftIcon={<User className="h-4 w-4" />}>Login</Button>
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             ref={menuButtonRef}
-            onClick={() => setMobileOpen(prev => !prev)}
-            className="xl:hidden p-2 rounded-xl text-surface-700 hover:bg-surface-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            type="button"
+            onClick={() => setMobileOpen(value => !value)}
+            className="rounded-xl border border-brand-100 bg-brand-50 p-2.5 text-brand-700 transition-colors hover:bg-brand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 xl:hidden"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
             aria-controls="public-mobile-menu"
           >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mega Menu */}
-      {megaMenuOpen && (
-        <div
-          id="course-mega-menu"
-          ref={megaMenuPanelRef}
-          className="hidden xl:block absolute top-full left-0 w-full max-h-[calc(100vh-5rem)] overflow-y-auto bg-white shadow-card-lg border-t border-surface-100 z-50 animate-slide-down"
-          onMouseLeave={() => setMegaMenuOpen(false)}
-        >
-          <div className="container-xl py-8">
-            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-surface-200 pb-5">
-              <div>
-                <p className="mb-1 text-xs font-bold uppercase tracking-[0.16em] text-brand-600">
-                  Learn with Global Minds
-                </p>
-                <h2 className="text-xl font-bold text-surface-900">Explore courses by topic</h2>
-                <p className="mt-1 text-sm text-surface-600">
-                  Choose a topic to see its courses and subtopics.
-                </p>
-              </div>
-              <Link
-                to="/courses"
-                className="inline-flex items-center rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
-              >
-                View all courses
-              </Link>
-            </div>
-            <div className="grid gap-5 xl:grid-cols-[minmax(220px,1fr)_minmax(0,2fr)]">
-              <div className="grid content-start grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-2">
-              {megaMenuData.map(section => {
-                const Icon = categoryIcons[section.categorySlug] || BookOpen;
-                return (
-                  <button
-                    key={section.title}
-                    type="button"
-                    onClick={() => setSelectedMegaCategory(section.title)}
-                    className={cn(
-                      'flex min-w-0 items-center gap-2 rounded-xl border p-3 text-left transition-colors',
-                      selectedMegaCategory === section.title
-                        ? 'border-brand-300 bg-brand-50 text-brand-800 shadow-sm'
-                        : 'border-surface-200 bg-white text-surface-700 hover:border-brand-200 hover:bg-surface-50',
-                    )}
-                    aria-pressed={selectedMegaCategory === section.title}
-                    aria-controls="course-subtopics"
-                  >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50">
-                      <Icon className="h-4 w-4 text-brand-600" />
-                    </span>
-                    <span className="min-w-0 flex-1 text-sm font-semibold leading-tight">
-                      {section.title}
-                    </span>
-                    <span className="text-xs text-surface-500">{section.courses.length}</span>
-                  </button>
-                );
-              })}
-              </div>
-              {(() => {
-                const selectedSection = megaMenuData.find(section => section.title === selectedMegaCategory) ?? megaMenuData[0];
-                return (
-                  <section
-                    id="course-subtopics"
-                    aria-live="polite"
-                    className="rounded-xl border border-surface-200 bg-surface-50/70 p-5"
-                  >
-                    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50">
-                          {(() => {
-                            const Icon = categoryIcons[selectedSection.categorySlug] || BookOpen;
-                            return <Icon className="h-5 w-5 text-brand-600" />;
-                          })()}
-                        </span>
-                        <div>
-                          <h3 className="font-bold text-surface-900">{selectedSection.title}</h3>
-                          <p className="text-xs text-surface-500">
-                            {selectedSection.courses.length} courses and subtopics
-                          </p>
-                        </div>
-                      </div>
-                      <Link
-                        to={`/categories/${selectedSection.categorySlug}`}
-                        className="text-sm font-semibold text-brand-700 hover:text-brand-800"
-                      >
-                        Browse topic →
-                      </Link>
-                    </div>
-                    <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                      {selectedSection.courses.map(course => (
-                        <li key={`${selectedSection.title}-${course.title}`}>
-                          <Link
-                            to={course.href}
-                            className="flex min-h-11 items-center justify-between gap-2 rounded-lg border border-surface-200 bg-white px-3 py-2 text-sm text-surface-700 transition-colors hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700"
-                          >
-                            <span className="min-w-0 truncate">{course.title}</span>
-                            {course.badge && (
-                              <span className="shrink-0 rounded-full bg-accent-50 px-1.5 py-0.5 text-xs font-medium text-accent-700">
-                                {course.badge}
-                              </span>
-                            )}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                );
-              })()}
-            </div>
-
-            {/* Bottom bar in mega menu */}
-            <div className="mt-8 pt-6 border-t border-surface-100 flex items-center justify-between">
-              <div className="flex gap-6 flex-wrap">
-                <Link to="/master-programs" className="flex items-center gap-2 text-sm font-semibold text-surface-700 hover:text-brand-600">
-                  <Award className="w-4 h-4 text-brand-500" />
-                  Master Programs
-                </Link>
-                <Link to="/certifications" className="flex items-center gap-2 text-sm font-semibold text-surface-700 hover:text-brand-600">
-                  <Award className="w-4 h-4 text-accent-500" />
-                  Certifications
-                </Link>
-                <Link to="/placement-records" className="flex items-center gap-2 text-sm font-semibold text-surface-700 hover:text-brand-600">
-                  <Briefcase className="w-4 h-4 text-green-500" />
-                  Placement Records
-                </Link>
-                <Link to="/live-projects" className="flex items-center gap-2 text-sm font-semibold text-surface-700 hover:text-brand-600">
-                  <BookOpen className="w-4 h-4 text-purple-500" />
-                  Live Projects
-                </Link>
-                <Link to="/batch-schedule" className="flex items-center gap-2 text-sm font-semibold text-surface-700 hover:text-brand-600">
-                  <BookOpen className="w-4 h-4 text-orange-500" />
-                  Batch Schedule
-                </Link>
-                <Link to="/demo-class" className="flex items-center gap-2 text-sm font-semibold text-surface-700 hover:text-brand-600">
-                  <BookOpen className="w-4 h-4 text-sky-500" />
-                  Free Demo Class
-                </Link>
-              </div>
-              <Link to="/courses">
-                <Button size="sm" variant="secondary">
-                  View All Courses →
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Mobile navigation drawer */}
       {mobileOpen && (
         <>
-        <button
-          type="button"
-          className="xl:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-surface-950/40"
-          onClick={() => setMobileOpen(false)}
-          aria-label="Close navigation menu"
-        />
-        <div
-          id="public-mobile-menu"
-          ref={mobileMenuRef}
-          className="xl:hidden fixed top-16 right-0 bottom-0 z-50 w-full max-w-md overflow-y-auto bg-white shadow-card-lg"
-          onKeyDown={event => {
-            if (event.key === 'Escape') {
-              event.preventDefault();
-              setMobileOpen(false);
-              menuButtonRef.current?.focus();
-              return;
-            }
-            if (event.key !== 'Tab' || !mobileMenuRef.current) return;
-            const focusable = Array.from(mobileMenuRef.current.querySelectorAll<HTMLElement>(
-              'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled])',
-            ));
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            if (event.shiftKey && document.activeElement === first) {
-              event.preventDefault();
-              last?.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-              event.preventDefault();
-              first?.focus();
-            }
-          }}
-        >
-          <div className="container-xl py-4">
-            {/* Search */}
-            <Link
-              to="/courses"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-3 p-3 rounded-xl bg-surface-50 mb-4 text-surface-600"
-            >
-              <Search className="w-5 h-5" />
-              <span className="text-sm">Search courses...</span>
-            </Link>
-
-            {/* Nav Links */}
-            <nav className="space-y-1">
-              {/* Courses with sub-items */}
-              <div>
-                <div className="flex items-center">
-                  <Link
-                    to="/courses"
-                    onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      'flex-1 p-3 rounded-xl font-semibold hover:bg-surface-50',
-                      isRouteActive('/courses') ? 'text-brand-700 bg-brand-50' : 'text-surface-900',
-                    )}
-                    aria-current={isRouteActive('/courses') ? 'page' : undefined}
-                  >
-                    Courses
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={() => setMobileExpanded(mobileExpanded === 'courses' ? null : 'courses')}
-                    className="p-3 rounded-xl text-surface-600 hover:bg-surface-50"
-                    aria-label={mobileExpanded === 'courses' ? 'Collapse course categories' : 'Expand course categories'}
-                    aria-expanded={mobileExpanded === 'courses'}
-                  >
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileExpanded === 'courses' && 'rotate-180')} />
-                  </button>
-                </div>
-                {mobileExpanded === 'courses' && (
-                  <div className="ml-4 mt-1 space-y-1 border-l-2 border-brand-100 pl-4">
-                    {categories.slice(0, 8).map(cat => {
-                      const Icon = categoryIcons[cat.slug] || BookOpen;
-                      return (
-                        <Link
-                          key={cat.id}
-                          to={`/categories/${cat.slug}`}
-                          onClick={() => setMobileOpen(false)}
-                          className="flex items-center gap-2 p-2.5 rounded-lg text-sm text-surface-700 hover:text-brand-600 hover:bg-brand-50"
-                        >
-                          <Icon className="w-4 h-4" />
-                          {cat.title}
-                        </Link>
-                      );
-                    })}
-                    <Link to="/courses" onClick={() => setMobileOpen(false)} className="block p-2.5 text-sm font-semibold text-brand-600">
-                      View All Courses →
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {[
-                { label: 'Master Programs', href: '/master-programs' },
-                { label: 'Online Training', href: '/online-training' },
-                { label: 'Classroom Training', href: '/classroom-training' },
-                { label: 'Certifications', href: '/certifications' },
-                { label: 'Batch Schedule', href: '/batch-schedule' },
-                { label: 'Free Demo Class', href: '/demo-class' },
-                { label: 'Skill Assessment', href: '/skill-assessment' },
-                { label: 'Career & Placement', href: '/career' },
-                { label: 'Placement Records', href: '/placement-records' },
-                { label: 'Interview Prep', href: '/career/interview-preparation' },
-                { label: 'Mock Interview', href: '/career/mock-interview' },
-                { label: 'Internships', href: '/internships' },
-                { label: 'Live Projects', href: '/live-projects' },
-                { label: 'Events & Webinars', href: '/events' },
-                { label: 'Scholarships', href: '/scholarships' },
-                { label: 'Refer & Earn', href: '/refer-earn' },
-                { label: 'Corporate Training', href: '/corporate-training' },
-                { label: 'Expert Trainers', href: '/trainers' },
-                { label: 'Blog', href: '/blog' },
-                { label: 'About Us', href: '/about' },
-                { label: 'Contact', href: '/contact' },
-                { label: 'Locations', href: '/locations' },
-              ].map(link => (
+          <button
+            type="button"
+            className="fixed inset-x-0 bottom-0 top-16 z-40 bg-surface-950/40 xl:hidden"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close navigation menu"
+          />
+          <div
+            id="public-mobile-menu"
+            ref={mobileMenuRef}
+            className="reactbits-mobile-menu fixed bottom-0 right-0 top-16 z-50 w-full max-w-md overflow-y-auto bg-white shadow-card-lg xl:hidden"
+            onKeyDown={event => {
+              if (event.key === 'Escape') {
+                event.preventDefault();
+                setMobileOpen(false);
+                menuButtonRef.current?.focus();
+                return;
+              }
+              if (event.key !== 'Tab' || !mobileMenuRef.current) return;
+              const focusable = Array.from(mobileMenuRef.current.querySelectorAll<HTMLElement>(
+                'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled])',
+              ));
+              const first = focusable[0];
+              const last = focusable[focusable.length - 1];
+              if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last?.focus();
+              } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first?.focus();
+              }
+            }}
+          >
+            <div className="container-xl space-y-1 py-4">
+              <Link
+                to="/courses"
+                onClick={() => setMobileOpen(false)}
+                className="mb-4 flex items-center gap-3 rounded-xl bg-surface-50 p-3 text-surface-600"
+              >
+                <Search className="h-5 w-5" />
+                <span className="text-sm">Search courses...</span>
+              </Link>
+              <nav aria-label="Mobile navigation" className="space-y-1">
                 <Link
-                  key={link.href}
-                  to={link.href}
+                  to="/"
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'block p-3 rounded-xl font-medium hover:bg-surface-50 hover:text-brand-600',
-                    isRouteActive(link.href) ? 'text-brand-700 bg-brand-50' : 'text-surface-900',
+                    'flex items-center gap-2 rounded-xl p-3 font-semibold hover:bg-surface-50',
+                    location.pathname === '/' ? 'bg-brand-50 text-brand-700' : 'text-surface-900',
                   )}
-                  aria-current={isRouteActive(link.href) ? 'page' : undefined}
+                  aria-current={location.pathname === '/' ? 'page' : undefined}
                 >
-                  {link.label}
+                  <Home className="h-5 w-5" />
+                  Home
                 </Link>
-              ))}
-            </nav>
-
-            {/* Mobile CTA */}
-            <div className="mt-6 space-y-3 pt-4 border-t border-surface-100">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-3 p-3 rounded-xl bg-surface-50 text-surface-700"
-              >
-                <Phone className="w-5 h-5 text-brand-500" />
-                <span className="font-medium">{siteConfig.phone}</span>
-              </a>
-              <Link to="/login" className="block">
-                <Button variant="secondary" size="lg" fullWidth leftIcon={<User className="w-4 h-4" />}>
-                  Login
-                </Button>
-              </Link>
-              <Link to="/register" className="block">
-                <Button size="lg" fullWidth>
-                  Enroll Now — Free Counseling
-                </Button>
-              </Link>
+                {primaryItems.map(renderMobileItem)}
+                {moreItems.length > 0 && (
+                  <section className="pt-3">
+                    <h2 className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-surface-500">More</h2>
+                    {moreItems.map(renderMobileItem)}
+                  </section>
+                )}
+              </nav>
+              <div className="mt-6 space-y-3 border-t border-surface-100 pt-4">
+                <Link to="/login" onClick={() => setMobileOpen(false)} className="block">
+                  <Button variant="secondary" size="lg" fullWidth leftIcon={<User className="h-4 w-4" />}>Login</Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
         </>
       )}
     </header>

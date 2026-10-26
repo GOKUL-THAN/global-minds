@@ -1,26 +1,26 @@
-import { useState } from 'react';
-import { CheckCircle, Calendar, Clock, Users, Star, Monitor, Play } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { CheckCircle, Calendar, Clock, Users, Monitor, Play, Loader2 } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { enquiryService } from '../services/enquiryService';
 
 const popularDemoCourses = [
-  { id: 'aws', title: 'AWS Training', duration: '1.5 Hrs', category: 'Cloud', icon: '☁️', rating: 4.9, students: 2400 },
-  { id: 'fullstack', title: 'Full Stack (MERN)', duration: '1.5 Hrs', category: 'Development', icon: '💻', rating: 4.8, students: 3100 },
-  { id: 'devops', title: 'DevOps Training', duration: '1.5 Hrs', category: 'DevOps', icon: '🔧', rating: 4.9, students: 1800 },
-  { id: 'datascience', title: 'Data Science & AI', duration: '1.5 Hrs', category: 'AI / ML', icon: '🧠', rating: 4.8, students: 2700 },
-  { id: 'testing', title: 'Software Testing', duration: '1.5 Hrs', category: 'QA', icon: '🛡️', rating: 4.7, students: 2200 },
-  { id: 'python', title: 'Python Programming', duration: '1 Hr', category: 'Programming', icon: '🐍', rating: 4.9, students: 3500 },
-  { id: 'azure', title: 'Microsoft Azure', duration: '1.5 Hrs', category: 'Cloud', icon: '🔵', rating: 4.8, students: 1600 },
-  { id: 'genai', title: 'Generative AI', duration: '1 Hr', category: 'AI / ML', icon: '✨', rating: 4.9, students: 1900 },
+  { id: 'aws', title: 'AWS / Cloud', duration: '1.5 Hrs', category: 'AWS / Cloud', icon: '☁️' },
+  { id: 'datascience', title: 'Data Science', duration: '1.5 Hrs', category: 'Data Science', icon: '📊' },
+  { id: 'machine-learning', title: 'Machine Learning', duration: '1.5 Hrs', category: 'Machine Learning', icon: '🧠' },
+  { id: 'fullstack', title: 'Full Stack Development', duration: '1.5 Hrs', category: 'Full Stack Development', icon: '💻' },
+  { id: 'cyber-security', title: 'Cyber Security', duration: '1.5 Hrs', category: 'Cyber Security', icon: '🛡️' },
+  { id: 'testing', title: 'Software Testing', duration: '1.5 Hrs', category: 'Software Testing', icon: '🧪' },
+  { id: 'automation-testing', title: 'Automation Testing', duration: '1.5 Hrs', category: 'Automation Testing', icon: '⚙️' },
 ];
 
 const upcomingDemos = [
-  { course: 'AWS Training', trainer: 'Rajesh Kumar', date: 'Oct 10, 2026', time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
-  { course: 'Full Stack Development', trainer: 'Priya Nair', date: 'Oct 11, 2026', time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 7 },
-  { course: 'Data Science & AI', trainer: 'Anitha Reddy', date: 'Oct 12, 2026', time: '7:00 PM IST', mode: 'Online (Zoom)', seats: 10 },
-  { course: 'DevOps with Kubernetes', trainer: 'Suresh Anand', date: 'Oct 13, 2026', time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 3 },
-  { course: 'Python Programming', trainer: 'Arjun Singh', date: 'Oct 14, 2026', time: '6:00 PM IST', mode: 'Online (Zoom)', seats: 12 },
+  { course: 'AWS / Cloud', trainer: 'Rajesh Kumar', date: 'Oct 10, 2026', dateValue: '2026-10-10', time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
+  { course: 'Full Stack Development', trainer: 'Priya Nair', date: 'Oct 11, 2026', dateValue: '2026-10-11', time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 7 },
+  { course: 'Data Science', trainer: 'Anitha Reddy', date: 'Oct 12, 2026', dateValue: '2026-10-12', time: '7:00 PM IST', mode: 'Online (Zoom)', seats: 10 },
+  { course: 'Machine Learning', trainer: 'Suresh Anand', date: 'Oct 13, 2026', dateValue: '2026-10-13', time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 3 },
+  { course: 'Cyber Security', trainer: 'Arjun Singh', date: 'Oct 14, 2026', dateValue: '2026-10-14', time: '6:00 PM IST', mode: 'Online (Zoom)', seats: 12 },
 ];
 
 const benefits = [
@@ -50,6 +50,9 @@ export default function DemoClassPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState('');
+  const bookingFormRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState<FormData>({
     name: '', email: '', phone: '', course: '', preferredDate: '', preferredTime: '', mode: 'Online', message: '',
   });
@@ -58,9 +61,50 @@ export default function DemoClassPage() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmissionError('');
+    setSubmitting(true);
+    try {
+      const result = await enquiryService.submitEnquiry({
+        fullName: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        country: 'India',
+        city: form.mode === 'Classroom' ? 'Chennai' : '',
+        course: form.course,
+        mode: form.mode,
+        message: [
+          'Free demo registration',
+          form.preferredDate && `Preferred date: ${form.preferredDate}`,
+          form.preferredTime && `Preferred time: ${form.preferredTime}`,
+          form.message,
+        ].filter(Boolean).join('\n'),
+        consent: true,
+      });
+      if (!result.success) {
+        setSubmissionError(result.message);
+        return;
+      }
+      setSubmitted(true);
+    } catch (cause) {
+      setSubmissionError(cause instanceof Error ? cause.message : 'Unable to register for the demo. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const registerForDemo = (demo: typeof upcomingDemos[number]) => {
+    setSubmitted(false);
+    setSubmissionError('');
+    setForm(current => ({
+      ...current,
+      course: demo.course,
+      preferredDate: demo.dateValue,
+      mode: demo.mode.startsWith('Classroom') ? 'Classroom' : 'Online',
+      message: `Scheduled demo with ${demo.trainer} at ${demo.time} (${demo.mode}).`,
+    }));
+    bookingFormRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   return (
@@ -93,7 +137,7 @@ export default function DemoClassPage() {
             </div>
 
             {/* Booking Form */}
-            <div className="bg-white rounded-3xl p-8 text-surface-900 shadow-2xl">
+            <div ref={bookingFormRef} className="bg-white rounded-3xl p-8 text-surface-900 shadow-2xl">
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -104,7 +148,7 @@ export default function DemoClassPage() {
                     Thanks, <strong>{form.name}</strong>! Your free demo class for <strong>{form.course || 'the selected course'}</strong> has been scheduled.
                   </p>
                   <p className="text-surface-500 text-sm">
-                    You'll receive a confirmation email at <strong>{form.email}</strong> with the Zoom link and details.
+                    Our team will contact you at <strong>{form.email}</strong> to confirm your demo details.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -168,7 +212,6 @@ export default function DemoClassPage() {
                         {popularDemoCourses.map(c => (
                           <option key={c.id} value={c.title}>{c.title}</option>
                         ))}
-                        <option value="Other">Other Course</option>
                       </select>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -211,13 +254,18 @@ export default function DemoClassPage() {
                               onChange={handleChange}
                               className="accent-brand-600"
                             />
-                            <span className="text-sm text-surface-700">{m}</span>
+                            <span className="text-sm text-surface-700">{m === 'Classroom' ? 'Classroom (Chennai)' : m}</span>
                           </label>
                         ))}
                       </div>
                     </div>
-                    <Button type="submit" fullWidth size="lg">
-                      Book Free Demo Now
+                    {submissionError && (
+                      <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                        {submissionError}
+                      </p>
+                    )}
+                    <Button type="submit" fullWidth size="lg" disabled={submitting}>
+                      {submitting ? <><Loader2 className="h-4 w-4 animate-spin" /> Registering...</> : 'Book Free Demo Now'}
                     </Button>
                     <p className="text-xs text-surface-400 text-center">
                       By submitting you agree to our Privacy Policy. We won't spam you.
@@ -262,7 +310,7 @@ export default function DemoClassPage() {
                     </span>
                   </div>
                 </div>
-                <Button variant="secondary" size="sm" fullWidth onClick={() => setSubmitted(false)}>
+                <Button variant="secondary" size="sm" fullWidth onClick={() => registerForDemo(d)}>
                   Register for this Demo
                 </Button>
               </div>
@@ -284,14 +332,7 @@ export default function DemoClassPage() {
                 <div className="text-3xl mb-3">{c.icon}</div>
                 <h3 className="font-semibold text-surface-900 group-hover:text-brand-700 mb-1">{c.title}</h3>
                 <p className="text-xs text-surface-500 mb-3">{c.category} · {c.duration} demo</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-xs text-surface-500">
-                    <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                    <span>{c.rating}</span>
-                    <span>({c.students.toLocaleString()} enrolled)</span>
-                  </div>
-                  <span className="text-xs font-semibold text-brand-600">Free</span>
-                </div>
+                <span className="text-xs font-semibold text-brand-600">Free demo</span>
               </div>
             ))}
           </div>
@@ -308,7 +349,7 @@ export default function DemoClassPage() {
               { q: 'How long is a demo class?', a: 'Demo sessions are typically 60–90 minutes. You\'ll get a solid overview of the course and can ask questions directly to the trainer.' },
               { q: 'Can I attend multiple demo sessions?', a: 'Absolutely! We encourage you to attend demos for different courses if you\'re exploring options.' },
               { q: 'What is covered in the demo?', a: 'The trainer covers course overview, curriculum highlights, career scope, real-world use cases, and answers all your queries.' },
-              { q: 'Is it online or offline?', a: 'We offer both. Online demos happen via Zoom/Google Meet. Offline demos are available at our training centers.' },
+              { q: 'Is it online or offline?', a: 'We offer both. Online demos happen via Zoom/Google Meet. Offline demos are available at our Chennai centre.' },
             ].map(faq => (
               <div key={faq.q} className="bg-white rounded-2xl p-5 border border-surface-100">
                 <h3 className="font-semibold text-surface-900 mb-2">{faq.q}</h3>

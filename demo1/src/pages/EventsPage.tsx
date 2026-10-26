@@ -4,7 +4,8 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
-import { siteConfig } from '../data/siteConfig';
+import { useCmsCollection } from '../hooks/useCmsCollection';
+import { useSiteConfig } from '../contexts/SiteConfigContext';
 
 type EventType = 'All' | 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
 
@@ -26,7 +27,7 @@ interface Event {
   badge?: string;
 }
 
-const events: Event[] = [
+export const defaultEvents: Event[] = [
   {
     id: 'e1',
     title: 'Cloud Architecture Masterclass: Designing Scalable AWS Solutions',
@@ -60,22 +61,6 @@ const events: Event[] = [
     description: 'Build a complete CI/CD pipeline using GitHub Actions, Docker, and Kubernetes. Hands-on lab with guided exercises.',
     topics: ['GitHub Actions', 'Docker containerisation', 'Kubernetes deployment', 'Monitoring with Grafana'],
     badge: 'Last 12 Seats',
-  },
-  {
-    id: 'e3',
-    title: 'AI & Generative AI Career Opportunities in 2026',
-    type: 'Seminar',
-    date: '2026-10-21',
-    time: '6:00 PM – 8:00 PM IST',
-    duration: '2 Hours',
-    speaker: 'Deepa Krishnan',
-    speakerRole: 'AI Research Engineer, Microsoft',
-    mode: 'Online',
-    seats: 300,
-    seatsLeft: 180,
-    fee: 'Free',
-    description: 'Explore career paths in AI, the skills hiring managers are looking for in 2026, and how to break into the field.',
-    topics: ['GenAI landscape', 'Roles in AI industry', 'Skills demand in 2026', 'Career roadmap'],
   },
   {
     id: 'e4',
@@ -163,7 +148,6 @@ const events: Event[] = [
 
 const pastEvents = [
   { title: 'Kubernetes Deep Dive Workshop', date: 'Sep 2026', attendees: 87, rating: 4.9 },
-  { title: 'Introduction to GenAI Webinar', date: 'Aug 2026', attendees: 412, rating: 4.8 },
   { title: 'Full Stack Hackathon Summer 2026', date: 'Jul 2026', attendees: 96, rating: 4.9 },
   { title: 'Power BI Masterclass', date: 'Jul 2026', attendees: 143, rating: 4.7 },
   { title: 'Career Fair – IT Placements 2026', date: 'Jun 2026', attendees: 320, rating: 4.8 },
@@ -187,6 +171,9 @@ function feeBadge(fee: string) {
 interface RegisterForm { name: string; email: string; phone: string }
 
 export default function EventsPage() {
+  const siteConfig = useSiteConfig();
+  const events = useCmsCollection<Event>('events', defaultEvents);
+
   usePageMeta({
     title: 'Events, Webinars & Workshops',
     description: 'Attend free and paid webinars, workshops, hackathons and seminars at Global Minds Academy. Build skills, network with experts and accelerate your career.',

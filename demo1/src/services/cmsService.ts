@@ -24,7 +24,7 @@ export interface CmsRecord<T = Record<string, unknown>> {
 
 export type PublicCmsRecord<T = Record<string, unknown>> =
   | { id: string; section: CmsSection; slug: string; status: 'published'; content: T; updatedAt: string; publishedAt: string | null }
-  | { id: string; section: CmsSection; slug: string; status: 'archived'; updatedAt: string; publishedAt: string | null };
+  | { id: string; section: CmsSection; slug: string; status: 'archived' | 'unpublished'; updatedAt: string; publishedAt: string | null };
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(path, {
@@ -43,6 +43,15 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+async function requestPublic<T>(path: string): Promise<T> {
+  const response = await fetch(path, { credentials: 'same-origin' });
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({})) as { message?: string };
+    throw new Error(result.message ?? `CMS request failed (${response.status}).`);
+  }
+  return response.json() as Promise<T>;
+}
+
 const adminPath = (section: CmsSection, slug?: string) =>
   `/api/admin/content/${encodeURIComponent(section)}${slug ? `/${encodeURIComponent(slug)}` : ''}`;
 
@@ -52,7 +61,10 @@ export const cmsService = {
     return result.records;
   },
   async getPublic(section: CmsSection): Promise<PublicCmsRecord[]> {
-    const result = await request<{ records: PublicCmsRecord[] }>(`/api/content/${encodeURIComponent(section)}`);
+    const result = await requestPublic<{ records: PublicCmsRecord[] }>(
+      `/api/content/${encodeURIComponent(section)}`,
+    );
+    if (!Array.isArray(result.records)) throw new Error('CMS returned an invalid public record list.');
     return result.records;
   },
   async create(section: CmsSection, slug: string, content: Record<string, unknown>): Promise<CmsRecord> {

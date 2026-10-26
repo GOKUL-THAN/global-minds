@@ -7,7 +7,7 @@ import {
   Play, Target, GraduationCap, Menu, X, Settings, Search,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 
 // Demo student data — replace with real API data when backend is connected
 const mockStudent = {
@@ -29,7 +29,7 @@ const mockStudent = {
 const demoCourses = [
   {
     id: 'ec1',
-    title: 'AWS Training',
+    title: 'AWS / Cloud',
     progress: 35,
     nextLesson: 'IAM & Security',
     totalLessons: 48,
@@ -55,9 +55,9 @@ const demoCourses = [
 
 // Demo schedule
 const demoSchedule = [
-  { id: 's1', course: 'AWS Training', topic: 'EC2 Instances & Auto Scaling', date: 'Tomorrow', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming' },
+  { id: 's1', course: 'AWS / Cloud', topic: 'EC2 Instances & Auto Scaling', date: 'Tomorrow', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming' },
   { id: 's2', course: 'Python Training', topic: 'OOP — Classes & Inheritance', date: 'Monday', time: '7:00 PM – 9:00 PM', mode: 'Online', status: 'upcoming' },
-  { id: 's3', course: 'AWS Training', topic: 'S3 Storage Services', date: 'Wednesday', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming' },
+  { id: 's3', course: 'AWS / Cloud', topic: 'S3 Storage Services', date: 'Wednesday', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming' },
   { id: 's4', course: 'Python Training', topic: 'File Handling', date: 'Thursday', time: '7:00 PM – 9:00 PM', mode: 'Online', status: 'upcoming' },
 ];
 
@@ -310,6 +310,7 @@ function ProfileSection() {
 }
 
 function SupportSection() {
+  const siteConfig = useSiteConfig();
   return (
     <div className="space-y-5">
       <h2 className="font-display font-bold text-xl text-surface-900">Support</h2>

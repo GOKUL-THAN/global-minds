@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { X, Megaphone } from 'lucide-react';
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { cn } from '../../utils/cn';
 
 export function AnnouncementBar() {
+  const siteConfig = useSiteConfig();
   const [dismissed, setDismissed] = useState(false);
   const location = useLocation();
   const { announcementBar } = siteConfig;
 
-  if (!announcementBar.enabled || dismissed) return null;
+  if (!announcementBar.enabled || dismissed || location.pathname === '/') return null;
 
   return (
     <div className={cn(

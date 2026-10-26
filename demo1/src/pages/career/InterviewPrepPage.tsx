@@ -11,8 +11,8 @@ const topics = [
     category: 'Technical Fundamentals',
     icon: Code2,
     color: 'bg-brand-50 text-brand-600',
-    href: '/courses?category=programming',
-    details: 'Review core data structures, algorithm complexity, object-oriented design, SQL queries and networking concepts commonly assessed in technical screens.',
+    href: '/master-programs/freshers-master-program',
+    details: 'Global Minds Academy Freshers Master Program builds core technical fundamentals through data structures, algorithms, object-oriented programming, SQL, and networking essentials—designed for freshers preparing for real IT roles and technical interviews.',
     items: ['Data Structures & Algorithms', 'System Design basics', 'Object-Oriented Programming', 'SQL & databases', 'Computer Networks basics'],
   },
   {

@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Monitor, ArrowRight, CheckCircle } from 'lucide-react';
 import { locations } from '../../data/locations';
+import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { usePageMeta } from '../../hooks/usePageMeta';
@@ -10,13 +11,14 @@ import { useCmsCollection } from '../../hooks/useCmsCollection';
 
 export default function LocationDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const visibleLocations = useCmsCollection('locations', locations);
+  const visibleLocations = useCmsCollection('locations', locations)
+    .filter(item => item.slug === 'chennai');
   const location = visibleLocations.find(item => item.slug === (slug || ''));
 
   usePageMeta({
     title: location ? `${location.city} Training Centre` : undefined,
     description: location
-      ? `Global Minds Academy ${location.city} training centre. IT training in ${location.city} — cloud, DevOps, AI, full stack, data science and more.`
+      ? `Global Minds Academy ${location.city} classroom training centre.`
       : undefined,
   });
 
@@ -124,16 +126,16 @@ export default function LocationDetailPage() {
           <div className="space-y-6">
             <div className="bg-white border border-surface-100 rounded-2xl p-6 shadow-card">
               <h3 className="font-semibold text-surface-900 mb-4">Courses Available Here</h3>
-              {location.courses.length > 0 ? (
+              {publicCourseCatalog.some(course => location.courses.includes(course.sourceSlug)) ? (
                 <ul className="space-y-2">
-                  {location.courses.map(courseSlug => (
-                    <li key={courseSlug}>
+                  {publicCourseCatalog.filter(course => location.courses.includes(course.sourceSlug)).map(course => (
+                    <li key={course.sourceSlug}>
                       <Link
-                        to={`/courses/${courseSlug}`}
+                        to={`/courses/${course.sourceSlug}`}
                         className="text-sm text-brand-600 hover:text-brand-700 flex items-center gap-1.5"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-brand-400 flex-shrink-0" />
-                        {courseSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                        {course.title}
                       </Link>
                     </li>
                   ))}
@@ -146,20 +148,6 @@ export default function LocationDetailPage() {
               </Link>
             </div>
 
-            <div className="bg-surface-50 rounded-2xl p-5">
-              <h3 className="font-semibold text-surface-900 mb-2">Other Locations</h3>
-              <div className="space-y-2">
-                {[
-                  { label: 'Chennai', href: '/locations/chennai' },
-                  { label: 'Bangalore', href: '/locations/bangalore' },
-                  { label: 'Hyderabad', href: '/locations/hyderabad' },
-                ].filter(l => !l.href.includes(slug || '')).map(l => (
-                  <Link key={l.href} to={l.href} className="block text-sm text-brand-600 hover:text-brand-700">
-                    → {l.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

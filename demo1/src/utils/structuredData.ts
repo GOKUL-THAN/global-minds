@@ -41,13 +41,6 @@ export function courseSchema(course: Course) {
     },
     url: `${siteConfig.siteUrl}/courses/${course.slug}`,
     image: course.thumbnail,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: course.rating,
-      reviewCount: course.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
     offers: {
       '@type': 'Offer',
       price: course.discountPrice,

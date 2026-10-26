@@ -47,6 +47,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
       ref={ref}
       disabled={disabled || loading}
       className={cn(
+        'gma-button',
         'inline-flex items-center justify-center font-semibold',
         'transition-colors duration-150 active:translate-y-px',
         'focus-visible:outline-2 focus-visible:outline-brand-500 focus-visible:outline-offset-2',

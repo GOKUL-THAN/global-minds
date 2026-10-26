@@ -1,32 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Search, SlidersHorizontal, X, Grid, List, BookOpen } from 'lucide-react';
 import { CourseCard } from '../../components/courses/CourseCard';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
-import { categories } from '../../data/categories';
+import { categories as staticCategories } from '../../data/categories';
 import { cn } from '../../utils/cn';
 import type { Course } from '../../types';
 import { usePageMeta } from '../../hooks/usePageMeta';
-import { useCmsCollection } from '../../hooks/useCmsCollection';
 import { useCourseCatalog } from '../../hooks/useCourseCatalog';
+import { useCmsCollection } from '../../hooks/useCmsCollection';
 
-const levels = ['Beginner', 'Intermediate', 'Advanced'];
 const modes = ['Online', 'Classroom', 'Both'];
 const sortOptions = [
-  { value: 'popular', label: 'Most Popular' },
-  { value: 'rating', label: 'Highest Rated' },
+  { value: 'title-asc', label: 'Title: A to Z' },
   { value: 'price-asc', label: 'Price: Low to High' },
   { value: 'price-desc', label: 'Price: High to Low' },
 ];
 
 const quickFilters = [
   { label: 'All Courses', category: '' },
-  { label: 'Cloud & AWS', category: 'cloud' },
-  { label: 'DevOps', category: 'devops' },
-  { label: 'Data Science', category: 'data-science' },
-  { label: 'AI & Machine Learning', category: 'ai-ml' },
-  { label: 'Testing & QA', category: 'testing' },
-  { label: 'Development', category: 'development' },
+  { label: 'AWS / Cloud', category: 'cloud-computing' },
+  { label: 'Data Science', category: 'data-science-analytics' },
+  { label: 'Machine Learning', category: 'machine-learning' },
+  { label: 'Full Stack Development', category: 'full-stack-development' },
+  { label: 'Cyber Security', category: 'cyber-security' },
+  { label: 'Software Testing', category: 'software-testing' },
+  { label: 'Automation Testing', category: 'automation-testing' },
 ];
 
 function normalizeSearchText(value: string): string {
@@ -40,10 +39,16 @@ function normalizeSearchText(value: string): string {
 
 export default function CoursesPage() {
   const { courses: visibleCourses, loading: coursesLoading, error: coursesError } = useCourseCatalog();
-  const visibleCategories = useCmsCollection('categories', categories);
+  const categories = useCmsCollection('categories', staticCategories);
+  const catalogCategories = useMemo(() => categories
+    .map(category => ({
+      ...category,
+      courseCount: visibleCourses.filter(course => course.category === category.slug).length,
+    }))
+    .filter(category => category.courseCount > 0), [visibleCourses]);
   usePageMeta({
-    title: 'All Courses — IT Training, Cloud, DevOps, AI & More',
-    description: `Browse ${visibleCourses.length} IT training courses in cloud computing, DevOps, AI, machine learning, full stack development, data science and more.`,
+    title: 'Courses',
+    description: 'Browse AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing courses.',
   });
   const [searchParams, setSearchParams] = useSearchParams();
   const [layout, setLayout] = useState<'grid' | 'list'>('grid');
@@ -52,10 +57,8 @@ export default function CoursesPage() {
 
   const searchQuery = searchParams.get('q') || '';
   const selectedCategory = searchParams.get('category') || '';
-  // Multi-select levels stored as comma-separated 'levels' param
-  const selectedLevels = (searchParams.get('levels') || '').split(',').filter(Boolean);
   const selectedMode = searchParams.get('mode') || '';
-  const sortBy = searchParams.get('sort') || 'popular';
+  const sortBy = sortOptions.find(option => option.value === searchParams.get('sort'))?.value ?? 'title-asc';
   const [localSearch, setLocalSearch] = useState(searchQuery);
 
   useEffect(() => {
@@ -69,7 +72,7 @@ export default function CoursesPage() {
     const queryTerms = normalizeSearchText(localSearch).split(' ').filter(Boolean);
     if (queryTerms.length > 0) {
       result = result.filter(course => {
-        const categoryTitle = visibleCategories.find(category => category.slug === course.category)?.title || '';
+        const categoryTitle = catalogCategories.find(category => category.slug === course.category)?.title || '';
         const searchableText = normalizeSearchText([
           course.slug,
           course.title,
@@ -78,8 +81,6 @@ export default function CoursesPage() {
           course.category,
           categoryTitle,
           course.subCategory,
-          course.instructor.name,
-          ...course.instructor.expertise,
           ...course.tags,
           ...course.skills,
           ...course.tools,
@@ -89,7 +90,6 @@ export default function CoursesPage() {
     }
 
     if (selectedCategory) result = result.filter(c => c.category === selectedCategory);
-    if (selectedLevels.length > 0) result = result.filter(c => selectedLevels.includes(c.level));
     if (selectedMode) {
       if (selectedMode === 'Online') result = result.filter(c => c.onlineAvailable);
       if (selectedMode === 'Classroom') result = result.filter(c => c.classroomAvailable);
@@ -97,14 +97,13 @@ export default function CoursesPage() {
     }
 
     switch (sortBy) {
-      case 'popular': result.sort((a, b) => b.learnerCount - a.learnerCount); break;
-      case 'rating': result.sort((a, b) => b.rating - a.rating); break;
       case 'price-asc': result.sort((a, b) => a.discountPrice - b.discountPrice); break;
       case 'price-desc': result.sort((a, b) => b.discountPrice - a.discountPrice); break;
+      default: result.sort((a, b) => a.title.localeCompare(b.title)); break;
     }
 
     setFiltered(result);
-  }, [localSearch, selectedCategory, selectedLevels.join(','), selectedMode, sortBy, visibleCategories, visibleCourses]);
+  }, [localSearch, selectedCategory, selectedMode, sortBy, catalogCategories, visibleCourses]);
 
   const setParam = (key: string, value: string) => {
     const next = new URLSearchParams(searchParams);
@@ -112,12 +111,6 @@ export default function CoursesPage() {
     setSearchParams(next);
   };
 
-  const toggleLevel = (level: string) => {
-    const next = selectedLevels.includes(level)
-      ? selectedLevels.filter(l => l !== level)
-      : [...selectedLevels, level];
-    setParam('levels', next.join(','));
-  };
 
   const clearAll = () => {
     setSearchParams(new URLSearchParams());
@@ -128,11 +121,11 @@ export default function CoursesPage() {
   const activeFilters: { label: string; clear: () => void }[] = [
     selectedCategory
       ? {
-          label: visibleCategories.find(c => c.slug === selectedCategory)?.title ?? selectedCategory,
+          label: catalogCategories.find(c => c.slug === selectedCategory)?.title ?? selectedCategory,
           clear: () => setParam('category', ''),
         }
       : null,
-    ...selectedLevels.map(l => ({ label: l, clear: () => toggleLevel(l) })),
+
     selectedMode ? { label: selectedMode, clear: () => setParam('mode', '') } : null,
   ].filter(Boolean) as { label: string; clear: () => void }[];
 
@@ -144,7 +137,7 @@ export default function CoursesPage() {
           <Breadcrumbs items={[{ label: 'Courses' }]} className="text-white/60 mb-4" />
           <h1 className="display-md text-white mb-3">Explore All Courses</h1>
           <p className="text-white/70 max-w-xl">
-            Discover {visibleCourses.length} industry-focused courses across cloud, AI, DevOps, full stack, testing and more.
+            Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
           </p>
         </div>
       </div>
@@ -327,7 +320,7 @@ export default function CoursesPage() {
                 <div>
                   <h3 className="text-sm font-semibold text-surface-700 mb-3">Category</h3>
                   <div className="space-y-1">
-                    {visibleCategories.map(cat => (
+                    {catalogCategories.map(cat => (
                       <label
                         key={cat.id}
                         className={cn(
@@ -345,9 +338,6 @@ export default function CoursesPage() {
                           className="w-4 h-4 text-brand-600 border-surface-300 focus:ring-brand-500"
                         />
                         <span className="text-sm flex-1">{cat.title}</span>
-                        <span className="text-xs text-surface-400 bg-surface-100 rounded-full px-1.5 py-0.5">
-                          {cat.courseCount}
-                        </span>
                       </label>
                     ))}
                     {selectedCategory && (
@@ -362,40 +352,6 @@ export default function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Level filter — multi-select checkboxes */}
-                <div>
-                  <h3 className="text-sm font-semibold text-surface-700 mb-3">Level</h3>
-                  <div className="space-y-1">
-                    {levels.map(level => (
-                      <label
-                        key={level}
-                        className={cn(
-                          'flex items-center gap-2.5 cursor-pointer px-3 py-2 rounded-lg transition-colors',
-                          selectedLevels.includes(level)
-                            ? 'bg-brand-50 text-brand-700'
-                            : 'hover:bg-surface-50 text-surface-600',
-                        )}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedLevels.includes(level)}
-                          onChange={() => toggleLevel(level)}
-                          className="w-4 h-4 text-brand-600 border-surface-300 rounded focus:ring-brand-500"
-                        />
-                        <span className="text-sm">{level}</span>
-                      </label>
-                    ))}
-                    {selectedLevels.length > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => setParam('levels', '')}
-                        className="text-xs text-brand-600 hover:text-brand-700 mt-1 px-3"
-                      >
-                        Clear levels
-                      </button>
-                    )}
-                  </div>
-                </div>
 
                 {/* Mode filter — pill-row radio */}
                 <div>
@@ -473,14 +429,14 @@ export default function CoursesPage() {
               ) : layout === 'grid' ? (
                 /* ── Grid with fade-in animation on filter change ── */
                 <div
-                  key={`${filtered.length}-${selectedCategory}-${selectedLevels.join(',')}-${selectedMode}`}
+                  key={`${filtered.length}-${selectedCategory}-${selectedMode}`}
                   className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 transition-opacity duration-300 opacity-100"
                 >
                   {filtered.map(course => <CourseCard key={course.id} course={course} />)}
                 </div>
               ) : (
                 <div
-                  key={`list-${filtered.length}-${selectedCategory}-${selectedLevels.join(',')}-${selectedMode}`}
+                  key={`list-${filtered.length}-${selectedCategory}-${selectedMode}`}
                   className="space-y-4 transition-opacity duration-300 opacity-100"
                 >
                   {filtered.map(course => <CourseCard key={course.id} course={course} layout="list" />)}
@@ -530,7 +486,7 @@ export default function CoursesPage() {
               <div>
                 <h3 className="text-sm font-semibold text-surface-700 mb-3">Category</h3>
                 <div className="space-y-1">
-                  {visibleCategories.map(cat => (
+                  {catalogCategories.map(cat => (
                     <label
                       key={cat.id}
                       className={cn(
@@ -546,35 +502,11 @@ export default function CoursesPage() {
                         className="w-4 h-4 text-brand-600 border-surface-300 focus:ring-brand-500"
                       />
                       <span className="text-sm flex-1">{cat.title}</span>
-                      <span className="text-xs text-surface-400 bg-surface-100 rounded-full px-1.5 py-0.5">{cat.courseCount}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
-              {/* Level */}
-              <div>
-                <h3 className="text-sm font-semibold text-surface-700 mb-3">Level</h3>
-                <div className="space-y-1">
-                  {levels.map(level => (
-                    <label
-                      key={level}
-                      className={cn(
-                        'flex items-center gap-2.5 cursor-pointer px-3 py-2 rounded-lg transition-colors',
-                        selectedLevels.includes(level) ? 'bg-brand-50 text-brand-700' : 'hover:bg-surface-50 text-surface-600',
-                      )}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={selectedLevels.includes(level)}
-                        onChange={() => toggleLevel(level)}
-                        className="w-4 h-4 text-brand-600 border-surface-300 rounded focus:ring-brand-500"
-                      />
-                      <span className="text-sm">{level}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
 
               {/* Mode */}
               <div>

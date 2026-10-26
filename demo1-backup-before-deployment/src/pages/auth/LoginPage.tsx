@@ -1,0 +1,150 @@
+import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { Loader2, Eye, EyeOff } from 'lucide-react';
+import { authService } from '../../services/authService';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
+import { cn } from '../../utils/cn';
+
+const schema = z.object({
+  email: z.string().email('Valid email required'),
+  password: z.string().min(1, 'Password required'),
+});
+
+type FormData = z.infer<typeof schema>;
+
+export default function LoginPage() {
+  const siteConfig = useSiteConfig();
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const adminLogin = location.pathname === '/admin/login';
+
+  const { register, handleSubmit, getValues, formState: { errors, isSubmitting } } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const [notice, setNotice] = useState('');
+  const [isResending, setIsResending] = useState(false);
+
+  const onSubmit = async (data: FormData) => {
+    setError('');
+    setNotice('');
+    try {
+      const result = await authService.login(data);
+      if (result.success) {
+        if (!result.user) {
+          setError('Unable to verify your account.');
+          return;
+        }
+        if (result.user.role === 'STUDENT') {
+          navigate('/dashboard', { replace: true });
+          return;
+        }
+        if (!['ADMIN', 'SUPER_ADMIN', 'CONTENT_MANAGER', 'TRAINER'].includes(result.user.role)) {
+          setError('This account is not authorized to access the admin portal.');
+          return;
+        }
+        navigate('/admin', { replace: true });
+      } else {
+        setError(result.message);
+        if (result.code === 'EMAIL_VERIFICATION_REQUIRED') {
+          setNotice('Your email address must be verified before you can sign in.');
+        }
+      }
+    } catch {
+      setError('Unable to reach the sign-in server. Start the API server and try again.');
+    }
+  };
+
+  const resendVerification = async () => {
+    const email = getValues('email');
+    if (!email) {
+      setError('Enter your email address first.');
+      return;
+    }
+    setError('');
+    setIsResending(true);
+    try {
+      const result = await authService.resendVerification(email);
+      setNotice(result.message);
+      if (!result.success) setError(result.message);
+    } catch {
+      setError('We could not resend the verification link right now.');
+    } finally {
+      setIsResending(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-surface-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-card-xl">
+        <div className="text-center mb-8">
+          <Link to="/" className="inline-flex items-center gap-2 mb-4">
+            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
+          </Link>
+          <h1 className="font-display font-bold text-2xl">{adminLogin ? 'Admin sign in' : 'Sign in'}</h1>
+          <p className="text-surface-500 mt-1 text-sm">
+            {adminLogin ? 'Sign in with your Admin or Super Admin account.' : 'Sign in to your student or admin account.'}
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <div>
+            <label className="form-label" htmlFor="login-email">Email</label>
+            <input id="login-email" type="email" placeholder="your@email.com" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'login-email-error' : undefined} className={cn('form-input', errors.email && 'border-red-400')} {...register('email')} />
+            {errors.email && <p id="login-email-error" className="form-error">{errors.email.message}</p>}
+          </div>
+
+          <div>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="form-label mb-0" htmlFor="login-password">Password</label>
+              <Link to="/forgot-password" className="text-xs text-brand-600 hover:text-brand-700">Forgot password?</Link>
+            </div>
+            <div className="relative">
+              <input
+                id="login-password"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Your password"
+                autoComplete="current-password"
+                aria-invalid={!!errors.password}
+                aria-describedby={errors.password ? 'login-password-error' : undefined}
+                className={cn('form-input pr-10', errors.password && 'border-red-400')}
+                {...register('password')}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(p => !p)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600"
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                aria-pressed={showPassword}
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
+            </div>
+            {errors.password && <p id="login-password-error" className="form-error">{errors.password.message}</p>}
+          </div>
+
+          {error && <p role="alert" className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{error}</p>}
+          {notice && <p role="status" className="text-sm text-blue-800 bg-blue-50 border border-blue-200 rounded-xl px-4 py-3">{notice}</p>}
+          {notice && (
+            <button type="button" disabled={isResending} onClick={() => void resendVerification()} className="text-sm text-brand-600 hover:text-brand-700 disabled:opacity-50">
+              {isResending ? 'Sending verification link...' : 'Resend verification email'}
+            </button>
+          )}
+
+          <button type="submit" disabled={isSubmitting} className="btn-primary btn w-full">
+            {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Signing in...</> : 'Sign In'}
+          </button>
+        </form>
+
+        {!adminLogin && (
+          <p className="text-center text-sm text-surface-500 mt-6">
+            New to Global Minds Academy? <Link to="/register" className="text-brand-600 hover:text-brand-700 font-semibold">Create an account</Link>
+          </p>
+        )}
+        <p className="text-center text-xs mt-4"><Link to="/" className="text-surface-500 hover:text-brand-600">Back to website</Link></p>
+      </div>
+    </div>
+  );
+}

@@ -4,7 +4,7 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
-import { siteConfig } from '../data/siteConfig';
+import { useSiteConfig } from '../contexts/SiteConfigContext';
 
 // ── How it works steps ─────────────────────────────────────
 const howItWorks = [
@@ -114,6 +114,7 @@ const faqs = [
 interface ReferForm { name: string; friendName: string; friendEmail: string; friendPhone: string; course: string }
 
 export default function ReferEarnPage() {
+  const siteConfig = useSiteConfig();
   usePageMeta({
     title: 'Refer & Earn',
     description: 'Refer a friend to Global Minds Academy and earn up to ₹7,000 per referral. Your friend gets a discount too. Join the Refer & Earn programme today.',
@@ -224,8 +225,8 @@ export default function ReferEarnPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: '👥', value: '4,800+', label: 'Successful Referrals' },
-                { icon: '💰', value: '₹1.4 Cr+', label: 'Rewards Paid Out' },
+                { icon: '👥', value: '150+', label: 'Successful Referrals' },
+                { icon: '💰', value: '₹1.5 Lakh', label: 'Rewards Paid Out' },
                 { icon: '🎁', value: '₹3,000', label: 'Min. Reward Per Referral' },
                 { icon: '⚡', value: '7 Days', label: 'Reward Payout Time' },
               ].map(s => (
@@ -425,7 +426,7 @@ export default function ReferEarnPage() {
                         className="w-full border border-surface-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-300 bg-white"
                       >
                         <option value="">Any course</option>
-                        {['AWS Training', 'DevOps Training', 'Full Stack Development', 'Data Science & AI', 'Python Training', 'Software Testing', 'Cyber Security', 'Generative AI'].map(c => (
+                        {['AWS / Cloud', 'DevOps Training', 'Full Stack Development', 'Data Science & AI', 'Python Training', 'Software Testing', 'Cyber Security'].map(c => (
                           <option key={c}>{c}</option>
                         ))}
                       </select>

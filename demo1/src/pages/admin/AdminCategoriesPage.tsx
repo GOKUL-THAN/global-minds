@@ -1,7 +1,8 @@
-import { categories } from '../../data/categories';
+import { categories as staticCategories } from '../../data/categories';
 import { Cloud, GitBranch, Cpu, Layers, BarChart2, Shield, Code2, Database, PenTool, TrendingUp, Kanban, Wifi, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import { useCmsCollection } from '../../hooks/useCmsCollection';
 
 const iconMap: Record<string, React.ElementType> = {
   cloud: Cloud, 'git-branch': GitBranch, cpu: Cpu, layers: Layers,
@@ -11,6 +12,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function AdminCategoriesPage() {
+  const categories = useCmsCollection('categories', staticCategories);
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -21,7 +23,7 @@ export default function AdminCategoriesPage() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {categories.sort((a, b) => a.order - b.order).map(cat => {
+        {[...categories].sort((a, b) => a.order - b.order).map(cat => {
           const Icon = iconMap[cat.icon] || Code2;
           return (
             <div key={cat.id} className="bg-white rounded-2xl border border-surface-100 p-5 flex items-center gap-4">

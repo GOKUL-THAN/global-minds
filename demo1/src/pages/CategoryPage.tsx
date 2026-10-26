@@ -1,16 +1,18 @@
 import { useParams, Link } from 'react-router-dom';
-import { categories } from '../data/categories';
+import { categories as staticCategories } from '../data/categories';
 import { CourseCard } from '../components/courses/CourseCard';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import NotFoundPage from './NotFoundPage';
-import { useCmsCollection } from '../hooks/useCmsCollection';
 import { useCourseCatalog } from '../hooks/useCourseCatalog';
+import { useCmsCollection } from '../hooks/useCmsCollection';
 
 export default function CategoryPage() {
   const { slug } = useParams<{ slug: string }>();
-  const visibleCategories = useCmsCollection('categories', categories);
   const { courses: visibleCourses, loading: coursesLoading, error: coursesError } = useCourseCatalog();
-  const category = visibleCategories.find(item => item.slug === (slug || ''));
+  const categories = useCmsCollection('categories', staticCategories);
+  const category = categories.find(item =>
+    item.slug === (slug || ''),
+  );
   const catCourses = visibleCourses.filter(course => course.category === (slug || '') && course.status === 'active');
 
   if (!category) return <NotFoundPage />;

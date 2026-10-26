@@ -1,13 +1,12 @@
-import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
-import { AnnouncementBar } from './AnnouncementBar';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { ToastContainer } from '../ui/Toast';
 import { BackToTop } from '../ui/BackToTop';
+import { PageTransition } from './PageTransition';
+import { QuickContactAssistant } from './QuickContactAssistant';
 
 export function Layout() {
-  const location = useLocation();
-
   return (
     <>
       <ScrollRestoration />
@@ -19,18 +18,18 @@ export function Layout() {
         Skip to main content
       </a>
 
-      <div className="flex flex-col min-h-screen">
-        <AnnouncementBar />
+      <div className="public-site flex min-h-screen flex-col">
         <Navbar />
         <main className="flex-1" id="main-content" tabIndex={-1}>
-          <div key={location.pathname} className="page-enter">
+          <PageTransition>
             <Outlet />
-          </div>
+          </PageTransition>
         </main>
         <Footer />
       </div>
       <ToastContainer />
       <BackToTop />
+      <QuickContactAssistant />
     </>
   );
 }

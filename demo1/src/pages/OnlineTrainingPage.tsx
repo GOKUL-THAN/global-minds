@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { EnquiryForm } from '../components/ui/EnquiryForm';
 import { CTASection } from '../components/home/CTASection';
-import { siteConfig } from '../data/siteConfig';
+import { useSiteConfig } from '../contexts/SiteConfigContext';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const features = [
@@ -16,6 +16,7 @@ const features = [
 ];
 
 export default function OnlineTrainingPage() {
+  const siteConfig = useSiteConfig();
   usePageMeta({
     title: 'Online Training — Live Instructor-Led Classes',
     description: 'Learn from anywhere with live instructor-led online classes, recorded sessions, LMS access and doubt-clearing support.',

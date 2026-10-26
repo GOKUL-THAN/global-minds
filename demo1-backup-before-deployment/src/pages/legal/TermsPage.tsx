@@ -1,0 +1,40 @@
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+
+export default function TermsPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="bg-surface-50 border-b border-surface-100 py-10">
+        <div className="container-xl">
+          <Breadcrumbs items={[{ label: 'Terms of Service' }]} className="mb-3" />
+          <h1 className="heading-xl">Terms of Service</h1>
+          <p className="text-surface-500 text-sm mt-1">Last updated: [DATE — PLACEHOLDER]</p>
+        </div>
+      </div>
+      <div className="container-xl py-12 max-w-3xl">
+        <div className="prose text-surface-700 space-y-6">
+          <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-sm">
+            <strong>Note:</strong> Placeholder terms of service. Must be reviewed by a qualified legal professional before publication.
+          </div>
+
+          <h2 className="font-display font-bold text-xl">1. Acceptance of Terms</h2>
+          <p>By accessing or using Global Minds Academy's website and services, you agree to be bound by these Terms of Service. [PLACEHOLDER]</p>
+
+          <h2 className="font-display font-bold text-xl">2. Course Enrollment</h2>
+          <p>Course enrollment is subject to availability and payment of applicable fees. Details are confirmed upon registration. [PLACEHOLDER]</p>
+
+          <h2 className="font-display font-bold text-xl">3. Intellectual Property</h2>
+          <p>All course materials, videos, and content are the intellectual property of Global Minds Academy and may not be reproduced without permission. [PLACEHOLDER]</p>
+
+          <h2 className="font-display font-bold text-xl">4. User Conduct</h2>
+          <p>Users agree to use our platform for lawful purposes only and not to share course materials with unauthorised third parties. [PLACEHOLDER]</p>
+
+          <h2 className="font-display font-bold text-xl">5. Limitation of Liability</h2>
+          <p>Global Minds Academy is not liable for any indirect, incidental, or consequential damages arising from use of our services. [PLACEHOLDER]</p>
+
+          <h2 className="font-display font-bold text-xl">6. Contact</h2>
+          <p>For terms-related queries: [EMAIL — PLACEHOLDER]</p>
+        </div>
+      </div>
+    </div>
+  );
+}

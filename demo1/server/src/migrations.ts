@@ -8,6 +8,21 @@ interface Migration {
   up(database: DataDatabase): Promise<void>;
 }
 
+async function readServerSeedFile(fileName: string): Promise<string> {
+  const directory = dirname(fileURLToPath(import.meta.url));
+  for (const path of [
+    resolve(directory, '../data', fileName),
+    resolve(directory, '../../data', fileName),
+  ]) {
+    try {
+      return await readFile(path, 'utf8');
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+    }
+  }
+  throw new Error(`Database seed file is missing: ${fileName}`);
+}
+
 const migrations: Migration[] = [
   {
     id: '001_initial_schema',
@@ -572,8 +587,7 @@ const migrations: Migration[] = [
   {
     id: '005_database_course_catalog',
     async up(database) {
-      const seedPath = resolve(dirname(fileURLToPath(import.meta.url)), '../data/course-catalog.seed.json');
-      const seedText = await readFile(seedPath, 'utf8');
+      const seedText = await readServerSeedFile('course-catalog.seed.json');
       const seed: unknown = JSON.parse(seedText);
       if (!Array.isArray(seed)) throw new Error('Course catalog migration seed must be an array.');
 
@@ -675,8 +689,7 @@ const migrations: Migration[] = [
   {
     id: '006_backfill_catalog_course_details',
     async up(database) {
-      const seedPath = resolve(dirname(fileURLToPath(import.meta.url)), '../data/course-catalog.seed.json');
-      const seedText = await readFile(seedPath, 'utf8');
+      const seedText = await readServerSeedFile('course-catalog.seed.json');
       const seed: unknown = JSON.parse(seedText);
       if (!Array.isArray(seed)) throw new Error('Course catalog migration seed must be an array.');
 
@@ -728,6 +741,313 @@ const migrations: Migration[] = [
             publishedContent === null ? null : JSON.stringify(publishedContent),
             record.id,
           ],
+        );
+      }
+    },
+  },
+  {
+    id: '007_operational_modules',
+    async up(database) {
+      await database.execute(
+        'ALTER TABLE student_profiles ADD COLUMN archived_at TEXT',
+      );
+      await database.execute(
+        'ALTER TABLE student_profiles ADD COLUMN is_archived INTEGER NOT NULL DEFAULT 0',
+      );
+      await database.execute(`
+        CREATE TABLE batches (
+          id TEXT PRIMARY KEY,
+          name TEXT NOT NULL,
+          code TEXT NOT NULL UNIQUE,
+          description TEXT NOT NULL DEFAULT '',
+          start_date TEXT,
+          end_date TEXT,
+          schedule_json TEXT NOT NULL DEFAULT '{}',
+          status TEXT NOT NULL DEFAULT 'planned'
+            CHECK (status IN ('planned', 'active', 'completed', 'cancelled', 'archived')),
+          created_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          archived_at TEXT
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE batch_students (
+          batch_id TEXT NOT NULL REFERENCES batches(id) ON DELETE CASCADE,
+          student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+          assigned_at TEXT NOT NULL,
+          PRIMARY KEY (batch_id, student_id)
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE batch_trainers (
+          batch_id TEXT NOT NULL REFERENCES batches(id) ON DELETE CASCADE,
+          trainer_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+          assigned_at TEXT NOT NULL,
+          PRIMARY KEY (batch_id, trainer_id)
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE attendance (
+          id TEXT PRIMARY KEY,
+          batch_id TEXT NOT NULL REFERENCES batches(id) ON DELETE CASCADE,
+          student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+          attendance_date TEXT NOT NULL,
+          status TEXT NOT NULL CHECK (status IN ('present', 'absent', 'late', 'excused')),
+          notes TEXT NOT NULL DEFAULT '',
+          marked_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          UNIQUE (batch_id, student_id, attendance_date)
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE internships (
+          id TEXT PRIMARY KEY,
+          title TEXT NOT NULL,
+          company TEXT NOT NULL DEFAULT '',
+          description TEXT NOT NULL DEFAULT '',
+          status TEXT NOT NULL DEFAULT 'open'
+            CHECK (status IN ('draft', 'open', 'closed', 'archived')),
+          start_date TEXT,
+          end_date TEXT,
+          created_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          archived_at TEXT
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE internship_applications (
+          id TEXT PRIMARY KEY,
+          internship_id TEXT NOT NULL REFERENCES internships(id) ON DELETE CASCADE,
+          student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+          supervisor_id TEXT REFERENCES users(id) ON DELETE SET NULL,
+          status TEXT NOT NULL DEFAULT 'applied'
+            CHECK (status IN ('applied', 'reviewing', 'accepted', 'rejected', 'in_progress', 'completed')),
+          progress INTEGER NOT NULL DEFAULT 0 CHECK (progress BETWEEN 0 AND 100),
+          notes TEXT NOT NULL DEFAULT '',
+          applied_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          UNIQUE (internship_id, student_id)
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE certificates (
+          id TEXT PRIMARY KEY,
+          certificate_id TEXT NOT NULL UNIQUE,
+          student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+          course_name TEXT NOT NULL,
+          issued_at TEXT NOT NULL,
+          status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'revoked')),
+          revoked_at TEXT,
+          revoked_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_at TEXT NOT NULL
+        )
+      `);
+
+      for (const [name, description] of [
+        ['students.archive', 'Archive students'],
+        ['students.restore', 'Restore archived students'],
+        ['students.delete', 'Permanently delete students'],
+        ['batches.create', 'Create batches'],
+        ['batches.update', 'Update batches'],
+        ['batches.archive', 'Archive batches'],
+        ['batches.delete', 'Delete batches'],
+        ['batches.assign', 'Assign students and trainers to batches'],
+        ['internships.read', 'Read internships and applications'],
+        ['internships.create', 'Create internships'],
+        ['internships.update', 'Update internships and applications'],
+        ['internships.delete', 'Delete internships'],
+        ['applications.read', 'Read internship applications'],
+        ['applications.manage', 'Manage internship applications'],
+        ['certificates.create', 'Issue certificates'],
+        ['certificates.revoke', 'Revoke certificates'],
+        ['certificates.delete', 'Delete certificates'],
+      ] as const) {
+        await database.execute(
+          'INSERT INTO permissions (id, name, description) VALUES (?, ?, ?)',
+          [`permission_${name.replaceAll('.', '_')}`, name, description],
+        );
+      }
+
+      const grants: Record<string, string[]> = {
+        SUPER_ADMIN: [
+          'students.archive', 'students.restore', 'students.delete',
+          'batches.create', 'batches.update', 'batches.archive', 'batches.delete', 'batches.assign',
+          'internships.read', 'internships.create', 'internships.update', 'internships.delete',
+          'applications.read', 'applications.manage',
+          'certificates.create', 'certificates.revoke', 'certificates.delete',
+        ],
+        ADMIN: [
+          'students.archive', 'students.restore',
+          'batches.create', 'batches.update', 'batches.archive', 'batches.delete', 'batches.assign',
+          'internships.read', 'internships.create', 'internships.update', 'internships.delete',
+          'applications.read', 'applications.manage',
+          'certificates.create', 'certificates.revoke', 'certificates.delete',
+        ],
+        TRAINER: [
+          'internships.read', 'applications.read', 'applications.manage',
+        ],
+      };
+      for (const [role, permissions] of Object.entries(grants)) {
+        for (const permission of permissions) {
+          await database.execute(
+            `INSERT INTO role_permissions (role_id, permission_id)
+             VALUES (?, ?)`,
+            [`role_${role.toLowerCase()}`, `permission_${permission.replaceAll('.', '_')}`],
+          );
+        }
+      }
+
+      for (const [table, index] of [
+        ['batch_students', 'batch_students_student_idx'],
+        ['batch_trainers', 'batch_trainers_trainer_idx'],
+        ['attendance', 'attendance_batch_date_idx'],
+        ['internship_applications', 'internship_applications_student_idx'],
+        ['certificates', 'certificates_student_issued_idx'],
+      ] as const) {
+        const columns: Record<string, string> = {
+          batch_students: 'student_id',
+          batch_trainers: 'trainer_id',
+          attendance: 'batch_id, attendance_date',
+          internship_applications: 'student_id',
+          certificates: 'student_id, issued_at',
+        };
+        await database.execute(`CREATE INDEX ${index} ON ${table} (${columns[table]})`);
+      }
+    },
+  },
+  {
+    id: '008_student_portal',
+    async up(database) {
+      await database.execute(`
+        CREATE TABLE course_enrollments (
+          id TEXT PRIMARY KEY,
+          student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+          course_record_id TEXT NOT NULL REFERENCES cms_records(id) ON DELETE CASCADE,
+          status TEXT NOT NULL DEFAULT 'active'
+            CHECK (status IN ('active', 'completed', 'withdrawn')),
+          enrolled_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          assigned_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          UNIQUE (student_id, course_record_id)
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE student_announcements (
+          id TEXT PRIMARY KEY,
+          title TEXT NOT NULL,
+          body TEXT NOT NULL,
+          status TEXT NOT NULL DEFAULT 'draft'
+            CHECK (status IN ('draft', 'published', 'archived')),
+          created_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          published_at TEXT
+        )
+      `);
+      await database.execute('CREATE INDEX course_enrollments_student_idx ON course_enrollments (student_id, status, enrolled_at)');
+      await database.execute('CREATE INDEX student_announcements_status_idx ON student_announcements (status, published_at)');
+
+      for (const [name, description] of [
+        ['enrollments.manage', 'Manage student course enrollments'],
+        ['announcements.manage', 'Manage student announcements'],
+      ] as const) {
+        await database.execute(
+          'INSERT INTO permissions (id, name, description) VALUES (?, ?, ?)',
+          [`permission_${name.replaceAll('.', '_')}`, name, description],
+        );
+      }
+      for (const role of ['SUPER_ADMIN', 'ADMIN']) {
+        const permissions = role === 'ADMIN'
+          ? ['enrollments.manage', 'announcements.manage', 'audit_logs.read']
+          : ['enrollments.manage', 'announcements.manage'];
+        for (const permission of permissions) {
+          await database.execute(
+            'INSERT INTO role_permissions (role_id, permission_id) VALUES (?, ?)',
+            [`role_${role.toLowerCase()}`, `permission_${permission.replaceAll('.', '_')}`],
+          );
+        }
+      }
+    },
+  },
+  {
+    id: '009_student_profile_photo',
+    async up(database) {
+      await database.execute(
+        "ALTER TABLE student_profiles ADD COLUMN photo TEXT NOT NULL DEFAULT ''",
+      );
+    },
+  },
+  {
+    id: '010_seed_static_site_content',
+    async up(database) {
+      const seedText = await readServerSeedFile('site-content.seed.json');
+      const seed: unknown = JSON.parse(seedText);
+      if (!Array.isArray(seed)) throw new Error('Site content seed must be an array.');
+
+      const now = new Date().toISOString();
+      for (const value of seed) {
+        if (!value || typeof value !== 'object' || Array.isArray(value)) {
+          throw new Error('Site content seed contains an invalid record.');
+        }
+        const record = value as Record<string, unknown>;
+        const section = typeof record.section === 'string' ? record.section : '';
+        const slug = typeof record.slug === 'string' ? record.slug : '';
+        const content = record.content;
+        if (!/^[a-z0-9-]+$/.test(section)
+          || !/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(slug)
+          || !content || typeof content !== 'object' || Array.isArray(content)) {
+          throw new Error('Site content seed contains an invalid section, slug, or content object.');
+        }
+        const contentJson = JSON.stringify(content);
+        await database.execute(
+          `INSERT INTO cms_records (
+            id, section, slug, content_json, published_json, status, created_by, created_role,
+            updated_by, updated_role, created_at, updated_at, published_at
+          ) VALUES (?, ?, ?, ?, ?, 'published', 'system-content-seed', 'SUPER_ADMIN',
+            'system-content-seed', 'SUPER_ADMIN', ?, ?, ?)
+          ON CONFLICT (section, slug) DO NOTHING`,
+          [`site-seed-${section}-${slug}`, section, slug, contentJson, contentJson, now, now, now],
+        );
+      }
+    },
+  },
+  {
+    id: '011_payment_records',
+    async up(database) {
+      await database.execute(`
+        CREATE TABLE payment_records (
+          id TEXT PRIMARY KEY,
+          student_id TEXT NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
+          course_record_id TEXT REFERENCES cms_records(id) ON DELETE SET NULL,
+          provider TEXT NOT NULL CHECK (provider IN ('manual', 'razorpay', 'stripe', 'paypal')),
+          provider_order_id TEXT NOT NULL UNIQUE,
+          provider_payment_id TEXT UNIQUE,
+          amount_minor INTEGER NOT NULL CHECK (amount_minor > 0),
+          currency TEXT NOT NULL CHECK (currency = upper(currency) AND length(currency) = 3),
+          status TEXT NOT NULL CHECK (status IN ('pending', 'succeeded', 'failed', 'refunded')),
+          created_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        )
+      `);
+      await database.execute(
+        'CREATE INDEX payment_records_student_created_idx ON payment_records (student_id, created_at)',
+      );
+      await database.execute(
+        'CREATE INDEX payment_records_status_created_idx ON payment_records (status, created_at)',
+      );
+      await database.execute(
+        'INSERT INTO permissions (id, name, description) VALUES (?, ?, ?)',
+        ['permission_payments_manage', 'payments.manage', 'Record manual payments'],
+      );
+      for (const role of ['SUPER_ADMIN', 'ADMIN']) {
+        await database.execute(
+          'INSERT INTO role_permissions (role_id, permission_id) VALUES (?, ?)',
+          [`role_${role.toLowerCase()}`, 'permission_payments_manage'],
         );
       }
     },

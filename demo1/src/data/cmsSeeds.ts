@@ -1,3 +1,17 @@
+import { scholarships } from './scholarships';
+import { categories } from './categories';
+import { masterPrograms } from './masterPrograms';
+import { blogPosts } from './blogs';
+import { instructors } from './instructors';
+import { internships } from './internships';
+import { locations } from './locations';
+import { testimonials } from './testimonials';
+import { globalFAQs } from './faqs';
+import { allCourses } from './courses';
+
+const contentRecords = <T extends object>(items: readonly T[]): Record<string, unknown>[] =>
+  items.map(item => Object.fromEntries(Object.entries(item)));
+
 export const cmsSections = [
   { id: 'dashboard', label: 'Dashboard' },
   { id: 'courses', label: 'Courses' },
@@ -38,13 +52,13 @@ export type CmsSection = (typeof cmsSections)[number]['id'];
 
 export const cmsSeeds: Record<CmsSection, Record<string, unknown>[]> = {
   dashboard: [],
-  courses: [],
-  categories: [],
-  'master-programs': [],
+  courses: contentRecords(allCourses),
+  categories: contentRecords(categories),
+  'master-programs': contentRecords(masterPrograms),
   'website-menu': [],
   'live-projects': [],
   events: [],
-  scholarships: [],
+  scholarships: scholarships.map(scholarship => ({ ...scholarship })),
   'refer-earn': [],
   'corporate-training': [],
   about: [],
@@ -59,14 +73,14 @@ export const cmsSeeds: Record<CmsSection, Record<string, unknown>[]> = {
   'interview-preparation': [],
   'mock-interview': [],
   students: [],
-  instructors: [],
+  instructors: contentRecords(instructors),
   enquiries: [],
-  internships: [],
+  internships: contentRecords(internships),
   batches: [],
-  locations: [],
-  blog: [],
-  faqs: [],
-  testimonials: [],
+  locations: contentRecords(locations),
+  blog: contentRecords(blogPosts),
+  faqs: contentRecords(globalFAQs),
+  testimonials: contentRecords(testimonials),
   certificates: [],
   payments: [],
   settings: [],

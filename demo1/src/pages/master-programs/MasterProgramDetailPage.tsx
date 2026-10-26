@@ -1,13 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { masterPrograms } from '../../data/masterPrograms';
-import { Clock, Users, BookOpen, Award, CheckCircle, ArrowRight, ChevronDown } from 'lucide-react';
+import { Clock, BookOpen, Award, CheckCircle, ArrowRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { formatPrice } from '../../utils/formatters';
 import { FAQAccordion } from '../../components/ui/FAQAccordion';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { Button } from '../../components/ui/Button';
-import { StarRating } from '../../components/ui/StarRating';
 import { cn } from '../../utils/cn';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
 
@@ -49,20 +48,15 @@ export default function MasterProgramDetailPage() {
               <div className="flex flex-wrap gap-5 text-sm text-white/70">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{program.duration}</span>
                 <span className="flex items-center gap-1.5"><BookOpen className="w-4 h-4" />{program.modules.length} modules</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4" />{program.learnerCount.toLocaleString()} learners</span>
-              </div>
-              <div className="mt-4">
-                <StarRating rating={program.rating} showValue size="lg" reviewCount={program.reviewCount} />
               </div>
             </div>
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-card-lg">
+            <div className="relative aspect-[16/9] min-h-56 overflow-hidden rounded-2xl border border-white/10 bg-surface-100 shadow-card-lg lg:aspect-auto lg:min-h-[24rem]">
               <img
                 src={program.banner}
                 alt={`${program.title} learning program`}
-                className="h-56 w-full object-cover sm:h-64 lg:h-full lg:min-h-64"
+                className="absolute inset-0 h-full w-full object-cover"
                 loading="eager"
               />
-              <div className="master-program-image-overlay absolute inset-0" />
             </div>
           </div>
         </div>

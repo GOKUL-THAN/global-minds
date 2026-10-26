@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { GraduationCap, Loader2, CheckCircle } from 'lucide-react';
+import { Loader2, CheckCircle } from 'lucide-react';
 import { authService } from '../services/authService';
-import { siteConfig } from '../data/siteConfig';
+import { useSiteConfig } from '../contexts/SiteConfigContext';
 import { cn } from '../utils/cn';
 import { useCourseCatalog } from '../hooks/useCourseCatalog';
 
@@ -27,6 +27,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function RegisterPage() {
+  const siteConfig = useSiteConfig();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const { courses, loading: coursesLoading, error: coursesError } = useCourseCatalog();
@@ -66,9 +67,7 @@ export default function RegisterPage() {
       <div className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-card-xl">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-brand flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
+            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
           </Link>
           <h1 className="font-display font-bold text-2xl">Create Your Account</h1>
           <p className="text-surface-500 mt-1">Join Global Minds Academy and start your learning journey.</p>

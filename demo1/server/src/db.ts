@@ -280,6 +280,12 @@ export async function replaceIdentityRolePermissions(
 export async function listAuditLogs(input: {
   page: number;
   pageSize: number;
+  action?: string;
+  actorId?: string;
+  resourceType?: string;
+  resourceId?: string;
+  from?: string;
+  to?: string;
 }): Promise<{ entries: Array<{
   id: string;
   actor_user_id: string | null;
@@ -290,7 +296,37 @@ export async function listAuditLogs(input: {
   ip_address: string;
   created_at: string;
 }>; total: number }> {
-  const count = await queryOne<{ total: number }>('SELECT COUNT(*) AS total FROM audit_logs');
+  const filters: string[] = [];
+  const values: (string | number)[] = [];
+  if (input.action) {
+    filters.push('action = ?');
+    values.push(input.action);
+  }
+  if (input.actorId) {
+    filters.push('actor_user_id = ?');
+    values.push(input.actorId);
+  }
+  if (input.resourceType) {
+    filters.push('resource_type = ?');
+    values.push(input.resourceType);
+  }
+  if (input.resourceId) {
+    filters.push('resource_id = ?');
+    values.push(input.resourceId);
+  }
+  if (input.from) {
+    filters.push('created_at >= ?');
+    values.push(input.from);
+  }
+  if (input.to) {
+    filters.push('created_at <= ?');
+    values.push(input.to);
+  }
+  const where = filters.length ? `WHERE ${filters.join(' AND ')}` : '';
+  const count = await queryOne<{ total: number }>(
+    `SELECT COUNT(*) AS total FROM audit_logs ${where}`,
+    values,
+  );
   const entries = await queryAll<{
     id: string;
     actor_user_id: string | null;
@@ -302,10 +338,46 @@ export async function listAuditLogs(input: {
     created_at: string;
   }>(
     `SELECT id, actor_user_id, action, resource_type, resource_id, metadata_json,
-      ip_address, created_at FROM audit_logs ORDER BY created_at DESC LIMIT ? OFFSET ?`,
-    [input.pageSize, (input.page - 1) * input.pageSize],
+      ip_address, created_at FROM audit_logs ${where}
+     ORDER BY created_at DESC LIMIT ? OFFSET ?`,
+    [...values, input.pageSize, (input.page - 1) * input.pageSize],
   );
   return { entries, total: Number(count?.total ?? 0) };
+}
+
+export async function getOperationsStatus(): Promise<{
+  students: boolean;
+  attendance: boolean;
+  batches: boolean;
+  internships: boolean;
+  activity: boolean;
+  certificates: boolean;
+}> {
+  const database = getDataDatabase();
+  const tablesExist = async (tables: string[]): Promise<boolean> => {
+    try {
+      for (const table of tables) await database.query(`SELECT 1 FROM ${table} LIMIT 0`);
+      return true;
+    } catch (error) {
+      const databaseError = error as { code?: unknown; message?: unknown };
+      if (databaseError.code === '42P01' || (typeof databaseError.message === 'string' && /no such table:/i.test(databaseError.message))) {
+        return false;
+      }
+      throw error;
+    }
+  };
+  const [students, attendance, batches, internships, activity, certificates] = await Promise.all([
+    tablesExist(['users', 'student_profiles']).then(async exists => exists
+      && await database.hasColumn('student_profiles', 'is_archived')
+      && await database.hasColumn('student_profiles', 'archived_at')),
+    tablesExist(['attendance', 'batches', 'batch_students']),
+    tablesExist(['batches', 'batch_students', 'batch_trainers']).then(async exists => exists
+      && await database.hasColumn('batches', 'archived_at')),
+    tablesExist(['internships', 'internship_applications']),
+    tablesExist(['audit_logs']),
+    tablesExist(['certificates']),
+  ]);
+  return { students, attendance, batches, internships, activity, certificates };
 }
 
 export async function createIdentitySession(input: {
@@ -337,7 +409,7 @@ export async function getAuthenticatedSession(
 ): Promise<AuthenticatedSession | undefined> {
   const now = new Date().toISOString();
   const account = await queryOne<Omit<AuthenticatedSession, 'permissions'>>(
-    `SELECT s.id, s.user_id, u.email, u.first_name, u.last_name, u.phone,
+    `SELECT s.user_id AS id, s.user_id, u.email, u.first_name, u.last_name, u.phone,
       r.name AS role, u.is_active, u.email_verified, u.created_at, u.last_login_at,
       COALESCE(sp.country, '') AS country, COALESCE(sp.city, '') AS city,
       COALESCE(sp.education, '') AS education, COALESCE(sp.experience, '') AS experience
@@ -428,8 +500,9 @@ export async function updateManagedIdentity(input: {
       [input.targetId],
     );
     if (!current || input.actorId === input.targetId) return false;
-    if (current.role === 'SUPER_ADMIN' && input.actorRole !== 'SUPER_ADMIN') return false;
-    if (input.role === 'SUPER_ADMIN' && input.actorRole !== 'SUPER_ADMIN') return false;
+    if (input.actorRole !== 'SUPER_ADMIN'
+      && (['SUPER_ADMIN', 'ADMIN', 'CONTENT_MANAGER'].includes(current.role)
+        || (input.role && ['SUPER_ADMIN', 'ADMIN', 'CONTENT_MANAGER'].includes(input.role)))) return false;
     const now = new Date().toISOString();
     if (input.isActive !== undefined) {
       await getDataDatabase().execute(
@@ -1040,11 +1113,13 @@ export type PublicCmsRecord =
     status: 'published';
     content: Record<string, unknown>;
   })
-  | Pick<CmsRecord, 'id' | 'section' | 'slug' | 'updatedAt' | 'publishedAt' | 'status'>;
+  | (Pick<CmsRecord, 'id' | 'section' | 'slug' | 'updatedAt' | 'publishedAt'> & {
+    status: 'archived' | 'unpublished';
+  });
 
 export async function listPublishedCmsRecords(section: CmsSection): Promise<PublicCmsRecord[]> {
   const rows = await queryAll<CmsRow>(
-    `${cmsSelect} WHERE section = ? AND status IN ('published', 'archived') ORDER BY updated_at DESC`,
+    `${cmsSelect} WHERE section = ? ORDER BY updated_at DESC`,
     [section],
   );
   const records: PublicCmsRecord[] = [];
@@ -1059,13 +1134,13 @@ export async function listPublishedCmsRecords(section: CmsSection): Promise<Publ
         updatedAt: row.published_at ?? row.updated_at,
         publishedAt: row.published_at,
       });
-    } else if (row.status === 'archived' && row.published_json !== null) {
+    } else {
       records.push({
         id: row.id,
         section: row.section,
         slug: row.slug,
-        status: 'archived',
-        updatedAt: row.archived_at ?? row.updated_at,
+        status: row.status === 'archived' ? 'archived' : 'unpublished',
+        updatedAt: row.status === 'archived' ? row.archived_at ?? row.updated_at : row.updated_at,
         publishedAt: row.published_at,
       });
     }

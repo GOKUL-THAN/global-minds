@@ -1,5 +1,5 @@
 import { cmsService, type PublicCmsRecord } from './cmsService';
-import { allCourses } from '../data/courses';
+import { publicCourseCatalog } from '../data/publicCourseCatalog';
 import type { Course } from '../types';
 
 export interface CourseFilterOptions {
@@ -12,7 +12,7 @@ export interface CourseFilterOptions {
   classroom?: boolean;
   certification?: boolean;
   masterProgram?: boolean;
-  sortBy?: 'popular' | 'newest' | 'rating' | 'price-asc' | 'price-desc';
+  sortBy?: 'newest' | 'price-asc' | 'price-desc';
 }
 
 function stringValue(record: Record<string, unknown>, key: string, fallback = ''): string {
@@ -110,23 +110,13 @@ export function mapPublishedCourse(record: Extract<PublicCmsRecord, { status: 'p
 class CourseService {
   async getAllCourses(): Promise<Course[]> {
     const records = await cmsService.getPublic('courses');
-    const sourceCourses = new Map(allCourses.map(course => [course.slug, course]));
-    return records.flatMap(record => {
-      if (record.status !== 'published') return [];
+    const publishedRecords = new Map(records
+      .filter((record): record is Extract<PublicCmsRecord, { status: 'published' }> => record.status === 'published')
+      .map(record => [record.slug, record]));
 
-      const source = sourceCourses.get(record.slug);
-      if (!source) return [mapPublishedCourse(record)];
-
-      const sourceContent: Record<string, unknown> = { ...source };
-      const content = record.content as Record<string, unknown>;
-      const mergedContent = {
-        ...sourceContent,
-        ...content,
-        instructor: content.instructor && typeof content.instructor === 'object' && !Array.isArray(content.instructor)
-          ? { ...source.instructor, ...content.instructor }
-          : source.instructor,
-      };
-      return [mapPublishedCourse({ ...record, content: mergedContent })];
+    return publicCourseCatalog.flatMap(listing => {
+      const record = publishedRecords.get(listing.sourceSlug);
+      return record ? [mapPublishedCourse(record)] : [];
     });
   }
 
@@ -156,8 +146,6 @@ class CourseService {
         course.longDescription,
         course.category,
         course.subCategory,
-        course.instructor.name,
-        ...course.instructor.expertise,
         ...course.tags,
         ...course.skills,
       ]
@@ -171,9 +159,7 @@ class CourseService {
       if (filters.priceMin !== undefined) results = results.filter(course => course.discountPrice >= filters.priceMin!);
       if (filters.priceMax !== undefined) results = results.filter(course => course.discountPrice <= filters.priceMax!);
       switch (filters.sortBy) {
-        case 'popular': results.sort((first, second) => second.learnerCount - first.learnerCount); break;
         case 'newest': results.sort((first, second) => second.slug.localeCompare(first.slug)); break;
-        case 'rating': results.sort((first, second) => second.rating - first.rating); break;
         case 'price-asc': results.sort((first, second) => first.discountPrice - second.discountPrice); break;
         case 'price-desc': results.sort((first, second) => second.discountPrice - first.discountPrice); break;
       }

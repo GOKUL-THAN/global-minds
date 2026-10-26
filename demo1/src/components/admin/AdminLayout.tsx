@@ -3,15 +3,17 @@ import { Link, useLocation, Outlet, useNavigate, useOutletContext } from 'react-
 import {
   LayoutDashboard, BookOpen, Users, UserCheck, MessageSquare,
   Briefcase, Calendar, MapPin, Star, Newspaper, HelpCircle,
-  Award, CreditCard, Settings, ChevronDown, Menu, X,
-  LogOut, Shield, Activity, TrendingUp,
+  Award, Settings, ChevronDown, Menu, X, ClipboardCheck,
+  LogOut, Shield, Activity,
   BarChart2,
   PenTool,
   Navigation2,
+  Megaphone,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { authService } from '../../services/authService';
 import type { User } from '../../types';
+import { PageTransition } from '../layout/PageTransition';
 
 interface NavGroup {
   label: string;
@@ -23,18 +25,27 @@ const navGroups: NavGroup[] = [
     label: 'Overview',
     items: [
       { icon: LayoutDashboard, label: 'Dashboard', href: '/admin' },
-      { icon: Activity, label: 'Activity Log', href: '/admin/activity' },
+    ],
+  },
+  {
+    label: 'Operations',
+    items: [
+      { icon: Users, label: 'Students', href: '/admin/students' },
+      { icon: Calendar, label: 'Attendance', href: '/admin/attendance' },
+      { icon: Calendar, label: 'Batches', href: '/admin/batches' },
+      { icon: Briefcase, label: 'Internships', href: '/admin/internships' },
+      { icon: Activity, label: 'Activity History', href: '/admin/activity' },
+      { icon: ClipboardCheck, label: 'Certificates', href: '/admin/certificates' },
     ],
   },
   {
     label: 'Content',
     items: [
-      { icon: BookOpen, label: 'Courses', href: '/admin/courses' },
-      { icon: PenTool, label: 'Website Menu', href: '/admin/website/website-menu' },
-      { icon: Navigation2, label: 'Navigation Menu', href: '/admin/navigation' },
-      { icon: Briefcase, label: 'Live Projects', href: '/admin/website/live-projects' },
-      { icon: Calendar, label: 'Events & Webinars', href: '/admin/website/events' },
-      { icon: Award, label: 'Scholarships', href: '/admin/website/scholarships' },
+    { icon: BookOpen, label: 'Courses', href: '/admin/courses' },
+    { icon: Navigation2, label: 'Navigation Menu', href: '/admin/navigation' },
+    { icon: Briefcase, label: 'Live Projects', href: '/admin/website/live-projects' },
+    { icon: Calendar, label: 'Events & Webinars', href: '/admin/website/events' },
+    { icon: Award, label: 'Scholarships', href: '/admin/website/scholarships' },
       { icon: Star, label: 'Refer & Earn', href: '/admin/website/refer-earn' },
       { icon: Briefcase, label: 'Corporate Training', href: '/admin/website/corporate-training' },
       { icon: UserCheck, label: 'Expert Trainers', href: '/admin/website/instructors' },
@@ -53,19 +64,10 @@ const navGroups: NavGroup[] = [
       { icon: Award, label: 'Placement Records', href: '/admin/website/placement-records' },
       { icon: BookOpen, label: 'Interview Preparation', href: '/admin/website/interview-preparation' },
       { icon: Users, label: 'Mock Interview', href: '/admin/website/mock-interview' },
-      { icon: BookOpen, label: 'Categories', href: '/admin/categories' },
-      { icon: Newspaper, label: 'Blog', href: '/admin/blog' },
-      { icon: HelpCircle, label: 'FAQs', href: '/admin/faqs' },
-      { icon: Star, label: 'Testimonials', href: '/admin/testimonials' },
+      { icon: BookOpen, label: 'Categories', href: '/admin/website/categories' },
+      { icon: HelpCircle, label: 'FAQs', href: '/admin/website/faqs' },
+      { icon: Star, label: 'Testimonials', href: '/admin/website/testimonials' },
       { icon: PenTool, label: 'Content Studio', href: '/admin/studio' },
-    ],
-  },
-  {
-    label: 'Students',
-    items: [
-      { icon: Users, label: 'All Students', href: '/admin/students' },
-      { icon: TrendingUp, label: 'Student Progress', href: '/admin/student-progress' },
-      { icon: BarChart2, label: 'Attendance', href: '/admin/attendance' },
     ],
   },
   {
@@ -73,16 +75,8 @@ const navGroups: NavGroup[] = [
     items: [
       { icon: UserCheck, label: 'Instructors', href: '/admin/instructors' },
       { icon: MessageSquare, label: 'Enquiries', href: '/admin/enquiries' },
-    ],
-  },
-  {
-    label: 'Operations',
-    items: [
-      { icon: Calendar, label: 'Batches', href: '/admin/batches' },
-      { icon: Briefcase, label: 'Internships', href: '/admin/internships' },
-      { icon: MapPin, label: 'Locations', href: '/admin/locations' },
-      { icon: Award, label: 'Certificates', href: '/admin/certificates' },
-      { icon: CreditCard, label: 'Payments', href: '/admin/payments' },
+      { icon: Megaphone, label: 'Student announcements', href: '/admin/announcements' },
+      { icon: Shield, label: 'Accounts & permissions', href: '/admin/users' },
     ],
   },
   {
@@ -93,6 +87,22 @@ const navGroups: NavGroup[] = [
     ],
   },
 ];
+
+const navPermissions: Record<string, string> = {
+  '/admin/students': 'students.read',
+  '/admin/attendance': 'attendance.read',
+  '/admin/batches': 'batches.read',
+  '/admin/internships': 'internships.read',
+  '/admin/activity': 'audit_logs.read',
+  '/admin/certificates': 'certificates.read',
+  '/admin/courses': 'courses.read',
+  '/admin/categories': 'categories.manage',
+  '/admin/enquiries': 'enquiries.read',
+  '/admin/announcements': 'announcements.manage',
+  '/admin/settings': 'settings.manage',
+  '/admin/users': 'users.update',
+  '/account/security': 'profile.read',
+};
 
 export function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -128,7 +138,11 @@ export function AdminLayout() {
     if (sidebarOpen) sidebarRef.current?.querySelector<HTMLElement>('a[href], button')?.focus();
   }, [sidebarOpen]);
 
-  const permittedRoutes = user.role === 'CONTENT_MANAGER'
+  const permittedRoutes = user.role === 'SUPER_ADMIN'
+    ? undefined
+    : user.role === 'ADMIN'
+      ? new Set(navGroups.flatMap(group => group.items).filter(item => item.href !== '/admin/users').map(item => item.href))
+      : user.role === 'CONTENT_MANAGER'
     ? new Set([
       '/admin', '/admin/courses', '/admin/categories', '/admin/master-programs',
       '/admin/blog', '/admin/faqs', '/admin/testimonials', '/admin/studio',
@@ -143,6 +157,17 @@ export function AdminLayout() {
       items: permittedRoutes ? group.items.filter(item =>
         permittedRoutes.has(item.href) || (item.href.startsWith('/admin/website/') && permittedRoutes.has('/admin/studio')),
       ) : group.items,
+    }))
+    .map(group => ({
+      ...group,
+      items: group.items.filter(item => {
+        if (user.role === 'SUPER_ADMIN') return true;
+        const permission = navPermissions[item.href]
+          ?? (item.href.startsWith('/admin/website/') || item.href === '/admin/studio' || item.href === '/admin/navigation'
+            ? 'content.read'
+            : undefined);
+        return !permission || user.permissions?.includes(permission) === true;
+      }),
     }))
     .filter(group => group.items.length > 0);
 
@@ -205,7 +230,6 @@ export function AdminLayout() {
         {visibleNavGroups.map(group => (
           <div key={group.label} className="mb-4">
             <button
-              ref={menuButtonRef}
               type="button"
               onClick={() => toggleGroup(group.label)}
               aria-expanded={!collapsedGroups.has(group.label)}
@@ -296,6 +320,7 @@ export function AdminLayout() {
         <header className="sticky top-0 z-30 bg-white border-b border-surface-200 px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-4">
             <button
+              ref={menuButtonRef}
               type="button"
               onClick={() => setSidebarOpen(true)}
               className="lg:hidden p-2 rounded-xl text-surface-600 hover:bg-surface-100"
@@ -322,7 +347,9 @@ export function AdminLayout() {
 
         {/* Page content */}
         <main className="min-w-0 p-4 sm:p-6 lg:p-8">
-          <Outlet context={user} />
+          <PageTransition>
+            <Outlet context={user} />
+          </PageTransition>
         </main>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, Eye } from 'lucide-react';
-import { locations } from '../../data/locations';
+import { locations as staticLocations } from '../../data/locations';
 import { Badge } from '../../components/ui/Badge';
+import { useCmsCollection } from '../../hooks/useCmsCollection';
 
 export default function AdminLocationsPage() {
+  const locations = useCmsCollection('locations', staticLocations);
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">

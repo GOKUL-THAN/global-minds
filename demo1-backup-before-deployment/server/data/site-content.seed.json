@@ -1,0 +1,5454 @@
+[
+  {
+    "section": "courses",
+    "slug": "data-science",
+    "content": {
+      "id": "c1",
+      "slug": "data-science",
+      "title": "Data Science",
+      "shortDescription": "Learn data analysis, Python, statistics, machine learning, and data visualisation to build a data science career.",
+      "longDescription": "This four-month Data Science programme covers the complete pipeline from raw data to actionable insights. You will master Python for data manipulation, statistical foundations, machine learning algorithms, and professional data visualisation using industry tools like Power BI and Matplotlib. Real-world capstone projects prepare you for data science roles across finance, healthcare, and tech.",
+      "category": "data-science-analytics",
+      "subCategory": "Data Analysis",
+      "level": "Beginner",
+      "duration": "4 Months",
+      "totalHours": 100,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i2",
+        "name": "Priya Sharma",
+        "slug": "priya-sharma",
+        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
+        "designation": "Lead Data Scientist & AI Engineer",
+        "expertise": [
+          "Python",
+          "Machine Learning",
+          "Deep Learning",
+          "NLP",
+          "Data Science"
+        ],
+        "experience": "10+ Years",
+        "certifications": [
+          "Google Professional ML Engineer",
+          "AWS Machine Learning Specialty",
+          "TensorFlow Developer"
+        ],
+        "courses": [
+          "data-science",
+          "machine-learning",
+          "generative-ai"
+        ],
+        "bio": "Priya is a data scientist with expertise in building and deploying ML models at scale. Placeholder bio — to be updated with real trainer information.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.8,
+        "totalStudents": 6200
+      },
+      "syllabus": [
+        "Python for Data Science",
+        "Statistics & Probability Fundamentals",
+        "Data Wrangling with Pandas & NumPy",
+        "Exploratory Data Analysis (EDA)",
+        "Data Visualisation with Matplotlib & Seaborn",
+        "SQL for Data Analysts",
+        "Machine Learning Fundamentals",
+        "Supervised Learning Algorithms",
+        "Unsupervised Learning & Clustering",
+        "Power BI Dashboards",
+        "Capstone Project"
+      ],
+      "modules": [
+        {
+          "id": "m2-1",
+          "title": "Python & Statistics Foundations",
+          "duration": "2 weeks",
+          "topics": [
+            "Python syntax & data structures",
+            "NumPy arrays",
+            "Descriptive statistics",
+            "Probability distributions",
+            "Hypothesis testing"
+          ]
+        },
+        {
+          "id": "m2-2",
+          "title": "Data Wrangling & EDA",
+          "duration": "3 weeks",
+          "topics": [
+            "Pandas DataFrames",
+            "Data cleaning strategies",
+            "Handling missing values",
+            "Feature engineering",
+            "EDA techniques"
+          ]
+        },
+        {
+          "id": "m2-3",
+          "title": "Data Visualisation",
+          "duration": "2 weeks",
+          "topics": [
+            "Matplotlib plots",
+            "Seaborn statistical charts",
+            "Interactive visualisations",
+            "Power BI basics",
+            "Storytelling with data"
+          ]
+        },
+        {
+          "id": "m2-4",
+          "title": "SQL for Data Analysis",
+          "duration": "2 weeks",
+          "topics": [
+            "SELECT, JOIN, GROUP BY",
+            "Window functions",
+            "CTEs & subqueries",
+            "Database design basics",
+            "Real-world SQL projects"
+          ]
+        },
+        {
+          "id": "m2-5",
+          "title": "Machine Learning with Scikit-learn",
+          "duration": "4 weeks",
+          "topics": [
+            "Regression & classification",
+            "Decision trees & random forests",
+            "Clustering algorithms",
+            "Model evaluation metrics",
+            "Hyperparameter tuning"
+          ]
+        },
+        {
+          "id": "m2-6",
+          "title": "Capstone & Career Prep",
+          "duration": "3 weeks",
+          "topics": [
+            "End-to-end capstone project",
+            "Portfolio building",
+            "Resume for data roles",
+            "Mock interviews",
+            "Kaggle competition walkthrough"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Basic computer literacy",
+        "High-school level mathematics (algebra, statistics basics)"
+      ],
+      "skills": [
+        "Python",
+        "Statistics",
+        "Data Analysis",
+        "Machine Learning",
+        "Data Visualisation",
+        "SQL",
+        "Pandas",
+        "NumPy"
+      ],
+      "tools": [
+        "Python",
+        "Jupyter",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Scikit-learn",
+        "SQL",
+        "Power BI"
+      ],
+      "projects": [
+        "Sales forecasting model using regression",
+        "Customer segmentation with K-means clustering",
+        "Interactive Power BI sales dashboard"
+      ],
+      "certification": "Global Minds Data Science Certificate",
+      "careerOutcomes": [
+        "Analyse large datasets to extract business insights",
+        "Build and evaluate machine learning models",
+        "Create compelling data visualisations for stakeholders",
+        "Work in data science, analytics, or BI roles"
+      ],
+      "jobRoles": [
+        "Data Scientist",
+        "Data Analyst",
+        "Business Intelligence Analyst",
+        "ML Engineer",
+        "Research Analyst"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 28000,
+      "discountPrice": 20000,
+      "currency": "INR",
+      "discountPercentage": 29,
+      "thumbnail": "/images/courses/data-science.jpg",
+      "banner": "/images/courses/data-science.jpg",
+      "rating": 4.9,
+      "reviewCount": 340,
+      "learnerCount": 5600,
+      "featured": true,
+      "trending": true,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "machine-learning",
+        "full-stack-development"
+      ],
+      "whoShouldJoin": [
+        "Fresh graduates targeting data roles",
+        "Business analysts wanting to upskill in Python & ML",
+        "Professionals moving into data science from other fields",
+        "Entrepreneurs seeking data-driven decision-making skills"
+      ],
+      "learningObjectives": [
+        "Master Python for end-to-end data analysis",
+        "Apply statistics and probability to real datasets",
+        "Build supervised and unsupervised ML models",
+        "Visualise data effectively for business communication",
+        "Complete a real-world data science capstone project"
+      ],
+      "tags": [
+        "data-science",
+        "python",
+        "machine-learning",
+        "data-analysis",
+        "statistics"
+      ],
+      "metaTitle": "Data Science Course — Python, ML & Analytics | Global Minds Academy",
+      "metaDescription": "Comprehensive Data Science training with Python, Pandas, Machine Learning and Power BI. Certified by Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "machine-learning",
+    "content": {
+      "id": "c2",
+      "slug": "machine-learning",
+      "title": "Machine Learning",
+      "shortDescription": "Deep dive into supervised, unsupervised and reinforcement learning algorithms with hands-on Python projects.",
+      "longDescription": "This advanced Machine Learning course provides an in-depth exploration of core ML algorithms — from linear models to ensemble methods, deep neural networks, NLP and computer vision. Each module is paired with practical Python projects using TensorFlow, Keras and Scikit-learn. You will finish with a deployed ML model on AWS SageMaker.",
+      "category": "artificial-intelligence",
+      "subCategory": "Machine Learning",
+      "level": "Intermediate",
+      "duration": "3 Months",
+      "totalHours": 80,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i2",
+        "name": "Priya Sharma",
+        "slug": "priya-sharma",
+        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
+        "designation": "Lead Data Scientist & AI Engineer",
+        "expertise": [
+          "Python",
+          "Machine Learning",
+          "Deep Learning",
+          "NLP",
+          "Data Science"
+        ],
+        "experience": "10+ Years",
+        "certifications": [
+          "Google Professional ML Engineer",
+          "AWS Machine Learning Specialty",
+          "TensorFlow Developer"
+        ],
+        "courses": [
+          "data-science",
+          "machine-learning",
+          "generative-ai"
+        ],
+        "bio": "Priya is a data scientist with expertise in building and deploying ML models at scale. Placeholder bio — to be updated with real trainer information.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.8,
+        "totalStudents": 6200
+      },
+      "syllabus": [
+        "Python & Math Refresher for ML",
+        "Supervised Learning — Regression & Classification",
+        "Ensemble Methods — Random Forest, XGBoost, Gradient Boosting",
+        "Unsupervised Learning — Clustering & Dimensionality Reduction",
+        "Neural Networks & Deep Learning Fundamentals",
+        "Convolutional Neural Networks (CNN) for Computer Vision",
+        "Recurrent Neural Networks (RNN) & NLP",
+        "Model Evaluation, Hyperparameter Tuning & MLOps",
+        "ML Model Deployment on AWS SageMaker"
+      ],
+      "modules": [
+        {
+          "id": "m3-1",
+          "title": "ML Foundations & Supervised Learning",
+          "duration": "2 weeks",
+          "topics": [
+            "Linear & logistic regression",
+            "Decision trees",
+            "SVMs",
+            "Bias-variance tradeoff",
+            "Cross-validation"
+          ]
+        },
+        {
+          "id": "m3-2",
+          "title": "Ensemble & Advanced Algorithms",
+          "duration": "2 weeks",
+          "topics": [
+            "Random forests",
+            "Gradient boosting",
+            "XGBoost & LightGBM",
+            "Stacking & blending",
+            "Feature importance"
+          ]
+        },
+        {
+          "id": "m3-3",
+          "title": "Unsupervised Learning",
+          "duration": "1 week",
+          "topics": [
+            "K-means & hierarchical clustering",
+            "DBSCAN",
+            "PCA & t-SNE",
+            "Anomaly detection",
+            "Association rules"
+          ]
+        },
+        {
+          "id": "m3-4",
+          "title": "Deep Learning with TensorFlow & Keras",
+          "duration": "3 weeks",
+          "topics": [
+            "Neural network architecture",
+            "Activation functions",
+            "Backpropagation",
+            "CNNs for image classification",
+            "Transfer learning"
+          ]
+        },
+        {
+          "id": "m3-5",
+          "title": "NLP & Sequence Models",
+          "duration": "2 weeks",
+          "topics": [
+            "Text preprocessing",
+            "Word embeddings",
+            "RNNs & LSTMs",
+            "Transformer basics",
+            "Sentiment analysis project"
+          ]
+        },
+        {
+          "id": "m3-6",
+          "title": "MLOps & Model Deployment",
+          "duration": "2 weeks",
+          "topics": [
+            "Model versioning with MLflow",
+            "AWS SageMaker deployment",
+            "REST API serving",
+            "Monitoring model drift",
+            "Capstone project"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Python programming (intermediate level)",
+        "Basic statistics and linear algebra",
+        "Completion of a Data Science course or equivalent experience"
+      ],
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "Neural Networks",
+        "NLP",
+        "Computer Vision",
+        "Model Deployment"
+      ],
+      "tools": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "Scikit-learn",
+        "Pandas",
+        "Jupyter",
+        "AWS SageMaker"
+      ],
+      "projects": [
+        "Image classifier with CNN using transfer learning",
+        "Sentiment analysis NLP pipeline",
+        "End-to-end ML pipeline deployed on AWS SageMaker"
+      ],
+      "certification": "Global Minds Machine Learning Certificate",
+      "careerOutcomes": [
+        "Design and train production-grade ML models",
+        "Apply deep learning to computer vision and NLP tasks",
+        "Deploy and monitor ML models in cloud environments",
+        "Contribute to AI product development teams"
+      ],
+      "jobRoles": [
+        "Machine Learning Engineer",
+        "AI Engineer",
+        "Data Scientist",
+        "NLP Engineer",
+        "Computer Vision Engineer"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 26000,
+      "discountPrice": 19000,
+      "currency": "INR",
+      "discountPercentage": 27,
+      "thumbnail": "/images/courses/machine-learning.jpg",
+      "banner": "/images/courses/machine-learning.jpg",
+      "rating": 4.8,
+      "reviewCount": 280,
+      "learnerCount": 4100,
+      "featured": true,
+      "trending": true,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "data-science",
+        "full-stack-development"
+      ],
+      "whoShouldJoin": [
+        "Data scientists looking to deepen ML expertise",
+        "Software engineers transitioning into AI/ML",
+        "Researchers applying ML to scientific problems",
+        "Professionals preparing for ML engineer roles"
+      ],
+      "learningObjectives": [
+        "Implement core supervised and unsupervised ML algorithms from scratch",
+        "Build CNN and RNN models for vision and language tasks",
+        "Evaluate models rigorously and avoid common pitfalls",
+        "Deploy a trained model to production using AWS SageMaker",
+        "Understand MLOps principles for model lifecycle management"
+      ],
+      "tags": [
+        "machine-learning",
+        "python",
+        "deep-learning",
+        "neural-networks",
+        "ai"
+      ],
+      "metaTitle": "Machine Learning Course — Deep Learning, NLP, CNN | Global Minds Academy",
+      "metaDescription": "Deep dive into Machine Learning with Python, TensorFlow and AWS SageMaker. Industry-recognised certification from Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "software-testing",
+    "content": {
+      "id": "c3",
+      "slug": "software-testing",
+      "title": "Software Testing",
+      "shortDescription": "Comprehensive software testing course covering manual testing, test planning, SDLC, STLC, Agile and bug tracking.",
+      "longDescription": "This Software Testing course provides a solid foundation in quality assurance — covering the full software testing lifecycle from requirements analysis and test planning through to defect tracking and test closure. You will work with industry tools including Jira, TestRail and Postman, and practise Agile testing techniques used in modern scrum teams.",
+      "category": "software-testing",
+      "subCategory": "Manual Testing",
+      "level": "Beginner",
+      "duration": "2 Months",
+      "totalHours": 60,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i5",
+        "name": "Kiran Reddy",
+        "slug": "kiran-reddy",
+        "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+        "designation": "QA Automation Architect",
+        "expertise": [
+          "Selenium",
+          "API Testing",
+          "Performance Testing",
+          "Cypress",
+          "Postman",
+          "CI/CD"
+        ],
+        "experience": "11+ Years",
+        "certifications": [
+          "ISTQB Advanced",
+          "AWS Cloud Practitioner"
+        ],
+        "courses": [
+          "software-testing",
+          "automation-testing",
+          "cyber-security"
+        ],
+        "bio": "Kiran has designed QA processes for large-scale enterprise applications. Placeholder bio — to be updated.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.7,
+        "totalStudents": 4900
+      },
+      "syllabus": [
+        "Introduction to Software Testing & SDLC",
+        "STLC — Software Testing Life Cycle",
+        "Test Planning & Test Strategy",
+        "Writing Effective Test Cases",
+        "Bug Reporting & Defect Life Cycle",
+        "Agile Testing & Scrum Ceremonies",
+        "Boundary Value Analysis & Equivalence Partitioning",
+        "Integration & System Testing",
+        "Regression & Smoke Testing",
+        "Tools — Jira, TestRail & Postman Basics"
+      ],
+      "modules": [
+        {
+          "id": "m4-1",
+          "title": "Testing Fundamentals & SDLC",
+          "duration": "1 week",
+          "topics": [
+            "Types of testing",
+            "SDLC phases",
+            "Verification vs validation",
+            "Testing principles",
+            "Entry & exit criteria"
+          ]
+        },
+        {
+          "id": "m4-2",
+          "title": "Test Design Techniques",
+          "duration": "2 weeks",
+          "topics": [
+            "Equivalence partitioning",
+            "Boundary value analysis",
+            "Decision table testing",
+            "State transition testing",
+            "Use-case-based testing"
+          ]
+        },
+        {
+          "id": "m4-3",
+          "title": "Test Planning & Documentation",
+          "duration": "2 weeks",
+          "topics": [
+            "Test plan structure",
+            "Test strategy vs plan",
+            "RTM (Requirement Traceability Matrix)",
+            "Test estimation",
+            "Risk-based testing"
+          ]
+        },
+        {
+          "id": "m4-4",
+          "title": "Defect Management with Jira",
+          "duration": "1 week",
+          "topics": [
+            "Bug lifecycle",
+            "Writing clear defect reports",
+            "Defect severity & priority",
+            "Jira workflows",
+            "Test reporting"
+          ]
+        },
+        {
+          "id": "m4-5",
+          "title": "Agile Testing",
+          "duration": "2 weeks",
+          "topics": [
+            "Agile manifesto & testing",
+            "Sprint testing activities",
+            "Exploratory testing",
+            "Acceptance testing",
+            "Definition of Done"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Basic computer literacy",
+        "Understanding of software applications from a user perspective"
+      ],
+      "skills": [
+        "Manual Testing",
+        "Test Planning",
+        "Test Cases",
+        "Bug Reporting",
+        "Agile Testing",
+        "SDLC",
+        "STLC",
+        "Jira"
+      ],
+      "tools": [
+        "Jira",
+        "TestRail",
+        "Postman",
+        "Bugzilla",
+        "Excel"
+      ],
+      "projects": [
+        "Complete test plan and test cases for an e-commerce application",
+        "Defect reporting and tracking exercise with Jira",
+        "Agile sprint testing simulation"
+      ],
+      "certification": "Global Minds Software Testing Certificate",
+      "careerOutcomes": [
+        "Plan and execute comprehensive test cycles",
+        "Write professional test cases and defect reports",
+        "Work effectively in Agile scrum teams as a QA",
+        "Contribute to product quality from requirements to release"
+      ],
+      "jobRoles": [
+        "Software Tester",
+        "QA Analyst",
+        "Test Engineer",
+        "Quality Assurance Engineer",
+        "Functional Tester"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 18000,
+      "discountPrice": 13000,
+      "currency": "INR",
+      "discountPercentage": 28,
+      "thumbnail": "/images/courses/software-testing.jpg",
+      "banner": "/images/courses/software-testing.jpg",
+      "rating": 4.7,
+      "reviewCount": 195,
+      "learnerCount": 3800,
+      "featured": false,
+      "trending": false,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "automation-testing",
+        "full-stack-development"
+      ],
+      "whoShouldJoin": [
+        "Fresh graduates targeting QA roles",
+        "Non-technical professionals moving into tech as testers",
+        "Developers wanting to understand the QA process",
+        "Project managers seeking QA knowledge"
+      ],
+      "learningObjectives": [
+        "Understand the SDLC and STLC thoroughly",
+        "Write clear, actionable test cases from requirements",
+        "Report and track defects using Jira",
+        "Apply Agile testing practices in a scrum team",
+        "Perform various types of manual testing effectively"
+      ],
+      "tags": [
+        "software-testing",
+        "manual-testing",
+        "qa",
+        "jira",
+        "agile"
+      ],
+      "metaTitle": "Software Testing Course — Manual Testing, Jira, Agile | Global Minds Academy",
+      "metaDescription": "Learn software testing from scratch — manual testing, SDLC, Jira, Agile and bug tracking. Get certified with Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "automation-testing",
+    "content": {
+      "id": "c4",
+      "slug": "automation-testing",
+      "title": "Automation Testing",
+      "shortDescription": "Master Selenium, Cypress, API testing with Postman, and CI/CD integration for professional automation engineers.",
+      "longDescription": "This Automation Testing course equips you with the skills to design and implement robust automated test frameworks using Selenium WebDriver and Cypress. You will learn API testing with Postman and RestAssured, build test pipelines in Jenkins, and integrate automation into CI/CD workflows. Java and Python are both covered for test scripting.",
+      "category": "automation-testing",
+      "subCategory": "Automation Testing",
+      "level": "Intermediate",
+      "duration": "3 Months",
+      "totalHours": 80,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i5",
+        "name": "Kiran Reddy",
+        "slug": "kiran-reddy",
+        "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+        "designation": "QA Automation Architect",
+        "expertise": [
+          "Selenium",
+          "API Testing",
+          "Performance Testing",
+          "Cypress",
+          "Postman",
+          "CI/CD"
+        ],
+        "experience": "11+ Years",
+        "certifications": [
+          "ISTQB Advanced",
+          "AWS Cloud Practitioner"
+        ],
+        "courses": [
+          "software-testing",
+          "automation-testing",
+          "cyber-security"
+        ],
+        "bio": "Kiran has designed QA processes for large-scale enterprise applications. Placeholder bio — to be updated.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.7,
+        "totalStudents": 4900
+      },
+      "syllabus": [
+        "Automation Testing Fundamentals & Frameworks",
+        "Selenium WebDriver with Java",
+        "TestNG & JUnit Test Frameworks",
+        "Page Object Model (POM) Design Pattern",
+        "Cypress — Modern JavaScript Test Automation",
+        "API Testing with Postman & RestAssured",
+        "Data-Driven & Keyword-Driven Testing",
+        "CI/CD Integration with Jenkins",
+        "Git for Test Automation",
+        "BDD with Cucumber & Gherkin"
+      ],
+      "modules": [
+        {
+          "id": "m5-1",
+          "title": "Selenium WebDriver Fundamentals",
+          "duration": "3 weeks",
+          "topics": [
+            "Selenium architecture",
+            "Locator strategies",
+            "Browser interactions",
+            "Waits & synchronisation",
+            "Cross-browser testing"
+          ]
+        },
+        {
+          "id": "m5-2",
+          "title": "Test Frameworks — TestNG & POM",
+          "duration": "2 weeks",
+          "topics": [
+            "TestNG annotations",
+            "Assertions & reports",
+            "Page Object Model",
+            "Data-driven testing with Excel",
+            "Parallel test execution"
+          ]
+        },
+        {
+          "id": "m5-3",
+          "title": "Cypress Automation",
+          "duration": "2 weeks",
+          "topics": [
+            "Cypress architecture",
+            "Component & E2E testing",
+            "Fixtures & custom commands",
+            "Cypress dashboard",
+            "Visual regression testing"
+          ]
+        },
+        {
+          "id": "m5-4",
+          "title": "API Testing",
+          "duration": "2 weeks",
+          "topics": [
+            "REST API concepts",
+            "Postman collections & environments",
+            "RestAssured with Java",
+            "API authentication testing",
+            "Contract testing basics"
+          ]
+        },
+        {
+          "id": "m5-5",
+          "title": "CI/CD & DevOps Integration",
+          "duration": "2 weeks",
+          "topics": [
+            "Jenkins pipeline setup",
+            "Running tests in CI",
+            "Allure reports integration",
+            "Docker for test environments",
+            "Shift-left testing strategy"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Basic Java or Python programming",
+        "Completion of Software Testing fundamentals (or equivalent)",
+        "Familiarity with web technologies (HTML, CSS basics)"
+      ],
+      "skills": [
+        "Selenium",
+        "Cypress",
+        "API Testing",
+        "TestNG",
+        "JUnit",
+        "CI/CD",
+        "Java",
+        "Python"
+      ],
+      "tools": [
+        "Selenium",
+        "Cypress",
+        "Postman",
+        "TestNG",
+        "Jenkins",
+        "Git",
+        "Maven"
+      ],
+      "projects": [
+        "Selenium POM framework for an e-commerce website",
+        "Cypress E2E test suite with CI/CD pipeline in Jenkins",
+        "API automation suite with Postman & RestAssured"
+      ],
+      "certification": "Global Minds Automation Testing Certificate",
+      "careerOutcomes": [
+        "Design and maintain automation frameworks from scratch",
+        "Integrate automated tests into CI/CD pipelines",
+        "Perform API and end-to-end UI testing professionally",
+        "Reduce regression testing time significantly"
+      ],
+      "jobRoles": [
+        "Automation Test Engineer",
+        "QA Automation Engineer",
+        "SDET (Software Dev Engineer in Test)",
+        "Test Architect",
+        "DevOps QA Engineer"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 22000,
+      "discountPrice": 16000,
+      "currency": "INR",
+      "discountPercentage": 27,
+      "thumbnail": "/images/courses/automation-testing.jpg",
+      "banner": "/images/courses/automation-testing.jpg",
+      "rating": 4.8,
+      "reviewCount": 230,
+      "learnerCount": 3500,
+      "featured": true,
+      "trending": true,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "software-testing",
+        "full-stack-development"
+      ],
+      "whoShouldJoin": [
+        "Manual testers looking to advance to automation",
+        "Software developers adding testing skills",
+        "QA professionals targeting SDET roles",
+        "DevOps engineers adding test automation to pipelines"
+      ],
+      "learningObjectives": [
+        "Build Selenium and Cypress automation frameworks from scratch",
+        "Implement the Page Object Model design pattern",
+        "Automate REST API tests with Postman and RestAssured",
+        "Integrate automated tests into Jenkins CI/CD pipelines",
+        "Apply BDD practices with Cucumber and Gherkin"
+      ],
+      "tags": [
+        "automation-testing",
+        "selenium",
+        "cypress",
+        "api-testing",
+        "qa"
+      ],
+      "metaTitle": "Automation Testing Course — Selenium, Cypress, API Testing | Global Minds Academy",
+      "metaDescription": "Master Selenium, Cypress and API automation with CI/CD integration. Industry-certified automation testing course at Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "aws-training",
+    "content": {
+      "id": "c5",
+      "slug": "aws-training",
+      "title": "AWS / Cloud",
+      "shortDescription": "Hands-on AWS training covering EC2, S3, VPC, IAM, RDS, Lambda and preparation for AWS certification exams.",
+      "longDescription": "This AWS / Cloud programme provides comprehensive hands-on experience with Amazon Web Services — the world's leading cloud platform. From core compute and storage services to serverless, databases, networking and security, you will gain practical skills aligned with the AWS Cloud Practitioner and Solutions Architect certifications.",
+      "category": "cloud-computing",
+      "subCategory": "Amazon Web Services",
+      "level": "Beginner",
+      "duration": "2 Months",
+      "totalHours": 60,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i1",
+        "name": "Alex Johnson",
+        "slug": "alex-johnson",
+        "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+        "designation": "Senior Cloud Architect",
+        "expertise": [
+          "AWS",
+          "Azure",
+          "GCP",
+          "Cloud Architecture",
+          "DevOps"
+        ],
+        "experience": "12+ Years",
+        "certifications": [
+          "AWS Solutions Architect Professional",
+          "AWS DevOps Engineer",
+          "Azure Solutions Architect"
+        ],
+        "courses": [
+          "aws-training",
+          "full-stack-development",
+          "generative-ai"
+        ],
+        "bio": "Alex is a certified cloud architect with over 12 years of experience designing and implementing cloud solutions for Fortune 500 companies. Placeholder bio — to be updated with real trainer information.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.9,
+        "totalStudents": 8500
+      },
+      "syllabus": [
+        "AWS Cloud Fundamentals & Global Infrastructure",
+        "IAM — Identity & Access Management",
+        "EC2 — Elastic Compute Cloud",
+        "S3 — Simple Storage Service",
+        "VPC — Virtual Private Cloud & Networking",
+        "RDS & DynamoDB — Managed Databases",
+        "Lambda & Serverless Architecture",
+        "CloudFormation — Infrastructure as Code",
+        "CloudWatch — Monitoring & Logging",
+        "AWS Security Best Practices & Cost Optimisation"
+      ],
+      "modules": [
+        {
+          "id": "m6-1",
+          "title": "AWS Fundamentals & IAM",
+          "duration": "1 week",
+          "topics": [
+            "Cloud computing models",
+            "AWS global regions & AZs",
+            "IAM users, groups & roles",
+            "MFA & security policies",
+            "AWS CLI setup"
+          ]
+        },
+        {
+          "id": "m6-2",
+          "title": "Compute & Storage",
+          "duration": "2 weeks",
+          "topics": [
+            "EC2 instance types & pricing",
+            "AMIs & Auto Scaling",
+            "S3 buckets & lifecycle policies",
+            "EBS & EFS storage",
+            "CloudFront CDN"
+          ]
+        },
+        {
+          "id": "m6-3",
+          "title": "Networking — VPC",
+          "duration": "2 weeks",
+          "topics": [
+            "VPC design",
+            "Subnets & route tables",
+            "Security groups & NACLs",
+            "NAT gateway & bastion hosts",
+            "VPC peering"
+          ]
+        },
+        {
+          "id": "m6-4",
+          "title": "Databases on AWS",
+          "duration": "1 week",
+          "topics": [
+            "RDS setup & read replicas",
+            "Aurora serverless",
+            "DynamoDB fundamentals",
+            "ElastiCache",
+            "Database migration strategies"
+          ]
+        },
+        {
+          "id": "m6-5",
+          "title": "Serverless & IaC",
+          "duration": "2 weeks",
+          "topics": [
+            "Lambda functions",
+            "API Gateway",
+            "Step Functions",
+            "CloudFormation templates",
+            "SAM framework"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Basic IT concepts (networking, operating systems)",
+        "Familiarity with command-line interfaces"
+      ],
+      "skills": [
+        "AWS EC2",
+        "S3",
+        "IAM",
+        "VPC",
+        "RDS",
+        "Lambda",
+        "CloudFormation",
+        "CloudWatch"
+      ],
+      "tools": [
+        "AWS Console",
+        "AWS CLI",
+        "Terraform",
+        "CloudFormation",
+        "IAM"
+      ],
+      "projects": [
+        "Deploy a three-tier web application on AWS",
+        "Build a serverless REST API with Lambda & API Gateway",
+        "Automate infrastructure provisioning with CloudFormation"
+      ],
+      "certification": "AWS Cloud Practitioner + Global Minds AWS Certificate",
+      "careerOutcomes": [
+        "Architect, deploy and manage AWS cloud infrastructure",
+        "Implement serverless applications on AWS",
+        "Secure AWS environments following best practices",
+        "Prepare for AWS certification exams"
+      ],
+      "jobRoles": [
+        "AWS Cloud Engineer",
+        "Cloud Solutions Architect",
+        "Cloud Operations Engineer",
+        "DevOps Engineer",
+        "Solutions Consultant"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 22000,
+      "discountPrice": 16000,
+      "currency": "INR",
+      "discountPercentage": 27,
+      "thumbnail": "/images/courses/aws-training.jpg",
+      "banner": "/images/courses/aws-training.jpg",
+      "rating": 4.8,
+      "reviewCount": 310,
+      "learnerCount": 5200,
+      "featured": true,
+      "trending": true,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "machine-learning",
+        "data-science"
+      ],
+      "whoShouldJoin": [
+        "IT professionals moving into cloud computing",
+        "Developers wanting to deploy on AWS",
+        "System administrators modernising to cloud ops",
+        "Students preparing for AWS certifications"
+      ],
+      "learningObjectives": [
+        "Navigate and configure core AWS services confidently",
+        "Design secure, scalable VPC network architectures",
+        "Deploy serverless applications using Lambda and API Gateway",
+        "Provision infrastructure with CloudFormation",
+        "Prepare for the AWS Cloud Practitioner certification"
+      ],
+      "tags": [
+        "aws",
+        "cloud",
+        "ec2",
+        "s3",
+        "lambda",
+        "cloud-computing",
+        "certification"
+      ],
+      "metaTitle": "AWS / Cloud Course — EC2, S3, Lambda, VPC | Global Minds Academy",
+      "metaDescription": "Hands-on AWS training covering EC2, S3, Lambda, VPC and certification prep. Start your cloud career with Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "generative-ai",
+    "content": {
+      "id": "c6",
+      "slug": "generative-ai",
+      "title": "Generative AI",
+      "shortDescription": "Build LLM applications, master prompt engineering, RAG pipelines, LangChain, AI agents and fine-tuning with OpenAI and HuggingFace.",
+      "longDescription": "The Generative AI course takes you from foundational LLM concepts to building production-ready AI applications. You will learn prompt engineering techniques, Retrieval-Augmented Generation (RAG), LangChain frameworks, AI agent design, vector databases and model fine-tuning using OpenAI, HuggingFace and open-source models.",
+      "category": "artificial-intelligence",
+      "subCategory": "Generative AI",
+      "level": "Intermediate",
+      "duration": "10 Weeks",
+      "totalHours": 80,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i2",
+        "name": "Priya Sharma",
+        "slug": "priya-sharma",
+        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
+        "designation": "Lead Data Scientist & AI Engineer",
+        "expertise": [
+          "Python",
+          "Machine Learning",
+          "Deep Learning",
+          "NLP",
+          "Data Science"
+        ],
+        "experience": "10+ Years",
+        "certifications": [
+          "Google Professional ML Engineer",
+          "AWS Machine Learning Specialty",
+          "TensorFlow Developer"
+        ],
+        "courses": [
+          "data-science",
+          "machine-learning",
+          "generative-ai"
+        ],
+        "bio": "Priya is a data scientist with expertise in building and deploying ML models at scale. Placeholder bio — to be updated with real trainer information.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.8,
+        "totalStudents": 6200
+      },
+      "syllabus": [
+        "LLM Fundamentals",
+        "Prompt Engineering",
+        "OpenAI API",
+        "HuggingFace",
+        "LangChain",
+        "RAG Pipelines",
+        "Vector Databases",
+        "AI Agents",
+        "Fine-tuning",
+        "Deployment"
+      ],
+      "modules": [
+        {
+          "id": "mg1",
+          "title": "LLMs & Prompt Engineering",
+          "duration": "2 weeks",
+          "topics": [
+            "LLM architecture",
+            "Prompt techniques",
+            "ChatGPT API",
+            "System prompts",
+            "Few-shot learning"
+          ]
+        },
+        {
+          "id": "mg2",
+          "title": "OpenAI & HuggingFace",
+          "duration": "2 weeks",
+          "topics": [
+            "OpenAI GPT models",
+            "HuggingFace transformers",
+            "BERT/T5",
+            "Text classification",
+            "Token embeddings"
+          ]
+        },
+        {
+          "id": "mg3",
+          "title": "LangChain & Agents",
+          "duration": "2 weeks",
+          "topics": [
+            "LangChain chains",
+            "Memory modules",
+            "Tool use",
+            "AI agent patterns",
+            "ReAct framework"
+          ]
+        },
+        {
+          "id": "mg4",
+          "title": "RAG & Vector Databases",
+          "duration": "2 weeks",
+          "topics": [
+            "RAG architecture",
+            "ChromaDB",
+            "Pinecone",
+            "Document loaders",
+            "Semantic search"
+          ]
+        },
+        {
+          "id": "mg5",
+          "title": "Fine-tuning & Deployment",
+          "duration": "2 weeks",
+          "topics": [
+            "LoRA fine-tuning",
+            "PEFT methods",
+            "Model serving",
+            "FastAPI",
+            "Cloud deployment"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Python basics",
+        "Basic ML knowledge helpful"
+      ],
+      "skills": [
+        "Prompt Engineering",
+        "LangChain",
+        "RAG",
+        "OpenAI API",
+        "HuggingFace",
+        "AI Agents",
+        "Vector Databases",
+        "Fine-tuning"
+      ],
+      "tools": [
+        "Python",
+        "LangChain",
+        "OpenAI API",
+        "HuggingFace",
+        "ChromaDB",
+        "FastAPI"
+      ],
+      "projects": [
+        "RAG-powered chatbot",
+        "AI agent with tool use",
+        "Fine-tuned domain model"
+      ],
+      "certification": "Global Minds Academy Generative AI Certificate",
+      "careerOutcomes": [
+        "AI Engineer",
+        "GenAI Developer",
+        "ML Engineer",
+        "Prompt Engineer",
+        "AI Solutions Architect"
+      ],
+      "jobRoles": [
+        "AI Engineer",
+        "GenAI Developer",
+        "LLM Engineer",
+        "Prompt Engineer"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 45000,
+      "discountPrice": 35000,
+      "currency": "INR",
+      "discountPercentage": 22,
+      "thumbnail": "/images/courses/generative-ai.jpg",
+      "banner": "/images/courses/generative-ai.jpg",
+      "rating": 4.9,
+      "reviewCount": 310,
+      "learnerCount": 870,
+      "featured": true,
+      "trending": true,
+      "popular": false,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "machine-learning",
+        "data-science",
+        "aws-training"
+      ],
+      "whoShouldJoin": [
+        "Python developers",
+        "ML engineers",
+        "Data scientists",
+        "Software developers interested in AI"
+      ],
+      "learningObjectives": [
+        "Build LLM-powered apps",
+        "Design RAG pipelines",
+        "Create AI agents with LangChain",
+        "Fine-tune open-source models"
+      ],
+      "tags": [
+        "Generative AI",
+        "LLMs",
+        "LangChain",
+        "RAG",
+        "OpenAI",
+        "HuggingFace",
+        "Prompt Engineering"
+      ],
+      "metaTitle": "Generative AI Course — LLMs, RAG, LangChain & OpenAI | Global Minds Academy",
+      "metaDescription": "Master Generative AI with LLMs, prompt engineering, RAG, LangChain and AI agents. Build production-ready AI apps at Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "full-stack-development",
+    "content": {
+      "id": "c7",
+      "slug": "full-stack-development",
+      "title": "Full Stack Development",
+      "shortDescription": "Comprehensive full stack development covering HTML, CSS, JavaScript, React, Node.js, databases, APIs and cloud deployment.",
+      "longDescription": "This six-month Full Stack Development programme takes you from zero to a job-ready full stack developer. You will master front-end development with React, back-end development with Node.js and Express, database design with MongoDB and SQL, RESTful and GraphQL API development, authentication, DevOps basics and cloud deployment on AWS.",
+      "category": "full-stack-development",
+      "subCategory": "Full Stack",
+      "level": "Beginner",
+      "duration": "6 Months",
+      "totalHours": 150,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i4",
+        "name": "Sarah Williams",
+        "slug": "sarah-williams",
+        "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+        "designation": "Full Stack Development Lead",
+        "expertise": [
+          "React",
+          "Node.js",
+          "TypeScript",
+          "MERN Stack",
+          "AWS",
+          "MongoDB"
+        ],
+        "experience": "8+ Years",
+        "certifications": [
+          "AWS Developer Associate",
+          "MongoDB Certified Developer"
+        ],
+        "courses": [
+          "full-stack-development",
+          "data-science",
+          "machine-learning"
+        ],
+        "bio": "Sarah is a full stack developer with expertise in modern JavaScript frameworks and cloud deployment. Placeholder bio — to be updated.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.8,
+        "totalStudents": 7100
+      },
+      "syllabus": [
+        "HTML5 & CSS3 Fundamentals",
+        "JavaScript (ES6+) — Core & Advanced",
+        "React.js — Component Architecture & Hooks",
+        "State Management — Redux & Context API",
+        "Node.js & Express — REST API Development",
+        "MongoDB & Mongoose — NoSQL Database",
+        "SQL & PostgreSQL Fundamentals",
+        "Authentication — JWT & OAuth 2.0",
+        "RESTful & GraphQL API Design",
+        "Docker & AWS Deployment",
+        "Testing — Jest, React Testing Library",
+        "Capstone Project — Full Stack Application"
+      ],
+      "modules": [
+        {
+          "id": "m8-1",
+          "title": "Front-End Foundations",
+          "duration": "4 weeks",
+          "topics": [
+            "Semantic HTML5",
+            "CSS Flexbox & Grid",
+            "Responsive design",
+            "JavaScript DOM manipulation",
+            "ES6+ features"
+          ]
+        },
+        {
+          "id": "m8-2",
+          "title": "React Development",
+          "duration": "4 weeks",
+          "topics": [
+            "JSX & component lifecycle",
+            "React Hooks (useState, useEffect)",
+            "Context API & Redux",
+            "React Router",
+            "Performance optimisation"
+          ]
+        },
+        {
+          "id": "m8-3",
+          "title": "Back-End with Node.js & Express",
+          "duration": "3 weeks",
+          "topics": [
+            "Node.js event loop",
+            "Express routing & middleware",
+            "RESTful API design",
+            "Error handling",
+            "File uploads & streaming"
+          ]
+        },
+        {
+          "id": "m8-4",
+          "title": "Databases & Authentication",
+          "duration": "3 weeks",
+          "topics": [
+            "MongoDB schema design",
+            "Mongoose ODM",
+            "PostgreSQL & SQL joins",
+            "JWT authentication",
+            "OAuth 2.0 & social login"
+          ]
+        },
+        {
+          "id": "m8-5",
+          "title": "DevOps & Cloud Deployment",
+          "duration": "2 weeks",
+          "topics": [
+            "Git workflows & GitHub Actions",
+            "Docker containerisation",
+            "AWS EC2 & S3 deployment",
+            "CI/CD pipeline",
+            "SSL & domain setup"
+          ]
+        },
+        {
+          "id": "m8-6",
+          "title": "Testing & Capstone Project",
+          "duration": "4 weeks",
+          "topics": [
+            "Jest unit testing",
+            "React Testing Library",
+            "Integration & API testing",
+            "Capstone project development",
+            "Code review & portfolio"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Basic computer literacy",
+        "Logical thinking and problem-solving aptitude",
+        "No prior programming experience required"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "REST APIs",
+        "Git",
+        "AWS"
+      ],
+      "tools": [
+        "VS Code",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Git",
+        "Postman",
+        "AWS"
+      ],
+      "projects": [
+        "E-commerce platform (React + Node.js + MongoDB)",
+        "Social media API with JWT authentication",
+        "Full stack task management app deployed on AWS"
+      ],
+      "certification": "Global Minds Full Stack Developer Certificate",
+      "careerOutcomes": [
+        "Build complete web applications independently",
+        "Work as a front-end, back-end, or full stack developer",
+        "Deploy and maintain web apps on cloud platforms",
+        "Contribute to real-world engineering teams from day one"
+      ],
+      "jobRoles": [
+        "Full Stack Developer",
+        "Front-End Developer",
+        "Back-End Developer",
+        "JavaScript Developer",
+        "Web Application Developer"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 35000,
+      "discountPrice": 25000,
+      "currency": "INR",
+      "discountPercentage": 29,
+      "thumbnail": "/images/courses/full-stack-development.jpg",
+      "banner": "/images/courses/full-stack-development.jpg",
+      "rating": 4.8,
+      "reviewCount": 420,
+      "learnerCount": 7200,
+      "featured": true,
+      "trending": true,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "aws-training",
+        "automation-testing"
+      ],
+      "whoShouldJoin": [
+        "Complete beginners who want to become developers",
+        "Front-end developers expanding to the back-end",
+        "Back-end developers learning modern front-end frameworks",
+        "Entrepreneurs wanting to build their own web products"
+      ],
+      "learningObjectives": [
+        "Build responsive front-end UIs with React",
+        "Design and implement RESTful APIs with Node.js and Express",
+        "Model and query data with MongoDB and PostgreSQL",
+        "Secure web applications with JWT and OAuth 2.0",
+        "Deploy full stack applications to AWS using Docker and CI/CD"
+      ],
+      "tags": [
+        "full-stack",
+        "react",
+        "nodejs",
+        "javascript",
+        "mongodb",
+        "web-development"
+      ],
+      "metaTitle": "Full Stack Development Course — React, Node.js, MongoDB | Global Minds Academy",
+      "metaDescription": "Become a job-ready full stack developer with React, Node.js, MongoDB and AWS. 6-month certified programme at Global Minds Academy."
+    }
+  },
+  {
+    "section": "courses",
+    "slug": "cyber-security",
+    "content": {
+      "id": "c8",
+      "slug": "cyber-security",
+      "title": "Cyber Security",
+      "shortDescription": "Ethical hacking, penetration testing, network security, SIEM, vulnerability assessment and preparation for CompTIA Security+.",
+      "longDescription": "This Cyber Security course delivers practical, hands-on training in ethical hacking and penetration testing using industry-standard tools like Kali Linux, Metasploit and Burp Suite. You will cover network security fundamentals, cryptography, SIEM platforms, vulnerability assessment methodologies and gain preparation for the CompTIA Security+ certification.",
+      "category": "cyber-security",
+      "subCategory": "Network Security",
+      "level": "Intermediate",
+      "duration": "3 Months",
+      "totalHours": 80,
+      "mode": "Both",
+      "language": "English",
+      "instructor": {
+        "id": "i6",
+        "name": "Meera Nair",
+        "slug": "meera-nair",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+        "designation": "Cyber Security Expert",
+        "expertise": [
+          "Ethical Hacking",
+          "Network Security",
+          "Penetration Testing",
+          "SIEM",
+          "Cloud Security"
+        ],
+        "experience": "10+ Years",
+        "certifications": [
+          "CEH",
+          "OSCP",
+          "CompTIA Security+",
+          "CISSP"
+        ],
+        "courses": [
+          "cyber-security",
+          "software-testing"
+        ],
+        "bio": "Meera is a certified ethical hacker with experience in enterprise security audits. Placeholder bio — to be updated.",
+        "linkedIn": "https://linkedin.com/in/placeholder",
+        "rating": 4.9,
+        "totalStudents": 3200
+      },
+      "syllabus": [
+        "Cyber Security Fundamentals & Threat Landscape",
+        "Network Security — Protocols, Firewalls & IDS/IPS",
+        "Ethical Hacking Methodology",
+        "Reconnaissance & OSINT Techniques",
+        "Scanning & Enumeration with Nmap",
+        "Exploitation with Metasploit Framework",
+        "Web Application Security & Burp Suite",
+        "Wireless Network Security",
+        "Cryptography & PKI",
+        "SIEM & Incident Response",
+        "Vulnerability Assessment with Nessus",
+        "CompTIA Security+ Exam Prep"
+      ],
+      "modules": [
+        {
+          "id": "m9-1",
+          "title": "Security Fundamentals & Networking",
+          "duration": "2 weeks",
+          "topics": [
+            "CIA triad",
+            "OSI model security",
+            "TCP/IP attack vectors",
+            "Firewall & IDS/IPS",
+            "Network hardening"
+          ]
+        },
+        {
+          "id": "m9-2",
+          "title": "Ethical Hacking & Reconnaissance",
+          "duration": "2 weeks",
+          "topics": [
+            "Penetration testing phases",
+            "OSINT & footprinting",
+            "Nmap scanning",
+            "Enumeration techniques",
+            "Vulnerability identification"
+          ]
+        },
+        {
+          "id": "m9-3",
+          "title": "Exploitation & Post-Exploitation",
+          "duration": "3 weeks",
+          "topics": [
+            "Metasploit framework",
+            "Exploiting common CVEs",
+            "Privilege escalation",
+            "Lateral movement",
+            "Covering tracks"
+          ]
+        },
+        {
+          "id": "m9-4",
+          "title": "Web Application Security",
+          "duration": "2 weeks",
+          "topics": [
+            "OWASP Top 10",
+            "Burp Suite proxy & scanner",
+            "SQL injection",
+            "XSS & CSRF attacks",
+            "Secure coding principles"
+          ]
+        },
+        {
+          "id": "m9-5",
+          "title": "Cryptography & SIEM",
+          "duration": "1 week",
+          "topics": [
+            "Symmetric & asymmetric encryption",
+            "PKI & certificates",
+            "Hashing algorithms",
+            "SIEM platforms (Splunk basics)",
+            "Incident response process"
+          ]
+        }
+      ],
+      "prerequisites": [
+        "Basic networking knowledge (TCP/IP, OSI model)",
+        "Familiarity with Linux command line",
+        "Understanding of web technologies"
+      ],
+      "skills": [
+        "Ethical Hacking",
+        "Penetration Testing",
+        "Network Security",
+        "SIEM",
+        "Vulnerability Assessment",
+        "Firewalls",
+        "Cryptography"
+      ],
+      "tools": [
+        "Kali Linux",
+        "Metasploit",
+        "Wireshark",
+        "Nmap",
+        "Burp Suite",
+        "Nessus"
+      ],
+      "projects": [
+        "Full penetration test report on a lab environment",
+        "Web application security assessment with Burp Suite",
+        "SIEM dashboard setup and incident response simulation"
+      ],
+      "certification": "Global Minds Cyber Security Certificate + CompTIA Security+ prep",
+      "careerOutcomes": [
+        "Conduct professional penetration tests and vulnerability assessments",
+        "Secure network infrastructure against common threats",
+        "Respond to and investigate security incidents",
+        "Prepare for CompTIA Security+ certification"
+      ],
+      "jobRoles": [
+        "Cyber Security Analyst",
+        "Ethical Hacker / Penetration Tester",
+        "Security Operations Center (SOC) Analyst",
+        "Information Security Engineer",
+        "Vulnerability Analyst"
+      ],
+      "placementSupport": true,
+      "batchSchedule": [
+        {
+          "id": "b1",
+          "day": "Monday / Wednesday / Friday",
+          "time": "7:00 AM – 9:00 AM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b2",
+          "day": "Tuesday / Thursday",
+          "time": "7:00 PM – 9:00 PM",
+          "mode": "Online",
+          "seats": 20,
+          "startDate": "Flexible",
+          "type": "Weekday"
+        },
+        {
+          "id": "b3",
+          "day": "Saturday / Sunday",
+          "time": "10:00 AM – 1:00 PM",
+          "mode": "Both",
+          "seats": 15,
+          "startDate": "Flexible",
+          "type": "Weekend"
+        },
+        {
+          "id": "b4",
+          "day": "Monday – Friday",
+          "time": "10:00 AM – 4:00 PM",
+          "mode": "Both",
+          "seats": 10,
+          "startDate": "Flexible",
+          "type": "Fast-Track"
+        }
+      ],
+      "onlineAvailable": true,
+      "classroomAvailable": true,
+      "oneToOneAvailable": true,
+      "price": 24000,
+      "discountPrice": 17000,
+      "currency": "INR",
+      "discountPercentage": 29,
+      "thumbnail": "/images/courses/cyber-security.jpg",
+      "banner": "/images/courses/cyber-security.jpg",
+      "rating": 4.9,
+      "reviewCount": 165,
+      "learnerCount": 2400,
+      "featured": false,
+      "trending": true,
+      "popular": true,
+      "status": "active",
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Who is this course for?",
+          "answer": "This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need prior experience?",
+          "answer": "No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above."
+        },
+        {
+          "id": "f3",
+          "question": "Is there a certificate upon completion?",
+          "answer": "Yes, Global Minds Academy provides a course completion certificate recognised by industry."
+        },
+        {
+          "id": "f4",
+          "question": "What is the refund policy?",
+          "answer": "Please refer to our refund policy page for full details."
+        },
+        {
+          "id": "f5",
+          "question": "Is placement support available?",
+          "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance."
+        }
+      ],
+      "relatedCourses": [
+        "aws-training",
+        "automation-testing"
+      ],
+      "whoShouldJoin": [
+        "IT professionals moving into cyber security",
+        "Network administrators wanting security expertise",
+        "Developers learning secure coding and security testing",
+        "Students targeting ethical hacking or SOC analyst roles"
+      ],
+      "learningObjectives": [
+        "Apply ethical hacking methodology in a lab environment",
+        "Identify and exploit common vulnerabilities using Metasploit",
+        "Conduct web application security assessments with Burp Suite",
+        "Set up and operate a basic SIEM for incident detection",
+        "Prepare effectively for the CompTIA Security+ exam"
+      ],
+      "tags": [
+        "cyber-security",
+        "ethical-hacking",
+        "penetration-testing",
+        "network-security",
+        "kali-linux"
+      ],
+      "metaTitle": "Cyber Security Course — Ethical Hacking, Penetration Testing | Global Minds Academy",
+      "metaDescription": "Hands-on Cyber Security training with Kali Linux, Metasploit and Burp Suite. CompTIA Security+ prep included. Global Minds Academy."
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "cloud-computing",
+    "content": {
+      "id": "cat-cloud",
+      "slug": "cloud-computing",
+      "title": "AWS / Cloud",
+      "description": "AWS / Cloud",
+      "icon": "cloud",
+      "color": "#3b82f6",
+      "bgColor": "#eff6ff",
+      "courseCount": 1,
+      "courses": [
+        "aws-training"
+      ],
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "data-science-analytics",
+    "content": {
+      "id": "cat-data",
+      "slug": "data-science-analytics",
+      "title": "Data Science",
+      "description": "Data Science",
+      "icon": "bar-chart-2",
+      "color": "#f59e0b",
+      "bgColor": "#fffbeb",
+      "courseCount": 1,
+      "courses": [
+        "data-science"
+      ],
+      "featured": true,
+      "order": 2
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "machine-learning",
+    "content": {
+      "id": "cat-ml",
+      "slug": "machine-learning",
+      "title": "Machine Learning",
+      "description": "Machine Learning",
+      "icon": "cpu",
+      "color": "#8b5cf6",
+      "bgColor": "#f5f3ff",
+      "courseCount": 1,
+      "courses": [
+        "machine-learning"
+      ],
+      "featured": true,
+      "order": 3
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "full-stack-development",
+    "content": {
+      "id": "cat-fullstack",
+      "slug": "full-stack-development",
+      "title": "Full Stack Development",
+      "description": "Full Stack Development",
+      "icon": "layers",
+      "color": "#10b981",
+      "bgColor": "#ecfdf5",
+      "courseCount": 1,
+      "courses": [
+        "full-stack-development"
+      ],
+      "featured": true,
+      "order": 4
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "cyber-security",
+    "content": {
+      "id": "cat-cyber",
+      "slug": "cyber-security",
+      "title": "Cyber Security",
+      "description": "Cyber Security",
+      "icon": "shield",
+      "color": "#ef4444",
+      "bgColor": "#fef2f2",
+      "courseCount": 1,
+      "courses": [
+        "cyber-security"
+      ],
+      "featured": true,
+      "order": 5
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "software-testing",
+    "content": {
+      "id": "cat-testing",
+      "slug": "software-testing",
+      "title": "Software Testing",
+      "description": "Software Testing",
+      "icon": "check-circle",
+      "color": "#06b6d4",
+      "bgColor": "#ecfeff",
+      "courseCount": 1,
+      "courses": [
+        "software-testing"
+      ],
+      "featured": true,
+      "order": 6
+    }
+  },
+  {
+    "section": "categories",
+    "slug": "automation-testing",
+    "content": {
+      "id": "cat-automation-testing",
+      "slug": "automation-testing",
+      "title": "Automation Testing",
+      "description": "Automation Testing",
+      "icon": "zap",
+      "color": "#f97316",
+      "bgColor": "#fff7ed",
+      "courseCount": 1,
+      "courses": [
+        "automation-testing"
+      ],
+      "featured": true,
+      "order": 7
+    }
+  },
+  {
+    "section": "master-programs",
+    "slug": "freshers-master-program",
+    "content": {
+      "id": "mp1",
+      "slug": "freshers-master-program",
+      "title": "Global Minds Academy Freshers Master Program",
+      "tagline": "Your Complete IT Career Launch Pad",
+      "shortDescription": "A comprehensive program for fresh graduates — programming, web fundamentals, software testing, cloud basics, DevOps, aptitude and placement support.",
+      "longDescription": "The Freshers Master Program is designed to transform fresh graduates and career starters into industry-ready IT professionals. It covers programming fundamentals, web development, software testing, cloud basics, DevOps, communication skills, aptitude, resume preparation and mock interviews. PLACEHOLDER — to be customised.",
+      "duration": "6 Months",
+      "totalHours": 480,
+      "level": "Beginner",
+      "modules": [
+        {
+          "id": "mm1",
+          "title": "Programming Fundamentals",
+          "duration": "40 Hours",
+          "topics": [
+            "Logic building",
+            "Flowcharts",
+            "Algorithms",
+            "Problem solving"
+          ],
+          "tools": [
+            "C/Python"
+          ]
+        },
+        {
+          "id": "mm2",
+          "title": "Python / Java Programming",
+          "duration": "60 Hours",
+          "topics": [
+            "Core language concepts",
+            "OOP",
+            "Data structures",
+            "File handling"
+          ],
+          "tools": [
+            "Python or Java"
+          ]
+        },
+        {
+          "id": "mm3",
+          "title": "SQL & Database",
+          "duration": "25 Hours",
+          "topics": [
+            "SQL basics",
+            "Joins",
+            "Stored procedures",
+            "Database design"
+          ],
+          "tools": [
+            "MySQL"
+          ]
+        },
+        {
+          "id": "mm4",
+          "title": "Web Fundamentals",
+          "duration": "30 Hours",
+          "topics": [
+            "HTML5",
+            "CSS3",
+            "JavaScript basics",
+            "Responsive design"
+          ],
+          "tools": [
+            "VS Code",
+            "Browser"
+          ]
+        },
+        {
+          "id": "mm5",
+          "title": "Git & GitHub",
+          "duration": "10 Hours",
+          "topics": [
+            "Version control",
+            "Branching",
+            "Pull requests",
+            "Collaboration"
+          ],
+          "tools": [
+            "Git",
+            "GitHub"
+          ]
+        },
+        {
+          "id": "mm6",
+          "title": "Software Testing Basics",
+          "duration": "40 Hours",
+          "topics": [
+            "SDLC/STLC",
+            "Manual testing",
+            "Test cases",
+            "Bug reporting"
+          ],
+          "tools": [
+            "JIRA",
+            "TestLink"
+          ]
+        },
+        {
+          "id": "mm7",
+          "title": "Cloud Fundamentals",
+          "duration": "20 Hours",
+          "topics": [
+            "Cloud concepts",
+            "AWS basics",
+            "Azure intro",
+            "Deployment basics"
+          ],
+          "tools": [
+            "AWS Console"
+          ]
+        },
+        {
+          "id": "mm8",
+          "title": "DevOps Fundamentals",
+          "duration": "20 Hours",
+          "topics": [
+            "CI/CD concepts",
+            "Docker intro",
+            "Jenkins intro",
+            "DevOps culture"
+          ],
+          "tools": [
+            "Docker",
+            "Jenkins"
+          ]
+        },
+        {
+          "id": "mm9",
+          "title": "Communication & Aptitude",
+          "duration": "30 Hours",
+          "topics": [
+            "Business communication",
+            "Verbal & written",
+            "Quantitative aptitude",
+            "Logical reasoning"
+          ],
+          "tools": []
+        },
+        {
+          "id": "mm10",
+          "title": "Career Preparation",
+          "duration": "30 Hours",
+          "topics": [
+            "Resume writing",
+            "LinkedIn profile",
+            "GitHub portfolio",
+            "Interview skills",
+            "Mock interviews"
+          ],
+          "tools": []
+        },
+        {
+          "id": "mm11",
+          "title": "Capstone Projects",
+          "duration": "40 Hours",
+          "topics": [
+            "2 real-world projects",
+            "Project documentation",
+            "Presentation skills"
+          ],
+          "tools": [
+            "Full stack"
+          ]
+        }
+      ],
+      "skills": [
+        "Python/Java",
+        "Web Development",
+        "SQL",
+        "Git",
+        "Software Testing",
+        "Cloud Basics",
+        "DevOps Basics",
+        "Communication",
+        "Problem Solving"
+      ],
+      "tools": [
+        "Python/Java",
+        "MySQL",
+        "Git",
+        "JIRA",
+        "AWS",
+        "Docker",
+        "Jenkins",
+        "VS Code"
+      ],
+      "projects": 2,
+      "certification": "Global Minds Academy Freshers Program Certificate",
+      "careerOutcomes": [
+        "Junior Developer",
+        "QA Engineer",
+        "Cloud Support Associate",
+        "Technical Support Engineer"
+      ],
+      "jobRoles": [
+        "Junior Software Developer",
+        "QA Engineer",
+        "Technical Support",
+        "Cloud Support"
+      ],
+      "targetAudience": [
+        "Fresh graduates (any stream)",
+        "Career starters",
+        "Non-IT professionals entering technology",
+        "Students in final year"
+      ],
+      "prerequisites": [
+        "Basic computer skills",
+        "Graduation (any stream)"
+      ],
+      "price": 80000,
+      "discountPrice": 59999,
+      "currency": "INR",
+      "thumbnail": "/images/master-programs/freshers-master-program.jpg",
+      "banner": "/images/master-programs/freshers-master-program.jpg",
+      "featured": true,
+      "learnerCount": 5200,
+      "rating": 4.8,
+      "reviewCount": 890,
+      "placementSupport": true,
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Is this program suitable for non-CS graduates?",
+          "answer": "Yes, this program is designed for any graduate, regardless of educational background."
+        },
+        {
+          "id": "f2",
+          "question": "What is the batch size?",
+          "answer": "Batches are kept small to ensure quality. Placeholder — confirm with admissions."
+        },
+        {
+          "id": "f3",
+          "question": "Is placement guaranteed?",
+          "answer": "We provide strong placement support, resume prep and mock interviews. Placement depends on individual performance. Placeholder."
+        }
+      ],
+      "status": "active"
+    }
+  },
+  {
+    "section": "master-programs",
+    "slug": "full-stack-master-program",
+    "content": {
+      "id": "mp2",
+      "slug": "full-stack-master-program",
+      "title": "Full Stack Master Program",
+      "tagline": "Build Complete Web Applications from Frontend to Backend",
+      "shortDescription": "Become a full stack developer — HTML, CSS, JavaScript, React, Node.js, databases, REST APIs, Git, authentication, deployment and cloud basics.",
+      "longDescription": "The Full Stack Master Program takes you from zero to a deployable full stack application. You will learn modern frontend and backend technologies, databases, authentication, deployment and cloud integration. PLACEHOLDER.",
+      "duration": "5 Months",
+      "totalHours": 400,
+      "level": "Beginner",
+      "modules": [
+        {
+          "id": "mm1",
+          "title": "HTML & CSS",
+          "duration": "25 Hours",
+          "topics": [
+            "HTML5 semantic",
+            "CSS3",
+            "Flexbox",
+            "Grid",
+            "Responsive design",
+            "Animations"
+          ],
+          "tools": [
+            "VS Code",
+            "Chrome DevTools"
+          ]
+        },
+        {
+          "id": "mm2",
+          "title": "JavaScript & TypeScript",
+          "duration": "50 Hours",
+          "topics": [
+            "ES6+",
+            "DOM",
+            "Async/Await",
+            "Fetch API",
+            "TypeScript basics"
+          ],
+          "tools": [
+            "Node.js",
+            "Vite"
+          ]
+        },
+        {
+          "id": "mm3",
+          "title": "React Development",
+          "duration": "60 Hours",
+          "topics": [
+            "Components",
+            "Hooks",
+            "Context API",
+            "Redux Toolkit",
+            "React Router",
+            "Testing"
+          ],
+          "tools": [
+            "React",
+            "Redux",
+            "Vite"
+          ]
+        },
+        {
+          "id": "mm4",
+          "title": "Node.js & Express",
+          "duration": "50 Hours",
+          "topics": [
+            "Node.js fundamentals",
+            "Express framework",
+            "REST APIs",
+            "Middleware",
+            "Authentication"
+          ],
+          "tools": [
+            "Node.js",
+            "Express",
+            "Postman"
+          ]
+        },
+        {
+          "id": "mm5",
+          "title": "Databases",
+          "duration": "35 Hours",
+          "topics": [
+            "MongoDB",
+            "Mongoose",
+            "PostgreSQL",
+            "SQL basics",
+            "Database design"
+          ],
+          "tools": [
+            "MongoDB",
+            "PostgreSQL",
+            "Compass"
+          ]
+        },
+        {
+          "id": "mm6",
+          "title": "Authentication & Security",
+          "duration": "20 Hours",
+          "topics": [
+            "JWT",
+            "OAuth basics",
+            "Bcrypt",
+            "CSRF protection",
+            "Input validation"
+          ],
+          "tools": [
+            "Passport.js",
+            "JWT"
+          ]
+        },
+        {
+          "id": "mm7",
+          "title": "Deployment & Cloud",
+          "duration": "30 Hours",
+          "topics": [
+            "Git/GitHub",
+            "Docker basics",
+            "AWS EC2/S3",
+            "Vercel",
+            "Netlify",
+            "CI/CD intro"
+          ],
+          "tools": [
+            "Docker",
+            "AWS",
+            "GitHub Actions"
+          ]
+        },
+        {
+          "id": "mm8",
+          "title": "Capstone Projects",
+          "duration": "50 Hours",
+          "topics": [
+            "E-commerce application",
+            "Social media app",
+            "Portfolio project",
+            "Code review"
+          ],
+          "tools": [
+            "Full stack"
+          ]
+        }
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "PostgreSQL",
+        "REST APIs",
+        "Docker",
+        "AWS",
+        "Git"
+      ],
+      "tools": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "Git",
+        "GitHub"
+      ],
+      "projects": 3,
+      "certification": "Global Minds Academy Full Stack Developer Certificate",
+      "careerOutcomes": [
+        "Full Stack Developer",
+        "React Developer",
+        "Node.js Developer",
+        "MERN Stack Developer",
+        "Web Developer"
+      ],
+      "jobRoles": [
+        "Full Stack Developer",
+        "Frontend Developer",
+        "Backend Developer",
+        "MERN Developer"
+      ],
+      "targetAudience": [
+        "Beginners wanting web development career",
+        "CS students",
+        "Developers wanting to go full stack",
+        "Entrepreneurs"
+      ],
+      "prerequisites": [
+        "Basic computer skills",
+        "Logical thinking"
+      ],
+      "price": 90000,
+      "discountPrice": 69999,
+      "currency": "INR",
+      "thumbnail": "/images/master-programs/full-stack-master-program.jpg",
+      "banner": "/images/master-programs/full-stack-master-program.jpg",
+      "featured": true,
+      "learnerCount": 4800,
+      "rating": 4.9,
+      "reviewCount": 760,
+      "placementSupport": true,
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Is prior programming experience required?",
+          "answer": "No. The program starts from fundamentals and builds up progressively."
+        },
+        {
+          "id": "f2",
+          "question": "What projects will I build?",
+          "answer": "You will build 3 complete applications including an e-commerce platform. Placeholder."
+        }
+      ],
+      "status": "active"
+    }
+  },
+  {
+    "section": "master-programs",
+    "slug": "ai-ml-master-program",
+    "content": {
+      "id": "mp3",
+      "slug": "ai-ml-master-program",
+      "title": "AI & Machine Learning Master Program",
+      "tagline": "Build Intelligent Systems with Python, ML & Deep Learning",
+      "shortDescription": "Master AI and ML from scratch — Python, deep learning, NLP, computer vision, LLMs, prompt engineering and real-world AI deployment.",
+      "longDescription": "The AI & Machine Learning Master Program takes you from Python fundamentals to building production-grade AI systems. You will master classical machine learning, deep learning architectures, natural language processing, computer vision, large language models, and MLOps deployment pipelines using the latest tools and frameworks.",
+      "duration": "6 Months",
+      "totalHours": 480,
+      "level": "Beginner",
+      "modules": [
+        {
+          "id": "mm1",
+          "title": "Python for AI",
+          "duration": "35 Hours",
+          "topics": [
+            "Python fundamentals",
+            "NumPy",
+            "Pandas",
+            "Data manipulation",
+            "OOP for ML"
+          ],
+          "tools": [
+            "Python",
+            "Jupyter",
+            "VS Code"
+          ]
+        },
+        {
+          "id": "mm2",
+          "title": "Mathematics for ML",
+          "duration": "30 Hours",
+          "topics": [
+            "Linear algebra",
+            "Calculus basics",
+            "Probability & statistics",
+            "Distributions",
+            "Hypothesis testing"
+          ],
+          "tools": [
+            "Python",
+            "SciPy"
+          ]
+        },
+        {
+          "id": "mm3",
+          "title": "Machine Learning",
+          "duration": "65 Hours",
+          "topics": [
+            "Supervised & unsupervised learning",
+            "Regression",
+            "Classification",
+            "Clustering",
+            "Ensemble methods",
+            "Feature engineering",
+            "Model evaluation"
+          ],
+          "tools": [
+            "Scikit-learn",
+            "XGBoost",
+            "MLflow"
+          ]
+        },
+        {
+          "id": "mm4",
+          "title": "Deep Learning",
+          "duration": "60 Hours",
+          "topics": [
+            "Neural networks",
+            "CNNs",
+            "RNNs",
+            "LSTMs",
+            "Transfer learning",
+            "GAN basics"
+          ],
+          "tools": [
+            "TensorFlow",
+            "Keras",
+            "PyTorch"
+          ]
+        },
+        {
+          "id": "mm5",
+          "title": "Computer Vision",
+          "duration": "35 Hours",
+          "topics": [
+            "Image processing",
+            "Object detection",
+            "YOLO",
+            "Image segmentation",
+            "OpenCV"
+          ],
+          "tools": [
+            "OpenCV",
+            "PyTorch",
+            "Roboflow"
+          ]
+        },
+        {
+          "id": "mm6",
+          "title": "Natural Language Processing",
+          "duration": "40 Hours",
+          "topics": [
+            "Text preprocessing",
+            "Word embeddings",
+            "Transformers",
+            "BERT",
+            "Sentiment analysis",
+            "NER"
+          ],
+          "tools": [
+            "NLTK",
+            "spaCy",
+            "HuggingFace"
+          ]
+        },
+        {
+          "id": "mm7",
+          "title": "Generative AI & LLMs",
+          "duration": "45 Hours",
+          "topics": [
+            "LLM fundamentals",
+            "Prompt engineering",
+            "RAG",
+            "LangChain",
+            "AI agents",
+            "Fine-tuning",
+            "OpenAI API"
+          ],
+          "tools": [
+            "LangChain",
+            "OpenAI API",
+            "HuggingFace",
+            "ChromaDB"
+          ]
+        },
+        {
+          "id": "mm8",
+          "title": "MLOps & AI Deployment",
+          "duration": "35 Hours",
+          "topics": [
+            "Model deployment",
+            "FastAPI",
+            "Docker for ML",
+            "AWS SageMaker",
+            "CI/CD for ML",
+            "Model monitoring"
+          ],
+          "tools": [
+            "FastAPI",
+            "Docker",
+            "AWS SageMaker",
+            "MLflow"
+          ]
+        },
+        {
+          "id": "mm9",
+          "title": "Capstone Projects",
+          "duration": "55 Hours",
+          "topics": [
+            "End-to-end ML project",
+            "GenAI application",
+            "Computer vision project",
+            "Kaggle competition",
+            "Portfolio creation"
+          ],
+          "tools": [
+            "Full AI stack"
+          ]
+        }
+      ],
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision",
+        "NLP",
+        "LLMs",
+        "LangChain",
+        "MLOps",
+        "PyTorch",
+        "TensorFlow"
+      ],
+      "tools": [
+        "Python",
+        "Jupyter",
+        "Scikit-learn",
+        "TensorFlow",
+        "PyTorch",
+        "HuggingFace",
+        "LangChain",
+        "OpenCV",
+        "Docker",
+        "AWS SageMaker"
+      ],
+      "projects": 4,
+      "certification": "Global Minds Academy AI & ML Master Certificate",
+      "careerOutcomes": [
+        "AI Engineer",
+        "ML Engineer",
+        "Data Scientist",
+        "NLP Engineer",
+        "GenAI Developer",
+        "Computer Vision Engineer"
+      ],
+      "jobRoles": [
+        "AI Engineer",
+        "ML Engineer",
+        "Data Scientist",
+        "NLP Engineer",
+        "GenAI Developer"
+      ],
+      "targetAudience": [
+        "Fresh graduates",
+        "Software developers pivoting to AI",
+        "Data analysts",
+        "Professionals wanting AI skills"
+      ],
+      "prerequisites": [
+        "Basic mathematics",
+        "Basic programming (helpful but not required)"
+      ],
+      "price": 105000,
+      "discountPrice": 79999,
+      "currency": "INR",
+      "thumbnail": "/images/master-programs/data-science-master-program.jpg",
+      "banner": "/images/master-programs/data-science-master-program.jpg",
+      "featured": true,
+      "learnerCount": 3100,
+      "rating": 4.9,
+      "reviewCount": 520,
+      "placementSupport": true,
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Do I need a maths background to join?",
+          "answer": "No. We cover all the required mathematics within the program at a practical, applied level."
+        },
+        {
+          "id": "f2",
+          "question": "Is prior programming experience required?",
+          "answer": "No. Python is taught from scratch in the first module."
+        },
+        {
+          "id": "f3",
+          "question": "Will I learn about LLMs and ChatGPT-style models?",
+          "answer": "Yes. There is a dedicated module on LLMs, prompt engineering, RAG, and building AI applications."
+        }
+      ],
+      "status": "active"
+    }
+  },
+  {
+    "section": "master-programs",
+    "slug": "data-science-business-intelligence",
+    "content": {
+      "id": "mp4",
+      "slug": "data-science-business-intelligence",
+      "title": "Data Science & Business Intelligence Master Program",
+      "tagline": "From Raw Data to Business Decisions and AI Insights",
+      "shortDescription": "Comprehensive program combining data science, analytics, BI tools and ML — Python, SQL, Power BI, Tableau, machine learning and data storytelling.",
+      "longDescription": "The Data Science & Business Intelligence Master Program is the most complete data career program at Global Minds Academy. It bridges the gap between BI reporting and AI-powered analytics, equipping you with Python, SQL, Power BI, Tableau, machine learning, and the ability to communicate data insights to business stakeholders.",
+      "duration": "6 Months",
+      "totalHours": 480,
+      "level": "Beginner",
+      "modules": [
+        {
+          "id": "mm1",
+          "title": "Python for Data Science",
+          "duration": "40 Hours",
+          "topics": [
+            "Python fundamentals",
+            "NumPy",
+            "Pandas",
+            "Data wrangling",
+            "File I/O",
+            "APIs"
+          ],
+          "tools": [
+            "Python",
+            "Jupyter"
+          ]
+        },
+        {
+          "id": "mm2",
+          "title": "SQL & Database Analytics",
+          "duration": "35 Hours",
+          "topics": [
+            "SQL advanced queries",
+            "Window functions",
+            "CTEs",
+            "Stored procedures",
+            "Database design"
+          ],
+          "tools": [
+            "MySQL",
+            "PostgreSQL"
+          ]
+        },
+        {
+          "id": "mm3",
+          "title": "Data Analysis & Visualisation",
+          "duration": "35 Hours",
+          "topics": [
+            "Exploratory data analysis",
+            "Matplotlib",
+            "Seaborn",
+            "Plotly",
+            "Statistical analysis"
+          ],
+          "tools": [
+            "Matplotlib",
+            "Seaborn",
+            "Plotly"
+          ]
+        },
+        {
+          "id": "mm4",
+          "title": "Power BI",
+          "duration": "50 Hours",
+          "topics": [
+            "Power Query",
+            "Data modelling",
+            "DAX formulas",
+            "Reports & dashboards",
+            "Power BI Service",
+            "Row-level security"
+          ],
+          "tools": [
+            "Power BI Desktop",
+            "Power BI Service"
+          ]
+        },
+        {
+          "id": "mm5",
+          "title": "Tableau",
+          "duration": "35 Hours",
+          "topics": [
+            "Tableau Desktop",
+            "Chart types",
+            "Calculated fields",
+            "LOD expressions",
+            "Dashboard design",
+            "Tableau Server"
+          ],
+          "tools": [
+            "Tableau Desktop"
+          ]
+        },
+        {
+          "id": "mm6",
+          "title": "Statistics & Mathematics",
+          "duration": "25 Hours",
+          "topics": [
+            "Descriptive statistics",
+            "Probability",
+            "Distributions",
+            "Hypothesis testing",
+            "Regression basics"
+          ],
+          "tools": [
+            "Python",
+            "SciPy"
+          ]
+        },
+        {
+          "id": "mm7",
+          "title": "Machine Learning for BI",
+          "duration": "55 Hours",
+          "topics": [
+            "Supervised learning",
+            "Clustering",
+            "Forecasting",
+            "Recommendation systems",
+            "Feature engineering",
+            "Model evaluation"
+          ],
+          "tools": [
+            "Scikit-learn",
+            "XGBoost",
+            "MLflow"
+          ]
+        },
+        {
+          "id": "mm8",
+          "title": "ETL & Data Warehousing",
+          "duration": "30 Hours",
+          "topics": [
+            "ETL concepts",
+            "Data warehousing",
+            "Star/snowflake schema",
+            "Data pipelines",
+            "Azure Data Factory intro"
+          ],
+          "tools": [
+            "SSIS",
+            "Azure Data Factory"
+          ]
+        },
+        {
+          "id": "mm9",
+          "title": "Data Storytelling & Business Communication",
+          "duration": "20 Hours",
+          "topics": [
+            "Storytelling with data",
+            "Executive dashboards",
+            "Visual design principles",
+            "Presenting insights"
+          ],
+          "tools": []
+        },
+        {
+          "id": "mm10",
+          "title": "Capstone Projects",
+          "duration": "55 Hours",
+          "topics": [
+            "Sales analytics dashboard",
+            "ML forecasting project",
+            "End-to-end BI solution",
+            "Portfolio presentation"
+          ],
+          "tools": [
+            "Full data stack"
+          ]
+        }
+      ],
+      "skills": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Tableau",
+        "DAX",
+        "Machine Learning",
+        "ETL",
+        "Data Modelling",
+        "Data Visualisation",
+        "Statistics"
+      ],
+      "tools": [
+        "Python",
+        "Jupyter",
+        "SQL Server",
+        "Power BI",
+        "Tableau",
+        "Scikit-learn",
+        "Excel",
+        "Azure Data Factory"
+      ],
+      "projects": 4,
+      "certification": "Global Minds Academy Data Science & BI Master Certificate",
+      "careerOutcomes": [
+        "Data Scientist",
+        "BI Developer",
+        "Data Analyst",
+        "Power BI Developer",
+        "ML Analyst",
+        "Business Analyst"
+      ],
+      "jobRoles": [
+        "Data Scientist",
+        "BI Developer",
+        "Data Analyst",
+        "Power BI Developer",
+        "Reporting Analyst"
+      ],
+      "targetAudience": [
+        "Fresh graduates",
+        "Finance and analytics professionals",
+        "Report developers",
+        "Business analysts",
+        "Developers pivoting to data"
+      ],
+      "prerequisites": [
+        "Basic Excel or SQL knowledge (helpful)",
+        "No programming experience required"
+      ],
+      "price": 95000,
+      "discountPrice": 72999,
+      "currency": "INR",
+      "thumbnail": "/images/master-programs/data-science-master-program.jpg",
+      "banner": "/images/master-programs/data-science-master-program.jpg",
+      "featured": true,
+      "learnerCount": 2600,
+      "rating": 4.9,
+      "reviewCount": 440,
+      "placementSupport": true,
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Is this program for data analysts or data scientists?",
+          "answer": "Both. It covers BI tools like Power BI and Tableau as well as Python-based machine learning, so you graduate as a complete data professional."
+        },
+        {
+          "id": "f2",
+          "question": "Do I need Power BI or Tableau licenses?",
+          "answer": "Power BI Desktop is free. Tableau offers a free trial. We guide you through setup on day one."
+        },
+        {
+          "id": "f3",
+          "question": "Will this help me get a data analyst job?",
+          "answer": "Yes. The program is job-focused with placement support, portfolio projects and mock interviews."
+        }
+      ],
+      "status": "active"
+    }
+  },
+  {
+    "section": "master-programs",
+    "slug": "software-testing-master-program",
+    "content": {
+      "id": "mp6",
+      "slug": "software-testing-master-program",
+      "title": "Software Testing Master Program",
+      "tagline": "Become a Complete QA & Test Automation Engineer",
+      "shortDescription": "Complete testing program — manual testing, Selenium, API testing, performance testing, CI/CD integration and real-world QA projects.",
+      "longDescription": "The Software Testing Master Program prepares you for a complete QA career, covering everything from testing fundamentals to advanced automation frameworks. PLACEHOLDER.",
+      "duration": "4 Months",
+      "totalHours": 320,
+      "level": "Beginner",
+      "modules": [
+        {
+          "id": "mm1",
+          "title": "Testing Fundamentals",
+          "duration": "25 Hours",
+          "topics": [
+            "SDLC",
+            "STLC",
+            "Testing types",
+            "Test levels",
+            "Defect lifecycle",
+            "JIRA"
+          ],
+          "tools": [
+            "JIRA",
+            "TestLink"
+          ]
+        },
+        {
+          "id": "mm2",
+          "title": "Manual Testing",
+          "duration": "40 Hours",
+          "topics": [
+            "Test planning",
+            "Test design techniques",
+            "Test execution",
+            "Bug reporting",
+            "Agile testing"
+          ],
+          "tools": [
+            "JIRA",
+            "TestRail"
+          ]
+        },
+        {
+          "id": "mm3",
+          "title": "Java for Automation",
+          "duration": "35 Hours",
+          "topics": [
+            "Java basics",
+            "OOP",
+            "Collections",
+            "Exception handling for automation"
+          ],
+          "tools": [
+            "Eclipse",
+            "Java"
+          ]
+        },
+        {
+          "id": "mm4",
+          "title": "Selenium WebDriver",
+          "duration": "50 Hours",
+          "topics": [
+            "WebDriver setup",
+            "Locators",
+            "Page Object Model",
+            "TestNG",
+            "Data-driven testing",
+            "Cross-browser"
+          ],
+          "tools": [
+            "Selenium",
+            "TestNG",
+            "Maven"
+          ]
+        },
+        {
+          "id": "mm5",
+          "title": "API Testing",
+          "duration": "25 Hours",
+          "topics": [
+            "REST API concepts",
+            "Postman",
+            "Newman",
+            "Rest Assured",
+            "API automation"
+          ],
+          "tools": [
+            "Postman",
+            "Rest Assured"
+          ]
+        },
+        {
+          "id": "mm6",
+          "title": "Performance Testing",
+          "duration": "20 Hours",
+          "topics": [
+            "JMeter basics",
+            "Load testing",
+            "Performance metrics",
+            "Test analysis"
+          ],
+          "tools": [
+            "JMeter"
+          ]
+        },
+        {
+          "id": "mm7",
+          "title": "CI/CD & DevOps for QA",
+          "duration": "20 Hours",
+          "topics": [
+            "Jenkins",
+            "GitHub Actions",
+            "Docker basics",
+            "Test reporting"
+          ],
+          "tools": [
+            "Jenkins",
+            "GitHub Actions"
+          ]
+        },
+        {
+          "id": "mm8",
+          "title": "Advanced Tools",
+          "duration": "20 Hours",
+          "topics": [
+            "Cypress intro",
+            "Playwright intro",
+            "Mobile testing basics",
+            "BDD with Cucumber"
+          ],
+          "tools": [
+            "Cypress",
+            "Playwright",
+            "Cucumber"
+          ]
+        },
+        {
+          "id": "mm9",
+          "title": "Capstone Projects",
+          "duration": "25 Hours",
+          "topics": [
+            "Full automation suite",
+            "API test framework",
+            "Performance test report"
+          ],
+          "tools": [
+            "Full stack testing"
+          ]
+        }
+      ],
+      "skills": [
+        "Manual Testing",
+        "Selenium",
+        "TestNG",
+        "API Testing",
+        "JMeter",
+        "Postman",
+        "Jenkins",
+        "Cypress",
+        "Java for automation"
+      ],
+      "tools": [
+        "Selenium",
+        "TestNG",
+        "Postman",
+        "JIRA",
+        "JMeter",
+        "Jenkins",
+        "Cypress",
+        "Maven"
+      ],
+      "projects": 3,
+      "certification": "Global Minds Academy Software Testing Master Certificate + ISTQB Guidance",
+      "careerOutcomes": [
+        "QA Engineer",
+        "Test Automation Engineer",
+        "SDET",
+        "Performance Test Engineer",
+        "QA Lead"
+      ],
+      "jobRoles": [
+        "QA Engineer",
+        "Test Automation Engineer",
+        "SDET",
+        "Performance Tester"
+      ],
+      "targetAudience": [
+        "Fresh graduates",
+        "Manual testers upgrading skills",
+        "Developers wanting QA skills",
+        "Career switchers"
+      ],
+      "prerequisites": [
+        "Basic computer knowledge"
+      ],
+      "price": 70000,
+      "discountPrice": 54999,
+      "currency": "INR",
+      "thumbnail": "/images/master-programs/software-testing-master-program.jpg",
+      "banner": "/images/master-programs/software-testing-master-program.jpg",
+      "featured": false,
+      "learnerCount": 2400,
+      "rating": 4.7,
+      "reviewCount": 420,
+      "placementSupport": true,
+      "faqs": [
+        {
+          "id": "f1",
+          "question": "Do I need Java knowledge before joining?",
+          "answer": "No, Java for automation is covered in the program from basics."
+        }
+      ],
+      "status": "active"
+    }
+  },
+  {
+    "section": "scholarships",
+    "slug": "merit",
+    "content": {
+      "id": "merit",
+      "icon": "🏆",
+      "title": "Merit Scholarship",
+      "discount": "Up to 50% Off",
+      "badge": "Most Popular",
+      "badgeColor": "bg-brand-100 text-brand-700",
+      "description": "For students who score 80% or above in our free skill assessment test. Rewards academic excellence.",
+      "eligibility": [
+        "Score 80%+ in skill assessment",
+        "Any degree / diploma",
+        "Fresh enrollment only"
+      ],
+      "howToApply": "Take the free skill assessment on our website. Qualifying scores automatically trigger a scholarship offer.",
+      "color": "border-brand-200 bg-brand-50"
+    }
+  },
+  {
+    "section": "scholarships",
+    "slug": "fresher",
+    "content": {
+      "id": "fresher",
+      "icon": "🎓",
+      "title": "Fresher / Student Scholarship",
+      "discount": "30% Off",
+      "badge": "Freshers",
+      "badgeColor": "bg-green-100 text-green-700",
+      "description": "Exclusive discount for recent graduates and final year students entering the IT industry.",
+      "eligibility": [
+        "Final year or recently graduated (within 1 year)",
+        "Valid college ID required",
+        "Any stream / degree"
+      ],
+      "howToApply": "Apply online and upload your college ID or marksheet. Our team verifies within 24 hours.",
+      "color": "border-green-200 bg-green-50"
+    }
+  },
+  {
+    "section": "scholarships",
+    "slug": "women",
+    "content": {
+      "id": "women",
+      "icon": "👩‍💻",
+      "title": "Women in Tech Scholarship",
+      "discount": "40% Off",
+      "badge": "Special Initiative",
+      "badgeColor": "bg-purple-100 text-purple-700",
+      "description": "Supporting gender diversity in technology. Special discount for women professionals and students.",
+      "eligibility": [
+        "Identifies as a woman",
+        "Any background — IT or non-IT",
+        "All courses eligible"
+      ],
+      "howToApply": "Fill out the scholarship application form and mention \"Women in Tech\" in the comments.",
+      "color": "border-purple-200 bg-purple-50"
+    }
+  },
+  {
+    "section": "scholarships",
+    "slug": "referral",
+    "content": {
+      "id": "referral",
+      "icon": "🤝",
+      "title": "Referral Discount",
+      "discount": "₹3,000 Off",
+      "badge": "Refer & Save",
+      "badgeColor": "bg-orange-100 text-orange-700",
+      "description": "Get ₹3,000 off your enrollment fee when referred by an existing or past student.",
+      "eligibility": [
+        "Referred by a current or alumni student",
+        "Valid referral code required",
+        "Stackable with select offers"
+      ],
+      "howToApply": "Get a referral code from your friend and enter it at checkout. Discount applied instantly.",
+      "color": "border-orange-200 bg-orange-50"
+    }
+  },
+  {
+    "section": "scholarships",
+    "slug": "corporate",
+    "content": {
+      "id": "corporate",
+      "icon": "🏢",
+      "title": "Group / Corporate Discount",
+      "discount": "Up to 30% Off",
+      "badge": "Teams",
+      "badgeColor": "bg-sky-100 text-sky-700",
+      "description": "Special pricing for companies enrolling 3 or more employees for upskilling programs.",
+      "eligibility": [
+        "Minimum 3 employees enrolling together",
+        "Same or different courses",
+        "Invoice billing available"
+      ],
+      "howToApply": "Contact our corporate team with the number of employees and preferred courses.",
+      "color": "border-sky-200 bg-sky-50"
+    }
+  },
+  {
+    "section": "scholarships",
+    "slug": "early",
+    "content": {
+      "id": "early",
+      "icon": "⚡",
+      "title": "Early Bird Offer",
+      "discount": "₹2,000 Off",
+      "badge": "Limited Time",
+      "badgeColor": "bg-yellow-100 text-yellow-700",
+      "description": "Enroll at least 15 days before a batch starts to get an early bird discount.",
+      "eligibility": [
+        "Enroll 15+ days before batch start",
+        "Pay full fee upfront",
+        "All courses eligible"
+      ],
+      "howToApply": "Select your batch on the batch schedule page. The early bird price is automatically shown for eligible batches.",
+      "color": "border-yellow-200 bg-yellow-50"
+    }
+  },
+  {
+    "section": "instructors",
+    "slug": "alex-johnson",
+    "content": {
+      "id": "i1",
+      "name": "Alex Johnson",
+      "slug": "alex-johnson",
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      "designation": "Senior Cloud Architect",
+      "expertise": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Cloud Architecture",
+        "DevOps"
+      ],
+      "experience": "12+ Years",
+      "certifications": [
+        "AWS Solutions Architect Professional",
+        "AWS DevOps Engineer",
+        "Azure Solutions Architect"
+      ],
+      "courses": [
+        "aws-training",
+        "full-stack-development",
+        "generative-ai"
+      ],
+      "bio": "Alex is a certified cloud architect with over 12 years of experience designing and implementing cloud solutions for Fortune 500 companies. Placeholder bio — to be updated with real trainer information.",
+      "linkedIn": "https://linkedin.com/in/placeholder",
+      "rating": 4.9,
+      "totalStudents": 8500
+    }
+  },
+  {
+    "section": "instructors",
+    "slug": "priya-sharma",
+    "content": {
+      "id": "i2",
+      "name": "Priya Sharma",
+      "slug": "priya-sharma",
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
+      "designation": "Lead Data Scientist & AI Engineer",
+      "expertise": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "NLP",
+        "Data Science"
+      ],
+      "experience": "10+ Years",
+      "certifications": [
+        "Google Professional ML Engineer",
+        "AWS Machine Learning Specialty",
+        "TensorFlow Developer"
+      ],
+      "courses": [
+        "data-science",
+        "machine-learning",
+        "generative-ai"
+      ],
+      "bio": "Priya is a data scientist with expertise in building and deploying ML models at scale. Placeholder bio — to be updated with real trainer information.",
+      "linkedIn": "https://linkedin.com/in/placeholder",
+      "rating": 4.8,
+      "totalStudents": 6200
+    }
+  },
+  {
+    "section": "instructors",
+    "slug": "rahul-verma",
+    "content": {
+      "id": "i3",
+      "name": "Rahul Verma",
+      "slug": "rahul-verma",
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      "designation": "Senior DevOps Engineer",
+      "expertise": [
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "Terraform",
+        "Ansible",
+        "CI/CD",
+        "AWS"
+      ],
+      "experience": "9+ Years",
+      "certifications": [
+        "CKA",
+        "AWS DevOps Engineer",
+        "HashiCorp Terraform Associate"
+      ],
+      "courses": [
+        "aws-training",
+        "full-stack-development",
+        "cyber-security"
+      ],
+      "bio": "Rahul specialises in DevOps transformation, CI/CD pipeline design and container orchestration. Placeholder bio — to be updated.",
+      "linkedIn": "https://linkedin.com/in/placeholder",
+      "rating": 4.9,
+      "totalStudents": 5800
+    }
+  },
+  {
+    "section": "instructors",
+    "slug": "sarah-williams",
+    "content": {
+      "id": "i4",
+      "name": "Sarah Williams",
+      "slug": "sarah-williams",
+      "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      "designation": "Full Stack Development Lead",
+      "expertise": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "MERN Stack",
+        "AWS",
+        "MongoDB"
+      ],
+      "experience": "8+ Years",
+      "certifications": [
+        "AWS Developer Associate",
+        "MongoDB Certified Developer"
+      ],
+      "courses": [
+        "full-stack-development",
+        "data-science",
+        "machine-learning"
+      ],
+      "bio": "Sarah is a full stack developer with expertise in modern JavaScript frameworks and cloud deployment. Placeholder bio — to be updated.",
+      "linkedIn": "https://linkedin.com/in/placeholder",
+      "rating": 4.8,
+      "totalStudents": 7100
+    }
+  },
+  {
+    "section": "instructors",
+    "slug": "kiran-reddy",
+    "content": {
+      "id": "i5",
+      "name": "Kiran Reddy",
+      "slug": "kiran-reddy",
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      "designation": "QA Automation Architect",
+      "expertise": [
+        "Selenium",
+        "API Testing",
+        "Performance Testing",
+        "Cypress",
+        "Postman",
+        "CI/CD"
+      ],
+      "experience": "11+ Years",
+      "certifications": [
+        "ISTQB Advanced",
+        "AWS Cloud Practitioner"
+      ],
+      "courses": [
+        "software-testing",
+        "automation-testing",
+        "cyber-security"
+      ],
+      "bio": "Kiran has designed QA processes for large-scale enterprise applications. Placeholder bio — to be updated.",
+      "linkedIn": "https://linkedin.com/in/placeholder",
+      "rating": 4.7,
+      "totalStudents": 4900
+    }
+  },
+  {
+    "section": "instructors",
+    "slug": "meera-nair",
+    "content": {
+      "id": "i6",
+      "name": "Meera Nair",
+      "slug": "meera-nair",
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      "designation": "Cyber Security Expert",
+      "expertise": [
+        "Ethical Hacking",
+        "Network Security",
+        "Penetration Testing",
+        "SIEM",
+        "Cloud Security"
+      ],
+      "experience": "10+ Years",
+      "certifications": [
+        "CEH",
+        "OSCP",
+        "CompTIA Security+",
+        "CISSP"
+      ],
+      "courses": [
+        "cyber-security",
+        "software-testing"
+      ],
+      "bio": "Meera is a certified ethical hacker with experience in enterprise security audits. Placeholder bio — to be updated.",
+      "linkedIn": "https://linkedin.com/in/placeholder",
+      "rating": 4.9,
+      "totalStudents": 3200
+    }
+  },
+  {
+    "section": "internships",
+    "slug": "aws-cloud-internship",
+    "content": {
+      "id": "int1",
+      "slug": "aws-cloud-internship",
+      "title": "AWS / Cloud Intern",
+      "company": "Placeholder Tech Company",
+      "duration": "3 Months",
+      "location": "Chennai / Remote",
+      "mode": "Both",
+      "eligibility": [
+        "B.Tech / BCA / MCA final year or recent graduate",
+        "Completed AWS or Azure course",
+        "Basic Linux and networking knowledge"
+      ],
+      "skills": [
+        "AWS EC2",
+        "S3",
+        "VPC",
+        "IAM",
+        "Basic Linux",
+        "Git"
+      ],
+      "responsibilities": [
+        "Assist in cloud infrastructure management",
+        "Participate in CI/CD pipeline tasks",
+        "Document cloud configurations",
+        "Participate in team stand-ups and reviews"
+      ],
+      "certificate": true,
+      "stipend": "Stipend details — PLACEHOLDER",
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "category": "AWS / Cloud",
+      "thumbnail": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop"
+    }
+  },
+  {
+    "section": "internships",
+    "slug": "automation-testing-internship",
+    "content": {
+      "id": "int2",
+      "slug": "automation-testing-internship",
+      "title": "Automation Testing Intern",
+      "company": "Placeholder Software QA",
+      "duration": "2 Months",
+      "location": "Remote",
+      "mode": "Both",
+      "eligibility": [
+        "Any graduate",
+        "Completed Automation Testing course",
+        "Knowledge of test automation"
+      ],
+      "skills": [
+        "Selenium",
+        "Cypress",
+        "TestNG",
+        "API testing",
+        "Git"
+      ],
+      "responsibilities": [
+        "Create and maintain automated test scripts",
+        "Run regression test suites",
+        "Report and track defects",
+        "Participate in QA reviews"
+      ],
+      "certificate": true,
+      "stipend": "Stipend details — PLACEHOLDER",
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "category": "Automation Testing",
+      "thumbnail": "https://images.unsplash.com/photo-1596496181871-9681eacf9764?w=600&h=400&fit=crop"
+    }
+  },
+  {
+    "section": "internships",
+    "slug": "full-stack-developer-internship",
+    "content": {
+      "id": "int3",
+      "slug": "full-stack-developer-internship",
+      "title": "Full Stack Developer Intern",
+      "company": "Placeholder Digital Agency",
+      "duration": "3 Months",
+      "location": "Remote",
+      "mode": "Both",
+      "eligibility": [
+        "B.Tech / BCA / MCA / BSc IT",
+        "Completed Full Stack Development or React course",
+        "Knowledge of JavaScript and Node.js"
+      ],
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "HTML",
+        "CSS",
+        "Git"
+      ],
+      "responsibilities": [
+        "Build and maintain web application features",
+        "Collaborate with senior developers",
+        "Write clean, documented code",
+        "Participate in code reviews"
+      ],
+      "certificate": true,
+      "stipend": "Stipend details — PLACEHOLDER",
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "category": "Full Stack Development",
+      "thumbnail": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&h=400&fit=crop"
+    }
+  },
+  {
+    "section": "internships",
+    "slug": "data-science-internship",
+    "content": {
+      "id": "int4",
+      "slug": "data-science-internship",
+      "title": "Data Science Intern",
+      "company": "Placeholder Analytics Company",
+      "duration": "3 Months",
+      "location": "Remote",
+      "mode": "Both",
+      "eligibility": [
+        "B.Tech / BSc / MSc in CS, IT or Statistics",
+        "Completed Data Science or ML course",
+        "Python and pandas knowledge"
+      ],
+      "skills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Data visualization",
+        "SQL"
+      ],
+      "responsibilities": [
+        "Data collection and preprocessing",
+        "Build and evaluate ML models",
+        "Create visualisation reports",
+        "Support data team activities"
+      ],
+      "certificate": true,
+      "stipend": "Stipend details — PLACEHOLDER",
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "category": "Data Science",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+    }
+  },
+  {
+    "section": "internships",
+    "slug": "qa-testing-internship",
+    "content": {
+      "id": "int5",
+      "slug": "qa-testing-internship",
+      "title": "QA / Software Testing Intern",
+      "company": "Placeholder Software QA",
+      "duration": "2 Months",
+      "location": "Remote",
+      "mode": "Both",
+      "eligibility": [
+        "Any graduate",
+        "Completed Software Testing course",
+        "Knowledge of manual testing"
+      ],
+      "skills": [
+        "Manual Testing",
+        "Test cases",
+        "JIRA",
+        "Basic Selenium",
+        "Bug reporting"
+      ],
+      "responsibilities": [
+        "Write and execute test cases",
+        "Report and track bugs in JIRA",
+        "Assist in regression testing",
+        "Participate in QA team activities"
+      ],
+      "certificate": true,
+      "stipend": "Stipend details — PLACEHOLDER",
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "category": "Software Testing",
+      "thumbnail": "https://images.unsplash.com/photo-1596496181871-9681eacf9764?w=600&h=400&fit=crop"
+    }
+  },
+  {
+    "section": "internships",
+    "slug": "machine-learning-internship",
+    "content": {
+      "id": "int6",
+      "slug": "machine-learning-internship",
+      "title": "Machine Learning Intern",
+      "company": "Placeholder Analytics Company",
+      "duration": "3 Months",
+      "location": "Remote",
+      "mode": "Online",
+      "eligibility": [
+        "B.Tech / BSc / MSc in CS, IT or Statistics",
+        "Completed Machine Learning course",
+        "Python fundamentals"
+      ],
+      "skills": [
+        "Python",
+        "Scikit-learn",
+        "TensorFlow",
+        "Model evaluation",
+        "Data preprocessing"
+      ],
+      "responsibilities": [
+        "Prepare datasets for model training",
+        "Build and evaluate ML models",
+        "Document experiments and results",
+        "Support model deployment tasks"
+      ],
+      "certificate": true,
+      "stipend": "Stipend details — PLACEHOLDER",
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "category": "Machine Learning",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+    }
+  },
+  {
+    "section": "locations",
+    "slug": "chennai",
+    "content": {
+      "id": "loc1",
+      "slug": "chennai",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "address": "123 IT Corridor, Placeholder Area, Chennai – 600001. [PLACEHOLDER — update with real address]",
+      "phone": "+91 99999 00001",
+      "email": "chennai@globalacademy.com",
+      "mapUrl": "https://maps.google.com",
+      "courses": [
+        "aws-training",
+        "data-science",
+        "machine-learning",
+        "full-stack-development",
+        "cyber-security",
+        "software-testing",
+        "automation-testing"
+      ],
+      "facilities": [
+        "Air-conditioned classrooms",
+        "Computer labs",
+        "High-speed Wi-Fi",
+        "Library",
+        "Cafeteria",
+        "Placement cell"
+      ],
+      "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&h=400&fit=crop",
+      "active": true,
+      "lat": 13.0827,
+      "lng": 80.2707
+    }
+  },
+  {
+    "section": "blog",
+    "slug": "aws-certification-guide-2026",
+    "content": {
+      "id": "b1",
+      "slug": "aws-certification-guide-2026",
+      "title": "The Complete AWS Certification Roadmap for 2026",
+      "excerpt": "Everything you need to know about AWS certification paths, study strategies and exam tips for 2026. PLACEHOLDER — to be replaced with real content.",
+      "content": "PLACEHOLDER CONTENT — This blog post content will be replaced with a real article.",
+      "author": {
+        "name": "Alex Johnson",
+        "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+        "role": "Cloud Architect"
+      },
+      "category": "Cloud",
+      "tags": [
+        "AWS",
+        "Certification",
+        "Cloud Computing",
+        "Career"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=450&fit=crop",
+      "publishedAt": "2026-09-15",
+      "readTime": "8 min read",
+      "featured": true,
+      "metaTitle": "AWS Certification Roadmap 2026 | Global Minds Academy Blog",
+      "metaDescription": "Complete guide to AWS certification paths and exam preparation for 2026."
+    }
+  },
+  {
+    "section": "blog",
+    "slug": "devops-engineer-salary-2026",
+    "content": {
+      "id": "b3",
+      "slug": "devops-engineer-salary-2026",
+      "title": "DevOps Engineer Salary Trends in 2026",
+      "excerpt": "A data-driven look at DevOps engineer salaries across different experience levels and locations. PLACEHOLDER.",
+      "content": "PLACEHOLDER CONTENT — To be replaced.",
+      "author": {
+        "name": "Rahul Verma",
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+        "role": "DevOps Engineer"
+      },
+      "category": "Career",
+      "tags": [
+        "DevOps",
+        "Salary",
+        "Career",
+        "Kubernetes"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&h=450&fit=crop",
+      "publishedAt": "2026-09-08",
+      "readTime": "5 min read",
+      "featured": false,
+      "metaTitle": "DevOps Engineer Salary 2026 | Global Minds Academy Blog",
+      "metaDescription": "DevOps engineer salary trends for 2026 across experience levels and regions."
+    }
+  },
+  {
+    "section": "blog",
+    "slug": "full-stack-vs-backend-developer",
+    "content": {
+      "id": "b4",
+      "slug": "full-stack-vs-backend-developer",
+      "title": "Full Stack Developer vs Backend Developer: Which Career Path to Choose?",
+      "excerpt": "Comparing the roles, responsibilities, salary expectations and career trajectories of full stack and backend developers. PLACEHOLDER.",
+      "content": "PLACEHOLDER CONTENT — To be replaced.",
+      "author": {
+        "name": "Sarah Williams",
+        "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+        "role": "Full Stack Developer"
+      },
+      "category": "Career",
+      "tags": [
+        "Full Stack",
+        "Backend",
+        "Career",
+        "Web Development"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=450&fit=crop",
+      "publishedAt": "2026-08-25",
+      "readTime": "7 min read",
+      "featured": false
+    }
+  },
+  {
+    "section": "blog",
+    "slug": "top-python-libraries-data-science",
+    "content": {
+      "id": "b5",
+      "slug": "top-python-libraries-data-science",
+      "title": "Top Python Libraries for Data Science in 2026",
+      "excerpt": "A practical guide to the most important Python libraries every data scientist should know in 2026. PLACEHOLDER.",
+      "content": "PLACEHOLDER CONTENT — To be replaced.",
+      "author": {
+        "name": "Priya Sharma",
+        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+        "role": "Data Scientist"
+      },
+      "category": "Data Science",
+      "tags": [
+        "Python",
+        "Data Science",
+        "Libraries",
+        "Pandas",
+        "NumPy"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+      "publishedAt": "2026-08-12",
+      "readTime": "9 min read",
+      "featured": true
+    }
+  },
+  {
+    "section": "blog",
+    "slug": "kubernetes-vs-docker-swarm",
+    "content": {
+      "id": "b6",
+      "slug": "kubernetes-vs-docker-swarm",
+      "title": "Kubernetes vs Docker Swarm: Which Container Orchestrator to Choose?",
+      "excerpt": "An honest comparison of Kubernetes and Docker Swarm for container orchestration in production environments. PLACEHOLDER.",
+      "content": "PLACEHOLDER CONTENT — To be replaced.",
+      "author": {
+        "name": "Rahul Verma",
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+        "role": "DevOps Engineer"
+      },
+      "category": "DevOps",
+      "tags": [
+        "Kubernetes",
+        "Docker",
+        "DevOps",
+        "Containers"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1667372393913-a4b0d7d39751?w=800&h=450&fit=crop",
+      "publishedAt": "2026-07-30",
+      "readTime": "8 min read",
+      "featured": false
+    }
+  },
+  {
+    "section": "faqs",
+    "slug": "gf-courses",
+    "content": {
+      "id": "gf-courses",
+      "question": "What courses does Global Minds Academy offer?",
+      "answer": "AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.",
+      "category": "Courses"
+    }
+  },
+  {
+    "section": "faqs",
+    "slug": "gf-partners",
+    "content": {
+      "id": "gf-partners",
+      "question": "How many hiring partners does Global Minds Academy have?",
+      "answer": "Global Minds Academy has 50+ hiring partners.",
+      "category": "Career"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t1",
+    "content": {
+      "id": "t1",
+      "name": "Arun Kumar",
+      "role": "Data Analyst",
+      "company": "",
+      "course": "Data Science",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "I enrolled in Data Warehousing and Tableau at the Global Minds Perumbakkam center. The faculty members are friendly and provide excellent, detailed training. The hands-on approach and real-time scenarios really helped me understand the concepts deeply. Highly recommend Global Minds Academy.",
+      "date": "2026-04-10",
+      "featured": false,
+      "type": "text",
+      "source": "Google Review"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t2",
+    "content": {
+      "id": "t2",
+      "name": "Sneha V",
+      "role": "Cloud & BI Analyst",
+      "company": "",
+      "course": "AWS / Cloud",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "The AWS and Power BI training was very detailed and practical. The instructors focus on industry requirements and real-time scenarios. I was able to apply what I learned directly to my work. Global Minds Academy truly prepares you for the job market.",
+      "date": "2026-04-08",
+      "featured": false,
+      "type": "text",
+      "source": "Google Review"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t3",
+    "content": {
+      "id": "t3",
+      "name": "Keerthana Muthusamy",
+      "role": "Full Stack Developer",
+      "company": "",
+      "course": "Full Stack Development",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "I completed React JS and Node.js training here. The hands-on projects and interview preparation sessions helped me gain confidence and practical skills. The trainers are extremely supportive and always ready to clarify doubts. Global Minds Academy is the best decision I made for my career.",
+      "date": "2026-04-05",
+      "featured": true,
+      "type": "text",
+      "source": "Google Review"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t4",
+    "content": {
+      "id": "t4",
+      "name": "Rajesh Kumar",
+      "role": "Java Backend Developer",
+      "company": "",
+      "course": "Full Stack Development",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "The Full Stack Java track at Global Minds is outstanding. We built a complete Smart Employee Management System using Java 21, Spring Boot, Spring Security, React and MySQL. The capstone project was exactly what employers look for. Got placed within 2 months of completing the course.",
+      "date": "2026-03-20",
+      "featured": true,
+      "type": "text"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t5",
+    "content": {
+      "id": "t5",
+      "name": "Priya Devi",
+      "role": "ML Engineer",
+      "company": "",
+      "course": "Machine Learning",
+      "location": "Bangalore",
+      "country": "India",
+      "rating": 5,
+      "review": "The AI & ML Masterclass is truly industry-level. We worked with PyTorch, TensorFlow, HuggingFace, and built a real AI Healthcare Assistant with disease prediction and an LLM chatbot. The 1-on-1 mentorship from the AI researchers made all the difference. Highly recommended.",
+      "date": "2026-03-15",
+      "featured": false,
+      "type": "text"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t6",
+    "content": {
+      "id": "t6",
+      "name": "Mohammed Faiz",
+      "role": "AWS Cloud Engineer",
+      "company": "",
+      "course": "AWS / Cloud",
+      "location": "Hyderabad",
+      "country": "India",
+      "rating": 5,
+      "review": "The AWS Cloud Architect program at Global Minds is exceptional. We deployed a full cloud-based e-commerce application using EC2, RDS, S3, CloudFront, Load Balancer, Docker, Terraform and Jenkins. Real-world project experience that directly got me a cloud engineer role.",
+      "date": "2026-02-28",
+      "featured": true,
+      "type": "text"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t7",
+    "content": {
+      "id": "t7",
+      "name": "Lakshmi Priya",
+      "role": "Data Engineer",
+      "company": "",
+      "course": "Data Science",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "Switched from a non-IT background and Global Minds made the transition smooth. The training in Data Science, Tableau and Data Warehousing was structured and practical. The placement support team was very active in getting me interview calls. Now working as a Data Engineer.",
+      "date": "2026-02-10",
+      "featured": false,
+      "type": "text"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t8",
+    "content": {
+      "id": "t8",
+      "name": "Suresh Babu",
+      "role": "DevOps Engineer",
+      "company": "",
+      "course": "AWS / Cloud",
+      "location": "Pune",
+      "country": "India",
+      "rating": 5,
+      "review": "DevOps training at Global Minds covers everything — Docker, Kubernetes, Terraform, Jenkins, Ansible and AWS integration. The hands-on labs are the best part. Every concept is applied immediately in the lab environment. Got placed as a DevOps engineer within 45 days.",
+      "date": "2026-01-25",
+      "featured": false,
+      "type": "text"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t9",
+    "content": {
+      "id": "t9",
+      "name": "Anitha Rajan",
+      "role": "BI Developer",
+      "company": "",
+      "course": "Data Science",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "The Tableau and Power BI course was very well-structured. Faculty at Global Minds Perumbakkam explains everything with real business use cases. The dashboards we built during training became direct portfolio pieces that impressed my current employer.",
+      "date": "2026-01-18",
+      "featured": false,
+      "type": "text"
+    }
+  },
+  {
+    "section": "testimonials",
+    "slug": "t10",
+    "content": {
+      "id": "t10",
+      "name": "Karthik S",
+      "role": "Software Engineer",
+      "company": "",
+      "course": "Full Stack Development",
+      "location": "Chennai",
+      "country": "India",
+      "rating": 5,
+      "review": "From a fresher with no experience to a placed software engineer — Global Minds Academy made it happen. The curriculum is designed directly by industry professionals. The Spring Boot REST API project and React frontend I built here became the talking points in every interview.",
+      "date": "2025-12-30",
+      "featured": false,
+      "type": "text"
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e1",
+    "content": {
+      "id": "e1",
+      "title": "Cloud Architecture Masterclass: Designing Scalable AWS Solutions",
+      "type": "Webinar",
+      "date": "2026-10-14",
+      "time": "7:00 PM – 9:00 PM IST",
+      "duration": "2 Hours",
+      "speaker": "Rajesh Kumar",
+      "speakerRole": "AWS Solutions Architect, 12 yrs exp",
+      "mode": "Online",
+      "seats": 200,
+      "seatsLeft": 47,
+      "fee": "Free",
+      "description": "Deep-dive into designing fault-tolerant, highly available and cost-optimised AWS architectures. Includes live Q&A.",
+      "topics": [
+        "Multi-AZ architecture",
+        "Cost optimisation",
+        "High availability patterns",
+        "Security best practices"
+      ],
+      "badge": "Filling Fast"
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e2",
+    "content": {
+      "id": "e2",
+      "title": "Hands-on DevOps Workshop: CI/CD Pipeline from Scratch",
+      "type": "Workshop",
+      "date": "2026-10-18",
+      "time": "10:00 AM – 4:00 PM IST",
+      "duration": "6 Hours",
+      "speaker": "Suresh Anand",
+      "speakerRole": "DevOps Lead, Ex-Google",
+      "mode": "Hybrid",
+      "seats": 50,
+      "seatsLeft": 12,
+      "fee": "₹499",
+      "description": "Build a complete CI/CD pipeline using GitHub Actions, Docker, and Kubernetes. Hands-on lab with guided exercises.",
+      "topics": [
+        "GitHub Actions",
+        "Docker containerisation",
+        "Kubernetes deployment",
+        "Monitoring with Grafana"
+      ],
+      "badge": "Last 12 Seats"
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e4",
+    "content": {
+      "id": "e4",
+      "title": "48-Hour Full Stack Hackathon",
+      "type": "Hackathon",
+      "date": "2026-10-24",
+      "time": "9:00 AM IST (48 hrs)",
+      "duration": "48 Hours",
+      "speaker": "Global Minds Academy Mentors",
+      "speakerRole": "Industry Expert Panel",
+      "mode": "Hybrid",
+      "seats": 100,
+      "seatsLeft": 35,
+      "fee": "Free",
+      "description": "Build a full-stack web application in 48 hours. Top 3 teams win prizes worth ₹1 lakh. Open to all skill levels.",
+      "topics": [
+        "React / Next.js",
+        "Node.js / Python backend",
+        "Database design",
+        "UI/UX fundamentals"
+      ],
+      "badge": "Prize: ₹1 Lakh"
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e5",
+    "content": {
+      "id": "e5",
+      "title": "Data Science Bootcamp: From Zero to Hero",
+      "type": "Workshop",
+      "date": "2026-11-01",
+      "time": "10:00 AM – 5:00 PM IST",
+      "duration": "7 Hours",
+      "speaker": "Anitha Reddy",
+      "speakerRole": "Principal Data Scientist, Infosys",
+      "mode": "Online",
+      "seats": 80,
+      "seatsLeft": 62,
+      "fee": "₹299",
+      "description": "A comprehensive one-day workshop covering Python for data science, Pandas, Matplotlib, Scikit-learn and building your first ML model.",
+      "topics": [
+        "Python for data science",
+        "EDA with Pandas",
+        "Visualisation",
+        "Building ML models"
+      ],
+      "badge": "New"
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e6",
+    "content": {
+      "id": "e6",
+      "title": "Resume & LinkedIn Masterclass for IT Professionals",
+      "type": "Webinar",
+      "date": "2026-11-07",
+      "time": "7:00 PM – 8:30 PM IST",
+      "duration": "1.5 Hours",
+      "speaker": "Meena Pillai",
+      "speakerRole": "HR Manager, TCS | Career Coach",
+      "mode": "Online",
+      "seats": 250,
+      "seatsLeft": 210,
+      "fee": "Free",
+      "description": "Learn what hiring managers actually look for. Build an ATS-proof resume and a standout LinkedIn profile live during the session.",
+      "topics": [
+        "ATS-friendly resume structure",
+        "LinkedIn profile optimisation",
+        "Personal branding",
+        "Common resume mistakes"
+      ]
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e7",
+    "content": {
+      "id": "e7",
+      "title": "Cyber Security Awareness Workshop",
+      "type": "Workshop",
+      "date": "2026-11-12",
+      "time": "10:00 AM – 1:00 PM IST",
+      "duration": "3 Hours",
+      "speaker": "Venkat Rao",
+      "speakerRole": "CISSP | Cyber Security Lead",
+      "mode": "Offline",
+      "seats": 40,
+      "seatsLeft": 22,
+      "fee": "₹199",
+      "description": "Practical session on ethical hacking fundamentals, common vulnerabilities, and how to protect applications. Includes hands-on CTF challenge.",
+      "topics": [
+        "OWASP Top 10",
+        "Ethical hacking basics",
+        "CTF challenge",
+        "Security careers"
+      ]
+    }
+  },
+  {
+    "section": "events",
+    "slug": "e8",
+    "content": {
+      "id": "e8",
+      "title": "Freshers Career Panel: Landing Your First IT Job",
+      "type": "Seminar",
+      "date": "2026-11-18",
+      "time": "5:00 PM – 7:00 PM IST",
+      "duration": "2 Hours",
+      "speaker": "Panel of 5 Industry Experts",
+      "speakerRole": "HR Leaders from Top MNCs",
+      "mode": "Hybrid",
+      "seats": 300,
+      "seatsLeft": 245,
+      "fee": "Free",
+      "description": "A candid panel discussion with HR leaders and senior developers on what it takes to land your first IT job as a fresher in 2026.",
+      "topics": [
+        "What recruiters want",
+        "Interview tips",
+        "Package negotiation",
+        "Career growth paths"
+      ]
+    }
+  },
+  {
+    "section": "live-projects",
+    "slug": "fullstack",
+    "content": {
+      "id": "fullstack",
+      "title": "Full Stack Projects",
+      "icon": "💻",
+      "color": "bg-brand-50 border-brand-200",
+      "iconBg": "bg-brand-100",
+      "iconColor": "text-brand-600",
+      "count": 50,
+      "projects": [
+        {
+          "title": "E-Commerce Platform",
+          "stack": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Stripe"
+          ],
+          "difficulty": "Advanced",
+          "description": "Full-featured online store with product catalog, cart, checkout, payments and admin dashboard.",
+          "outcomes": [
+            "REST API design",
+            "Authentication & JWT",
+            "Payment integration",
+            "Admin panel"
+          ]
+        },
+        {
+          "title": "Job Portal Application",
+          "stack": [
+            "Next.js",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind"
+          ],
+          "difficulty": "Intermediate",
+          "description": "Job listing and application portal with recruiter and candidate portals, search and filters.",
+          "outcomes": [
+            "Full-stack Next.js",
+            "Database design",
+            "File uploads",
+            "Role-based access"
+          ]
+        },
+        {
+          "title": "Real-Time Chat App",
+          "stack": [
+            "React",
+            "Socket.io",
+            "Node.js",
+            "Redis"
+          ],
+          "difficulty": "Intermediate",
+          "description": "Slack-style group chat with private messages, channels, file sharing and online status.",
+          "outcomes": [
+            "WebSocket communication",
+            "Real-time updates",
+            "Message persistence",
+            "User presence"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "section": "live-projects",
+    "slug": "devops",
+    "content": {
+      "id": "devops",
+      "title": "DevOps & Cloud Projects",
+      "icon": "☁️",
+      "color": "bg-orange-50 border-orange-200",
+      "iconBg": "bg-orange-100",
+      "iconColor": "text-orange-600",
+      "count": 50,
+      "projects": [
+        {
+          "title": "CI/CD Pipeline on AWS",
+          "stack": [
+            "GitHub Actions",
+            "Docker",
+            "ECR",
+            "ECS"
+          ],
+          "difficulty": "Intermediate",
+          "description": "End-to-end CI/CD pipeline that builds, tests and deploys a Node.js app to AWS ECS on every commit.",
+          "outcomes": [
+            "GitHub Actions workflows",
+            "Docker containerisation",
+            "AWS ECS deployment",
+            "Zero-downtime deploys"
+          ]
+        },
+        {
+          "title": "Infrastructure as Code with Terraform",
+          "stack": [
+            "Terraform",
+            "AWS",
+            "VPC",
+            "EC2"
+          ],
+          "difficulty": "Advanced",
+          "description": "Provision a complete AWS VPC with subnets, security groups, EC2 instances and RDS using Terraform.",
+          "outcomes": [
+            "Terraform modules",
+            "State management",
+            "AWS networking",
+            "Security groups"
+          ]
+        },
+        {
+          "title": "Kubernetes Microservices Deployment",
+          "stack": [
+            "Kubernetes",
+            "Helm",
+            "Prometheus",
+            "Grafana"
+          ],
+          "difficulty": "Advanced",
+          "description": "Deploy a multi-service application on Kubernetes with autoscaling, service mesh and monitoring.",
+          "outcomes": [
+            "Kubernetes objects",
+            "Helm charts",
+            "HPA & VPA",
+            "Observability"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "section": "live-projects",
+    "slug": "datascience",
+    "content": {
+      "id": "datascience",
+      "title": "Data Science & AI Projects",
+      "icon": "🧠",
+      "color": "bg-purple-50 border-purple-200",
+      "iconBg": "bg-purple-100",
+      "iconColor": "text-purple-600",
+      "count": 50,
+      "projects": [
+        {
+          "title": "Customer Churn Prediction",
+          "stack": [
+            "Python",
+            "Scikit-learn",
+            "Pandas",
+            "Streamlit"
+          ],
+          "difficulty": "Intermediate",
+          "description": "Predict telecom customer churn using machine learning and deploy an interactive Streamlit dashboard.",
+          "outcomes": [
+            "EDA",
+            "Feature engineering",
+            "Model selection",
+            "Deployment with Streamlit"
+          ]
+        },
+        {
+          "title": "Sentiment Analysis Pipeline",
+          "stack": [
+            "Python",
+            "BERT",
+            "Hugging Face",
+            "FastAPI"
+          ],
+          "difficulty": "Advanced",
+          "description": "NLP pipeline that classifies product reviews as positive/negative/neutral using BERT fine-tuning.",
+          "outcomes": [
+            "NLP preprocessing",
+            "Transformer models",
+            "Model fine-tuning",
+            "REST API serving"
+          ]
+        },
+        {
+          "title": "Sales Dashboard with Power BI",
+          "stack": [
+            "Power BI",
+            "DAX",
+            "SQL",
+            "Excel"
+          ],
+          "difficulty": "Beginner",
+          "description": "Interactive sales analytics dashboard with KPIs, drill-downs, and forecasting using Power BI.",
+          "outcomes": [
+            "Power Query",
+            "DAX measures",
+            "Visual design",
+            "Data modelling"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "section": "live-projects",
+    "slug": "testing",
+    "content": {
+      "id": "testing",
+      "title": "Testing & QA Projects",
+      "icon": "🧪",
+      "color": "bg-green-50 border-green-200",
+      "iconBg": "bg-green-100",
+      "iconColor": "text-green-600",
+      "count": 50,
+      "projects": [
+        {
+          "title": "Selenium Test Automation Framework",
+          "stack": [
+            "Selenium",
+            "TestNG",
+            "Java",
+            "Maven"
+          ],
+          "difficulty": "Intermediate",
+          "description": "Page Object Model-based automation framework for an e-commerce site with reports and CI integration.",
+          "outcomes": [
+            "POM design pattern",
+            "Data-driven testing",
+            "Extent Reports",
+            "Jenkins integration"
+          ]
+        },
+        {
+          "title": "API Testing with Rest Assured",
+          "stack": [
+            "Rest Assured",
+            "Java",
+            "Postman",
+            "Newman"
+          ],
+          "difficulty": "Intermediate",
+          "description": "Comprehensive API test suite covering CRUD operations, authentication and error scenarios.",
+          "outcomes": [
+            "HTTP methods testing",
+            "Schema validation",
+            "Auth testing",
+            "Newman CLI reports"
+          ]
+        },
+        {
+          "title": "Performance Testing with JMeter",
+          "stack": [
+            "JMeter",
+            "Grafana",
+            "InfluxDB",
+            "BlazeMeter"
+          ],
+          "difficulty": "Advanced",
+          "description": "Load and stress testing a REST API with real-time performance monitoring and reporting.",
+          "outcomes": [
+            "Load test plans",
+            "Distributed testing",
+            "Real-time metrics",
+            "Performance analysis"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "section": "website-menu",
+    "slug": "site-navigation",
+    "content": {
+      "primary": [
+        {
+          "id": "courses",
+          "label": "Courses",
+          "href": "/courses",
+          "section": "primary",
+          "visible": true,
+          "order": 1,
+          "icon": "",
+          "children": [
+            {
+              "id": "course-category-cloud-computing",
+              "label": "AWS / Cloud",
+              "href": "/categories/cloud-computing",
+              "visible": true,
+              "order": 1,
+              "icon": ""
+            },
+            {
+              "id": "course-category-data-science-analytics",
+              "label": "Data Science",
+              "href": "/categories/data-science-analytics",
+              "visible": true,
+              "order": 2,
+              "icon": ""
+            },
+            {
+              "id": "course-category-machine-learning",
+              "label": "Machine Learning",
+              "href": "/categories/machine-learning",
+              "visible": true,
+              "order": 3,
+              "icon": ""
+            },
+            {
+              "id": "course-category-full-stack-development",
+              "label": "Full Stack Development",
+              "href": "/categories/full-stack-development",
+              "visible": true,
+              "order": 4,
+              "icon": ""
+            },
+            {
+              "id": "course-category-cyber-security",
+              "label": "Cyber Security",
+              "href": "/categories/cyber-security",
+              "visible": true,
+              "order": 5,
+              "icon": ""
+            },
+            {
+              "id": "course-category-software-testing",
+              "label": "Software Testing",
+              "href": "/categories/software-testing",
+              "visible": true,
+              "order": 6,
+              "icon": ""
+            },
+            {
+              "id": "course-category-automation-testing",
+              "label": "Automation Testing",
+              "href": "/categories/automation-testing",
+              "visible": true,
+              "order": 7,
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "id": "master-programs",
+          "label": "Master Programs",
+          "href": "/master-programs",
+          "section": "primary",
+          "visible": true,
+          "order": 2,
+          "icon": "",
+          "children": []
+        },
+        {
+          "id": "placement",
+          "label": "Placement Records",
+          "href": "/placement-records",
+          "section": "primary",
+          "visible": true,
+          "order": 3,
+          "icon": "",
+          "children": []
+        },
+        {
+          "id": "corporate-training",
+          "label": "Corporate",
+          "href": "/corporate-training",
+          "section": "primary",
+          "visible": true,
+          "order": 4,
+          "icon": "",
+          "children": []
+        },
+        {
+          "id": "colleges",
+          "label": "College",
+          "href": "/colleges",
+          "section": "primary",
+          "visible": true,
+          "order": 5,
+          "icon": "",
+          "children": []
+        }
+      ],
+      "more": [
+        {
+          "id": "1-batch-schedule",
+          "label": "Batch Schedule",
+          "href": "/batch-schedule",
+          "visible": true,
+          "order": 1,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "2-events",
+          "label": "Events",
+          "href": "/events",
+          "visible": true,
+          "order": 2,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "3-about",
+          "label": "About",
+          "href": "/about",
+          "visible": true,
+          "order": 3,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "4-blog",
+          "label": "Blog",
+          "href": "/blog",
+          "visible": true,
+          "order": 4,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "5-contact",
+          "label": "Contact",
+          "href": "/contact",
+          "visible": true,
+          "order": 5,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "6-certifications",
+          "label": "Certifications",
+          "href": "/certifications",
+          "visible": true,
+          "order": 6,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "7-internships",
+          "label": "Internships",
+          "href": "/internships",
+          "visible": true,
+          "order": 7,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "8-scholarships",
+          "label": "Scholarships",
+          "href": "/scholarships",
+          "visible": true,
+          "order": 8,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "9-online-training",
+          "label": "Online Training",
+          "href": "/online-training",
+          "visible": true,
+          "order": 9,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "10-classroom-training",
+          "label": "Classroom Training",
+          "href": "/classroom-training",
+          "visible": true,
+          "order": 10,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "11-free-demo-class",
+          "label": "Free Demo Class",
+          "href": "/demo-class",
+          "visible": true,
+          "order": 11,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "12-skill-assessment",
+          "label": "Skill Assessment",
+          "href": "/skill-assessment",
+          "visible": true,
+          "order": 12,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "13-career-placement",
+          "label": "Career & Placement",
+          "href": "/career",
+          "visible": true,
+          "order": 13,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "14-interview-prep",
+          "label": "Interview Prep",
+          "href": "/career/interview-preparation",
+          "visible": true,
+          "order": 14,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "15-mock-interview",
+          "label": "Mock Interview",
+          "href": "/career/mock-interview",
+          "visible": true,
+          "order": 15,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "16-live-projects",
+          "label": "Live Projects",
+          "href": "/live-projects",
+          "visible": true,
+          "order": 16,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "17-refer-earn",
+          "label": "Refer & Earn",
+          "href": "/refer-earn",
+          "visible": true,
+          "order": 17,
+          "icon": "",
+          "section": "more",
+          "children": []
+        },
+        {
+          "id": "18-locations",
+          "label": "Locations",
+          "href": "/locations",
+          "visible": true,
+          "order": 18,
+          "icon": "",
+          "section": "more",
+          "children": []
+        }
+      ]
+    }
+  },
+  {
+    "section": "settings",
+    "slug": "site-config",
+    "content": {
+      "brandName": "Global Minds Academy",
+      "brandShortName": "GMA",
+      "tagline": "Build Skills Today for Tomorrow's Leaders",
+      "subTagline": "AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.",
+      "logoText": "Global Minds Academy",
+      "logoUrl": "/logo.png",
+      "faviconUrl": "/logo.png",
+      "foundedYear": 2018,
+      "email": "globalminds.learn@gmail.com",
+      "supportEmail": "support@globalmindsacademy.in",
+      "admissionsEmail": "admissions@globalmindsacademy.in",
+      "phone": "+91 95974 37333",
+      "phoneAlt": "+91 95974 37333",
+      "whatsapp": "+919597437333",
+      "whatsappMessage": "Hi, I want to know more about Global Minds Academy courses.",
+      "address": {
+        "line1": "Nookampalayam Road, Perumbakkam",
+        "line2": "Chennai – 600 100",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "pincode": "600100"
+      },
+      "businessHours": "Mon – Sat: 9:00 AM – 7:00 PM IST",
+      "supportHours": "24/7 Online Support",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/company/globalmindsacademy",
+        "twitter": "https://twitter.com/globalmindsacad",
+        "facebook": "https://facebook.com/globalmindsacademy",
+        "youtube": "https://youtube.com/@globalmindsacademy",
+        "instagram": "https://instagram.com/globalmindsacademy",
+        "github": "https://github.com/globalmindsacademy",
+        "telegram": "https://t.me/globalmindsacademy"
+      },
+      "siteUrl": "https://globalmindsacademy.in",
+      "apiBaseUrl": "https://api.globalmindsacademy.in/v1",
+      "seo": {
+        "defaultTitle": "Global Minds Academy | Build Skills. Own the Future.",
+        "titleTemplate": "%s | Global Minds Academy",
+        "defaultDescription": "Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Academy. 50+ hiring partners.",
+        "defaultOgImage": "https://globalmindsacademy.in/og-image.jpg",
+        "twitterHandle": "@globalmindsacad"
+      },
+      "stats": [
+        {
+          "id": "s1",
+          "label": "Graduates Trained",
+          "value": "15,000+",
+          "numericValue": 15000,
+          "suffix": "+",
+          "icon": "users",
+          "description": "Across 25+ countries"
+        },
+        {
+          "id": "s2",
+          "label": "Hiring Partners",
+          "value": "50+",
+          "numericValue": 50,
+          "suffix": "+",
+          "icon": "briefcase",
+          "description": "Top tech enterprises"
+        },
+        {
+          "id": "s3",
+          "label": "Student Rating",
+          "value": "4.9/5.0",
+          "numericValue": 4.9,
+          "suffix": "",
+          "icon": "star",
+          "description": "From 8,000+ reviews"
+        },
+        {
+          "id": "s4",
+          "label": "Placement Success",
+          "value": "98.4%",
+          "numericValue": 98.4,
+          "suffix": "%",
+          "icon": "award",
+          "description": "Within 6 months"
+        },
+        {
+          "id": "s5",
+          "label": "Countries Reached",
+          "value": "25+",
+          "numericValue": 25,
+          "suffix": "+",
+          "icon": "globe",
+          "description": "India, US, Europe, Asia"
+        },
+        {
+          "id": "s6",
+          "label": "Master Programs",
+          "value": "5",
+          "numericValue": 5,
+          "suffix": "",
+          "icon": "book-open",
+          "description": "Comprehensive career tracks"
+        }
+      ],
+      "countries": [
+        {
+          "name": "India",
+          "code": "IN",
+          "flag": "🇮🇳"
+        },
+        {
+          "name": "USA",
+          "code": "US",
+          "flag": "🇺🇸"
+        },
+        {
+          "name": "UK",
+          "code": "GB",
+          "flag": "🇬🇧"
+        },
+        {
+          "name": "Canada",
+          "code": "CA",
+          "flag": "🇨🇦"
+        },
+        {
+          "name": "Australia",
+          "code": "AU",
+          "flag": "🇦🇺"
+        },
+        {
+          "name": "UAE",
+          "code": "AE",
+          "flag": "🇦🇪"
+        },
+        {
+          "name": "Singapore",
+          "code": "SG",
+          "flag": "🇸🇬"
+        },
+        {
+          "name": "Saudi Arabia",
+          "code": "SA",
+          "flag": "🇸🇦"
+        },
+        {
+          "name": "Germany",
+          "code": "DE",
+          "flag": "🇩🇪"
+        },
+        {
+          "name": "Netherlands",
+          "code": "NL",
+          "flag": "🇳🇱"
+        },
+        {
+          "name": "Other",
+          "code": "XX",
+          "flag": "🌍"
+        }
+      ],
+      "currencies": [
+        {
+          "code": "INR",
+          "symbol": "₹",
+          "name": "Indian Rupee"
+        },
+        {
+          "code": "USD",
+          "symbol": "$",
+          "name": "US Dollar"
+        },
+        {
+          "code": "GBP",
+          "symbol": "£",
+          "name": "British Pound"
+        },
+        {
+          "code": "EUR",
+          "symbol": "€",
+          "name": "Euro"
+        },
+        {
+          "code": "AED",
+          "symbol": "د.إ",
+          "name": "UAE Dirham"
+        },
+        {
+          "code": "CAD",
+          "symbol": "C$",
+          "name": "Canadian Dollar"
+        },
+        {
+          "code": "AUD",
+          "symbol": "A$",
+          "name": "Australian Dollar"
+        }
+      ],
+      "whyUs": [
+        {
+          "icon": "flask",
+          "title": "100% Practical Labs",
+          "description": "Every session includes hands-on lab work with real enterprise tools — no theory-only classes."
+        },
+        {
+          "icon": "graduation-cap",
+          "title": "Global Certification",
+          "description": "50+ hiring partners."
+        },
+        {
+          "icon": "user",
+          "title": "1-on-1 Mentorship",
+          "description": "Dedicated personal mentors — senior software architects and AI researchers guide your learning journey."
+        },
+        {
+          "icon": "briefcase",
+          "title": "50+ Hiring Partners",
+          "description": "Global Minds Academy has 50+ hiring partners."
+        },
+        {
+          "icon": "layers",
+          "title": "Enterprise Capstone Projects",
+          "description": "Build impressive GitHub portfolio projects: Spring Boot EMS, AI Healthcare Assistant, Cloud E-Commerce."
+        },
+        {
+          "icon": "globe",
+          "title": "Courses",
+          "description": "AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing."
+        }
+      ],
+      "announcementBar": {
+        "enabled": true,
+        "message": "Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing. 50+ Hiring Partners.",
+        "cta": "Register Now",
+        "ctaHref": "/batch-schedule",
+        "dismissible": true
+      },
+      "features": {
+        "payments": false,
+        "googleLogin": false,
+        "chatSupport": false,
+        "liveClasses": true,
+        "coursePreviewVideo": true,
+        "newsletter": true,
+        "blog": true
+      }
+    }
+  }
+]

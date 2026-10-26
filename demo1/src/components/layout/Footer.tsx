@@ -1,32 +1,22 @@
 import { Link } from 'react-router-dom';
-import {
-  GraduationCap, Mail, Phone, MapPin, Facebook, Twitter,
+import { Mail, Phone, MapPin, Facebook, Twitter,
   Linkedin, Youtube, Instagram, Github, Send,
 } from 'lucide-react';
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { useState } from 'react';
 import { enquiryService } from '../../services/enquiryService';
 import { cn } from '../../utils/cn';
 
 const footerLinks = {
   Courses: [
-    { label: 'AWS Training', href: '/courses/aws-training' },
-    { label: 'DevOps Training', href: '/courses/devops-training' },
+    { label: 'AWS / Cloud', href: '/courses/aws-training' },
     { label: 'Data Science', href: '/courses/data-science' },
+    { label: 'Machine Learning', href: '/courses/machine-learning' },
     { label: 'Full Stack Development', href: '/courses/full-stack-development' },
-    { label: 'Generative AI', href: '/courses/generative-ai' },
     { label: 'Cyber Security', href: '/courses/cyber-security' },
-    { label: 'Python Training', href: '/courses/python-training' },
+    { label: 'Software Testing', href: '/courses/software-testing' },
+    { label: 'Automation Testing', href: '/courses/automation-testing' },
     { label: 'All Courses', href: '/courses' },
-  ],
-  'Master Programs': [
-    { label: 'Freshers Program', href: '/master-programs/freshers-master-program' },
-    { label: 'Full Stack', href: '/master-programs/full-stack-master-program' },
-    { label: 'Cloud Program', href: '/master-programs/cloud-master-program' },
-    { label: 'DevOps Program', href: '/master-programs/devops-master-program' },
-    { label: 'Data Science & AI', href: '/master-programs/data-science-master-program' },
-    { label: 'Software Testing', href: '/master-programs/software-testing-master-program' },
-    { label: 'All Programs', href: '/master-programs' },
   ],
   'Training & Learning': [
     { label: 'Online Training', href: '/online-training' },
@@ -50,37 +40,25 @@ const footerLinks = {
     { label: 'Scholarships', href: '/scholarships' },
     { label: 'Refer & Earn', href: '/refer-earn' },
   ],
-  'Popular New Courses': [
-    { label: 'CCNA Training', href: '/courses/ccna' },
-    { label: 'SAP ABAP', href: '/courses/sap-abap' },
-    { label: 'SAP FICO', href: '/courses/sap-fico' },
-    { label: 'ServiceNow', href: '/courses/servicenow' },
-    { label: '.NET Core / C#', href: '/courses/dotnet-core' },
-    { label: 'Snowflake', href: '/courses/snowflake' },
-    { label: 'dbt', href: '/courses/dbt' },
-    { label: 'Databricks', href: '/courses/databricks' },
-    { label: 'Flutter', href: '/courses/flutter' },
-    { label: 'PMP Certification', href: '/courses/pmp-certification' },
-  ],
+
   'Company': [
     { label: 'About Us', href: '/about' },
-    { label: 'Expert Trainers', href: '/trainers' },
     { label: 'Locations', href: '/locations' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact Us', href: '/contact' },
   ],
 };
 
-const socialLinks = [
-  { icon: Linkedin, href: siteConfig.socialLinks.linkedin, label: 'LinkedIn' },
-  { icon: Youtube, href: siteConfig.socialLinks.youtube, label: 'YouTube' },
-  { icon: Instagram, href: siteConfig.socialLinks.instagram, label: 'Instagram' },
-  { icon: Facebook, href: siteConfig.socialLinks.facebook, label: 'Facebook' },
-  { icon: Twitter, href: siteConfig.socialLinks.twitter, label: 'X (Twitter)' },
-  { icon: Github, href: siteConfig.socialLinks.github, label: 'GitHub' },
-];
-
 export function Footer() {
+  const siteConfig = useSiteConfig();
+  const socialLinks = [
+    { icon: Linkedin, href: siteConfig.socialLinks.linkedin, label: 'LinkedIn' },
+    { icon: Youtube, href: siteConfig.socialLinks.youtube, label: 'YouTube' },
+    { icon: Instagram, href: siteConfig.socialLinks.instagram, label: 'Instagram' },
+    { icon: Facebook, href: siteConfig.socialLinks.facebook, label: 'Facebook' },
+    { icon: Twitter, href: siteConfig.socialLinks.twitter, label: 'X (Twitter)' },
+    { icon: Github, href: siteConfig.socialLinks.github, label: 'GitHub' },
+  ];
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -109,9 +87,12 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-brand flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-white" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="Global Minds Academy logo"
+                className="h-12 w-12 object-contain rounded-xl bg-white/10 p-1"
+                onError={e => { e.currentTarget.style.display = 'none'; }}
+              />
               <span className="font-display font-extrabold text-xl text-white">
                 Global <span className="text-brand-400">Minds Academy</span>
               </span>
@@ -168,9 +149,24 @@ export function Footer() {
 
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([group, links]) => (
-            <div key={group}>
-              <h3 className="font-semibold text-white text-sm mb-4">{group}</h3>
-              <ul className="space-y-2.5">
+            <div key={group} className="footer-link-group">
+              <h3 className="mb-4 hidden text-sm font-semibold text-white lg:block">{group}</h3>
+              <details className="lg:hidden">
+                <summary className="cursor-pointer py-3 text-sm font-semibold text-white">{group}</summary>
+                <ul className="space-y-2.5 pb-3">
+                  {links.map(link => (
+                    <li key={link.href}>
+                      <Link
+                        to={link.href}
+                        className="text-sm text-surface-400 hover:text-white hover:translate-x-0.5 transition-all duration-200 inline-block"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+              <ul className="hidden space-y-2.5 lg:block">
                 {links.map(link => (
                   <li key={link.href}>
                     <Link
@@ -234,8 +230,7 @@ export function Footer() {
       <div className="border-t border-surface-800">
         <div className="container-xl py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-surface-500 text-center sm:text-left">
-            © {new Date().getFullYear()} Global Minds Academy. All rights reserved.{' '}
-            <span className="text-surface-600">Placeholder content — business details to be updated.</span>
+            © {new Date().getFullYear()} Global Minds Academy. All rights reserved.
           </p>
 
           <div className="flex items-center flex-wrap justify-center gap-4">

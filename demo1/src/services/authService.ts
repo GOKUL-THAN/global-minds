@@ -135,6 +135,7 @@ class AuthService {
   async getCurrentUser(): Promise<User | null> {
     const response = await fetch('/api/auth/me', { credentials: 'same-origin' });
     if (response.status === 401 || response.status === 403) return null;
+    // If backend is unreachable (network error handled by caller), rethrow
     if (!response.ok) throw new Error('Unable to verify your session.');
 
     const result = await readApiResult(response) as ApiResult & {

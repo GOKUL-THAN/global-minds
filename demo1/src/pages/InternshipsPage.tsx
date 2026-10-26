@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, MapPin, Clock, CheckCircle, ArrowRight, Search, Filter } from 'lucide-react';
-import { internships } from '../data/internships';
+import { allowedInternshipCategories, internships } from '../data/internships';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { Badge } from '../components/ui/Badge';
@@ -10,19 +10,20 @@ import { usePageMeta } from '../hooks/usePageMeta';
 import { cn } from '../utils/cn';
 import { useCmsCollection } from '../hooks/useCmsCollection';
 
-const categories = ['All', ...Array.from(new Set(internships.map(i => i.category)))];
+const categories = ['All', ...allowedInternshipCategories];
 const modes = ['All', 'Online', 'Classroom', 'Both'];
 
 export default function InternshipsPage() {
-  const visibleInternships = useCmsCollection('internships', internships);
+  const visibleInternships = useCmsCollection('internships', internships)
+    .filter(internship => allowedInternshipCategories.includes(internship.category));
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedMode, setSelectedMode] = useState('All');
   const [statusFilter, setStatusFilter] = useState<'all' | 'open' | 'coming-soon'>('all');
 
   usePageMeta({
-    title: 'IT Internships — Cloud, DevOps, Data, AI & More',
-    description: 'Explore IT internship opportunities in cloud engineering, DevOps, full stack development, data science, QA testing, AI and more.',
+    title: 'Course Internships — AWS / Cloud, Data Science, Machine Learning & More',
+    description: 'Explore internships related to AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Software Testing, and Automation Testing.',
   });
 
   const filtered = visibleInternships.filter(i => {
@@ -46,7 +47,7 @@ export default function InternshipsPage() {
           <Breadcrumbs items={[{ label: 'Internships' }]} className="text-white/50 mb-4" />
           <h1 className="display-lg text-white mb-4">Internships</h1>
           <p className="text-white/70 text-xl max-w-2xl">
-            Gain real industry experience through our internship programs across cloud, DevOps, full stack, data science, QA and more.
+            Gain real industry experience through internships related to AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Software Testing, and Automation Testing.
           </p>
           <div className="flex flex-wrap gap-4 mt-6">
             <div className="px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium">
@@ -104,9 +105,9 @@ export default function InternshipsPage() {
           {/* Status tabs */}
           <div className="flex gap-2 flex-wrap">
             {([
-              { id: 'all', label: `All (${internships.length})` },
+              { id: 'all', label: `All (${visibleInternships.length})` },
               { id: 'open', label: `Open (${openCount})` },
-              { id: 'coming-soon', label: `Coming Soon (${internships.filter(i => i.status === 'coming-soon').length})` },
+              { id: 'coming-soon', label: `Coming Soon (${visibleInternships.filter(i => i.status === 'coming-soon').length})` },
             ] as const).map(tab => (
               <button
                 key={tab.id}

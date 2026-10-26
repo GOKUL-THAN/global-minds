@@ -3,8 +3,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { GraduationCap, Loader2, Eye, EyeOff } from 'lucide-react';
+import { Loader2, Eye, EyeOff } from 'lucide-react';
 import { authService } from '../../services/authService';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { cn } from '../../utils/cn';
 
 const schema = z.object({
@@ -15,6 +16,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function LoginPage() {
+  const siteConfig = useSiteConfig();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -36,10 +38,6 @@ export default function LoginPage() {
           return;
         }
         if (result.user.role === 'STUDENT') {
-          if (adminLogin) {
-            setError('Student accounts cannot access the admin portal.');
-            return;
-          }
           navigate('/dashboard', { replace: true });
           return;
         }
@@ -55,7 +53,7 @@ export default function LoginPage() {
         }
       }
     } catch {
-      setError('We could not sign you in right now. Please try again.');
+      setError('Unable to reach the sign-in server. Start the API server and try again.');
     }
   };
 
@@ -83,9 +81,7 @@ export default function LoginPage() {
       <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-card-xl">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-brand flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
+            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
           </Link>
           <h1 className="font-display font-bold text-2xl">{adminLogin ? 'Admin sign in' : 'Sign in'}</h1>
           <p className="text-surface-500 mt-1 text-sm">

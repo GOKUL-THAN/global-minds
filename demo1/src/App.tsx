@@ -1,5 +1,6 @@
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Link, Navigate } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
+import { PageTransition } from './components/layout/PageTransition';
 import { AdminLayout } from './components/admin/AdminLayout';
 import { AdminAuthGate } from './components/admin/AdminAuthGate';
 
@@ -7,12 +8,12 @@ import { AdminAuthGate } from './components/admin/AdminAuthGate';
 import HomePage from './pages/HomePage';
 import CoursesPage from './pages/courses/CoursesPage';
 import CourseDetailPage from './pages/courses/CourseDetailPage';
-import CategoryPage from './pages/CategoryPage';
+import CertificationsPage from './pages/CertificationsPage';
 import MasterProgramsPage from './pages/master-programs/MasterProgramsPage';
 import MasterProgramDetailPage from './pages/master-programs/MasterProgramDetailPage';
+import CategoryPage from './pages/CategoryPage';
 import OnlineTrainingPage from './pages/OnlineTrainingPage';
 import ClassroomTrainingPage from './pages/ClassroomTrainingPage';
-import CertificationsPage from './pages/CertificationsPage';
 import CareerPage from './pages/career/CareerPage';
 import JobSupportPage from './pages/career/JobSupportPage';
 import InterviewPrepPage from './pages/career/InterviewPrepPage';
@@ -22,7 +23,6 @@ import InternshipsPage from './pages/InternshipsPage';
 import InternshipDetailPage from './pages/internships/InternshipDetailPage';
 import CorporateTrainingPage from './pages/CorporateTrainingPage';
 import CollegesPage from './pages/CollegesPage';
-import TrainersPage from './pages/TrainersPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/blog/BlogPage';
@@ -57,27 +57,17 @@ import StudentDashboardPage from './pages/dashboard/StudentDashboardPage';
 // ── Admin pages ─────────────────────────────────────────────
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import AdminCoursesPage from './pages/admin/AdminCoursesPage';
-import AdminCategoriesPage from './pages/admin/AdminCategoriesPage';
-import AdminMasterProgramsPage from './pages/admin/AdminMasterProgramsPage';
-import AdminStudentsPage from './pages/admin/AdminStudentsPage';
-import AdminStudentDetailPage from './pages/admin/AdminStudentDetailPage';
-import AdminStudentProgressPage from './pages/admin/AdminStudentProgressPage';
-import AdminAttendancePage from './pages/admin/AdminAttendancePage';
-import AdminInstructorsPage from './pages/admin/AdminInstructorsPage';
 import AdminEnquiriesPage from './pages/admin/AdminEnquiriesPage';
-import AdminInternshipsPage from './pages/admin/AdminInternshipsPage';
-import AdminBatchesPage from './pages/admin/AdminBatchesPage';
-import AdminLocationsPage from './pages/admin/AdminLocationsPage';
-import AdminBlogPage from './pages/admin/AdminBlogPage';
-import AdminFAQsPage from './pages/admin/AdminFAQsPage';
-import AdminTestimonialsPage from './pages/admin/AdminTestimonialsPage';
-import AdminCertificatesPage from './pages/admin/AdminCertificatesPage';
-import AdminPaymentsPage from './pages/admin/AdminPaymentsPage';
 import AdminSettingsPage from './pages/admin/AdminSettingsPage';
 import AdminGenericPage from './pages/admin/AdminGenericPage';
-import AdminActivityPage from './pages/admin/AdminActivityPage';
+import AdminOperationalPage from './pages/admin/AdminOperationalPage';
 import AdminContentStudioPage from './pages/admin/AdminContentStudioPage';
 import AdminNavigationPage from './pages/admin/AdminNavigationPage';
+import AdminUnavailablePage from './pages/admin/AdminUnavailablePage';
+import AdminAnnouncementsPage from './pages/admin/AdminAnnouncementsPage';
+import AdminUserManagementPage from './pages/admin/AdminUserManagementPage';
+import CertificateViewPage from './pages/CertificateViewPage';
+import { SiteConfigProvider } from './contexts/SiteConfigContext';
 
 // ── Payment placeholder pages ───────────────────────────────
 function CheckoutPage() {
@@ -145,7 +135,7 @@ const router = createBrowserRouter([
       { path: 'courses/:slug', element: <CourseDetailPage /> },
       { path: 'categories/:slug', element: <CategoryPage /> },
 
-      // Master Programs
+      // Master programs
       { path: 'master-programs', element: <MasterProgramsPage /> },
       { path: 'master-programs/:slug', element: <MasterProgramDetailPage /> },
 
@@ -173,8 +163,9 @@ const router = createBrowserRouter([
       // Corporate
       { path: 'corporate-training', element: <CorporateTrainingPage /> },
 
-      // Trainers
-      { path: 'trainers', element: <TrainersPage /> },
+      // Colleges
+      { path: 'colleges', element: <CollegesPage /> },
+      { path: 'colleges/*', element: <CollegesPage /> },
 
       // Company
       { path: 'about', element: <AboutPage /> },
@@ -210,6 +201,7 @@ const router = createBrowserRouter([
       { path: 'scholarships', element: <ScholarshipPage /> },
       { path: 'events', element: <EventsPage /> },
       { path: 'live-projects', element: <LiveProjectsPage /> },
+      { path: 'projects', element: <LiveProjectsPage /> },
       { path: 'refer-earn', element: <ReferEarnPage /> },
 
       // 404
@@ -218,15 +210,16 @@ const router = createBrowserRouter([
   },
 
   // ── Auth pages (no navbar/footer) ────────────────────────
-  { path: '/login', element: <LoginPage /> },
-  { path: '/admin/login', element: <LoginPage /> },
-  { path: '/verify-email', element: <VerifyEmailPage /> },
-  { path: '/forgot-password', element: <ForgotPasswordPage /> },
-  { path: '/reset-password', element: <ResetPasswordPage /> },
-  { path: '/account/security', element: <AccountSecurityPage /> },
+  { path: '/login', element: <PageTransition className="public-site standalone-page"><LoginPage /></PageTransition> },
+  { path: '/admin/login', element: <PageTransition className="public-site standalone-page"><LoginPage /></PageTransition> },
+  { path: '/verify-email', element: <PageTransition className="public-site standalone-page"><VerifyEmailPage /></PageTransition> },
+  { path: '/forgot-password', element: <PageTransition className="public-site standalone-page"><ForgotPasswordPage /></PageTransition> },
+  { path: '/reset-password', element: <PageTransition className="public-site standalone-page"><ResetPasswordPage /></PageTransition> },
+  { path: '/account/security', element: <PageTransition className="public-site standalone-page"><AccountSecurityPage /></PageTransition> },
 
   // ── Dashboard (no navbar/footer) ─────────────────────────
-  { path: '/dashboard', element: <StudentDashboardPage /> },
+  { path: '/dashboard', element: <PageTransition className="public-site standalone-page"><StudentDashboardPage /></PageTransition> },
+  { path: '/certificates/:certificateId', element: <PageTransition className="public-site standalone-page"><CertificateViewPage /></PageTransition> },
 
   // ── Admin (dedicated admin layout) ───────────────────────
   {
@@ -238,25 +231,27 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <AdminDashboardPage /> },
           { path: 'courses', element: <AdminCoursesPage /> },
-          { path: 'categories', element: <AdminCategoriesPage /> },
-          { path: 'master-programs', element: <AdminMasterProgramsPage /> },
-          { path: 'students', element: <AdminStudentsPage /> },
-          { path: 'students/:id', element: <AdminStudentDetailPage /> },
-          { path: 'student-progress', element: <AdminStudentProgressPage /> },
-          { path: 'attendance', element: <AdminAttendancePage /> },
-          { path: 'activity', element: <AdminActivityPage /> },
+          { path: 'categories', element: <Navigate to="/admin/website/categories" replace /> },
+          { path: 'master-programs', element: <Navigate to="/admin/website/master-programs" replace /> },
+          { path: 'students', element: <AdminOperationalPage /> },
+          { path: 'student-progress', element: <Navigate to="/admin/students" replace /> },
+          { path: 'attendance', element: <AdminOperationalPage /> },
+          { path: 'activity', element: <AdminOperationalPage /> },
           { path: 'studio', element: <AdminContentStudioPage /> },
+          { path: 'website/website-menu', element: <AdminNavigationPage /> },
           { path: 'website/:section', element: <AdminContentStudioPage /> },
-          { path: 'instructors', element: <AdminInstructorsPage /> },
+          { path: 'instructors', element: <Navigate to="/admin/website/instructors" replace /> },
           { path: 'enquiries', element: <AdminEnquiriesPage /> },
-          { path: 'internships', element: <AdminInternshipsPage /> },
-          { path: 'batches', element: <AdminBatchesPage /> },
-          { path: 'locations', element: <AdminLocationsPage /> },
-          { path: 'blog', element: <AdminBlogPage /> },
-          { path: 'faqs', element: <AdminFAQsPage /> },
-          { path: 'testimonials', element: <AdminTestimonialsPage /> },
-          { path: 'certificates', element: <AdminCertificatesPage /> },
-          { path: 'payments', element: <AdminPaymentsPage /> },
+          { path: 'internships', element: <AdminOperationalPage /> },
+          { path: 'batches', element: <AdminOperationalPage /> },
+          { path: 'locations', element: <Navigate to="/admin/website/locations" replace /> },
+          { path: 'blog', element: <Navigate to="/admin/website/blog" replace /> },
+          { path: 'faqs', element: <Navigate to="/admin/website/faqs" replace /> },
+          { path: 'testimonials', element: <Navigate to="/admin/website/testimonials" replace /> },
+          { path: 'certificates', element: <AdminOperationalPage /> },
+          { path: 'announcements', element: <AdminAnnouncementsPage /> },
+          { path: 'users', element: <AdminUserManagementPage /> },
+          { path: 'payments', element: <AdminUnavailablePage /> },
           { path: 'settings', element: <AdminSettingsPage /> },
           { path: 'navigation', element: <AdminNavigationPage /> },
           { path: '*', element: <AdminGenericPage title="Page Not Found" description="This admin page doesn't exist." /> },
@@ -267,5 +262,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <SiteConfigProvider>
+      <RouterProvider router={router} />
+    </SiteConfigProvider>
+  );
 }

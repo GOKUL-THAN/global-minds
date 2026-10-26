@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { siteConfig } from '../data/siteConfig';
+import { useSiteConfig } from '../contexts/SiteConfigContext';
 
 interface PageMetaOptions {
   title?: string;
@@ -23,6 +23,7 @@ export function usePageMeta({
   canonical,
   noIndex = false,
 }: PageMetaOptions = {}) {
+  const siteConfig = useSiteConfig();
   useEffect(() => {
     const fullTitle = title
       ? siteConfig.seo.titleTemplate.replace('%s', title)

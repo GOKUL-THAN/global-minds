@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 import { Button } from '../ui/Button';
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 
 interface CTASectionProps {
   title?: string;
@@ -24,6 +24,7 @@ export function CTASection({
   showPhone = true,
   variant = 'brand',
 }: CTASectionProps) {
+  const siteConfig = useSiteConfig();
   const bg =
     variant === 'brand'
       ? 'bg-gradient-to-r from-brand-700 to-brand-600'

@@ -1,22 +1,22 @@
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { Settings, ExternalLink } from 'lucide-react';
 
 export default function AdminSettingsPage() {
+  const siteConfig = useSiteConfig();
   return (
     <div className="space-y-6">
       <div>
         <h1 className="font-display font-bold text-2xl text-surface-900">Settings</h1>
-        <p className="text-surface-500 text-sm mt-0.5">Global Minds Academy site configuration — edit <code className="bg-surface-100 px-1 rounded">src/data/siteConfig.ts</code> to update</p>
+        <p className="text-surface-500 text-sm mt-0.5">Global Minds Academy site configuration, loaded from published database settings</p>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
         <div className="flex items-start gap-3">
           <Settings className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div>
-            <h3 className="font-semibold text-amber-900 mb-1">Configuration via Data Files</h3>
+            <h3 className="font-semibold text-amber-900 mb-1">Configuration in Content Studio</h3>
             <p className="text-amber-700 text-sm">
-              All site-wide settings are currently managed in <code>src/data/siteConfig.ts</code>. 
-              A full settings UI with persistence requires a backend API. Below is a read-only view of current config.
+              Site-wide settings are stored in the database. Edit and publish the Site Config record under Website → Settings in Content Studio.
             </p>
           </div>
         </div>

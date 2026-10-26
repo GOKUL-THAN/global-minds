@@ -1,11 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import {
-  Clock, Users, BarChart2, Monitor, MapPin, BadgeCheck,
-  ChevronDown, Star, ArrowRight, Phone, Download,
+  Clock, BarChart2, Monitor, MapPin, BadgeCheck,
+  ChevronDown, ArrowRight, Phone, Download,
   CheckCircle, Briefcase, BookOpen, Target, Code2, Award,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { StarRating } from '../../components/ui/StarRating';
 import { FAQAccordion } from '../../components/ui/FAQAccordion';
 import { CourseCard } from '../../components/courses/CourseCard';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
@@ -16,10 +15,11 @@ import { formatPrice } from '../../utils/formatters';
 import { cn } from '../../utils/cn';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { courseSchema, faqPageSchema, breadcrumbSchema, injectStructuredData } from '../../utils/structuredData';
-import { siteConfig } from '../../data/siteConfig';
+import { useSiteConfig } from '../../contexts/SiteConfigContext';
 import { useCourseCatalog } from '../../hooks/useCourseCatalog';
 
 export default function CourseDetailPage() {
+  const siteConfig = useSiteConfig();
   const { slug } = useParams<{ slug: string }>();
   const { courses, loading: coursesLoading, error: coursesError } = useCourseCatalog();
   const course = courses.find(item => item.slug === (slug || ''));
@@ -111,37 +111,16 @@ export default function CourseDetailPage() {
                   <BarChart2 className="w-4 h-4" /> {course.level}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Users className="w-4 h-4" /> {course.learnerCount.toLocaleString()} learners
-                </span>
-                <span className="flex items-center gap-1.5">
                   <BookOpen className="w-4 h-4" /> {course.modules.length} modules
                 </span>
                 {course.onlineAvailable && (
                   <span className="flex items-center gap-1.5"><Monitor className="w-4 h-4" /> Online</span>
                 )}
                 {course.classroomAvailable && (
-                  <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> Classroom</span>
+                  <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> Classroom — Chennai</span>
                 )}
               </div>
 
-              {/* Rating */}
-              <div className="flex items-center gap-3">
-                <StarRating rating={course.rating} size="lg" showValue />
-                <span className="text-white/60 text-sm">({course.reviewCount.toLocaleString()} reviews)</span>
-              </div>
-
-              {/* Instructor */}
-              <div className="flex items-center gap-3 mt-6">
-                <img
-                  src={course.instructor.photo}
-                  alt={course.instructor.name}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
-                />
-                <div>
-                  <p className="text-xs text-white/50">Instructor</p>
-                  <p className="text-sm font-semibold text-white">{course.instructor.name}</p>
-                </div>
-              </div>
             </div>
 
             {/* Mobile price card preview */}
@@ -345,29 +324,6 @@ export default function CourseDetailPage() {
               </ul>
             </section>
 
-            {/* Instructor */}
-            <section aria-labelledby="instructor-heading">
-              <h2 id="instructor-heading" className="heading-xl mb-6">Your Instructor</h2>
-              <div className="flex items-start gap-5 p-6 bg-surface-50 rounded-2xl">
-                <img
-                  src={course.instructor.photo}
-                  alt={course.instructor.name}
-                  className="w-20 h-20 rounded-2xl object-cover flex-shrink-0"
-                />
-                <div>
-                  <h3 className="font-display font-bold text-surface-900 text-lg">{course.instructor.name}</h3>
-                  <p className="text-brand-600 text-sm font-medium mb-2">{course.instructor.designation}</p>
-                  <p className="text-surface-500 text-xs mb-3">{course.instructor.experience} experience</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {course.instructor.certifications.slice(0, 3).map(cert => (
-                      <span key={cert} className="text-xs bg-white border border-surface-200 px-2 py-0.5 rounded-lg text-surface-600">{cert}</span>
-                    ))}
-                  </div>
-                  <p className="text-surface-600 text-sm mt-3 leading-relaxed">{course.instructor.bio}</p>
-                </div>
-              </div>
-            </section>
-
             {/* FAQs */}
             <section aria-labelledby="faq-heading">
               <h2 id="faq-heading" className="heading-xl mb-6">Frequently Asked Questions</h2>
@@ -423,7 +379,6 @@ export default function CourseDetailPage() {
                 {[
                   { label: 'Duration', value: course.duration, icon: Clock },
                   { label: 'Level', value: course.level, icon: BarChart2 },
-                  { label: 'Learners', value: `${course.learnerCount.toLocaleString()}+`, icon: Users },
                   { label: 'Certificate', value: 'Included', icon: BadgeCheck },
                 ].map(item => (
                   <div key={item.label} className="flex items-center justify-between text-sm">
@@ -447,12 +402,12 @@ export default function CourseDetailPage() {
                   )}
                   {course.classroomAvailable && (
                     <div className="flex items-center gap-2 text-sm text-surface-700">
-                      <MapPin className="w-4 h-4 text-green-500" /> Classroom
+                      <MapPin className="w-4 h-4 text-green-500" /> Classroom in Chennai
                     </div>
                   )}
                   {course.oneToOneAvailable && (
                     <div className="flex items-center gap-2 text-sm text-surface-700">
-                      <Star className="w-4 h-4 text-accent-500" /> One-to-One
+                      <BadgeCheck className="w-4 h-4 text-accent-500" /> One-to-One
                     </div>
                   )}
                 </div>
@@ -498,7 +453,7 @@ export default function CourseDetailPage() {
         {/* Final CTA */}
         <div className="mt-16 p-10 rounded-3xl bg-gradient-to-r from-brand-700 to-brand-600 text-white text-center">
           <h2 className="text-2xl font-display font-bold mb-3">Ready to Start?</h2>
-          <p className="text-white/80 mb-6">Join thousands of learners already growing their careers with Global Minds Academy.</p>
+          <p className="text-white/80 mb-6">Build practical skills and take the next step in your career with Global Minds Academy.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
               <Button className="bg-white text-brand-700 hover:bg-brand-50" size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
