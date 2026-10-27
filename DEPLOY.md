@@ -1,57 +1,22 @@
 # Deploy Guide — Global Minds Academy
 
-Three deployment paths are documented below. Render runs the Express service
-and frontend together. Vercel runs the frontend and API as serverless
-functions, using Neon PostgreSQL for persistent storage.
+Two free paths. **Render (Option B) is the only one that runs the full site** —
+login, admin, CMS, and forms all need the Express backend, which Netlify/Vercel
+static hosting cannot provide.
 
-| | Option A: Netlify | Option B: Render (recommended) | Option C: Vercel + Neon |
-|---|---|---|---|---|
-| What runs | Frontend only | Frontend + Express backend + PostgreSQL | Frontend + serverless API + Neon PostgreSQL |
-| Login / admin / forms | Not available | Working | Working |
-| Email verification | Not available | With Resend key | With Resend key |
-| Database | None | Render PostgreSQL | Neon PostgreSQL |
-| Setup | ~2 min | ~5 min | Configure Vercel and Neon |
-
----
-
-## Option C — Vercel + Neon (serverless)
-
-Vercel deploys the React frontend and the API functions under `api/`. Neon
-provides the persistent PostgreSQL database; SQLite is not suitable for these
-serverless functions. Vercel installs both the root and `server/` dependencies,
-then builds the frontend and type-checks the API.
-
-1. Create a Neon project and copy its **pooled** connection string.
-2. Import this repository into Vercel and set the project root to the
-   repository root. Vercel uses `vercel.json` to build and route `/api/*`.
-3. Add these environment variables in Vercel for the environments you deploy:
-
-| Key | Value |
-|-----|-------|
-| `DATABASE_DRIVER` | `postgres` |
-| `DATABASE_URL` | Neon pooled connection string |
-| `JWT_SECRET` | At least 32 random bytes |
-| `APP_ORIGIN` | Exact site origin, e.g. `https://your-site.vercel.app` |
-| `ADMIN_EMAIL` | Admin account email |
-| `ADMIN_PASSWORD` | 14–72 bytes |
-| `SUPER_ADMIN_EMAIL` | Super-admin account email |
-| `SUPER_ADMIN_PASSWORD` | 14–72 bytes; different from admin password |
-| `RESEND_API_KEY` | Optional; configure together with `EMAIL_FROM` |
-| `EMAIL_FROM` | Optional; required when `RESEND_API_KEY` is set |
-
-4. Deploy. Database migrations run on the first API invocation. For preview
-   deployments, set `APP_ORIGIN` to that preview's exact origin if you need
-   sign-in or other mutating requests to work there.
-5. Verify `/api/health` and then test sign-in and the public forms.
-
-Do not commit credentials or the Neon connection string. Configure them only in
-Vercel's project environment settings. Set `APP_ORIGIN` to every production
-custom domain used by the site; browser mutations from origins not on the
-allowlist are rejected.
+| | Option A: Netlify | Option B: Render (recommended) |
+|---|---|---|
+| Cost | Free | Free |
+| What runs | Frontend only | Frontend **+ backend + database** |
+| Login / admin / forms | ❌ broken | ✅ working |
+| CMS content editing | ❌ | ✅ |
+| Email verification | ❌ | ✅ (with Resend key) |
+| Setup time | ~2 min | ~5 min |
+| Sleeps when idle | No | Yes (wakes on next request) |
 
 ---
 
-## Option B — Render (full stack)
+## Option B — Render (full stack, recommended)
 
 The `render.yaml` blueprint deploys:
 - one **PostgreSQL** database (free, expires in 90 days)
@@ -165,9 +130,10 @@ On the first `--prod` deploy, Netlify asks for a site name (becomes
 
 ### Why a separate backend is needed on Netlify
 
-Netlify is configured here as a static frontend preview only. The Express API
-uses persistent database storage, sessions, and HttpOnly cookies; use Render
-or Vercel + Neon when those features are needed.
+Netlify serves static files only. The Express API uses SQLite files on disk,
+JWT sessions, and HttpOnly cookies — none of that runs on Netlify Functions
+(serverless, ephemeral filesystem). That's why Option B (Render) is the real
+deploy for this project.
 
 If you specifically want Netlify for the frontend, you can host the backend
 separately on Render (Option B's web service) and point the frontend at it by
