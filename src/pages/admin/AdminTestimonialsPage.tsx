@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Star, Search, Plus, Edit2, Trash2, Eye, EyeOff, X } from 'lucide-react';
 import { Badge } from '../../components/ui/Badge';
 import type { Testimonial } from '../../types';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 type LocalT = Testimonial & { hidden: boolean };
 
@@ -108,8 +110,10 @@ export default function AdminTestimonialsPage() {
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className="font-display font-bold text-2xl text-surface-900">Testimonials</h1>
-          <p className="text-surface-500 text-sm mt-0.5">
+          <h1 className="font-display font-bold text-2xl text-surface-900">
+            <ShinyText text="Testimonials" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </h1>
+          <p className="text-surface-500 text-sm mt-0.5 font-medium">
             {items.length} reviews · {items.filter(t => t.featured).length} featured
           </p>
         </div>
@@ -148,7 +152,8 @@ export default function AdminTestimonialsPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
+      <SpotlightCard>
+        <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -255,6 +260,7 @@ export default function AdminTestimonialsPage() {
           )}
         </div>
       </div>
+      </SpotlightCard>
 
       {/* Modal */}
       {showModal && (

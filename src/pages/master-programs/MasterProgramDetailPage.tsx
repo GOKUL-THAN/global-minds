@@ -7,6 +7,9 @@ import { FAQAccordion } from '../../components/ui/FAQAccordion';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { Button } from '../../components/ui/Button';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { cn } from '../../utils/cn';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
 
@@ -40,9 +43,17 @@ export default function MasterProgramDetailPage() {
             <div className="lg:col-span-2">
               <div className="page-hero-badge mb-4">
                 <Award className="w-4 h-4 text-teal-600" />
-                <span>Flagship Master Program</span>
+                <ShinyText text="Flagship Master Program" shinyColor="rgba(23, 108, 115, 0.9)" />
               </div>
-              <h1 className="page-hero-title display-md font-extrabold mb-3">{program.title}</h1>
+              <h1 className="page-hero-title display-md font-extrabold mb-3">
+                <DecryptedText
+                  text={program.title}
+                  speed={40}
+                  maxIterations={15}
+                  sequential={true}
+                  revealDirection="start"
+                />
+              </h1>
               <p className="page-hero-highlight text-lg font-bold mb-4">{program.tagline}</p>
               <p className="page-hero-desc text-base sm:text-lg mb-6">{program.shortDescription}</p>
               <div className="flex flex-wrap gap-3 text-sm">
@@ -149,7 +160,7 @@ export default function MasterProgramDetailPage() {
 
           {/* Sidebar */}
           <div>
-            <div className="sticky-enroll">
+            <SpotlightCard className="sticky-enroll bg-white border border-teal-200/80 rounded-3xl p-6 shadow-xl">
               <div className="text-3xl font-black text-surface-900 mb-1">{formatPrice(program.discountPrice, program.currency)}</div>
               <div className="text-surface-500 line-through text-sm mb-4 font-medium">{formatPrice(program.price, program.currency)}</div>
               <div className="space-y-3 mb-6">
@@ -173,7 +184,7 @@ export default function MasterProgramDetailPage() {
                   </div>
                 ))}
               </div>
-            </div>
+            </SpotlightCard>
           </div>
         </div>
 

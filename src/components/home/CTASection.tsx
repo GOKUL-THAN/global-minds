@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { siteConfig } from '../../data/siteConfig';
+import { Magnetic } from '../ui/Magnetic';
+import { ShinyText } from '../ui/ShinyText';
 
 interface CTASectionProps {
   title?: string;
@@ -42,28 +44,38 @@ export function CTASection({
       </div>
 
       <div className="container-xl relative text-center">
+        <div className="mb-3 inline-block">
+          <ShinyText
+            text="✨ Global Minds Tech Transformation"
+            shinyColor={variant === 'light' ? 'rgba(23, 108, 115, 0.9)' : 'rgba(255, 255, 255, 0.95)'}
+          />
+        </div>
         <h2 className={`display-md mb-4 ${textPrimary}`}>{title}</h2>
         <p className={`text-lg mb-10 max-w-2xl mx-auto leading-relaxed ${textSecondary}`}>{subtitle}</p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to={primaryHref}>
-            <Button
-              size="xl"
-              className={variant !== 'light' ? 'bg-white text-brand-900 hover:bg-brand-50 shadow-lg font-bold' : ''}
-              variant={variant === 'light' ? 'primary' : 'ghost'}
-              rightIcon={<ArrowRight className="w-5 h-5" />}
-            >
-              {primaryLabel}
-            </Button>
+            <Magnetic>
+              <Button
+                size="xl"
+                className={variant !== 'light' ? 'bg-white text-brand-900 hover:bg-brand-50 shadow-lg font-bold' : ''}
+                variant={variant === 'light' ? 'primary' : 'ghost'}
+                rightIcon={<ArrowRight className="w-5 h-5" />}
+              >
+                {primaryLabel}
+              </Button>
+            </Magnetic>
           </Link>
           <Link to={secondaryHref}>
-            <Button
-              size="xl"
-              className={variant !== 'light' ? 'border-2 border-white/80 text-white hover:bg-white/10 font-bold' : ''}
-              variant={variant === 'light' ? 'secondary' : 'outline'}
-            >
-              {secondaryLabel}
-            </Button>
+            <Magnetic>
+              <Button
+                size="xl"
+                className={variant !== 'light' ? 'border-2 border-white/80 text-white hover:bg-white/10 font-bold' : ''}
+                variant={variant === 'light' ? 'secondary' : 'outline'}
+              >
+                {secondaryLabel}
+              </Button>
+            </Magnetic>
           </Link>
         </div>
 

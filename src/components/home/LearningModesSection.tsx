@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Monitor, MapPin, User, ArrowRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { SpotlightCard } from '../ui/SpotlightCard';
 
 const modes = [
   {
@@ -59,9 +60,9 @@ export function LearningModesSection() {
         {/* Mode cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {modes.map((mode) => (
-            <div
+            <SpotlightCard
               key={mode.title}
-              className="group rounded-3xl overflow-hidden border border-surface-200 hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1"
+              className="group rounded-3xl overflow-hidden border border-surface-200 hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1 h-full"
             >
               {/* Card top */}
               <div className={cn('p-8 bg-gradient-to-br', mode.color)}>
@@ -97,7 +98,7 @@ export function LearningModesSection() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

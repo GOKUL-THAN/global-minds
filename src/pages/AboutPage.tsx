@@ -1,5 +1,9 @@
 import { Briefcase, CheckCircle, ShieldCheck, Zap } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { CountUp } from '../components/ui/CountUp';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 
@@ -39,10 +43,17 @@ export default function AboutPage() {
           <Breadcrumbs items={[{ label: 'About Us' }]} className="mb-4" />
           <div className="max-w-4xl">
             <div className="page-hero-badge mb-4">
-              Empowering IT Careers • Chennai &amp; Global
+              <ShinyText text="Empowering IT Careers • Chennai & Global" shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
             <h1 className="page-hero-title mb-6">
-              Building Skills Today for <span className="page-hero-highlight">Tomorrow&apos;s Leaders</span>
+              Building Skills Today for <DecryptedText
+                text="Tomorrow's Leaders"
+                speed={40}
+                maxIterations={15}
+                sequential={true}
+                revealDirection="start"
+                className="page-hero-highlight"
+              />
             </h1>
             <p className="page-hero-desc max-w-3xl text-lg sm:text-xl leading-relaxed mb-4">
               At Global Minds Academy, we offer specialized training programs designed to meet industry standards and future career demands. Our courses include advanced IT technologies such as Python, Java, React JS, Node.js, AWS, Data Science, Data Warehousing, Blockchain, Dot Net, Selenium, Hadoop, Tableau, Power BI, and more.
@@ -59,11 +70,13 @@ export default function AboutPage() {
         <div className="container-xl py-10">
           <div className="mx-auto grid max-w-xs grid-cols-1 gap-6 text-center">
             {coreStats.map(s => (
-              <div key={s.label} className={`p-6 rounded-2xl ${s.color}`}>
+              <SpotlightCard key={s.label} className={`p-6 rounded-2xl ${s.color}`}>
                 <s.icon className="w-7 h-7 mx-auto mb-2" />
-                <div className="text-3xl font-black">{s.value}</div>
+                <div className="text-3xl font-black">
+                  <CountUp end={50} start={true} suffix="+" />
+                </div>
                 <div className="text-sm font-bold mt-1 text-surface-800">{s.label}</div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -92,13 +105,13 @@ export default function AboutPage() {
             {features.map(feature => {
               const Icon = feature.icon;
               return (
-                <div key={feature.title} className={`rounded-2xl border p-6 ${feature.cardClass}`}>
+                <SpotlightCard key={feature.title} className={`rounded-2xl border p-6 ${feature.cardClass}`}>
                   <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-white ${feature.iconClass}`}>
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="text-lg font-extrabold text-surface-900">{feature.title}</div>
                   <div className="mt-2 text-sm font-medium text-surface-600">{feature.description}</div>
-                </div>
+                </SpotlightCard>
               );
             })}
           </div>
@@ -117,11 +130,11 @@ export default function AboutPage() {
               { title: 'Career First', desc: 'Placement support, resume prep and mock interviews are built into every program.' },
               { title: 'Continuous Growth', desc: 'Learning doesn\'t stop at graduation — alumni get lifetime access to updated course content.' },
             ].map(v => (
-              <div key={v.title} className="bg-white rounded-2xl p-6 border border-surface-100 text-center hover:shadow-card-md transition-shadow">
+              <SpotlightCard key={v.title} className="bg-white rounded-2xl p-6 border border-surface-100 text-center hover:shadow-card-md transition-shadow">
                 <CheckCircle className="w-8 h-8 text-brand-500 mx-auto mb-3" />
                 <h3 className="font-semibold text-surface-900 mb-2">{v.title}</h3>
                 <p className="text-surface-500 text-sm leading-relaxed">{v.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

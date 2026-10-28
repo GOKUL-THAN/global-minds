@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { categories } from '../data/categories';
 import { CourseCard } from '../components/courses/CourseCard';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
 import NotFoundPage from './NotFoundPage';
 import { useCourseCatalog } from '../hooks/useCourseCatalog';
 import { publicCourseCatalog } from '../data/publicCourseCatalog';
@@ -23,10 +25,17 @@ export default function CategoryPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Courses', href: '/courses' }, { label: category.title }]} className="mb-4" />
           <div className="page-hero-badge mb-3">
-            <span>Specialized Domain</span>
+            <ShinyText text="Specialized Domain" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-md font-extrabold mb-3">
-            <span className="page-hero-highlight">{category.title}</span>
+            <DecryptedText
+              text={category.title}
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
           </h1>
           <p className="page-hero-desc max-w-xl text-base sm:text-lg font-medium">{category.description}</p>
         </div>

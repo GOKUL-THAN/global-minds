@@ -4,6 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Phone, Mail, MapPin, MessageSquare, Clock, CheckCircle, Loader2, Send } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { siteConfig } from '../data/siteConfig';
 import { enquiryService } from '../services/enquiryService';
 import { cn } from '../utils/cn';
@@ -47,10 +50,17 @@ export default function ContactPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Contact' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            Connect With Our Advisors • 24hr Turnaround
+            <ShinyText text="Connect With Our Advisors • 24hr Turnaround" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title mb-4">
-            Get in <span className="page-hero-highlight">Touch</span>
+            Get in <DecryptedText
+              text="Touch"
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl leading-relaxed">
             Get in touch with our team for course enquiries, career counseling, corporate training or general questions.
@@ -71,7 +81,7 @@ export default function ContactPage() {
               <h2 className="heading-xl mb-8">Get in Touch</h2>
               <div className="space-y-5 mb-10">
                 {contacts.map(c => (
-                  <div key={c.label} className="flex items-center gap-4 p-4 bg-surface-50 rounded-2xl">
+                  <SpotlightCard key={c.label} className="flex items-center gap-4 p-4 bg-surface-50 rounded-2xl">
                     <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
                       <c.icon className="w-5 h-5 text-brand-600" />
                     </div>
@@ -83,12 +93,12 @@ export default function ContactPage() {
                         <p className="text-surface-900 font-bold">{c.value}</p>
                       )}
                     </div>
-                  </div>
+                  </SpotlightCard>
                 ))}
               </div>
 
               {/* Address */}
-              <div className="flex items-start gap-4 p-4 bg-surface-50 rounded-2xl mb-8">
+              <SpotlightCard className="flex items-start gap-4 p-4 bg-surface-50 rounded-2xl mb-8">
                 <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-brand-600" />
                 </div>
@@ -97,7 +107,7 @@ export default function ContactPage() {
                   <p className="text-surface-900 font-bold">{siteConfig.address.line1}</p>
                   <p className="text-surface-700 text-sm">{siteConfig.address.city}, {siteConfig.address.state}, {siteConfig.address.country}</p>
                 </div>
-              </div>
+              </SpotlightCard>
 
               <p className="text-surface-600 text-sm font-medium">Response within 24 hours on business days.</p>
             </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, Users, ArrowRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { SpotlightCard } from '../ui/SpotlightCard';
 
 const upcomingBatches = [
   {
@@ -69,39 +70,40 @@ export function UpcomingBatchesSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {upcomingBatches.map((batch) => (
-            <Link
-              key={batch.course}
-              to={batch.href}
-              className={cn(
-                'group rounded-2xl border p-5 transition-all duration-300',
-                'hover:shadow-card-md hover:-translate-y-1',
-                batch.color,
-              )}
-            >
-              <span className={cn('inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-3', batch.modeColor)}>
-                {batch.mode}
-              </span>
-              <h3 className="font-display font-bold text-surface-900 mb-3 group-hover:text-brand-700 transition-colors">
-                {batch.course}
-              </h3>
-              <div className="space-y-2 text-sm text-surface-700 font-medium">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-surface-600 shrink-0" />
-                  <span>{batch.date}</span>
+            <SpotlightCard key={batch.course} className="h-full">
+              <Link
+                to={batch.href}
+                className={cn(
+                  'group rounded-2xl border p-5 transition-all duration-300 block h-full',
+                  'hover:shadow-card-md hover:-translate-y-1',
+                  batch.color,
+                )}
+              >
+                <span className={cn('inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-3', batch.modeColor)}>
+                  {batch.mode}
+                </span>
+                <h3 className="font-display font-bold text-surface-900 mb-3 group-hover:text-brand-700 transition-colors">
+                  {batch.course}
+                </h3>
+                <div className="space-y-2 text-sm text-surface-700 font-medium">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-surface-600 shrink-0" />
+                    <span>{batch.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-surface-600 shrink-0" />
+                    <span>{batch.time}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="w-4 h-4 text-surface-600 shrink-0" />
+                    <span className="font-bold text-emerald-800">{batch.seats} seats left</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-surface-600 shrink-0" />
-                  <span>{batch.time}</span>
+                <div className="mt-4 pt-3 border-t border-surface-200 text-xs font-bold text-brand-700 group-hover:text-brand-800">
+                  Reserve seat →
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-surface-600 shrink-0" />
-                  <span className="font-bold text-emerald-800">{batch.seats} seats left</span>
-                </div>
-              </div>
-              <div className="mt-4 pt-3 border-t border-surface-200 text-xs font-bold text-brand-700 group-hover:text-brand-800">
-                Reserve seat →
-              </div>
-            </Link>
+              </Link>
+            </SpotlightCard>
           ))}
         </div>
       </div>

@@ -4,6 +4,9 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { locations } from '../data/locations';
 import { useCmsCollection } from '../hooks/useCmsCollection';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 export default function ClassroomTrainingPage() {
   const active = useCmsCollection('locations', locations)
@@ -16,10 +19,10 @@ export default function ClassroomTrainingPage() {
           <Breadcrumbs items={[{ label: 'Classroom Training' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
             <MapPin className="w-4 h-4 text-teal-600" />
-            <span>Chennai Tech Campus</span>
+            <ShinyText text="Chennai Tech Campus" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Classroom <span className="page-hero-highlight">Training</span>
+            Classroom <DecryptedText text="Training" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Immersive, hands-on classroom training at our Chennai centre with expert instructors and fully equipped high-performance labs.
@@ -35,21 +38,23 @@ export default function ClassroomTrainingPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {active.map(loc => (
-              <Link key={loc.id} to={`/locations/${loc.slug}`} className="card-hover overflow-hidden block">
-                <img src={loc.image} alt={loc.city} className="w-full h-44 object-cover" loading="lazy" />
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-green-600" />
-                    <span className="font-semibold text-surface-900">{loc.city}, {loc.state}</span>
+              <SpotlightCard key={loc.id} className="h-full">
+                <Link to={`/locations/${loc.slug}`} className="card-hover overflow-hidden block h-full">
+                  <img src={loc.image} alt={loc.city} className="w-full h-44 object-cover" loading="lazy" />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="w-4 h-4 text-green-600" />
+                      <span className="font-semibold text-surface-900">{loc.city}, {loc.state}</span>
+                    </div>
+                    <p className="text-xs text-surface-600 font-medium mb-3">{loc.address}</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {loc.facilities.slice(0, 3).map(f => (
+                        <span key={f} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-lg border border-surface-200">{f}</span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-xs text-surface-600 font-medium mb-3">{loc.address}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {loc.facilities.slice(0, 3).map(f => (
-                      <span key={f} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-lg border border-surface-200">{f}</span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -65,13 +70,17 @@ export default function ClassroomTrainingPage() {
               { icon: Users, title: 'Small Batches', desc: 'Limited batch sizes for personalised attention.' },
               { icon: Coffee, title: 'Student Lounge', desc: 'Comfortable break areas and cafeteria facilities.' },
             ].map(f => (
-              <div key={f.title} className="text-center p-6 bg-white rounded-2xl border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center mx-auto mb-4">
-                  <f.icon className="w-6 h-6 text-green-600" />
+              <SpotlightCard key={f.title} className="h-full">
+                <div className="text-center p-6 bg-white rounded-2xl border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center mx-auto mb-4">
+                      <f.icon className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold text-surface-900 mb-2">{f.title}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{f.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{f.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{f.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2, CheckCircle } from 'lucide-react';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { ShinyText } from '../components/ui/ShinyText';
 import { authService } from '../services/authService';
 import { siteConfig } from '../data/siteConfig';
 import { cn } from '../utils/cn';
@@ -63,10 +65,13 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen bg-surface-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-card-xl">
+      <SpotlightCard className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-card-xl border border-surface-200">
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold mb-4">
+            <ShinyText text="🎓 Free Student Registration • Instant Access" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </div>
+          <Link to="/" className="inline-flex items-center gap-2 mb-4 block">
+            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain mx-auto" />
           </Link>
           <h1 className="font-display font-bold text-2xl">Create Your Account</h1>
           <p className="text-surface-600 font-medium mt-1">Join Global Minds Academy and start your learning journey.</p>
@@ -191,7 +196,7 @@ export default function RegisterPage() {
           Already have an account?{' '}
           <Link to="/login" className="text-brand-700 hover:text-brand-800 font-bold">Sign in</Link>
         </p>
-      </div>
+      </SpotlightCard>
     </div>
   );
 }

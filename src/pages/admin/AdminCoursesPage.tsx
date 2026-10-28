@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Archive, Check, ChevronLeft, ChevronRight, Edit2, Eye, EyeOff, Filter, Loader2, Plus, RotateCcw, Search, Send } from 'lucide-react';
 import { Badge } from '../../components/ui/Badge';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 import { cmsService, type CmsRecord, type CmsStatus } from '../../services/cmsService';
 
 function contentString(content: Record<string, unknown>, field: string, fallback = ''): string {
@@ -112,6 +114,9 @@ export default function AdminCoursesPage() {
     <div className="space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold mb-2">
+            <ShinyText text="Courses Database Management" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </div>
           <h1 className="font-display font-bold text-2xl text-surface-900">Courses</h1>
           <p className="text-surface-500 text-sm mt-0.5">{entries.length} database courses.</p>
         </div>
@@ -123,7 +128,7 @@ export default function AdminCoursesPage() {
       {error && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{error}</p>}
       {notice && <p role="status" className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">{notice}</p>}
 
-      <section aria-label="Filter courses" className="bg-white rounded-2xl border border-surface-100 p-4 flex flex-col sm:flex-row gap-4">
+      <SpotlightCard className="bg-white rounded-2xl border border-surface-200 p-4 flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
           <Search aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-surface-400" />
           <input type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search courses..." className="form-input pl-9" aria-label="Search courses" />
@@ -150,9 +155,9 @@ export default function AdminCoursesPage() {
           <option value="title-desc">Title Z–A</option>
         </select>
         <p className="text-sm text-surface-500 flex items-center" aria-live="polite">{filtered.length} results</p>
-      </section>
+      </SpotlightCard>
 
-      <section className="bg-white rounded-2xl border border-surface-100 overflow-hidden" aria-label="Course list">
+      <SpotlightCard className="bg-white rounded-2xl border border-surface-200 overflow-hidden">
         {loading
           ? <div className="flex items-center justify-center gap-2 py-12 text-surface-500"><Loader2 className="w-5 h-5 animate-spin" /> Loading courses...</div>
           : <div className="overflow-x-auto">
@@ -244,7 +249,7 @@ export default function AdminCoursesPage() {
             </div>
           </div>
         )}
-      </section>
+      </SpotlightCard>
 
       <p className="text-xs text-surface-400">
         Editing a built-in course creates a CMS draft; saved CMS records override built-in course details on the public catalog.

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import type { FAQ } from '../../types';
+import { SpotlightCard } from './SpotlightCard';
 
 interface FAQAccordionProps {
   faqs: FAQ[];
@@ -16,9 +17,9 @@ export function FAQAccordion({ faqs, className }: FAQAccordionProps) {
   return (
     <div className={cn('space-y-3', className)}>
       {faqs.map(faq => (
-        <div
+        <SpotlightCard
           key={faq.id}
-          className="border border-surface-200 rounded-2xl overflow-hidden"
+          className="border border-surface-200 rounded-2xl overflow-hidden bg-white"
         >
           <button
             onClick={() => toggle(faq.id)}
@@ -49,7 +50,7 @@ export function FAQAccordion({ faqs, className }: FAQAccordionProps) {
               <div className="pt-4">{faq.answer}</div>
             </div>
           </div>
-        </div>
+        </SpotlightCard>
       ))}
     </div>
   );

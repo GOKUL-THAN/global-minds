@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { X, Megaphone } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 import { cn } from '../../utils/cn';
+import { ShinyText } from '../ui/ShinyText';
 
 export function AnnouncementBar() {
   const [dismissed, setDismissed] = useState(false);
@@ -27,7 +28,7 @@ export function AnnouncementBar() {
           <div className="flex items-center gap-2 flex-1 min-w-0">
             <Megaphone className="w-4 h-4 flex-shrink-0 opacity-80" />
             <p className="text-sm font-medium truncate">
-              {announcementBar.message}
+              <ShinyText text={announcementBar.message} shinyColor="rgba(255, 255, 255, 0.95)" />
             </p>
           </div>
 

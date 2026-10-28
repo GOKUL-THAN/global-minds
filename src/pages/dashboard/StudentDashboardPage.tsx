@@ -7,6 +7,8 @@ import {
 import { authService } from '../../services/authService';
 import { studentPortalService, type StudentPortalData, type StudentProfile } from '../../services/studentPortalService';
 import { CountUp } from '../../components/ui/CountUp';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 const formatDate = (value: string | null | undefined) => value
   ? new Date(value).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
@@ -150,8 +152,10 @@ export default function StudentDashboardPage() {
       <div className="container-xl py-8 space-y-6">
         {error && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">{error}</p>}
         {notice && <p role="status" className="rounded-xl border border-green-200 bg-green-50 p-3 text-sm text-green-800">{notice}</p>}
-        <section className="bg-gradient-to-r from-brand-700 to-brand-600 rounded-2xl p-7 text-white">
-          <p className="text-brand-100 text-sm">Student dashboard</p>
+        <section className="bg-gradient-to-r from-brand-700 to-brand-600 rounded-2xl p-7 text-white shadow-lg">
+          <p className="text-brand-100 text-sm font-semibold">
+            <ShinyText text="🎓 Student Portal Dashboard" shinyColor="rgba(255, 255, 255, 0.95)" />
+          </p>
           <h1 className="font-display font-bold text-3xl mt-1">Welcome, {profile.firstName} {profile.lastName}</h1>
           <p className="text-brand-100 mt-2">{profile.email}</p>
         </section>
@@ -163,13 +167,15 @@ export default function StudentDashboardPage() {
             { label: 'Attendance records', count: portal.attendanceTotal, icon: Check },
             { label: 'Certificates', count: portal.certificates.length, icon: Award },
           ].map(({ label, count, icon: Icon }) => (
-            <article key={label} className="rounded-2xl border border-surface-200 bg-white p-5">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-surface-600">{label}</p>
-                <Icon className="h-5 w-5 text-brand-600" />
-              </div>
-              <p className="mt-3 text-2xl font-bold text-surface-900"><CountUp end={count} start /></p>
-            </article>
+            <SpotlightCard key={label}>
+              <article className="rounded-2xl border border-surface-200 bg-white p-5 transition-all duration-300 hover:shadow-card-md">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-surface-600">{label}</p>
+                  <Icon className="h-5 w-5 text-brand-600" />
+                </div>
+                <p className="mt-3 text-2xl font-bold text-surface-900"><CountUp end={count} start /></p>
+              </article>
+            </SpotlightCard>
           ))}
         </section>
 

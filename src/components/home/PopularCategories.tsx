@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 import { cn } from '../../utils/cn';
+import { SpotlightCard } from '../ui/SpotlightCard';
 
 const iconMap: Record<string, React.ElementType> = {
   'aws-training': Cloud,
@@ -44,23 +45,24 @@ export function PopularCategories() {
             const styles = cardStyles[course.sourceSlug] || { iconBg: 'bg-brand-50', iconColor: 'text-brand-600', border: 'border-brand-200' };
 
             return (
-              <Link
-                key={course.sourceSlug}
-                to={`/courses/${course.sourceSlug}`}
-                className={cn(
-                  'group flex min-h-[180px] flex-col items-center justify-center rounded-2xl border bg-white p-5 text-center',
-                  'border-surface-200 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card-md',
-                  styles.border,
-                )}
-                aria-label={`Explore ${course.title}`}
-              >
-                <div className={cn('mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/80 shadow-sm', styles.iconBg, styles.iconColor)}>
-                  <Icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-2xl font-semibold text-surface-900 transition-colors group-hover:text-brand-700">
-                  {course.title}
-                </h3>
-              </Link>
+              <SpotlightCard key={course.sourceSlug} className="h-full">
+                <Link
+                  to={`/courses/${course.sourceSlug}`}
+                  className={cn(
+                    'group flex min-h-[180px] h-full flex-col items-center justify-center rounded-2xl border bg-white p-5 text-center',
+                    'border-surface-200 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card-md',
+                    styles.border,
+                  )}
+                  aria-label={`Explore ${course.title}`}
+                >
+                  <div className={cn('mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/80 shadow-sm', styles.iconBg, styles.iconColor)}>
+                    <Icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-surface-900 transition-colors group-hover:text-brand-700">
+                    {course.title}
+                  </h3>
+                </Link>
+              </SpotlightCard>
             );
           })}
         </div>

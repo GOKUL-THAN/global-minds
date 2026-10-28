@@ -2,6 +2,8 @@ import { useState, type FormEvent } from 'react';
 import { Bot, Mail, MessageCircle, Send, X } from 'lucide-react';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 import { siteConfig } from '../../data/siteConfig';
+import { ShinyText } from '../ui/ShinyText';
+import { Magnetic } from '../ui/Magnetic';
 
 interface ChatMessage {
   role: 'assistant' | 'user';
@@ -112,7 +114,9 @@ export function QuickContactAssistant() {
                 <Bot className="h-5 w-5" aria-hidden="true" />
               </span>
               <div>
-                <h2 className="font-semibold">Global Minds AI Assistant</h2>
+                <h2 className="font-semibold">
+                  <ShinyText text="Global Minds AI Assistant" shinyColor="rgba(255, 255, 255, 0.95)" />
+                </h2>
                 <p className="text-xs text-teal-100 font-medium">Online · Instant answers</p>
               </div>
             </div>
@@ -179,43 +183,51 @@ export function QuickContactAssistant() {
       <div className="fixed bottom-24 right-4 z-[70] flex flex-col items-center gap-3 sm:right-6">
         {quickContactsOpen && (
           <>
-            <button
-              type="button"
-              onClick={() => setAssistantOpen(open => !open)}
-              aria-label={assistantOpen ? 'Close AI assistant' : 'Open AI assistant'}
-              aria-expanded={assistantOpen}
-              className="relative flex h-14 w-14 items-center justify-center rounded-full bg-violet-600 text-white shadow-lg transition-transform hover:scale-105"
-            >
-              <Bot className="h-6 w-6" aria-hidden="true" />
-              <span className="absolute -right-1 -top-1 rounded-full bg-amber-300 px-1.5 py-0.5 text-[10px] font-bold text-surface-950">AI</span>
-            </button>
-            <a
-              href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Chat on WhatsApp at ${siteConfig.phone}`}
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:scale-105"
-            >
-              <MessageCircle className="h-6 w-6" aria-hidden="true" />
-            </a>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              aria-label={`Email ${siteConfig.email}`}
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-600 text-white shadow-lg transition-transform hover:scale-105"
-            >
-              <Mail className="h-6 w-6" aria-hidden="true" />
-            </a>
+            <Magnetic>
+              <button
+                type="button"
+                onClick={() => setAssistantOpen(open => !open)}
+                aria-label={assistantOpen ? 'Close AI assistant' : 'Open AI assistant'}
+                aria-expanded={assistantOpen}
+                className="relative flex h-14 w-14 items-center justify-center rounded-full bg-violet-600 text-white shadow-lg transition-transform hover:scale-105"
+              >
+                <Bot className="h-6 w-6" aria-hidden="true" />
+                <span className="absolute -right-1 -top-1 rounded-full bg-amber-300 px-1.5 py-0.5 text-[10px] font-bold text-surface-950">AI</span>
+              </button>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Chat on WhatsApp at ${siteConfig.phone}`}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:scale-105"
+              >
+                <MessageCircle className="h-6 w-6" aria-hidden="true" />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                aria-label={`Email ${siteConfig.email}`}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-600 text-white shadow-lg transition-transform hover:scale-105"
+              >
+                <Mail className="h-6 w-6" aria-hidden="true" />
+              </a>
+            </Magnetic>
           </>
         )}
-        <button
-          type="button"
-          onClick={() => setQuickContactsOpen(open => !open)}
-          aria-label={quickContactsOpen ? 'Close quick contact' : 'Open quick contact'}
-          aria-expanded={quickContactsOpen}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-rose-500 text-white shadow-lg transition-transform hover:scale-105"
-        >
-          {quickContactsOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
-        </button>
+        <Magnetic>
+          <button
+            type="button"
+            onClick={() => setQuickContactsOpen(open => !open)}
+            aria-label={quickContactsOpen ? 'Close quick contact' : 'Open quick contact'}
+            aria-expanded={quickContactsOpen}
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-rose-500 text-white shadow-lg transition-transform hover:scale-105"
+          >
+            {quickContactsOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+          </button>
+        </Magnetic>
       </div>
     </>
   );

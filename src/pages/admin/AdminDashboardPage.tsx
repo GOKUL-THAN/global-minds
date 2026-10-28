@@ -4,6 +4,8 @@ import { Link, useOutletContext } from 'react-router-dom';
 import type { User } from '../../types';
 import { adminOperationsService, type OperationalModule, type OperationalStatus, type OperationalSummary, type SystemHealth } from '../../services/adminOperationsService';
 import { CountUp } from '../../components/ui/CountUp';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 const adminTools = [
   {
@@ -126,7 +128,14 @@ export default function AdminDashboardPage() {
                 ["Today's attendance", summary.todayAttendance],
                 ['Open internships', summary.openInternships],
                 ['Active certificates', summary.activeCertificates],
-              ].map(([label, value]) => <article key={label} className="rounded-2xl border border-surface-200 bg-white p-4"><p className="text-xs text-surface-600 font-medium">{label}</p><p className="mt-2 text-2xl font-bold text-surface-900">{typeof value === 'number' ? <CountUp end={value} start /> : value}</p></article>)}
+              ].map(([label, value]) => (
+                <SpotlightCard key={label}>
+                  <article className="rounded-2xl border border-surface-200 bg-white p-4 transition-all duration-300 hover:shadow-card-md">
+                    <p className="text-xs text-surface-600 font-medium">{label}</p>
+                    <p className="mt-2 text-2xl font-bold text-surface-900">{typeof value === 'number' ? <CountUp end={value} start /> : value}</p>
+                  </article>
+                </SpotlightCard>
+              ))}
             </div>
           ) : <p role="status" className="text-sm text-surface-600 font-medium">Loading database statistics...</p>}
         </section>
@@ -146,13 +155,15 @@ export default function AdminDashboardPage() {
       {tools.length > 0 ? (
         <section aria-label="Available admin tools" className="grid gap-4 sm:grid-cols-2">
           {tools.map(({ title, description, href, icon: Icon }) => (
-            <Link key={href} to={href} className="group rounded-2xl border border-surface-200 bg-white p-5 transition-colors hover:border-brand-300 hover:bg-brand-50">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700 group-hover:bg-white">
-                <Icon className="h-5 w-5" />
-              </div>
-              <h2 className="mt-4 font-semibold text-surface-900">{title}</h2>
-              <p className="mt-1 text-sm text-surface-600 font-medium">{description}</p>
-            </Link>
+            <SpotlightCard key={href}>
+              <Link to={href} className="group block rounded-2xl border border-surface-200 bg-white p-5 transition-all duration-300 hover:border-brand-300 hover:shadow-card-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h2 className="mt-4 font-semibold text-surface-900 group-hover:text-brand-700 transition-colors">{title}</h2>
+                <p className="mt-1 text-sm text-surface-600 font-medium">{description}</p>
+              </Link>
+            </SpotlightCard>
           ))}
         </section>
       ) : (

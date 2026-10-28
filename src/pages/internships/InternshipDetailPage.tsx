@@ -4,6 +4,9 @@ import { allowedInternshipCategories, internships } from '../../data/internships
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { Badge } from '../../components/ui/Badge';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { formatDate } from '../../utils/formatters';
 import NotFoundPage from '../NotFoundPage';
@@ -42,13 +45,21 @@ export default function InternshipDetailPage() {
             <div className="lg:col-span-2">
               <div className="flex flex-wrap items-center gap-2.5 mb-4">
                 <div className="page-hero-badge">
-                  {internship.category}
+                  <ShinyText text={internship.category} shinyColor="rgba(23, 108, 115, 0.9)" />
                 </div>
                 <Badge variant={statusVariant}>
                   {internship.status === 'open' ? '✓ Open' : internship.status === 'coming-soon' ? 'Coming Soon' : 'Closed'}
                 </Badge>
               </div>
-              <h1 className="page-hero-title mb-3">{internship.title}</h1>
+              <h1 className="page-hero-title mb-3">
+                <DecryptedText
+                  text={internship.title}
+                  speed={40}
+                  maxIterations={15}
+                  sequential={true}
+                  revealDirection="start"
+                />
+              </h1>
               <p className="page-hero-desc text-lg mb-6 font-semibold text-teal-900">{internship.company}</p>
               <div className="flex flex-wrap gap-3 text-sm">
                 <span className="page-hero-chip flex items-center gap-2 font-medium">
@@ -151,7 +162,7 @@ export default function InternshipDetailPage() {
           {/* Sidebar */}
           <div>
             <div className="sticky top-24 space-y-6">
-              <div className="bg-white border border-surface-200 rounded-2xl p-6 shadow-card">
+              <SpotlightCard className="bg-white border border-surface-200 rounded-2xl p-6 shadow-card">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-surface-900">Quick Info</h3>
                   <Badge variant={statusVariant}>{internship.status}</Badge>
@@ -174,7 +185,7 @@ export default function InternshipDetailPage() {
                     {internship.status === 'coming-soon' ? 'Opening Soon' : 'Closed'}
                   </button>
                 )}
-              </div>
+              </SpotlightCard>
 
               <div className="bg-brand-50 border border-brand-200 rounded-2xl p-5">
                 <h3 className="font-semibold text-brand-900 mb-2">Complete a Course First</h3>

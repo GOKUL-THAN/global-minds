@@ -6,6 +6,8 @@ import {
 } from 'lucide-react';
 import type { Enquiry, EnquiryStatus } from '../../data/adminMockData';
 import { cn } from '../../utils/cn';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 import { enquiryService } from '../../services/enquiryService';
 
 function AddEnquiryModal({
@@ -290,6 +292,9 @@ export default function AdminEnquiriesPage() {
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold mb-2">
+            <ShinyText text="Lead Management & CRM" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </div>
           <h1 className="font-display font-bold text-2xl text-surface-900">Enquiries</h1>
           <p className="text-surface-500 text-sm mt-1">Manage and track all incoming leads</p>
         </div>

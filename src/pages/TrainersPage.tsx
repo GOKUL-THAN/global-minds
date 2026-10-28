@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { instructors } from '../data/instructors';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Badge } from '../components/ui/Badge';
 import { useCmsCollection } from '../hooks/useCmsCollection';
@@ -24,10 +27,17 @@ export default function TrainersPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Trainers' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            Certified Industry Mentors • 10+ Years Avg Exp
+            <ShinyText text="Certified Industry Mentors • 10+ Years Avg Exp" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title mb-4">
-            Expert <span className="page-hero-highlight">Trainers &amp; Mentors</span>
+            Expert <DecryptedText
+              text="Trainers & Mentors"
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
           </h1>
           <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
             Learn from certified industry professionals with real-world production experience in cloud, full-stack, data engineering, and automation.
@@ -48,9 +58,9 @@ export default function TrainersPage() {
               const isExpanded = expandedTrainers.has(trainer.id);
               const detailsId = `trainer-details-${trainer.id}`;
               return (
-                <div
+                <SpotlightCard
                   key={trainer.id}
-                  className="bg-white rounded-3xl border border-surface-100 overflow-hidden hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white rounded-3xl border border-surface-100 overflow-hidden hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1 h-full"
                 >
                   {/* Header */}
                   <div className="bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white text-center">
@@ -155,7 +165,7 @@ export default function TrainersPage() {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </SpotlightCard>
               );
             })}
           </div>

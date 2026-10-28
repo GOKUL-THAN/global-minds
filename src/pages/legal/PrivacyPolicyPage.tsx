@@ -1,4 +1,6 @@
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -6,8 +8,19 @@ export default function PrivacyPolicyPage() {
       <div className="page-hero-premium py-12 relative overflow-hidden">
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Privacy Policy' }]} className="mb-3" />
-          <div className="page-hero-badge mb-3">Data Privacy &amp; Trust</div>
-          <h1 className="page-hero-title mb-2">Privacy <span className="page-hero-highlight">Policy</span></h1>
+          <div className="page-hero-badge mb-3">
+            <ShinyText text="Data Privacy & Trust" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </div>
+          <h1 className="page-hero-title mb-2">
+            Privacy <DecryptedText
+              text="Policy"
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
+          </h1>
           <p className="text-surface-600 font-semibold text-sm">Last updated: October 2026</p>
         </div>
       </div>

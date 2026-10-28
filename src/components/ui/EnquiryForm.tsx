@@ -7,6 +7,7 @@ import { enquiryService } from '../../services/enquiryService';
 import { useCourseCatalog } from '../../hooks/useCourseCatalog';
 import { siteConfig } from '../../data/siteConfig';
 import { cn } from '../../utils/cn';
+import { ShinyText } from './ShinyText';
 
 const schema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
@@ -245,10 +246,10 @@ export function EnquiryForm({
               Submitting...
             </>
           ) : (
-            <>
+            <span className="inline-flex items-center justify-center gap-2">
               <Send className="w-4 h-4" />
-              Request Free Counseling
-            </>
+              <ShinyText text={compact ? 'Submit' : 'Request Free Counseling'} shinyColor="rgba(255, 255, 255, 0.95)" />
+            </span>
           )}
         </button>
       </form>

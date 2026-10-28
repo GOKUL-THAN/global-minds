@@ -3,6 +3,9 @@ import { Calendar, Clock, Monitor, MapPin, Users, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 
@@ -79,10 +82,17 @@ export default function BatchSchedulePage() {
           <Breadcrumbs items={[{ label: 'Batch Schedule' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
             <Calendar className="w-4 h-4 text-teal-600" />
-            <span>Real-Time Enrollment Open</span>
+            <ShinyText text="Real-Time Enrollment Open" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Upcoming <span className="page-hero-highlight">Batch Schedules</span>
+            Upcoming <DecryptedText
+              text="Batch Schedules"
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Find the right batch that fits your schedule — weekday, weekend, or fast-track. Online, classroom, and hybrid options available with personalized mentorship.
@@ -167,7 +177,7 @@ export default function BatchSchedulePage() {
                 const seatsLeftPct = batch.seatsLeft / batch.seatsTotal;
                 const sc = seatColor(batch.seatsLeft, batch.seatsTotal);
                 return (
-                  <div
+                  <SpotlightCard
                     key={batch.id}
                     className="bg-white rounded-2xl border border-surface-200 p-5 hover:border-brand-300 hover:shadow-card-md transition-all"
                   >
@@ -233,7 +243,7 @@ export default function BatchSchedulePage() {
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </SpotlightCard>
                 );
               })}
             </div>

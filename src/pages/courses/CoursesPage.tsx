@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { Search, SlidersHorizontal, X, Grid, List, BookOpen } from 'lucide-react';
 import { CourseCard } from '../../components/courses/CourseCard';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
 import { categories } from '../../data/categories';
 import { cn } from '../../utils/cn';
 import type { Course } from '../../types';
@@ -134,10 +136,10 @@ export default function CoursesPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Courses' }]} className="mb-4" />
           <div className="page-hero-badge mb-3">
-            <span>Career-Focused Curricula</span>
+            <ShinyText text="✨ Career-Focused Curricula" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-md font-extrabold mb-3">
-            Explore <span className="page-hero-highlight">All Courses</span>
+            Explore <DecryptedText text="All Courses" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc max-w-2xl text-base sm:text-lg">
             Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.

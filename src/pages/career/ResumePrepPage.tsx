@@ -4,6 +4,9 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 
 const resumeTips = [
   'Use a clean, ATS-friendly template with clear section headings',
@@ -41,10 +44,10 @@ export default function ResumePrepPage() {
           />
           <div className="page-hero-badge mb-4">
             <CheckCircle className="w-4 h-4 text-teal-600" />
-            <span>ATS-Friendly Formatting</span>
+            <ShinyText text="ATS-Friendly Formatting" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Resume <span className="page-hero-highlight">Preparation</span>
+            Resume <DecryptedText text="Preparation" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Build a strong, ATS-optimised resume that gets you shortlisted by top tech recruiters and hiring managers in the IT industry.
@@ -63,13 +66,17 @@ export default function ResumePrepPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sections.map((s, i) => (
-              <div key={s.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
-                <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
-                  <span className="font-bold text-brand-600 text-sm">{String(i + 1).padStart(2, '0')}</span>
+              <SpotlightCard key={s.title} className="h-full">
+                <div className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
+                      <span className="font-bold text-brand-600 text-sm">{String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                    <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

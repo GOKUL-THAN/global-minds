@@ -1224,6 +1224,25 @@
   animation-play-state: paused;
 }
 
+/* React Bits Marquee Animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap, 1.5rem))); }
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(calc(-100% - var(--gap, 1.5rem))); }
+  to { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-experience *,
   .home-experience *::before,

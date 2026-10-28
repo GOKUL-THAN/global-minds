@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Award, Loader2, Printer } from 'lucide-react';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { ShinyText } from '../components/ui/ShinyText';
 
 type Certificate = {
   certificateId: string;
@@ -42,9 +44,11 @@ export default function CertificateViewPage() {
           <Link to="/dashboard" className="text-sm font-medium text-brand-700 hover:underline">Back to dashboard</Link>
           <button type="button" onClick={() => window.print()} className="btn-primary btn inline-flex items-center gap-2"><Printer className="h-4 w-4" /> Print / Save as PDF</button>
         </div>
-        <article className={`border-8 bg-white p-8 text-center shadow-card sm:p-16 ${certificate.valid ? 'border-brand-200' : 'border-red-200'}`}>
+        <SpotlightCard className={`border-8 bg-white p-8 text-center shadow-card sm:p-16 rounded-3xl ${certificate.valid ? 'border-brand-200' : 'border-red-200'}`}>
           <Award className={`mx-auto h-14 w-14 ${certificate.valid ? 'text-brand-600' : 'text-red-600'}`} />
-          <p className="mt-6 text-sm font-bold uppercase tracking-[0.25em] text-surface-700">Global Minds Academy</p>
+          <p className="mt-6 text-sm font-bold uppercase tracking-[0.25em] text-surface-700">
+            <ShinyText text="Global Minds Academy" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </p>
           <h1 className="mt-5 font-display text-3xl font-bold text-surface-900 sm:text-5xl">Certificate of Achievement</h1>
           <p className="mt-8 text-surface-700 font-medium">This certifies that</p>
           <p className="mt-2 font-display text-3xl font-semibold text-brand-800">{certificate.studentName}</p>
@@ -52,8 +56,8 @@ export default function CertificateViewPage() {
           <p className="mt-2 text-2xl font-bold text-surface-900">{certificate.courseName}</p>
           <p className="mt-8 text-sm text-surface-600 font-medium">Issued {new Date(certificate.issuedAt).toLocaleDateString()}</p>
           <p className="mt-2 text-xs text-surface-600 font-medium">Certificate ID: {certificate.certificateId}</p>
-          <p className={`mt-6 text-sm font-bold uppercase tracking-wide ${certificate.valid ? 'text-green-700' : 'text-red-700'}`}>{certificate.valid ? 'Verified and valid' : 'Revoked — not valid'}</p>
-        </article>
+          <p className={`mt-6 text-sm font-bold uppercase tracking-wide ${certificate.valid ? 'text-green-700' : 'text-red-700'}`}>{certificate.valid ? '✓ Verified and valid' : 'Revoked — not valid'}</p>
+        </SpotlightCard>
       </div>
     </main>
   );

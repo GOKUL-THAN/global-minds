@@ -4,6 +4,8 @@ import { Eye, EyeOff, Plus, Edit2, Trash2, Clock, Search, X } from 'lucide-react
 import { formatPrice } from '../../utils/formatters';
 import { Badge } from '../../components/ui/Badge';
 import type { MasterProgram } from '../../types';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 type LocalMP = MasterProgram & { hidden: boolean };
 
@@ -116,8 +118,10 @@ export default function AdminMasterProgramsPage() {
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className="font-display font-bold text-2xl text-surface-900">Master Programs</h1>
-          <p className="text-surface-500 text-sm mt-0.5">
+          <h1 className="font-display font-bold text-2xl text-surface-900">
+            <ShinyText text="Master Programs" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </h1>
+          <p className="text-surface-500 text-sm mt-0.5 font-medium">
             {visibleCount} visible · {items.length} total
           </p>
         </div>
@@ -140,7 +144,8 @@ export default function AdminMasterProgramsPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
+      <SpotlightCard>
+        <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -249,6 +254,7 @@ export default function AdminMasterProgramsPage() {
           )}
         </div>
       </div>
+      </SpotlightCard>
 
       {/* Modal */}
       {showModal && (

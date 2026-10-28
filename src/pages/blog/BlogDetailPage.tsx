@@ -4,6 +4,9 @@ import { blogPosts } from '../../data/blogs';
 import { formatDate } from '../../utils/formatters';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { Badge } from '../../components/ui/Badge';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import NotFoundPage from '../NotFoundPage';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
@@ -38,7 +41,9 @@ export default function BlogDetailPage() {
             className="mb-6"
           />
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <div className="page-hero-badge">{post.category}</div>
+            <div className="page-hero-badge">
+              <ShinyText text={post.category} shinyColor="rgba(23, 108, 115, 0.9)" />
+            </div>
             <span className="page-hero-chip font-medium text-sm flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-teal-600" /> {post.readTime}
             </span>
@@ -46,7 +51,15 @@ export default function BlogDetailPage() {
               <Calendar className="w-3.5 h-3.5 text-teal-600" /> {formatDate(post.publishedAt)}
             </span>
           </div>
-          <h1 className="page-hero-title mb-6">{post.title}</h1>
+          <h1 className="page-hero-title mb-6">
+            <DecryptedText
+              text={post.title}
+              speed={30}
+              maxIterations={12}
+              sequential={true}
+              revealDirection="start"
+            />
+          </h1>
           <p className="page-hero-desc text-lg sm:text-xl leading-relaxed mb-6">{post.excerpt}</p>
           <div className="flex items-center gap-3">
             <img
@@ -122,25 +135,29 @@ export default function BlogDetailPage() {
             <h2 className="heading-xl mb-6">More from the Blog</h2>
             <div className="grid sm:grid-cols-3 gap-6">
               {others.map(p => (
-                <Link
+                <SpotlightCard
                   key={p.id}
-                  to={`/blog/${p.slug}`}
-                  className="group block rounded-2xl overflow-hidden border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all"
+                  className="rounded-2xl overflow-hidden border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all"
                 >
-                  <img
-                    src={p.featuredImage}
-                    alt={p.title}
-                    className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="p-4">
-                    <Badge variant="brand" className="mb-2">{p.category}</Badge>
-                    <h3 className="font-bold text-surface-900 text-sm line-clamp-2 group-hover:text-brand-700 transition-colors">
-                      {p.title}
-                    </h3>
-                    <p className="text-xs text-surface-600 font-medium mt-2">{p.readTime}</p>
-                  </div>
-                </Link>
+                  <Link
+                    to={`/blog/${p.slug}`}
+                    className="group block h-full"
+                  >
+                    <img
+                      src={p.featuredImage}
+                      alt={p.title}
+                      className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="p-4">
+                      <Badge variant="brand" className="mb-2">{p.category}</Badge>
+                      <h3 className="font-bold text-surface-900 text-sm line-clamp-2 group-hover:text-brand-700 transition-colors">
+                        {p.title}
+                      </h3>
+                      <p className="text-xs text-surface-600 font-medium mt-2">{p.readTime}</p>
+                    </div>
+                  </Link>
+                </SpotlightCard>
               ))}
             </div>
           </div>

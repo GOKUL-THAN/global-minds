@@ -6,6 +6,11 @@ import { Button } from '../components/ui/Button';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { useCmsCollection } from '../hooks/useCmsCollection';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { PixelCard } from '../components/ui/PixelCard';
+import { CountUp } from '../components/ui/CountUp';
 
 // ── Project Categories ─────────────────────────────────────
 const projectCategories = [
@@ -208,11 +213,11 @@ export default function LiveProjectsPage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
               <Trophy className="w-4 h-4 text-amber-300" />
-              50+ Industry-Grade Projects
+              <ShinyText text="50+ Industry-Grade Projects" shinyColor="rgba(217, 161, 11, 0.95)" />
             </div>
             <h1 className="page-hero-title mb-5">
               Build Real Projects.<br />
-              <span className="page-hero-highlight">Impress Employers.</span>
+              <DecryptedText text="Impress Employers." speed={30} maxIterations={10} className="page-hero-highlight" />
             </h1>
             <p className="page-hero-desc mx-auto max-w-3xl text-lg sm:text-xl mb-8 leading-relaxed">
               Every course includes live, industry-grade projects designed to fill your GitHub portfolio and give you the practical experience that gets you hired.
@@ -229,11 +234,18 @@ export default function LiveProjectsPage() {
               { value: '95%', label: 'Hire Rate (with project)', icon: '🎯' },
               { value: '4.8★', label: 'Average Rating', icon: '⭐' },
             ].map(s => (
-              <div key={s.label} className="page-hero-chip flex flex-col items-center justify-center p-4 text-center">
-                <div className="text-2xl mb-1.5" aria-hidden="true">{s.icon}</div>
-                <div className="font-display font-bold text-2xl text-white">{s.value}</div>
-                <div className="text-xs text-teal-200/90 font-medium mt-1">{s.label}</div>
-              </div>
+              <SpotlightCard key={s.label}>
+                <div className="page-hero-chip flex flex-col items-center justify-center p-4 text-center h-full">
+                  <div className="text-2xl mb-1.5" aria-hidden="true">{s.icon}</div>
+                  <div className="font-display font-bold text-2xl text-white">
+                    {s.value === '50+' ? <CountUp end={50} suffix="+" start />
+                      : s.value === '120+' ? <CountUp end={120} suffix="+" start />
+                      : s.value === '95%' ? <CountUp end={95} suffix="%" start />
+                      : s.value}
+                  </div>
+                  <div className="text-xs text-teal-200/90 font-medium mt-1">{s.label}</div>
+                </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -305,31 +317,35 @@ export default function LiveProjectsPage() {
                 </div>
                 <div className="grid md:grid-cols-3 gap-5">
                   {cat.projects.map(proj => (
-                    <div key={proj.title} className={`rounded-2xl border-2 p-6 ${cat.color} hover:shadow-card-md transition-shadow bg-white`}>
-                      <div className="flex items-start justify-between mb-3">
-                        <h4 className="font-semibold text-surface-900 flex-1 leading-snug">{proj.title}</h4>
-                        <span className={`text-xs px-2.5 py-1 rounded-full font-bold ml-2 flex-shrink-0 ${difficultyColor(proj.difficulty)}`}>
-                          {proj.difficulty}
-                        </span>
+                    <SpotlightCard key={proj.title} className="h-full">
+                      <div className={`rounded-2xl border-2 p-6 ${cat.color} hover:shadow-card-md transition-shadow bg-white h-full flex flex-col justify-between`}>
+                        <div>
+                          <div className="flex items-start justify-between mb-3">
+                            <h4 className="font-semibold text-surface-900 flex-1 leading-snug">{proj.title}</h4>
+                            <span className={`text-xs px-2.5 py-1 rounded-full font-bold ml-2 flex-shrink-0 ${difficultyColor(proj.difficulty)}`}>
+                              {proj.difficulty}
+                            </span>
+                          </div>
+                          <p className="text-sm text-surface-700 font-medium mb-4">{proj.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mb-4">
+                            {proj.stack.map(tech => (
+                              <span key={tech} className="text-xs bg-white border border-surface-300 text-surface-800 font-semibold px-2 py-0.5 rounded-full">{tech}</span>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-surface-800 mb-2 uppercase tracking-wide">What you'll build:</p>
+                          <ul className="space-y-1">
+                            {proj.outcomes.map(o => (
+                              <li key={o} className="flex items-center gap-2 text-xs text-surface-700 font-medium">
+                                <ArrowRight className="w-3 h-3 text-brand-600 flex-shrink-0" />
+                                {o}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                      <p className="text-sm text-surface-700 font-medium mb-4">{proj.description}</p>
-                      <div className="flex flex-wrap gap-1.5 mb-4">
-                        {proj.stack.map(tech => (
-                          <span key={tech} className="text-xs bg-white border border-surface-300 text-surface-800 font-semibold px-2 py-0.5 rounded-full">{tech}</span>
-                        ))}
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-surface-800 mb-2 uppercase tracking-wide">What you'll build:</p>
-                        <ul className="space-y-1">
-                          {proj.outcomes.map(o => (
-                            <li key={o} className="flex items-center gap-2 text-xs text-surface-700 font-medium">
-                              <ArrowRight className="w-3 h-3 text-brand-600 flex-shrink-0" />
-                              {o}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                    </SpotlightCard>
                   ))}
                 </div>
               </div>

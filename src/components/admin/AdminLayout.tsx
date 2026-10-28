@@ -14,6 +14,7 @@ import { cn } from '../../utils/cn';
 import { authService } from '../../services/authService';
 import type { User } from '../../types';
 import { PageTransition } from '../layout/PageTransition';
+import { ShinyText } from '../ui/ShinyText';
 
 interface NavGroup {
   label: string;
@@ -217,7 +218,9 @@ export function AdminLayout() {
           <img src="/logo.png" alt="Global Minds Academy logo" className="h-14 w-auto max-w-[115px] object-contain" />
           <div>
             <p className="font-display font-bold text-sm">Global Minds Academy</p>
-            <p className="text-xs text-surface-300">Admin Portal</p>
+            <p className="text-xs text-brand-300 font-semibold">
+              <ShinyText text="Admin Portal" shinyColor="rgba(45, 212, 191, 0.95)" />
+            </p>
           </div>
         </Link>
         <button type="button" onClick={() => setSidebarOpen(false)} aria-label="Close admin navigation" className="lg:hidden rounded-lg p-2 text-surface-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">

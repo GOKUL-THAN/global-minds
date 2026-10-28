@@ -10,6 +10,10 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { enquiryService } from '../services/enquiryService';
 import { cn } from '../utils/cn';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { CountUp } from '../components/ui/CountUp';
 
 const schema = z.object({
   institutionName: z.string().min(2, 'Institution name required'),
@@ -137,10 +141,10 @@ export default function CollegesPage() {
             <div className="max-w-2xl">
               <div className="page-hero-badge mb-4">
                 <Building2 className="w-4 h-4 text-teal-600" />
-                <span>Institutional Partnership Program</span>
+                <ShinyText text="Institutional Partnership Program" shinyColor="rgba(23, 108, 115, 0.9)" />
               </div>
               <h1 className="page-hero-title display-lg font-extrabold mb-4">
-                Partner with <span className="page-hero-highlight">Global Minds Academy</span>
+                Partner with <DecryptedText text="Global Minds Academy" speed={30} maxIterations={10} className="page-hero-highlight" />
               </h1>
               <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
                 Empower your students with industry-relevant skills in AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
@@ -157,10 +161,18 @@ export default function CollegesPage() {
             {/* Stats strip */}
             <div className="grid grid-cols-2 gap-4 lg:gap-5 lg:w-72 flex-shrink-0">
               {stats.map(stat => (
-                <div key={stat.label} className="page-hero-chip px-5 py-4 text-center flex flex-col items-center justify-center">
-                  <div className="text-2xl font-bold text-surface-900">{stat.value}</div>
-                  <div className="text-xs text-surface-600 font-semibold mt-1">{stat.label}</div>
-                </div>
+                <SpotlightCard key={stat.label}>
+                  <div className="page-hero-chip px-5 py-4 text-center flex flex-col items-center justify-center h-full">
+                    <div className="text-2xl font-bold text-surface-900">
+                      {stat.value === '120+' ? <CountUp end={120} suffix="+" start />
+                        : stat.value === '2500+' ? <CountUp end={2500} suffix="+" start />
+                        : stat.value === '92%' ? <CountUp end={92} suffix="%" start />
+                        : stat.value === '50+' ? <CountUp end={50} suffix="+" start />
+                        : stat.value}
+                    </div>
+                    <div className="text-xs text-surface-600 font-semibold mt-1">{stat.label}</div>
+                  </div>
+                </SpotlightCard>
               ))}
             </div>
           </div>
@@ -179,18 +191,19 @@ export default function CollegesPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map(b => (
-              <a
-                key={b.title}
-                href="#college-enquiry"
-                className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-                aria-label={`Enquire about: ${b.title}`}
-              >
-                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
-                  <b.icon className="w-6 h-6 text-brand-600" />
-                </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{b.desc}</p>
-              </a>
+              <SpotlightCard key={b.title}>
+                <a
+                  href="#college-enquiry"
+                  className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 h-full"
+                  aria-label={`Enquire about: ${b.title}`}
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+                    <b.icon className="w-6 h-6 text-brand-600" />
+                  </div>
+                  <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
+                  <p className="text-surface-600 text-sm leading-relaxed">{b.desc}</p>
+                </a>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -207,21 +220,25 @@ export default function CollegesPage() {
             {offerings.map(o => {
               const Icon = o.icon;
               return (
-                <div key={o.title} id={o.id} className="bg-white rounded-2xl border border-surface-200 p-6 hover:border-brand-300 hover:shadow-card-md transition-all">
-                  <div className="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-brand-600" />
+                <SpotlightCard key={o.title} className="h-full">
+                  <div id={o.id} className="bg-white rounded-2xl border border-surface-200 p-6 hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                    <div>
+                      <div className="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
+                        <Icon className="w-5 h-5 text-brand-600" />
+                      </div>
+                      <h3 className="font-bold text-surface-900 mb-1">{o.title}</h3>
+                      <p className="text-xs text-brand-700 font-bold mb-4">{o.subtitle}</p>
+                      <ul className="space-y-2">
+                        {o.items.map(item => (
+                          <li key={item} className="flex items-start gap-2 text-sm text-surface-700 font-medium">
+                            <CheckCircle className="w-3.5 h-3.5 text-green-600 mt-0.5 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-surface-900 mb-1">{o.title}</h3>
-                  <p className="text-xs text-brand-700 font-bold mb-4">{o.subtitle}</p>
-                  <ul className="space-y-2">
-                    {o.items.map(item => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-surface-700 font-medium">
-                        <CheckCircle className="w-3.5 h-3.5 text-green-600 mt-0.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </SpotlightCard>
               );
             })}
           </div>
@@ -232,7 +249,7 @@ export default function CollegesPage() {
       <section className="section" id="college-enquiry">
         <div className="container-xl">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 shadow-card border border-surface-200">
+            <SpotlightCard className="bg-white rounded-3xl p-8 shadow-card border border-surface-200">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-brand-600" />
@@ -411,7 +428,7 @@ export default function CollegesPage() {
                   </p>
                 </form>
               )}
-            </div>
+            </SpotlightCard>
           </div>
         </div>
       </section>

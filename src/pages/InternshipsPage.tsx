@@ -9,6 +9,9 @@ import { Button } from '../components/ui/Button';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { cn } from '../utils/cn';
 import { useCmsCollection } from '../hooks/useCmsCollection';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 const categories = ['All', ...allowedInternshipCategories];
 const modes = ['All', 'Online', 'Classroom', 'Both'];
@@ -46,10 +49,10 @@ export default function InternshipsPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Internships' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            Industry Experience & Real-World Projects
+            <ShinyText text="Industry Experience & Real-World Projects" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title mb-4">
-            Industry-Ready <span className="page-hero-highlight">Internships</span>
+            Industry-Ready <DecryptedText text="Internships" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-xl max-w-2xl leading-relaxed mb-6">
             Gain real industry experience through internships related to AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Software Testing, and Automation Testing.
@@ -143,63 +146,65 @@ export default function InternshipsPage() {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map(internship => (
-              <div key={internship.id} className="card-hover overflow-hidden flex flex-col">
-                <div className="relative">
-                  <img
-                    src={internship.thumbnail}
-                    alt={internship.title}
-                    className="w-full h-36 object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <Badge variant={internship.status === 'open' ? 'green' : internship.status === 'coming-soon' ? 'yellow' : 'gray'}>
-                      {internship.status === 'open' ? '✓ Open' : internship.status === 'coming-soon' ? 'Coming Soon' : 'Closed'}
-                    </Badge>
-                  </div>
-                </div>
-
-                <div className="p-5 flex-1 flex flex-col">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-brand-700 font-bold">{internship.category}</span>
-                    <span className="text-xs text-surface-600 font-medium">{internship.mode}</span>
+              <SpotlightCard key={internship.id} className="h-full">
+                <div className="card-hover overflow-hidden flex flex-col h-full bg-white rounded-2xl border border-surface-200">
+                  <div className="relative">
+                    <img
+                      src={internship.thumbnail}
+                      alt={internship.title}
+                      className="w-full h-36 object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <Badge variant={internship.status === 'open' ? 'green' : internship.status === 'coming-soon' ? 'yellow' : 'gray'}>
+                        {internship.status === 'open' ? '✓ Open' : internship.status === 'coming-soon' ? 'Coming Soon' : 'Closed'}
+                      </Badge>
+                    </div>
                   </div>
 
-                  <h3 className="font-display font-bold text-surface-900 mb-1">{internship.title}</h3>
-                  <p className="text-surface-600 text-xs font-medium mb-3">{internship.company}</p>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-brand-700 font-bold">{internship.category}</span>
+                      <span className="text-xs text-surface-600 font-medium">{internship.mode}</span>
+                    </div>
 
-                  <div className="flex flex-wrap gap-3 text-xs text-surface-600 font-medium mb-4">
-                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5 text-brand-600" />{internship.duration}</span>
-                    <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-brand-600" />{internship.location}</span>
-                    {internship.certificate && (
-                      <span className="flex items-center gap-1 text-green-700 font-semibold"><CheckCircle className="w-3.5 h-3.5" />Certificate</span>
-                    )}
-                  </div>
+                    <h3 className="font-display font-bold text-surface-900 mb-1">{internship.title}</h3>
+                    <p className="text-surface-600 text-xs font-medium mb-3">{internship.company}</p>
 
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {internship.skills.slice(0, 4).map(s => (
-                      <span key={s} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-lg border border-surface-200">{s}</span>
-                    ))}
-                    {internship.skills.length > 4 && (
-                      <span className="text-xs bg-surface-100 text-surface-600 font-medium px-2 py-0.5 rounded-lg border border-surface-200">+{internship.skills.length - 4}</span>
-                    )}
-                  </div>
+                    <div className="flex flex-wrap gap-3 text-xs text-surface-600 font-medium mb-4">
+                      <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5 text-brand-600" />{internship.duration}</span>
+                      <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-brand-600" />{internship.location}</span>
+                      {internship.certificate && (
+                        <span className="flex items-center gap-1 text-green-700 font-semibold"><CheckCircle className="w-3.5 h-3.5" />Certificate</span>
+                      )}
+                    </div>
 
-                  <div className="mt-auto pt-4 border-t border-surface-200 flex gap-2">
-                    <Link to={`/internships/${internship.slug}`} className="flex-1">
-                      <Button variant="secondary" size="sm" fullWidth>
-                        View Details
-                      </Button>
-                    </Link>
-                    {internship.status === 'open' && (
-                      <Link to={`/internships/${internship.slug}#apply-form`} className="flex-1">
-                        <Button size="sm" fullWidth rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
-                          Apply
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {internship.skills.slice(0, 4).map(s => (
+                        <span key={s} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-lg border border-surface-200">{s}</span>
+                      ))}
+                      {internship.skills.length > 4 && (
+                        <span className="text-xs bg-surface-100 text-surface-600 font-medium px-2 py-0.5 rounded-lg border border-surface-200">+{internship.skills.length - 4}</span>
+                      )}
+                    </div>
+
+                    <div className="mt-auto pt-4 border-t border-surface-200 flex gap-2">
+                      <Link to={`/internships/${internship.slug}`} className="flex-1">
+                        <Button variant="secondary" size="sm" fullWidth>
+                          View Details
                         </Button>
                       </Link>
-                    )}
+                      {internship.status === 'open' && (
+                        <Link to={`/internships/${internship.slug}#apply-form`} className="flex-1">
+                          <Button size="sm" fullWidth rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
+                            Apply
+                          </Button>
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         )}

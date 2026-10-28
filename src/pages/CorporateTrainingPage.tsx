@@ -7,6 +7,9 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { enquiryService } from '../services/enquiryService';
 import { cn } from '../utils/cn';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 const schema = z.object({
   companyName: z.string().min(2, 'Company name required'),
@@ -62,10 +65,10 @@ export default function CorporateTrainingPage() {
           <Breadcrumbs items={[{ label: 'Corporate Training' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
             <Briefcase className="w-4 h-4 text-teal-600" />
-            <span>Enterprise Upskilling Solutions</span>
+            <ShinyText text="Enterprise Upskilling Solutions" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Corporate <span className="page-hero-highlight">Training</span>
+            Corporate <DecryptedText text="Training" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Enterprise-grade, customised technology training for your teams — from cloud and DevOps to AI, data science, and modern software development.
@@ -80,13 +83,15 @@ export default function CorporateTrainingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {benefits.map(b => (
-              <a key={b.title} href="#corporate-enquiry" className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Request corporate training: ${b.title}`}>
-                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
-                  <b.icon className="w-6 h-6 text-brand-600" />
-                </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{b.desc}</p>
-              </a>
+              <SpotlightCard key={b.title} className="h-full">
+                <a href="#corporate-enquiry" className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 h-full" aria-label={`Request corporate training: ${b.title}`}>
+                  <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+                    <b.icon className="w-6 h-6 text-brand-600" />
+                  </div>
+                  <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
+                  <p className="text-surface-600 text-sm leading-relaxed">{b.desc}</p>
+                </a>
+              </SpotlightCard>
             ))}
           </div>
         </div>

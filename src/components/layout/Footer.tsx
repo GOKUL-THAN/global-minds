@@ -6,6 +6,8 @@ import { siteConfig } from '../../data/siteConfig';
 import { useState } from 'react';
 import { enquiryService } from '../../services/enquiryService';
 import { cn } from '../../utils/cn';
+import { Magnetic } from '../ui/Magnetic';
+import { ShinyText } from '../ui/ShinyText';
 
 const footerLinks = {
   Courses: [
@@ -129,16 +131,17 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex flex-wrap gap-2.5">
               {socialLinks.map(({ icon: Icon, href, label, color }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="footer-social-link group w-9 h-9 rounded-xl bg-surface-100 hover:bg-surface-200 border border-surface-300 flex items-center justify-center transition-all duration-200 shadow-sm"
-                >
-                  <Icon className="w-4 h-4" style={{ color }} />
-                </a>
+                <Magnetic key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="footer-social-link group w-9 h-9 rounded-xl bg-surface-100 hover:bg-surface-200 border border-surface-300 flex items-center justify-center transition-all duration-200 shadow-sm"
+                  >
+                    <Icon className="w-4 h-4" style={{ color }} />
+                  </a>
+                </Magnetic>
               ))}
             </div>
           </div>
@@ -213,7 +216,9 @@ export function Footer() {
                   className="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-semibold transition-colors disabled:opacity-50 flex items-center gap-2 shadow-sm"
                 >
                   <Send className="w-4 h-4" />
-                  <span className="hidden sm:block">Subscribe</span>
+                  <span className="hidden sm:block">
+                    <ShinyText text="Subscribe" shinyColor="rgba(255, 255, 255, 0.95)" />
+                  </span>
                 </button>
               </form>
             )}

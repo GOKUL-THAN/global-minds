@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useState, type ChangeEvent } from 'rea
 import { useLocation, useOutletContext, useParams } from 'react-router-dom';
 import { AlertTriangle, Archive, Check, ChevronLeft, ChevronRight, Loader2, Plus, RefreshCw, RotateCcw, Search, Trash2 } from 'lucide-react';
 import { adminOperationsService, type OperationalModule } from '../../services/adminOperationsService';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 import type { User } from '../../types';
 
 type FormField = { name: string; label: string; type?: 'text' | 'email' | 'password' | 'tel' | 'date' | 'number' | 'textarea' | 'select' | 'image'; options?: string[]; required?: boolean };
@@ -524,6 +526,9 @@ export default function AdminOperationalPage() {
     <div className="space-y-6">
       <header className="flex flex-wrap items-start justify-between gap-3">
         <div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold mb-2">
+            <ShinyText text="Academy Operational Data" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </div>
           <h1 className="font-display text-2xl font-bold text-surface-900">{config.title}</h1>
           <p className="mt-1 text-sm text-surface-500">{config.description}</p>
         </div>

@@ -6,6 +6,10 @@ import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { scholarships as defaultScholarships } from '../data/scholarships';
 import { useCmsCollection } from '../hooks/useCmsCollection';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { CountUp } from '../components/ui/CountUp';
 
 // ── Course Fee Table ───────────────────────────────────────
 const courseFees = [
@@ -69,11 +73,11 @@ export default function ScholarshipPage() {
           <div className="max-w-3xl">
             <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
               <Percent className="w-4 h-4 text-amber-300" />
-              Up to 50% Scholarship Available • Zero Burden Learning
+              <ShinyText text="Up to 50% Scholarship Available • Zero Burden Learning" shinyColor="rgba(217, 161, 11, 0.95)" />
             </div>
             <h1 className="page-hero-title mb-6">
               Scholarships &amp;<br />
-              <span className="page-hero-highlight">Fee Structure</span>
+              <DecryptedText text="Fee Structure" speed={30} maxIterations={10} className="page-hero-highlight" />
             </h1>
             <p className="page-hero-desc text-xl mb-8 max-w-2xl leading-relaxed">
               Quality tech education shouldn't break the bank. Explore our scholarships, flexible EMI plans and discounts designed to make learning accessible to everyone.
@@ -120,30 +124,34 @@ export default function ScholarshipPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {scholarships.map(s => (
-              <div key={s.id} className={`rounded-2xl border-2 p-6 ${s.color} hover:shadow-card-md transition-shadow`}>
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{s.icon}</span>
-                  <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${s.badgeColor}`}>{s.badge}</span>
+              <SpotlightCard key={s.id} className="h-full">
+                <div className={`rounded-2xl border-2 p-6 ${s.color} hover:shadow-card-md transition-shadow h-full flex flex-col justify-between`}>
+                  <div>
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="text-3xl">{s.icon}</span>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${s.badgeColor}`}>{s.badge}</span>
+                    </div>
+                    <h3 className="font-display font-bold text-xl text-surface-900 mb-1">{s.title}</h3>
+                    <div className="text-2xl font-bold text-brand-700 mb-3">{s.discount}</div>
+                    <p className="text-sm text-surface-600 mb-4">{s.description}</p>
+                    <div className="mb-4">
+                      <p className="text-xs font-semibold text-surface-700 uppercase tracking-wide mb-2">Eligibility</p>
+                      <ul className="space-y-1">
+                        {s.eligibility.map(e => (
+                          <li key={e} className="flex items-center gap-2 text-xs text-surface-600">
+                            <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+                            {e}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="bg-white/70 rounded-xl p-3">
+                    <p className="text-xs font-semibold text-surface-700 mb-1">How to Apply</p>
+                    <p className="text-xs text-surface-600">{s.howToApply}</p>
+                  </div>
                 </div>
-                <h3 className="font-display font-bold text-xl text-surface-900 mb-1">{s.title}</h3>
-                <div className="text-2xl font-bold text-brand-700 mb-3">{s.discount}</div>
-                <p className="text-sm text-surface-600 mb-4">{s.description}</p>
-                <div className="mb-4">
-                  <p className="text-xs font-semibold text-surface-700 uppercase tracking-wide mb-2">Eligibility</p>
-                  <ul className="space-y-1">
-                    {s.eligibility.map(e => (
-                      <li key={e} className="flex items-center gap-2 text-xs text-surface-600">
-                        <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
-                        {e}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="bg-white/70 rounded-xl p-3">
-                  <p className="text-xs font-semibold text-surface-700 mb-1">How to Apply</p>
-                  <p className="text-xs text-surface-600">{s.howToApply}</p>
-                </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ChevronDown, Plus, Edit2, Trash2, Eye, EyeOff, Search, X } from 'lucide-react';
 import { Badge } from '../../components/ui/Badge';
 import type { FAQ } from '../../types';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 type LocalFAQ = FAQ & { hidden: boolean };
 
@@ -77,8 +79,10 @@ export default function AdminFAQsPage() {
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className="font-display font-bold text-2xl text-surface-900">FAQs</h1>
-          <p className="text-surface-500 text-sm mt-0.5">
+          <h1 className="font-display font-bold text-2xl text-surface-900">
+            <ShinyText text="FAQs" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </h1>
+          <p className="text-surface-500 text-sm mt-0.5 font-medium">
             {items.filter(f => !f.hidden).length} visible · {items.length} total
           </p>
         </div>
@@ -113,7 +117,8 @@ export default function AdminFAQsPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
+      <SpotlightCard>
+        <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -209,6 +214,7 @@ export default function AdminFAQsPage() {
           )}
         </div>
       </div>
+      </SpotlightCard>
 
       {/* Modal */}
       {showModal && (

@@ -20,3 +20,8 @@ WEBSITE GLOBALMINDS/demo1/.env
 WEBSITE GLOBALMINDS/demo1/server/.env
 WEBSITE GLOBALMINDS/demo1/server/data/*.sqlite
 WEBSITE GLOBALMINDS/demo1/server/data/*.sqlite-journal
+
+*.sqlite
+*.sqlite-journal
+server/data/*.sqlite
+server/data/*.sqlite-journal

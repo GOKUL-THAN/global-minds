@@ -6,6 +6,8 @@ import { siteConfig } from '../../data/siteConfig';
 import { defaultNavigation, readNavigationContent, type MenuItem, type NavigationContent } from '../../data/navigationMenu';
 import { cmsService } from '../../services/cmsService';
 import { Button } from '../ui/Button';
+import { SpotlightCard } from '../ui/SpotlightCard';
+import { Magnetic } from '../ui/Magnetic';
 
 const navigationSlug = 'site-navigation';
 
@@ -401,7 +403,9 @@ export function Navbar() {
               <span className="hidden text-sm 2xl:inline">Search</span>
             </Link>
             <Link to="/login">
-              <Button variant="ghost" size="sm" leftIcon={<User className="h-4 w-4" />}>Login</Button>
+              <Magnetic>
+                <Button variant="ghost" size="sm" leftIcon={<User className="h-4 w-4" />}>Login</Button>
+              </Magnetic>
             </Link>
           </div>
 

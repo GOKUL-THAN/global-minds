@@ -1,5 +1,6 @@
 import { BookOpen, Briefcase, Cloud, Code, Cpu, ShieldCheck, TestTube2 } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { SpotlightCard } from '../ui/SpotlightCard';
 
 const achievements = [
   { icon: Cloud, title: 'AWS / Cloud' },
@@ -27,23 +28,24 @@ export function AchievementsSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {achievements.map((item) => (
-            <div
-              key={item.title}
-              className={cn(
-                'group flex flex-col items-center text-center p-5 rounded-2xl',
-                'bg-white border border-surface-200',
-                'hover:shadow-card-md hover:-translate-y-1 transition-all duration-300',
-              )}
-            >
-              <div className={cn(
-                'w-14 h-14 rounded-2xl flex items-center justify-center mb-3',
-                'group-hover:scale-110 transition-transform',
-                'bg-brand-50',
-              )}>
-                <item.icon className={cn('w-7 h-7 text-brand-700')} />
+            <SpotlightCard key={item.title} className="h-full">
+              <div
+                className={cn(
+                  'group flex flex-col items-center text-center p-5 rounded-2xl h-full justify-center',
+                  'bg-white border border-surface-200',
+                  'hover:shadow-card-md hover:-translate-y-1 transition-all duration-300',
+                )}
+              >
+                <div className={cn(
+                  'w-14 h-14 rounded-2xl flex items-center justify-center mb-3',
+                  'group-hover:scale-110 transition-transform',
+                  'bg-brand-50',
+                )}>
+                  <item.icon className={cn('w-7 h-7 text-brand-700')} />
+                </div>
+                <h3 className="font-semibold text-surface-900 text-sm mb-1">{item.title}</h3>
               </div>
-              <h3 className="font-semibold text-surface-900 text-sm mb-1">{item.title}</h3>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

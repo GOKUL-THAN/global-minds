@@ -3,6 +3,9 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 
 const careerServices = [
   { icon: FileText, title: 'Resume Building', desc: 'Craft an ATS-friendly resume that highlights your technical skills, projects and certifications.' },
@@ -26,11 +29,11 @@ export default function CareerPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Career & Placement' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            <CheckCircle className="w-4 h-4 text-teal-300" />
-            <span>Dedicated Placement Cell</span>
+            <CheckCircle className="w-4 h-4 text-teal-600" />
+            <ShinyText text="Dedicated Placement Cell" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Career &amp; <span className="page-hero-highlight">Placement Support</span>
+            Career &amp; <DecryptedText text="Placement Support" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Dedicated career support to help you land your dream IT job — from resume building to mock interviews, salary negotiation, and direct recruiter connections.
@@ -48,13 +51,17 @@ export default function CareerPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {careerServices.map(s => (
-              <div key={s.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
-                  <s.icon className="w-6 h-6 text-brand-600" />
+              <SpotlightCard key={s.title} className="h-full">
+                <div className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+                      <s.icon className="w-6 h-6 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

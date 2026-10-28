@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { siteConfig } from '../../data/siteConfig';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { CountUp } from '../../components/ui/CountUp';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 // Demo student data — replace with real API data when backend is connected
 const mockStudent = {
@@ -95,21 +98,29 @@ function OverviewSection() {
       <DemoNote message="This dashboard shows demo data. Real course progress and stats will appear after backend integration." />
 
       {/* Welcome */}
-      <div className="bg-gradient-to-r from-brand-700 to-brand-600 rounded-2xl p-6 text-white">
+      <div className="bg-gradient-to-r from-brand-700 to-brand-600 rounded-2xl p-6 text-white shadow-card">
         <p className="text-teal-100 text-sm mb-1 font-medium">Welcome back 👋</p>
-        <h2 className="font-display font-bold text-2xl mb-4">{mockStudent.name}</h2>
+        <h2 className="font-display font-bold text-2xl mb-4">
+          <ShinyText text={mockStudent.name} shinyColor="rgba(255, 255, 255, 0.95)" />
+        </h2>
         <div className="flex flex-wrap gap-6 text-sm">
           <div>
             <p className="text-teal-100 font-medium">Enrolled Courses</p>
-            <p className="text-xl font-bold">{mockStudent.enrolledCourses}</p>
+            <p className="text-xl font-bold">
+              <CountUp end={mockStudent.enrolledCourses} start={true} duration={1.2} />
+            </p>
           </div>
           <div>
             <p className="text-teal-100 font-medium">Hours Learned</p>
-            <p className="text-xl font-bold">{mockStudent.totalHoursLearned}</p>
+            <p className="text-xl font-bold">
+              <CountUp end={mockStudent.totalHoursLearned} start={true} duration={1.5} suffix=" hrs" />
+            </p>
           </div>
           <div>
             <p className="text-teal-100 font-medium">Certificates</p>
-            <p className="text-xl font-bold">{mockStudent.certificates}</p>
+            <p className="text-xl font-bold">
+              <CountUp end={mockStudent.certificates} start={true} duration={1.2} />
+            </p>
           </div>
         </div>
       </div>
@@ -122,41 +133,50 @@ function OverviewSection() {
           { label: 'Certificates', value: mockStudent.certificates, icon: Award, color: 'bg-purple-50 text-purple-600' },
           { label: 'Hours Learned', value: mockStudent.totalHoursLearned, icon: Clock, color: 'bg-accent-50 text-accent-600' },
         ].map(s => (
-          <div key={s.label} className="bg-white rounded-2xl p-5 border border-surface-200">
-            <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center mb-3', s.color)}>
-              <s.icon className="w-5 h-5" />
+          <SpotlightCard key={s.label}>
+            <div className="bg-white rounded-2xl p-5 border border-surface-200 h-full">
+              <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center mb-3', s.color)}>
+                <s.icon className="w-5 h-5" />
+              </div>
+              <div className="text-2xl font-bold text-surface-900 mb-0.5">
+                <CountUp end={s.value} start={true} duration={1.2} />
+              </div>
+              <p className="text-sm text-surface-600 font-medium">{s.label}</p>
             </div>
-            <div className="text-2xl font-bold text-surface-900 mb-0.5">{s.value}</div>
-            <p className="text-sm text-surface-600 font-medium">{s.label}</p>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
 
       {/* Continue learning */}
       <div>
-        <h3 className="font-semibold text-surface-900 mb-4">Continue Learning</h3>
+        <h3 className="font-semibold text-surface-900 mb-4 flex items-center gap-2">
+          <span>Continue Learning</span>
+          <ShinyText text="• Active" shinyColor="rgba(23, 108, 115, 0.9)" />
+        </h3>
         <div className="space-y-4">
           {demoCourses.map(course => (
-            <div key={course.id} className="bg-white rounded-2xl border border-surface-200 p-4 flex gap-4">
-              <img src={course.thumbnail} alt={course.title} className="w-16 h-12 rounded-xl object-cover flex-shrink-0" loading="lazy" />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <h4 className="font-semibold text-surface-900 text-sm">{course.title}</h4>
-                  <span className="text-xs text-brand-700 font-bold flex-shrink-0">{course.progress}%</span>
+            <SpotlightCard key={course.id}>
+              <div className="bg-white rounded-2xl border border-surface-200 p-4 flex gap-4">
+                <img src={course.thumbnail} alt={course.title} className="w-16 h-12 rounded-xl object-cover flex-shrink-0" loading="lazy" />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <h4 className="font-semibold text-surface-900 text-sm">{course.title}</h4>
+                    <span className="text-xs text-brand-700 font-bold flex-shrink-0">{course.progress}%</span>
+                  </div>
+                  <p className="text-xs text-surface-600 font-medium mb-2">Next: {course.nextLesson}</p>
+                  <div className="progress-bar mb-2">
+                    <div className="progress-fill" style={{ width: `${course.progress}%` }} />
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-surface-600 font-medium">
+                    <span>{course.completedLessons} / {course.totalLessons} lessons</span>
+                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.nextClassDate}</span>
+                  </div>
                 </div>
-                <p className="text-xs text-surface-600 font-medium mb-2">Next: {course.nextLesson}</p>
-                <div className="progress-bar mb-2">
-                  <div className="progress-fill" style={{ width: `${course.progress}%` }} />
-                </div>
-                <div className="flex items-center justify-between text-xs text-surface-600 font-medium">
-                  <span>{course.completedLessons} / {course.totalLessons} lessons</span>
-                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.nextClassDate}</span>
-                </div>
+                <button className="hidden sm:flex w-9 h-9 rounded-xl bg-brand-600 items-center justify-center flex-shrink-0 hover:bg-brand-700 transition-colors" aria-label="Resume course">
+                  <Play className="w-4 h-4 text-white fill-white" />
+                </button>
               </div>
-              <button className="hidden sm:flex w-9 h-9 rounded-xl bg-brand-600 items-center justify-center flex-shrink-0 hover:bg-brand-700 transition-colors" aria-label="Resume course">
-                <Play className="w-4 h-4 text-white fill-white" />
-              </button>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
@@ -166,16 +186,18 @@ function OverviewSection() {
         <h3 className="font-semibold text-surface-900 mb-4">Upcoming Classes</h3>
         <div className="space-y-3">
           {demoSchedule.slice(0, 2).map(s => (
-            <div key={s.id} className="bg-white rounded-xl border border-surface-200 p-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
-                <Calendar className="w-5 h-5 text-brand-600" />
+            <SpotlightCard key={s.id}>
+              <div className="bg-white rounded-xl border border-surface-200 p-4 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-5 h-5 text-brand-600" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-surface-900">{s.topic}</p>
+                  <p className="text-xs text-surface-600 font-medium">{s.course} · {s.date} · {s.time}</p>
+                </div>
+                <span className="text-xs text-brand-700 font-semibold hidden sm:block">{s.mode}</span>
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-surface-900">{s.topic}</p>
-                <p className="text-xs text-surface-600 font-medium">{s.course} · {s.date} · {s.time}</p>
-              </div>
-              <span className="text-xs text-brand-700 font-semibold hidden sm:block">{s.mode}</span>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
@@ -194,28 +216,34 @@ function CoursesSection() {
       {demoCourses.length > 0 ? (
         <div className="grid sm:grid-cols-2 gap-6">
           {demoCourses.map(course => (
-            <div key={course.id} className="bg-white rounded-2xl border border-surface-200 overflow-hidden">
-              <img src={course.thumbnail} alt={course.title} className="w-full h-40 object-cover" />
-              <div className="p-5">
-                <h3 className="font-semibold text-surface-900 mb-1">{course.title}</h3>
-                <p className="text-xs text-surface-600 font-medium mb-3">Instructor: {course.instructor}</p>
-                <div className="mb-3">
-                  <div className="flex justify-between text-xs text-surface-600 font-medium mb-1">
-                    <span>Progress</span><span className="font-bold text-brand-700">{course.progress}%</span>
-                  </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: `${course.progress}%` }} />
+            <SpotlightCard key={course.id}>
+              <div className="bg-white rounded-2xl border border-surface-200 overflow-hidden h-full flex flex-col justify-between">
+                <div>
+                  <img src={course.thumbnail} alt={course.title} className="w-full h-40 object-cover" />
+                  <div className="p-5">
+                    <h3 className="font-semibold text-surface-900 mb-1">{course.title}</h3>
+                    <p className="text-xs text-surface-600 font-medium mb-3">Instructor: {course.instructor}</p>
+                    <div className="mb-3">
+                      <div className="flex justify-between text-xs text-surface-600 font-medium mb-1">
+                        <span>Progress</span><span className="font-bold text-brand-700">{course.progress}%</span>
+                      </div>
+                      <div className="progress-bar">
+                        <div className="progress-fill" style={{ width: `${course.progress}%` }} />
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-surface-600 font-medium mb-4">
+                      <span>{course.completedLessons}/{course.totalLessons} lessons</span>
+                      <span>Next: {course.nextClassDate}</span>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-xs text-surface-600 font-medium mb-4">
-                  <span>{course.completedLessons}/{course.totalLessons} lessons</span>
-                  <span>Next: {course.nextClassDate}</span>
+                <div className="p-5 pt-0">
+                  <button className="btn-primary btn w-full text-sm flex items-center justify-center gap-2">
+                    <Play className="w-3.5 h-3.5 fill-white" /> Continue Learning
+                  </button>
                 </div>
-                <button className="btn-primary btn w-full text-sm flex items-center justify-center gap-2">
-                  <Play className="w-3.5 h-3.5 fill-white" /> Continue Learning
-                </button>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       ) : (
@@ -237,21 +265,23 @@ function ScheduleSection() {
       <DemoNote />
       <div className="space-y-3">
         {demoSchedule.map(s => (
-          <div key={s.id} className="bg-white rounded-2xl border border-surface-200 p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
-              <Calendar className="w-6 h-6 text-brand-600" />
-            </div>
-            <div className="flex-1">
-              <p className="font-semibold text-surface-900">{s.topic}</p>
-              <p className="text-sm text-surface-600 font-medium mt-0.5">{s.course}</p>
-              <div className="flex flex-wrap gap-3 mt-2 text-xs text-surface-600 font-medium">
-                <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{s.date}</span>
-                <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{s.time}</span>
-                <span className="bg-brand-50 border border-brand-200 text-brand-800 px-2 py-0.5 rounded-full font-semibold">{s.mode}</span>
+          <SpotlightCard key={s.id}>
+            <div className="bg-white rounded-2xl border border-surface-200 p-5 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                <Calendar className="w-6 h-6 text-brand-600" />
               </div>
+              <div className="flex-1">
+                <p className="font-semibold text-surface-900">{s.topic}</p>
+                <p className="text-sm text-surface-600 font-medium mt-0.5">{s.course}</p>
+                <div className="flex flex-wrap gap-3 mt-2 text-xs text-surface-600 font-medium">
+                  <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{s.date}</span>
+                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{s.time}</span>
+                  <span className="bg-brand-50 border border-brand-200 text-brand-800 px-2 py-0.5 rounded-full font-semibold">{s.mode}</span>
+                </div>
+              </div>
+              <button className="hidden sm:block btn-secondary btn text-xs">Join</button>
             </div>
-            <button className="hidden sm:block btn-secondary btn text-xs">Join</button>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
     </div>
@@ -279,32 +309,34 @@ function ProfileSection() {
     <div className="space-y-5">
       <h2 className="font-display font-bold text-xl text-surface-900">My Profile</h2>
       <DemoNote message="Demo profile data — real profile will load after login and backend integration." />
-      <div className="bg-white rounded-2xl border border-surface-200 p-6">
-        <div className="flex items-center gap-4 mb-6 pb-6 border-b border-surface-200">
-          <img src={mockStudent.avatar} alt={mockStudent.name} className="w-16 h-16 rounded-2xl object-cover" />
-          <div>
-            <h3 className="font-bold text-surface-900 text-lg">{mockStudent.name}</h3>
-            <p className="text-surface-600 font-medium text-sm">{mockStudent.email}</p>
-            <p className="text-xs text-surface-600 font-medium mt-0.5">Member since {mockStudent.joinedDate}</p>
-          </div>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {[
-            { label: 'Phone', value: mockStudent.phone },
-            { label: 'Country', value: mockStudent.country },
-            { label: 'City', value: mockStudent.city },
-            { label: 'Education', value: mockStudent.education },
-          ].map(f => (
-            <div key={f.label} className="bg-surface-50 border border-surface-200 rounded-xl p-3">
-              <p className="text-xs text-surface-600 font-medium mb-0.5">{f.label}</p>
-              <p className="text-sm font-semibold text-surface-900">{f.value}</p>
+      <SpotlightCard>
+        <div className="bg-white rounded-2xl border border-surface-200 p-6">
+          <div className="flex items-center gap-4 mb-6 pb-6 border-b border-surface-200">
+            <img src={mockStudent.avatar} alt={mockStudent.name} className="w-16 h-16 rounded-2xl object-cover" />
+            <div>
+              <h3 className="font-bold text-surface-900 text-lg">{mockStudent.name}</h3>
+              <p className="text-surface-600 font-medium text-sm">{mockStudent.email}</p>
+              <p className="text-xs text-surface-600 font-medium mt-0.5">Member since {mockStudent.joinedDate}</p>
             </div>
-          ))}
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { label: 'Phone', value: mockStudent.phone },
+              { label: 'Country', value: mockStudent.country },
+              { label: 'City', value: mockStudent.city },
+              { label: 'Education', value: mockStudent.education },
+            ].map(f => (
+              <div key={f.label} className="bg-surface-50 border border-surface-200 rounded-xl p-3">
+                <p className="text-xs text-surface-600 font-medium mb-0.5">{f.label}</p>
+                <p className="text-sm font-semibold text-surface-900">{f.value}</p>
+              </div>
+            ))}
+          </div>
+          <button className="btn-secondary btn mt-4 text-sm opacity-50 cursor-not-allowed" disabled>
+            Edit Profile — Requires Backend
+          </button>
         </div>
-        <button className="btn-secondary btn mt-4 text-sm opacity-50 cursor-not-allowed" disabled>
-          Edit Profile — Requires Backend
-        </button>
-      </div>
+      </SpotlightCard>
     </div>
   );
 }
@@ -320,25 +352,33 @@ function SupportSection() {
           { icon: BookOpen, title: 'Knowledge Base', desc: 'Browse FAQs and how-to guides.', label: 'Browse', color: 'bg-green-50 text-green-600' },
           { icon: MessageSquare, title: 'Contact Us', desc: 'Reach us by email or phone.', label: 'Contact', color: 'bg-accent-50 text-accent-600', href: '/contact' },
         ].map(item => (
-          <div key={item.title} className="bg-white rounded-2xl border border-surface-200 p-5">
-            <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center mb-3', item.color)}>
-              <item.icon className="w-5 h-5" />
+          <SpotlightCard key={item.title}>
+            <div className="bg-white rounded-2xl border border-surface-200 p-5 h-full flex flex-col justify-between">
+              <div>
+                <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center mb-3', item.color)}>
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <h3 className="font-semibold text-surface-900 mb-1">{item.title}</h3>
+                <p className="text-surface-600 font-medium text-sm mb-4">{item.desc}</p>
+              </div>
+              <div>
+                {item.href ? (
+                  <Link to={item.href}><button className="btn-secondary btn text-sm">{item.label}</button></Link>
+                ) : (
+                  <button className="btn-secondary btn text-sm opacity-50 cursor-not-allowed" disabled>{item.label}</button>
+                )}
+              </div>
             </div>
-            <h3 className="font-semibold text-surface-900 mb-1">{item.title}</h3>
-            <p className="text-surface-600 font-medium text-sm mb-4">{item.desc}</p>
-            {item.href ? (
-              <Link to={item.href}><button className="btn-secondary btn text-sm">{item.label}</button></Link>
-            ) : (
-              <button className="btn-secondary btn text-sm opacity-50 cursor-not-allowed" disabled>{item.label}</button>
-            )}
-          </div>
+          </SpotlightCard>
         ))}
       </div>
-      <div className="bg-white border border-surface-200 rounded-2xl p-5 text-center">
-        <p className="text-surface-700 font-medium text-sm mb-2">Need immediate help?</p>
-        <a href={`tel:${siteConfig.phone}`} className="text-brand-700 font-bold hover:text-brand-800">{siteConfig.phone}</a>
-        <p className="text-surface-600 font-medium text-xs mt-1">{siteConfig.businessHours}</p>
-      </div>
+      <SpotlightCard>
+        <div className="bg-white border border-surface-200 rounded-2xl p-5 text-center">
+          <p className="text-surface-700 font-medium text-sm mb-2">Need immediate help?</p>
+          <a href={`tel:${siteConfig.phone}`} className="text-brand-700 font-bold hover:text-brand-800">{siteConfig.phone}</a>
+          <p className="text-surface-600 font-medium text-xs mt-1">{siteConfig.businessHours}</p>
+        </div>
+      </SpotlightCard>
     </div>
   );
 }

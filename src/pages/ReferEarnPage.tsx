@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Gift, Copy, CheckCircle, Share2, Zap, ArrowRight, Trophy } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { siteConfig } from '../data/siteConfig';
@@ -172,11 +175,18 @@ export default function ReferEarnPage() {
             <div>
               <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
                 <Gift className="w-4 h-4 text-amber-300" />
-                Earn up to ₹7,000 per referral
+                <ShinyText text="Earn up to ₹7,000 per referral" shinyColor="rgba(23, 108, 115, 0.9)" />
               </div>
               <h1 className="page-hero-title mb-6">
                 Refer a Friend.<br />
-                <span className="page-hero-highlight">Both of You Win.</span>
+                <DecryptedText
+                  text="Both of You Win."
+                  speed={40}
+                  maxIterations={15}
+                  sequential={true}
+                  revealDirection="start"
+                  className="page-hero-highlight"
+                />
               </h1>
               <p className="page-hero-desc text-xl mb-8 max-w-xl leading-relaxed">
                 Share Global Minds Academy with your friends. When they enroll, you earn ₹3,000 – ₹7,000 in your wallet and they get a discount on their course fee.
@@ -305,7 +315,7 @@ export default function ReferEarnPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {rewardTiers.map(tier => (
-              <div key={tier.tier} className={`rounded-2xl border-2 p-6 relative ${tier.color} hover:shadow-card-md transition-shadow`}>
+              <SpotlightCard key={tier.tier} className={`rounded-2xl border-2 p-6 relative ${tier.color} hover:shadow-card-md transition-shadow`}>
                 {tier.badge && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className={`text-xs px-3 py-1 rounded-full font-bold bg-brand-700 text-white whitespace-nowrap shadow`}>
@@ -327,7 +337,7 @@ export default function ReferEarnPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
           <p className="text-xs text-surface-600 font-medium text-center mt-5">
@@ -450,7 +460,7 @@ export default function ReferEarnPage() {
               </p>
               <div className="space-y-3">
                 {leaderboard.map(person => (
-                  <div
+                  <SpotlightCard
                     key={person.rank}
                     className={`flex items-center gap-4 p-4 rounded-2xl border ${
                       person.rank === 1 ? 'border-yellow-300 bg-yellow-50' :
@@ -459,26 +469,28 @@ export default function ReferEarnPage() {
                       'border-surface-100 bg-white'
                     }`}
                   >
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 ${
-                      person.rank === 1 ? 'bg-yellow-500 text-white' :
-                      person.rank === 2 ? 'bg-surface-400 text-white' :
-                      person.rank === 3 ? 'bg-orange-500 text-white' :
-                      'bg-surface-200 text-surface-700'
-                    }`}>
-                      {person.rank === 1 ? '🥇' : person.rank === 2 ? '🥈' : person.rank === 3 ? '🥉' : `#${person.rank}`}
+                    <div className="flex items-center gap-4 w-full">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 ${
+                        person.rank === 1 ? 'bg-yellow-500 text-white' :
+                        person.rank === 2 ? 'bg-surface-400 text-white' :
+                        person.rank === 3 ? 'bg-orange-500 text-white' :
+                        'bg-surface-200 text-surface-700'
+                      }`}>
+                        {person.rank === 1 ? '🥇' : person.rank === 2 ? '🥈' : person.rank === 3 ? '🥉' : `#${person.rank}`}
+                      </div>
+                      <div className={`w-10 h-10 ${person.color} rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                        {person.avatar}
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-surface-900">{person.name}</p>
+                        <p className="text-xs text-surface-500">{person.city}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-bold text-green-700">{person.earned}</p>
+                        <p className="text-xs text-surface-500">{person.referrals} referrals</p>
+                      </div>
                     </div>
-                    <div className={`w-10 h-10 ${person.color} rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
-                      {person.avatar}
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-surface-900">{person.name}</p>
-                      <p className="text-xs text-surface-500">{person.city}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-bold text-green-700">{person.earned}</p>
-                      <p className="text-xs text-surface-500">{person.referrals} referrals</p>
-                    </div>
-                  </div>
+                  </SpotlightCard>
                 ))}
               </div>
 

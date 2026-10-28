@@ -4,6 +4,9 @@ import { locations } from '../../data/locations';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { Badge } from '../../components/ui/Badge';
 import NotFoundPage from '../NotFoundPage';
@@ -38,13 +41,23 @@ export default function LocationDetailPage() {
           />
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <div className="page-hero-badge">
-              Classroom &amp; Lab Hub
+              <ShinyText text="Classroom & Lab Hub" shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
             <Badge variant={location.active ? 'green' : 'gray'}>
               {location.active ? '✓ Open Now' : 'Coming Soon'}
             </Badge>
           </div>
-          <h1 className="page-hero-title mb-2">Global Minds Academy <span className="page-hero-highlight">{location.city}</span></h1>
+          <h1 className="page-hero-title mb-2">
+            Global Minds Academy{' '}
+            <DecryptedText
+              text={location.city}
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
+          </h1>
           <p className="page-hero-desc text-lg font-medium">{location.state}, {location.country}</p>
         </div>
       </div>
@@ -71,7 +84,7 @@ export default function LocationDetailPage() {
                   { icon: Mail, label: 'Email', value: location.email, href: `mailto:${location.email}` },
                   { icon: Clock, label: 'Hours', value: 'Mon – Sat: 9 AM – 7 PM' },
                 ].map(item => (
-                  <div key={item.label} className="flex items-start gap-3 p-4 bg-surface-50 border border-surface-200 rounded-xl">
+                  <SpotlightCard key={item.label} className="flex items-start gap-3 p-4 bg-surface-50 border border-surface-200 rounded-xl">
                     <div className="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-4 h-4 text-brand-600" />
                     </div>
@@ -85,7 +98,7 @@ export default function LocationDetailPage() {
                         <p className="text-sm font-semibold text-surface-900">{item.value}</p>
                       )}
                     </div>
-                  </div>
+                  </SpotlightCard>
                 ))}
               </div>
             </section>

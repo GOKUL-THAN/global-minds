@@ -3,6 +3,9 @@ import { CheckCircle, XCircle, RotateCcw, TrendingUp, Award, ArrowRight } from '
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 // ── Quiz Topics ────────────────────────────────────────────
@@ -206,10 +209,17 @@ export default function SkillAssessmentPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Skill Assessment' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            Interactive Knowledge Check • 100% Free
+            <ShinyText text="Interactive Knowledge Check • 100% Free" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title mb-4">
-            Free <span className="page-hero-highlight">Skill Assessment</span>
+            Free <DecryptedText
+              text="Skill Assessment"
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
           </h1>
           <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
             Test your existing knowledge, identify your skill gaps, and get personalised course recommendations — all in 10 minutes or less.
@@ -234,20 +244,22 @@ export default function SkillAssessmentPage() {
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {quizTopics.map(topic => (
-                  <button
+                  <SpotlightCard
                     key={topic.id}
+                    className="h-full bg-white border-2 border-surface-200 rounded-2xl hover:border-brand-500 hover:shadow-card-md transition-all cursor-pointer group"
                     onClick={() => handleStart(topic.id)}
-                    className="text-left p-6 bg-white border-2 border-surface-200 rounded-2xl hover:border-brand-500 hover:shadow-card-md transition-all group"
                   >
-                    <div className="text-3xl mb-3">{topic.icon}</div>
-                    <h3 className="font-display font-bold text-surface-900 group-hover:text-brand-700 mb-1">{topic.title}</h3>
-                    <p className="text-sm text-surface-600 font-medium mb-3">{topic.questions} questions · {topic.duration}</p>
-                    <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${
-                      topic.level === 'Beginner' ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
-                    }`}>
-                      {topic.level}
-                    </span>
-                  </button>
+                    <div className="p-6">
+                      <div className="text-3xl mb-3">{topic.icon}</div>
+                      <h3 className="font-display font-bold text-surface-900 group-hover:text-brand-700 mb-1">{topic.title}</h3>
+                      <p className="text-sm text-surface-600 font-medium mb-3">{topic.questions} questions · {topic.duration}</p>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${
+                        topic.level === 'Beginner' ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
+                      }`}>
+                        {topic.level}
+                      </span>
+                    </div>
+                  </SpotlightCard>
                 ))}
               </div>
               <div className="mt-10 bg-surface-50 border border-surface-200 rounded-2xl p-6 text-center">

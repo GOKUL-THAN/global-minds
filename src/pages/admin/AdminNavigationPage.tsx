@@ -6,6 +6,8 @@ import {
 import { Badge } from '../../components/ui/Badge';
 import { defaultNavigation, readNavigationContent, type MenuItem, type MenuLink, type NavigationContent } from '../../data/navigationMenu';
 import { cmsService, type CmsRecord } from '../../services/cmsService';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 const navigationSlug = 'site-navigation';
 const cmsContentLimit = 64 * 1024;
@@ -386,7 +388,8 @@ export default function AdminNavigationPage() {
   const MenuTable = ({ section, title }: { section: 'primary' | 'more'; title: string }) => {
     const items = orderedItems[section];
     return (
-      <section className="overflow-hidden rounded-2xl border border-surface-200 bg-white">
+      <SpotlightCard className="h-full">
+        <section className="overflow-hidden rounded-2xl border border-surface-200 bg-white h-full">
         <div className="flex items-center justify-between gap-3 border-b border-surface-100 px-4 py-3">
           <h2 className="font-semibold text-surface-900">{title}</h2>
           <button type="button" disabled={busy} onClick={() => openNewMenuItem(section)}
@@ -462,14 +465,17 @@ export default function AdminNavigationPage() {
           </div>
         )}
       </section>
+      </SpotlightCard>
     );
   };
 
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="font-display text-2xl font-bold text-surface-900">Navigation Menu</h1>
-        <p className="mt-1 text-sm text-surface-500">Manage menu links and submenu content. Changes are saved and published to the website.</p>
+        <h1 className="font-display text-2xl font-bold text-surface-900">
+          <ShinyText text="Navigation Menu" shinyColor="rgba(23, 108, 115, 0.9)" />
+        </h1>
+        <p className="mt-1 text-sm text-surface-500 font-medium">Manage menu links and submenu content. Changes are saved and published to the website.</p>
       </header>
 
       {error && <div role="alert" className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">{error}</div>}

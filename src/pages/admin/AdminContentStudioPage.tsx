@@ -4,6 +4,8 @@ import { cmsSections, cmsSeeds, type CmsSection } from '../../data/cmsSeeds';
 import { cmsService, type CmsRecord, type CmsStatus } from '../../services/cmsService';
 import type { User } from '../../types';
 import { Link, Navigate, useNavigate, useOutletContext, useParams, useSearchParams } from 'react-router-dom';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 interface StudioEntry {
   slug: string;
@@ -623,8 +625,10 @@ function AdminContentStudioEditor() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="font-display font-bold text-2xl text-surface-900">Content Studio</h1>
-        <p className="mt-1 text-sm text-surface-500">
+        <h1 className="font-display font-bold text-2xl text-surface-900">
+          <ShinyText text="Content Studio" shinyColor="rgba(23, 108, 115, 0.9)" />
+        </h1>
+        <p className="mt-1 text-sm text-surface-500 font-medium">
           Edit website content as drafts, publish explicitly, or archive to hide it from public pages.
         </p>
       </header>
@@ -644,69 +648,72 @@ function AdminContentStudioEditor() {
       {notice && <div role="status" className="rounded-xl border border-green-200 bg-green-50 p-3 text-sm text-green-800">{notice}</div>}
 
       <div className="grid gap-6 xl:grid-cols-[minmax(280px,0.8fr)_minmax(0,1.5fr)]">
-        <section className="overflow-hidden rounded-2xl border border-surface-200 bg-white">
-          <div className="space-y-3 border-b border-surface-100 p-4">
-            <label className="block text-xs font-semibold uppercase tracking-wide text-surface-500" htmlFor="cms-section">Section</label>
-            <select id="cms-section" className="form-select" value={section} onChange={event => {
-              const nextSection = event.target.value as CmsSection;
-              if (routeSection) navigate(`/admin/website/${nextSection}`);
-              else setSection(nextSection);
-            }}>
-              {cmsSections.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
-            </select>
-            <label className="sr-only" htmlFor="cms-search">Search CMS records</label>
-            <input id="cms-search" type="search" className="form-input" value={recordSearch}
-              onChange={event => setRecordSearch(event.target.value)} placeholder="Search title, slug, category or ID" />
-            <div className="flex items-center gap-2">
-              <select aria-label="Filter records by status" className="form-select flex-1" value={statusFilter} onChange={event => setStatusFilter(event.target.value as typeof statusFilter)}>
-                <option value="all">All records</option>
-                <option value="draft">Drafts / unsaved seeds</option>
-                <option value="published">Published</option>
-                <option value="archived">Archived</option>
+        <SpotlightCard>
+          <section className="overflow-hidden rounded-2xl border border-surface-200 bg-white h-full">
+            <div className="space-y-3 border-b border-surface-100 p-4">
+              <label className="block text-xs font-semibold uppercase tracking-wide text-surface-500" htmlFor="cms-section">Section</label>
+              <select id="cms-section" className="form-select" value={section} onChange={event => {
+                const nextSection = event.target.value as CmsSection;
+                if (routeSection) navigate(`/admin/website/${nextSection}`);
+                else setSection(nextSection);
+              }}>
+                {cmsSections.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
               </select>
-              <button type="button" onClick={() => startNew()} className="btn-primary btn inline-flex shrink-0 items-center gap-2 text-sm">
-                <Plus className="h-4 w-4" /> New
-              </button>
-            </div>
-          </div>
-          <div className="max-h-[65vh] overflow-y-auto p-2">
-            {loading ? <p className="p-4 text-sm text-surface-500">Loading records…</p> : entries.length === 0 ? (
-              <p className="p-4 text-sm text-surface-500">No records in this section yet. Create one with New.</p>
-            ) : entries.map(item => (
-              <div key={item.slug} className={`group mb-1 flex items-center rounded-xl transition-colors ${selectedSlug === item.slug ? 'bg-brand-50 ring-1 ring-brand-200' : 'hover:bg-surface-50'}`}>
-                <button type="button" onClick={() => {
-                  if (hasUnsavedChanges && !window.confirm('Discard your unsaved course changes?')) return;
-                  setSelectedSlug(item.slug);
-                }}
-                  className="min-w-0 flex-1 p-3 text-left">
-                  <span className="flex items-center justify-between gap-3">
-                    <span className="truncate font-mono text-sm text-surface-900">{item.slug}</span>
-                    {item.record
-                      ? <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${statusStyles[item.record.status]}`}>{statusLabel(item.record)}</span>
-                      : <span className="shrink-0 rounded-full bg-surface-100 px-2 py-0.5 text-[10px] font-semibold text-surface-600">STATIC SEED</span>}
-                  </span>
-                  <span className="mt-1 block truncate text-xs text-surface-500">
-                    {typeof item.content.title === 'string' ? item.content.title
-                      : typeof item.content.name === 'string' ? item.content.name
-                        : typeof item.content.label === 'string' ? item.content.label
-                          : 'Content record'}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={(event) => { event.stopPropagation(); void quickRemoveEntry(item); }}
-                  aria-label={`Remove ${item.slug}`}
-                  title={item.record ? 'Delete permanently' : 'Remove from website'}
-                  className="mr-2 shrink-0 rounded-lg p-1.5 text-surface-400 opacity-0 transition-all hover:bg-red-50 hover:text-red-600 group-hover:opacity-100 focus-visible:opacity-100"
-                >
-                  <Trash2 className="h-3.5 w-3.5" />
+              <label className="sr-only" htmlFor="cms-search">Search CMS records</label>
+              <input id="cms-search" type="search" className="form-input" value={recordSearch}
+                onChange={event => setRecordSearch(event.target.value)} placeholder="Search title, slug, category or ID" />
+              <div className="flex items-center gap-2">
+                <select aria-label="Filter records by status" className="form-select flex-1" value={statusFilter} onChange={event => setStatusFilter(event.target.value as typeof statusFilter)}>
+                  <option value="all">All records</option>
+                  <option value="draft">Drafts / unsaved seeds</option>
+                  <option value="published">Published</option>
+                  <option value="archived">Archived</option>
+                </select>
+                <button type="button" onClick={() => startNew()} className="btn-primary btn inline-flex shrink-0 items-center gap-2 text-sm">
+                  <Plus className="h-4 w-4" /> New
                 </button>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+            <div className="max-h-[65vh] overflow-y-auto p-2">
+              {loading ? <p className="p-4 text-sm text-surface-500">Loading records…</p> : entries.length === 0 ? (
+                <p className="p-4 text-sm text-surface-500">No records in this section yet. Create one with New.</p>
+              ) : entries.map(item => (
+                <div key={item.slug} className={`group mb-1 flex items-center rounded-xl transition-colors ${selectedSlug === item.slug ? 'bg-brand-50 ring-1 ring-brand-200' : 'hover:bg-surface-50'}`}>
+                  <button type="button" onClick={() => {
+                    if (hasUnsavedChanges && !window.confirm('Discard your unsaved course changes?')) return;
+                    setSelectedSlug(item.slug);
+                  }}
+                    className="min-w-0 flex-1 p-3 text-left">
+                    <span className="flex items-center justify-between gap-3">
+                      <span className="truncate font-mono text-sm text-surface-900">{item.slug}</span>
+                      {item.record
+                        ? <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${statusStyles[item.record.status]}`}>{statusLabel(item.record)}</span>
+                        : <span className="shrink-0 rounded-full bg-surface-100 px-2 py-0.5 text-[10px] font-semibold text-surface-600">STATIC SEED</span>}
+                    </span>
+                    <span className="mt-1 block truncate text-xs text-surface-500">
+                      {typeof item.content.title === 'string' ? item.content.title
+                        : typeof item.content.name === 'string' ? item.content.name
+                          : typeof item.content.label === 'string' ? item.content.label
+                            : 'Content record'}
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(event) => { event.stopPropagation(); void quickRemoveEntry(item); }}
+                    aria-label={`Remove ${item.slug}`}
+                    title={item.record ? 'Delete permanently' : 'Remove from website'}
+                    className="mr-2 shrink-0 rounded-lg p-1.5 text-surface-400 opacity-0 transition-all hover:bg-red-50 hover:text-red-600 group-hover:opacity-100 focus-visible:opacity-100"
+                  >
+                    <Trash2 className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          </section>
+        </SpotlightCard>
 
-        <section className="rounded-2xl border border-surface-200 bg-white">
+        <SpotlightCard>
+          <section className="rounded-2xl border border-surface-200 bg-white h-full">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-100 p-4">
             <div className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-brand-600" />
@@ -806,6 +813,7 @@ function AdminContentStudioEditor() {
             </div>
           </div>
         </section>
+        </SpotlightCard>
       </div>
     </div>
   );

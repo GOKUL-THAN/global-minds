@@ -5,6 +5,9 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 
 const topics = [
   {
@@ -59,10 +62,10 @@ export default function InterviewPrepPage() {
           />
           <div className="page-hero-badge mb-4">
             <CheckCircle className="w-4 h-4 text-teal-600" />
-            <span>Technical &amp; HR Mock Rounds</span>
+            <ShinyText text="Technical & HR Mock Rounds" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Interview <span className="page-hero-highlight">Preparation</span>
+            Interview <DecryptedText text="Preparation" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Structured interview preparation for technical, HR and aptitude rounds — domain-specific coaching aligned to the roles you're targeting.
@@ -84,42 +87,46 @@ export default function InterviewPrepPage() {
               const isExpanded = expandedTopics.has(t.category);
               const detailsId = `prep-details-${t.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
               return (
-                <article key={t.category} className="bg-white rounded-3xl p-6 border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${t.color}`}>
-                    <t.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-display font-bold text-surface-900 text-lg mb-4">{t.category}</h3>
-                  <ul className="space-y-2">
-                    {t.items.map(item => (
-                      <li key={item} className="flex items-center gap-2.5 text-sm text-surface-700 font-medium">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div id={detailsId} hidden={!isExpanded} className="mt-4 rounded-xl bg-surface-50 border border-surface-200 p-4 text-sm text-surface-700 leading-relaxed">
-                    {t.details}
-                  </div>
-                  <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                    <button
-                      type="button"
-                      aria-expanded={isExpanded}
-                      aria-controls={detailsId}
-                      onClick={() => setExpandedTopics(current => {
-                        const next = new Set(current);
-                        if (next.has(t.category)) next.delete(t.category);
-                        else next.add(t.category);
-                        return next;
-                      })}
-                      className="text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
-                    >
-                      {isExpanded ? 'Hide details' : 'Show details'}
-                    </button>
-                    <Link to={t.href} className="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
-                      Explore preparation <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </article>
+                <SpotlightCard key={t.category} className="h-full">
+                  <article className="bg-white rounded-3xl p-6 border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                    <div>
+                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${t.color}`}>
+                        <t.icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-display font-bold text-surface-900 text-lg mb-4">{t.category}</h3>
+                      <ul className="space-y-2">
+                        {t.items.map(item => (
+                          <li key={item} className="flex items-center gap-2.5 text-sm text-surface-700 font-medium">
+                            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <div id={detailsId} hidden={!isExpanded} className="mt-4 rounded-xl bg-surface-50 border border-surface-200 p-4 text-sm text-surface-700 leading-relaxed">
+                        {t.details}
+                      </div>
+                    </div>
+                    <div className="mt-5 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-surface-100">
+                      <button
+                        type="button"
+                        aria-expanded={isExpanded}
+                        aria-controls={detailsId}
+                        onClick={() => setExpandedTopics(current => {
+                          const next = new Set(current);
+                          if (next.has(t.category)) next.delete(t.category);
+                          else next.add(t.category);
+                          return next;
+                        })}
+                        className="text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                      >
+                        {isExpanded ? 'Hide details' : 'Show details'}
+                      </button>
+                      <Link to={t.href} className="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
+                        Explore preparation <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </article>
+                </SpotlightCard>
               );
             })}
           </div>

@@ -12,6 +12,10 @@ import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { CountUp } from '../components/ui/CountUp';
 
 const placementStats = [
   { icon: Users, value: '1,000+', label: 'Students Placed', tone: 'teal' },
@@ -150,10 +154,10 @@ export default function PlacementPage() {
             <Breadcrumbs items={[{ label: 'Placement Records' }]} className="mb-5" />
             <div className="page-hero-badge mb-6">
               <TrendingUp className="h-4 w-4 text-teal-600" aria-hidden="true" />
-              <span>80% Placement Rate — 2024 Batch</span>
+              <ShinyText text="80% Placement Rate — 2024 Batch" shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
-            <h1 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Placement Records &amp; <span className="page-hero-highlight">Hiring Partners</span>
+            <h1 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl text-surface-900">
+              Placement Records &amp; <DecryptedText text="Hiring Partners" speed={30} maxIterations={10} className="page-hero-highlight" />
             </h1>
             <p className="page-hero-desc max-w-2xl text-lg sm:text-xl leading-relaxed">
               Over 1,000 students placed in top MNCs and product companies. Our dedicated placement team works with 50+ hiring partners to get you the best opportunities.
@@ -179,13 +183,22 @@ export default function PlacementPage() {
       <section className="border-b border-surface-100 bg-white py-10 sm:py-14" aria-label="Placement statistics">
         <div className="container-xl grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {placementStats.map(({ icon: Icon, value, label, tone }) => (
-            <div key={label} className="rounded-2xl border border-surface-100 bg-white px-3 py-5 text-center shadow-sm sm:px-4">
-              <span className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${toneStyles[tone].icon}`}>
-                <Icon className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <p className="text-2xl font-extrabold tracking-tight text-surface-950 sm:text-3xl">{value}</p>
-              <p className="mt-1 text-sm text-surface-500">{label}</p>
-            </div>
+            <SpotlightCard key={label}>
+              <div className="rounded-2xl border border-surface-100 bg-white px-3 py-5 text-center shadow-sm sm:px-4 h-full flex flex-col justify-between">
+                <div>
+                  <span className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${toneStyles[tone].icon}`}>
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <p className="text-2xl font-extrabold tracking-tight text-surface-950 sm:text-3xl">
+                    {value === '1,000+' ? <CountUp end={1000} suffix="+" start />
+                      : value === '50+' ? <CountUp end={50} suffix="+" start />
+                      : value === '80%' ? <CountUp end={80} suffix="%" start />
+                      : value}
+                  </p>
+                </div>
+                <p className="mt-1 text-sm text-surface-500 font-medium">{label}</p>
+              </div>
+            </SpotlightCard>
           ))}
         </div>
       </section>

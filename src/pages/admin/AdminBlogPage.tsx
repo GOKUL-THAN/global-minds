@@ -4,6 +4,8 @@ import { Eye, EyeOff, Plus, Edit2, Trash2, Search, Calendar, X } from 'lucide-re
 import { Badge } from '../../components/ui/Badge';
 import { formatDate } from '../../utils/formatters';
 import type { BlogPost } from '../../types';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 type LocalPost = BlogPost & { status: 'published' | 'draft' };
 
@@ -129,8 +131,10 @@ export default function AdminBlogPage() {
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className="font-display font-bold text-2xl text-surface-900">Blog</h1>
-          <p className="text-surface-500 text-sm mt-0.5">
+          <h1 className="font-display font-bold text-2xl text-surface-900">
+            <ShinyText text="Blog" shinyColor="rgba(23, 108, 115, 0.9)" />
+          </h1>
+          <p className="text-surface-500 text-sm mt-0.5 font-medium">
             {counts.published} published · {counts.draft} drafts
           </p>
         </div>
@@ -181,9 +185,10 @@ export default function AdminBlogPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+      <SpotlightCard>
+        <div className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
             <thead>
               <tr className="bg-surface-50 border-b border-surface-100">
                 <th className="text-left px-4 py-3 font-semibold text-surface-600">Post</th>
@@ -285,6 +290,7 @@ export default function AdminBlogPage() {
           )}
         </div>
       </div>
+      </SpotlightCard>
 
       {/* Modal */}
       {showModal && (

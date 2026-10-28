@@ -4,6 +4,9 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 
 const services = [
   { icon: Search, title: 'Job Search Strategy', desc: 'Targeted guidance on where to look for IT jobs, how to apply effectively and how to stand out from other candidates.' },
@@ -30,10 +33,10 @@ export default function JobSupportPage() {
           />
           <div className="page-hero-badge mb-4">
             <CheckCircle className="w-4 h-4 text-teal-600" />
-            <span>End-to-End Application Guidance</span>
+            <ShinyText text="End-to-End Application Guidance" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Job Search <span className="page-hero-highlight">Support</span>
+            Job Search <DecryptedText text="Support" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Practical guidance to help you navigate the IT job market effectively — from uncovering opportunities to acing interviews and accepting top offers.
@@ -48,13 +51,17 @@ export default function JobSupportPage() {
         <div className="container-xl">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {services.map(s => (
-              <div key={s.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
-                  <s.icon className="w-6 h-6 text-brand-600" />
+              <SpotlightCard key={s.title} className="h-full">
+                <div className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+                      <s.icon className="w-6 h-6 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
 

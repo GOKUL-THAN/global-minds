@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { Loader2, Send } from 'lucide-react';
 import { enquiryService } from '../../services/enquiryService';
 import { cn } from '../../utils/cn';
+import { ShinyText } from '../ui/ShinyText';
 
 const schema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
@@ -151,9 +152,10 @@ export function HomeContactForm() {
               Sending...
             </>
           ) : (
-            <>
-              Send Enquiry <Send className="h-4 w-4" />
-            </>
+            <span className="inline-flex items-center gap-2">
+              <ShinyText text="Send Enquiry" shinyColor="rgba(255, 255, 255, 0.95)" />
+              <Send className="h-4 w-4" />
+            </span>
           )}
         </button>
       </div>

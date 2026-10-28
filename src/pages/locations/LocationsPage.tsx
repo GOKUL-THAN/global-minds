@@ -6,6 +6,9 @@ import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { Badge } from '../../components/ui/Badge';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
 
 export default function LocationsPage() {
@@ -19,10 +22,17 @@ export default function LocationsPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Locations' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            Campuses &amp; Hybrid Learning Hubs
+            <ShinyText text="Campuses & Hybrid Learning Hubs" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title mb-4">
-            Training <span className="page-hero-highlight">Centres</span>
+            Training <DecryptedText
+              text="Centres"
+              speed={40}
+              maxIterations={15}
+              sequential={true}
+              revealDirection="start"
+              className="page-hero-highlight"
+            />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl leading-relaxed">
             In-person classroom training is available at our state-of-the-art Chennai centre. Online live interactive training is available globally.
@@ -40,7 +50,7 @@ export default function LocationsPage() {
           <h2 className="heading-xl mb-8">Chennai Centre</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {visibleLocations.map(loc => (
-              <div key={loc.id} className={`card-hover overflow-hidden ${!loc.active ? 'opacity-60' : ''}`}>
+              <SpotlightCard key={loc.id} className={`card-hover overflow-hidden rounded-3xl border border-surface-200 bg-white ${!loc.active ? 'opacity-60' : ''}`}>
                 <img src={loc.image} alt={loc.city} className="w-full h-44 object-cover" loading="lazy" />
                 <div className="p-5">
                   <div className="flex items-center justify-between mb-3">
@@ -91,7 +101,7 @@ export default function LocationsPage() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
 

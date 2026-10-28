@@ -2,6 +2,10 @@ import { Award, BadgeCheck, Star, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { TiltedCard } from '../components/ui/TiltedCard';
 
 const certTypes = [
   { icon: BadgeCheck, title: 'Course Completion Certificate', desc: 'Issued upon completing any Global Minds Academy course or master program.', color: 'bg-brand-50 text-brand-600', href: '/courses' },
@@ -29,10 +33,10 @@ export default function CertificationsPage() {
           <div>
             <Breadcrumbs items={[{ label: 'Certifications' }]} className="mb-4" />
             <div className="page-hero-badge mb-4">
-              Industry Recognized Credentials
+              <ShinyText text="Industry Recognized Credentials" shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
             <h1 className="page-hero-title mb-4">
-              Global <span className="page-hero-highlight">Certifications</span>
+              Global <DecryptedText text="Certifications" speed={30} maxIterations={10} className="page-hero-highlight" />
             </h1>
             <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
               Earn industry-recognised certificates that validate your skills and boost your career profile.
@@ -42,11 +46,13 @@ export default function CertificationsPage() {
             </p>
           </div>
           <div className="relative">
-            <img
-              src="/images/certificate-illustration.svg"
-              alt="Illustration of a course completion certificate"
-              className="w-full max-w-lg mx-auto rounded-2xl shadow-xl border border-teal-200/60"
-            />
+            <TiltedCard>
+              <img
+                src="/images/certificate-illustration.svg"
+                alt="Illustration of a course completion certificate"
+                className="w-full max-w-lg mx-auto rounded-2xl shadow-xl border border-teal-200/60"
+              />
+            </TiltedCard>
           </div>
         </div>
       </div>
@@ -59,13 +65,17 @@ export default function CertificationsPage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certTypes.map(cert => (
-              <Link key={cert.title} to={cert.href} className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${cert.title}`}>
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${cert.color}`}>
-                  <cert.icon className="w-6 h-6" />
-                </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{cert.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{cert.desc}</p>
-              </Link>
+              <SpotlightCard key={cert.title} className="h-full">
+                <Link to={cert.href} className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 h-full flex flex-col justify-between" aria-label={`Explore ${cert.title}`}>
+                  <div>
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${cert.color}`}>
+                      <cert.icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-semibold text-surface-900 mb-2">{cert.title}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{cert.desc}</p>
+                  </div>
+                </Link>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -79,25 +89,29 @@ export default function CertificationsPage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {vendorCerts.map(cert => (
-              <Link key={cert.name} to={cert.href} className="block bg-white rounded-2xl p-5 border border-surface-200 hover:border-brand-300 hover:shadow-card hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${cert.credential} preparation course`}>
-                <div className="h-14 flex items-center mb-4">
-                  <img
-                    src={`/images/certification-vendors/${cert.logo}.png`}
-                    alt={`${cert.name} logo`}
-                    className="max-w-32 max-h-12 object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="text-xs text-brand-700 font-bold uppercase tracking-wide mb-1">{cert.name} certification</p>
-                <h3 className="font-semibold text-surface-900 mb-3">{cert.credential}</h3>
-                <ul className="space-y-1">
-                  {cert.courses.map(c => (
-                    <li key={c} className="text-xs text-surface-700 font-medium flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />{c}
-                    </li>
-                  ))}
-                </ul>
-              </Link>
+              <SpotlightCard key={cert.name} className="h-full">
+                <Link to={cert.href} className="block bg-white rounded-2xl p-5 border border-surface-200 hover:border-brand-300 hover:shadow-card hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 h-full flex flex-col justify-between" aria-label={`Explore ${cert.credential} preparation course`}>
+                  <div>
+                    <div className="h-14 flex items-center mb-4">
+                      <img
+                        src={`/images/certification-vendors/${cert.logo}.png`}
+                        alt={`${cert.name} logo`}
+                        className="max-w-32 max-h-12 object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="text-xs text-brand-700 font-bold uppercase tracking-wide mb-1">{cert.name} certification</p>
+                    <h3 className="font-semibold text-surface-900 mb-3">{cert.credential}</h3>
+                  </div>
+                  <ul className="space-y-1 pt-2 border-t border-surface-100">
+                    {cert.courses.map(c => (
+                      <li key={c} className="text-xs text-surface-700 font-medium flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />{c}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              </SpotlightCard>
             ))}
           </div>
         </div>

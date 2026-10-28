@@ -1,5 +1,7 @@
 import { AlertTriangle, ArrowLeft } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ShinyText } from '../../components/ui/ShinyText';
 
 interface AdminGenericPageProps {
   title: string;
@@ -15,8 +17,10 @@ export default function AdminGenericPage({ title, description }: AdminGenericPag
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-display font-bold text-2xl text-surface-900">{title || label}</h1>
-          {description && <p className="text-surface-500 text-sm mt-1">{description}</p>}
+          <h1 className="font-display font-bold text-2xl text-surface-900">
+            <ShinyText text={title || label} shinyColor="rgba(23, 108, 115, 0.9)" />
+          </h1>
+          {description && <p className="text-surface-500 text-sm mt-1 font-medium">{description}</p>}
         </div>
         <Link to="/admin">
           <button className="btn-secondary btn flex items-center gap-2 text-sm">
@@ -25,15 +29,17 @@ export default function AdminGenericPage({ title, description }: AdminGenericPag
         </Link>
       </div>
 
-      <div className="bg-white rounded-3xl border border-surface-100 p-12 text-center">
-        <div className="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-4">
-          <AlertTriangle className="w-8 h-8 text-amber-500" />
+      <SpotlightCard>
+        <div className="bg-white rounded-3xl border border-surface-100 p-12 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-4">
+            <AlertTriangle className="w-8 h-8 text-amber-500" />
+          </div>
+          <h2 className="font-display font-bold text-xl text-surface-900 mb-2">Admin page not found</h2>
+          <p className="text-surface-500 mb-6 max-w-lg mx-auto font-medium">
+            The requested page does not exist. Use the admin navigation to open an available section.
+          </p>
         </div>
-        <h2 className="font-display font-bold text-xl text-surface-900 mb-2">Admin page not found</h2>
-        <p className="text-surface-500 mb-6 max-w-lg mx-auto">
-          The requested page does not exist. Use the admin navigation to open an available section.
-        </p>
-      </div>
+      </SpotlightCard>
     </div>
   );
 }

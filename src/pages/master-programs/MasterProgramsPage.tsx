@@ -6,6 +6,9 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { DecryptedText } from '../../components/ui/DecryptedText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 
 export default function MasterProgramsPage() {
   const programs = useCmsCollection('master-programs', masterPrograms);
@@ -22,10 +25,10 @@ export default function MasterProgramsPage() {
           <div className="max-w-3xl">
             <div className="page-hero-badge mb-4">
               <Award className="w-4 h-4 text-teal-600" />
-              <span>Complete Career Tracks</span>
+              <ShinyText text="Complete Career Tracks" shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
             <h1 className="page-hero-title display-lg font-extrabold mb-4">
-              Master <span className="page-hero-highlight">Programs</span>
+              Master <DecryptedText text="Programs" speed={30} maxIterations={10} className="page-hero-highlight" />
             </h1>
             <p className="page-hero-desc text-lg sm:text-xl">
               Structured multi-month programs designed to take you from fundamentals to job-ready in your chosen technology domain. With real projects, placement support and certification guidance.
@@ -39,12 +42,12 @@ export default function MasterProgramsPage() {
         <div className="container-xl">
           <div className="grid lg:grid-cols-2 gap-8">
             {programs.filter(mp => mp.status === 'active').map(program => (
-              <Link
-                key={program.id}
-                to={`/master-programs/${program.slug}`}
-                className="card-hover group block overflow-hidden"
-                aria-label={`View ${program.title} details`}
-              >
+              <SpotlightCard key={program.id} className="h-full">
+                <Link
+                  to={`/master-programs/${program.slug}`}
+                  className="card-hover group block overflow-hidden h-full flex flex-col justify-between"
+                  aria-label={`View ${program.title} details`}
+                >
                 {/* Banner */}
                 <div className="relative aspect-[16/9] overflow-hidden bg-surface-100">
                   <img
@@ -108,7 +111,8 @@ export default function MasterProgramsPage() {
                   </div>
                 </div>
               </Link>
-            ))}
+            </SpotlightCard>
+          ))}
           </div>
         </div>
       </section>

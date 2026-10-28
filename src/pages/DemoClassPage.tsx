@@ -2,6 +2,9 @@ import { useRef, useState } from 'react';
 import { CheckCircle, Calendar, Clock, Users, Monitor, Play, Loader2 } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { enquiryService } from '../services/enquiryService';
 
@@ -117,11 +120,18 @@ export default function DemoClassPage() {
             <div>
               <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
                 <Play className="w-4 h-4 text-amber-300" />
-                100% Free Live Session — No Obligation
+                <ShinyText text="100% Free Live Session — No Obligation" shinyColor="rgba(23, 108, 115, 0.9)" />
               </div>
               <h1 className="page-hero-title mb-6">
                 Book Your Free<br />
-                <span className="page-hero-highlight">Demo Class</span>
+                <DecryptedText
+                  text="Demo Class"
+                  speed={40}
+                  maxIterations={15}
+                  sequential={true}
+                  revealDirection="start"
+                  className="page-hero-highlight"
+                />
               </h1>
               <p className="page-hero-desc text-lg sm:text-xl mb-8 leading-relaxed">
                 Experience our teaching quality before enrolling. Attend a free live demo session with our expert trainers — ask questions, see the curriculum, and decide with confidence.
@@ -287,7 +297,7 @@ export default function DemoClassPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {upcomingDemos.map(d => (
-              <div key={d.course + d.date} className="bg-white rounded-2xl border border-surface-200 p-5 hover:border-brand-300 hover:shadow-card-md transition-all">
+              <SpotlightCard key={d.course + d.date} className="h-full bg-white rounded-2xl border border-surface-200 p-5 hover:border-brand-300 hover:shadow-card-md transition-all">
                 <h3 className="font-semibold text-surface-900 mb-1">{d.course}</h3>
                 <p className="text-sm text-surface-600 font-medium mb-4">Trainer: {d.trainer}</p>
                 <div className="space-y-2 mb-4">
@@ -313,7 +323,7 @@ export default function DemoClassPage() {
                 <Button variant="secondary" size="sm" fullWidth onClick={() => registerForDemo(d)}>
                   Register for this Demo
                 </Button>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -328,12 +338,12 @@ export default function DemoClassPage() {
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {popularDemoCourses.map(c => (
-              <div key={c.id} className="p-5 bg-surface-50 rounded-2xl border border-surface-200 hover:border-brand-300 hover:bg-brand-50/50 transition-all group">
+              <SpotlightCard key={c.id} className="h-full p-5 bg-surface-50 rounded-2xl border border-surface-200 hover:border-brand-300 hover:bg-brand-50/50 transition-all group">
                 <div className="text-3xl mb-3">{c.icon}</div>
                 <h3 className="font-semibold text-surface-900 group-hover:text-brand-700 mb-1">{c.title}</h3>
                 <p className="text-xs text-surface-600 font-medium mb-3">{c.category} · {c.duration} demo</p>
                 <span className="text-xs font-bold text-brand-700">Free demo</span>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -351,10 +361,10 @@ export default function DemoClassPage() {
               { q: 'What is covered in the demo?', a: 'The trainer covers course overview, curriculum highlights, career scope, real-world use cases, and answers all your queries.' },
               { q: 'Is it online or offline?', a: 'We offer both. Online demos happen via Zoom/Google Meet. Offline demos are available at our Chennai centre.' },
             ].map(faq => (
-              <div key={faq.q} className="bg-white rounded-2xl p-5 border border-surface-200">
+              <SpotlightCard key={faq.q} className="bg-white rounded-2xl p-5 border border-surface-200">
                 <h3 className="font-semibold text-surface-900 mb-2">{faq.q}</h3>
                 <p className="text-sm text-surface-700 leading-relaxed">{faq.a}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

@@ -11,6 +11,8 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
+import { ShinyText } from '../../components/ui/ShinyText';
+import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { formatPrice } from '../../utils/formatters';
 import { cn } from '../../utils/cn';
 import { usePageMeta } from '../../hooks/usePageMeta';
@@ -332,7 +334,7 @@ export default function CourseDetailPage() {
 
           {/* Sticky enrollment panel */}
           <div className="hidden lg:block">
-            <div className="sticky-enroll">
+            <SpotlightCard className="sticky-enroll bg-white border border-teal-200/80 rounded-3xl p-6 shadow-xl">
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-baseline gap-3 mb-2">
@@ -347,7 +349,7 @@ export default function CourseDetailPage() {
                 </div>
                 {savings > 0 && (
                   <p className="text-green-600 text-sm font-semibold">
-                    You save {formatPrice(savings, course.currency)} ({course.discountPercentage}% off)
+                    <ShinyText text={`You save ${formatPrice(savings, course.currency)} (${course.discountPercentage}% off)`} shinyColor="rgba(16, 185, 129, 0.9)" />
                   </p>
                 )}
               </div>
@@ -424,7 +426,7 @@ export default function CourseDetailPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
           </div>
         </div>
 

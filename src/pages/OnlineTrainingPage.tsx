@@ -5,6 +5,9 @@ import { EnquiryForm } from '../components/ui/EnquiryForm';
 import { CTASection } from '../components/home/CTASection';
 import { siteConfig } from '../data/siteConfig';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 const features = [
   { icon: Video, title: 'Live Instructor-Led Classes', desc: 'Attend live sessions with expert instructors in real time, not pre-recorded videos.' },
@@ -27,10 +30,10 @@ export default function OnlineTrainingPage() {
           <Breadcrumbs items={[{ label: 'Online Training' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
             <Globe className="w-4 h-4 text-teal-600" />
-            <span>Interactive Live Virtual Learning</span>
+            <ShinyText text="Interactive Live Virtual Learning" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title display-lg font-extrabold mb-4">
-            Online <span className="page-hero-highlight">Training</span>
+            Online <DecryptedText text="Training" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Learn from industry experts through live, instructor-led online classes. Study from anywhere in the world with 1-on-1 mentorship and full session recordings.
@@ -45,13 +48,17 @@ export default function OnlineTrainingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map(f => (
-              <div key={f.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
-                  <f.icon className="w-6 h-6 text-brand-600" />
+              <SpotlightCard key={f.title} className="h-full">
+                <div className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+                      <f.icon className="w-6 h-6 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold text-surface-900 mb-2">{f.title}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{f.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-surface-900 mb-2">{f.title}</h3>
-                <p className="text-surface-600 text-sm leading-relaxed">{f.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

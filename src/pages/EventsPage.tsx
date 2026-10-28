@@ -6,6 +6,9 @@ import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { useCmsCollection } from '../hooks/useCmsCollection';
 import { siteConfig } from '../data/siteConfig';
+import { ShinyText } from '../components/ui/ShinyText';
+import { DecryptedText } from '../components/ui/DecryptedText';
+import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 type EventType = 'All' | 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
 
@@ -212,10 +215,10 @@ export default function EventsPage() {
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Events & Webinars' }]} className="mb-4" />
           <div className="page-hero-badge mb-4">
-            Live Community Sessions &amp; Masterclasses
+            <ShinyText text="Live Community Sessions & Masterclasses" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="page-hero-title mb-4">
-            Events, Webinars &amp; <span className="page-hero-highlight">Workshops</span>
+            Events, Webinars &amp; <DecryptedText text="Workshops" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
             Learn from industry experts, build skills through hands-on workshops, and connect with the tech community — most events are free.
@@ -256,10 +259,10 @@ export default function EventsPage() {
             {filtered.map(event => {
               const isExpanded = expandedEvents.has(event.id);
               return (
-                <article
-                  key={event.id}
-                  className="bg-white rounded-2xl border border-surface-100 overflow-hidden hover:shadow-card-lg transition-shadow"
-                >
+                <SpotlightCard key={event.id} className="h-full">
+                  <article
+                    className="bg-white rounded-2xl border border-surface-100 overflow-hidden hover:shadow-card-lg transition-shadow h-full flex flex-col justify-between"
+                  >
                   {/* Top accent bar by type */}
                   <div className={`h-1 w-full ${event.type === 'Webinar' ? 'bg-brand-500' :
                     event.type === 'Workshop' ? 'bg-orange-400' :
@@ -358,8 +361,9 @@ export default function EventsPage() {
                     </div>
                   </div>
                 </article>
-              );
-            })}
+              </SpotlightCard>
+            );
+          })}
           </div>
         </div>
       </section>

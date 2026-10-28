@@ -2,9 +2,19 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Magnetic } from '../ui/Magnetic';
+import { ShinyText } from '../ui/ShinyText';
+import { RotatingText } from '../ui/RotatingText';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 
 const proofPoints = ['Practical, mentor-led training', 'Live online learning', 'Classroom training in Chennai'];
+const trendingDomains = [
+  'AWS & Cloud Engineering',
+  'Full Stack Development',
+  'Data Science & AI',
+  'DevOps & Automation',
+  'Software Testing & QA',
+  'Cyber Security',
+];
 
 export function HeroSection() {
   return (
@@ -16,7 +26,7 @@ export function HeroSection() {
         <div className="container-xl relative z-10 mx-auto px-4 py-10 text-center sm:py-12 lg:py-14">
           <div className="home-hero-badge mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold sm:text-sm">
             <Sparkles className="h-4 w-4 text-amber-700" aria-hidden="true" />
-            <span>Global Minds Tech Training</span>
+            <ShinyText text="Global Minds Tech Training" shinyColor="rgba(217, 161, 11, 0.95)" />
           </div>
           <h1 className="home-hero-title mx-auto mt-7 max-w-5xl font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl text-surface-900">
             <span className="block text-surface-900">
@@ -26,7 +36,18 @@ export function HeroSection() {
               Own the Future.
             </span>
           </h1>
-          <p className="home-hero-description mx-auto mt-6 max-w-4xl text-base leading-relaxed sm:text-lg text-surface-700 font-medium">
+          <div className="mt-4 flex items-center justify-center gap-2 text-base font-semibold sm:text-lg text-brand-800">
+            <span>Specialise in</span>
+            <span className="inline-block rounded-xl border border-brand-200 bg-brand-50/80 px-3 py-1 shadow-sm">
+              <RotatingText
+                texts={trendingDomains}
+                className="text-brand-800 font-bold"
+                itemClassName="text-brand-800 font-bold"
+                interval={2400}
+              />
+            </span>
+          </div>
+          <p className="home-hero-description mx-auto mt-4 max-w-4xl text-base leading-relaxed sm:text-lg text-surface-700 font-medium">
             Build job-ready skills through practical, career-focused technology training designed to help you move forward.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
