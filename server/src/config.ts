@@ -26,6 +26,21 @@ function configuredAccount(prefix: 'ADMIN' | 'SUPER_ADMIN') {
 }
 
 const serverDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const appAllowedOrigins = (process.env.APP_ALLOWED_ORIGINS ?? '')
+  .split(',')
+  .map(origin => origin.trim().replace(/\/$/, ''))
+  .filter(Boolean);
+for (const origin of appAllowedOrigins) {
+  let parsedOrigin: URL;
+  try {
+    parsedOrigin = new URL(origin);
+  } catch {
+    throw new Error('APP_ALLOWED_ORIGINS must contain valid HTTP(S) origins.');
+  }
+  if (!['http:', 'https:'].includes(parsedOrigin.protocol) || parsedOrigin.origin !== origin) {
+    throw new Error('APP_ALLOWED_ORIGINS must contain valid HTTP(S) origins.');
+  }
+}
 const databaseDriver = process.env.DATABASE_DRIVER?.trim().toLowerCase() ?? 'sqlite';
 if (databaseDriver !== 'sqlite' && databaseDriver !== 'postgres') {
   throw new Error('DATABASE_DRIVER must be either "sqlite" or "postgres".');
@@ -46,6 +61,7 @@ if (Boolean(resendApiKey) !== Boolean(emailFrom)) {
 export const config = {
   port: Number(process.env.PORT ?? 3001),
   appOrigin: required('APP_ORIGIN'),
+  appAllowedOrigins,
   databaseDriver,
   databaseUrl,
   databasePath: path.resolve(serverDirectory, process.env.DATABASE_PATH ?? 'data/admin.sqlite'),

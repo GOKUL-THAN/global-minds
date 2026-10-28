@@ -1,13 +1,13 @@
 # Deploy Guide — Global Minds Academy
 
-Two free paths. **Render (Option B) is the only one that runs the full site** —
-login, admin, CMS, and forms all need the Express backend, which Netlify/Vercel
-static hosting cannot provide.
+The Vercel project serves the frontend and proxies `/api/*` to the Express API
+on Render. Render runs the API with PostgreSQL; its blueprint is configured at
+the repository root.
 
-| | Option A: Netlify | Option B: Render (recommended) |
+| | Option A: Netlify | Option B: Vercel + Render (recommended) |
 |---|---|---|
 | Cost | Free | Free |
-| What runs | Frontend only | Frontend **+ backend + database** |
+| What runs | Frontend only | Vercel frontend + Render API + PostgreSQL |
 | Login / admin / forms | ❌ broken | ✅ working |
 | CMS content editing | ❌ | ✅ |
 | Email verification | ❌ | ✅ (with Resend key) |
@@ -16,22 +16,21 @@ static hosting cannot provide.
 
 ---
 
-## Option B — Render (full stack, recommended)
+## Option B — Vercel frontend + Render API (recommended)
 
-The `render.yaml` blueprint deploys:
+The Vercel project rewrites `/api/*` and `/health` to
+`https://global-minds-academy.onrender.com`. The `render.yaml` blueprint deploys:
 - one **PostgreSQL** database (free, expires in 90 days)
-- one **web service** that serves the built React frontend **and** the Express API
-  on a single URL (single-origin, so cookies + sessions just work)
+- one **web service** for the Express API (it also serves the built frontend)
 
 ### Step 1 — Push the repo to GitHub
 
-The repo is already connected to `github.com/gokult78/global-minds.git` on the
-`master` branch. Commit the deploy prep (see Step 5 of the prep) and push:
+The repo is `GOKUL-THAN/global-minds` and deploys from `main`. Push changes:
 
 ```powershell
 git add -A
-git commit -m "Add deploy config: Render blueprint + single-origin server"
-git push origin master
+git commit -m "Fix production API deployment"
+git push origin main
 ```
 
 > If `git push` fails with an auth error, your GitHub token expired.
@@ -41,7 +40,7 @@ git push origin master
 
 1. Sign in to <https://render.com> (free account, no credit card).
 2. Dashboard → **New** → **Blueprint**.
-3. Select the `gokult78/global-minds` repo (authorize Render to read it if asked).
+3. Select the `GOKUL-THAN/global-minds` repo (authorize Render to read it if asked).
 4. Render reads `render.yaml` and shows the database + web service it will create.
 5. Fill in the secret environment variables (Render prompts for each `sync: false`):
 
@@ -50,35 +49,23 @@ git push origin master
 | `JWT_SECRET` | 32+ random characters — e.g. run `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"` |
 | `ADMIN_PASSWORD` | Min 14 characters — the password for `admin@local.test` |
 | `SUPER_ADMIN_PASSWORD` | Min 14 characters, **different** from ADMIN_PASSWORD — password for `globalminds@gmail.com` |
-| `APP_ORIGIN` | Leave blank for now — set it after Step 3 (see below) |
 | `RESEND_API_KEY` | Optional — only if you want email verification / password recovery |
 | `EMAIL_FROM` | Optional — e.g. `Global Minds Academy <accounts@globalmindsacademy.in>` |
 
 6. Click **Apply**. Render provisions the database and deploys the web service.
    First build takes ~3–5 minutes.
 
-### Step 3 — Set APP_ORIGIN to your live URL
+### Step 3 — Verify the Vercel origin allowlist
 
-Once the service is live, Render assigns it a URL like
-`https://global-minds-academy.onrender.com`. Copy that URL.
+`APP_ORIGIN` and `APP_ALLOWED_ORIGINS` are set by `render.yaml` to allow the
+Vercel production aliases. Keep them aligned with the aliases configured for
+the Vercel project if those aliases change.
 
-Render dashboard → your web service → **Environment** → set:
+The API must be live before the frontend can log in or save queries. Verify:
 
-```
-APP_ORIGIN = https://global-minds-academy.onrender.com
-```
-
-Save — Render redeploys automatically. The API's CORS check requires `APP_ORIGIN`
-to match the exact origin the browser visits, so this step is **required** for
-login/admin to work.
-
-### Step 4 — Verify
-
-Open `https://<your-service>.onrender.com`:
-
-- Homepage loads → ✅
-- `/health` returns `{"status":"ok"}` → ✅ API is live
-- `/admin/login` → sign in with `admin@local.test` + the ADMIN_PASSWORD you set → ✅
+- `https://global-minds-academy.onrender.com/health` returns `{"status":"ok"}`.
+- `https://global-minds-beta.vercel.app/health` returns the same JSON through the Vercel proxy.
+- Sign in and submit an enquiry on the Vercel site.
 
 ### Free-tier notes
 
@@ -86,14 +73,14 @@ Open `https://<your-service>.onrender.com`:
   sleep takes ~30s to wake it. Subsequent requests are fast.
 - Free PostgreSQL expires in 90 days. Before then, back up your data
   (`pg_dump`) or upgrade the database to a paid plan.
-- Auto-deploy is on: every `git push` to `master` redeploys automatically.
+- Auto-deploy is on: every `git push` to `main` redeploys automatically.
 
 ### One-command alternative (after first setup)
 
 Once the blueprint is created and secrets are saved, future deploys are just:
 
 ```powershell
-git push origin master
+git push origin main
 ```
 
 Render rebuilds and redeploys automatically.
@@ -130,15 +117,12 @@ On the first `--prod` deploy, Netlify asks for a site name (becomes
 
 ### Why a separate backend is needed on Netlify
 
-Netlify serves static files only. The Express API uses SQLite files on disk,
-JWT sessions, and HttpOnly cookies — none of that runs on Netlify Functions
-(serverless, ephemeral filesystem). That's why Option B (Render) is the real
-deploy for this project.
+Netlify serves static files only in this configuration. The Express API needs
+a persistent PostgreSQL database for accounts, sessions, CMS data, and enquiries.
 
-If you specifically want Netlify for the frontend, you can host the backend
-separately on Render (Option B's web service) and point the frontend at it by
-setting `VITE_API_BASE_URL` to the Render URL before building — but that's a
-hybrid setup, more complex than just using Render end-to-end.
+If you use Netlify for the frontend, you must also configure an equivalent
+`/api/*` proxy to the Render service. The application uses same-origin API
+paths, so setting `VITE_API_BASE_URL` alone does not configure the requests.
 
 ---
 
@@ -146,9 +130,10 @@ hybrid setup, more complex than just using Render end-to-end.
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
+| Login says the sign-in server is unreachable; API requests return the website HTML | The Render API is unavailable or Vercel is not proxying `/api/*` to it | Ensure the Render blueprint is applied and healthy at `/health`; verify the Vercel API rewrite is deployed |
 | Render build fails at `npm --prefix server run build` | Server TypeScript error | Run `npm --prefix server run build` locally first; fix any errors, push |
-| Login fails with 403 "origin not allowed" | `APP_ORIGIN` not set or wrong | Set `APP_ORIGIN` to the exact `https://...onrender.com` URL in Render env |
-| Admin login says "Invalid email or password" | Bootstrap passwords not set / mismatched | Set `ADMIN_PASSWORD` + `SUPER_ADMIN_PASSWORD` in Render env, then **clear the database** (Render dashboard → database → reset) so accounts are re-seeded |
+| Login fails with 403 "origin not allowed" | Frontend origin is not allowlisted | Set `APP_ORIGIN` to the canonical Vercel origin and add other frontend origins to `APP_ALLOWED_ORIGINS` |
+| Admin login says "Invalid email or password" | Account email/password do not match the initialized database account | Verify the configured account email and use the password set when the account was initialized; use the supported password-reset flow rather than resetting the production database |
 | 500 on first API call | `JWT_SECRET` missing | Set `JWT_SECRET` (32+ chars) in Render env |
 | Service never wakes / cold starts very slow | Free tier | First request after 15 min idle takes ~30s; this is expected |
 | `git push` rejected | GitHub token expired | `gh auth login`, then retry |
@@ -163,7 +148,8 @@ hybrid setup, more complex than just using Render end-to-end.
 | `DATABASE_DRIVER` | yes | `postgres` (render.yaml sets it) |
 | `DATABASE_URL` | yes | Injected from the Render database |
 | `JWT_SECRET` | yes | 32+ random characters |
-| `APP_ORIGIN` | yes | Your live `https://...onrender.com` URL |
+| `APP_ORIGIN` | yes | Canonical frontend origin, set to the Vercel production URL |
+| `APP_ALLOWED_ORIGINS` | no | Comma-separated additional exact frontend origins |
 | `ADMIN_EMAIL` | yes | Default `admin@local.test` |
 | `ADMIN_PASSWORD` | yes | Min 14 chars |
 | `SUPER_ADMIN_EMAIL` | yes | Default `globalminds@gmail.com` |

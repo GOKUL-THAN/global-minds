@@ -31,7 +31,7 @@ services:
     region: oregon        # change if you prefer a region closer to your users
     runtime: node
     branch: main
-    rootDir: WEBSITE GLOBALMINDS/demo1
+    rootDir: .
     buildCommand: npm install && npm --prefix server install && npm run build && npm --prefix server run build
     startCommand: node server/dist/index.js
     healthCheckPath: /health
@@ -42,10 +42,10 @@ services:
         value: production
       - key: PORT
         value: 10000        # Render injects its own port; this is a safe fallback
-      # The public URL of this service (Render assigns it on first deploy).
-      # Update APP_ORIGIN to the real https://<service-name>.onrender.com once created.
       - key: APP_ORIGIN
-        sync: false         # set manually after first deploy (see DEPLOY.md)
+        value: https://global-minds-beta.vercel.app
+      - key: APP_ALLOWED_ORIGINS
+        value: https://global-minds-git-main-website-1cc7.vercel.app,https://global-minds-website-1cc7.vercel.app,https://global-minds-academy.onrender.com
       # Database — Render injects the internal DATABASE_URL from the database above
       - key: DATABASE_DRIVER
         value: postgres

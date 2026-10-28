@@ -15,6 +15,7 @@ WEBSITE GLOBALMINDS/demo1/server/dist/
 
 # Secrets
 .env
+.env*.local
 WEBSITE GLOBALMINDS/demo1/.env
 WEBSITE GLOBALMINDS/demo1/server/.env
 WEBSITE GLOBALMINDS/demo1/server/data/*.sqlite

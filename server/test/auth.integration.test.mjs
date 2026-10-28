@@ -101,6 +101,7 @@ before(async () => {
     NODE_ENV: 'test',
     PORT: String(serverPort),
     APP_ORIGIN: 'http://localhost:5173',
+    APP_ALLOWED_ORIGINS: 'https://global-minds-git-main-website-1cc7.vercel.app',
     DATABASE_DRIVER: 'sqlite',
     DATABASE_PATH: databasePath,
     JWT_SECRET: 'phase-two-integration-secret-at-least-32-bytes',
@@ -176,6 +177,28 @@ before(async () => {
 after(async () => {
   await stopApi();
   if (temporaryDirectory) await rm(temporaryDirectory, { recursive: true, force: true });
+});
+
+test('allows configured Vercel origins and rejects unknown origins', async () => {
+  const allowedResponse = await fetch(`${baseUrl}/api/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Origin: 'https://global-minds-git-main-website-1cc7.vercel.app',
+    },
+    body: JSON.stringify({}),
+  });
+  assert.equal(allowedResponse.status, 400);
+
+  const blockedResponse = await fetch(`${baseUrl}/api/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Origin: 'https://untrusted.example',
+    },
+    body: JSON.stringify({}),
+  });
+  assert.equal(blockedResponse.status, 403);
 });
 
 test('auth routes enforce sessions, role permissions, expiry, and login throttling', async () => {

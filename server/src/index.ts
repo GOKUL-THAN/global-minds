@@ -75,6 +75,7 @@ app.use(cookieParser());
 
 const allowedOrigins = new Set([
   config.appOrigin,
+  ...config.appAllowedOrigins,
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   'http://localhost:5173',
