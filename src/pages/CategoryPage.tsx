@@ -19,14 +19,16 @@ export default function CategoryPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div
-        className="py-14 text-white"
-        style={{ background: `linear-gradient(135deg, ${category.color}dd, ${category.color}99)` }}
-      >
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Courses', href: '/courses' }, { label: category.title }]} className="text-white/60 mb-4" />
-          <h1 className="display-md text-white mb-3">{category.title}</h1>
-          <p className="text-white/80 max-w-xl">{category.description}</p>
+      <div className="page-hero-premium py-14">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Courses', href: '/courses' }, { label: category.title }]} className="mb-4" />
+          <div className="page-hero-badge mb-3">
+            <span>Specialized Domain</span>
+          </div>
+          <h1 className="page-hero-title display-md font-extrabold mb-3">
+            <span className="page-hero-highlight">{category.title}</span>
+          </h1>
+          <p className="page-hero-desc max-w-xl text-base sm:text-lg font-medium">{category.description}</p>
         </div>
       </div>
       <div className="container-xl py-12">
@@ -41,10 +43,10 @@ export default function CategoryPage() {
             {catCourses.map(c => <CourseCard key={c.id} course={c} />)}
           </div>
         ) : coursesLoading ? (
-          <p role="status" className="py-16 text-center text-surface-500">Loading courses...</p>
+          <p role="status" className="py-16 text-center text-surface-600 font-medium">Loading courses...</p>
         ) : coursesError ? null : (
-          <div className="text-center py-16 bg-surface-50 rounded-3xl">
-            <p className="text-surface-500 mb-4">
+          <div className="text-center py-16 bg-surface-50 border border-surface-200 rounded-3xl">
+            <p className="text-surface-600 font-medium mb-4">
               Courses for <strong>{category.title}</strong> are coming soon.
             </p>
             <Link to="/courses" className="btn-primary btn inline-flex">Browse All Courses</Link>

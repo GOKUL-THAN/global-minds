@@ -50,12 +50,12 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: siteConfig.socialLinks.linkedin, label: 'LinkedIn' },
-  { icon: Youtube, href: siteConfig.socialLinks.youtube, label: 'YouTube' },
-  { icon: Instagram, href: siteConfig.socialLinks.instagram, label: 'Instagram' },
-  { icon: Facebook, href: siteConfig.socialLinks.facebook, label: 'Facebook' },
-  { icon: Twitter, href: siteConfig.socialLinks.twitter, label: 'X (Twitter)' },
-  { icon: Github, href: siteConfig.socialLinks.github, label: 'GitHub' },
+  { icon: Linkedin, href: siteConfig.socialLinks.linkedin, label: 'LinkedIn', color: '#0A66C2' },
+  { icon: Youtube, href: siteConfig.socialLinks.youtube, label: 'YouTube', color: '#FF0000' },
+  { icon: Instagram, href: siteConfig.socialLinks.instagram, label: 'Instagram', color: '#E4405F' },
+  { icon: Facebook, href: siteConfig.socialLinks.facebook, label: 'Facebook', color: '#1877F2' },
+  { icon: Twitter, href: siteConfig.socialLinks.twitter, label: 'X (Twitter)', color: '#000000' },
+  { icon: Github, href: siteConfig.socialLinks.github, label: 'GitHub', color: '#181717' },
 ];
 
 export function Footer() {
@@ -80,7 +80,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-surface-950 text-surface-300">
+    <footer className="bg-white text-surface-700 border-t border-surface-200">
       {/* Main Footer */}
       <div className="container-xl pt-16 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
@@ -90,15 +90,15 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Global Minds Academy logo"
-                className="h-12 w-12 object-contain rounded-xl bg-white/10 p-1"
+                className="h-12 w-12 object-contain rounded-xl bg-surface-50 border border-surface-200 p-1"
                 onError={e => { e.currentTarget.style.display = 'none'; }}
               />
-              <span className="font-display font-extrabold text-xl text-white">
-                Global <span className="text-brand-400">Minds Academy</span>
+              <span className="font-display font-extrabold text-xl text-surface-900">
+                Global <span className="text-brand-600">Minds Academy</span>
               </span>
             </Link>
 
-            <p className="text-sm text-surface-400 leading-relaxed mb-6 max-w-xs">
+            <p className="text-sm text-surface-600 leading-relaxed mb-6 max-w-xs">
               {siteConfig.subTagline}
             </p>
 
@@ -106,42 +106,38 @@ export function Footer() {
             <div className="space-y-3 mb-6">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-2.5 text-sm hover:text-white transition-colors"
+                className="flex items-center gap-2.5 text-sm text-surface-700 hover:text-brand-700 transition-colors font-medium"
               >
-                <Phone className="w-4 h-4 text-brand-400 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-brand-600 flex-shrink-0" />
                 {siteConfig.phone}
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2.5 text-sm hover:text-white transition-colors"
+                className="flex items-center gap-2.5 text-sm text-surface-700 hover:text-brand-700 transition-colors font-medium"
               >
-                <Mail className="w-4 h-4 text-brand-400 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-brand-600 flex-shrink-0" />
                 {siteConfig.email}
               </a>
-              <div className="flex items-start gap-2.5 text-sm">
-                <MapPin className="w-4 h-4 text-brand-400 flex-shrink-0 mt-0.5" />
-                <span className="text-surface-400">
+              <div className="flex items-start gap-2.5 text-sm text-surface-600">
+                <MapPin className="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5" />
+                <span>
                   {siteConfig.address.city}, {siteConfig.address.state}, {siteConfig.address.country}
                 </span>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-wrap gap-2">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
+            <div className="flex flex-wrap gap-2.5">
+              {socialLinks.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className={cn(
-                    'w-9 h-9 rounded-xl bg-surface-800 hover:bg-brand-600',
-                    'flex items-center justify-center text-surface-400 hover:text-white',
-                    'transition-all duration-200',
-                  )}
+                  className="footer-social-link group w-9 h-9 rounded-xl bg-surface-100 hover:bg-surface-200 border border-surface-300 flex items-center justify-center transition-all duration-200 shadow-sm"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4" style={{ color }} />
                 </a>
               ))}
             </div>
@@ -150,15 +146,15 @@ export function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group} className="footer-link-group">
-              <h3 className="mb-4 hidden text-sm font-semibold text-white lg:block">{group}</h3>
+              <h3 className="mb-4 hidden text-sm font-bold text-surface-900 lg:block">{group}</h3>
               <details className="lg:hidden">
-                <summary className="cursor-pointer py-3 text-sm font-semibold text-white">{group}</summary>
+                <summary className="cursor-pointer py-3 text-sm font-bold text-surface-900">{group}</summary>
                 <ul className="space-y-2.5 pb-3">
                   {links.map(link => (
                     <li key={link.href}>
                       <Link
                         to={link.href}
-                        className="text-sm text-surface-400 hover:text-white hover:translate-x-0.5 transition-all duration-200 inline-block"
+                        className="text-sm text-surface-600 hover:text-brand-700 hover:translate-x-0.5 transition-all duration-200 inline-block font-medium"
                       >
                         {link.label}
                       </Link>
@@ -171,7 +167,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      className="text-sm text-surface-400 hover:text-white hover:translate-x-0.5 transition-all duration-200 inline-block"
+                      className="text-sm text-surface-600 hover:text-brand-700 hover:translate-x-0.5 transition-all duration-200 inline-block font-medium"
                     >
                       {link.label}
                     </Link>
@@ -183,17 +179,17 @@ export function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="mt-12 pt-10 border-t border-surface-800">
+        <div className="mt-12 pt-10 border-t border-surface-200">
           <div className="max-w-xl">
-            <h3 className="font-display font-bold text-white text-lg mb-2">
+            <h3 className="font-display font-bold text-surface-900 text-lg mb-2">
               Stay ahead with industry insights
             </h3>
-            <p className="text-sm text-surface-400 mb-4">
+            <p className="text-sm text-surface-600 mb-4">
               Get the latest on courses, certifications, tech trends and career tips.
             </p>
 
             {subscribed ? (
-              <p className="text-green-400 text-sm font-medium">
+              <p className="text-green-700 text-sm font-semibold">
                 ✓ You're subscribed! Thank you.
               </p>
             ) : (
@@ -205,8 +201,8 @@ export function Footer() {
                   placeholder="Enter your email"
                   required
                   className={cn(
-                    'flex-1 px-4 py-2.5 rounded-xl bg-surface-800 border border-surface-700',
-                    'text-white placeholder-surface-500 text-sm',
+                    'flex-1 px-4 py-2.5 rounded-xl bg-white border border-surface-300',
+                    'text-surface-900 placeholder:text-surface-400 text-sm',
                     'focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500',
                   )}
                   aria-label="Email address for newsletter"
@@ -214,22 +210,22 @@ export function Footer() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-semibold transition-colors disabled:opacity-50 flex items-center gap-2"
+                  className="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-semibold transition-colors disabled:opacity-50 flex items-center gap-2 shadow-sm"
                 >
                   <Send className="w-4 h-4" />
                   <span className="hidden sm:block">Subscribe</span>
                 </button>
               </form>
             )}
-            {subscribeError && <p role="alert" className="text-red-300 text-sm mt-2">{subscribeError}</p>}
+            {subscribeError && <p role="alert" className="text-red-600 text-sm mt-2">{subscribeError}</p>}
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-surface-800">
+      <div className="border-t border-surface-200">
         <div className="container-xl py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-surface-500 text-center sm:text-left">
+          <p className="text-xs text-surface-600 text-center sm:text-left font-medium">
             © {new Date().getFullYear()} Global Minds Academy. All rights reserved.
           </p>
 
@@ -243,7 +239,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-xs text-surface-500 hover:text-surface-300 transition-colors"
+                className="text-xs text-surface-600 hover:text-brand-700 transition-colors font-medium"
               >
                 {link.label}
               </Link>

@@ -69,8 +69,8 @@ export default function RegisterPage() {
             <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
           </Link>
           <h1 className="font-display font-bold text-2xl">Create Your Account</h1>
-          <p className="text-surface-500 mt-1">Join Global Minds Academy and start your learning journey.</p>
-          <p className="text-xs text-surface-400 mt-1">Student accounts require email verification before sign-in.</p>
+          <p className="text-surface-600 font-medium mt-1">Join Global Minds Academy and start your learning journey.</p>
+          <p className="text-xs text-surface-600 font-medium mt-1">Student accounts require email verification before sign-in.</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -169,27 +169,27 @@ export default function RegisterPage() {
           </div>
 
           <label className="flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" className="mt-0.5 w-4 h-4 text-brand-600 rounded" {...register('consent')} />
-            <span className="text-xs text-surface-500">
+            <input type="checkbox" className="mt-0.5 w-4 h-4 text-brand-600 rounded border-surface-300" {...register('consent')} />
+            <span className="text-xs text-surface-600 font-medium">
               I agree to the{' '}
-              <Link to="/terms" className="text-brand-600 hover:underline">Terms of Service</Link>{' '}
+              <Link to="/terms" className="text-brand-700 font-bold hover:underline">Terms of Service</Link>{' '}
               and{' '}
-              <Link to="/privacy-policy" className="text-brand-600 hover:underline">Privacy Policy</Link>,
+              <Link to="/privacy-policy" className="text-brand-700 font-bold hover:underline">Privacy Policy</Link>,
               and consent to being contacted by Global Minds Academy.
             </span>
           </label>
           {errors.consent && <p className="form-error">{errors.consent.message}</p>}
 
-          {error && <p className="text-sm text-red-500 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{error}</p>}
+          {error && <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{error}</p>}
 
           <button type="submit" disabled={isSubmitting} className="btn-primary btn w-full">
             {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Creating account...</> : 'Create Account'}
           </button>
         </form>
 
-        <p className="text-center text-sm text-surface-500 mt-6">
+        <p className="text-center text-sm text-surface-600 font-medium mt-6">
           Already have an account?{' '}
-          <Link to="/login" className="text-brand-600 hover:text-brand-700 font-semibold">Sign in</Link>
+          <Link to="/login" className="text-brand-700 hover:text-brand-800 font-bold">Sign in</Link>
         </p>
       </div>
     </div>

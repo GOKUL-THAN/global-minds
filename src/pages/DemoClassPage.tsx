@@ -110,26 +110,26 @@ export default function DemoClassPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-brand-700 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Free Demo Class' }]} className="text-white/50 mb-4" />
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Free Demo Class' }]} className="mb-4" />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm font-medium text-white/90 mb-6">
-                <Play className="w-4 h-4 text-yellow-400" />
-                100% Free — No Obligation
+              <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
+                <Play className="w-4 h-4 text-amber-300" />
+                100% Free Live Session — No Obligation
               </div>
-              <h1 className="display-lg text-white mb-6">
+              <h1 className="page-hero-title mb-6">
                 Book Your Free<br />
-                <span className="text-yellow-300">Demo Class</span>
+                <span className="page-hero-highlight">Demo Class</span>
               </h1>
-              <p className="text-white/70 text-lg mb-8">
+              <p className="page-hero-desc text-lg sm:text-xl mb-8 leading-relaxed">
                 Experience our teaching quality before enrolling. Attend a free live demo session with our expert trainers — ask questions, see the curriculum, and decide with confidence.
               </p>
               <ul className="space-y-3">
                 {benefits.map(b => (
-                  <li key={b} className="flex items-center gap-3 text-white/80">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <li key={b} className="flex items-center gap-3 text-surface-800 font-semibold text-sm sm:text-base">
+                    <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -137,7 +137,7 @@ export default function DemoClassPage() {
             </div>
 
             {/* Booking Form */}
-            <div ref={bookingFormRef} className="bg-white rounded-3xl p-8 text-surface-900 shadow-2xl">
+            <div ref={bookingFormRef} className="bg-white rounded-3xl p-8 text-surface-900 shadow-2xl border border-teal-500/20">
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -267,7 +267,7 @@ export default function DemoClassPage() {
                     <Button type="submit" fullWidth size="lg" disabled={submitting}>
                       {submitting ? <><Loader2 className="h-4 w-4 animate-spin" /> Registering...</> : 'Book Free Demo Now'}
                     </Button>
-                    <p className="text-xs text-surface-400 text-center">
+                    <p className="text-xs text-surface-600 text-center font-medium">
                       By submitting you agree to our Privacy Policy. We won't spam you.
                     </p>
                   </form>
@@ -283,29 +283,29 @@ export default function DemoClassPage() {
         <div className="container-xl">
           <div className="text-center mb-10">
             <h2 className="display-sm mb-3">Upcoming Demo Sessions</h2>
-            <p className="text-surface-500">Join a scheduled demo or book a private session.</p>
+            <p className="text-surface-600 font-medium">Join a scheduled demo or book a private session.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {upcomingDemos.map(d => (
-              <div key={d.course + d.date} className="bg-white rounded-2xl border border-surface-100 p-5 hover:shadow-card-md transition-shadow">
+              <div key={d.course + d.date} className="bg-white rounded-2xl border border-surface-200 p-5 hover:border-brand-300 hover:shadow-card-md transition-all">
                 <h3 className="font-semibold text-surface-900 mb-1">{d.course}</h3>
-                <p className="text-sm text-surface-500 mb-4">Trainer: {d.trainer}</p>
+                <p className="text-sm text-surface-600 font-medium mb-4">Trainer: {d.trainer}</p>
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2 text-sm text-surface-600">
-                    <Calendar className="w-4 h-4 text-brand-500" />
+                  <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
+                    <Calendar className="w-4 h-4 text-brand-600" />
                     {d.date}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-surface-600">
-                    <Clock className="w-4 h-4 text-brand-500" />
+                  <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
+                    <Clock className="w-4 h-4 text-brand-600" />
                     {d.time}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-surface-600">
-                    <Monitor className="w-4 h-4 text-brand-500" />
+                  <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
+                    <Monitor className="w-4 h-4 text-brand-600" />
                     {d.mode}
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Users className="w-4 h-4 text-brand-500" />
-                    <span className={d.seats <= 4 ? 'text-red-600 font-medium' : 'text-green-600'}>
+                    <Users className="w-4 h-4 text-brand-600" />
+                    <span className={d.seats <= 4 ? 'text-red-700 font-bold' : 'text-green-700 font-bold'}>
                       {d.seats} seats left
                     </span>
                   </div>
@@ -324,15 +324,15 @@ export default function DemoClassPage() {
         <div className="container-xl">
           <div className="text-center mb-10">
             <h2 className="display-sm mb-3">Demo Available For All Popular Courses</h2>
-            <p className="text-surface-500">Book a 1–1.5 hr free demo for any course below.</p>
+            <p className="text-surface-600 font-medium">Book a 1–1.5 hr free demo for any course below.</p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {popularDemoCourses.map(c => (
-              <div key={c.id} className="p-5 bg-surface-50 rounded-2xl hover:bg-brand-50 transition-colors group">
+              <div key={c.id} className="p-5 bg-surface-50 rounded-2xl border border-surface-200 hover:border-brand-300 hover:bg-brand-50/50 transition-all group">
                 <div className="text-3xl mb-3">{c.icon}</div>
                 <h3 className="font-semibold text-surface-900 group-hover:text-brand-700 mb-1">{c.title}</h3>
-                <p className="text-xs text-surface-500 mb-3">{c.category} · {c.duration} demo</p>
-                <span className="text-xs font-semibold text-brand-600">Free demo</span>
+                <p className="text-xs text-surface-600 font-medium mb-3">{c.category} · {c.duration} demo</p>
+                <span className="text-xs font-bold text-brand-700">Free demo</span>
               </div>
             ))}
           </div>
@@ -351,9 +351,9 @@ export default function DemoClassPage() {
               { q: 'What is covered in the demo?', a: 'The trainer covers course overview, curriculum highlights, career scope, real-world use cases, and answers all your queries.' },
               { q: 'Is it online or offline?', a: 'We offer both. Online demos happen via Zoom/Google Meet. Offline demos are available at our Chennai centre.' },
             ].map(faq => (
-              <div key={faq.q} className="bg-white rounded-2xl p-5 border border-surface-100">
+              <div key={faq.q} className="bg-white rounded-2xl p-5 border border-surface-200">
                 <h3 className="font-semibold text-surface-900 mb-2">{faq.q}</h3>
-                <p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p>
+                <p className="text-sm text-surface-700 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

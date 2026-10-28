@@ -22,14 +22,14 @@ export function FAQSection() {
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <p className="text-sm text-brand-600 font-semibold uppercase tracking-wider mb-3">
+            <p className="text-sm text-brand-700 font-bold uppercase tracking-wider mb-3">
               Common questions
             </p>
             <h2 className="display-md">
               Frequently Asked{' '}
               <span className="text-gradient">Questions</span>
             </h2>
-            <p className="text-surface-500 mt-4 max-w-xl mx-auto">
+            <p className="text-surface-700 font-medium mt-4 max-w-xl mx-auto">
               Course areas and hiring-partner information.
             </p>
           </div>
@@ -63,13 +63,13 @@ export function FAQSection() {
                     <ChevronDown
                       className={cn(
                         'h-5 w-5 shrink-0 transition-transform duration-200',
-                        isOpen ? 'rotate-180 text-brand-600' : 'text-surface-400',
+                        isOpen ? 'rotate-180 text-brand-600' : 'text-surface-600',
                       )}
                     />
                   </button>
                   {isOpen && (
                     <div className="px-5 pb-5 -mt-1">
-                      <p className="text-sm text-surface-600 leading-relaxed">
+                      <p className="text-sm text-surface-700 font-medium leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

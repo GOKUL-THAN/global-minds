@@ -48,8 +48,8 @@ export function StatsSection() {
                   : stat.value === '80%' ? <CountUp end={80} suffix="%" start={isVisible} />
                     : stat.value}
               </div>
-              <p className="mb-0.5 text-sm font-semibold text-surface-800">{stat.label}</p>
-              <p className="home-stat-detail text-sm text-surface-500">{stat.detail}</p>
+              <p className="mb-0.5 text-sm font-bold text-surface-900">{stat.label}</p>
+              <p className="home-stat-detail text-sm text-surface-600 font-medium">{stat.detail}</p>
             </motion.div>
           ))}
         </div>

@@ -74,12 +74,18 @@ export default function BatchSchedulePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Batch Schedule' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Upcoming Batch Schedules</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
-            Find the right batch that fits your schedule — weekday, weekend, or fast-track. Online, classroom, and hybrid options available.
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Batch Schedule' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            <Calendar className="w-4 h-4 text-teal-600" />
+            <span>Real-Time Enrollment Open</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Upcoming <span className="page-hero-highlight">Batch Schedules</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+            Find the right batch that fits your schedule — weekday, weekend, or fast-track. Online, classroom, and hybrid options available with personalized mentorship.
           </p>
         </div>
       </div>
@@ -92,13 +98,13 @@ export default function BatchSchedulePage() {
 
             {/* Mode */}
             <div className="flex items-center gap-1 flex-wrap">
-              <span className="text-xs text-surface-500 mr-1">Mode:</span>
+              <span className="text-xs font-bold text-surface-800 mr-1">Mode:</span>
               {(['All', 'Online', 'Classroom', 'Hybrid'] as Mode[]).map(m => (
                 <button
                   key={m}
                   onClick={() => setModeFilter(m)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                    modeFilter === m ? 'bg-brand-600 text-white' : 'bg-surface-100 text-surface-600 hover:bg-surface-200'
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+                    modeFilter === m ? 'bg-brand-700 text-white shadow-sm' : 'bg-white text-surface-700 border border-surface-200 hover:border-brand-500 hover:text-brand-800'
                   }`}
                 >
                   {m}
@@ -110,13 +116,13 @@ export default function BatchSchedulePage() {
 
             {/* Type */}
             <div className="flex items-center gap-1 flex-wrap">
-              <span className="text-xs text-surface-500 mr-1">Type:</span>
+              <span className="text-xs font-bold text-surface-800 mr-1">Type:</span>
               {(['All', 'Weekday', 'Weekend', 'Fast-Track'] as BatchType[]).map(t => (
                 <button
                   key={t}
                   onClick={() => setTypeFilter(t)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                    typeFilter === t ? 'bg-accent-600 text-white' : 'bg-surface-100 text-surface-600 hover:bg-surface-200'
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+                    typeFilter === t ? 'bg-accent-700 text-white shadow-sm' : 'bg-white text-surface-700 border border-surface-200 hover:border-brand-500 hover:text-brand-800'
                   }`}
                 >
                   {t}
@@ -128,17 +134,17 @@ export default function BatchSchedulePage() {
 
             {/* Category */}
             <div className="flex items-center gap-2">
-              <span className="text-xs text-surface-500">Category:</span>
+              <span className="text-xs font-bold text-surface-800">Category:</span>
               <select
                 value={categoryFilter}
                 onChange={e => setCategoryFilter(e.target.value)}
-                className="text-xs border border-surface-200 rounded-lg px-2 py-1.5 bg-white text-surface-700 focus:outline-none focus:ring-2 focus:ring-brand-300"
+                className="text-xs border border-surface-300 rounded-lg px-2 py-1.5 bg-white text-surface-800 font-medium focus:outline-none focus:ring-2 focus:ring-brand-500"
               >
                 {categories.map(c => <option key={c}>{c}</option>)}
               </select>
             </div>
 
-            <span className="ml-auto text-sm text-surface-500">{filtered.length} batch{filtered.length !== 1 ? 'es' : ''} found</span>
+            <span className="ml-auto text-sm text-surface-700 font-semibold">{filtered.length} batch{filtered.length !== 1 ? 'es' : ''} found</span>
           </div>
         </div>
       </div>
@@ -163,7 +169,7 @@ export default function BatchSchedulePage() {
                 return (
                   <div
                     key={batch.id}
-                    className="bg-white rounded-2xl border border-surface-100 p-5 hover:shadow-card-md transition-shadow"
+                    className="bg-white rounded-2xl border border-surface-200 p-5 hover:border-brand-300 hover:shadow-card-md transition-all"
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                       {/* Info */}
@@ -173,32 +179,32 @@ export default function BatchSchedulePage() {
                             <div className="flex items-center gap-2 flex-wrap mb-1">
                               <h3 className="font-display font-bold text-surface-900">{batch.course}</h3>
                               {batch.badge && (
-                                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${badgeColor(batch.badge)}`}>
+                                <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${badgeColor(batch.badge)}`}>
                                   {batch.badge}
                                 </span>
                               )}
                             </div>
-                            <p className="text-sm text-surface-500">{batch.category} · Trainer: {batch.instructor}</p>
+                            <p className="text-sm text-surface-600 font-medium">{batch.category} · Trainer: {batch.instructor}</p>
                           </div>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-                          <div className="flex items-center gap-2 text-sm text-surface-600">
-                            <Calendar className="w-4 h-4 text-brand-500 flex-shrink-0" />
+                          <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
+                            <Calendar className="w-4 h-4 text-brand-600 flex-shrink-0" />
                             <span>{new Date(batch.startDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-surface-600">
-                            <Clock className="w-4 h-4 text-brand-500 flex-shrink-0" />
+                          <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
+                            <Clock className="w-4 h-4 text-brand-600 flex-shrink-0" />
                             <span>{batch.time}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-surface-600">
+                          <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
                             {batch.mode === 'Classroom' ? (
-                              <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
+                              <MapPin className="w-4 h-4 text-brand-600 flex-shrink-0" />
                             ) : (
-                              <Monitor className="w-4 h-4 text-brand-500 flex-shrink-0" />
+                              <Monitor className="w-4 h-4 text-brand-600 flex-shrink-0" />
                             )}
                             <span>{batch.mode === 'Both' ? 'Online + Classroom' : batch.mode}</span>                          </div>
-                          <div className="flex items-center gap-2 text-sm text-surface-600">
-                            <Users className="w-4 h-4 text-brand-500 flex-shrink-0" />
+                          <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
+                            <Users className="w-4 h-4 text-brand-600 flex-shrink-0" />
                             <span>{batch.days}</span>
                           </div>
                         </div>
@@ -208,15 +214,15 @@ export default function BatchSchedulePage() {
                       <div className="flex flex-row lg:flex-col items-center lg:items-end gap-4 lg:gap-2 flex-shrink-0">
                         <div className="text-right">
                           <div className="font-display font-bold text-xl text-surface-900">{batch.fee}</div>
-                          <div className="text-xs text-surface-400">{batch.duration} · {batch.type}</div>
+                          <div className="text-xs text-surface-600 font-medium">{batch.duration} · {batch.type}</div>
                         </div>
-                        <div className={`text-xs font-medium px-2.5 py-1 rounded-full ${sc}`}>
+                        <div className={`text-xs font-semibold px-2.5 py-1 rounded-full ${sc}`}>
                           {batch.seatsLeft} seats left
                         </div>
                         {/* Seat bar */}
                         <div className="w-24 bg-surface-100 rounded-full h-1.5">
                           <div
-                            className={`h-1.5 rounded-full ${seatsLeftPct <= 0.2 ? 'bg-red-500' : seatsLeftPct <= 0.5 ? 'bg-orange-400' : 'bg-green-400'}`}
+                            className={`h-1.5 rounded-full ${seatsLeftPct <= 0.2 ? 'bg-red-500' : seatsLeftPct <= 0.5 ? 'bg-orange-400' : 'bg-green-500'}`}
                             style={{ width: `${seatsLeftPct * 100}%` }}
                           />
                         </div>
@@ -245,10 +251,10 @@ export default function BatchSchedulePage() {
               { icon: '📹', title: 'Recorded Sessions', desc: 'All live classes recorded — watch at your own pace.' },
               { icon: '🤝', title: 'Doubt Sessions', desc: 'Weekend doubt-clearing sessions included for every batch.' },
             ].map(b => (
-              <div key={b.title} className="p-6 rounded-2xl bg-surface-50">
+              <div key={b.title} className="p-6 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-300 transition-all">
                 <div className="text-3xl mb-3">{b.icon}</div>
                 <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
-                <p className="text-sm text-surface-500">{b.desc}</p>
+                <p className="text-sm text-surface-600 leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>

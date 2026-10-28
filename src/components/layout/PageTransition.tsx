@@ -20,7 +20,7 @@ export function PageTransition({ children, className }: { children: ReactNode; c
     }, { threshold: 0.08, rootMargin: '0px 0px -7% 0px' });
 
     const observed = new WeakSet<HTMLElement>();
-    const targetSelector = 'section, article, .grid, tbody tr';
+    const targetSelector = 'section:not(.home-hero), article, .grid, tbody tr';
     const registerTarget = (target: HTMLElement) => {
       if (observed.has(target)) return;
       observed.add(target);

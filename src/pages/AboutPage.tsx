@@ -34,17 +34,20 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
 
       {/* ── Hero ───────────────────────────────────────── */}
-      <div className="bg-gradient-to-br from-surface-950 via-brand-950 to-surface-900 text-white py-20">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'About Us' }]} className="text-white/50 mb-4" />
+      <div className="page-hero-premium py-20 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'About Us' }]} className="mb-4" />
           <div className="max-w-4xl">
-            <h1 className="display-lg text-white mb-6">
-              Building Skills today for <span className="text-gradient">Tomorrow&apos;s Leaders</span>
+            <div className="page-hero-badge mb-4">
+              Empowering IT Careers • Chennai &amp; Global
+            </div>
+            <h1 className="page-hero-title mb-6">
+              Building Skills Today for <span className="page-hero-highlight">Tomorrow&apos;s Leaders</span>
             </h1>
-            <p className="max-w-3xl text-lg leading-relaxed text-white/70">
+            <p className="page-hero-desc max-w-3xl text-lg sm:text-xl leading-relaxed mb-4">
               At Global Minds Academy, we offer specialized training programs designed to meet industry standards and future career demands. Our courses include advanced IT technologies such as Python, Java, React JS, Node.js, AWS, Data Science, Data Warehousing, Blockchain, Dot Net, Selenium, Hadoop, Tableau, Power BI, and more.
             </p>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/60">
+            <p className="max-w-3xl text-base leading-relaxed text-surface-700 font-semibold">
               All programs are industry-oriented, certification-backed, and come with 100% placement opportunity.
             </p>
           </div>
@@ -59,7 +62,7 @@ export default function AboutPage() {
               <div key={s.label} className={`p-6 rounded-2xl ${s.color}`}>
                 <s.icon className="w-7 h-7 mx-auto mb-2" />
                 <div className="text-3xl font-black">{s.value}</div>
-                <div className="text-xs font-medium mt-1 opacity-80">{s.label}</div>
+                <div className="text-sm font-bold mt-1 text-surface-800">{s.label}</div>
               </div>
             ))}
           </div>
@@ -70,16 +73,16 @@ export default function AboutPage() {
         <div className="container-xl">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-600">Why Global Minds</p>
-              <h2 className="display-md mb-4">Designed for real-world growth</h2>
-              <p className="text-lg leading-relaxed text-surface-600">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-700">Why Global Minds</p>
+              <h2 className="display-md text-surface-900 mb-4">Designed for real-world growth</h2>
+              <p className="text-lg leading-relaxed text-surface-700">
                 We help learners build job-ready skills through practical, industry-led training and mentor support.
               </p>
             </div>
             <div className="rounded-3xl border border-brand-200 bg-white p-6 shadow-[0_20px_40px_-10px_rgba(13,148,136,0.12)]">
               <img src="/logo.png" alt="Global Minds Academy emblem" className="mx-auto mb-6 h-28 w-28 object-contain" />
               <h3 className="text-center text-2xl font-black tracking-[0.12em] text-surface-900">GLOBAL MINDS ACADEMY</h3>
-              <p className="mt-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
+              <p className="mt-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
                 Build Skills | Own the Future
               </p>
             </div>
@@ -94,7 +97,7 @@ export default function AboutPage() {
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="text-lg font-extrabold text-surface-900">{feature.title}</div>
-                  <div className="mt-2 text-sm font-medium text-surface-500">{feature.description}</div>
+                  <div className="mt-2 text-sm font-medium text-surface-600">{feature.description}</div>
                 </div>
               );
             })}

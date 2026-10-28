@@ -102,7 +102,7 @@ export function ForgotPasswordPage() {
   return (
     <AuthPageShell title="Reset your password">
       <form onSubmit={submit} className="space-y-4">
-        <p className="text-sm text-surface-500">Enter your account email. If an active account exists, we’ll send a time-limited reset link.</p>
+        <p className="text-sm text-surface-600 font-medium">Enter your account email. If an active account exists, we’ll send a time-limited reset link.</p>
         <div>
           <label className="form-label" htmlFor="recovery-email">Email</label>
           <input id="recovery-email" className="form-input" type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} />
@@ -111,7 +111,7 @@ export function ForgotPasswordPage() {
         <button className="btn-primary btn w-full justify-center" type="submit" disabled={loading}>
           {loading ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</> : 'Send reset link'}
         </button>
-        <p className="text-center text-sm"><Link to="/login" className="text-brand-600 hover:underline">Back to sign in</Link></p>
+        <p className="text-center text-sm"><Link to="/login" className="text-brand-700 font-semibold hover:underline">Back to sign in</Link></p>
       </form>
     </AuthPageShell>
   );
@@ -158,7 +158,7 @@ export function ResetPasswordPage() {
   return (
     <AuthPageShell title="Choose a new password">
       <form onSubmit={submit} className="space-y-4">
-        <p className="text-sm text-surface-500">Use a password at least 12 characters long. Reset links expire after 30 minutes.</p>
+        <p className="text-sm text-surface-600 font-medium">Use a password at least 12 characters long. Reset links expire after 30 minutes.</p>
         <div>
           <label className="form-label" htmlFor="new-password">New password</label>
           <input id="new-password" className="form-input" type="password" autoComplete="new-password" minLength={12} maxLength={72} required disabled={!token} value={password} onChange={event => setPassword(event.target.value)} />

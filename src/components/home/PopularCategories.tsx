@@ -33,7 +33,7 @@ export function PopularCategories() {
           <h2 className="display-md text-surface-900">
             <span className="text-gradient">Courses</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-lg text-surface-500">
+          <p className="mx-auto mt-4 max-w-4xl text-lg text-surface-700 font-medium">
             AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
           </p>
         </div>
@@ -57,7 +57,7 @@ export function PopularCategories() {
                 <div className={cn('mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/80 shadow-sm', styles.iconBg, styles.iconColor)}>
                   <Icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-2xl font-semibold text-surface-900 transition-colors group-hover:text-brand-600">
+                <h3 className="text-2xl font-semibold text-surface-900 transition-colors group-hover:text-brand-700">
                   {course.title}
                 </h3>
               </Link>

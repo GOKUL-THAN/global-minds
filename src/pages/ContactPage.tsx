@@ -43,11 +43,23 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Contact' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Contact Us</h1>
-          <p className="text-white/70 text-lg">Get in touch with our team for course enquiries, career counseling, corporate training or general questions.</p>
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Contact' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            Connect With Our Advisors • 24hr Turnaround
+          </div>
+          <h1 className="page-hero-title mb-4">
+            Get in <span className="page-hero-highlight">Touch</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl leading-relaxed">
+            Get in touch with our team for course enquiries, career counseling, corporate training or general questions.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <div className="page-hero-chip">Free 1-on-1 Consultation</div>
+            <div className="page-hero-chip">Instant WhatsApp Connect</div>
+            <div className="page-hero-chip">Campus Visits Welcome</div>
+          </div>
         </div>
       </div>
 
@@ -64,11 +76,11 @@ export default function ContactPage() {
                       <c.icon className="w-5 h-5 text-brand-600" />
                     </div>
                     <div>
-                      <p className="text-xs text-surface-400 font-medium">{c.label}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-surface-600">{c.label}</p>
                       {c.href ? (
-                        <a href={c.href} className="text-surface-900 font-semibold hover:text-brand-600 transition-colors">{c.value}</a>
+                        <a href={c.href} className="text-surface-900 font-bold hover:text-brand-700 transition-colors">{c.value}</a>
                       ) : (
-                        <p className="text-surface-900 font-semibold">{c.value}</p>
+                        <p className="text-surface-900 font-bold">{c.value}</p>
                       )}
                     </div>
                   </div>
@@ -81,14 +93,13 @@ export default function ContactPage() {
                   <MapPin className="w-5 h-5 text-brand-600" />
                 </div>
                 <div>
-                  <p className="text-xs text-surface-400 font-medium mb-1">Address</p>
-                  <p className="text-surface-900 font-semibold">{siteConfig.address.line1}</p>
-                  <p className="text-surface-500 text-sm">{siteConfig.address.city}, {siteConfig.address.state}, {siteConfig.address.country}</p>
-                  <p className="text-surface-400 text-xs mt-1">PLACEHOLDER — update with real address</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-surface-600 mb-1">Address</p>
+                  <p className="text-surface-900 font-bold">{siteConfig.address.line1}</p>
+                  <p className="text-surface-700 text-sm">{siteConfig.address.city}, {siteConfig.address.state}, {siteConfig.address.country}</p>
                 </div>
               </div>
 
-              <p className="text-surface-400 text-sm">Response within 24 hours on business days.</p>
+              <p className="text-surface-600 text-sm font-medium">Response within 24 hours on business days.</p>
             </div>
 
             {/* Form */}

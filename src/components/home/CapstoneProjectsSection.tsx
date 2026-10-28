@@ -32,11 +32,11 @@ export function CapstoneProjectsSection() {
       <div className="container-xl">
         <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Real-world capstone portfolio</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-700">Real-world capstone portfolio</p>
             <h2 className="display-md text-surface-900">
               Explore Industry <span className="text-gradient">Capstone Projects</span>
             </h2>
-            <p className="mt-3 max-w-2xl leading-relaxed text-surface-500">
+            <p className="mt-3 max-w-2xl leading-relaxed text-surface-600">
               Apply your skills to guided, practical projects across development, data science and cloud technologies.
             </p>
           </div>
@@ -54,12 +54,12 @@ export function CapstoneProjectsSection() {
                 <Code2 className="h-14 w-14 opacity-80" aria-hidden="true" />
               </div>
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">{project.course}</p>
+                <p className="text-xs font-bold uppercase tracking-wide text-brand-700">{project.course}</p>
                 <h3 className="mt-2 font-display text-lg font-bold text-surface-900">{project.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-surface-600">{project.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-surface-700">{project.description}</p>
                 <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
                   {project.tools.map(tool => (
-                    <li key={tool} className="rounded-full border border-surface-200 bg-surface-50 px-2.5 py-1 text-xs text-surface-600">
+                    <li key={tool} className="rounded-full border border-surface-200 bg-surface-50 px-2.5 py-1 text-xs font-medium text-surface-700">
                       {tool}
                     </li>
                   ))}

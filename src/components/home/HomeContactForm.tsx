@@ -63,7 +63,7 @@ export function HomeContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="rounded-2xl border border-amber-100 bg-white p-6 shadow-sm sm:p-8">
       <div className="mb-6">
         <h3 className="font-display text-2xl font-bold text-surface-900">Send Us a Message</h3>
-        <p className="mt-3 text-surface-500">
+        <p className="mt-3 text-surface-600 leading-relaxed">
           Have questions about our bootcamps, fees, or batch timings? Drop us a message!
         </p>
       </div>

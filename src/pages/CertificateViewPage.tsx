@@ -44,15 +44,15 @@ export default function CertificateViewPage() {
         </div>
         <article className={`border-8 bg-white p-8 text-center shadow-card sm:p-16 ${certificate.valid ? 'border-brand-200' : 'border-red-200'}`}>
           <Award className={`mx-auto h-14 w-14 ${certificate.valid ? 'text-brand-600' : 'text-red-600'}`} />
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.25em] text-surface-500">Global Minds Academy</p>
+          <p className="mt-6 text-sm font-bold uppercase tracking-[0.25em] text-surface-700">Global Minds Academy</p>
           <h1 className="mt-5 font-display text-3xl font-bold text-surface-900 sm:text-5xl">Certificate of Achievement</h1>
-          <p className="mt-8 text-surface-600">This certifies that</p>
+          <p className="mt-8 text-surface-700 font-medium">This certifies that</p>
           <p className="mt-2 font-display text-3xl font-semibold text-brand-800">{certificate.studentName}</p>
-          <p className="mt-6 text-surface-600">has successfully completed</p>
-          <p className="mt-2 text-2xl font-semibold text-surface-900">{certificate.courseName}</p>
-          <p className="mt-8 text-sm text-surface-500">Issued {new Date(certificate.issuedAt).toLocaleDateString()}</p>
-          <p className="mt-2 text-xs text-surface-500">Certificate ID: {certificate.certificateId}</p>
-          <p className={`mt-6 text-sm font-semibold uppercase tracking-wide ${certificate.valid ? 'text-green-700' : 'text-red-700'}`}>{certificate.valid ? 'Verified and valid' : 'Revoked — not valid'}</p>
+          <p className="mt-6 text-surface-700 font-medium">has successfully completed</p>
+          <p className="mt-2 text-2xl font-bold text-surface-900">{certificate.courseName}</p>
+          <p className="mt-8 text-sm text-surface-600 font-medium">Issued {new Date(certificate.issuedAt).toLocaleDateString()}</p>
+          <p className="mt-2 text-xs text-surface-600 font-medium">Certificate ID: {certificate.certificateId}</p>
+          <p className={`mt-6 text-sm font-bold uppercase tracking-wide ${certificate.valid ? 'text-green-700' : 'text-red-700'}`}>{certificate.valid ? 'Verified and valid' : 'Revoked — not valid'}</p>
         </article>
       </div>
     </main>

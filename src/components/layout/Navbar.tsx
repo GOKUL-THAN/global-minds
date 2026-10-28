@@ -126,7 +126,7 @@ export function Navbar() {
   const renderDesktopItem = (item: MenuItem) => {
     const active = isRouteActive(item.href);
     const hasChildren = item.children.some(child => child.visible);
-    const buttonStyle = item.id === 'courses'
+    const buttonStyle = active
       ? 'bg-brand-600 text-white shadow-sm hover:bg-brand-700'
       : 'text-surface-700 hover:text-brand-600 hover:bg-brand-50';
     if (!hasChildren) {
@@ -134,7 +134,7 @@ export function Navbar() {
         <SiteLink
           key={item.id}
           href={item.href}
-          className={cn('flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors', buttonStyle, active && 'text-brand-700 bg-brand-50')}
+          className={cn('flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors', buttonStyle)}
         >
           <MenuImage src={item.icon} className="h-5 w-5 rounded object-contain" />
           {item.label}
@@ -150,7 +150,7 @@ export function Navbar() {
           type="button"
           onClick={() => { setOpenDropdown(isOpen ? null : item.id); setMoreMenuOpen(false); }}
           onMouseEnter={() => { setOpenDropdown(item.id); setMoreMenuOpen(false); }}
-          className={cn('flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors', buttonStyle, (isOpen || active) && (item.id === 'courses' ? 'bg-brand-700' : 'text-brand-700 bg-brand-50'))}
+          className={cn('flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors', buttonStyle, isOpen && !active && 'bg-brand-50 text-brand-700')}
           aria-label={`Open ${item.label} submenu`}
           aria-expanded={isOpen}
           aria-haspopup="true"
@@ -182,7 +182,7 @@ export function Navbar() {
               <div className={`grid gap-4`} style={{ gridTemplateColumns: `repeat(${Math.min(groups.size, 4)}, 1fr)` }}>
                 {Array.from(groups.entries()).map(([groupName, groupChildren]) => (
                   <div key={groupName}>
-                    <p className="mb-2 px-2 text-[11px] font-bold uppercase tracking-wider text-brand-600">{groupName}</p>
+                    <p className="mb-2 px-2 text-xs font-bold uppercase tracking-wider text-brand-800">{groupName}</p>
                     <div className="space-y-0.5">
                       {groupChildren.map(child => (
                         <SiteLink
@@ -206,7 +206,7 @@ export function Navbar() {
               className="absolute left-0 top-full z-50 mt-2 max-h-[min(70vh,36rem)] w-80 max-w-[90vw] overflow-y-auto rounded-xl border border-surface-100 bg-white p-2 shadow-card-lg"
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <p className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-surface-500">{item.label}</p>
+              <p className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-surface-800">{item.label}</p>
               {visibleChildren.map(child => (
                 <SiteLink
                   key={child.id}
@@ -318,9 +318,9 @@ export function Navbar() {
         scrolled ? 'bg-white shadow-card' : 'bg-white',
       )}
     >
-      <div className="container-xl">
+      <div className="mx-auto max-w-screen-2xl px-2 sm:px-3 lg:px-4">
         <div className="flex h-16 items-center justify-between lg:h-18">
-          <Link to="/" className="-ml-1 flex shrink-0 items-center gap-2.5" aria-label="Global Minds Academy home">
+          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Global Minds Academy home">
             <img
               src={siteConfig.logoUrl}
               alt="Global Minds Academy logo"
@@ -329,7 +329,7 @@ export function Navbar() {
             />
             <span className="whitespace-nowrap font-display text-base font-extrabold tracking-tight sm:text-lg">
               <span className="text-[#164e59]">Global</span>{' '}
-              <span className="text-[#53b5ba]">Minds Academy</span>
+              <span className="text-[#176c73]">Minds Academy</span>
             </span>
           </Link>
 
@@ -339,7 +339,7 @@ export function Navbar() {
               className={cn(
                 'flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                 location.pathname === '/'
-                  ? 'text-brand-700 bg-brand-50'
+                  ? 'bg-brand-600 text-white shadow-sm hover:bg-brand-700'
                   : 'text-surface-700 hover:text-brand-600 hover:bg-brand-50',
               )}
               aria-current={location.pathname === '/' ? 'page' : undefined}
@@ -394,7 +394,7 @@ export function Navbar() {
           <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
             <Link
               to="/courses"
-              className="inline-flex items-center gap-1.5 rounded-lg p-2 text-surface-500 transition-colors hover:bg-brand-50 hover:text-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              className="inline-flex items-center gap-1.5 rounded-lg p-2 text-surface-700 font-medium transition-colors hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
               aria-label="Search courses"
             >
               <Search className="h-5 w-5" />
@@ -457,7 +457,7 @@ export function Navbar() {
               <Link
                 to="/courses"
                 onClick={() => setMobileOpen(false)}
-                className="mb-4 flex items-center gap-3 rounded-xl bg-surface-50 p-3 text-surface-600"
+                className="mb-4 flex items-center gap-3 rounded-xl bg-surface-50 p-3 text-surface-700 font-medium border border-surface-200"
               >
                 <Search className="h-5 w-5" />
                 <span className="text-sm">Search courses...</span>
@@ -478,7 +478,7 @@ export function Navbar() {
                 {primaryItems.map(renderMobileItem)}
                 {moreItems.length > 0 && (
                   <section className="pt-3">
-                    <h2 className="px-3 py-2 text-xs font-bold uppercase tracking-wide text-surface-500">More</h2>
+                    <h2 className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-surface-800">More</h2>
                     {moreItems.map(renderMobileItem)}
                   </section>
                 )}

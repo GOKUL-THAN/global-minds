@@ -116,18 +116,18 @@ function CourseRecommendation({ topicId, score, total }: { topicId: string; scor
   };
   const course = courseMap[topicId];
   return (
-    <div className="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+    <div className="bg-brand-50 rounded-2xl p-6 border border-brand-200">
       <h3 className="font-semibold text-surface-900 mb-2">Recommended Next Step</h3>
       {pct >= 80 ? (
-        <p className="text-surface-600 text-sm mb-4">
+        <p className="text-surface-700 font-medium text-sm mb-4 leading-relaxed">
           You have a strong foundation in {topic?.title}. Take the advanced course to become an expert.
         </p>
       ) : pct >= 50 ? (
-        <p className="text-surface-600 text-sm mb-4">
+        <p className="text-surface-700 font-medium text-sm mb-4 leading-relaxed">
           You have a basic understanding. Our {topic?.title} course will fill the gaps and make you job-ready.
         </p>
       ) : (
-        <p className="text-surface-600 text-sm mb-4">
+        <p className="text-surface-700 font-medium text-sm mb-4 leading-relaxed">
           This is a great starting point! Our beginner-friendly {topic?.title} course is perfect for you.
         </p>
       )}
@@ -202,13 +202,23 @@ export default function SkillAssessmentPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Skill Assessment' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Free Skill Assessment</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
-            Test your existing knowledge, identify your skill gaps, and get personalised course recommendations — all for free.
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Skill Assessment' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            Interactive Knowledge Check • 100% Free
+          </div>
+          <h1 className="page-hero-title mb-4">
+            Free <span className="page-hero-highlight">Skill Assessment</span>
+          </h1>
+          <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
+            Test your existing knowledge, identify your skill gaps, and get personalised course recommendations — all in 10 minutes or less.
           </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <div className="page-hero-chip">6 Tech Domains</div>
+            <div className="page-hero-chip">Instant Score & Feedback</div>
+            <div className="page-hero-chip">Tailored Course Guidance</div>
+          </div>
         </div>
       </div>
 
@@ -220,28 +230,28 @@ export default function SkillAssessmentPage() {
             <>
               <div className="text-center mb-10">
                 <h2 className="display-sm mb-3">Choose a Topic to Assess</h2>
-                <p className="text-surface-500">Each quiz has 10 questions and takes about 10 minutes. Results are instant.</p>
+                <p className="text-surface-600 font-medium">Each quiz has 10 questions and takes about 10 minutes. Results are instant.</p>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {quizTopics.map(topic => (
                   <button
                     key={topic.id}
                     onClick={() => handleStart(topic.id)}
-                    className="text-left p-6 bg-white border-2 border-surface-100 rounded-2xl hover:border-brand-400 hover:shadow-card-md transition-all group"
+                    className="text-left p-6 bg-white border-2 border-surface-200 rounded-2xl hover:border-brand-500 hover:shadow-card-md transition-all group"
                   >
                     <div className="text-3xl mb-3">{topic.icon}</div>
                     <h3 className="font-display font-bold text-surface-900 group-hover:text-brand-700 mb-1">{topic.title}</h3>
-                    <p className="text-sm text-surface-500 mb-3">{topic.questions} questions · {topic.duration}</p>
-                    <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
-                      topic.level === 'Beginner' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+                    <p className="text-sm text-surface-600 font-medium mb-3">{topic.questions} questions · {topic.duration}</p>
+                    <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${
+                      topic.level === 'Beginner' ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
                     }`}>
                       {topic.level}
                     </span>
                   </button>
                 ))}
               </div>
-              <div className="mt-10 bg-surface-50 rounded-2xl p-6 text-center">
-                <p className="text-surface-600 mb-4">Want a personalised career assessment by an expert counsellor?</p>
+              <div className="mt-10 bg-surface-50 border border-surface-200 rounded-2xl p-6 text-center">
+                <p className="text-surface-700 font-medium mb-4">Want a personalised career assessment by an expert counsellor?</p>
                 <Link to="/contact">
                   <Button variant="secondary">Talk to a Career Advisor</Button>
                 </Link>
@@ -255,23 +265,23 @@ export default function SkillAssessmentPage() {
               {/* Progress */}
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-surface-700">
+                  <span className="text-sm font-bold text-surface-800">
                     Question {currentQ + 1} of {questions.length}
                   </span>
-                  <button onClick={handleReset} className="text-sm text-surface-400 hover:text-surface-700 flex items-center gap-1">
+                  <button onClick={handleReset} className="text-sm font-semibold text-surface-600 hover:text-surface-900 flex items-center gap-1">
                     <RotateCcw className="w-3.5 h-3.5" /> Change topic
                   </button>
                 </div>
                 <div className="w-full bg-surface-100 rounded-full h-2">
                   <div
-                    className="bg-brand-500 h-2 rounded-full transition-all duration-300"
+                    className="bg-brand-600 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${((currentQ + 1) / questions.length) * 100}%` }}
                   />
                 </div>
               </div>
 
               {/* Question */}
-              <div className="bg-white rounded-2xl border border-surface-100 p-8 shadow-card-sm">
+              <div className="bg-white rounded-2xl border border-surface-200 p-8 shadow-card-sm">
                 <h2 className="font-display font-bold text-xl text-surface-900 mb-6">
                   {questions[currentQ].question}
                 </h2>
@@ -279,32 +289,32 @@ export default function SkillAssessmentPage() {
                   {questions[currentQ].options.map((option, idx) => {
                     let cls = 'w-full text-left p-4 rounded-xl border-2 text-sm font-medium transition-all ';
                     if (selectedOption === null) {
-                      cls += 'border-surface-200 hover:border-brand-400 hover:bg-brand-50 cursor-pointer';
+                      cls += 'border-surface-200 hover:border-brand-500 hover:bg-brand-50 cursor-pointer text-surface-900';
                     } else if (idx === questions[currentQ].correct) {
-                      cls += 'border-green-500 bg-green-50 text-green-800';
+                      cls += 'border-green-600 bg-green-50 text-green-900 font-semibold';
                     } else if (idx === selectedOption) {
-                      cls += 'border-red-400 bg-red-50 text-red-800';
+                      cls += 'border-red-500 bg-red-50 text-red-900 font-semibold';
                     } else {
-                      cls += 'border-surface-200 bg-surface-50 text-surface-400 cursor-default';
+                      cls += 'border-surface-200 bg-surface-50 text-surface-500 cursor-default';
                     }
                     return (
                       <button key={idx} className={cls} onClick={() => handleAnswer(idx)}>
                         <div className="flex items-center gap-3">
                           <span className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs font-bold flex-shrink-0 ${
                             selectedOption !== null && idx === questions[currentQ].correct
-                              ? 'border-green-500 bg-green-500 text-white'
+                              ? 'border-green-600 bg-green-600 text-white'
                               : selectedOption === idx && idx !== questions[currentQ].correct
-                                ? 'border-red-400 bg-red-400 text-white'
+                                ? 'border-red-500 bg-red-500 text-white'
                                 : 'border-surface-300'
                           }`}>
                             {['A', 'B', 'C', 'D'][idx]}
                           </span>
                           <span>{option}</span>
                           {selectedOption !== null && idx === questions[currentQ].correct && (
-                            <CheckCircle className="w-4 h-4 text-green-500 ml-auto flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-green-600 ml-auto flex-shrink-0" />
                           )}
                           {selectedOption === idx && idx !== questions[currentQ].correct && (
-                            <XCircle className="w-4 h-4 text-red-500 ml-auto flex-shrink-0" />
+                            <XCircle className="w-4 h-4 text-red-600 ml-auto flex-shrink-0" />
                           )}
                         </div>
                       </button>
@@ -313,9 +323,9 @@ export default function SkillAssessmentPage() {
                 </div>
 
                 {showExplanation && (
-                  <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
-                    <p className="text-sm text-blue-800">
-                      <strong>Explanation:</strong> {questions[currentQ].explanation}
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+                    <p className="text-sm text-blue-900 font-medium">
+                      <strong className="font-bold">Explanation:</strong> {questions[currentQ].explanation}
                     </p>
                   </div>
                 )}
@@ -331,7 +341,7 @@ export default function SkillAssessmentPage() {
           {/* Results */}
           {state === 'result' && (
             <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-3xl border border-surface-100 p-8 shadow-card-lg text-center mb-8">
+              <div className="bg-white rounded-3xl border border-surface-200 p-8 shadow-card-lg text-center mb-8">
                 <div className="w-24 h-24 rounded-full bg-brand-50 flex items-center justify-center mx-auto mb-6 relative">
                   <Award className="w-12 h-12 text-brand-600" />
                 </div>
@@ -341,7 +351,7 @@ export default function SkillAssessmentPage() {
                 <div className="text-xl mb-2">
                   <ScoreBadge score={score} total={questions.length} />
                 </div>
-                <p className="text-surface-500 mb-6">
+                <p className="text-surface-600 font-medium mb-6">
                   You answered {score} out of {questions.length} questions correctly ({Math.round((score / questions.length) * 100)}%).
                 </p>
                 <div className="flex gap-3 justify-center flex-wrap">

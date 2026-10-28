@@ -11,7 +11,7 @@ const homepageMasterProgramImages: Record<string, string> = {
   'freshers-master-program': '/images/master-programs/freshers-master-program.jpg',
   'full-stack-master-program': '/images/master-programs/full-stack-master-program.jpg',
   'ai-ml-master-program': '/images/master-programs/data-science-master-program.jpg',
-  'data-science-business-intelligence': '/images/master-programs/data-science-master-program.jpg',
+  'data-science-business-intelligence': '/images/master-programs/business-intelligence-master-program.jpg',
   'software-testing-master-program': '/images/master-programs/software-testing-master-program.jpg',
 };
 
@@ -24,11 +24,11 @@ export function MasterProgramsSection() {
       <div className="container-xl">
         <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Complete career tracks</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-700">Complete career tracks</p>
             <h2 className="display-md text-surface-900">
               Master Programs — <span className="text-gradient">Complete Career Tracks</span>
             </h2>
-            <p className="mt-3 max-w-2xl leading-relaxed text-surface-500">
+            <p className="mt-3 max-w-2xl leading-relaxed text-surface-600">
               Structured multi-month programs to deepen your skills, build real projects, and support your career growth.
             </p>
           </div>
@@ -54,14 +54,14 @@ export function MasterProgramsSection() {
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-lg bg-surface-900/70 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
+                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-lg bg-slate-900/85 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
                   <Clock className="h-3 w-3" aria-hidden="true" />{program.duration}
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="mb-2 line-clamp-2 font-display text-base font-bold text-surface-900 transition-colors group-hover:text-brand-700">{program.title}</h3>
-                <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-surface-500">{program.shortDescription}</p>
-                <div className="mb-4 flex items-center gap-2 text-xs text-surface-500">
+                <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-surface-600">{program.shortDescription}</p>
+                <div className="mb-4 flex items-center gap-2 text-xs font-medium text-surface-600">
                   <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
                   {program.modules.length} modules
                 </div>
@@ -69,10 +69,10 @@ export function MasterProgramsSection() {
                   <div>
                     <div className="text-base font-bold text-surface-900">{formatPrice(program.discountPrice, program.currency)}</div>
                     {program.price !== program.discountPrice && (
-                      <div className="text-xs text-surface-400 line-through">{formatPrice(program.price, program.currency)}</div>
+                      <div className="text-xs text-surface-500 line-through">{formatPrice(program.price, program.currency)}</div>
                     )}
                   </div>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-700">
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-brand-700">
                     Learn more <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                 </div>

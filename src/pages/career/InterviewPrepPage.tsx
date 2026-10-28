@@ -51,14 +51,20 @@ export default function InterviewPrepPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-14">
-        <div className="container-xl">
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
           <Breadcrumbs
             items={[{ label: 'Career', href: '/career' }, { label: 'Interview Preparation' }]}
-            className="text-white/50 mb-4"
+            className="mb-4"
           />
-          <h1 className="display-lg text-white mb-4">Interview Preparation</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
+          <div className="page-hero-badge mb-4">
+            <CheckCircle className="w-4 h-4 text-teal-600" />
+            <span>Technical &amp; HR Mock Rounds</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Interview <span className="page-hero-highlight">Preparation</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
             Structured interview preparation for technical, HR and aptitude rounds — domain-specific coaching aligned to the roles you're targeting.
           </p>
         </div>
@@ -69,7 +75,7 @@ export default function InterviewPrepPage() {
         <div className="container-xl">
           <div className="text-center mb-12">
             <h2 className="display-md mb-4">What We Cover</h2>
-            <p className="text-surface-500 max-w-xl mx-auto">
+            <p className="text-surface-600 max-w-xl mx-auto font-medium">
               Comprehensive preparation across all interview formats you'll encounter in the IT hiring process.
             </p>
           </div>
@@ -78,42 +84,42 @@ export default function InterviewPrepPage() {
               const isExpanded = expandedTopics.has(t.category);
               const detailsId = `prep-details-${t.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
               return (
-              <article key={t.category} className="bg-white rounded-3xl p-6 border border-surface-100 hover:shadow-card-md transition-all">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${t.color}`}>
-                  <t.icon className="w-6 h-6" />
-                </div>
-                <h3 className="font-display font-bold text-surface-900 text-lg mb-4">{t.category}</h3>
-                <ul className="space-y-2">
-                  {t.items.map(item => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm text-surface-600">
-                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div id={detailsId} hidden={!isExpanded} className="mt-4 rounded-xl bg-surface-50 p-4 text-sm text-surface-600">
-                  {t.details}
-                </div>
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                  <button
-                    type="button"
-                    aria-expanded={isExpanded}
-                    aria-controls={detailsId}
-                    onClick={() => setExpandedTopics(current => {
-                      const next = new Set(current);
-                      if (next.has(t.category)) next.delete(t.category);
-                      else next.add(t.category);
-                      return next;
-                    })}
-                    className="text-sm font-semibold text-brand-600 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
-                  >
-                    {isExpanded ? 'Hide details' : 'Show details'}
-                  </button>
-                  <Link to={t.href} className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
-                    Explore preparation <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </article>
+                <article key={t.category} className="bg-white rounded-3xl p-6 border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all">
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${t.color}`}>
+                    <t.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display font-bold text-surface-900 text-lg mb-4">{t.category}</h3>
+                  <ul className="space-y-2">
+                    {t.items.map(item => (
+                      <li key={item} className="flex items-center gap-2.5 text-sm text-surface-700 font-medium">
+                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div id={detailsId} hidden={!isExpanded} className="mt-4 rounded-xl bg-surface-50 border border-surface-200 p-4 text-sm text-surface-700 leading-relaxed">
+                    {t.details}
+                  </div>
+                  <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+                    <button
+                      type="button"
+                      aria-expanded={isExpanded}
+                      aria-controls={detailsId}
+                      onClick={() => setExpandedTopics(current => {
+                        const next = new Set(current);
+                        if (next.has(t.category)) next.delete(t.category);
+                        else next.add(t.category);
+                        return next;
+                      })}
+                      className="text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                    >
+                      {isExpanded ? 'Hide details' : 'Show details'}
+                    </button>
+                    <Link to={t.href} className="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
+                      Explore preparation <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </article>
               );
             })}
           </div>
@@ -140,7 +146,7 @@ export default function InterviewPrepPage() {
                     </span>
                     <div>
                       <h4 className="font-semibold text-surface-900 mb-0.5">{item.title}</h4>
-                      <p className="text-surface-500 text-sm">{item.desc}</p>
+                      <p className="text-surface-600 text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}

@@ -10,12 +10,23 @@ export default function BlogPage() {
   const posts = useCmsCollection('blog', blogPosts);
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Blog' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Blog & Resources</h1>
-          <p className="text-white/70">Tech insights, career guidance, certification tips and industry trends.</p>
-          <p className="text-white/40 text-sm mt-2">* Placeholder blog posts — to be replaced with real articles.</p>
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Blog' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            Tech Insights &amp; Career Roadmaps
+          </div>
+          <h1 className="page-hero-title mb-4">
+            Blog &amp; <span className="page-hero-highlight">Resources</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl leading-relaxed">
+            Tech insights, career guidance, certification tips, and real-world developer tutorials written by mentors.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <div className="page-hero-chip">Cloud &amp; DevOps</div>
+            <div className="page-hero-chip">AI &amp; Data Science</div>
+            <div className="page-hero-chip">Career Guides</div>
+          </div>
         </div>
       </div>
 
@@ -28,17 +39,17 @@ export default function BlogPage() {
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <Badge variant="brand">{post.category}</Badge>
-                    <span className="text-xs text-surface-400 flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
+                    <span className="text-xs text-surface-600 font-medium flex items-center gap-1"><Clock className="w-3.5 h-3.5 text-brand-600" />{post.readTime}</span>
                   </div>
-                  <h2 className="font-display font-semibold text-surface-900 group-hover:text-brand-600 transition-colors mb-2 line-clamp-2">{post.title}</h2>
-                  <p className="text-surface-500 text-sm line-clamp-2 mb-4">{post.excerpt}</p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-surface-100">
+                  <h2 className="font-display font-bold text-surface-900 group-hover:text-brand-700 transition-colors mb-2 line-clamp-2">{post.title}</h2>
+                  <p className="text-surface-600 text-sm line-clamp-2 mb-4 leading-relaxed">{post.excerpt}</p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-surface-200">
                     <img src={post.author.photo} alt={post.author.name} className="w-8 h-8 rounded-full object-cover" />
                     <div>
-                      <p className="text-xs font-semibold text-surface-800">{post.author.name}</p>
-                      <p className="text-xs text-surface-400 flex items-center gap-1"><Calendar className="w-3 h-3" />{formatDate(post.publishedAt)}</p>
+                      <p className="text-xs font-bold text-surface-900">{post.author.name}</p>
+                      <p className="text-xs text-surface-600 font-medium flex items-center gap-1"><Calendar className="w-3.5 h-3.5 text-brand-600" />{formatDate(post.publishedAt)}</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-surface-400 ml-auto group-hover:text-brand-500 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-brand-600 ml-auto group-hover:text-brand-800 group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </Link>

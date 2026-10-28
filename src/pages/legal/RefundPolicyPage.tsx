@@ -3,11 +3,12 @@ import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 export default function RefundPolicyPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-surface-50 border-b border-surface-100 py-10">
-        <div className="container-xl">
+      <div className="page-hero-premium py-12 relative overflow-hidden">
+        <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Refund Policy' }]} className="mb-3" />
-          <h1 className="heading-xl">Refund Policy</h1>
-          <p className="text-surface-500 text-sm mt-1">Last updated: [DATE — PLACEHOLDER]</p>
+          <div className="page-hero-badge mb-3">Transparency &amp; Guarantee</div>
+          <h1 className="page-hero-title mb-2">Refund <span className="page-hero-highlight">Policy</span></h1>
+          <p className="text-surface-600 font-semibold text-sm">Last updated: October 2026</p>
         </div>
       </div>
       <div className="container-xl py-12 max-w-3xl">

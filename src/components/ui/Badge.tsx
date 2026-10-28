@@ -9,13 +9,13 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-  brand:  'bg-brand-50 text-brand-700',
-  accent: 'bg-accent-50 text-accent-700',
-  green:  'bg-green-50 text-green-700',
-  purple: 'bg-purple-50 text-purple-700',
-  red:    'bg-red-50 text-red-700',
-  yellow: 'bg-amber-50 text-amber-700',
-  gray:   'bg-surface-100 text-surface-600',
+  brand:  'bg-brand-50 text-brand-800 border border-brand-200',
+  accent: 'bg-accent-50 text-accent-700 border border-amber-200',
+  green:  'bg-green-50 text-green-800 border border-green-200',
+  purple: 'bg-purple-50 text-purple-800 border border-purple-200',
+  red:    'bg-red-50 text-red-800 border border-red-200',
+  yellow: 'bg-amber-50 text-amber-900 border border-amber-200',
+  gray:   'bg-surface-100 text-surface-800 border border-surface-200',
 };
 
 export function Badge({ children, variant = 'brand', className }: BadgeProps) {

@@ -83,7 +83,7 @@ export default function LoginPage() {
             <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
           </Link>
           <h1 className="font-display font-bold text-2xl">{adminLogin ? 'Admin sign in' : 'Sign in'}</h1>
-          <p className="text-surface-500 mt-1 text-sm">
+          <p className="text-surface-600 font-medium mt-1 text-sm">
             {adminLogin ? 'Sign in with your Admin or Super Admin account.' : 'Sign in to your student or admin account.'}
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function LoginPage() {
           <div>
             <div className="flex items-center justify-between mb-1.5">
               <label className="form-label mb-0" htmlFor="login-password">Password</label>
-              <Link to="/forgot-password" className="text-xs text-brand-600 hover:text-brand-700">Forgot password?</Link>
+              <Link to="/forgot-password" className="text-xs font-semibold text-brand-700 hover:text-brand-800">Forgot password?</Link>
             </div>
             <div className="relative">
               <input
@@ -114,7 +114,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setShowPassword(p => !p)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-500 hover:text-surface-800"
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
                 aria-pressed={showPassword}
               >
@@ -127,7 +127,7 @@ export default function LoginPage() {
           {error && <p role="alert" className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{error}</p>}
           {notice && <p role="status" className="text-sm text-blue-800 bg-blue-50 border border-blue-200 rounded-xl px-4 py-3">{notice}</p>}
           {notice && (
-            <button type="button" disabled={isResending} onClick={() => void resendVerification()} className="text-sm text-brand-600 hover:text-brand-700 disabled:opacity-50">
+            <button type="button" disabled={isResending} onClick={() => void resendVerification()} className="text-sm font-semibold text-brand-700 hover:text-brand-800 disabled:opacity-50">
               {isResending ? 'Sending verification link...' : 'Resend verification email'}
             </button>
           )}
@@ -138,11 +138,11 @@ export default function LoginPage() {
         </form>
 
         {!adminLogin && (
-          <p className="text-center text-sm text-surface-500 mt-6">
-            New to Global Minds Academy? <Link to="/register" className="text-brand-600 hover:text-brand-700 font-semibold">Create an account</Link>
+          <p className="text-center text-sm text-surface-600 font-medium mt-6">
+            New to Global Minds Academy? <Link to="/register" className="text-brand-700 hover:text-brand-800 font-bold">Create an account</Link>
           </p>
         )}
-        <p className="text-center text-xs mt-4"><Link to="/" className="text-surface-500 hover:text-brand-600">Back to website</Link></p>
+        <p className="text-center text-xs mt-4"><Link to="/" className="text-surface-600 hover:text-brand-700 font-medium">Back to website</Link></p>
       </div>
     </div>
   );

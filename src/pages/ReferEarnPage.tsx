@@ -165,44 +165,41 @@ export default function ReferEarnPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-brand-700 via-brand-900 to-surface-950 text-white py-20 overflow-hidden relative">
-        {/* Decorative circles */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
-        <div className="container-xl relative">
-          <Breadcrumbs items={[{ label: 'Refer & Earn' }]} className="text-white/50 mb-4" />
+      <div className="page-hero-premium py-20 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Refer & Earn' }]} className="mb-4" />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/30 rounded-full px-4 py-2 text-sm font-medium text-yellow-300 mb-6">
-                <Gift className="w-4 h-4" />
+              <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
+                <Gift className="w-4 h-4 text-amber-300" />
                 Earn up to ₹7,000 per referral
               </div>
-              <h1 className="display-lg text-white mb-6">
+              <h1 className="page-hero-title mb-6">
                 Refer a Friend.<br />
-                <span className="text-yellow-300">Both of You Win.</span>
+                <span className="page-hero-highlight">Both of You Win.</span>
               </h1>
-              <p className="text-white/70 text-xl mb-8 max-w-xl">
+              <p className="page-hero-desc text-xl mb-8 max-w-xl leading-relaxed">
                 Share Global Minds Academy with your friends. When they enroll, you earn ₹3,000 – ₹7,000 in your wallet and they get a discount on their course fee.
               </p>
 
               {/* Referral link card */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
-                <p className="text-sm text-white/70 mb-3 font-medium">Your Referral Link (Demo)</p>
+              <div className="rounded-2xl p-5 border border-teal-200 bg-white/95 shadow-md backdrop-blur-md">
+                <p className="text-sm text-surface-800 mb-3 font-semibold">Your Referral Link (Demo)</p>
                 <div className="flex items-center gap-3">
-                  <div className="flex-1 bg-white/10 rounded-xl px-4 py-2.5 text-sm text-white/90 font-mono truncate" title={referralLink}>
+                  <div className="flex-1 bg-surface-50 border border-teal-200 rounded-xl px-4 py-2.5 text-sm text-surface-900 font-mono truncate" title={referralLink}>
                     {referralLink}
                   </div>
                   <button
                     type="button"
                     onClick={handleCopy}
                     aria-label={copied ? 'Referral link copied' : 'Copy referral link'}
-                    className="flex items-center gap-2 bg-white text-brand-700 hover:bg-brand-50 px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors flex-shrink-0"
+                    className="flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white px-4 py-2.5 rounded-xl text-sm font-bold shadow-md shadow-teal-900/20 transition-colors flex-shrink-0"
                   >
-                    {copied ? <CheckCircle className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
+                    {copied ? <CheckCircle className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4" />}
                     {copied ? 'Copied!' : 'Copy'}
                   </button>
                 </div>
-                {copyError && <p role="alert" className="mt-2 text-sm text-yellow-200">{copyError}</p>}
+                {copyError && <p role="alert" className="mt-2 text-sm text-amber-700 font-medium">{copyError}</p>}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {shareLinks.map(({ channel, href }) => (
                     <a
@@ -210,14 +207,14 @@ export default function ReferEarnPage() {
                       href={href}
                       target={channel === 'Email' ? undefined : '_blank'}
                       rel={channel === 'Email' ? undefined : 'noopener noreferrer'}
-                      className="flex items-center gap-1.5 text-xs bg-white/10 hover:bg-white/20 border border-white/10 rounded-lg px-3 py-1.5 text-white/80 transition-colors"
+                      className="flex items-center gap-1.5 text-xs bg-surface-100 hover:bg-teal-50 border border-surface-200 hover:border-teal-300 rounded-lg px-3 py-1.5 text-surface-700 hover:text-teal-900 font-medium transition-colors"
                     >
-                      <Share2 className="w-3.5 h-3.5" />
+                      <Share2 className="w-3.5 h-3.5 text-teal-600" />
                       {channel}
                     </a>
                   ))}
                 </div>
-                <p className="mt-3 text-xs text-white/60">This is a sample referral link. Personal referral tracking requires an account service.</p>
+                <p className="mt-3 text-xs text-surface-600 font-medium">* This is a sample referral link. Personal referral tracking requires an active learner account.</p>
               </div>
             </div>
 
@@ -229,10 +226,10 @@ export default function ReferEarnPage() {
                 { icon: '🎁', value: '₹3,000', label: 'Min. Reward Per Referral' },
                 { icon: '⚡', value: '7 Days', label: 'Reward Payout Time' },
               ].map(s => (
-                <div key={s.label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div key={s.label} className="page-hero-chip flex flex-col items-center justify-center p-6 text-center">
                   <div className="text-3xl mb-2">{s.icon}</div>
                   <div className="font-display font-bold text-2xl text-white mb-1">{s.value}</div>
-                  <div className="text-xs text-white/60">{s.label}</div>
+                  <div className="text-xs text-teal-200/80 font-medium">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -244,9 +241,9 @@ export default function ReferEarnPage() {
       <section className="section bg-white">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Simple Process</span>
+            <span className="inline-block text-sm font-bold text-brand-700 uppercase tracking-wider mb-3">Simple Process</span>
             <h2 className="display-md mb-4">How It Works</h2>
-            <p className="text-surface-500 max-w-xl mx-auto">Four easy steps to start earning rewards for every friend you bring to Global Minds Academy.</p>
+            <p className="text-surface-600 font-medium max-w-xl mx-auto">Four easy steps to start earning rewards for every friend you bring to Global Minds Academy.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {howItWorks.map((step, idx) => {
@@ -260,23 +257,23 @@ export default function ReferEarnPage() {
                     aria-controls={`refer-step-${idx}`}
                     onClick={() => setSelectedStep(isOpen ? null : idx)}
                     className={`w-full rounded-2xl p-6 text-center h-full transition-all border ${
-                    isOpen ? 'bg-brand-50 border-brand-200 shadow-card-md' : 'bg-surface-50 border-surface-100 hover:border-brand-200 hover:bg-brand-50'
+                    isOpen ? 'bg-brand-50 border-brand-300 shadow-card-md' : 'bg-surface-50 border-surface-200 hover:border-brand-300 hover:bg-brand-50'
                     }`}
                   >
                     <div className="relative flex flex-col items-center justify-between h-full">
                       <div className="absolute top-0 right-0 text-4xl font-black text-surface-200">{step.step}</div>
                       <div className="text-4xl mb-4 mt-6">{step.icon}</div>
                       <h3 className="font-semibold text-surface-900 mb-2">{step.title}</h3>
-                      <p className="text-sm text-surface-500 mb-4">{step.desc}</p>
-                      <span className="inline-flex items-center justify-center rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-semibold text-brand-700">
+                      <p className="text-sm text-surface-600 font-medium mb-4">{step.desc}</p>
+                      <span className="inline-flex items-center justify-center rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-bold text-brand-700">
                         {isOpen ? 'Hide details' : 'View details'}
                       </span>
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div id={`refer-step-${idx}`} className="mt-3 rounded-xl bg-brand-50 border border-brand-100 px-4 py-3 text-left text-sm text-surface-700">
-                      <p className="font-medium text-brand-700 mb-1">What happens next</p>
+                    <div id={`refer-step-${idx}`} className="mt-3 rounded-xl bg-brand-50 border border-brand-200 px-4 py-3 text-left text-sm text-surface-800 font-medium">
+                      <p className="font-bold text-brand-800 mb-1">What happens next</p>
                       <p>
                         {idx === 0 && 'Generate your unique referral link and share it with your network to start tracking every successful enrollment.'}
                         {idx === 1 && 'Send the link through WhatsApp, email, social media, or direct messaging to reach potential learners faster.'}
@@ -288,7 +285,7 @@ export default function ReferEarnPage() {
 
                   {idx < howItWorks.length - 1 && (
                     <div className="hidden lg:flex absolute top-1/2 -right-3 z-10 items-center justify-center">
-                      <ArrowRight className="w-6 h-6 text-brand-300" />
+                      <ArrowRight className="w-6 h-6 text-brand-400" />
                     </div>
                   )}
                 </div>
@@ -302,38 +299,38 @@ export default function ReferEarnPage() {
       <section className="section bg-surface-50">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Reward Tiers</span>
+            <span className="inline-block text-sm font-bold text-brand-700 uppercase tracking-wider mb-3">Reward Tiers</span>
             <h2 className="display-md mb-4">Earn More as You Refer More</h2>
-            <p className="text-surface-500 max-w-xl mx-auto">The more friends you refer, the higher your per-referral reward. Rewards are cumulative and never expire.</p>
+            <p className="text-surface-600 font-medium max-w-xl mx-auto">The more friends you refer, the higher your per-referral reward. Rewards are cumulative and never expire.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {rewardTiers.map(tier => (
               <div key={tier.tier} className={`rounded-2xl border-2 p-6 relative ${tier.color} hover:shadow-card-md transition-shadow`}>
                 {tier.badge && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className={`text-xs px-3 py-1 rounded-full font-semibold bg-brand-600 text-white whitespace-nowrap shadow`}>
+                    <span className={`text-xs px-3 py-1 rounded-full font-bold bg-brand-700 text-white whitespace-nowrap shadow`}>
                       {tier.badge}
                     </span>
                   </div>
                 )}
                 <div className="text-center pt-2">
                   <div className={`font-display font-black text-2xl mb-1 ${tier.textColor}`}>{tier.tier}</div>
-                  <div className="text-sm text-surface-500 mb-4">{tier.referrals} referrals</div>
+                  <div className="text-sm text-surface-600 font-semibold mb-4">{tier.referrals} referrals</div>
                   <div className="border-t border-surface-200 pt-4 space-y-3">
                     <div>
-                      <p className="text-xs text-surface-500 mb-0.5">You earn</p>
+                      <p className="text-xs text-surface-600 font-medium mb-0.5">You earn</p>
                       <p className="font-bold text-xl text-surface-900">{tier.yourReward}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-surface-500 mb-0.5">Friend gets</p>
-                      <p className="font-semibold text-green-700">{tier.friendDiscount}</p>
+                      <p className="text-xs text-surface-600 font-medium mb-0.5">Friend gets</p>
+                      <p className="font-bold text-green-700">{tier.friendDiscount}</p>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-surface-400 text-center mt-5">
+          <p className="text-xs text-surface-600 font-medium text-center mt-5">
             * Rewards credited as wallet balance. Payout within 7 business days post friend's payment confirmation.
           </p>
         </div>

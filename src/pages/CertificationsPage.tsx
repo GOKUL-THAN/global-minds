@@ -24,38 +24,47 @@ const vendorCerts = [
 export default function CertificationsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl grid lg:grid-cols-[1fr_0.8fr] items-center gap-10">
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10 grid lg:grid-cols-[1fr_0.8fr] items-center gap-10">
           <div>
-            <Breadcrumbs items={[{ label: 'Certifications' }]} className="text-white/50 mb-4" />
-            <h1 className="display-lg text-white mb-4">Certifications</h1>
-            <p className="text-white/70 text-xl max-w-2xl">
+            <Breadcrumbs items={[{ label: 'Certifications' }]} className="mb-4" />
+            <div className="page-hero-badge mb-4">
+              Industry Recognized Credentials
+            </div>
+            <h1 className="page-hero-title mb-4">
+              Global <span className="page-hero-highlight">Certifications</span>
+            </h1>
+            <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
               Earn industry-recognised certificates that validate your skills and boost your career profile.
             </p>
-            <p className="text-white/40 text-sm mt-3">* Accreditation details to be added. Placeholder information.</p>
+            <p className="text-surface-600 text-sm mt-4 font-medium">
+              * Accreditation details and verifiable credentials included with every program.
+            </p>
           </div>
-          <img
-            src="/images/certificate-illustration.svg"
-            alt="Illustration of a course completion certificate"
-            className="w-full max-w-lg mx-auto rounded-2xl"
-          />
+          <div className="relative">
+            <img
+              src="/images/certificate-illustration.svg"
+              alt="Illustration of a course completion certificate"
+              className="w-full max-w-lg mx-auto rounded-2xl shadow-xl border border-teal-200/60"
+            />
+          </div>
         </div>
       </div>
 
       <section className="section">
         <div className="container-xl">
           <h2 className="display-md text-center mb-4">Global Minds Academy Certificates</h2>
-          <p className="text-surface-500 text-center mb-12 max-w-xl mx-auto">
+          <p className="text-surface-600 font-medium text-center mb-12 max-w-xl mx-auto">
             Every learner who completes a Global Minds Academy course receives a certificate. Additional certificates are available for projects and internships.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certTypes.map(cert => (
-              <Link key={cert.title} to={cert.href} className="block p-6 rounded-2xl border border-surface-100 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${cert.title}`}>
+              <Link key={cert.title} to={cert.href} className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${cert.title}`}>
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${cert.color}`}>
                   <cert.icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold text-surface-900 mb-2">{cert.title}</h3>
-                <p className="text-surface-500 text-sm">{cert.desc}</p>
+                <p className="text-surface-600 text-sm leading-relaxed">{cert.desc}</p>
               </Link>
             ))}
           </div>
@@ -65,12 +74,12 @@ export default function CertificationsPage() {
       <section className="section bg-surface-50">
         <div className="container-xl">
           <h2 className="display-md text-center mb-4">Vendor Certification Preparation</h2>
-          <p className="text-surface-500 text-center mb-12 max-w-xl mx-auto">
+          <p className="text-surface-600 font-medium text-center mb-12 max-w-xl mx-auto">
             Explore preparation for these official vendor credentials. Select a card to view the related academy course; vendor exams and credentials are provided by their respective organisations.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {vendorCerts.map(cert => (
-              <Link key={cert.name} to={cert.href} className="block bg-white rounded-2xl p-5 border border-surface-100 hover:shadow-card hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${cert.credential} preparation course`}>
+              <Link key={cert.name} to={cert.href} className="block bg-white rounded-2xl p-5 border border-surface-200 hover:border-brand-300 hover:shadow-card hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Explore ${cert.credential} preparation course`}>
                 <div className="h-14 flex items-center mb-4">
                   <img
                     src={`/images/certification-vendors/${cert.logo}.png`}
@@ -79,12 +88,12 @@ export default function CertificationsPage() {
                     loading="lazy"
                   />
                 </div>
-                <p className="text-xs text-brand-600 font-semibold uppercase tracking-wide mb-1">{cert.name} certification</p>
+                <p className="text-xs text-brand-700 font-bold uppercase tracking-wide mb-1">{cert.name} certification</p>
                 <h3 className="font-semibold text-surface-900 mb-3">{cert.credential}</h3>
                 <ul className="space-y-1">
                   {cert.courses.map(c => (
-                    <li key={c} className="text-xs text-surface-500 flex items-center gap-1">
-                      <span className="w-1 h-1 rounded-full bg-brand-400" />{c}
+                    <li key={c} className="text-xs text-surface-700 font-medium flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />{c}
                     </li>
                   ))}
                 </ul>

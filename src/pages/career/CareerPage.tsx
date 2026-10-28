@@ -22,15 +22,21 @@ export default function CareerPage() {
   });
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Career & Placement' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Career & Placement Support</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
-            Dedicated career support to help you land your dream IT job — from resume building to mock interviews and job search guidance.
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Career & Placement' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            <CheckCircle className="w-4 h-4 text-teal-300" />
+            <span>Dedicated Placement Cell</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Career &amp; <span className="page-hero-highlight">Placement Support</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+            Dedicated career support to help you land your dream IT job — from resume building to mock interviews, salary negotiation, and direct recruiter connections.
           </p>
-          <p className="text-white/40 text-sm mt-3">
-            * We provide career guidance and placement support. Outcomes depend on individual performance and market conditions. No guarantee of placement is implied.
+          <p className="text-surface-600 text-xs sm:text-sm mt-3 font-medium">
+            * We provide comprehensive career guidance and placement assistance. Outcomes depend on individual performance and market conditions.
           </p>
         </div>
       </div>
@@ -42,12 +48,12 @@ export default function CareerPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {careerServices.map(s => (
-              <div key={s.title} className="p-6 rounded-2xl border border-surface-100 hover:shadow-card-md transition-shadow">
+              <div key={s.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
                   <s.icon className="w-6 h-6 text-brand-600" />
                 </div>
                 <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
-                <p className="text-surface-500 text-sm">{s.desc}</p>
+                <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>

@@ -22,12 +22,18 @@ export default function OnlineTrainingPage() {
   });
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-brand-700 to-brand-600 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Online Training' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Online Training</h1>
-          <p className="text-white/80 text-xl max-w-2xl">
-            Learn from industry experts through live, instructor-led online classes. Study from anywhere in the world.
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Online Training' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            <Globe className="w-4 h-4 text-teal-600" />
+            <span>Interactive Live Virtual Learning</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Online <span className="page-hero-highlight">Training</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+            Learn from industry experts through live, instructor-led online classes. Study from anywhere in the world with 1-on-1 mentorship and full session recordings.
           </p>
         </div>
       </div>
@@ -39,12 +45,12 @@ export default function OnlineTrainingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map(f => (
-              <div key={f.title} className="p-6 rounded-2xl border border-surface-100 hover:shadow-card-md transition-shadow">
+              <div key={f.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
                   <f.icon className="w-6 h-6 text-brand-600" />
                 </div>
                 <h3 className="font-semibold text-surface-900 mb-2">{f.title}</h3>
-                <p className="text-surface-500 text-sm">{f.desc}</p>
+                <p className="text-surface-600 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -56,12 +62,12 @@ export default function OnlineTrainingPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="display-md mb-4">Learn From Anywhere</h2>
-              <p className="text-surface-500 mb-6">
+              <p className="text-surface-600 mb-6 font-medium leading-relaxed">
                 We support learners from across the globe. Our online training is designed to serve students wherever they are.
               </p>
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {siteConfig.countries.map(c => (
-                  <div key={c.code} className="flex items-center gap-2 p-3 bg-white rounded-xl border border-surface-100 text-sm text-surface-600">
+                  <div key={c.code} className="flex items-center gap-2 p-3 bg-white rounded-xl border border-surface-200 text-sm text-surface-800 font-medium">
                     <span className="text-lg">{c.flag}</span>
                     {c.name}
                   </div>
@@ -73,7 +79,7 @@ export default function OnlineTrainingPage() {
                 </button>
               </Link>
             </div>
-            <div className="bg-surface-50 rounded-3xl p-8">
+            <div className="bg-white border border-surface-200 rounded-3xl p-8 shadow-card">
               <EnquiryForm title="Enquire About Online Training" compact />
             </div>
           </div>

@@ -17,7 +17,7 @@ export function BlogSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="text-sm text-brand-600 font-semibold uppercase tracking-wider mb-3">
+            <p className="text-sm text-brand-700 font-bold uppercase tracking-wider mb-3">
               Knowledge hub
             </p>
             <h2 className="display-md">
@@ -39,7 +39,7 @@ export function BlogSection() {
               key={post.id}
               to={`/blog/${post.slug}`}
               className={cn(
-                'group block rounded-2xl overflow-hidden border border-surface-100',
+                'group block rounded-2xl overflow-hidden border border-surface-200',
                 'hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300',
               )}
             >
@@ -57,21 +57,21 @@ export function BlogSection() {
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Badge variant="brand">{post.category}</Badge>
-                  <span className="text-xs text-surface-400 flex items-center gap-1">
+                  <span className="text-xs text-surface-600 font-medium flex items-center gap-1">
                     <Clock className="w-3 h-3" />
                     {post.readTime}
                   </span>
                 </div>
 
-                <h3 className="font-display font-semibold text-surface-900 group-hover:text-brand-600 transition-colors mb-2 line-clamp-2">
+                <h3 className="font-display font-semibold text-surface-900 group-hover:text-brand-700 transition-colors mb-2 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-sm text-surface-500 line-clamp-2 mb-4">
+                <p className="text-sm text-surface-600 font-medium line-clamp-2 mb-4">
                   {post.excerpt}
                 </p>
 
                 {/* Author + date */}
-                <div className="flex items-center gap-3 pt-4 border-t border-surface-100">
+                <div className="flex items-center gap-3 pt-4 border-t border-surface-200">
                   <img
                     src={post.author.photo}
                     alt={post.author.name}
@@ -80,7 +80,7 @@ export function BlogSection() {
                   />
                   <div>
                     <p className="text-xs font-semibold text-surface-800">{post.author.name}</p>
-                    <p className="text-xs text-surface-400 flex items-center gap-1">
+                    <p className="text-xs text-surface-600 font-medium flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {formatDate(post.publishedAt)}
                     </p>

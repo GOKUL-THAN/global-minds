@@ -26,12 +26,12 @@ export function CTASection({
 }: CTASectionProps) {
   const bg =
     variant === 'brand'
-      ? 'bg-gradient-to-r from-brand-700 to-brand-600'
+      ? 'cta-section-banner bg-gradient-to-r from-brand-800 to-brand-700'
       : variant === 'dark'
-      ? 'bg-surface-950'
+      ? 'cta-section-banner bg-surface-950'
       : 'bg-surface-50';
-  const textPrimary = variant === 'light' ? 'text-surface-900' : 'text-white';
-  const textSecondary = variant === 'light' ? 'text-surface-500' : 'text-white/70';
+  const textPrimary = variant === 'light' ? 'text-surface-900 font-extrabold' : 'text-white font-extrabold';
+  const textSecondary = variant === 'light' ? 'text-surface-600' : 'text-white/90';
 
   return (
     <section className={`${bg} relative overflow-hidden py-20`} aria-label="Call to action">
@@ -43,13 +43,13 @@ export function CTASection({
 
       <div className="container-xl relative text-center">
         <h2 className={`display-md mb-4 ${textPrimary}`}>{title}</h2>
-        <p className={`text-lg mb-10 max-w-2xl mx-auto ${textSecondary}`}>{subtitle}</p>
+        <p className={`text-lg mb-10 max-w-2xl mx-auto leading-relaxed ${textSecondary}`}>{subtitle}</p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to={primaryHref}>
             <Button
               size="xl"
-              className={variant !== 'light' ? 'bg-white text-brand-700 hover:bg-brand-50 shadow-lg' : ''}
+              className={variant !== 'light' ? 'bg-white text-brand-900 hover:bg-brand-50 shadow-lg font-bold' : ''}
               variant={variant === 'light' ? 'primary' : 'ghost'}
               rightIcon={<ArrowRight className="w-5 h-5" />}
             >
@@ -59,7 +59,7 @@ export function CTASection({
           <Link to={secondaryHref}>
             <Button
               size="xl"
-              className={variant !== 'light' ? 'border-white/30 text-white hover:bg-white/10' : ''}
+              className={variant !== 'light' ? 'border-2 border-white/80 text-white hover:bg-white/10 font-bold' : ''}
               variant={variant === 'light' ? 'secondary' : 'outline'}
             >
               {secondaryLabel}
@@ -71,7 +71,7 @@ export function CTASection({
           <div className="mt-8">
             <a
               href={`tel:${siteConfig.phone}`}
-              className={`inline-flex items-center gap-2 text-sm ${textSecondary} hover:${textPrimary} transition-colors`}
+              className={`inline-flex items-center gap-2 text-sm font-semibold ${textSecondary} hover:${textPrimary} transition-colors`}
             >
               <Phone className="w-4 h-4" />
               Call us: {siteConfig.phone}

@@ -42,36 +42,41 @@ export default function InternshipsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Internships' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Internships</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Internships' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            Industry Experience & Real-World Projects
+          </div>
+          <h1 className="page-hero-title mb-4">
+            Industry-Ready <span className="page-hero-highlight">Internships</span>
+          </h1>
+          <p className="page-hero-desc text-xl max-w-2xl leading-relaxed mb-6">
             Gain real industry experience through internships related to AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Software Testing, and Automation Testing.
           </p>
-          <div className="flex flex-wrap gap-4 mt-6">
-            <div className="px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-300 text-sm font-medium">
+          <div className="flex flex-wrap gap-3">
+            <div className="page-hero-chip font-semibold text-emerald-800 border-emerald-300 bg-emerald-50">
               {openCount} Open Positions
             </div>
-            <div className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm">
+            <div className="page-hero-chip">
               Certificate Included
             </div>
-            <div className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm">
-              Remote & On-site
+            <div className="page-hero-chip">
+              Remote & On-site Opportunities
             </div>
           </div>
-          <p className="text-white/40 text-xs mt-4">
-            * Placeholder listings — contact us for current internship availability.
+          <p className="text-surface-600 text-xs mt-4 font-medium">
+            * Contact us for current internship availability and immediate onboarding schedules.
           </p>
         </div>
       </div>
 
       <div className="container-xl py-10">
         {/* Search & Filters */}
-        <div className="bg-white rounded-2xl border border-surface-100 p-4 mb-8 space-y-4">
+        <div className="bg-white rounded-2xl border border-surface-200 p-4 mb-8 space-y-4 shadow-sm">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-surface-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-surface-500" />
               <input
                 type="search"
                 value={search}
@@ -82,11 +87,11 @@ export default function InternshipsPage() {
               />
             </div>
             <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-surface-400 flex-shrink-0" />
+              <Filter className="w-4 h-4 text-surface-500 flex-shrink-0" />
               <select
                 value={selectedCategory}
                 onChange={e => setSelectedCategory(e.target.value)}
-                className="form-select"
+                className="form-select font-medium text-surface-800"
                 aria-label="Filter by category"
               >
                 {categories.map(c => <option key={c}>{c}</option>)}
@@ -94,7 +99,7 @@ export default function InternshipsPage() {
               <select
                 value={selectedMode}
                 onChange={e => setSelectedMode(e.target.value)}
-                className="form-select"
+                className="form-select font-medium text-surface-800"
                 aria-label="Filter by mode"
               >
                 {modes.map(m => <option key={m}>{m}</option>)}
@@ -113,10 +118,10 @@ export default function InternshipsPage() {
                 key={tab.id}
                 onClick={() => setStatusFilter(tab.id)}
                 className={cn(
-                  'px-4 py-1.5 rounded-full text-sm font-medium transition-colors',
+                  'px-4 py-1.5 rounded-full text-sm font-semibold transition-colors',
                   statusFilter === tab.id
-                    ? 'bg-brand-600 text-white'
-                    : 'bg-surface-100 text-surface-600 hover:bg-surface-200',
+                    ? 'bg-brand-700 text-white shadow-sm'
+                    : 'bg-white text-surface-700 border border-surface-200 hover:border-brand-500 hover:text-brand-800',
                 )}
               >
                 {tab.label}
@@ -155,31 +160,31 @@ export default function InternshipsPage() {
 
                 <div className="p-5 flex-1 flex flex-col">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-brand-600 font-semibold">{internship.category}</span>
-                    <span className="text-xs text-surface-400">{internship.mode}</span>
+                    <span className="text-xs text-brand-700 font-bold">{internship.category}</span>
+                    <span className="text-xs text-surface-600 font-medium">{internship.mode}</span>
                   </div>
 
-                  <h3 className="font-display font-semibold text-surface-900 mb-1">{internship.title}</h3>
-                  <p className="text-surface-500 text-xs mb-3">{internship.company}</p>
+                  <h3 className="font-display font-bold text-surface-900 mb-1">{internship.title}</h3>
+                  <p className="text-surface-600 text-xs font-medium mb-3">{internship.company}</p>
 
-                  <div className="flex flex-wrap gap-3 text-xs text-surface-500 mb-4">
-                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{internship.duration}</span>
-                    <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{internship.location}</span>
+                  <div className="flex flex-wrap gap-3 text-xs text-surface-600 font-medium mb-4">
+                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5 text-brand-600" />{internship.duration}</span>
+                    <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-brand-600" />{internship.location}</span>
                     {internship.certificate && (
-                      <span className="flex items-center gap-1 text-green-600"><CheckCircle className="w-3 h-3" />Certificate</span>
+                      <span className="flex items-center gap-1 text-green-700 font-semibold"><CheckCircle className="w-3.5 h-3.5" />Certificate</span>
                     )}
                   </div>
 
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {internship.skills.slice(0, 4).map(s => (
-                      <span key={s} className="text-xs bg-surface-100 text-surface-600 px-2 py-0.5 rounded-lg">{s}</span>
+                      <span key={s} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-lg border border-surface-200">{s}</span>
                     ))}
                     {internship.skills.length > 4 && (
-                      <span className="text-xs bg-surface-100 text-surface-400 px-2 py-0.5 rounded-lg">+{internship.skills.length - 4}</span>
+                      <span className="text-xs bg-surface-100 text-surface-600 font-medium px-2 py-0.5 rounded-lg border border-surface-200">+{internship.skills.length - 4}</span>
                     )}
                   </div>
 
-                  <div className="mt-auto pt-4 border-t border-surface-100 flex gap-2">
+                  <div className="mt-auto pt-4 border-t border-surface-200 flex gap-2">
                     <Link to={`/internships/${internship.slug}`} className="flex-1">
                       <Button variant="secondary" size="sm" fullWidth>
                         View Details

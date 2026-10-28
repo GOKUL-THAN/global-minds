@@ -130,11 +130,16 @@ export default function CoursesPage() {
   return (
     <div className="min-h-screen bg-surface-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-12">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Courses' }]} className="text-white/60 mb-4" />
-          <h1 className="display-md text-white mb-3">Explore All Courses</h1>
-          <p className="text-white/70 max-w-xl">
+      <div className="page-hero-premium py-14">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Courses' }]} className="mb-4" />
+          <div className="page-hero-badge mb-3">
+            <span>Career-Focused Curricula</span>
+          </div>
+          <h1 className="page-hero-title display-md font-extrabold mb-3">
+            Explore <span className="page-hero-highlight">All Courses</span>
+          </h1>
+          <p className="page-hero-desc max-w-2xl text-base sm:text-lg">
             Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
           </p>
         </div>
@@ -204,8 +209,8 @@ export default function CoursesPage() {
               type="button"
               onClick={() => setFilterOpen(prev => !prev)}
               className={cn(
-                'sm:hidden flex items-center gap-2 px-4 py-3 rounded-full border font-medium text-sm transition-colors',
-                filterOpen ? 'bg-brand-600 text-white border-brand-600' : 'bg-white border-surface-200 text-surface-700',
+                'sm:hidden flex items-center gap-2 px-4 py-3 rounded-full border font-semibold text-sm transition-colors',
+                filterOpen ? 'bg-brand-700 text-white border-brand-700' : 'bg-white border-surface-200 text-surface-800',
               )}
             >
               <SlidersHorizontal className="w-4 h-4" />
@@ -213,13 +218,13 @@ export default function CoursesPage() {
             </button>
 
             {/* Layout toggle — polished pill */}
-            <div className="hidden sm:flex items-center bg-surface-100 rounded-full p-1">
+            <div className="hidden sm:flex items-center bg-surface-100 rounded-full p-1 border border-surface-200">
               <button
                 type="button"
                 onClick={() => setLayout('grid')}
                 className={cn(
                   'p-2 rounded-full transition-all',
-                  layout === 'grid' ? 'bg-white shadow-sm text-brand-600' : 'text-surface-400 hover:text-surface-600',
+                  layout === 'grid' ? 'bg-white shadow-sm text-brand-700 font-bold' : 'text-surface-500 hover:text-surface-800',
                 )}
                 aria-label="Grid layout"
               >
@@ -230,7 +235,7 @@ export default function CoursesPage() {
                 onClick={() => setLayout('list')}
                 className={cn(
                   'p-2 rounded-full transition-all',
-                  layout === 'list' ? 'bg-white shadow-sm text-brand-600' : 'text-surface-400 hover:text-surface-600',
+                  layout === 'list' ? 'bg-white shadow-sm text-brand-700 font-bold' : 'text-surface-500 hover:text-surface-800',
                 )}
                 aria-label="List layout"
               >
@@ -248,10 +253,10 @@ export default function CoursesPage() {
               type="button"
               onClick={() => setParam('category', qf.category)}
               className={cn(
-                'rounded-full px-4 py-2 text-sm font-medium border transition-all',
+                'rounded-full px-4 py-2 text-sm transition-all',
                 selectedCategory === qf.category
-                  ? 'bg-brand-600 text-white border-brand-600'
-                  : 'bg-white text-surface-600 border-surface-200 hover:border-brand-400 hover:text-brand-600',
+                  ? 'bg-brand-700 text-white border-brand-700 font-bold shadow-sm'
+                  : 'bg-white text-surface-700 border-surface-200 hover:border-brand-500 hover:text-brand-800 font-medium',
               )}
             >
               {qf.label}

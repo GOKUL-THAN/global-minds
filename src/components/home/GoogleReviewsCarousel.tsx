@@ -60,19 +60,19 @@ export function GoogleReviewsCarousel() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <h3 className="truncate font-bold text-surface-900">{review.name}</h3>
-                    <p className="text-sm text-surface-400">
+                    <p className="text-sm text-surface-600 font-medium">
                       {new Date(`${review.date}T00:00:00`).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}
                     </p>
                   </div>
                   <span aria-label="Google review" className="text-2xl font-bold text-[#4285F4]">G</span>
                 </div>
-                <div className="mt-4 flex items-center gap-1 text-amber-400" aria-label={`${review.rating} out of 5 stars`}>
+                <div className="mt-4 flex items-center gap-1 text-amber-500" aria-label={`${review.rating} out of 5 stars`}>
                   {Array.from({ length: review.rating }, (_, starIndex) => (
                     <Star key={starIndex} className="h-5 w-5 fill-current" aria-hidden="true" />
                   ))}
-                  <BadgeCheck className="ml-1 h-4 w-4 fill-blue-500 text-white" aria-label="Verified review" />
+                  <BadgeCheck className="ml-1 h-4 w-4 fill-blue-600 text-white" aria-label="Verified review" />
                 </div>
-                <p className="mt-4 flex-1 leading-relaxed text-surface-600 line-clamp-4">{review.review}</p>
+                <p className="mt-4 flex-1 leading-relaxed text-surface-700 line-clamp-4">{review.review}</p>
               </article>
             ))}
           </div>

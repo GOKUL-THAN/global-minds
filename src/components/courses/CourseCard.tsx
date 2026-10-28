@@ -43,19 +43,19 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
                 {course.trending && <Badge variant="accent">Trending</Badge>}
                 {course.featured && <Badge variant="brand">Featured</Badge>}
               </div>
-              <h3 className="font-display font-semibold text-surface-900 group-hover:text-brand-600 transition-colors line-clamp-1">
+              <h3 className="font-display font-bold text-surface-900 group-hover:text-brand-700 transition-colors line-clamp-1">
                 {course.title}
               </h3>
             </div>
             <div className="text-right flex-shrink-0">
               <div className="text-lg font-bold text-brand-700">{formatPrice(course.discountPrice, course.currency)}</div>
               {discount > 0 && (
-                <div className="text-xs text-surface-400 line-through">{formatPrice(course.price, course.currency)}</div>
+                <div className="text-xs text-surface-500 line-through">{formatPrice(course.price, course.currency)}</div>
               )}
             </div>
           </div>
-          <p className="text-sm text-surface-500 line-clamp-2 mb-3">{course.shortDescription}</p>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-surface-500">
+          <p className="text-sm text-surface-600 line-clamp-2 mb-3 leading-relaxed">{course.shortDescription}</p>
+          <div className="flex flex-wrap items-center gap-4 text-xs text-surface-600 font-medium">
             <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{course.duration}</span>
             <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" />{course.modules.length} modules</span>
             <span className="flex items-center gap-1"><BarChart2 className="w-3.5 h-3.5" />{course.level}</span>
@@ -94,7 +94,7 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
 
         {/* Discount badge */}
         {discount > 0 && (
-          <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+          <div className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-lg shadow-sm">
             -{discount}%
           </div>
         )}
@@ -102,12 +102,12 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
         {/* Mode badges */}
         <div className="absolute bottom-3 left-3 flex gap-1">
           {course.onlineAvailable && (
-            <span className="flex items-center gap-1 text-xs bg-black/60 text-white px-2 py-1 rounded-lg backdrop-blur-sm">
+            <span className="flex items-center gap-1 text-xs bg-slate-900/85 text-white font-medium px-2 py-1 rounded-lg backdrop-blur-sm">
               <Monitor className="w-3 h-3" /> Online
             </span>
           )}
           {course.classroomAvailable && (
-            <span className="flex items-center gap-1 text-xs bg-black/60 text-white px-2 py-1 rounded-lg backdrop-blur-sm">
+            <span className="flex items-center gap-1 text-xs bg-slate-900/85 text-white font-medium px-2 py-1 rounded-lg backdrop-blur-sm">
               <MapPin className="w-3 h-3" /> Chennai Classroom
             </span>
           )}
@@ -117,22 +117,22 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
       {/* Content */}
       <div className="p-5 flex min-h-[17rem] flex-col">
         {/* Category */}
-        <p className="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-1.5">
+        <p className="text-xs text-brand-700 font-bold uppercase tracking-wider mb-1.5">
           {course.subCategory}
         </p>
 
         {/* Title */}
-        <h3 className="font-display font-semibold text-surface-900 group-hover:text-brand-600 transition-colors mb-2 line-clamp-2 text-base leading-snug">
+        <h3 className="font-display font-bold text-surface-900 group-hover:text-brand-700 transition-colors mb-2 line-clamp-2 text-base leading-snug">
           {course.title}
         </h3>
 
         {/* Short description */}
-        <p className="text-sm text-surface-500 line-clamp-2 mb-3 leading-relaxed">
+        <p className="text-sm text-surface-600 line-clamp-2 mb-3 leading-relaxed">
           {course.shortDescription}
         </p>
 
         {/* Meta */}
-        <div className="flex items-center gap-3 text-xs text-surface-400 mb-4">
+        <div className="flex items-center gap-3 text-xs text-surface-600 mb-4 font-medium">
           <span className="flex items-center gap-1">
             <Clock className="w-3.5 h-3.5" />
             {course.duration}
@@ -146,7 +146,7 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
             {course.modules.length} modules
           </span>
           <span className="flex items-center gap-1">
-            <BadgeCheck className="w-3.5 h-3.5 text-green-500" />
+            <BadgeCheck className="w-3.5 h-3.5 text-green-600" />
             Certificate
           </span>
         </div>
@@ -158,12 +158,12 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
               {formatPrice(course.discountPrice, course.currency)}
             </span>
             {discount > 0 && (
-              <span className="text-sm text-surface-400 line-through">
+              <span className="text-sm text-surface-500 line-through font-normal">
                 {formatPrice(course.price, course.currency)}
               </span>
             )}
           </div>
-          <span className="text-xs font-semibold text-brand-600 hover:text-brand-700 transition-colors">
+          <span className="text-xs font-bold text-brand-700 hover:text-brand-800 transition-colors">
             View Details →
           </span>
         </div>

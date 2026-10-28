@@ -163,9 +163,9 @@ export default function StudentDashboardPage() {
             { label: 'Attendance records', count: portal.attendanceTotal, icon: Check },
             { label: 'Certificates', count: portal.certificates.length, icon: Award },
           ].map(({ label, count, icon: Icon }) => (
-            <article key={label} className="rounded-2xl border border-surface-100 bg-white p-5">
+            <article key={label} className="rounded-2xl border border-surface-200 bg-white p-5">
               <div className="flex items-center justify-between">
-                <p className="text-sm text-surface-500">{label}</p>
+                <p className="text-sm font-semibold text-surface-600">{label}</p>
                 <Icon className="h-5 w-5 text-brand-600" />
               </div>
               <p className="mt-3 text-2xl font-bold text-surface-900"><CountUp end={count} start /></p>
@@ -173,9 +173,9 @@ export default function StudentDashboardPage() {
           ))}
         </section>
 
-        <section className="rounded-2xl border border-surface-100 bg-white p-6">
+        <section className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
           <div className="mb-4 flex items-center justify-between gap-3">
-            <div><h2 className="font-semibold text-surface-900">Your profile</h2><p className="text-sm text-surface-500">Edit contact and learning profile details.</p></div>
+            <div><h2 className="font-semibold text-surface-900">Your profile</h2><p className="text-sm text-surface-600 font-medium">Edit contact and learning profile details.</p></div>
             {!editingProfile && <button type="button" onClick={() => { setDraft(profile); setEditingProfile(true); }} className="btn-secondary btn flex items-center gap-2"><Pencil className="h-4 w-4" /> Edit profile</button>}
           </div>
           {editingProfile ? (
@@ -198,51 +198,51 @@ export default function StudentDashboardPage() {
               {[
                 ['Phone', profile.phone], ['Country', profile.country], ['City', profile.city],
                 ['Education', profile.education], ['Experience', profile.experience], ['Career goal', profile.careerGoal],
-              ].map(([label, value]) => <div key={label}><dt className="text-surface-500">{label}</dt><dd className="mt-0.5 whitespace-pre-wrap text-surface-800">{value || 'Not provided'}</dd></div>)}
+              ].map(([label, value]) => <div key={label}><dt className="text-surface-600 font-semibold">{label}</dt><dd className="mt-0.5 whitespace-pre-wrap text-surface-900 font-medium">{value || 'Not provided'}</dd></div>)}
             </dl>
           )}
         </section>
 
         <section className="grid gap-6 xl:grid-cols-2">
-          <article className="rounded-2xl border border-surface-100 bg-white p-6">
+          <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><BookOpen className="h-5 w-5 text-brand-600" /> Enrolled courses</h2>
             {portal.courses.length ? <ul className="divide-y divide-surface-100">{portal.courses.map(course => (
               <li key={course.id} className="flex gap-4 py-4 first:pt-0 last:pb-0">
                 {course.thumbnail && <img src={course.thumbnail} alt="" className="h-16 w-24 rounded-lg object-cover" />}
-                <div className="min-w-0 flex-1"><Link to={`/courses/${course.slug}`} className="font-medium text-brand-700 hover:underline">{course.title}</Link><p className="mt-1 line-clamp-2 text-sm text-surface-500">{course.shortDescription || `Enrollment: ${course.status}`}</p><p className="mt-1 text-xs text-surface-400">Enrolled {formatDate(course.enrolledAt)} · {course.status}</p></div>
+                <div className="min-w-0 flex-1"><Link to={`/courses/${course.slug}`} className="font-semibold text-brand-700 hover:underline">{course.title}</Link><p className="mt-1 line-clamp-2 text-sm text-surface-600 font-medium">{course.shortDescription || `Enrollment: ${course.status}`}</p><p className="mt-1 text-xs text-surface-600 font-medium">Enrolled {formatDate(course.enrolledAt)} · {course.status}</p></div>
               </li>
-            ))}</ul> : <p className="text-sm text-surface-500">You do not have any course enrollments yet. Contact the academy if you think this is a mistake.</p>}
+            ))}</ul> : <p className="text-sm text-surface-600 font-medium">You do not have any course enrollments yet. Contact the academy if you think this is a mistake.</p>}
           </article>
 
-          <article className="rounded-2xl border border-surface-100 bg-white p-6">
+          <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><CalendarDays className="h-5 w-5 text-brand-600" /> Your batches & schedules</h2>
-            {portal.batches.length ? <ul className="space-y-3">{portal.batches.map(batch => <li key={batch.id} className="rounded-xl border border-surface-100 p-4"><div className="flex flex-wrap justify-between gap-2"><h3 className="font-medium text-surface-900">{batch.name}</h3><span className="text-xs capitalize text-brand-700">{batch.status}</span></div><p className="mt-1 text-xs text-surface-500">{batch.code} · {formatDate(batch.startDate)} – {formatDate(batch.endDate)}</p><p className="mt-2 whitespace-pre-wrap break-words text-sm text-surface-600">{formatSchedule(batch.schedule) || batch.description || 'Schedule details will be shared by your trainer.'}</p></li>)}</ul> : <p className="text-sm text-surface-500">No batch has been assigned to your account yet.</p>}
+            {portal.batches.length ? <ul className="space-y-3">{portal.batches.map(batch => <li key={batch.id} className="rounded-xl border border-surface-200 p-4"><div className="flex flex-wrap justify-between gap-2"><h3 className="font-semibold text-surface-900">{batch.name}</h3><span className="text-xs font-bold capitalize text-brand-700">{batch.status}</span></div><p className="mt-1 text-xs text-surface-600 font-medium">{batch.code} · {formatDate(batch.startDate)} – {formatDate(batch.endDate)}</p><p className="mt-2 whitespace-pre-wrap break-words text-sm text-surface-700 font-medium">{formatSchedule(batch.schedule) || batch.description || 'Schedule details will be shared by your trainer.'}</p></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">No batch has been assigned to your account yet.</p>}
           </article>
 
-          <article className="rounded-2xl border border-surface-100 bg-white p-6">
+          <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><Check className="h-5 w-5 text-brand-600" /> Attendance</h2>
-            {portal.attendance.length ? <div className="overflow-x-auto"><table className="w-full text-left text-sm"><thead><tr className="border-b text-surface-500"><th className="py-2 pr-3">Date</th><th className="py-2 pr-3">Batch</th><th className="py-2">Status</th></tr></thead><tbody className="divide-y">{portal.attendance.slice(0, 10).map(item => <tr key={item.id}><td className="py-3 pr-3">{formatDate(item.attendanceDate)}</td><td className="py-3 pr-3">{item.batchName}</td><td className="py-3 capitalize">{item.status}</td></tr>)}</tbody></table><p className="mt-3 text-xs text-surface-500">Showing {Math.min(10, portal.attendance.length)} of {portal.attendanceTotal} attendance records.</p></div> : <p className="text-sm text-surface-500">Attendance will appear here after your class records are submitted.</p>}
+            {portal.attendance.length ? <div className="overflow-x-auto"><table className="w-full text-left text-sm"><thead><tr className="border-b border-surface-200 text-surface-700 font-bold"><th className="py-2 pr-3">Date</th><th className="py-2 pr-3">Batch</th><th className="py-2">Status</th></tr></thead><tbody className="divide-y divide-surface-100">{portal.attendance.slice(0, 10).map(item => <tr key={item.id} className="text-surface-800 font-medium"><td className="py-3 pr-3">{formatDate(item.attendanceDate)}</td><td className="py-3 pr-3">{item.batchName}</td><td className="py-3 capitalize font-semibold">{item.status}</td></tr>)}</tbody></table><p className="mt-3 text-xs text-surface-600 font-medium">Showing {Math.min(10, portal.attendance.length)} of {portal.attendanceTotal} attendance records.</p></div> : <p className="text-sm text-surface-600 font-medium">Attendance will appear here after your class records are submitted.</p>}
           </article>
 
-          <article className="rounded-2xl border border-surface-100 bg-white p-6">
+          <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><Briefcase className="h-5 w-5 text-brand-600" /> Internships</h2>
-            {portal.internships.length ? <ul className="space-y-3">{portal.internships.map(item => <li key={item.id} className="rounded-xl border border-surface-100 p-4"><div className="flex flex-wrap justify-between gap-2"><h3 className="font-medium text-surface-900">{item.title}</h3><span className="text-xs capitalize text-brand-700">{item.status.replace(/_/g, ' ')}</span></div><p className="mt-1 text-sm text-surface-500">{item.company || 'Company to be confirmed'} · Applied {formatDate(item.appliedAt)}</p>{item.supervisorName && <p className="mt-1 text-xs text-surface-500">Supervisor: {item.supervisorName}</p>}            <div className="mt-3 h-2 overflow-hidden rounded-full bg-surface-100"><div className="reactbits-progress-fill h-full bg-brand-600" style={{ width: `${item.progress}%` }} /></div><p className="mt-1 text-right text-xs text-surface-500">{item.progress}% complete</p></li>)}</ul> : <p className="text-sm text-surface-500">No internship applications are linked to your account.</p>}
+            {portal.internships.length ? <ul className="space-y-3">{portal.internships.map(item => <li key={item.id} className="rounded-xl border border-surface-200 p-4"><div className="flex flex-wrap justify-between gap-2"><h3 className="font-semibold text-surface-900">{item.title}</h3><span className="text-xs font-bold capitalize text-brand-700">{item.status.replace(/_/g, ' ')}</span></div><p className="mt-1 text-sm text-surface-600 font-medium">{item.company || 'Company to be confirmed'} · Applied {formatDate(item.appliedAt)}</p>{item.supervisorName && <p className="mt-1 text-xs text-surface-600 font-medium">Supervisor: {item.supervisorName}</p>}            <div className="mt-3 h-2 overflow-hidden rounded-full bg-surface-100"><div className="reactbits-progress-fill h-full bg-brand-600" style={{ width: `${item.progress}%` }} /></div><p className="mt-1 text-right text-xs text-surface-600 font-medium">{item.progress}% complete</p></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">No internship applications are linked to your account.</p>}
           </article>
 
-          <article className="rounded-2xl border border-surface-100 bg-white p-6">
+          <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><Award className="h-5 w-5 text-brand-600" /> Certificates</h2>
-            {portal.certificates.length ? <ul className="space-y-3">{portal.certificates.map(certificate => <li key={certificate.id} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-surface-100 p-4"><div><h3 className="font-medium text-surface-900">{certificate.courseName}</h3><p className="mt-1 text-xs text-surface-500">Issued {formatDate(certificate.issuedAt)} · ID {certificate.certificateId}</p></div><Link to={`/certificates/${encodeURIComponent(certificate.certificateId)}`} className="btn-secondary btn text-sm">View / print</Link></li>)}</ul> : <p className="text-sm text-surface-500">Issued certificates will be available here.</p>}
+            {portal.certificates.length ? <ul className="space-y-3">{portal.certificates.map(certificate => <li key={certificate.id} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-surface-200 p-4"><div><h3 className="font-semibold text-surface-900">{certificate.courseName}</h3><p className="mt-1 text-xs text-surface-600 font-medium">Issued {formatDate(certificate.issuedAt)} · ID {certificate.certificateId}</p></div><Link to={`/certificates/${encodeURIComponent(certificate.certificateId)}`} className="btn-secondary btn text-sm">View / print</Link></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">Issued certificates will be available here.</p>}
           </article>
 
-          <article className="rounded-2xl border border-surface-100 bg-white p-6">
+          <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 font-semibold text-surface-900">Announcements</h2>
-            {portal.announcements.length ? <ul className="space-y-3">{portal.announcements.map(announcement => <li key={announcement.id} className="rounded-xl border border-surface-100 p-4"><h3 className="font-medium text-surface-900">{announcement.title}</h3><p className="mt-1 whitespace-pre-wrap text-sm text-surface-600">{announcement.body}</p><time className="mt-2 block text-xs text-surface-400">{formatDate(announcement.publishedAt)}</time></li>)}</ul> : <p className="text-sm text-surface-500">There are no current announcements.</p>}
+            {portal.announcements.length ? <ul className="space-y-3">{portal.announcements.map(announcement => <li key={announcement.id} className="rounded-xl border border-surface-200 p-4"><h3 className="font-semibold text-surface-900">{announcement.title}</h3><p className="mt-1 whitespace-pre-wrap text-sm text-surface-700 font-medium">{announcement.body}</p><time className="mt-2 block text-xs text-surface-600 font-medium">{formatDate(announcement.publishedAt)}</time></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">There are no current announcements.</p>}
           </article>
         </section>
 
-        <section className="rounded-2xl border border-surface-100 bg-white p-6">
+        <section className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
           <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><Activity className="h-5 w-5 text-brand-600" /> Account activity</h2>
-          {portal.activity.length ? <ul className="divide-y divide-surface-100">{portal.activity.map(item => <li key={item.id} className="flex flex-wrap justify-between gap-2 py-3 first:pt-0 last:pb-0"><span className="text-sm text-surface-800">{item.action.replace(/[._]/g, ' ')}</span><time className="text-xs text-surface-500">{formatDate(item.createdAt)}</time></li>)}</ul> : <p className="text-sm text-surface-500">No account activity has been recorded yet.</p>}
+          {portal.activity.length ? <ul className="divide-y divide-surface-100">{portal.activity.map(item => <li key={item.id} className="flex flex-wrap justify-between gap-2 py-3 first:pt-0 last:pb-0"><span className="text-sm text-surface-800 font-medium">{item.action.replace(/[._]/g, ' ')}</span><time className="text-xs text-surface-600 font-medium">{formatDate(item.createdAt)}</time></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">No account activity has been recorded yet.</p>}
         </section>
       </div>
     </main>

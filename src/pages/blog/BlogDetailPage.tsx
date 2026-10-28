@@ -27,8 +27,8 @@ export default function BlogDetailPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-surface-50 border-b border-surface-100 py-10">
-        <div className="container-xl max-w-4xl">
+      <div className="page-hero-premium py-14 relative overflow-hidden">
+        <div className="container-xl max-w-4xl relative z-10">
           <Breadcrumbs
             items={[
               { label: 'Blog', href: '/blog' },
@@ -38,25 +38,25 @@ export default function BlogDetailPage() {
             className="mb-6"
           />
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <Badge variant="brand">{post.category}</Badge>
-            <span className="text-surface-400 text-sm flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" /> {post.readTime}
+            <div className="page-hero-badge">{post.category}</div>
+            <span className="page-hero-chip font-medium text-sm flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-teal-600" /> {post.readTime}
             </span>
-            <span className="text-surface-400 text-sm flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5" /> {formatDate(post.publishedAt)}
+            <span className="page-hero-chip font-medium text-sm flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-teal-600" /> {formatDate(post.publishedAt)}
             </span>
           </div>
-          <h1 className="display-md text-surface-900 mb-6">{post.title}</h1>
-          <p className="text-surface-500 text-lg leading-relaxed mb-6">{post.excerpt}</p>
+          <h1 className="page-hero-title mb-6">{post.title}</h1>
+          <p className="page-hero-desc text-lg sm:text-xl leading-relaxed mb-6">{post.excerpt}</p>
           <div className="flex items-center gap-3">
             <img
               src={post.author.photo}
               alt={post.author.name}
-              className="w-12 h-12 rounded-full object-cover"
+              className="w-12 h-12 rounded-full object-cover border-2 border-teal-500/30"
             />
             <div>
-              <p className="font-semibold text-surface-900">{post.author.name}</p>
-              <p className="text-sm text-surface-500">{post.author.role}</p>
+              <p className="font-bold text-surface-900">{post.author.name}</p>
+              <p className="text-sm text-surface-600 font-medium">{post.author.role}</p>
             </div>
           </div>
         </div>
@@ -88,20 +88,20 @@ export default function BlogDetailPage() {
         </article>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-10 pb-10 border-b border-surface-100">
+        <div className="flex flex-wrap gap-2 mb-10 pb-10 border-b border-surface-200">
           {post.tags.map(tag => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-100 text-surface-600 text-sm"
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-100 text-surface-700 text-sm font-medium border border-surface-200"
             >
-              <Tag className="w-3 h-3" />
+              <Tag className="w-3.5 h-3.5 text-brand-600" />
               {tag}
             </span>
           ))}
         </div>
 
         {/* Author bio */}
-        <div className="bg-surface-50 rounded-3xl p-8 mb-12 flex gap-5 items-start">
+        <div className="bg-surface-50 border border-surface-200 rounded-3xl p-8 mb-12 flex gap-5 items-start">
           <img
             src={post.author.photo}
             alt={post.author.name}
@@ -109,8 +109,8 @@ export default function BlogDetailPage() {
           />
           <div>
             <p className="font-display font-bold text-surface-900 text-lg mb-1">{post.author.name}</p>
-            <p className="text-brand-600 text-sm font-medium mb-2">{post.author.role}</p>
-            <p className="text-surface-500 text-sm">
+            <p className="text-brand-700 text-sm font-semibold mb-2">{post.author.role}</p>
+            <p className="text-surface-600 text-sm font-medium leading-relaxed">
               Expert instructor at Global Minds Academy. Placeholder author bio — to be updated with real profile information.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function BlogDetailPage() {
                 <Link
                   key={p.id}
                   to={`/blog/${p.slug}`}
-                  className="group block rounded-2xl overflow-hidden border border-surface-100 hover:shadow-card-md transition-all"
+                  className="group block rounded-2xl overflow-hidden border border-surface-200 hover:border-brand-300 hover:shadow-card-md transition-all"
                 >
                   <img
                     src={p.featuredImage}
@@ -135,10 +135,10 @@ export default function BlogDetailPage() {
                   />
                   <div className="p-4">
                     <Badge variant="brand" className="mb-2">{p.category}</Badge>
-                    <h3 className="font-semibold text-surface-900 text-sm line-clamp-2 group-hover:text-brand-600 transition-colors">
+                    <h3 className="font-bold text-surface-900 text-sm line-clamp-2 group-hover:text-brand-700 transition-colors">
                       {p.title}
                     </h3>
-                    <p className="text-xs text-surface-400 mt-2">{p.readTime}</p>
+                    <p className="text-xs text-surface-600 font-medium mt-2">{p.readTime}</p>
                   </div>
                 </Link>
               ))}
@@ -147,11 +147,11 @@ export default function BlogDetailPage() {
         )}
 
         {/* Nav */}
-        <div className="mt-10 pt-8 border-t border-surface-100 flex justify-between">
-          <Link to="/blog" className="flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700">
+        <div className="mt-10 pt-8 border-t border-surface-200 flex justify-between">
+          <Link to="/blog" className="flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800">
             <ArrowLeft className="w-4 h-4" /> Back to Blog
           </Link>
-          <Link to="/courses" className="flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700">
+          <Link to="/courses" className="flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800">
             Explore Courses <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

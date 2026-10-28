@@ -113,7 +113,7 @@ export function QuickContactAssistant() {
               </span>
               <div>
                 <h2 className="font-semibold">Global Minds AI Assistant</h2>
-                <p className="text-xs text-white/75">Online · Instant answers</p>
+                <p className="text-xs text-teal-100 font-medium">Online · Instant answers</p>
               </div>
             </div>
             <button
@@ -132,8 +132,8 @@ export function QuickContactAssistant() {
                 key={`${message.role}-${index}`}
                 className={`max-w-[90%] whitespace-pre-line rounded-2xl px-3.5 py-3 text-sm leading-relaxed ${
                   message.role === 'user'
-                    ? 'ml-auto bg-brand-700 text-white'
-                    : 'bg-white text-surface-700 shadow-sm'
+                    ? 'ml-auto bg-brand-700 text-white font-medium'
+                    : 'bg-white border border-surface-200 text-surface-800 font-medium shadow-sm'
                 }`}
               >
                 {message.text}
@@ -146,7 +146,7 @@ export function QuickContactAssistant() {
                     key={suggestion}
                     type="button"
                     onClick={() => sendQuestion(suggestion)}
-                    className="block w-full rounded-xl border border-brand-100 bg-white px-3 py-2 text-left text-xs font-medium text-brand-700 transition-colors hover:bg-brand-50"
+                    className="block w-full rounded-xl border border-brand-300 bg-white px-3 py-2 text-left text-xs font-semibold text-brand-800 transition-colors hover:bg-brand-50 hover:border-brand-500"
                   >
                     💡 {suggestion}
                   </button>
@@ -155,14 +155,14 @@ export function QuickContactAssistant() {
             )}
           </div>
 
-          <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-surface-100 bg-white p-3">
+          <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-surface-200 bg-white p-3">
             <label className="sr-only" htmlFor="assistant-question">Ask about courses, training or projects</label>
             <input
               id="assistant-question"
               value={question}
               onChange={event => setQuestion(event.target.value)}
               placeholder="Ask about courses, training or projects..."
-              className="min-w-0 flex-1 rounded-xl border border-surface-200 px-3 py-2.5 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+              className="min-w-0 flex-1 rounded-xl border border-surface-200 px-3 py-2.5 text-sm text-surface-900 placeholder:text-surface-500 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
             />
             <button
               type="submit"

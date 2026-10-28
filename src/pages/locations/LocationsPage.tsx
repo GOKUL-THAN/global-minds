@@ -15,12 +15,23 @@ export default function LocationsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Locations' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Training Centres</h1>
-          <p className="text-white/70">In-person classroom training is available in Chennai. Online training is available globally.</p>
-          <p className="text-white/40 text-sm mt-2">Contact us to confirm the Chennai centre address.</p>
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Locations' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            Campuses &amp; Hybrid Learning Hubs
+          </div>
+          <h1 className="page-hero-title mb-4">
+            Training <span className="page-hero-highlight">Centres</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl leading-relaxed">
+            In-person classroom training is available at our state-of-the-art Chennai centre. Online live interactive training is available globally.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <div className="page-hero-chip">Chennai Campus Open</div>
+            <div className="page-hero-chip">Global Online Access</div>
+            <div className="page-hero-chip">High-Speed Lab Infrastructure</div>
+          </div>
         </div>
       </div>
 
@@ -36,20 +47,20 @@ export default function LocationsPage() {
                     <h3 className="font-display font-bold text-surface-900 text-lg">{loc.city}</h3>
                     <Badge variant={loc.active ? 'green' : 'gray'}>{loc.active ? 'Open' : 'Coming Soon'}</Badge>
                   </div>
-                  <p className="text-surface-400 text-xs mb-3">{loc.state}, {loc.country}</p>
+                  <p className="text-surface-600 text-xs font-medium mb-3">{loc.state}, {loc.country}</p>
                   {loc.active && (
                     <div className="space-y-2 mb-4">
-                      <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-sm text-surface-600 hover:text-brand-600">
-                        <Phone className="w-3.5 h-3.5" />{loc.phone}
+                      <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-sm text-surface-800 hover:text-brand-700 font-medium">
+                        <Phone className="w-3.5 h-3.5 text-brand-600" />{loc.phone}
                       </a>
-                      <a href={`mailto:${loc.email}`} className="flex items-center gap-2 text-sm text-surface-600 hover:text-brand-600">
-                        <Mail className="w-3.5 h-3.5" />{loc.email}
+                      <a href={`mailto:${loc.email}`} className="flex items-center gap-2 text-sm text-surface-800 hover:text-brand-700 font-medium">
+                        <Mail className="w-3.5 h-3.5 text-brand-600" />{loc.email}
                       </a>
                     </div>
                   )}
                   <div className="flex flex-wrap gap-1.5">
                     {(expandedLocations.has(loc.id) ? loc.facilities : loc.facilities.slice(0, 3)).map(f => (
-                      <span key={f} className="text-xs bg-surface-100 text-surface-600 px-2 py-0.5 rounded-lg">{f}</span>
+                      <span key={f} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-lg border border-surface-200">{f}</span>
                     ))}
                   </div>
                   {(loc.facilities.length > 3 || loc.courses.length > 0) && (
@@ -63,17 +74,17 @@ export default function LocationsPage() {
                         else next.add(loc.id);
                         return next;
                       })}
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
                     >
                       {expandedLocations.has(loc.id) ? 'Show less' : 'Show centre details'}
                       <ChevronDown className={`w-4 h-4 transition-transform ${expandedLocations.has(loc.id) ? 'rotate-180' : ''}`} />
                     </button>
                   )}
-                  <div id={`location-details-${loc.id}`} hidden={!expandedLocations.has(loc.id)} className="mt-4 border-t border-surface-100 pt-4">
-                    <p className="text-xs font-semibold text-surface-500 mb-1">Courses available at this centre</p>
+                  <div id={`location-details-${loc.id}`} hidden={!expandedLocations.has(loc.id)} className="mt-4 border-t border-surface-200 pt-4">
+                    <p className="text-xs font-bold text-surface-700 mb-1">Courses available at this centre</p>
                     <ul className="flex flex-wrap gap-1.5">
                       {publicCourseCatalog.filter(course => loc.courses.includes(course.sourceSlug)).map(course => (
-                        <li key={course.sourceSlug} className="text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-lg">
+                        <li key={course.sourceSlug} className="text-xs bg-brand-50 text-brand-800 font-semibold px-2 py-0.5 rounded-lg border border-brand-200">
                           {course.title}
                         </li>
                       ))}
@@ -85,12 +96,12 @@ export default function LocationsPage() {
           </div>
 
           {/* Online note */}
-          <div className="mt-12 p-8 rounded-3xl bg-brand-50 border border-brand-100 flex items-start gap-4">
+          <div className="mt-12 p-8 rounded-3xl bg-brand-50 border border-brand-200 flex items-start gap-4">
             <Monitor className="w-8 h-8 text-brand-600 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-semibold text-brand-900 mb-1">Available Worldwide — Online</h3>
-              <p className="text-brand-700 text-sm">Can't attend in person? Our online training is available globally — India, UAE, UK, USA, Canada, Australia, Singapore and more.</p>
-              <Link to="/online-training" className="text-sm font-semibold text-brand-600 hover:text-brand-700 mt-2 inline-block">Learn about online training →</Link>
+              <p className="text-brand-800 font-medium text-sm">Can't attend in person? Our online training is available globally — India, UAE, UK, USA, Canada, Australia, Singapore and more.</p>
+              <Link to="/online-training" className="text-sm font-bold text-brand-700 hover:text-brand-800 mt-2 inline-block">Learn about online training →</Link>
             </div>
           </div>
         </div>

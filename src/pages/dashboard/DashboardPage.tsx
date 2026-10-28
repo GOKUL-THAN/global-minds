@@ -81,7 +81,7 @@ const sidebarNav: { icon: React.ElementType; label: string; id: NavSection; badg
 
 function DemoNote({ message }: { message?: string }) {
   return (
-    <div className="px-4 py-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-700 text-xs">
+    <div className="px-4 py-3 bg-amber-50 border border-amber-300 rounded-xl text-amber-900 text-xs font-medium">
       ⚠️ {message ?? 'Demo data — connect backend API to show real student data.'}
     </div>
   );
@@ -96,19 +96,19 @@ function OverviewSection() {
 
       {/* Welcome */}
       <div className="bg-gradient-to-r from-brand-700 to-brand-600 rounded-2xl p-6 text-white">
-        <p className="text-brand-200 text-sm mb-1">Welcome back 👋</p>
+        <p className="text-teal-100 text-sm mb-1 font-medium">Welcome back 👋</p>
         <h2 className="font-display font-bold text-2xl mb-4">{mockStudent.name}</h2>
         <div className="flex flex-wrap gap-6 text-sm">
           <div>
-            <p className="text-brand-200">Enrolled Courses</p>
+            <p className="text-teal-100 font-medium">Enrolled Courses</p>
             <p className="text-xl font-bold">{mockStudent.enrolledCourses}</p>
           </div>
           <div>
-            <p className="text-brand-200">Hours Learned</p>
+            <p className="text-teal-100 font-medium">Hours Learned</p>
             <p className="text-xl font-bold">{mockStudent.totalHoursLearned}</p>
           </div>
           <div>
-            <p className="text-brand-200">Certificates</p>
+            <p className="text-teal-100 font-medium">Certificates</p>
             <p className="text-xl font-bold">{mockStudent.certificates}</p>
           </div>
         </div>
@@ -122,12 +122,12 @@ function OverviewSection() {
           { label: 'Certificates', value: mockStudent.certificates, icon: Award, color: 'bg-purple-50 text-purple-600' },
           { label: 'Hours Learned', value: mockStudent.totalHoursLearned, icon: Clock, color: 'bg-accent-50 text-accent-600' },
         ].map(s => (
-          <div key={s.label} className="bg-white rounded-2xl p-5 border border-surface-100">
+          <div key={s.label} className="bg-white rounded-2xl p-5 border border-surface-200">
             <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center mb-3', s.color)}>
               <s.icon className="w-5 h-5" />
             </div>
             <div className="text-2xl font-bold text-surface-900 mb-0.5">{s.value}</div>
-            <p className="text-sm text-surface-500">{s.label}</p>
+            <p className="text-sm text-surface-600 font-medium">{s.label}</p>
           </div>
         ))}
       </div>
@@ -137,18 +137,18 @@ function OverviewSection() {
         <h3 className="font-semibold text-surface-900 mb-4">Continue Learning</h3>
         <div className="space-y-4">
           {demoCourses.map(course => (
-            <div key={course.id} className="bg-white rounded-2xl border border-surface-100 p-4 flex gap-4">
+            <div key={course.id} className="bg-white rounded-2xl border border-surface-200 p-4 flex gap-4">
               <img src={course.thumbnail} alt={course.title} className="w-16 h-12 rounded-xl object-cover flex-shrink-0" loading="lazy" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <h4 className="font-semibold text-surface-900 text-sm">{course.title}</h4>
-                  <span className="text-xs text-brand-600 font-semibold flex-shrink-0">{course.progress}%</span>
+                  <span className="text-xs text-brand-700 font-bold flex-shrink-0">{course.progress}%</span>
                 </div>
-                <p className="text-xs text-surface-500 mb-2">Next: {course.nextLesson}</p>
+                <p className="text-xs text-surface-600 font-medium mb-2">Next: {course.nextLesson}</p>
                 <div className="progress-bar mb-2">
                   <div className="progress-fill" style={{ width: `${course.progress}%` }} />
                 </div>
-                <div className="flex items-center justify-between text-xs text-surface-400">
+                <div className="flex items-center justify-between text-xs text-surface-600 font-medium">
                   <span>{course.completedLessons} / {course.totalLessons} lessons</span>
                   <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.nextClassDate}</span>
                 </div>
@@ -166,15 +166,15 @@ function OverviewSection() {
         <h3 className="font-semibold text-surface-900 mb-4">Upcoming Classes</h3>
         <div className="space-y-3">
           {demoSchedule.slice(0, 2).map(s => (
-            <div key={s.id} className="bg-white rounded-xl border border-surface-100 p-4 flex items-center gap-3">
+            <div key={s.id} className="bg-white rounded-xl border border-surface-200 p-4 flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
                 <Calendar className="w-5 h-5 text-brand-600" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-semibold text-surface-900">{s.topic}</p>
-                <p className="text-xs text-surface-500">{s.course} · {s.date} · {s.time}</p>
+                <p className="text-xs text-surface-600 font-medium">{s.course} · {s.date} · {s.time}</p>
               </div>
-              <span className="text-xs text-brand-600 font-medium hidden sm:block">{s.mode}</span>
+              <span className="text-xs text-brand-700 font-semibold hidden sm:block">{s.mode}</span>
             </div>
           ))}
         </div>
@@ -194,20 +194,20 @@ function CoursesSection() {
       {demoCourses.length > 0 ? (
         <div className="grid sm:grid-cols-2 gap-6">
           {demoCourses.map(course => (
-            <div key={course.id} className="bg-white rounded-2xl border border-surface-100 overflow-hidden">
+            <div key={course.id} className="bg-white rounded-2xl border border-surface-200 overflow-hidden">
               <img src={course.thumbnail} alt={course.title} className="w-full h-40 object-cover" />
               <div className="p-5">
                 <h3 className="font-semibold text-surface-900 mb-1">{course.title}</h3>
-                <p className="text-xs text-surface-500 mb-3">Instructor: {course.instructor}</p>
+                <p className="text-xs text-surface-600 font-medium mb-3">Instructor: {course.instructor}</p>
                 <div className="mb-3">
-                  <div className="flex justify-between text-xs text-surface-500 mb-1">
-                    <span>Progress</span><span className="font-semibold text-brand-600">{course.progress}%</span>
+                  <div className="flex justify-between text-xs text-surface-600 font-medium mb-1">
+                    <span>Progress</span><span className="font-bold text-brand-700">{course.progress}%</span>
                   </div>
                   <div className="progress-bar">
                     <div className="progress-fill" style={{ width: `${course.progress}%` }} />
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-xs text-surface-400 mb-4">
+                <div className="flex items-center justify-between text-xs text-surface-600 font-medium mb-4">
                   <span>{course.completedLessons}/{course.totalLessons} lessons</span>
                   <span>Next: {course.nextClassDate}</span>
                 </div>
@@ -219,10 +219,10 @@ function CoursesSection() {
           ))}
         </div>
       ) : (
-        <div className="bg-white rounded-2xl border border-surface-100 p-10 text-center">
-          <BookOpen className="w-12 h-12 text-surface-200 mx-auto mb-4" />
-          <h3 className="font-semibold text-surface-700 mb-2">No courses enrolled yet</h3>
-          <p className="text-surface-500 text-sm mb-4">Explore our course catalog to start learning.</p>
+        <div className="bg-white rounded-2xl border border-surface-200 p-10 text-center">
+          <BookOpen className="w-12 h-12 text-surface-300 mx-auto mb-4" />
+          <h3 className="font-bold text-surface-900 mb-2">No courses enrolled yet</h3>
+          <p className="text-surface-600 font-medium text-sm mb-4">Explore our course catalog to start learning.</p>
           <Link to="/courses"><button className="btn-primary btn">Browse Courses</button></Link>
         </div>
       )}
@@ -237,17 +237,17 @@ function ScheduleSection() {
       <DemoNote />
       <div className="space-y-3">
         {demoSchedule.map(s => (
-          <div key={s.id} className="bg-white rounded-2xl border border-surface-100 p-5 flex items-center gap-4">
+          <div key={s.id} className="bg-white rounded-2xl border border-surface-200 p-5 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
               <Calendar className="w-6 h-6 text-brand-600" />
             </div>
             <div className="flex-1">
               <p className="font-semibold text-surface-900">{s.topic}</p>
-              <p className="text-sm text-surface-500 mt-0.5">{s.course}</p>
-              <div className="flex flex-wrap gap-3 mt-2 text-xs text-surface-400">
+              <p className="text-sm text-surface-600 font-medium mt-0.5">{s.course}</p>
+              <div className="flex flex-wrap gap-3 mt-2 text-xs text-surface-600 font-medium">
                 <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{s.date}</span>
                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{s.time}</span>
-                <span className="bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full font-medium">{s.mode}</span>
+                <span className="bg-brand-50 border border-brand-200 text-brand-800 px-2 py-0.5 rounded-full font-semibold">{s.mode}</span>
               </div>
             </div>
             <button className="hidden sm:block btn-secondary btn text-xs">Join</button>
@@ -263,12 +263,12 @@ function GenericSection({ title, icon: Icon, message }: { title: string; icon: R
     <div className="space-y-5">
       <h2 className="font-display font-bold text-xl text-surface-900">{title}</h2>
       <DemoNote />
-      <div className="bg-white rounded-2xl border border-surface-100 p-10 text-center">
+      <div className="bg-white rounded-2xl border border-surface-200 p-10 text-center">
         <div className="w-14 h-14 rounded-2xl bg-surface-100 flex items-center justify-center mx-auto mb-4">
-          <Icon className="w-7 h-7 text-surface-400" />
+          <Icon className="w-7 h-7 text-surface-600" />
         </div>
-        <h3 className="font-semibold text-surface-700 mb-2">{title}</h3>
-        <p className="text-surface-500 text-sm max-w-sm mx-auto">{message}</p>
+        <h3 className="font-bold text-surface-900 mb-2">{title}</h3>
+        <p className="text-surface-700 font-medium text-sm max-w-sm mx-auto">{message}</p>
       </div>
     </div>
   );
@@ -279,13 +279,13 @@ function ProfileSection() {
     <div className="space-y-5">
       <h2 className="font-display font-bold text-xl text-surface-900">My Profile</h2>
       <DemoNote message="Demo profile data — real profile will load after login and backend integration." />
-      <div className="bg-white rounded-2xl border border-surface-100 p-6">
-        <div className="flex items-center gap-4 mb-6 pb-6 border-b border-surface-100">
+      <div className="bg-white rounded-2xl border border-surface-200 p-6">
+        <div className="flex items-center gap-4 mb-6 pb-6 border-b border-surface-200">
           <img src={mockStudent.avatar} alt={mockStudent.name} className="w-16 h-16 rounded-2xl object-cover" />
           <div>
             <h3 className="font-bold text-surface-900 text-lg">{mockStudent.name}</h3>
-            <p className="text-surface-500 text-sm">{mockStudent.email}</p>
-            <p className="text-xs text-surface-400 mt-0.5">Member since {mockStudent.joinedDate}</p>
+            <p className="text-surface-600 font-medium text-sm">{mockStudent.email}</p>
+            <p className="text-xs text-surface-600 font-medium mt-0.5">Member since {mockStudent.joinedDate}</p>
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
@@ -295,8 +295,8 @@ function ProfileSection() {
             { label: 'City', value: mockStudent.city },
             { label: 'Education', value: mockStudent.education },
           ].map(f => (
-            <div key={f.label} className="bg-surface-50 rounded-xl p-3">
-              <p className="text-xs text-surface-400 mb-0.5">{f.label}</p>
+            <div key={f.label} className="bg-surface-50 border border-surface-200 rounded-xl p-3">
+              <p className="text-xs text-surface-600 font-medium mb-0.5">{f.label}</p>
               <p className="text-sm font-semibold text-surface-900">{f.value}</p>
             </div>
           ))}
@@ -320,12 +320,12 @@ function SupportSection() {
           { icon: BookOpen, title: 'Knowledge Base', desc: 'Browse FAQs and how-to guides.', label: 'Browse', color: 'bg-green-50 text-green-600' },
           { icon: MessageSquare, title: 'Contact Us', desc: 'Reach us by email or phone.', label: 'Contact', color: 'bg-accent-50 text-accent-600', href: '/contact' },
         ].map(item => (
-          <div key={item.title} className="bg-white rounded-2xl border border-surface-100 p-5">
+          <div key={item.title} className="bg-white rounded-2xl border border-surface-200 p-5">
             <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center mb-3', item.color)}>
               <item.icon className="w-5 h-5" />
             </div>
             <h3 className="font-semibold text-surface-900 mb-1">{item.title}</h3>
-            <p className="text-surface-500 text-sm mb-4">{item.desc}</p>
+            <p className="text-surface-600 font-medium text-sm mb-4">{item.desc}</p>
             {item.href ? (
               <Link to={item.href}><button className="btn-secondary btn text-sm">{item.label}</button></Link>
             ) : (
@@ -334,10 +334,10 @@ function SupportSection() {
           </div>
         ))}
       </div>
-      <div className="bg-surface-50 rounded-2xl p-5 text-center">
-        <p className="text-surface-600 text-sm mb-2">Need immediate help?</p>
-        <a href={`tel:${siteConfig.phone}`} className="text-brand-600 font-semibold hover:text-brand-700">{siteConfig.phone}</a>
-        <p className="text-surface-400 text-xs mt-1">{siteConfig.businessHours}</p>
+      <div className="bg-white border border-surface-200 rounded-2xl p-5 text-center">
+        <p className="text-surface-700 font-medium text-sm mb-2">Need immediate help?</p>
+        <a href={`tel:${siteConfig.phone}`} className="text-brand-700 font-bold hover:text-brand-800">{siteConfig.phone}</a>
+        <p className="text-surface-600 font-medium text-xs mt-1">{siteConfig.businessHours}</p>
       </div>
     </div>
   );
@@ -379,33 +379,33 @@ export default function DashboardPage() {
 
   const Sidebar = () => (
     <div className={cn(
-      'fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-surface-100 flex flex-col',
+      'fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-surface-200 flex flex-col',
       'transition-transform duration-300',
       sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
     )}>
       {/* Header */}
-      <div className="p-5 border-b border-surface-100 flex items-center justify-between">
+      <div className="p-5 border-b border-surface-200 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="w-9 h-9 rounded-xl bg-gradient-brand flex items-center justify-center">
             <GraduationCap className="w-5 h-5 text-white" />
           </div>
           <div>
             <p className="font-display font-bold text-sm text-surface-900">My Dashboard</p>
-            <p className="text-xs text-surface-400">Global Minds Academy</p>
+            <p className="text-xs text-surface-600 font-medium">Global Minds Academy</p>
           </div>
         </div>
-        <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-surface-400 hover:text-surface-700">
+        <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-surface-600 hover:text-surface-950">
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {/* Student card */}
-      <div className="p-4 border-b border-surface-100">
-        <div className="flex items-center gap-3 bg-surface-50 rounded-xl p-3">
+      <div className="p-4 border-b border-surface-200">
+        <div className="flex items-center gap-3 bg-surface-50 border border-surface-200 rounded-xl p-3">
           <img src={mockStudent.avatar} alt={mockStudent.name} className="w-9 h-9 rounded-full object-cover" />
           <div className="min-w-0">
             <p className="text-sm font-semibold text-surface-900 truncate">{mockStudent.name}</p>
-            <p className="text-xs text-surface-400 truncate">{mockStudent.email}</p>
+            <p className="text-xs text-surface-600 font-medium truncate">{mockStudent.email}</p>
           </div>
         </div>
       </div>
@@ -420,17 +420,17 @@ export default function DashboardPage() {
               {item.label}
             </span>
             {item.badge && (
-              <span className="text-xs bg-brand-600 text-white px-1.5 py-0.5 rounded-full font-semibold min-w-[1.25rem] text-center">
+              <span className="text-xs bg-brand-700 text-white px-1.5 py-0.5 rounded-full font-bold min-w-[1.25rem] text-center">
                 {item.badge}
               </span>
             )}
             </>
           );
           const className = cn(
-            'w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors',
+            'w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors',
             active === item.id && !item.href
-              ? 'bg-brand-50 text-brand-700'
-              : 'text-surface-600 hover:bg-surface-50 hover:text-surface-900',
+              ? 'bg-brand-50 text-brand-800 font-bold border-l-4 border-brand-600'
+              : 'text-surface-700 hover:bg-surface-100 hover:text-surface-950',
           );
 
           return item.href ? (
@@ -457,8 +457,8 @@ export default function DashboardPage() {
       </nav>
 
       {/* Footer */}
-      <div className="p-4 border-t border-surface-100 space-y-1">
-        <Link to="/" className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm text-surface-500 hover:text-surface-700 hover:bg-surface-50 transition-colors">
+      <div className="p-4 border-t border-surface-200 space-y-1">
+        <Link to="/" className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-medium text-surface-600 hover:text-surface-950 hover:bg-surface-50 transition-colors">
           <LogOut className="w-4 h-4" /> Sign Out
         </Link>
       </div>
@@ -486,27 +486,27 @@ export default function DashboardPage() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden p-2 rounded-xl text-surface-600 hover:bg-surface-100"
+              className="lg:hidden p-2 rounded-xl text-surface-700 hover:bg-surface-100"
               aria-label="Open menu"
             >
               <Menu className="w-5 h-5" />
             </button>
-            <div className="flex items-center gap-2 text-sm text-surface-500">
-              <Link to="/" className="hover:text-brand-600">Home</Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="font-medium text-surface-900">
+            <div className="flex items-center gap-2 text-sm text-surface-600 font-medium">
+              <Link to="/" className="hover:text-brand-700">Home</Link>
+              <ChevronRight className="w-4 h-4 text-surface-400" />
+              <span className="font-bold text-surface-900">
                 {sidebarNav.find(n => n.id === active)?.label ?? 'Dashboard'}
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="hidden sm:flex text-xs bg-amber-50 border border-amber-200 text-amber-600 px-2 py-0.5 rounded-full font-medium">
+            <span className="hidden sm:flex text-xs bg-amber-50 border border-amber-300 text-amber-900 px-2 py-0.5 rounded-full font-semibold">
               Demo Mode
             </span>
             <button
               onClick={() => setActive('notifications')}
-              className="relative p-2 text-surface-500 hover:text-surface-900 hover:bg-surface-100 rounded-xl"
+              className="relative p-2 text-surface-600 hover:text-surface-900 hover:bg-surface-100 rounded-xl"
               aria-label="Notifications"
             >
               <Bell className="w-5 h-5" />
@@ -514,7 +514,7 @@ export default function DashboardPage() {
             </button>
             <button
               onClick={() => setActive('profile')}
-              className="p-0.5 rounded-full border-2 border-brand-200"
+              className="p-0.5 rounded-full border-2 border-brand-300"
               aria-label="Profile"
             >
               <img src={mockStudent.avatar} alt="Profile" className="w-7 h-7 rounded-full object-cover" />

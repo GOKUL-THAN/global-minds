@@ -27,17 +27,17 @@ const icons = {
 };
 
 const colors: Record<ToastType, string> = {
-  success: 'bg-green-50 border-green-200 text-green-800',
-  error:   'bg-red-50 border-red-200 text-red-800',
-  warning: 'bg-amber-50 border-amber-200 text-amber-800',
-  info:    'bg-brand-50 border-brand-200 text-brand-800',
+  success: 'bg-green-50 border-green-300 text-green-900',
+  error:   'bg-red-50 border-red-300 text-red-900',
+  warning: 'bg-amber-50 border-amber-300 text-amber-900',
+  info:    'bg-brand-50 border-brand-300 text-brand-900',
 };
 
 const iconColors: Record<ToastType, string> = {
-  success: 'text-green-500',
-  error:   'text-red-500',
-  warning: 'text-amber-500',
-  info:    'text-brand-500',
+  success: 'text-emerald-700',
+  error:   'text-red-700',
+  warning: 'text-amber-800',
+  info:    'text-brand-700',
 };
 
 export function ToastContainer() {

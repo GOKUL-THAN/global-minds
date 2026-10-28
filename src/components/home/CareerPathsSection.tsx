@@ -37,14 +37,14 @@ export function CareerPathsSection() {
     <section className="section bg-white" aria-label="Career learning paths">
       <div className="container-xl">
         <div className="text-center mb-12">
-          <p className="text-sm text-brand-600 font-semibold uppercase tracking-wider mb-3">
+          <p className="text-sm text-brand-700 font-bold uppercase tracking-wider mb-3">
             Structured career tracks
           </p>
           <h2 className="display-md">
             Your Career{' '}
             <span className="text-gradient">Roadmap</span>
           </h2>
-          <p className="text-surface-500 mt-4 max-w-2xl mx-auto">
+          <p className="text-surface-700 font-medium mt-4 max-w-2xl mx-auto">
             Not sure where to start? Pick a career goal and follow a step-by-step learning path designed by industry experts.
           </p>
         </div>
@@ -59,7 +59,7 @@ export function CareerPathsSection() {
               {/* Header */}
               <div className={cn('p-6 bg-gradient-to-r text-white', path.gradient)}>
                 <h3 className="font-display font-bold text-lg mb-1">{path.title}</h3>
-                <div className="flex items-center gap-4 text-sm text-white/80">
+                <div className="flex items-center gap-4 text-sm text-white font-medium">
                   <span>{path.duration}</span>
                   <span>•</span>
                   <span>Expected: {path.salary}</span>
@@ -77,12 +77,12 @@ export function CareerPathsSection() {
                           <div className="w-px h-4 bg-surface-200" />
                         )}
                       </div>
-                      <span className="text-sm text-surface-700 font-medium">{step}</span>
+                      <span className="text-sm text-surface-800 font-semibold">{step}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-5 pt-4 border-t border-surface-100 flex items-center gap-2 text-sm font-semibold text-brand-600 group-hover:text-brand-700">
+                <div className="mt-5 pt-4 border-t border-surface-200 flex items-center gap-2 text-sm font-bold text-brand-700 group-hover:text-brand-800">
                   Start this path
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>

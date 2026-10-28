@@ -51,18 +51,18 @@ export function UpcomingBatchesSection() {
       <div className="container-xl">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
-            <p className="text-sm text-brand-600 font-semibold uppercase tracking-wider mb-3">
+            <p className="text-sm text-brand-700 font-bold uppercase tracking-wider mb-3">
               Start learning soon
             </p>
             <h2 className="display-md">
               Upcoming{' '}
               <span className="text-gradient">Batch Schedule</span>
             </h2>
-            <p className="text-surface-500 mt-3 max-w-xl">
+            <p className="text-surface-700 font-medium mt-3 max-w-xl">
               Reserve your seat in our next batch. Limited seats available for personalised mentorship.
             </p>
           </div>
-          <Link to="/batch-schedule" className="shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors">
+          <Link to="/batch-schedule" className="shrink-0 inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 transition-colors">
             View full schedule <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -84,21 +84,21 @@ export function UpcomingBatchesSection() {
               <h3 className="font-display font-bold text-surface-900 mb-3 group-hover:text-brand-700 transition-colors">
                 {batch.course}
               </h3>
-              <div className="space-y-2 text-sm text-surface-600">
+              <div className="space-y-2 text-sm text-surface-700 font-medium">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-surface-400 shrink-0" />
+                  <Calendar className="w-4 h-4 text-surface-600 shrink-0" />
                   <span>{batch.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-surface-400 shrink-0" />
+                  <Clock className="w-4 h-4 text-surface-600 shrink-0" />
                   <span>{batch.time}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-surface-400 shrink-0" />
-                  <span className="font-semibold text-green-600">{batch.seats} seats left</span>
+                  <Users className="w-4 h-4 text-surface-600 shrink-0" />
+                  <span className="font-bold text-emerald-800">{batch.seats} seats left</span>
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-surface-200 text-xs font-semibold text-brand-600 group-hover:text-brand-700">
+              <div className="mt-4 pt-3 border-t border-surface-200 text-xs font-bold text-brand-700 group-hover:text-brand-800">
                 Reserve seat →
               </div>
             </Link>

@@ -217,10 +217,10 @@ export function AdminLayout() {
           <img src="/logo.png" alt="Global Minds Academy logo" className="h-14 w-auto max-w-[115px] object-contain" />
           <div>
             <p className="font-display font-bold text-sm">Global Minds Academy</p>
-            <p className="text-xs text-surface-400">Admin Portal</p>
+            <p className="text-xs text-surface-300">Admin Portal</p>
           </div>
         </Link>
-        <button type="button" onClick={() => setSidebarOpen(false)} aria-label="Close admin navigation" className="lg:hidden rounded-lg p-2 text-surface-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">
+        <button type="button" onClick={() => setSidebarOpen(false)} aria-label="Close admin navigation" className="lg:hidden rounded-lg p-2 text-surface-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">
           <X className="w-5 h-5" />
         </button>
       </div>
@@ -233,7 +233,7 @@ export function AdminLayout() {
               type="button"
               onClick={() => toggleGroup(group.label)}
               aria-expanded={!collapsedGroups.has(group.label)}
-              className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-surface-400 uppercase tracking-wider hover:text-surface-200 transition-colors"
+              className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-surface-300 uppercase tracking-wider hover:text-surface-100 transition-colors"
             >
               {group.label}
               {group.items.length > 1 && (
@@ -286,14 +286,14 @@ export function AdminLayout() {
             <p className="text-sm font-semibold text-white truncate">
               {user.role === 'SUPER_ADMIN' ? 'Super Admin' : user.role === 'CONTENT_MANAGER' ? 'Content Manager' : user.role === 'TRAINER' ? 'Trainer' : 'Admin'}
             </p>
-            <p className="text-xs text-surface-400 truncate">{user.email}</p>
+            <p className="text-xs text-surface-300 truncate">{user.email}</p>
           </div>
         </div>
-        <button type="button" onClick={signOut} className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-surface-400 hover:text-white rounded-xl hover:bg-surface-800 transition-colors">
+        <button type="button" onClick={signOut} className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-surface-300 hover:text-white rounded-xl hover:bg-surface-800 transition-colors">
           <LogOut className="w-4 h-4" />
           Sign out
         </button>
-        <Link to="/" className="flex items-center gap-2.5 px-3 py-2 text-sm text-surface-400 hover:text-white rounded-xl hover:bg-surface-800 transition-colors">
+        <Link to="/" className="flex items-center gap-2.5 px-3 py-2 text-sm text-surface-300 hover:text-white rounded-xl hover:bg-surface-800 transition-colors">
           Exit to Website
         </Link>
       </div>
@@ -323,7 +323,7 @@ export function AdminLayout() {
               ref={menuButtonRef}
               type="button"
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden p-2 rounded-xl text-surface-600 hover:bg-surface-100"
+              className="lg:hidden p-2 rounded-xl text-surface-700 hover:bg-surface-100"
               aria-label="Open sidebar"
               aria-expanded={sidebarOpen}
               aria-controls="admin-sidebar"
@@ -334,12 +334,12 @@ export function AdminLayout() {
               <p className="font-semibold text-surface-900 text-sm">
                 {visibleNavGroups.flatMap(g => g.items).find(i => isActive(i.href))?.label ?? 'Admin'}
               </p>
-              <p className="text-xs text-surface-400">Global Minds Academy Admin Portal</p>
+              <p className="text-xs text-surface-600 font-medium">Global Minds Academy Admin Portal</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold">
+            <div className="px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-800 text-xs font-semibold">
               Course changes sync through CMS
             </div>
           </div>

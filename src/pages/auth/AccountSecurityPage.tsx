@@ -95,7 +95,7 @@ export default function AccountSecurityPage() {
   return (
     <main className="min-h-screen bg-surface-50 py-10 px-4">
       <div className="max-w-3xl mx-auto space-y-6">
-        <Link to={user?.role === 'STUDENT' ? '/dashboard' : '/admin'} className="inline-flex items-center gap-2 text-sm text-brand-600 hover:underline">
+        <Link to={user?.role === 'STUDENT' ? '/dashboard' : '/admin'} className="inline-flex items-center gap-2 text-sm text-brand-700 font-semibold hover:underline">
           <ArrowLeft className="w-4 h-4" /> Back to account
         </Link>
         <header className="bg-white rounded-2xl p-6 shadow-card">
@@ -103,7 +103,7 @@ export default function AccountSecurityPage() {
             <Shield className="w-7 h-7 text-brand-600" />
             <div>
               <h1 className="font-display font-bold text-2xl">Account security</h1>
-              <p className="text-sm text-surface-500">{user?.email}</p>
+              <p className="text-sm text-surface-600 font-medium">{user?.email}</p>
             </div>
           </div>
         </header>
@@ -132,26 +132,26 @@ export default function AccountSecurityPage() {
           <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
             <div>
               <h2 className="font-semibold text-lg">Active sessions</h2>
-              <p className="text-sm text-surface-500">Revoke devices you no longer use. Sessions expire automatically.</p>
+              <p className="text-sm text-surface-600 font-medium">Revoke devices you no longer use. Sessions expire automatically.</p>
             </div>
             <button type="button" disabled={busy || sessions.length === 0} onClick={() => void revokeAll()} className="btn-secondary btn">
               Sign out all sessions
             </button>
           </div>
           {sessions.length === 0
-            ? <p className="text-sm text-surface-500">No active sessions were found.</p>
+            ? <p className="text-sm text-surface-600 font-medium">No active sessions were found.</p>
             : <ul className="divide-y divide-surface-100">
               {sessions.map(session => (
                 <li key={session.id} className="py-4 flex flex-wrap items-center justify-between gap-3">
                   <div className="flex items-start gap-3 min-w-0">
-                    <Smartphone className="w-5 h-5 text-surface-400 mt-0.5" />
+                    <Smartphone className="w-5 h-5 text-surface-500 mt-0.5" />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium break-all">{session.user_agent || 'Unknown device'}</p>
-                      <p className="text-xs text-surface-500">IP {session.ip_address || 'unknown'} · Last active {new Date(session.last_seen_at).toLocaleString()}</p>
-                      <p className="text-xs text-surface-500">Expires {new Date(session.expires_at).toLocaleString()}</p>
+                      <p className="text-sm font-semibold text-surface-900 break-all">{session.user_agent || 'Unknown device'}</p>
+                      <p className="text-xs text-surface-600 font-medium">IP {session.ip_address || 'unknown'} · Last active {new Date(session.last_seen_at).toLocaleString()}</p>
+                      <p className="text-xs text-surface-600 font-medium">Expires {new Date(session.expires_at).toLocaleString()}</p>
                     </div>
                   </div>
-                  <button type="button" onClick={() => void revokeSession(session.id)} className="text-sm text-red-700 hover:underline">Revoke</button>
+                  <button type="button" onClick={() => void revokeSession(session.id)} className="text-sm text-red-700 hover:text-red-900 font-semibold hover:underline">Revoke</button>
                 </li>
               ))}
             </ul>}

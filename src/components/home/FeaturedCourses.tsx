@@ -30,11 +30,11 @@ export function FeaturedCourses() {
       <div className="container-xl">
         <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Learn by building</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-700">Learn by building</p>
             <h2 className="display-md text-surface-900">
               Find your next <span className="text-gradient">big skill</span>
             </h2>
-            <p className="mt-3 max-w-xl leading-relaxed text-surface-500">
+            <p className="mt-3 max-w-xl leading-relaxed text-surface-600">
               Practical, mentor-led programs designed to help you move forward in technology.
             </p>
           </div>
@@ -79,7 +79,7 @@ export function FeaturedCourses() {
 
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-brand-700">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-brand-700">
                     {course.category === 'machine-learning'
                       ? 'AI & ML'
                       : course.category === 'automation-testing'
@@ -89,13 +89,13 @@ export function FeaturedCourses() {
                   <h3 className="font-display mb-2 line-clamp-2 text-base font-bold text-surface-900 transition-colors group-hover:text-brand-700">
                     {course.title}
                   </h3>
-                  <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-surface-500">
+                  <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-surface-600">
                     {course.shortDescription}
                   </p>
 
                   {/* Price */}
                   <div className="mt-auto flex items-center justify-between gap-3">
-                    <span className="flex items-center gap-1.5 text-sm text-surface-500">
+                    <span className="flex items-center gap-1.5 text-sm font-medium text-surface-600">
                       <Clock className="h-4 w-4" aria-hidden="true" />
                       {course.duration}
                     </span>

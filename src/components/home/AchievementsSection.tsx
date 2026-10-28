@@ -14,10 +14,10 @@ const achievements = [
 
 export function AchievementsSection() {
   return (
-    <section className="py-12 bg-surface-50 border-y border-surface-100" aria-label="Courses and hiring partners">
+    <section className="py-12 bg-surface-50 border-y border-surface-200" aria-label="Courses and hiring partners">
       <div className="container-xl">
         <div className="text-center mb-10">
-          <p className="text-sm text-brand-600 font-semibold uppercase tracking-wider mb-3">
+          <p className="text-sm text-brand-700 font-bold uppercase tracking-wider mb-3">
             Courses &amp; Hiring Partners
           </p>
           <h2 className="display-md">
@@ -31,7 +31,7 @@ export function AchievementsSection() {
               key={item.title}
               className={cn(
                 'group flex flex-col items-center text-center p-5 rounded-2xl',
-                'bg-white border border-surface-100',
+                'bg-white border border-surface-200',
                 'hover:shadow-card-md hover:-translate-y-1 transition-all duration-300',
               )}
             >
@@ -40,7 +40,7 @@ export function AchievementsSection() {
                 'group-hover:scale-110 transition-transform',
                 'bg-brand-50',
               )}>
-                <item.icon className={cn('w-7 h-7 text-brand-500')} />
+                <item.icon className={cn('w-7 h-7 text-brand-700')} />
               </div>
               <h3 className="font-semibold text-surface-900 text-sm mb-1">{item.title}</h3>
             </div>

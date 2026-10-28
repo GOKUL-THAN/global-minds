@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Building2, Users, Target, Clock, Award, CheckCircle, Loader2, Send } from 'lucide-react';
+import { Building2, Users, Target, Clock, Award, CheckCircle, Loader2, Send, Briefcase } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { enquiryService } from '../services/enquiryService';
@@ -57,12 +57,18 @@ export default function CorporateTrainingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Corporate Training' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Corporate Training</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
-            Enterprise-grade, customised technology training for your teams — from cloud and DevOps to AI, data and software development.
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Corporate Training' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            <Briefcase className="w-4 h-4 text-teal-600" />
+            <span>Enterprise Upskilling Solutions</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Corporate <span className="page-hero-highlight">Training</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+            Enterprise-grade, customised technology training for your teams — from cloud and DevOps to AI, data science, and modern software development.
           </p>
         </div>
       </div>
@@ -74,12 +80,12 @@ export default function CorporateTrainingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {benefits.map(b => (
-              <a key={b.title} href="#corporate-enquiry" className="block p-6 rounded-2xl border border-surface-100 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Request corporate training: ${b.title}`}>
+              <a key={b.title} href="#corporate-enquiry" className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" aria-label={`Request corporate training: ${b.title}`}>
                 <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
                   <b.icon className="w-6 h-6 text-brand-600" />
                 </div>
                 <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
-                <p className="text-surface-500 text-sm">{b.desc}</p>
+                <p className="text-surface-600 text-sm leading-relaxed">{b.desc}</p>
               </a>
             ))}
           </div>
@@ -91,13 +97,13 @@ export default function CorporateTrainingPage() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-3xl p-8 shadow-card">
               <h2 className="heading-xl mb-2">Request Corporate Training</h2>
-              <p className="text-surface-500 text-sm mb-6">Share your training requirements and our team will review your enquiry.</p>
+              <p className="text-surface-600 text-sm mb-6 font-medium">Share your training requirements and our team will review your enquiry.</p>
 
               {success ? (
                 <div className="text-center py-8">
-                  <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                  <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
                   <h3 className="font-bold text-surface-900 text-lg mb-2">Enquiry Received!</h3>
-                  <p className="text-surface-500">Our corporate training team will contact you within 1 business day.</p>
+                  <p className="text-surface-600 font-medium">Our corporate training team will contact you within 1 business day.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -161,8 +167,8 @@ export default function CorporateTrainingPage() {
                     <div className="grid grid-cols-3 gap-2 mt-2">
                       {techOptions.map(tech => (
                         <label key={tech} className="flex items-center gap-2 cursor-pointer">
-                          <input type="checkbox" value={tech} className="w-3.5 h-3.5 text-brand-600" {...register('technologies')} />
-                          <span className="text-xs text-surface-600">{tech}</span>
+                          <input type="checkbox" value={tech} className="w-3.5 h-3.5 text-brand-600 rounded border-surface-300" {...register('technologies')} />
+                          <span className="text-xs text-surface-800 font-medium">{tech}</span>
                         </label>
                       ))}
                     </div>

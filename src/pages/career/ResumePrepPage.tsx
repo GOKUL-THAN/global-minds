@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FileText, Linkedin, Github, Star, ArrowRight } from 'lucide-react';
+import { FileText, Linkedin, Github, Star, ArrowRight, CheckCircle } from 'lucide-react';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
@@ -33,15 +33,21 @@ export default function ResumePrepPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-14">
-        <div className="container-xl">
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
           <Breadcrumbs
             items={[{ label: 'Career', href: '/career' }, { label: 'Resume Preparation' }]}
-            className="text-white/50 mb-4"
+            className="mb-4"
           />
-          <h1 className="display-lg text-white mb-4">Resume Preparation</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
-            Build a strong, ATS-optimised resume that gets you noticed by recruiters and hiring managers in the IT industry.
+          <div className="page-hero-badge mb-4">
+            <CheckCircle className="w-4 h-4 text-teal-600" />
+            <span>ATS-Friendly Formatting</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Resume <span className="page-hero-highlight">Preparation</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+            Build a strong, ATS-optimised resume that gets you shortlisted by top tech recruiters and hiring managers in the IT industry.
           </p>
         </div>
       </div>
@@ -51,18 +57,18 @@ export default function ResumePrepPage() {
         <div className="container-xl">
           <div className="text-center mb-12">
             <h2 className="display-md mb-4">Key Resume Sections</h2>
-            <p className="text-surface-500 max-w-xl mx-auto">
+            <p className="text-surface-600 max-w-xl mx-auto font-medium">
               A strong IT resume needs the right structure. Here's what every section should accomplish.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sections.map((s, i) => (
-              <div key={s.title} className="p-6 rounded-2xl border border-surface-100 hover:shadow-card-md transition-shadow">
+              <div key={s.title} className="p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md transition-all">
                 <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
                   <span className="font-bold text-brand-600 text-sm">{String(i + 1).padStart(2, '0')}</span>
                 </div>
                 <h3 className="font-semibold text-surface-900 mb-2">{s.title}</h3>
-                <p className="text-surface-500 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-surface-600 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -79,8 +85,8 @@ export default function ResumePrepPage() {
               <ul className="space-y-3">
                 {resumeTips.map((tip, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Star className="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-surface-700 text-sm">{tip}</span>
+                    <Star className="w-4 h-4 text-accent-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-surface-800 text-sm font-medium">{tip}</span>
                   </li>
                 ))}
               </ul>
@@ -89,18 +95,18 @@ export default function ResumePrepPage() {
               <div className="mt-8 space-y-4">
                 <h3 className="font-semibold text-surface-900">Build Your Online Presence</h3>
                 <div className="flex gap-4">
-                  <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-surface-100 flex-1">
+                  <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-surface-200 flex-1">
                     <Linkedin className="w-6 h-6 text-blue-600" />
                     <div>
                       <p className="font-semibold text-sm text-surface-900">LinkedIn</p>
-                      <p className="text-xs text-surface-500">Professional profile</p>
+                      <p className="text-xs text-surface-600 font-medium">Professional profile</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-surface-100 flex-1">
+                  <div className="flex items-center gap-2 p-4 bg-white rounded-2xl border border-surface-200 flex-1">
                     <Github className="w-6 h-6 text-surface-900" />
                     <div>
                       <p className="font-semibold text-sm text-surface-900">GitHub</p>
-                      <p className="text-xs text-surface-500">Project portfolio</p>
+                      <p className="text-xs text-surface-600 font-medium">Project portfolio</p>
                     </div>
                   </div>
                 </div>

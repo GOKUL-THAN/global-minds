@@ -73,15 +73,15 @@ export default function CourseDetailPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-12">
-        <div className="container-xl">
+      <div className="page-hero-premium py-14">
+        <div className="container-xl relative z-10">
           <Breadcrumbs
             items={[
               { label: 'Courses', href: '/courses' },
               { label: course.subCategory, href: `/categories/${course.category}` },
               { label: course.title },
             ]}
-            className="text-white/50 mb-4"
+            className="mb-4"
           />
 
           <div className="grid lg:grid-cols-3 gap-12">
@@ -90,46 +90,46 @@ export default function CourseDetailPage() {
               <div className="flex gap-2 mb-4">
                 {course.trending && <Badge variant="accent">🔥 Trending</Badge>}
                 {course.featured && <Badge variant="brand">⭐ Featured</Badge>}
-                <Badge variant="gray">{course.level}</Badge>
+                <span className="page-hero-chip text-xs py-1 px-3">{course.level}</span>
               </div>
 
-              <h1 className="display-md text-white mb-4">{course.title}</h1>
-              <p className="text-white/75 text-lg mb-6 leading-relaxed">{course.shortDescription}</p>
+              <h1 className="page-hero-title display-md font-extrabold mb-4">{course.title}</h1>
+              <p className="page-hero-desc text-lg mb-6 leading-relaxed">{course.shortDescription}</p>
               <img
                 src={course.banner}
                 alt={`${course.title} course`}
-                className="lg:hidden w-full aspect-[4/3] object-cover rounded-2xl mb-6"
+                className="lg:hidden w-full aspect-[4/3] object-cover rounded-2xl mb-6 border border-white/20 shadow-xl"
               />
 
               {/* Meta */}
-              <div className="flex flex-wrap items-center gap-5 text-sm text-white/70 mb-6">
-                <span className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4" /> {course.duration}
+              <div className="flex flex-wrap items-center gap-3 text-sm mb-6">
+                <span className="page-hero-chip">
+                  <Clock className="w-4 h-4 text-teal-600" /> {course.duration}
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <BarChart2 className="w-4 h-4" /> {course.level}
+                <span className="page-hero-chip">
+                  <BarChart2 className="w-4 h-4 text-teal-600" /> {course.level}
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <BookOpen className="w-4 h-4" /> {course.modules.length} modules
+                <span className="page-hero-chip">
+                  <BookOpen className="w-4 h-4 text-teal-600" /> {course.modules.length} modules
                 </span>
                 {course.onlineAvailable && (
-                  <span className="flex items-center gap-1.5"><Monitor className="w-4 h-4" /> Online</span>
+                  <span className="page-hero-chip"><Monitor className="w-4 h-4 text-teal-600" /> Online</span>
                 )}
                 {course.classroomAvailable && (
-                  <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> Classroom — Chennai</span>
+                  <span className="page-hero-chip"><MapPin className="w-4 h-4 text-teal-600" /> Classroom — Chennai</span>
                 )}
               </div>
 
             </div>
 
             {/* Mobile price card preview */}
-            <div className="lg:hidden bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-              <div className="text-3xl font-bold text-white mb-1">
+            <div className="lg:hidden bg-white border border-teal-200 rounded-2xl p-6 shadow-xl">
+              <div className="text-3xl font-extrabold text-surface-900 mb-1">
                 {formatPrice(course.discountPrice, course.currency)}
               </div>
               {course.discountPercentage > 0 && (
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-white/50 line-through">{formatPrice(course.price, course.currency)}</span>
+                  <span className="text-surface-500 line-through text-sm font-medium">{formatPrice(course.price, course.currency)}</span>
                   <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-lg">-{course.discountPercentage}%</span>
                 </div>
               )}
@@ -144,7 +144,7 @@ export default function CourseDetailPage() {
               <img
                 src={course.banner}
                 alt={`${course.title} course`}
-                className="w-full aspect-[4/3] object-cover rounded-3xl border border-white/15 shadow-2xl"
+                className="w-full aspect-[4/3] object-cover rounded-3xl border border-teal-200/70 shadow-xl"
               />
             </div>
           </div>
@@ -450,17 +450,17 @@ export default function CourseDetailPage() {
         )}
 
         {/* Final CTA */}
-        <div className="mt-16 p-10 rounded-3xl bg-gradient-to-r from-brand-700 to-brand-600 text-white text-center">
-          <h2 className="text-2xl font-display font-bold mb-3">Ready to Start?</h2>
-          <p className="text-white/80 mb-6">Build practical skills and take the next step in your career with Global Minds Academy.</p>
+        <div className="cta-section-banner mt-16 p-10 rounded-3xl bg-gradient-to-r from-brand-800 to-brand-700 text-white text-center">
+          <h2 className="text-2xl font-display font-extrabold text-white mb-3">Ready to Start?</h2>
+          <p className="text-white/90 mb-6 max-w-xl mx-auto">Build practical skills and take the next step in your career with Global Minds Academy.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
-              <Button className="bg-white text-brand-700 hover:bg-brand-50" size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
+              <Button className="bg-white text-brand-900 hover:bg-brand-50 font-bold shadow-md" size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
                 Enroll in {course.title}
               </Button>
             </Link>
             <Link to="/courses">
-              <Button className="border-white/30 text-white hover:bg-white/10" variant="outline" size="lg">
+              <Button className="border-2 border-white/80 text-white hover:bg-white/10 font-bold" variant="outline" size="lg">
                 Browse More Courses
               </Button>
             </Link>

@@ -72,11 +72,11 @@ export function EnquiryForm({
           <CheckCircle className="w-8 h-8 text-green-500" />
         </div>
         <h3 className="font-display font-bold text-surface-900 text-xl mb-2">Thank You!</h3>
-        <p className="text-surface-500 mb-2">Your enquiry has been sent to our admissions team.</p>
-        <p className="text-surface-400 text-xs mb-4">Our team will contact you soon. You can also reach us at {siteConfig.email} or {siteConfig.phone}.</p>
+        <p className="text-surface-600 mb-2">Your enquiry has been sent to our admissions team.</p>
+        <p className="text-surface-600 text-xs mb-4">Our team will contact you soon. You can also reach us at {siteConfig.email} or {siteConfig.phone}.</p>
         <button
           onClick={() => setSuccess(false)}
-          className="text-sm text-brand-600 hover:text-brand-700 font-medium"
+          className="text-sm text-brand-700 hover:text-brand-800 font-semibold"
         >
           Submit another enquiry
         </button>
@@ -89,7 +89,7 @@ export function EnquiryForm({
       {!compact && (
         <div className="mb-6">
           <h3 className="font-display font-bold text-surface-900 text-xl mb-1">{title}</h3>
-          <p className="text-surface-500 text-sm">{subtitle}</p>
+          <p className="text-surface-600 text-sm">{subtitle}</p>
         </div>
       )}
 
@@ -196,7 +196,7 @@ export function EnquiryForm({
 
         {/* Message */}
         <div>
-          <label className="form-label" htmlFor="enq-message">Message <span className="font-normal text-surface-400">(optional)</span></label>
+          <label className="form-label" htmlFor="enq-message">Message <span className="font-medium text-surface-500">(optional)</span></label>
           <textarea
             id="enq-message"
             rows={compact ? 2 : 3}
@@ -217,10 +217,10 @@ export function EnquiryForm({
               aria-describedby={errors.consent ? 'enq-consent-error' : undefined}
               {...register('consent')}
             />
-            <span className="text-xs text-surface-500 leading-relaxed">
+            <span className="text-xs text-surface-600 leading-relaxed font-medium">
               I agree to be contacted by Global Minds Academy via phone, email or WhatsApp for course-related enquiries.
               I have read and accept the{' '}
-              <a href="/privacy-policy" className="text-brand-600 hover:underline">Privacy Policy</a>.
+              <a href="/privacy-policy" className="text-brand-700 font-semibold hover:underline">Privacy Policy</a>.
             </span>
           </label>
           {errors.consent && <p id="enq-consent-error" className="form-error">{errors.consent.message}</p>}

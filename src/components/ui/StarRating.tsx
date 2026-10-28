@@ -42,10 +42,10 @@ export function StarRating({
         })}
       </div>
       {showValue && (
-        <span className="text-xs font-semibold text-amber-500">{rating.toFixed(1)}</span>
+        <span className="text-xs font-bold text-amber-700">{rating.toFixed(1)}</span>
       )}
       {reviewCount !== undefined && (
-        <span className="text-xs text-surface-400">({reviewCount.toLocaleString()})</span>
+        <span className="text-xs font-semibold text-surface-600">({reviewCount.toLocaleString()})</span>
       )}
     </div>
   );

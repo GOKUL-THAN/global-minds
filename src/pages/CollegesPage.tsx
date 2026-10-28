@@ -97,7 +97,7 @@ const offerings = [
 
 const stats = [
   { value: '120+', label: 'College Partners' },
-  { value: '15,000+', label: 'Students Trained' },
+  { value: '2500+', label: 'Students Trained' },
   { value: '92%', label: 'Placement Rate' },
   { value: '50+', label: 'Hiring Partners' },
 ];
@@ -130,26 +130,26 @@ export default function CollegesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Colleges & Universities' }]} className="text-white/50 mb-4" />
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Colleges & Universities' }]} className="mb-4" />
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/80 mb-4">
-                <Building2 className="w-4 h-4" />
-                Institutional Partnership Program
+              <div className="page-hero-badge mb-4">
+                <Building2 className="w-4 h-4 text-teal-600" />
+                <span>Institutional Partnership Program</span>
               </div>
-              <h1 className="display-lg text-white mb-4">
-                Partner with Global Minds Academy
+              <h1 className="page-hero-title display-lg font-extrabold mb-4">
+                Partner with <span className="page-hero-highlight">Global Minds Academy</span>
               </h1>
-              <p className="text-white/70 text-xl max-w-2xl">
-                Empower your students with AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
+              <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+                Empower your students with industry-relevant skills in AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
-                <a href="#college-enquiry" className="btn-primary btn">
+                <a href="#college-enquiry" className="btn-primary btn rounded-xl shadow-md">
                   Enquire Now
                 </a>
-                <a href="#offerings" className="px-5 py-2.5 rounded-xl border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors">
+                <a href="#offerings" className="btn-secondary btn rounded-xl shadow-sm">
                   View Programs
                 </a>
               </div>
@@ -157,9 +157,9 @@ export default function CollegesPage() {
             {/* Stats strip */}
             <div className="grid grid-cols-2 gap-4 lg:gap-5 lg:w-72 flex-shrink-0">
               {stats.map(stat => (
-                <div key={stat.label} className="bg-white/10 border border-white/20 rounded-2xl px-5 py-4 text-center">
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-white/60 mt-1">{stat.label}</div>
+                <div key={stat.label} className="page-hero-chip px-5 py-4 text-center flex flex-col items-center justify-center">
+                  <div className="text-2xl font-bold text-surface-900">{stat.value}</div>
+                  <div className="text-xs text-surface-600 font-semibold mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -171,9 +171,9 @@ export default function CollegesPage() {
       <section className="section">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Why Partner With Us</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-700 mb-2">Why Partner With Us</p>
             <h2 className="display-md mb-4">Everything your institution needs</h2>
-            <p className="text-surface-500 max-w-xl mx-auto">
+            <p className="text-surface-600 max-w-xl mx-auto font-medium">
               From MoU sign-up to placement support, we offer end-to-end institutional programs tailored to your college's needs.
             </p>
           </div>
@@ -182,14 +182,14 @@ export default function CollegesPage() {
               <a
                 key={b.title}
                 href="#college-enquiry"
-                className="block p-6 rounded-2xl border border-surface-100 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                className="block p-6 rounded-2xl border border-surface-200 bg-white hover:border-brand-300 hover:shadow-card-md hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                 aria-label={`Enquire about: ${b.title}`}
               >
                 <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
                   <b.icon className="w-6 h-6 text-brand-600" />
                 </div>
                 <h3 className="font-semibold text-surface-900 mb-2">{b.title}</h3>
-                <p className="text-surface-500 text-sm">{b.desc}</p>
+                <p className="text-surface-600 text-sm leading-relaxed">{b.desc}</p>
               </a>
             ))}
           </div>
@@ -200,23 +200,23 @@ export default function CollegesPage() {
       <section className="section bg-surface-50" id="offerings">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Our Offerings</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-700 mb-2">Our Offerings</p>
             <h2 className="display-md mb-4">Programs designed for institutions</h2>
           </div>
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {offerings.map(o => {
               const Icon = o.icon;
               return (
-                <div key={o.title} id={o.id} className="bg-white rounded-2xl border border-surface-100 p-6 hover:shadow-card-md transition-shadow">
+                <div key={o.title} id={o.id} className="bg-white rounded-2xl border border-surface-200 p-6 hover:border-brand-300 hover:shadow-card-md transition-all">
                   <div className="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-brand-600" />
                   </div>
                   <h3 className="font-bold text-surface-900 mb-1">{o.title}</h3>
-                  <p className="text-xs text-brand-600 font-medium mb-4">{o.subtitle}</p>
+                  <p className="text-xs text-brand-700 font-bold mb-4">{o.subtitle}</p>
                   <ul className="space-y-2">
                     {o.items.map(item => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-surface-600">
-                        <CheckCircle className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <li key={item} className="flex items-start gap-2 text-sm text-surface-700 font-medium">
+                        <CheckCircle className="w-3.5 h-3.5 text-green-600 mt-0.5 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -232,22 +232,22 @@ export default function CollegesPage() {
       <section className="section" id="college-enquiry">
         <div className="container-xl">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 shadow-card border border-surface-100">
+            <div className="bg-white rounded-3xl p-8 shadow-card border border-surface-200">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-brand-600" />
                 </div>
                 <div>
                   <h2 className="heading-xl">College / University Enquiry</h2>
-                  <p className="text-surface-500 text-sm">Our institutional team will respond within 1 business day.</p>
+                  <p className="text-surface-600 text-sm font-medium">Our institutional team will respond within 1 business day.</p>
                 </div>
               </div>
 
               {success ? (
                 <div className="text-center py-10">
-                  <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
+                  <CheckCircle className="w-14 h-14 text-green-600 mx-auto mb-4" />
                   <h3 className="font-bold text-surface-900 text-xl mb-2">Enquiry Received!</h3>
-                  <p className="text-surface-500 max-w-sm mx-auto">
+                  <p className="text-surface-600 max-w-sm mx-auto font-medium">
                     Thank you for reaching out. Our institutional partnerships team will contact you within 1 business day.
                   </p>
                 </div>
@@ -376,10 +376,10 @@ export default function CollegesPage() {
                           <input
                             type="checkbox"
                             value={prog}
-                            className="w-3.5 h-3.5 text-brand-600 rounded"
+                            className="w-3.5 h-3.5 text-brand-600 rounded border-surface-300"
                             {...register('programs')}
                           />
-                          <span className="text-xs text-surface-600">{prog}</span>
+                          <span className="text-xs text-surface-800 font-medium">{prog}</span>
                         </label>
                       ))}
                     </div>
@@ -406,7 +406,7 @@ export default function CollegesPage() {
                       : <><Send className="w-4 h-4" /> Submit College Enquiry</>}
                   </button>
 
-                  <p className="text-xs text-surface-400 text-center">
+                  <p className="text-xs text-surface-600 text-center font-medium">
                     By submitting, you agree to be contacted by our institutional partnerships team.
                   </p>
                 </form>

@@ -72,15 +72,21 @@ export default function MockInterviewPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-14">
-        <div className="container-xl">
+      <div className="page-hero-premium py-16">
+        <div className="container-xl relative z-10">
           <Breadcrumbs
             items={[{ label: 'Career', href: '/career' }, { label: 'Mock Interview' }]}
-            className="text-white/50 mb-4"
+            className="mb-4"
           />
-          <h1 className="display-lg text-white mb-4">Mock Interviews</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
-            Realistic interview simulations with expert feedback — practice under real conditions before your actual interview.
+          <div className="page-hero-badge mb-4">
+            <CheckCircle className="w-4 h-4 text-teal-600" />
+            <span>1-on-1 Senior Industry Evaluators</span>
+          </div>
+          <h1 className="page-hero-title display-lg font-extrabold mb-4">
+            Mock <span className="page-hero-highlight">Interviews</span>
+          </h1>
+          <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
+            Realistic interview simulations with detailed actionable feedback — practice under real interview conditions before facing hiring managers.
           </p>
         </div>
       </div>
@@ -90,31 +96,31 @@ export default function MockInterviewPage() {
         <div className="container-xl">
           <div className="text-center mb-12">
             <h2 className="display-md mb-4">Interview Formats</h2>
-            <p className="text-surface-500 max-w-xl mx-auto">Choose the format that matches your preparation needs.</p>
+            <p className="text-surface-600 max-w-xl mx-auto font-medium">Choose the format that matches your preparation needs.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {mockFormats.map(f => (
               <article
                 key={f.title}
                 className={`rounded-3xl border overflow-hidden hover:shadow-card-xl transition-all duration-300 ${
-                  selectedFormat === f.title ? 'border-brand-500 ring-2 ring-brand-200 shadow-card-xl' : 'border-surface-100'
+                  selectedFormat === f.title ? 'border-brand-600 ring-2 ring-brand-300 shadow-card-xl' : 'border-surface-200'
                 }`}
               >
-                <div className="bg-surface-50 p-6 text-center border-b border-surface-100">
+                <div className="bg-surface-50 p-6 text-center border-b border-surface-200">
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 ${f.color}`}>
                     <f.icon className="w-7 h-7" />
                   </div>
                   <h3 className="font-display font-bold text-surface-900 text-lg mb-1">{f.title}</h3>
-                  <div className="flex items-center justify-center gap-1.5 text-sm text-surface-500">
+                  <div className="flex items-center justify-center gap-1.5 text-sm text-surface-600 font-medium">
                     <Clock className="w-3.5 h-3.5" />
                     {f.duration}
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 bg-white">
                   <ul className="space-y-2.5">
                     {f.features.map(feat => (
-                      <li key={feat} className="flex items-center gap-2.5 text-sm text-surface-600">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <li key={feat} className="flex items-center gap-2.5 text-sm text-surface-700 font-medium">
+                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                         {feat}
                       </li>
                     ))}
@@ -151,23 +157,23 @@ export default function MockInterviewPage() {
                 </div>
                 <div>
                   <h2 className="font-display font-bold text-surface-900 text-xl">Book a Mock Interview</h2>
-                  <p className="text-surface-500 text-sm">Our team will confirm the session within 24 hours. PLACEHOLDER.</p>
+                  <p className="text-surface-600 text-sm font-medium">Our team will confirm the session within 24 hours.</p>
                 </div>
               </div>
 
               {success ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-500" />
+                    <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="font-bold text-surface-900 text-lg mb-2">Booking Request Submitted!</h3>
-                  <p className="text-surface-500">Our career team will contact you within 24 hours to confirm the session.</p>
+                  <p className="text-surface-600 font-medium">Our career team will contact you within 24 hours to confirm the session.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   <input type="hidden" {...register('interviewFormat')} />
-                  <p className="text-sm text-brand-700 bg-brand-50 rounded-xl px-4 py-3">
-                    Selected format: <span className="font-semibold">{selectedFormat || 'Choose a format above'}</span>
+                  <p className="text-sm text-brand-800 bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 font-medium">
+                    Selected format: <span className="font-bold text-brand-900">{selectedFormat || 'Choose a format above'}</span>
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>

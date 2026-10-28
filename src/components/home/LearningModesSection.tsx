@@ -44,14 +44,14 @@ export function LearningModesSection() {
       <div className="container-xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-sm text-brand-600 font-semibold uppercase tracking-wider mb-3">
+          <p className="text-sm text-brand-700 font-bold uppercase tracking-wider mb-3">
             Your preferred way to learn
           </p>
-          <h2 className="display-md">
+          <h2 className="display-md text-surface-900">
             Flexible{' '}
             <span className="text-gradient">Learning Modes</span>
           </h2>
-          <p className="text-surface-500 mt-4 max-w-xl mx-auto">
+          <p className="text-surface-600 mt-4 max-w-xl mx-auto leading-relaxed">
             Learn online from anywhere, attend in-person classes at our Chennai centre, or choose one-to-one personal training.
           </p>
         </div>
@@ -61,25 +61,25 @@ export function LearningModesSection() {
           {modes.map((mode) => (
             <div
               key={mode.title}
-              className="group rounded-3xl overflow-hidden border border-surface-100 hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1"
+              className="group rounded-3xl overflow-hidden border border-surface-200 hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Card top */}
               <div className={cn('p-8 bg-gradient-to-br', mode.color)}>
-                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-white/25 flex items-center justify-center mb-4">
                   <mode.icon className="w-7 h-7 text-white" />
                 </div>
-                <div className="inline-flex px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold mb-3">
+                <div className="inline-flex px-3 py-1 rounded-full bg-white/25 text-white text-xs font-bold mb-3">
                   {mode.badge}
                 </div>
                 <h3 className="font-display font-bold text-white text-xl mb-2">{mode.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{mode.description}</p>
+                <p className="text-white/95 text-sm leading-relaxed">{mode.description}</p>
               </div>
 
               {/* Card bottom */}
               <div className="p-6 bg-white">
                 <ul className="space-y-2.5 mb-6">
                   {mode.features.map(f => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm text-surface-600">
+                    <li key={f} className="flex items-center gap-2.5 text-sm text-surface-700 font-medium">
                       <span className={cn('w-1.5 h-1.5 rounded-full flex-shrink-0', mode.lightColor.replace('bg-', 'bg-').replace('-50', '-400'))} />
                       {f}
                     </li>
@@ -88,7 +88,7 @@ export function LearningModesSection() {
                 <Link
                   to={mode.href}
                   className={cn(
-                    'flex items-center gap-2 text-sm font-semibold transition-colors',
+                    'flex items-center gap-2 text-sm font-bold transition-colors',
                     mode.textColor,
                     `hover:${mode.textColor.replace('600', '700')}`,
                   )}

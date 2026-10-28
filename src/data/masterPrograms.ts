@@ -237,7 +237,7 @@ const masterProgramImageBySlug: Record<string, string> = {
   'freshers-master-program': '/images/master-programs/freshers-master-program.jpg',
   'full-stack-master-program': '/images/master-programs/full-stack-master-program.jpg',
   'ai-ml-master-program': '/images/master-programs/data-science-master-program.jpg',
-  'data-science-business-intelligence': '/images/master-programs/data-science-master-program.jpg',
+  'data-science-business-intelligence': '/images/master-programs/business-intelligence-master-program.jpg',
   'software-testing-master-program': '/images/master-programs/software-testing-master-program.jpg',
 };
 

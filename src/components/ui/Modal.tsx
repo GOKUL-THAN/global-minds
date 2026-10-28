@@ -92,11 +92,11 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', className
       >
         {/* Header */}
         {title && (
-          <div className="flex items-center justify-between p-6 border-b border-surface-100">
+          <div className="flex items-center justify-between p-6 border-b border-surface-200">
             <h2 id="modal-title" className="heading-md">{title}</h2>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl hover:bg-surface-100 text-surface-500 hover:text-surface-900 transition-colors"
+              className="p-2 rounded-xl hover:bg-surface-100 text-surface-600 hover:text-surface-950 transition-colors"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -108,7 +108,7 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', className
         {!title && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-xl hover:bg-surface-100 text-surface-500 transition-colors z-10"
+            className="absolute top-4 right-4 p-2 rounded-xl hover:bg-surface-100 text-surface-600 hover:text-surface-950 transition-colors z-10"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />

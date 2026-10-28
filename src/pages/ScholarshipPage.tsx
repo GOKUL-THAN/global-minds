@@ -63,24 +63,28 @@ export default function ScholarshipPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-surface-950 via-brand-950 to-surface-900 text-white py-20">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Scholarships & Fee Structure' }]} className="text-white/50 mb-4" />
+      <div className="page-hero-premium py-20 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Scholarships & Fee Structure' }]} className="mb-4" />
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm font-medium text-white/90 mb-6">
-              <Percent className="w-4 h-4 text-yellow-400" />
-              Up to 50% Scholarship Available
+            <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
+              <Percent className="w-4 h-4 text-amber-300" />
+              Up to 50% Scholarship Available • Zero Burden Learning
             </div>
-            <h1 className="display-lg text-white mb-6">
+            <h1 className="page-hero-title mb-6">
               Scholarships &amp;<br />
-              <span className="text-yellow-300">Fee Structure</span>
+              <span className="page-hero-highlight">Fee Structure</span>
             </h1>
-            <p className="text-white/70 text-xl mb-8 max-w-2xl">
+            <p className="page-hero-desc text-xl mb-8 max-w-2xl leading-relaxed">
               Quality tech education shouldn't break the bank. Explore our scholarships, flexible EMI plans and discounts designed to make learning accessible to everyone.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#scholarships" className="btn-primary btn">View Scholarships</a>
-              <a href="#fees" className="btn bg-white/10 border border-white/20 text-white hover:bg-white/20">See Fee Structure</a>
+              <a href="#scholarships" className="btn bg-teal-700 hover:bg-teal-800 text-white font-bold shadow-md shadow-teal-900/15">
+                View Scholarships
+              </a>
+              <a href="#fees" className="btn bg-white border border-teal-600/30 text-teal-800 hover:bg-teal-50 font-semibold shadow-sm">
+                See Fee Structure
+              </a>
             </div>
           </div>
         </div>
@@ -99,7 +103,7 @@ export default function ScholarshipPage() {
               <div key={s.label}>
                 <s.icon className={`w-6 h-6 ${s.color} mx-auto mb-2`} />
                 <div className="font-display font-bold text-2xl text-surface-900">{s.value}</div>
-                <div className="text-sm text-surface-500">{s.label}</div>
+                <div className="text-sm text-surface-600 font-medium">{s.label}</div>
               </div>
             ))}
           </div>
@@ -110,9 +114,9 @@ export default function ScholarshipPage() {
       <section id="scholarships" className="section bg-surface-50">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Financial Aid</span>
+            <span className="inline-block text-sm font-bold text-brand-700 uppercase tracking-wider mb-3">Financial Aid</span>
             <h2 className="display-md mb-4">Available Scholarships &amp; Discounts</h2>
-            <p className="text-surface-500 max-w-2xl mx-auto">We offer multiple scholarship pathways to ensure no eligible student is held back by financial constraints.</p>
+            <p className="text-surface-600 font-medium max-w-2xl mx-auto">We offer multiple scholarship pathways to ensure no eligible student is held back by financial constraints.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {scholarships.map(s => (
@@ -149,37 +153,37 @@ export default function ScholarshipPage() {
       <section id="fees" className="section bg-white">
         <div className="container-xl">
           <div className="text-center mb-10">
-            <span className="inline-block text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Pricing</span>
+            <span className="inline-block text-sm font-bold text-brand-700 uppercase tracking-wider mb-3">Pricing</span>
             <h2 className="display-md mb-4">Course Fee Structure</h2>
-            <p className="text-surface-500 max-w-2xl mx-auto">Transparent pricing with no hidden charges. EMI options available on all courses.</p>
+            <p className="text-surface-600 font-medium max-w-2xl mx-auto">Transparent pricing with no hidden charges. EMI options available on all courses.</p>
           </div>
-          <div className="overflow-x-auto rounded-2xl border border-surface-100">
+          <div className="overflow-x-auto rounded-2xl border border-surface-200">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-surface-50 border-b border-surface-100">
-                  <th className="text-left px-6 py-4 font-semibold text-surface-700">Course</th>
-                  <th className="text-left px-4 py-4 font-semibold text-surface-700 hidden md:table-cell">Category</th>
-                  <th className="text-left px-4 py-4 font-semibold text-surface-700 hidden sm:table-cell">Duration</th>
-                  <th className="text-right px-4 py-4 font-semibold text-surface-700">Fee</th>
-                  <th className="text-right px-6 py-4 font-semibold text-surface-700 hidden lg:table-cell">EMI (6 mo.)</th>
+                <tr className="bg-surface-50 border-b border-surface-200">
+                  <th className="text-left px-6 py-4 font-bold text-surface-900">Course</th>
+                  <th className="text-left px-4 py-4 font-bold text-surface-900 hidden md:table-cell">Category</th>
+                  <th className="text-left px-4 py-4 font-bold text-surface-900 hidden sm:table-cell">Duration</th>
+                  <th className="text-right px-4 py-4 font-bold text-surface-900">Fee</th>
+                  <th className="text-right px-6 py-4 font-bold text-surface-900 hidden lg:table-cell">EMI (6 mo.)</th>
                 </tr>
               </thead>
               <tbody>
                 {courseFees.map((c, i) => (
-                  <tr key={c.course} className={`border-b border-surface-50 hover:bg-brand-50/30 transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50/30'}`}>
-                    <td className="px-6 py-4 font-medium text-surface-900">{c.course}</td>
-                    <td className="px-4 py-4 text-surface-500 hidden md:table-cell">
-                      <span className="bg-surface-100 px-2 py-0.5 rounded-full text-xs">{c.category}</span>
+                  <tr key={c.course} className={`border-b border-surface-100 hover:bg-brand-50/40 transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50/50'}`}>
+                    <td className="px-6 py-4 font-bold text-surface-900">{c.course}</td>
+                    <td className="px-4 py-4 text-surface-700 font-medium hidden md:table-cell">
+                      <span className="bg-surface-100 border border-surface-200 px-2 py-0.5 rounded-full text-xs font-semibold text-surface-800">{c.category}</span>
                     </td>
-                    <td className="px-4 py-4 text-surface-500 hidden sm:table-cell">{c.duration}</td>
-                    <td className="px-4 py-4 text-right font-bold text-surface-900">{c.fee}</td>
-                    <td className="px-6 py-4 text-right text-brand-600 text-xs font-medium hidden lg:table-cell">{c.emi}</td>
+                    <td className="px-4 py-4 text-surface-700 font-medium hidden sm:table-cell">{c.duration}</td>
+                    <td className="px-4 py-4 text-right font-extrabold text-surface-900">{c.fee}</td>
+                    <td className="px-6 py-4 text-right text-brand-700 text-xs font-bold hidden lg:table-cell">{c.emi}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-surface-400 mt-4 text-center">
+          <p className="text-xs text-surface-600 font-medium mt-4 text-center">
             * Prices shown are base prices. Scholarships and discounts apply additionally. All prices include GST-applicable base. Contact us for exact pricing.
           </p>
         </div>

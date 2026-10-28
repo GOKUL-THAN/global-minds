@@ -27,7 +27,7 @@ function InternshipCTASection() {
           <h2 className="display-md mb-4">
             Build Experience Through an <span className="text-gradient">Internship</span>
           </h2>
-          <p className="mb-8 text-surface-500">
+          <p className="mb-8 text-surface-700 font-medium">
             Explore internships related to AWS / Cloud, Data Science, Machine Learning, Full Stack Development,
             Software Testing, and Automation Testing.
           </p>

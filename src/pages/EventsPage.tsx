@@ -208,13 +208,23 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-surface-950 to-brand-950 text-white py-16">
-        <div className="container-xl">
-          <Breadcrumbs items={[{ label: 'Events & Webinars' }]} className="text-white/50 mb-4" />
-          <h1 className="display-lg text-white mb-4">Events, Webinars &amp; Workshops</h1>
-          <p className="text-white/70 text-xl max-w-2xl">
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <div className="container-xl relative z-10">
+          <Breadcrumbs items={[{ label: 'Events & Webinars' }]} className="mb-4" />
+          <div className="page-hero-badge mb-4">
+            Live Community Sessions &amp; Masterclasses
+          </div>
+          <h1 className="page-hero-title mb-4">
+            Events, Webinars &amp; <span className="page-hero-highlight">Workshops</span>
+          </h1>
+          <p className="page-hero-desc text-xl max-w-2xl leading-relaxed">
             Learn from industry experts, build skills through hands-on workshops, and connect with the tech community — most events are free.
           </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <div className="page-hero-chip">Live Interactive Q&amp;A</div>
+            <div className="page-hero-chip">Certificate of Attendance</div>
+            <div className="page-hero-chip">Industry Mentors</div>
+          </div>
         </div>
       </div>
 
@@ -226,14 +236,13 @@ export default function EventsPage() {
               <button
                 key={t}
                 onClick={() => setFilter(t)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0 ${
-                  filter === t ? 'bg-brand-600 text-white' : 'bg-surface-100 text-surface-600 hover:bg-surface-200'
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${filter === t ? 'bg-brand-700 text-white shadow-sm' : 'bg-white text-surface-700 border border-surface-200 hover:border-brand-500 hover:text-brand-800'
+                  }`}
               >
                 {t}
               </button>
             ))}
-            <span className="ml-auto text-sm text-surface-400 self-center whitespace-nowrap flex-shrink-0">
+            <span className="ml-auto text-sm text-surface-700 font-semibold self-center whitespace-nowrap flex-shrink-0">
               {filtered.length} event{filtered.length !== 1 ? 's' : ''}
             </span>
           </div>
@@ -252,45 +261,44 @@ export default function EventsPage() {
                   className="bg-white rounded-2xl border border-surface-100 overflow-hidden hover:shadow-card-lg transition-shadow"
                 >
                   {/* Top accent bar by type */}
-                  <div className={`h-1 w-full ${
-                    event.type === 'Webinar' ? 'bg-brand-500' :
+                  <div className={`h-1 w-full ${event.type === 'Webinar' ? 'bg-brand-500' :
                     event.type === 'Workshop' ? 'bg-orange-400' :
-                    event.type === 'Hackathon' ? 'bg-purple-500' : 'bg-green-500'
-                  }`} />
+                      event.type === 'Hackathon' ? 'bg-purple-500' : 'bg-green-500'
+                    }`} />
                   <div className="p-6">
                     <div className="flex items-start justify-between gap-3 mb-3">
                       <div className="flex-1">
                         <div className="flex flex-wrap gap-2 mb-2">
-                          <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${typeBadgeColor(event.type)}`}>{event.type}</span>
+                          <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${typeBadgeColor(event.type)}`}>{event.type}</span>
                           {event.badge && (
-                            <span className="text-xs px-2.5 py-1 rounded-full font-medium bg-red-100 text-red-700">{event.badge}</span>
+                            <span className="text-xs px-2.5 py-1 rounded-full font-bold bg-red-100 text-red-700">{event.badge}</span>
                           )}
                         </div>
                         <h3 className="font-display font-bold text-surface-900 leading-snug">{event.title}</h3>
                       </div>
                     </div>
-                    <p className="text-sm text-surface-500 mb-4">{event.description}</p>
+                    <p className="text-sm text-surface-600 font-medium mb-4 leading-relaxed">{event.description}</p>
 
                     {/* Meta */}
                     <div className="grid grid-cols-2 gap-2 mb-4">
-                      <div className="flex items-center gap-2 text-xs text-surface-600">
-                        <Calendar className="w-3.5 h-3.5 text-brand-500" />
+                      <div className="flex items-center gap-2 text-xs text-surface-700 font-medium">
+                        <Calendar className="w-3.5 h-3.5 text-brand-600" />
                         {new Date(event.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-surface-600">
-                        <Clock className="w-3.5 h-3.5 text-brand-500" />
+                      <div className="flex items-center gap-2 text-xs text-surface-700 font-medium">
+                        <Clock className="w-3.5 h-3.5 text-brand-600" />
                         {event.time}
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-surface-600">
+                      <div className="flex items-center gap-2 text-xs text-surface-700 font-medium">
                         {event.mode === 'Offline'
-                          ? <MapPin className="w-3.5 h-3.5 text-brand-500" />
-                          : <Monitor className="w-3.5 h-3.5 text-brand-500" />
+                          ? <MapPin className="w-3.5 h-3.5 text-brand-600" />
+                          : <Monitor className="w-3.5 h-3.5 text-brand-600" />
                         }
                         {event.mode}
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-surface-600">
-                        <Users className="w-3.5 h-3.5 text-brand-500" />
-                        <span className={event.seatsLeft <= 20 ? 'text-red-600 font-medium' : ''}>
+                      <div className="flex items-center gap-2 text-xs text-surface-700 font-medium">
+                        <Users className="w-3.5 h-3.5 text-brand-600" />
+                        <span className={event.seatsLeft <= 20 ? 'text-red-700 font-bold' : ''}>
                           {event.seatsLeft} seats left
                         </span>
                       </div>
@@ -308,36 +316,36 @@ export default function EventsPage() {
                           return next;
                         });
                       }}
-                      className="mb-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                      className="mb-4 inline-flex items-center gap-1 text-sm font-bold text-brand-700 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
                     >
                       {isExpanded ? 'Show less' : 'More event details'}
                       <ChevronDown className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                     </button>
-                    <div id={`event-details-${event.id}`} hidden={!isExpanded} className="mb-4 rounded-xl bg-brand-50 p-4 text-sm text-surface-700">
-                      <p><span className="font-semibold">Duration:</span> {event.duration}</p>
-                      <p className="mt-1"><span className="font-semibold">Capacity:</span> {event.seats} attendees ({event.seatsLeft} seats remaining)</p>
+                    <div id={`event-details-${event.id}`} hidden={!isExpanded} className="mb-4 rounded-xl bg-brand-50 border border-brand-200 p-4 text-sm text-surface-800 font-medium">
+                      <p><span className="font-bold">Duration:</span> {event.duration}</p>
+                      <p className="mt-1"><span className="font-bold">Capacity:</span> {event.seats} attendees ({event.seatsLeft} seats remaining)</p>
                     </div>
 
                     {/* Speaker */}
-                    <div className="flex items-center gap-3 p-3 bg-surface-50 rounded-xl mb-4">
-                      <div className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                    <div className="flex items-center gap-3 p-3 bg-surface-50 border border-surface-200 rounded-xl mb-4">
+                      <div className="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
                         {event.speaker.split(' ').map(w => w[0]).join('').slice(0, 2)}
                       </div>
                       <div>
-                        <p className="text-xs font-semibold text-surface-900">{event.speaker}</p>
-                        <p className="text-xs text-surface-500">{event.speakerRole}</p>
+                        <p className="text-xs font-bold text-surface-900">{event.speaker}</p>
+                        <p className="text-xs text-surface-600 font-medium">{event.speakerRole}</p>
                       </div>
                     </div>
 
                     {/* Topics */}
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {event.topics.map(t => (
-                        <span key={t} className="text-xs bg-surface-100 text-surface-600 px-2 py-0.5 rounded-full">{t}</span>
+                        <span key={t} className="text-xs bg-surface-100 text-surface-700 font-medium px-2 py-0.5 rounded-full border border-surface-200">{t}</span>
                       ))}
                     </div>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between pt-3 border-t border-surface-100">
+                    <div className="flex items-center justify-between pt-3 border-t border-surface-200">
                       <div>{feeBadge(event.fee)}</div>
                       <button
                         type="button"

@@ -33,7 +33,7 @@ export function FAQAccordion({ faqs, className }: FAQAccordionProps) {
             <span>{faq.question}</span>
             <ChevronDown
               className={cn(
-                'w-5 h-5 flex-shrink-0 text-brand-500 transition-transform duration-300',
+                'w-5 h-5 flex-shrink-0 text-brand-700 transition-transform duration-300',
                 openId === faq.id && 'rotate-180',
               )}
             />
@@ -45,7 +45,7 @@ export function FAQAccordion({ faqs, className }: FAQAccordionProps) {
               openId === faq.id ? 'max-h-96' : 'max-h-0',
             )}
           >
-            <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed border-t border-surface-100">
+            <div className="px-5 pb-5 text-sm text-surface-700 font-medium leading-relaxed border-t border-surface-200">
               <div className="pt-4">{faq.answer}</div>
             </div>
           </div>

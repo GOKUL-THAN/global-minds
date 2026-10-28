@@ -144,30 +144,30 @@ export default function PlacementPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-[#16494f] py-16 text-white sm:py-20 lg:py-24">
-        <div className="container-xl">
+      <section className="page-hero-premium py-16 sm:py-20 lg:py-24">
+        <div className="container-xl relative z-10">
           <div className="max-w-3xl">
-            <Breadcrumbs items={[{ label: 'Placement Records' }]} className="mb-5 text-white/50" />
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white/90">
-              <TrendingUp className="h-4 w-4 text-emerald-300" aria-hidden="true" />
-              80% Placement Rate — 2024 Batch
+            <Breadcrumbs items={[{ label: 'Placement Records' }]} className="mb-5" />
+            <div className="page-hero-badge mb-6">
+              <TrendingUp className="h-4 w-4 text-teal-600" aria-hidden="true" />
+              <span>80% Placement Rate — 2024 Batch</span>
             </div>
             <h1 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Placement Records &amp; Hiring Partners
+              Placement Records &amp; <span className="page-hero-highlight">Hiring Partners</span>
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
+            <p className="page-hero-desc max-w-2xl text-lg sm:text-xl leading-relaxed">
               Over 1,000 students placed in top MNCs and product companies. Our dedicated placement team works with 50+ hiring partners to get you the best opportunities.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-teal-500"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-6 py-3.5 font-bold text-white transition-colors hover:bg-teal-800 shadow-md shadow-teal-900/15"
               >
                 Start Your Journey <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
                 to="/courses"
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/15"
+                className="inline-flex items-center justify-center rounded-xl border border-teal-600/30 bg-white px-6 py-3.5 font-bold text-teal-800 transition-colors hover:bg-teal-50 shadow-sm"
               >
                 Explore Courses
               </Link>
