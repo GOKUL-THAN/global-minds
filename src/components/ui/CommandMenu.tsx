@@ -137,7 +137,7 @@ export function CommandMenu() {
   }, [navigate]);
 
   const filteredItems = useMemo(() => {
-    if (!query.trim()) return items;
+    if (!query.trim()) return [];
     const q = query.toLowerCase().trim();
     return items.filter(
       item => item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q) || item.category.toLowerCase().includes(q),
@@ -180,10 +180,14 @@ export function CommandMenu() {
 
         {/* Results List */}
         <div className="max-h-[60vh] overflow-y-auto p-2 scroll-smooth">
-          {filteredItems.length === 0 ? (
+          {!query.trim() ? (
+            <div className="py-12 text-center text-surface-400">
+              <Search className="mx-auto h-8 w-8 text-surface-300 mb-2 stroke-1" />
+              <p className="text-sm font-medium text-surface-500">Type to search courses and pages...</p>
+            </div>
+          ) : filteredItems.length === 0 ? (
             <div className="py-12 text-center text-surface-500">
-              <p className="text-sm">No results found for "{query}".</p>
-              <p className="mt-1 text-xs text-surface-400">Try searching "AWS", "Full Stack", "Demo", or "Scholarship"</p>
+              <p className="text-sm font-medium">No results found for "{query}".</p>
             </div>
           ) : (
             <div className="space-y-1">
