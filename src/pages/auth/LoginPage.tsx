@@ -140,6 +140,32 @@ export default function LoginPage() {
           <button type="submit" disabled={isSubmitting} className="btn-primary btn w-full">
             {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Signing in...</> : 'Sign In'}
           </button>
+
+          <div className="pt-4 border-t border-surface-200 space-y-2">
+            <p className="text-center text-xs text-surface-500 font-medium">Quick One-Click Demo Access:</p>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                disabled={isSubmitting}
+                onClick={() => {
+                  void onSubmit({ email: 'student@globalminds.com', password: 'StudentDemoPassword123!' });
+                }}
+                className="text-xs py-2 px-3 rounded-xl border border-brand-200 bg-brand-50 text-brand-800 font-semibold hover:bg-brand-100 transition-colors text-center"
+              >
+                🎓 Demo Student
+              </button>
+              <button
+                type="button"
+                disabled={isSubmitting}
+                onClick={() => {
+                  void onSubmit({ email: 'admin@local.test', password: 'AdminDemoPassword123!' });
+                }}
+                className="text-xs py-2 px-3 rounded-xl border border-surface-300 bg-surface-100 text-surface-800 font-semibold hover:bg-surface-200 transition-colors text-center"
+              >
+                🛡️ Demo Admin
+              </button>
+            </div>
+          </div>
         </form>
 
         {!adminLogin && (
