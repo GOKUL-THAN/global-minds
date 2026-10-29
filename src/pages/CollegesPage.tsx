@@ -14,6 +14,8 @@ import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CountUp } from '../components/ui/CountUp';
+import { PerspectiveGrid } from '../components/ui/PerspectiveGrid';
+import { Particles } from '../components/ui/Particles';
 
 const schema = z.object({
   institutionName: z.string().min(2, 'Institution name required'),
@@ -134,7 +136,9 @@ export default function CollegesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="page-hero-premium py-16">
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <PerspectiveGrid gridColor="rgba(23, 108, 115, 0.12)" horizonColor="rgba(23, 108, 115, 0.2)" />
+        <Particles className="opacity-35" quantity={25} color="#0d9488" />
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Colleges & Universities' }]} className="mb-4" />
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">

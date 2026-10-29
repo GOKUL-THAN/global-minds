@@ -12,6 +12,7 @@ import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { StarBorder } from '../../components/ui/StarBorder';
+import { Particles } from '../../components/ui/Particles';
 
 const schema = z.object({
   fullName: z.string().min(2, 'Name required'),
@@ -76,7 +77,8 @@ export default function MockInterviewPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="page-hero-premium py-16">
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <Particles className="opacity-35" quantity={25} color="#0d9488" />
         <div className="container-xl relative z-10">
           <Breadcrumbs
             items={[{ label: 'Career', href: '/career' }, { label: 'Mock Interview' }]}

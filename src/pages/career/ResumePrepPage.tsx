@@ -7,6 +7,7 @@ import { usePageMeta } from '../../hooks/usePageMeta';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { ComparisonSlider } from '../../components/ui/ComparisonSlider';
 
 const resumeTips = [
   'Use a clean, ATS-friendly template with clear section headings',
@@ -78,6 +79,74 @@ export default function ResumePrepPage() {
                 </div>
               </SpotlightCard>
             ))}
+          </div>
+
+          {/* Interactive ATS Transformation Comparison Slider (React Bits Pro UI & Cards) */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold text-brand-700 mb-2">
+                <ShinyText text="⚡ Interactive ATS Transformation" shinyColor="rgba(23, 108, 115, 0.95)" />
+              </span>
+              <h2 className="display-md text-surface-900">Drag to Compare: Traditional vs. Global Minds Resume</h2>
+              <p className="text-surface-600 max-w-xl mx-auto mt-2 text-sm font-medium">
+                See how our 1-on-1 resume engineering elevates your profile from ATS rejection to high-conversion tech interview calls.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <ComparisonSlider
+                beforeLabel="Standard Resume · 41% ATS"
+                afterLabel="Global Minds Optimized · 98% ATS"
+                beforeContent={
+                  <div className="space-y-4 font-mono text-xs text-surface-300">
+                    <div className="border-b border-surface-700 pb-2">
+                      <p className="font-bold text-sm text-red-400">❌ Rahul Sharma — Software Developer</p>
+                      <p className="text-surface-400">rahul@example.com · Chennai</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-surface-200 mb-1">SUMMARY</p>
+                      <p className="leading-relaxed">Hard working developer looking for a challenging role in IT company to utilize my skills and learn new technologies.</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-surface-200 mb-1">SKILLS</p>
+                      <p>Java, HTML, CSS, JavaScript, SQL, Basics of AWS, MS Office.</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-surface-200 mb-1">EXPERIENCE / PROJECTS</p>
+                      <p className="text-surface-300">• Worked on college library project using Java.</p>
+                      <p className="text-surface-300">• Responsible for coding modules and bug fixing.</p>
+                      <p className="text-surface-300">• Created forms and database tables.</p>
+                    </div>
+                  </div>
+                }
+                afterContent={
+                  <div className="space-y-4 font-mono text-xs text-emerald-200">
+                    <div className="border-b border-teal-800 pb-2 flex items-center justify-between">
+                      <div>
+                        <p className="font-bold text-sm text-emerald-400">✅ Rahul Sharma — Cloud & Full Stack Engineer</p>
+                        <p className="text-teal-300/80">rahul.dev@globalminds.org · github.com/rahul-cloud · LinkedIn Verified</p>
+                      </div>
+                      <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-bold text-emerald-300 border border-emerald-400/30">
+                        98% Recruiter Match
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-white mb-1">PROFESSIONAL SUMMARY</p>
+                      <p className="leading-relaxed text-surface-200">Cloud-native Software Engineer trained at Global Minds Academy with hands-on mastery in AWS architecture, Spring Boot microservices, and React. Architected 3 production-grade capstones with 99.9% uptime SLA.</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-white mb-1">CORE COMPETENCIES</p>
+                      <p className="text-teal-200">AWS (ECS, S3, RDS, Lambda, Terraform, CloudWatch), Java 21, Spring Boot 3, React 19, TypeScript, PostgreSQL, Docker, CI/CD Jenkins pipeline.</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-white mb-1">FEATURED CAPSTONE ARCHITECTURE</p>
+                      <p className="text-surface-200">• <span className="font-bold text-teal-300">Scalable E-Commerce Microservices:</span> Deployed on AWS ECS with Docker & Terraform, reducing latency by 42%.</p>
+                      <p className="text-surface-200">• <span className="font-bold text-teal-300">Automated CI/CD Pipeline:</span> Configured GitHub Actions & SonarQube quality gate ensuring 0 security vulnerabilities.</p>
+                    </div>
+                  </div>
+                }
+              />
+            </div>
           </div>
         </div>
       </section>

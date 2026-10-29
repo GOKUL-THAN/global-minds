@@ -11,6 +11,8 @@ import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { PixelCard } from '../components/ui/PixelCard';
 import { CountUp } from '../components/ui/CountUp';
+import { PerspectiveGrid } from '../components/ui/PerspectiveGrid';
+import { Particles } from '../components/ui/Particles';
 
 // ── Project Categories ─────────────────────────────────────
 const projectCategories = [
@@ -206,6 +208,8 @@ export default function LiveProjectsPage() {
     <div className="min-h-screen bg-white">
       {/* Hero */}
       <div className="page-hero-premium py-20 relative overflow-hidden">
+        <PerspectiveGrid gridColor="rgba(255, 255, 255, 0.12)" horizonColor="rgba(13, 148, 136, 0.3)" />
+        <Particles className="opacity-40" quantity={35} color="#5eead4" />
         <div className="container-xl relative z-10">
           <div className="flex justify-center">
             <Breadcrumbs items={[{ label: 'Live Projects' }]} className="mb-4" />

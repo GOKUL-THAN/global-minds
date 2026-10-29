@@ -4,6 +4,7 @@ import { Button } from '../ui/Button';
 import { Magnetic } from '../ui/Magnetic';
 import { ShinyText } from '../ui/ShinyText';
 import { RotatingText } from '../ui/RotatingText';
+import { Particles } from '../ui/Particles';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
 
 const proofPoints = ['Practical, mentor-led training', 'Live online learning', 'Classroom training in Chennai'];
@@ -20,6 +21,7 @@ export function HeroSection() {
   return (
     <>
       <section className="home-hero relative overflow-hidden bg-white text-surface-900" aria-label="Global Minds Academy">
+        <Particles className="opacity-45" quantity={40} color="#0d9488" />
         <div className="home-hero-pattern" aria-hidden="true" />
         <div className="home-hero-orb home-hero-orb-left" aria-hidden="true" />
         <div className="home-hero-orb home-hero-orb-right" aria-hidden="true" />

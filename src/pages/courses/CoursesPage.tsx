@@ -5,6 +5,7 @@ import { CourseCard } from '../../components/courses/CourseCard';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
+import { Particles } from '../../components/ui/Particles';
 import { categories } from '../../data/categories';
 import { cn } from '../../utils/cn';
 import type { Course } from '../../types';
@@ -132,7 +133,8 @@ export default function CoursesPage() {
   return (
     <div className="min-h-screen bg-surface-50">
       {/* Header */}
-      <div className="page-hero-premium py-14">
+      <div className="page-hero-premium py-14 relative overflow-hidden">
+        <Particles className="opacity-30" quantity={25} color="#0d9488" />
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Courses' }]} className="mb-4" />
           <div className="page-hero-badge mb-3">
