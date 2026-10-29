@@ -6,6 +6,9 @@ import { instructors } from './instructors';
 import { internships } from './internships';
 import { locations } from './locations';
 import { testimonials } from './testimonials';
+import { courses } from './courses';
+import { globalFAQs } from './faqs';
+import { defaultNavigation } from './navigationMenu';
 
 const contentRecords = <T extends object>(items: readonly T[]): Record<string, unknown>[] =>
   items.map(item => Object.fromEntries(Object.entries(item)));
@@ -50,10 +53,16 @@ export type CmsSection = (typeof cmsSections)[number]['id'];
 
 export const cmsSeeds: Record<CmsSection, Record<string, unknown>[]> = {
   dashboard: [],
-  courses: [],
+  courses: contentRecords(courses),
   categories: contentRecords(categories),
   'master-programs': contentRecords(masterPrograms),
-  'website-menu': [],
+  'website-menu': [
+    {
+      slug: 'site-navigation',
+      primary: defaultNavigation.primary,
+      more: defaultNavigation.more,
+    },
+  ],
   'live-projects': [],
   events: [],
   scholarships: scholarships.map(scholarship => ({ ...scholarship })),
@@ -77,7 +86,7 @@ export const cmsSeeds: Record<CmsSection, Record<string, unknown>[]> = {
   batches: [],
   locations: contentRecords(locations),
   blog: contentRecords(blogPosts),
-  faqs: [],
+  faqs: contentRecords(globalFAQs),
   testimonials: contentRecords(testimonials),
   certificates: [],
   payments: [],

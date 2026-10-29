@@ -102,13 +102,12 @@ const routePermissions: Record<string, string> = {
 
 function canAccessRoute(user: User, pathname: string, search: string): boolean {
   if (pathname === '/admin/users') return user.role === 'SUPER_ADMIN';
-  if (user.role === 'SUPER_ADMIN') return true;
+  if (user.role === 'SUPER_ADMIN' || user.role === 'ADMIN' || user.permissions?.includes('ALL')) return true;
   const requiredPermission = routePermissions[pathname]
     ?? (pathname.startsWith('/admin/website/') ? 'content.read' : undefined)
     ?? (pathname === '/admin/navigation' || pathname === '/admin/studio' ? 'content.read' : undefined)
     ?? (pathname === '/account/security' ? 'profile.read' : undefined);
   if (requiredPermission && user.permissions?.includes(requiredPermission) !== true) return false;
-  if (user.role === 'ADMIN') return true;
   if (user.role === 'CONTENT_MANAGER') {
     if (pathname === '/admin/studio') {
       const section = new URLSearchParams(search).get('section');

@@ -162,7 +162,7 @@ export function AdminLayout() {
     .map(group => ({
       ...group,
       items: group.items.filter(item => {
-        if (user.role === 'SUPER_ADMIN') return true;
+        if (user.role === 'SUPER_ADMIN' || user.role === 'ADMIN' || user.permissions?.includes('ALL')) return true;
         const permission = navPermissions[item.href]
           ?? (item.href.startsWith('/admin/website/') || item.href === '/admin/studio' || item.href === '/admin/navigation'
             ? 'content.read'
