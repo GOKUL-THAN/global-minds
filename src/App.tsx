@@ -313,6 +313,18 @@ const router = createBrowserRouter([
     path: '/certificates/:certificateId',
     element: <S><PageTransition className="public-site standalone-page"><CertificateViewPage /></PageTransition></S>,
   },
+  {
+    path: '/verify-certificate/:certificateId',
+    element: <S><PageTransition className="public-site standalone-page"><CertificateViewPage /></PageTransition></S>,
+  },
+  {
+    path: '/certificates/verify/:certificateId',
+    element: <S><PageTransition className="public-site standalone-page"><CertificateViewPage /></PageTransition></S>,
+  },
+  {
+    path: '/verify/:certificateId',
+    element: <S><PageTransition className="public-site standalone-page"><CertificateViewPage /></PageTransition></S>,
+  },
 
   // ── Admin (dedicated admin layout) ───────────────────────
   {

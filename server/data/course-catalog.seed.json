@@ -188,7 +188,7 @@
       "Build a serverless API with Lambda and API Gateway",
       "Implement auto-scaling architecture"
     ],
-    "certification": "Global Minds Academy AWS Training Certificate + Preparation for AWS Solutions Architect Associate",
+    "certification": "Global Minds Technologies AWS Training Certificate + Preparation for AWS Solutions Architect Associate",
     "careerOutcomes": [
       "Cloud Engineer",
       "AWS Solutions Architect",
@@ -271,7 +271,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -309,7 +309,7 @@
       "Cloud Computing",
       "DevOps"
     ],
-    "metaTitle": "AWS Training | Global Minds Academy — Cloud Computing Course",
+    "metaTitle": "AWS Training | Global Minds Technologies — Cloud Computing Course",
     "metaDescription": "Comprehensive AWS training with hands-on labs, real-world projects and certification preparation. Online and classroom batches available."
   },
   {
@@ -317,7 +317,7 @@
     "slug": "aws-online-training",
     "title": "AWS Online Training",
     "shortDescription": "Learn AWS from anywhere with live instructor-led online classes, recorded sessions and hands-on labs.",
-    "longDescription": "AWS Online Training at Global Minds Academy provides the same quality of instruction as classroom training, delivered entirely online through live sessions. PLACEHOLDER — replace with actual description.",
+    "longDescription": "AWS Online Training at Global Minds Technologies provides the same quality of instruction as classroom training, delivered entirely online through live sessions. PLACEHOLDER — replace with actual description.",
     "category": "cloud-computing",
     "subCategory": "AWS",
     "level": "Beginner",
@@ -432,7 +432,7 @@
     "projects": [
       "Build and deploy cloud-native applications on AWS"
     ],
-    "certification": "Global Minds Academy AWS Online Training Certificate",
+    "certification": "Global Minds Technologies AWS Online Training Certificate",
     "careerOutcomes": [
       "Cloud Engineer",
       "AWS Architect",
@@ -494,7 +494,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -525,7 +525,7 @@
       "Online Training",
       "Cloud"
     ],
-    "metaTitle": "AWS Online Training | Global Minds Academy",
+    "metaTitle": "AWS Online Training | Global Minds Technologies",
     "metaDescription": "Live instructor-led AWS online training with hands-on labs and certification preparation."
   },
   {
@@ -670,7 +670,7 @@
       "Data analysis project",
       "REST API with Flask"
     ],
-    "certification": "Global Minds Academy Python Programming Certificate",
+    "certification": "Global Minds Technologies Python Programming Certificate",
     "careerOutcomes": [
       "Python Developer",
       "Backend Developer",
@@ -752,7 +752,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -789,7 +789,7 @@
       "Beginner",
       "Data Science"
     ],
-    "metaTitle": "Python Training | Global Minds Academy — Python Programming Course",
+    "metaTitle": "Python Training | Global Minds Technologies — Python Programming Course",
     "metaDescription": "Comprehensive Python training from basics to advanced. Learn OOP, data libraries, APIs and build real-world projects."
   },
   {
@@ -933,7 +933,7 @@
       "RESTful API with Spring Boot",
       "Student management system"
     ],
-    "certification": "Global Minds Academy Java Programming Certificate",
+    "certification": "Global Minds Technologies Java Programming Certificate",
     "careerOutcomes": [
       "Java Developer",
       "Backend Developer",
@@ -1014,7 +1014,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -1048,7 +1048,7 @@
       "Spring Boot",
       "Backend"
     ],
-    "metaTitle": "Java Training | Global Minds Academy — Java Programming Course",
+    "metaTitle": "Java Training | Global Minds Technologies — Java Programming Course",
     "metaDescription": "Comprehensive Java training from core concepts to Spring Boot and enterprise development."
   },
   {
@@ -1222,7 +1222,7 @@
       "Portfolio website",
       "Blog platform with CMS"
     ],
-    "certification": "Global Minds Academy Full Stack Developer Certificate",
+    "certification": "Global Minds Technologies Full Stack Developer Certificate",
     "careerOutcomes": [
       "Full Stack Developer",
       "Frontend Developer",
@@ -1305,7 +1305,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -1343,7 +1343,7 @@
       "MERN",
       "Web Development"
     ],
-    "metaTitle": "Full Stack Development Training | Global Minds Academy",
+    "metaTitle": "Full Stack Development Training | Global Minds Technologies",
     "metaDescription": "Master full stack web development with React, Node.js, MongoDB, REST APIs and cloud deployment."
   },
   {
@@ -1488,7 +1488,7 @@
       "Shopping cart application",
       "Social media feed"
     ],
-    "certification": "Global Minds Academy React.js Certificate",
+    "certification": "Global Minds Technologies React.js Certificate",
     "careerOutcomes": [
       "React Developer",
       "Frontend Developer",
@@ -1568,7 +1568,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -1603,7 +1603,7 @@
       "Hooks",
       "Redux"
     ],
-    "metaTitle": "React JS Training | Global Minds Academy",
+    "metaTitle": "React JS Training | Global Minds Technologies",
     "metaDescription": "Master React.js with hooks, Redux, TypeScript and build production-grade applications."
   },
   {
@@ -1773,7 +1773,7 @@
       "Image classification system",
       "Sentiment analysis project"
     ],
-    "certification": "Global Minds Academy Data Science Certificate",
+    "certification": "Global Minds Technologies Data Science Certificate",
     "careerOutcomes": [
       "Data Scientist",
       "Data Analyst",
@@ -1856,7 +1856,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -1894,7 +1894,7 @@
       "AI",
       "Deep Learning"
     ],
-    "metaTitle": "Data Science Training | Global Minds Academy",
+    "metaTitle": "Data Science Training | Global Minds Technologies",
     "metaDescription": "Comprehensive data science course with Python, machine learning, deep learning and real-world projects."
   },
   {
@@ -2077,7 +2077,7 @@
       "Kubernetes microservices deployment",
       "Infrastructure automation with Terraform"
     ],
-    "certification": "Global Minds Academy DevOps Certificate",
+    "certification": "Global Minds Technologies DevOps Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Site Reliability Engineer",
@@ -2160,7 +2160,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -2199,7 +2199,7 @@
       "Terraform",
       "Jenkins"
     ],
-    "metaTitle": "DevOps Training | Global Minds Academy",
+    "metaTitle": "DevOps Training | Global Minds Technologies",
     "metaDescription": "Comprehensive DevOps training with Docker, Kubernetes, Jenkins, Terraform and real-world CI/CD projects."
   },
   {
@@ -2360,7 +2360,7 @@
       "Blue-green deployment strategy",
       "Production-ready Helm chart"
     ],
-    "certification": "Global Minds Academy Kubernetes Certificate + CKA Exam Preparation",
+    "certification": "Global Minds Technologies Kubernetes Certificate + CKA Exam Preparation",
     "careerOutcomes": [
       "Kubernetes Administrator",
       "DevOps Engineer",
@@ -2441,7 +2441,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -2478,7 +2478,7 @@
       "CKA",
       "Containers"
     ],
-    "metaTitle": "Kubernetes Training | Global Minds Academy — CKA Certification",
+    "metaTitle": "Kubernetes Training | Global Minds Technologies — CKA Certification",
     "metaDescription": "Master Kubernetes container orchestration with hands-on labs and CKA exam preparation."
   },
   {
@@ -2668,7 +2668,7 @@
       "Customer segmentation system",
       "End-to-end ML pipeline with MLflow"
     ],
-    "certification": "Global Minds Academy Machine Learning Certificate",
+    "certification": "Global Minds Technologies Machine Learning Certificate",
     "careerOutcomes": [
       "Machine Learning Engineer",
       "Data Scientist",
@@ -2750,7 +2750,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -2788,7 +2788,7 @@
       "MLOps",
       "Python"
     ],
-    "metaTitle": "Machine Learning Training | Global Minds Academy",
+    "metaTitle": "Machine Learning Training | Global Minds Technologies",
     "metaDescription": "Master machine learning with Scikit-learn, XGBoost, feature engineering, model evaluation and MLOps."
   },
   {
@@ -2952,7 +2952,7 @@
       "Custom chatbot with RAG",
       "Multi-modal content generator"
     ],
-    "certification": "Global Minds Academy Generative AI Certificate",
+    "certification": "Global Minds Technologies Generative AI Certificate",
     "careerOutcomes": [
       "GenAI Engineer",
       "AI Developer",
@@ -3034,7 +3034,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -3073,7 +3073,7 @@
       "Prompt Engineering",
       "RAG"
     ],
-    "metaTitle": "Generative AI Training | Global Minds Academy",
+    "metaTitle": "Generative AI Training | Global Minds Technologies",
     "metaDescription": "Master Generative AI with LangChain, RAG, OpenAI API, fine-tuning and build real-world AI applications."
   },
   {
@@ -3238,7 +3238,7 @@
       "Test plan and test cases for an e-commerce site",
       "API testing using Postman"
     ],
-    "certification": "Global Minds Academy Software Testing Certificate + ISTQB Foundation Preparation",
+    "certification": "Global Minds Technologies Software Testing Certificate + ISTQB Foundation Preparation",
     "careerOutcomes": [
       "Software Test Engineer",
       "QA Analyst",
@@ -3320,7 +3320,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -3359,7 +3359,7 @@
       "Jira",
       "Agile Testing"
     ],
-    "metaTitle": "Software Testing Training | Global Minds Academy",
+    "metaTitle": "Software Testing Training | Global Minds Technologies",
     "metaDescription": "Complete software testing course — manual testing, Jira, Agile testing, API basics and ISTQB preparation."
   },
   {
@@ -3542,7 +3542,7 @@
       "Web app vulnerability assessment",
       "SIEM dashboard with threat detection rules"
     ],
-    "certification": "Global Minds Academy Cyber Security Certificate + CEH & Security+ Exam Preparation",
+    "certification": "Global Minds Technologies Cyber Security Certificate + CEH & Security+ Exam Preparation",
     "careerOutcomes": [
       "Cyber Security Analyst",
       "Penetration Tester",
@@ -3624,7 +3624,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -3662,7 +3662,7 @@
       "Penetration Testing",
       "SIEM"
     ],
-    "metaTitle": "Cyber Security Training | Global Minds Academy",
+    "metaTitle": "Cyber Security Training | Global Minds Technologies",
     "metaDescription": "Comprehensive Cyber Security training — ethical hacking, OWASP, SIEM, cloud security and CEH preparation."
   },
   {
@@ -3817,7 +3817,7 @@
       "Build serverless solution with Azure Functions",
       "Implement Azure security architecture"
     ],
-    "certification": "Global Minds Academy Azure Certificate + AZ-900 Exam Preparation",
+    "certification": "Global Minds Technologies Azure Certificate + AZ-900 Exam Preparation",
     "careerOutcomes": [
       "Azure Cloud Engineer",
       "Azure Administrator",
@@ -3898,7 +3898,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -3935,7 +3935,7 @@
       "AZ-900",
       "AZ-104"
     ],
-    "metaTitle": "Microsoft Azure Training | Global Minds Academy",
+    "metaTitle": "Microsoft Azure Training | Global Minds Technologies",
     "metaDescription": "Comprehensive Azure training with certification preparation for AZ-900 and AZ-104."
   },
   {
@@ -4076,7 +4076,7 @@
       "Containerised application on GKE",
       "Serverless architecture on GCP"
     ],
-    "certification": "Global Minds Academy GCP Certificate + ACE Exam Preparation",
+    "certification": "Global Minds Technologies GCP Certificate + ACE Exam Preparation",
     "careerOutcomes": [
       "GCP Cloud Engineer",
       "Cloud Architect",
@@ -4157,7 +4157,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -4193,7 +4193,7 @@
       "GKE",
       "Cloud"
     ],
-    "metaTitle": "Google Cloud Platform Training | Global Minds Academy",
+    "metaTitle": "Google Cloud Platform Training | Global Minds Technologies",
     "metaDescription": "Master GCP with Compute Engine, BigQuery, GKE and Professional Cloud Architect preparation."
   },
   {
@@ -4346,7 +4346,7 @@
       "Customer behaviour analysis",
       "Business intelligence report"
     ],
-    "certification": "Global Minds Academy Data Analytics Certificate",
+    "certification": "Global Minds Technologies Data Analytics Certificate",
     "careerOutcomes": [
       "Data Analyst",
       "Business Analyst",
@@ -4429,7 +4429,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes, Global Minds Academy provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
+        "answer": "Yes, Global Minds Technologies provides a course completion certificate. This is a placeholder — final certification details to be confirmed."
       },
       {
         "id": "f4",
@@ -4467,7 +4467,7 @@
       "Excel",
       "Business Intelligence"
     ],
-    "metaTitle": "Data Analytics Training | Global Minds Academy",
+    "metaTitle": "Data Analytics Training | Global Minds Technologies",
     "metaDescription": "Learn data analytics with Excel, SQL, Python, Power BI and Tableau. Build dashboards and insights."
   },
   {
@@ -4629,7 +4629,7 @@
       "Financial KPI tracker",
       "Real-time operations dashboard"
     ],
-    "certification": "Global Minds Academy Power BI Certificate + PL-300 Exam Preparation",
+    "certification": "Global Minds Technologies Power BI Certificate + PL-300 Exam Preparation",
     "careerOutcomes": [
       "Power BI Developer",
       "BI Analyst",
@@ -4711,7 +4711,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -4749,7 +4749,7 @@
       "Data Analytics",
       "Dashboards"
     ],
-    "metaTitle": "Power BI Training | Global Minds Academy",
+    "metaTitle": "Power BI Training | Global Minds Technologies",
     "metaDescription": "Complete Power BI training — Power Query, DAX, data modelling, dashboards and Power BI Service."
   },
   {
@@ -4862,7 +4862,7 @@
     "projects": [
       "AWS DevOps real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy AWS DevOps Certificate",
+    "certification": "Global Minds Technologies AWS DevOps Certificate",
     "careerOutcomes": [
       "AWS DevOps Engineer",
       "Cloud Engineer",
@@ -4932,7 +4932,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -5065,7 +5065,7 @@
     "projects": [
       "Cloud Computing real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Cloud Computing Certificate",
+    "certification": "Global Minds Technologies Cloud Computing Certificate",
     "careerOutcomes": [
       "Cloud Engineer",
       "Cloud Administrator",
@@ -5135,7 +5135,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -5267,7 +5267,7 @@
     "projects": [
       "Cloud Security real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Cloud Security Certificate",
+    "certification": "Global Minds Technologies Cloud Security Certificate",
     "careerOutcomes": [
       "Cloud Security Engineer",
       "Security Architect",
@@ -5337,7 +5337,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -5471,7 +5471,7 @@
     "projects": [
       "Docker Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Docker Training Certificate",
+    "certification": "Global Minds Technologies Docker Training Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Platform Engineer",
@@ -5541,7 +5541,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -5676,7 +5676,7 @@
     "projects": [
       "Jenkins Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Jenkins Training Certificate",
+    "certification": "Global Minds Technologies Jenkins Training Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Build Engineer",
@@ -5746,7 +5746,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -5882,7 +5882,7 @@
     "projects": [
       "Terraform Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Terraform Training Certificate",
+    "certification": "Global Minds Technologies Terraform Training Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Cloud Engineer",
@@ -5952,7 +5952,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -6086,7 +6086,7 @@
     "projects": [
       "Ansible Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Ansible Training Certificate",
+    "certification": "Global Minds Technologies Ansible Training Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Systems Engineer",
@@ -6156,7 +6156,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -6290,7 +6290,7 @@
     "projects": [
       "JavaScript Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy JavaScript Training Certificate",
+    "certification": "Global Minds Technologies JavaScript Training Certificate",
     "careerOutcomes": [
       "JavaScript Developer",
       "Frontend Developer",
@@ -6360,7 +6360,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -6493,7 +6493,7 @@
     "projects": [
       "TypeScript Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy TypeScript Training Certificate",
+    "certification": "Global Minds Technologies TypeScript Training Certificate",
     "careerOutcomes": [
       "TypeScript Developer",
       "Frontend Developer",
@@ -6563,7 +6563,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -6696,7 +6696,7 @@
     "projects": [
       "C Programming real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy C Programming Certificate",
+    "certification": "Global Minds Technologies C Programming Certificate",
     "careerOutcomes": [
       "Embedded Systems Developer",
       "Systems Programmer",
@@ -6766,7 +6766,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -6899,7 +6899,7 @@
     "projects": [
       "C++ Programming real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy C++ Programming Certificate",
+    "certification": "Global Minds Technologies C++ Programming Certificate",
     "careerOutcomes": [
       "C++ Developer",
       "Systems Engineer",
@@ -6970,7 +6970,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -7105,7 +7105,7 @@
     "projects": [
       "SQL Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy SQL Training Certificate",
+    "certification": "Global Minds Technologies SQL Training Certificate",
     "careerOutcomes": [
       "Database Developer",
       "Data Analyst",
@@ -7175,7 +7175,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -7309,7 +7309,7 @@
     "projects": [
       "HTML & CSS real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy HTML & CSS Certificate",
+    "certification": "Global Minds Technologies HTML & CSS Certificate",
     "careerOutcomes": [
       "Frontend Developer",
       "Web Designer",
@@ -7379,7 +7379,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -7513,7 +7513,7 @@
     "projects": [
       "Angular Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Angular Training Certificate",
+    "certification": "Global Minds Technologies Angular Training Certificate",
     "careerOutcomes": [
       "Angular Developer",
       "Frontend Developer",
@@ -7583,7 +7583,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -7718,7 +7718,7 @@
     "projects": [
       "Node.js Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Node.js Training Certificate",
+    "certification": "Global Minds Technologies Node.js Training Certificate",
     "careerOutcomes": [
       "Node.js Developer",
       "Backend Developer",
@@ -7788,7 +7788,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -7924,7 +7924,7 @@
     "projects": [
       "MERN Stack Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy MERN Stack Training Certificate",
+    "certification": "Global Minds Technologies MERN Stack Training Certificate",
     "careerOutcomes": [
       "MERN Developer",
       "Full Stack Developer",
@@ -7994,7 +7994,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -8128,7 +8128,7 @@
     "projects": [
       "MEAN Stack Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy MEAN Stack Training Certificate",
+    "certification": "Global Minds Technologies MEAN Stack Training Certificate",
     "careerOutcomes": [
       "MEAN Developer",
       "Full Stack Developer",
@@ -8198,7 +8198,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -8334,7 +8334,7 @@
     "projects": [
       "Java Full Stack real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Java Full Stack Certificate",
+    "certification": "Global Minds Technologies Java Full Stack Certificate",
     "careerOutcomes": [
       "Java Full Stack Developer",
       "Backend Developer",
@@ -8404,7 +8404,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -8541,7 +8541,7 @@
     "projects": [
       "Python Full Stack real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Python Full Stack Certificate",
+    "certification": "Global Minds Technologies Python Full Stack Certificate",
     "careerOutcomes": [
       "Python Full Stack Developer",
       "Backend Developer",
@@ -8611,7 +8611,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -8748,7 +8748,7 @@
     "projects": [
       "Deep Learning real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Deep Learning Certificate",
+    "certification": "Global Minds Technologies Deep Learning Certificate",
     "careerOutcomes": [
       "Deep Learning Engineer",
       "AI Engineer",
@@ -8818,7 +8818,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -8953,7 +8953,7 @@
     "projects": [
       "Artificial Intelligence real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Artificial Intelligence Certificate",
+    "certification": "Global Minds Technologies Artificial Intelligence Certificate",
     "careerOutcomes": [
       "AI Engineer",
       "ML Engineer",
@@ -9023,7 +9023,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -9159,7 +9159,7 @@
     "projects": [
       "NLP Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy NLP Training Certificate",
+    "certification": "Global Minds Technologies NLP Training Certificate",
     "careerOutcomes": [
       "NLP Engineer",
       "AI Engineer",
@@ -9229,7 +9229,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -9366,7 +9366,7 @@
     "projects": [
       "Computer Vision real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Computer Vision Certificate",
+    "certification": "Global Minds Technologies Computer Vision Certificate",
     "careerOutcomes": [
       "Computer Vision Engineer",
       "AI Engineer",
@@ -9436,7 +9436,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -9571,7 +9571,7 @@
     "projects": [
       "Tableau Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Tableau Training Certificate",
+    "certification": "Global Minds Technologies Tableau Training Certificate",
     "careerOutcomes": [
       "Tableau Developer",
       "BI Analyst",
@@ -9641,7 +9641,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -9778,7 +9778,7 @@
     "projects": [
       "Big Data Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Big Data Training Certificate",
+    "certification": "Global Minds Technologies Big Data Training Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "Big Data Engineer",
@@ -9848,7 +9848,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -9985,7 +9985,7 @@
     "projects": [
       "Data Engineering real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Data Engineering Certificate",
+    "certification": "Global Minds Technologies Data Engineering Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "Analytics Engineer",
@@ -10055,7 +10055,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -10192,7 +10192,7 @@
     "projects": [
       "Business Intelligence real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Business Intelligence Certificate",
+    "certification": "Global Minds Technologies Business Intelligence Certificate",
     "careerOutcomes": [
       "BI Developer",
       "Data Analyst",
@@ -10262,7 +10262,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -10398,7 +10398,7 @@
     "projects": [
       "Automation Testing real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Automation Testing Certificate",
+    "certification": "Global Minds Technologies Automation Testing Certificate",
     "careerOutcomes": [
       "Automation Test Engineer",
       "SDET",
@@ -10468,7 +10468,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -10602,7 +10602,7 @@
     "projects": [
       "Selenium Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Selenium Training Certificate",
+    "certification": "Global Minds Technologies Selenium Training Certificate",
     "careerOutcomes": [
       "QA Automation Engineer",
       "SDET",
@@ -10672,7 +10672,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -10806,7 +10806,7 @@
     "projects": [
       "API Testing real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy API Testing Certificate",
+    "certification": "Global Minds Technologies API Testing Certificate",
     "careerOutcomes": [
       "API Test Engineer",
       "QA Engineer",
@@ -10876,7 +10876,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -11009,7 +11009,7 @@
     "projects": [
       "Performance Testing real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Performance Testing Certificate",
+    "certification": "Global Minds Technologies Performance Testing Certificate",
     "careerOutcomes": [
       "Performance Test Engineer",
       "QA Engineer",
@@ -11079,7 +11079,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -11213,7 +11213,7 @@
     "projects": [
       "ETL Testing real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy ETL Testing Certificate",
+    "certification": "Global Minds Technologies ETL Testing Certificate",
     "careerOutcomes": [
       "ETL Test Engineer",
       "Data QA Engineer",
@@ -11283,7 +11283,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -11418,7 +11418,7 @@
     "projects": [
       "Ethical Hacking real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Ethical Hacking Certificate",
+    "certification": "Global Minds Technologies Ethical Hacking Certificate",
     "careerOutcomes": [
       "Ethical Hacker",
       "Penetration Tester",
@@ -11488,7 +11488,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -11623,7 +11623,7 @@
     "projects": [
       "MySQL Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy MySQL Training Certificate",
+    "certification": "Global Minds Technologies MySQL Training Certificate",
     "careerOutcomes": [
       "Database Developer",
       "Database Administrator",
@@ -11693,7 +11693,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -11828,7 +11828,7 @@
     "projects": [
       "PostgreSQL Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy PostgreSQL Training Certificate",
+    "certification": "Global Minds Technologies PostgreSQL Training Certificate",
     "careerOutcomes": [
       "PostgreSQL DBA",
       "Database Developer",
@@ -11898,7 +11898,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -12032,7 +12032,7 @@
     "projects": [
       "Oracle Database Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Oracle Database Training Certificate",
+    "certification": "Global Minds Technologies Oracle Database Training Certificate",
     "careerOutcomes": [
       "Oracle DBA",
       "PL/SQL Developer",
@@ -12102,7 +12102,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -12237,7 +12237,7 @@
     "projects": [
       "UI/UX Design real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy UI/UX Design Certificate",
+    "certification": "Global Minds Technologies UI/UX Design Certificate",
     "careerOutcomes": [
       "UI/UX Designer",
       "Product Designer",
@@ -12307,7 +12307,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -12440,7 +12440,7 @@
     "projects": [
       "Figma Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Figma Training Certificate",
+    "certification": "Global Minds Technologies Figma Training Certificate",
     "careerOutcomes": [
       "UI Designer",
       "Product Designer",
@@ -12510,7 +12510,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -12646,7 +12646,7 @@
     "projects": [
       "Digital Marketing real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Digital Marketing Certificate",
+    "certification": "Global Minds Technologies Digital Marketing Certificate",
     "careerOutcomes": [
       "Digital Marketing Manager",
       "SEO Specialist",
@@ -12716,7 +12716,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -12850,7 +12850,7 @@
     "projects": [
       "SEO Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy SEO Training Certificate",
+    "certification": "Global Minds Technologies SEO Training Certificate",
     "careerOutcomes": [
       "SEO Specialist",
       "Digital Marketing Manager",
@@ -12920,7 +12920,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -13053,7 +13053,7 @@
     "projects": [
       "RPA with UiPath real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy RPA with UiPath Certificate",
+    "certification": "Global Minds Technologies RPA with UiPath Certificate",
     "careerOutcomes": [
       "RPA Developer",
       "Automation Engineer",
@@ -13123,7 +13123,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -13256,7 +13256,7 @@
     "projects": [
       "UiPath Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy UiPath Training Certificate",
+    "certification": "Global Minds Technologies UiPath Training Certificate",
     "careerOutcomes": [
       "Senior RPA Developer",
       "RPA Architect",
@@ -13326,7 +13326,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -13462,7 +13462,7 @@
     "projects": [
       "IoT Training real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy IoT Training Certificate",
+    "certification": "Global Minds Technologies IoT Training Certificate",
     "careerOutcomes": [
       "IoT Engineer",
       "Embedded Engineer",
@@ -13532,7 +13532,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -13666,7 +13666,7 @@
     "projects": [
       "Project Management real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Project Management Certificate",
+    "certification": "Global Minds Technologies Project Management Certificate",
     "careerOutcomes": [
       "Project Manager",
       "Program Manager",
@@ -13736,7 +13736,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -13870,7 +13870,7 @@
     "projects": [
       "Agile & Scrum real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Agile & Scrum Certificate",
+    "certification": "Global Minds Technologies Agile & Scrum Certificate",
     "careerOutcomes": [
       "Scrum Master",
       "Agile Coach",
@@ -13942,7 +13942,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -14077,7 +14077,7 @@
     "projects": [
       "Azure DevOps real-world project (PLACEHOLDER)"
     ],
-    "certification": "Global Minds Academy Azure DevOps Certificate",
+    "certification": "Global Minds Technologies Azure DevOps Certificate",
     "careerOutcomes": [
       "Azure DevOps Engineer",
       "DevOps Engineer",
@@ -14147,7 +14147,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy course completion certificate. Placeholder."
+        "answer": "Yes — Global Minds Technologies course completion certificate. Placeholder."
       },
       {
         "id": "f4",
@@ -14340,7 +14340,7 @@
       "Secure user management system",
       "Microservices-based order management app"
     ],
-    "certification": "Global Minds Academy Spring Boot Certificate",
+    "certification": "Global Minds Technologies Spring Boot Certificate",
     "careerOutcomes": [
       "Java Developer",
       "Spring Boot Developer",
@@ -14422,7 +14422,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -14460,7 +14460,7 @@
       "Spring Security",
       "Microservices"
     ],
-    "metaTitle": "Spring Boot Training | Global Minds Academy",
+    "metaTitle": "Spring Boot Training | Global Minds Technologies",
     "metaDescription": "Complete Spring Boot training — REST APIs, Spring Security, JPA, microservices and Docker deployment."
   },
   {
@@ -14630,7 +14630,7 @@
       "REST API for a social media app",
       "Real-time notification system with Celery"
     ],
-    "certification": "Global Minds Academy Django Web Development Certificate",
+    "certification": "Global Minds Technologies Django Web Development Certificate",
     "careerOutcomes": [
       "Python Django Developer",
       "Backend Developer",
@@ -14711,7 +14711,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -14749,7 +14749,7 @@
       "REST API",
       "DRF"
     ],
-    "metaTitle": "Django Training | Global Minds Academy",
+    "metaTitle": "Django Training | Global Minds Technologies",
     "metaDescription": "Complete Django training — ORM, DRF REST APIs, authentication, Celery and deployment."
   },
   {
@@ -14913,7 +14913,7 @@
       "Automated lead nurturing with Flows",
       "REST API integration with external system"
     ],
-    "certification": "Global Minds Academy Salesforce Certificate + Salesforce Admin & Platform Developer I Prep",
+    "certification": "Global Minds Technologies Salesforce Certificate + Salesforce Admin & Platform Developer I Prep",
     "careerOutcomes": [
       "Salesforce Developer",
       "Salesforce Administrator",
@@ -14994,7 +14994,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate upon finishing the course and projects."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
       },
       {
         "id": "f4",
@@ -15031,7 +15031,7 @@
       "CRM",
       "Salesforce Admin"
     ],
-    "metaTitle": "Salesforce Training | Global Minds Academy",
+    "metaTitle": "Salesforce Training | Global Minds Technologies",
     "metaDescription": "Comprehensive Salesforce training — Apex, LWC, Admin, SOQL, integrations and certification preparation."
   },
   {
@@ -15165,7 +15165,7 @@
       "Real-time chat app",
       "Task manager with Firebase"
     ],
-    "certification": "Global Minds Academy Flutter Development Certificate",
+    "certification": "Global Minds Technologies Flutter Development Certificate",
     "careerOutcomes": [
       "Flutter Developer",
       "Mobile App Developer",
@@ -15245,7 +15245,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -15281,8 +15281,8 @@
       "Cross-Platform",
       "Firebase"
     ],
-    "metaTitle": "Flutter Development Training | Global Minds Academy",
-    "metaDescription": "Learn Flutter Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Flutter Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Flutter Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs1",
     "slug": "flutter",
     "title": "Flutter Development",
@@ -15417,7 +15417,7 @@
       "Food delivery mobile app",
       "Social media feed app"
     ],
-    "certification": "Global Minds Academy React Native Development Certificate",
+    "certification": "Global Minds Technologies React Native Development Certificate",
     "careerOutcomes": [
       "React Native Developer",
       "Mobile Developer",
@@ -15496,7 +15496,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -15532,8 +15532,8 @@
       "iOS",
       "Android"
     ],
-    "metaTitle": "React Native Development Training | Global Minds Academy",
-    "metaDescription": "Learn React Native Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "React Native Development Training | Global Minds Technologies",
+    "metaDescription": "Learn React Native Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs2",
     "slug": "react-native",
     "title": "React Native Development",
@@ -15673,7 +15673,7 @@
       "Notes app with Room DB",
       "Fitness tracker app"
     ],
-    "certification": "Global Minds Academy Android App Development Certificate",
+    "certification": "Global Minds Technologies Android App Development Certificate",
     "careerOutcomes": [
       "Android Developer",
       "Mobile App Developer",
@@ -15752,7 +15752,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -15788,8 +15788,8 @@
       "Mobile",
       "MVVM"
     ],
-    "metaTitle": "Android App Development Training | Global Minds Academy",
-    "metaDescription": "Learn Android App Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Android App Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Android App Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs3",
     "slug": "android-development",
     "title": "Android App Development",
@@ -15930,7 +15930,7 @@
       "Expense tracker with Core Data",
       "Social media app"
     ],
-    "certification": "Global Minds Academy iOS App Development Certificate",
+    "certification": "Global Minds Technologies iOS App Development Certificate",
     "careerOutcomes": [
       "iOS Developer",
       "Swift Developer",
@@ -16010,7 +16010,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -16046,8 +16046,8 @@
       "Apple",
       "Mobile"
     ],
-    "metaTitle": "iOS App Development Training | Global Minds Academy",
-    "metaDescription": "Learn iOS App Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "iOS App Development Training | Global Minds Technologies",
+    "metaDescription": "Learn iOS App Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs4",
     "slug": "ios-development",
     "title": "iOS App Development",
@@ -16174,7 +16174,7 @@
       "Android app with coroutines",
       "REST API with Ktor"
     ],
-    "certification": "Global Minds Academy Kotlin Programming Certificate",
+    "certification": "Global Minds Technologies Kotlin Programming Certificate",
     "careerOutcomes": [
       "Kotlin Developer",
       "Android Developer",
@@ -16253,7 +16253,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -16286,8 +16286,8 @@
       "Coroutines",
       "Programming"
     ],
-    "metaTitle": "Kotlin Programming Training | Global Minds Academy",
-    "metaDescription": "Learn Kotlin Programming with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Kotlin Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn Kotlin Programming with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs5",
     "slug": "kotlin",
     "title": "Kotlin Programming",
@@ -16406,7 +16406,7 @@
       "CLI task manager",
       "SwiftUI contact book app"
     ],
-    "certification": "Global Minds Academy Swift Programming Certificate",
+    "certification": "Global Minds Technologies Swift Programming Certificate",
     "careerOutcomes": [
       "iOS Developer",
       "Swift Developer",
@@ -16485,7 +16485,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -16517,8 +16517,8 @@
       "Apple",
       "Programming"
     ],
-    "metaTitle": "Swift Programming Training | Global Minds Academy",
-    "metaDescription": "Learn Swift Programming with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Swift Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn Swift Programming with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs6",
     "slug": "swift",
     "title": "Swift Programming",
@@ -16650,7 +16650,7 @@
       "REST API microservice",
       "Real-time chat server"
     ],
-    "certification": "Global Minds Academy Go (Golang) Programming Certificate",
+    "certification": "Global Minds Technologies Go (Golang) Programming Certificate",
     "careerOutcomes": [
       "Go Developer",
       "Backend Engineer",
@@ -16730,7 +16730,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -16766,8 +16766,8 @@
       "Microservices",
       "Cloud Native"
     ],
-    "metaTitle": "Go (Golang) Programming Training | Global Minds Academy",
-    "metaDescription": "Learn Go (Golang) Programming with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Go (Golang) Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn Go (Golang) Programming with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs7",
     "slug": "go-programming",
     "title": "Go (Golang) Programming",
@@ -16907,7 +16907,7 @@
       "Actix-web REST API",
       "WebAssembly image filter"
     ],
-    "certification": "Global Minds Academy Rust Programming Certificate",
+    "certification": "Global Minds Technologies Rust Programming Certificate",
     "careerOutcomes": [
       "Rust Developer",
       "Systems Programmer",
@@ -16987,7 +16987,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -17023,8 +17023,8 @@
       "WebAssembly",
       "Concurrent"
     ],
-    "metaTitle": "Rust Programming Training | Global Minds Academy",
-    "metaDescription": "Learn Rust Programming with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Rust Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn Rust Programming with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs8",
     "slug": "rust-programming",
     "title": "Rust Programming",
@@ -17179,7 +17179,7 @@
       "Graph pathfinding visualiser",
       "Competitive programming portfolio"
     ],
-    "certification": "Global Minds Academy Data Structures & Algorithms Certificate",
+    "certification": "Global Minds Technologies Data Structures & Algorithms Certificate",
     "careerOutcomes": [
       "Software Engineer at FAANG",
       "Backend Developer",
@@ -17258,7 +17258,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -17296,8 +17296,8 @@
       "Competitive Programming",
       "Interview Prep"
     ],
-    "metaTitle": "Data Structures & Algorithms Training | Global Minds Academy",
-    "metaDescription": "Learn Data Structures & Algorithms with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Data Structures & Algorithms Training | Global Minds Technologies",
+    "metaDescription": "Learn Data Structures & Algorithms with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs9",
     "slug": "data-structures-algorithms",
     "title": "Data Structures & Algorithms",
@@ -17435,7 +17435,7 @@
       "Design social media feed",
       "Design chat application at scale"
     ],
-    "certification": "Global Minds Academy System Design Certificate",
+    "certification": "Global Minds Technologies System Design Certificate",
     "careerOutcomes": [
       "Senior Software Engineer",
       "Solutions Architect",
@@ -17516,7 +17516,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -17552,8 +17552,8 @@
       "Architecture",
       "Interview"
     ],
-    "metaTitle": "System Design Training | Global Minds Academy",
-    "metaDescription": "Learn System Design with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "System Design Training | Global Minds Technologies",
+    "metaDescription": "Learn System Design with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs10",
     "slug": "system-design",
     "title": "System Design",
@@ -17693,7 +17693,7 @@
       "Memory allocator in C",
       "File system simulator"
     ],
-    "certification": "Global Minds Academy Operating Systems Certificate",
+    "certification": "Global Minds Technologies Operating Systems Certificate",
     "careerOutcomes": [
       "Systems Programmer",
       "Embedded Engineer",
@@ -17773,7 +17773,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -17808,8 +17808,8 @@
       "Systems Programming",
       "Memory Management"
     ],
-    "metaTitle": "Operating Systems Training | Global Minds Academy",
-    "metaDescription": "Learn Operating Systems with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Operating Systems Training | Global Minds Technologies",
+    "metaDescription": "Learn Operating Systems with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs11",
     "slug": "operating-systems",
     "title": "Operating Systems",
@@ -17951,7 +17951,7 @@
       "Network packet analyser",
       "Subnet calculator tool"
     ],
-    "certification": "Global Minds Academy Computer Networks Certificate",
+    "certification": "Global Minds Technologies Computer Networks Certificate",
     "careerOutcomes": [
       "Network Engineer",
       "Cloud Engineer",
@@ -18032,7 +18032,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -18067,8 +18067,8 @@
       "Subnetting",
       "Socket Programming"
     ],
-    "metaTitle": "Computer Networks Training | Global Minds Academy",
-    "metaDescription": "Learn Computer Networks with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Computer Networks Training | Global Minds Technologies",
+    "metaDescription": "Learn Computer Networks with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs12",
     "slug": "computer-networks",
     "title": "Computer Networks",
@@ -18211,7 +18211,7 @@
       "Log monitoring system",
       "Web server setup and hardening"
     ],
-    "certification": "Global Minds Academy Linux Administration Certificate",
+    "certification": "Global Minds Technologies Linux Administration Certificate",
     "careerOutcomes": [
       "Linux Administrator",
       "DevOps Engineer",
@@ -18292,7 +18292,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -18329,8 +18329,8 @@
       "System Administration",
       "DevOps"
     ],
-    "metaTitle": "Linux Administration Training | Global Minds Academy",
-    "metaDescription": "Learn Linux Administration with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Linux Administration Training | Global Minds Technologies",
+    "metaDescription": "Learn Linux Administration with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs13",
     "slug": "linux-administration",
     "title": "Linux Administration",
@@ -18474,7 +18474,7 @@
       "NFT marketplace",
       "DeFi lending dApp"
     ],
-    "certification": "Global Minds Academy Blockchain Development Certificate",
+    "certification": "Global Minds Technologies Blockchain Development Certificate",
     "careerOutcomes": [
       "Blockchain Developer",
       "Smart Contract Developer",
@@ -18555,7 +18555,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -18594,8 +18594,8 @@
       "NFT",
       "Smart Contracts"
     ],
-    "metaTitle": "Blockchain Development Training | Global Minds Academy",
-    "metaDescription": "Learn Blockchain Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Blockchain Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Blockchain Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs14",
     "slug": "blockchain",
     "title": "Blockchain Development",
@@ -18733,7 +18733,7 @@
       "Token-gated content site",
       "DAO voting portal"
     ],
-    "certification": "Global Minds Academy Web3 Development Certificate",
+    "certification": "Global Minds Technologies Web3 Development Certificate",
     "careerOutcomes": [
       "Web3 Developer",
       "dApp Developer",
@@ -18812,7 +18812,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -18846,8 +18846,8 @@
       "DAO",
       "Ethereum"
     ],
-    "metaTitle": "Web3 Development Training | Global Minds Academy",
-    "metaDescription": "Learn Web3 Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Web3 Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Web3 Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs15",
     "slug": "web3",
     "title": "Web3 Development",
@@ -18990,7 +18990,7 @@
       "E-commerce platform as microservices",
       "Event-driven order processing system"
     ],
-    "certification": "Global Minds Academy Microservices Architecture Certificate",
+    "certification": "Global Minds Technologies Microservices Architecture Certificate",
     "careerOutcomes": [
       "Microservices Architect",
       "Senior Backend Developer",
@@ -19071,7 +19071,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -19108,8 +19108,8 @@
       "Docker",
       "Distributed Systems"
     ],
-    "metaTitle": "Microservices Architecture Training | Global Minds Academy",
-    "metaDescription": "Learn Microservices Architecture with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Microservices Architecture Training | Global Minds Technologies",
+    "metaDescription": "Learn Microservices Architecture with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs16",
     "slug": "microservices",
     "title": "Microservices Architecture",
@@ -19235,7 +19235,7 @@
       "Social media API with GraphQL",
       "Real-time messaging with subscriptions"
     ],
-    "certification": "Global Minds Academy GraphQL Development Certificate",
+    "certification": "Global Minds Technologies GraphQL Development Certificate",
     "careerOutcomes": [
       "GraphQL Developer",
       "Full Stack Developer",
@@ -19315,7 +19315,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -19350,8 +19350,8 @@
       "Full Stack",
       "Subscriptions"
     ],
-    "metaTitle": "GraphQL Development Training | Global Minds Academy",
-    "metaDescription": "Learn GraphQL Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "GraphQL Development Training | Global Minds Technologies",
+    "metaDescription": "Learn GraphQL Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs17",
     "slug": "graphql",
     "title": "GraphQL Development",
@@ -19491,7 +19491,7 @@
       "Real-time leaderboard",
       "Rate limiter with Redis"
     ],
-    "certification": "Global Minds Academy Redis Training Certificate",
+    "certification": "Global Minds Technologies Redis Training Certificate",
     "careerOutcomes": [
       "Backend Developer",
       "Database Engineer",
@@ -19570,7 +19570,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -19605,8 +19605,8 @@
       "In-Memory Database",
       "Backend"
     ],
-    "metaTitle": "Redis Training Training | Global Minds Academy",
-    "metaDescription": "Learn Redis Training with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Redis Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Redis Training with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs18",
     "slug": "redis",
     "title": "Redis Training",
@@ -19748,7 +19748,7 @@
       "E-commerce product catalogue",
       "Real-time analytics dashboard"
     ],
-    "certification": "Global Minds Academy MongoDB Training Certificate",
+    "certification": "Global Minds Technologies MongoDB Training Certificate",
     "careerOutcomes": [
       "MongoDB Developer",
       "Backend Developer",
@@ -19828,7 +19828,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -19865,8 +19865,8 @@
       "Aggregation",
       "Atlas"
     ],
-    "metaTitle": "MongoDB Training Training | Global Minds Academy",
-    "metaDescription": "Learn MongoDB Training with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "MongoDB Training Training | Global Minds Technologies",
+    "metaDescription": "Learn MongoDB Training with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs19",
     "slug": "mongodb",
     "title": "MongoDB Training",
@@ -20011,7 +20011,7 @@
       "3D FPS shooter",
       "Casual mobile game"
     ],
-    "certification": "Global Minds Academy Unity Game Development Certificate",
+    "certification": "Global Minds Technologies Unity Game Development Certificate",
     "careerOutcomes": [
       "Unity Developer",
       "Game Developer",
@@ -20092,7 +20092,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -20129,8 +20129,8 @@
       "3D",
       "Mobile Games"
     ],
-    "metaTitle": "Unity Game Development Training | Global Minds Academy",
-    "metaDescription": "Learn Unity Game Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Unity Game Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Unity Game Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs20",
     "slug": "unity-game-development",
     "title": "Unity Game Development",
@@ -20267,7 +20267,7 @@
       "Architectural visualisation",
       "Multiplayer arena"
     ],
-    "certification": "Global Minds Academy Unreal Engine Development Certificate",
+    "certification": "Global Minds Technologies Unreal Engine Development Certificate",
     "careerOutcomes": [
       "Unreal Developer",
       "Game Developer",
@@ -20347,7 +20347,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -20381,8 +20381,8 @@
       "C++",
       "AAA Games"
     ],
-    "metaTitle": "Unreal Engine Development Training | Global Minds Academy",
-    "metaDescription": "Learn Unreal Engine Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Unreal Engine Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Unreal Engine Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs21",
     "slug": "unreal-engine",
     "title": "Unreal Engine Development",
@@ -20522,7 +20522,7 @@
       "Autonomous rover",
       "IoT weather station"
     ],
-    "certification": "Global Minds Academy Embedded Systems Certificate",
+    "certification": "Global Minds Technologies Embedded Systems Certificate",
     "careerOutcomes": [
       "Embedded Engineer",
       "IoT Developer",
@@ -20603,7 +20603,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -20641,8 +20641,8 @@
       "IoT",
       "Hardware"
     ],
-    "metaTitle": "Embedded Systems Training | Global Minds Academy",
-    "metaDescription": "Learn Embedded Systems with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Embedded Systems Training | Global Minds Technologies",
+    "metaDescription": "Learn Embedded Systems with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs22",
     "slug": "embedded-systems",
     "title": "Embedded Systems",
@@ -20769,7 +20769,7 @@
       "AR furniture placement app",
       "WebXR portfolio scene"
     ],
-    "certification": "Global Minds Academy VR / AR Development Certificate",
+    "certification": "Global Minds Technologies VR / AR Development Certificate",
     "careerOutcomes": [
       "XR Developer",
       "VR Engineer",
@@ -20849,7 +20849,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -20884,8 +20884,8 @@
       "Unity XR",
       "WebXR"
     ],
-    "metaTitle": "VR / AR Development Training | Global Minds Academy",
-    "metaDescription": "Learn VR / AR Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "VR / AR Development Training | Global Minds Technologies",
+    "metaDescription": "Learn VR / AR Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs23",
     "slug": "vr-ar-development",
     "title": "VR / AR Development",
@@ -21011,7 +21011,7 @@
       "Real-time fraud detection pipeline",
       "Large-scale recommendation system"
     ],
-    "certification": "Global Minds Academy Apache Spark Training Certificate",
+    "certification": "Global Minds Technologies Apache Spark Training Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "Big Data Engineer",
@@ -21090,7 +21090,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -21125,8 +21125,8 @@
       "Streaming",
       "Data Engineering"
     ],
-    "metaTitle": "Apache Spark Training Training | Global Minds Academy",
-    "metaDescription": "Learn Apache Spark Training with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Apache Spark Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Apache Spark Training with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs24",
     "slug": "apache-spark",
     "title": "Apache Spark Training",
@@ -21251,7 +21251,7 @@
       "Real-time order processing pipeline",
       "Event-driven notification system"
     ],
-    "certification": "Global Minds Academy Apache Kafka Training Certificate",
+    "certification": "Global Minds Technologies Apache Kafka Training Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "Backend Developer",
@@ -21330,7 +21330,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -21364,8 +21364,8 @@
       "Streaming",
       "Data Engineering"
     ],
-    "metaTitle": "Apache Kafka Training Training | Global Minds Academy",
-    "metaDescription": "Learn Apache Kafka Training with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Apache Kafka Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Apache Kafka Training with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs25",
     "slug": "kafka",
     "title": "Apache Kafka Training",
@@ -21491,7 +21491,7 @@
       "Full CI/CD pipeline for Node.js app",
       "Docker multi-arch build and push"
     ],
-    "certification": "Global Minds Academy GitHub Actions & CI/CD Certificate",
+    "certification": "Global Minds Technologies GitHub Actions & CI/CD Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Build Engineer",
@@ -21570,7 +21570,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -21605,8 +21605,8 @@
       "Docker",
       "Automation"
     ],
-    "metaTitle": "GitHub Actions & CI/CD Training | Global Minds Academy",
-    "metaDescription": "Learn GitHub Actions & CI/CD with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "GitHub Actions & CI/CD Training | Global Minds Technologies",
+    "metaDescription": "Learn GitHub Actions & CI/CD with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs26",
     "slug": "github-actions",
     "title": "GitHub Actions & CI/CD",
@@ -21733,7 +21733,7 @@
       "Full monitoring stack for microservices",
       "K8s cluster observability dashboard"
     ],
-    "certification": "Global Minds Academy Prometheus & Grafana Certificate",
+    "certification": "Global Minds Technologies Prometheus & Grafana Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "SRE",
@@ -21813,7 +21813,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -21847,8 +21847,8 @@
       "Observability",
       "SRE"
     ],
-    "metaTitle": "Prometheus & Grafana Training | Global Minds Academy",
-    "metaDescription": "Learn Prometheus & Grafana with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Prometheus & Grafana Training | Global Minds Technologies",
+    "metaDescription": "Learn Prometheus & Grafana with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs27",
     "slug": "prometheus-grafana",
     "title": "Prometheus & Grafana",
@@ -21986,7 +21986,7 @@
       "Full-stack blog platform",
       "E-commerce store with auth and payments"
     ],
-    "certification": "Global Minds Academy Next.js Development Certificate",
+    "certification": "Global Minds Technologies Next.js Development Certificate",
     "careerOutcomes": [
       "Next.js Developer",
       "Full Stack Developer",
@@ -22065,7 +22065,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -22102,8 +22102,8 @@
       "SSR",
       "Server Components"
     ],
-    "metaTitle": "Next.js Development Training | Global Minds Academy",
-    "metaDescription": "Learn Next.js Development with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Next.js Development Training | Global Minds Technologies",
+    "metaDescription": "Learn Next.js Development with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs28",
     "slug": "next-js",
     "title": "Next.js Development",
@@ -22229,7 +22229,7 @@
       "E-commerce store with Nuxt",
       "Real-time chat with WebSockets"
     ],
-    "certification": "Global Minds Academy Vue.js Training Certificate",
+    "certification": "Global Minds Technologies Vue.js Training Certificate",
     "careerOutcomes": [
       "Vue.js Developer",
       "Frontend Developer",
@@ -22308,7 +22308,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -22343,8 +22343,8 @@
       "Nuxt",
       "Frontend"
     ],
-    "metaTitle": "Vue.js Training Training | Global Minds Academy",
-    "metaDescription": "Learn Vue.js Training with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Vue.js Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Vue.js Training with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs29",
     "slug": "vue-js",
     "title": "Vue.js Training",
@@ -22475,7 +22475,7 @@
       "Real-time chat with WebSockets",
       "Microservices with Kafka"
     ],
-    "certification": "Global Minds Academy NestJS Training Certificate",
+    "certification": "Global Minds Technologies NestJS Training Certificate",
     "careerOutcomes": [
       "NestJS Developer",
       "Backend Developer",
@@ -22554,7 +22554,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -22589,8 +22589,8 @@
       "Backend",
       "Enterprise"
     ],
-    "metaTitle": "NestJS Training Training | Global Minds Academy",
-    "metaDescription": "Learn NestJS Training with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "NestJS Training Training | Global Minds Technologies",
+    "metaDescription": "Learn NestJS Training with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs30",
     "slug": "nest-js",
     "title": "NestJS Training",
@@ -22715,7 +22715,7 @@
       "Physics engine in WASM",
       "React app with Rust computation"
     ],
-    "certification": "Global Minds Academy WebAssembly (WASM) Certificate",
+    "certification": "Global Minds Technologies WebAssembly (WASM) Certificate",
     "careerOutcomes": [
       "WebAssembly Developer",
       "Performance Engineer",
@@ -22794,7 +22794,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -22828,8 +22828,8 @@
       "Performance",
       "Web"
     ],
-    "metaTitle": "WebAssembly (WASM) Training | Global Minds Academy",
-    "metaDescription": "Learn WebAssembly (WASM) with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "WebAssembly (WASM) Training | Global Minds Technologies",
+    "metaDescription": "Learn WebAssembly (WASM) with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs31",
     "slug": "webassembly",
     "title": "WebAssembly (WASM)",
@@ -22952,7 +22952,7 @@
       "Offline-capable task manager",
       "PWA news reader with push notifications"
     ],
-    "certification": "Global Minds Academy Progressive Web Apps (PWA) Certificate",
+    "certification": "Global Minds Technologies Progressive Web Apps (PWA) Certificate",
     "careerOutcomes": [
       "Frontend Developer",
       "Full Stack Developer",
@@ -23031,7 +23031,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -23066,8 +23066,8 @@
       "Push Notifications",
       "Web"
     ],
-    "metaTitle": "Progressive Web Apps (PWA) Training | Global Minds Academy",
-    "metaDescription": "Learn Progressive Web Apps (PWA) with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Progressive Web Apps (PWA) Training | Global Minds Technologies",
+    "metaDescription": "Learn Progressive Web Apps (PWA) with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs32",
     "slug": "pwa",
     "title": "Progressive Web Apps (PWA)",
@@ -23205,7 +23205,7 @@
       "ACM-ICPC style team contest",
       "CF rating improvement plan"
     ],
-    "certification": "Global Minds Academy Competitive Programming Certificate",
+    "certification": "Global Minds Technologies Competitive Programming Certificate",
     "careerOutcomes": [
       "Software Engineer at FAANG",
       "Competitive Programmer",
@@ -23284,7 +23284,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy provides a course completion certificate."
+        "answer": "Yes — Global Minds Technologies provides a course completion certificate."
       },
       {
         "id": "f4",
@@ -23320,8 +23320,8 @@
       "LeetCode",
       "Codeforces"
     ],
-    "metaTitle": "Competitive Programming Training | Global Minds Academy",
-    "metaDescription": "Learn Competitive Programming with hands-on projects and expert guidance at Global Minds Academy.",
+    "metaTitle": "Competitive Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn Competitive Programming with hands-on projects and expert guidance at Global Minds Technologies.",
     "id": "cs33",
     "slug": "competitive-programming",
     "title": "Competitive Programming",
@@ -23458,7 +23458,7 @@
       "Enterprise network design",
       "Secure campus network lab"
     ],
-    "certification": "Global Minds Academy CCNA Prep Certificate + CCNA 200-301 Exam Preparation",
+    "certification": "Global Minds Technologies CCNA Prep Certificate + CCNA 200-301 Exam Preparation",
     "careerOutcomes": [
       "Network Engineer",
       "Network Administrator",
@@ -23538,7 +23538,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -23576,8 +23576,8 @@
       "Switching",
       "Certification"
     ],
-    "metaTitle": "CCNA Training Training | Global Minds Academy",
-    "metaDescription": "Learn CCNA Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "CCNA Training Training | Global Minds Technologies",
+    "metaDescription": "Learn CCNA Training with hands-on projects at Global Minds Technologies.",
     "id": "cm1",
     "slug": "ccna",
     "title": "CCNA Training",
@@ -23706,7 +23706,7 @@
     "projects": [
       "CCNP Training real-world project"
     ],
-    "certification": "Global Minds Academy CCNP Training Certificate",
+    "certification": "Global Minds Technologies CCNP Training Certificate",
     "careerOutcomes": [
       "Senior Network Engineer",
       "Network Architect",
@@ -23784,7 +23784,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -23818,8 +23818,8 @@
       "SD-WAN",
       "Advanced Networking"
     ],
-    "metaTitle": "CCNP Training Training | Global Minds Academy",
-    "metaDescription": "Learn CCNP Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "CCNP Training Training | Global Minds Technologies",
+    "metaDescription": "Learn CCNP Training with hands-on projects at Global Minds Technologies.",
     "id": "cm2",
     "slug": "ccnp",
     "title": "CCNP Training",
@@ -23936,7 +23936,7 @@
     "projects": [
       "CompTIA Network+ real-world project"
     ],
-    "certification": "Global Minds Academy CompTIA Network+ Certificate",
+    "certification": "Global Minds Technologies CompTIA Network+ Certificate",
     "careerOutcomes": [
       "Network Administrator",
       "Help Desk Engineer",
@@ -24014,7 +24014,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -24047,8 +24047,8 @@
       "Networking",
       "Certification"
     ],
-    "metaTitle": "CompTIA Network+ Training | Global Minds Academy",
-    "metaDescription": "Learn CompTIA Network+ with hands-on projects at Global Minds Academy.",
+    "metaTitle": "CompTIA Network+ Training | Global Minds Technologies",
+    "metaDescription": "Learn CompTIA Network+ with hands-on projects at Global Minds Technologies.",
     "id": "cm3",
     "slug": "comptia-network-plus",
     "title": "CompTIA Network+",
@@ -24178,7 +24178,7 @@
     "projects": [
       "CompTIA Security+ real-world project"
     ],
-    "certification": "Global Minds Academy CompTIA Security+ Certificate",
+    "certification": "Global Minds Technologies CompTIA Security+ Certificate",
     "careerOutcomes": [
       "Security Analyst",
       "SOC Analyst",
@@ -24257,7 +24257,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -24292,8 +24292,8 @@
       "Certification",
       "SY0-701"
     ],
-    "metaTitle": "CompTIA Security+ Training | Global Minds Academy",
-    "metaDescription": "Learn CompTIA Security+ with hands-on projects at Global Minds Academy.",
+    "metaTitle": "CompTIA Security+ Training | Global Minds Technologies",
+    "metaDescription": "Learn CompTIA Security+ with hands-on projects at Global Minds Technologies.",
     "id": "cm4",
     "slug": "comptia-security-plus",
     "title": "CompTIA Security+",
@@ -24410,7 +24410,7 @@
     "projects": [
       "CompTIA A+ Training real-world project"
     ],
-    "certification": "Global Minds Academy CompTIA A+ Training Certificate",
+    "certification": "Global Minds Technologies CompTIA A+ Training Certificate",
     "careerOutcomes": [
       "Help Desk Technician",
       "IT Support Specialist",
@@ -24489,7 +24489,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -24523,8 +24523,8 @@
       "Hardware",
       "Help Desk"
     ],
-    "metaTitle": "CompTIA A+ Training Training | Global Minds Academy",
-    "metaDescription": "Learn CompTIA A+ Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "CompTIA A+ Training Training | Global Minds Technologies",
+    "metaDescription": "Learn CompTIA A+ Training with hands-on projects at Global Minds Technologies.",
     "id": "cm5",
     "slug": "comptia-a-plus",
     "title": "CompTIA A+ Training",
@@ -24661,7 +24661,7 @@
     "projects": [
       "SAP ABAP Training real-world project"
     ],
-    "certification": "Global Minds Academy SAP ABAP Training Certificate",
+    "certification": "Global Minds Technologies SAP ABAP Training Certificate",
     "careerOutcomes": [
       "SAP ABAP Developer",
       "SAP Technical Consultant",
@@ -24740,7 +24740,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -24775,8 +24775,8 @@
       "ERP",
       "SAP HANA"
     ],
-    "metaTitle": "SAP ABAP Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAP ABAP Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAP ABAP Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAP ABAP Training with hands-on projects at Global Minds Technologies.",
     "id": "cm6",
     "slug": "sap-abap",
     "title": "SAP ABAP Training",
@@ -24909,7 +24909,7 @@
     "projects": [
       "SAP FICO Training real-world project"
     ],
-    "certification": "Global Minds Academy SAP FICO Training Certificate",
+    "certification": "Global Minds Technologies SAP FICO Training Certificate",
     "careerOutcomes": [
       "SAP FICO Consultant",
       "Finance SAP Consultant",
@@ -24988,7 +24988,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -25023,8 +25023,8 @@
       "ERP",
       "SAP S/4HANA"
     ],
-    "metaTitle": "SAP FICO Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAP FICO Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAP FICO Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAP FICO Training with hands-on projects at Global Minds Technologies.",
     "id": "cm7",
     "slug": "sap-fico",
     "title": "SAP FICO Training",
@@ -25153,7 +25153,7 @@
     "projects": [
       "SAP SD Training real-world project"
     ],
-    "certification": "Global Minds Academy SAP SD Training Certificate",
+    "certification": "Global Minds Technologies SAP SD Training Certificate",
     "careerOutcomes": [
       "SAP SD Consultant",
       "Functional Consultant",
@@ -25231,7 +25231,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -25265,8 +25265,8 @@
       "ERP",
       "Functional Consultant"
     ],
-    "metaTitle": "SAP SD Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAP SD Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAP SD Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAP SD Training with hands-on projects at Global Minds Technologies.",
     "id": "cm8",
     "slug": "sap-sd",
     "title": "SAP SD Training",
@@ -25393,7 +25393,7 @@
     "projects": [
       "SAP MM Training real-world project"
     ],
-    "certification": "Global Minds Academy SAP MM Training Certificate",
+    "certification": "Global Minds Technologies SAP MM Training Certificate",
     "careerOutcomes": [
       "SAP MM Consultant",
       "Procurement Analyst",
@@ -25471,7 +25471,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -25505,8 +25505,8 @@
       "Procurement",
       "ERP"
     ],
-    "metaTitle": "SAP MM Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAP MM Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAP MM Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAP MM Training with hands-on projects at Global Minds Technologies.",
     "id": "cm9",
     "slug": "sap-mm",
     "title": "SAP MM Training",
@@ -25625,7 +25625,7 @@
     "projects": [
       "SAP Basis Training real-world project"
     ],
-    "certification": "Global Minds Academy SAP Basis Training Certificate",
+    "certification": "Global Minds Technologies SAP Basis Training Certificate",
     "careerOutcomes": [
       "SAP Basis Consultant",
       "SAP System Admin",
@@ -25703,7 +25703,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -25737,8 +25737,8 @@
       "HANA",
       "S/4HANA"
     ],
-    "metaTitle": "SAP Basis Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAP Basis Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAP Basis Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAP Basis Training with hands-on projects at Global Minds Technologies.",
     "id": "cm10",
     "slug": "sap-basis",
     "title": "SAP Basis Training",
@@ -25888,7 +25888,7 @@
     "projects": [
       ".NET Core / C# Development real-world project"
     ],
-    "certification": "Global Minds Academy .NET Core / C# Development Certificate",
+    "certification": "Global Minds Technologies .NET Core / C# Development Certificate",
     "careerOutcomes": [
       ".NET Developer",
       "C# Developer",
@@ -25969,7 +25969,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -26007,8 +26007,8 @@
       "Blazor",
       "Microsoft"
     ],
-    "metaTitle": ".NET Core / C# Development Training | Global Minds Academy",
-    "metaDescription": "Learn .NET Core / C# Development with hands-on projects at Global Minds Academy.",
+    "metaTitle": ".NET Core / C# Development Training | Global Minds Technologies",
+    "metaDescription": "Learn .NET Core / C# Development with hands-on projects at Global Minds Technologies.",
     "id": "cm11",
     "slug": "dotnet-core",
     "title": ".NET Core / C# Development",
@@ -26129,7 +26129,7 @@
     "projects": [
       "C# Programming real-world project"
     ],
-    "certification": "Global Minds Academy C# Programming Certificate",
+    "certification": "Global Minds Technologies C# Programming Certificate",
     "careerOutcomes": [
       ".NET Developer",
       "C# Developer",
@@ -26207,7 +26207,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -26241,8 +26241,8 @@
       "OOP",
       "Microsoft"
     ],
-    "metaTitle": "C# Programming Training | Global Minds Academy",
-    "metaDescription": "Learn C# Programming with hands-on projects at Global Minds Academy.",
+    "metaTitle": "C# Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn C# Programming with hands-on projects at Global Minds Technologies.",
     "id": "cm12",
     "slug": "csharp",
     "title": "C# Programming",
@@ -26362,7 +26362,7 @@
     "projects": [
       "PowerShell Scripting real-world project"
     ],
-    "certification": "Global Minds Academy PowerShell Scripting Certificate",
+    "certification": "Global Minds Technologies PowerShell Scripting Certificate",
     "careerOutcomes": [
       "Windows Admin",
       "DevOps Engineer",
@@ -26441,7 +26441,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -26476,8 +26476,8 @@
       "Azure",
       "Scripting"
     ],
-    "metaTitle": "PowerShell Scripting Training | Global Minds Academy",
-    "metaDescription": "Learn PowerShell Scripting with hands-on projects at Global Minds Academy.",
+    "metaTitle": "PowerShell Scripting Training | Global Minds Technologies",
+    "metaDescription": "Learn PowerShell Scripting with hands-on projects at Global Minds Technologies.",
     "id": "cm13",
     "slug": "powershell",
     "title": "PowerShell Scripting",
@@ -26594,7 +26594,7 @@
     "projects": [
       "Microsoft Power Apps real-world project"
     ],
-    "certification": "Global Minds Academy Microsoft Power Apps Certificate",
+    "certification": "Global Minds Technologies Microsoft Power Apps Certificate",
     "careerOutcomes": [
       "Power Platform Developer",
       "Business Analyst",
@@ -26673,7 +26673,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -26708,8 +26708,8 @@
       "Microsoft",
       "Dataverse"
     ],
-    "metaTitle": "Microsoft Power Apps Training | Global Minds Academy",
-    "metaDescription": "Learn Microsoft Power Apps with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Microsoft Power Apps Training | Global Minds Technologies",
+    "metaDescription": "Learn Microsoft Power Apps with hands-on projects at Global Minds Technologies.",
     "id": "cm14",
     "slug": "power-apps",
     "title": "Microsoft Power Apps",
@@ -26828,7 +26828,7 @@
     "projects": [
       "SharePoint Development real-world project"
     ],
-    "certification": "Global Minds Academy SharePoint Development Certificate",
+    "certification": "Global Minds Technologies SharePoint Development Certificate",
     "careerOutcomes": [
       "SharePoint Developer",
       "SharePoint Admin",
@@ -26906,7 +26906,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -26940,8 +26940,8 @@
       "Intranet",
       "Power Platform"
     ],
-    "metaTitle": "SharePoint Development Training | Global Minds Academy",
-    "metaDescription": "Learn SharePoint Development with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SharePoint Development Training | Global Minds Technologies",
+    "metaDescription": "Learn SharePoint Development with hands-on projects at Global Minds Technologies.",
     "id": "cm15",
     "slug": "sharepoint",
     "title": "SharePoint Development",
@@ -27078,7 +27078,7 @@
     "projects": [
       "Snowflake Training real-world project"
     ],
-    "certification": "Global Minds Academy Snowflake Training Certificate",
+    "certification": "Global Minds Technologies Snowflake Training Certificate",
     "careerOutcomes": [
       "Snowflake Data Engineer",
       "Cloud Data Warehouse Engineer",
@@ -27157,7 +27157,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -27191,8 +27191,8 @@
       "Cloud Analytics",
       "Data Engineering"
     ],
-    "metaTitle": "Snowflake Training Training | Global Minds Academy",
-    "metaDescription": "Learn Snowflake Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Snowflake Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Snowflake Training with hands-on projects at Global Minds Technologies.",
     "id": "cm16",
     "slug": "snowflake",
     "title": "Snowflake Training",
@@ -27319,7 +27319,7 @@
     "projects": [
       "dbt (Data Build Tool) Training real-world project"
     ],
-    "certification": "Global Minds Academy dbt (Data Build Tool) Training Certificate",
+    "certification": "Global Minds Technologies dbt (Data Build Tool) Training Certificate",
     "careerOutcomes": [
       "Analytics Engineer",
       "Data Engineer",
@@ -27397,7 +27397,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -27432,8 +27432,8 @@
       "Snowflake",
       "BigQuery"
     ],
-    "metaTitle": "dbt (Data Build Tool) Training Training | Global Minds Academy",
-    "metaDescription": "Learn dbt (Data Build Tool) Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "dbt (Data Build Tool) Training Training | Global Minds Technologies",
+    "metaDescription": "Learn dbt (Data Build Tool) Training with hands-on projects at Global Minds Technologies.",
     "id": "cm17",
     "slug": "dbt",
     "title": "dbt (Data Build Tool) Training",
@@ -27569,7 +27569,7 @@
     "projects": [
       "Databricks Training real-world project"
     ],
-    "certification": "Global Minds Academy Databricks Training Certificate",
+    "certification": "Global Minds Technologies Databricks Training Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "ML Engineer",
@@ -27648,7 +27648,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -27683,8 +27683,8 @@
       "MLflow",
       "Lakehouse"
     ],
-    "metaTitle": "Databricks Training Training | Global Minds Academy",
-    "metaDescription": "Learn Databricks Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Databricks Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Databricks Training with hands-on projects at Global Minds Technologies.",
     "id": "cm18",
     "slug": "databricks",
     "title": "Databricks Training",
@@ -27821,7 +27821,7 @@
     "projects": [
       "SQL Server (MSSQL) Training real-world project"
     ],
-    "certification": "Global Minds Academy SQL Server (MSSQL) Training Certificate",
+    "certification": "Global Minds Technologies SQL Server (MSSQL) Training Certificate",
     "careerOutcomes": [
       "SQL Server DBA",
       "Database Developer",
@@ -27900,7 +27900,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -27937,8 +27937,8 @@
       "Microsoft",
       "MSBI"
     ],
-    "metaTitle": "SQL Server (MSSQL) Training Training | Global Minds Academy",
-    "metaDescription": "Learn SQL Server (MSSQL) Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SQL Server (MSSQL) Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SQL Server (MSSQL) Training with hands-on projects at Global Minds Technologies.",
     "id": "cm19",
     "slug": "sql-server",
     "title": "SQL Server (MSSQL) Training",
@@ -28058,7 +28058,7 @@
     "projects": [
       "Apache Cassandra Training real-world project"
     ],
-    "certification": "Global Minds Academy Apache Cassandra Training Certificate",
+    "certification": "Global Minds Technologies Apache Cassandra Training Certificate",
     "careerOutcomes": [
       "Cassandra Developer",
       "NoSQL Database Engineer",
@@ -28136,7 +28136,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -28170,8 +28170,8 @@
       "Distributed Database",
       "CQL"
     ],
-    "metaTitle": "Apache Cassandra Training Training | Global Minds Academy",
-    "metaDescription": "Learn Apache Cassandra Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Apache Cassandra Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Apache Cassandra Training with hands-on projects at Global Minds Technologies.",
     "id": "cm20",
     "slug": "cassandra",
     "title": "Apache Cassandra Training",
@@ -28293,7 +28293,7 @@
     "projects": [
       "Cypress Testing real-world project"
     ],
-    "certification": "Global Minds Academy Cypress Testing Certificate",
+    "certification": "Global Minds Technologies Cypress Testing Certificate",
     "careerOutcomes": [
       "Frontend QA Engineer",
       "SDET",
@@ -28371,7 +28371,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -28405,8 +28405,8 @@
       "Frontend Testing",
       "Test Automation"
     ],
-    "metaTitle": "Cypress Testing Training | Global Minds Academy",
-    "metaDescription": "Learn Cypress Testing with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Cypress Testing Training | Global Minds Technologies",
+    "metaDescription": "Learn Cypress Testing with hands-on projects at Global Minds Technologies.",
     "id": "cm21",
     "slug": "cypress",
     "title": "Cypress Testing",
@@ -28528,7 +28528,7 @@
     "projects": [
       "Playwright Testing real-world project"
     ],
-    "certification": "Global Minds Academy Playwright Testing Certificate",
+    "certification": "Global Minds Technologies Playwright Testing Certificate",
     "careerOutcomes": [
       "SDET",
       "QA Automation Engineer",
@@ -28606,7 +28606,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -28641,8 +28641,8 @@
       "TypeScript",
       "Automation"
     ],
-    "metaTitle": "Playwright Testing Training | Global Minds Academy",
-    "metaDescription": "Learn Playwright Testing with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Playwright Testing Training | Global Minds Technologies",
+    "metaDescription": "Learn Playwright Testing with hands-on projects at Global Minds Technologies.",
     "id": "cm22",
     "slug": "playwright",
     "title": "Playwright Testing",
@@ -28764,7 +28764,7 @@
     "projects": [
       "Appium Mobile Testing real-world project"
     ],
-    "certification": "Global Minds Academy Appium Mobile Testing Certificate",
+    "certification": "Global Minds Technologies Appium Mobile Testing Certificate",
     "careerOutcomes": [
       "Mobile QA Engineer",
       "SDET",
@@ -28842,7 +28842,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -28877,8 +28877,8 @@
       "iOS",
       "Automation"
     ],
-    "metaTitle": "Appium Mobile Testing Training | Global Minds Academy",
-    "metaDescription": "Learn Appium Mobile Testing with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Appium Mobile Testing Training | Global Minds Technologies",
+    "metaDescription": "Learn Appium Mobile Testing with hands-on projects at Global Minds Technologies.",
     "id": "cm23",
     "slug": "appium",
     "title": "Appium Mobile Testing",
@@ -29000,7 +29000,7 @@
     "projects": [
       "k6 Performance Testing real-world project"
     ],
-    "certification": "Global Minds Academy k6 Performance Testing Certificate",
+    "certification": "Global Minds Technologies k6 Performance Testing Certificate",
     "careerOutcomes": [
       "Performance Engineer",
       "SRE",
@@ -29078,7 +29078,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -29112,8 +29112,8 @@
       "JavaScript",
       "SRE"
     ],
-    "metaTitle": "k6 Performance Testing Training | Global Minds Academy",
-    "metaDescription": "Learn k6 Performance Testing with hands-on projects at Global Minds Academy.",
+    "metaTitle": "k6 Performance Testing Training | Global Minds Technologies",
+    "metaDescription": "Learn k6 Performance Testing with hands-on projects at Global Minds Technologies.",
     "id": "cm24",
     "slug": "k6-performance-testing",
     "title": "k6 Performance Testing",
@@ -29235,7 +29235,7 @@
     "projects": [
       "ArgoCD & GitOps real-world project"
     ],
-    "certification": "Global Minds Academy ArgoCD & GitOps Certificate",
+    "certification": "Global Minds Technologies ArgoCD & GitOps Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Platform Engineer",
@@ -29313,7 +29313,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -29348,8 +29348,8 @@
       "CD",
       "Platform Engineering"
     ],
-    "metaTitle": "ArgoCD & GitOps Training | Global Minds Academy",
-    "metaDescription": "Learn ArgoCD & GitOps with hands-on projects at Global Minds Academy.",
+    "metaTitle": "ArgoCD & GitOps Training | Global Minds Technologies",
+    "metaDescription": "Learn ArgoCD & GitOps with hands-on projects at Global Minds Technologies.",
     "id": "cm25",
     "slug": "argocd",
     "title": "ArgoCD & GitOps",
@@ -29470,7 +29470,7 @@
     "projects": [
       "HashiCorp Vault real-world project"
     ],
-    "certification": "Global Minds Academy HashiCorp Vault Certificate",
+    "certification": "Global Minds Technologies HashiCorp Vault Certificate",
     "careerOutcomes": [
       "Security Engineer",
       "DevOps Engineer",
@@ -29548,7 +29548,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -29583,8 +29583,8 @@
       "DevOps",
       "Security"
     ],
-    "metaTitle": "HashiCorp Vault Training | Global Minds Academy",
-    "metaDescription": "Learn HashiCorp Vault with hands-on projects at Global Minds Academy.",
+    "metaTitle": "HashiCorp Vault Training | Global Minds Technologies",
+    "metaDescription": "Learn HashiCorp Vault with hands-on projects at Global Minds Technologies.",
     "id": "cm26",
     "slug": "hashicorp-vault",
     "title": "HashiCorp Vault",
@@ -29707,7 +29707,7 @@
     "projects": [
       "Istio Service Mesh real-world project"
     ],
-    "certification": "Global Minds Academy Istio Service Mesh Certificate",
+    "certification": "Global Minds Technologies Istio Service Mesh Certificate",
     "careerOutcomes": [
       "DevOps Engineer",
       "Platform Engineer",
@@ -29785,7 +29785,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -29820,8 +29820,8 @@
       "mTLS",
       "Observability"
     ],
-    "metaTitle": "Istio Service Mesh Training | Global Minds Academy",
-    "metaDescription": "Learn Istio Service Mesh with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Istio Service Mesh Training | Global Minds Technologies",
+    "metaDescription": "Learn Istio Service Mesh with hands-on projects at Global Minds Technologies.",
     "id": "cm27",
     "slug": "istio",
     "title": "Istio Service Mesh",
@@ -29960,7 +29960,7 @@
     "projects": [
       "PHP & Laravel real-world project"
     ],
-    "certification": "Global Minds Academy PHP & Laravel Certificate",
+    "certification": "Global Minds Technologies PHP & Laravel Certificate",
     "careerOutcomes": [
       "PHP Developer",
       "Laravel Developer",
@@ -30040,7 +30040,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -30075,8 +30075,8 @@
       "Backend",
       "MVC"
     ],
-    "metaTitle": "PHP & Laravel Training | Global Minds Academy",
-    "metaDescription": "Learn PHP & Laravel with hands-on projects at Global Minds Academy.",
+    "metaTitle": "PHP & Laravel Training | Global Minds Technologies",
+    "metaDescription": "Learn PHP & Laravel with hands-on projects at Global Minds Technologies.",
     "id": "cm28",
     "slug": "php",
     "title": "PHP & Laravel",
@@ -30209,7 +30209,7 @@
     "projects": [
       "Ruby on Rails real-world project"
     ],
-    "certification": "Global Minds Academy Ruby on Rails Certificate",
+    "certification": "Global Minds Technologies Ruby on Rails Certificate",
     "careerOutcomes": [
       "Ruby on Rails Developer",
       "Backend Developer",
@@ -30287,7 +30287,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -30321,8 +30321,8 @@
       "Backend",
       "MVC"
     ],
-    "metaTitle": "Ruby on Rails Training | Global Minds Academy",
-    "metaDescription": "Learn Ruby on Rails with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Ruby on Rails Training | Global Minds Technologies",
+    "metaDescription": "Learn Ruby on Rails with hands-on projects at Global Minds Technologies.",
     "id": "cm29",
     "slug": "ruby-on-rails",
     "title": "Ruby on Rails",
@@ -30441,7 +30441,7 @@
     "projects": [
       "Scala Programming real-world project"
     ],
-    "certification": "Global Minds Academy Scala Programming Certificate",
+    "certification": "Global Minds Technologies Scala Programming Certificate",
     "careerOutcomes": [
       "Scala Developer",
       "Data Engineer",
@@ -30520,7 +30520,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -30555,8 +30555,8 @@
       "Spark",
       "Big Data"
     ],
-    "metaTitle": "Scala Programming Training | Global Minds Academy",
-    "metaDescription": "Learn Scala Programming with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Scala Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn Scala Programming with hands-on projects at Global Minds Technologies.",
     "id": "cm30",
     "slug": "scala",
     "title": "Scala Programming",
@@ -30698,7 +30698,7 @@
     "projects": [
       "R Programming real-world project"
     ],
-    "certification": "Global Minds Academy R Programming Certificate",
+    "certification": "Global Minds Technologies R Programming Certificate",
     "careerOutcomes": [
       "Data Scientist",
       "Statistical Analyst",
@@ -30777,7 +30777,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -30812,8 +30812,8 @@
       "Data Science",
       "Shiny"
     ],
-    "metaTitle": "R Programming Training | Global Minds Academy",
-    "metaDescription": "Learn R Programming with hands-on projects at Global Minds Academy.",
+    "metaTitle": "R Programming Training | Global Minds Technologies",
+    "metaDescription": "Learn R Programming with hands-on projects at Global Minds Technologies.",
     "id": "cm31",
     "slug": "r-programming",
     "title": "R Programming",
@@ -30936,7 +30936,7 @@
     "projects": [
       "MATLAB Training real-world project"
     ],
-    "certification": "Global Minds Academy MATLAB Training Certificate",
+    "certification": "Global Minds Technologies MATLAB Training Certificate",
     "careerOutcomes": [
       "Embedded Engineer",
       "Signal Processing Engineer",
@@ -31015,7 +31015,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -31050,8 +31050,8 @@
       "Engineering",
       "Control Systems"
     ],
-    "metaTitle": "MATLAB Training Training | Global Minds Academy",
-    "metaDescription": "Learn MATLAB Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "MATLAB Training Training | Global Minds Technologies",
+    "metaDescription": "Learn MATLAB Training with hands-on projects at Global Minds Technologies.",
     "id": "cm32",
     "slug": "matlab",
     "title": "MATLAB Training",
@@ -31189,7 +31189,7 @@
     "projects": [
       "MLOps Training real-world project"
     ],
-    "certification": "Global Minds Academy MLOps Training Certificate",
+    "certification": "Global Minds Technologies MLOps Training Certificate",
     "careerOutcomes": [
       "MLOps Engineer",
       "ML Platform Engineer",
@@ -31268,7 +31268,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -31303,8 +31303,8 @@
       "Model Monitoring",
       "ML Pipelines"
     ],
-    "metaTitle": "MLOps Training Training | Global Minds Academy",
-    "metaDescription": "Learn MLOps Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "MLOps Training Training | Global Minds Technologies",
+    "metaDescription": "Learn MLOps Training with hands-on projects at Global Minds Technologies.",
     "id": "cm33",
     "slug": "mlops",
     "title": "MLOps Training",
@@ -31440,7 +31440,7 @@
     "projects": [
       "LLMOps & AI Engineering real-world project"
     ],
-    "certification": "Global Minds Academy LLMOps & AI Engineering Certificate",
+    "certification": "Global Minds Technologies LLMOps & AI Engineering Certificate",
     "careerOutcomes": [
       "LLM Engineer",
       "AI Engineer",
@@ -31518,7 +31518,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -31552,8 +31552,8 @@
       "Guardrails",
       "Evaluation"
     ],
-    "metaTitle": "LLMOps & AI Engineering Training | Global Minds Academy",
-    "metaDescription": "Learn LLMOps & AI Engineering with hands-on projects at Global Minds Academy.",
+    "metaTitle": "LLMOps & AI Engineering Training | Global Minds Technologies",
+    "metaDescription": "Learn LLMOps & AI Engineering with hands-on projects at Global Minds Technologies.",
     "id": "cm34",
     "slug": "llmops",
     "title": "LLMOps & AI Engineering",
@@ -31679,7 +31679,7 @@
     "projects": [
       "Reinforcement Learning real-world project"
     ],
-    "certification": "Global Minds Academy Reinforcement Learning Certificate",
+    "certification": "Global Minds Technologies Reinforcement Learning Certificate",
     "careerOutcomes": [
       "RL Engineer",
       "AI Researcher",
@@ -31758,7 +31758,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -31792,8 +31792,8 @@
       "OpenAI Gym",
       "Deep RL"
     ],
-    "metaTitle": "Reinforcement Learning Training | Global Minds Academy",
-    "metaDescription": "Learn Reinforcement Learning with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Reinforcement Learning Training | Global Minds Technologies",
+    "metaDescription": "Learn Reinforcement Learning with hands-on projects at Global Minds Technologies.",
     "id": "cm35",
     "slug": "reinforcement-learning",
     "title": "Reinforcement Learning",
@@ -31929,7 +31929,7 @@
     "projects": [
       "ServiceNow Development real-world project"
     ],
-    "certification": "Global Minds Academy ServiceNow Development Certificate",
+    "certification": "Global Minds Technologies ServiceNow Development Certificate",
     "careerOutcomes": [
       "ServiceNow Developer",
       "ServiceNow Admin",
@@ -32008,7 +32008,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -32042,8 +32042,8 @@
       "Flow Designer",
       "CSA"
     ],
-    "metaTitle": "ServiceNow Development Training | Global Minds Academy",
-    "metaDescription": "Learn ServiceNow Development with hands-on projects at Global Minds Academy.",
+    "metaTitle": "ServiceNow Development Training | Global Minds Technologies",
+    "metaDescription": "Learn ServiceNow Development with hands-on projects at Global Minds Technologies.",
     "id": "cm36",
     "slug": "servicenow",
     "title": "ServiceNow Development",
@@ -32163,7 +32163,7 @@
     "projects": [
       "Microsoft Dynamics 365 real-world project"
     ],
-    "certification": "Global Minds Academy Microsoft Dynamics 365 Certificate",
+    "certification": "Global Minds Technologies Microsoft Dynamics 365 Certificate",
     "careerOutcomes": [
       "Dynamics 365 Developer",
       "CRM Consultant",
@@ -32241,7 +32241,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -32275,8 +32275,8 @@
       "ERP",
       "CRM"
     ],
-    "metaTitle": "Microsoft Dynamics 365 Training | Global Minds Academy",
-    "metaDescription": "Learn Microsoft Dynamics 365 with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Microsoft Dynamics 365 Training | Global Minds Technologies",
+    "metaDescription": "Learn Microsoft Dynamics 365 with hands-on projects at Global Minds Technologies.",
     "id": "cm37",
     "slug": "dynamics-365",
     "title": "Microsoft Dynamics 365",
@@ -32400,7 +32400,7 @@
     "projects": [
       "OpenCV & Computer Vision real-world project"
     ],
-    "certification": "Global Minds Academy OpenCV & Computer Vision Certificate",
+    "certification": "Global Minds Technologies OpenCV & Computer Vision Certificate",
     "careerOutcomes": [
       "Computer Vision Engineer",
       "AI Engineer",
@@ -32478,7 +32478,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -32512,8 +32512,8 @@
       "Object Detection",
       "Python"
     ],
-    "metaTitle": "OpenCV & Computer Vision Training | Global Minds Academy",
-    "metaDescription": "Learn OpenCV & Computer Vision with hands-on projects at Global Minds Academy.",
+    "metaTitle": "OpenCV & Computer Vision Training | Global Minds Technologies",
+    "metaDescription": "Learn OpenCV & Computer Vision with hands-on projects at Global Minds Technologies.",
     "id": "cm38",
     "slug": "opencv",
     "title": "OpenCV & Computer Vision",
@@ -32641,7 +32641,7 @@
     "projects": [
       "Hugging Face Transformers real-world project"
     ],
-    "certification": "Global Minds Academy Hugging Face Transformers Certificate",
+    "certification": "Global Minds Technologies Hugging Face Transformers Certificate",
     "careerOutcomes": [
       "NLP Engineer",
       "LLM Engineer",
@@ -32720,7 +32720,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -32756,8 +32756,8 @@
       "NLP",
       "LLM"
     ],
-    "metaTitle": "Hugging Face Transformers Training | Global Minds Academy",
-    "metaDescription": "Learn Hugging Face Transformers with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Hugging Face Transformers Training | Global Minds Technologies",
+    "metaDescription": "Learn Hugging Face Transformers with hands-on projects at Global Minds Technologies.",
     "id": "cm39",
     "slug": "hugging-face",
     "title": "Hugging Face Transformers",
@@ -32888,7 +32888,7 @@
     "projects": [
       "AWS Solutions Architect Professional real-world project"
     ],
-    "certification": "Global Minds Academy AWS Solutions Architect Professional Certificate",
+    "certification": "Global Minds Technologies AWS Solutions Architect Professional Certificate",
     "careerOutcomes": [
       "AWS Solutions Architect Professional",
       "Cloud Architect",
@@ -32966,7 +32966,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -33001,8 +33001,8 @@
       "Cloud Architecture",
       "Enterprise AWS"
     ],
-    "metaTitle": "AWS Solutions Architect Professional Training | Global Minds Academy",
-    "metaDescription": "Learn AWS Solutions Architect Professional with hands-on projects at Global Minds Academy.",
+    "metaTitle": "AWS Solutions Architect Professional Training | Global Minds Technologies",
+    "metaDescription": "Learn AWS Solutions Architect Professional with hands-on projects at Global Minds Technologies.",
     "id": "cm40",
     "slug": "aws-solutions-architect",
     "title": "AWS Solutions Architect Professional",
@@ -33122,7 +33122,7 @@
     "projects": [
       "AWS DevOps Professional real-world project"
     ],
-    "certification": "Global Minds Academy AWS DevOps Professional Certificate",
+    "certification": "Global Minds Technologies AWS DevOps Professional Certificate",
     "careerOutcomes": [
       "AWS DevOps Engineer Professional",
       "DevOps Engineer",
@@ -33200,7 +33200,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -33236,8 +33236,8 @@
       "CDK",
       "CloudFormation"
     ],
-    "metaTitle": "AWS DevOps Professional Training | Global Minds Academy",
-    "metaDescription": "Learn AWS DevOps Professional with hands-on projects at Global Minds Academy.",
+    "metaTitle": "AWS DevOps Professional Training | Global Minds Technologies",
+    "metaDescription": "Learn AWS DevOps Professional with hands-on projects at Global Minds Technologies.",
     "id": "cm41",
     "slug": "aws-devops-professional",
     "title": "AWS DevOps Professional",
@@ -33368,7 +33368,7 @@
     "projects": [
       "PMP Certification Training real-world project"
     ],
-    "certification": "Global Minds Academy PMP Certification Training Certificate",
+    "certification": "Global Minds Technologies PMP Certification Training Certificate",
     "careerOutcomes": [
       "Project Manager",
       "Program Manager",
@@ -33447,7 +33447,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -33480,8 +33480,8 @@
       "Certification",
       "Agile"
     ],
-    "metaTitle": "PMP Certification Training Training | Global Minds Academy",
-    "metaDescription": "Learn PMP Certification Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "PMP Certification Training Training | Global Minds Technologies",
+    "metaDescription": "Learn PMP Certification Training with hands-on projects at Global Minds Technologies.",
     "id": "cm42",
     "slug": "pmp-certification",
     "title": "PMP Certification Training",
@@ -33585,7 +33585,7 @@
     "projects": [
       "PRINCE2 Certification Training real-world project"
     ],
-    "certification": "Global Minds Academy PRINCE2 Certification Training Certificate",
+    "certification": "Global Minds Technologies PRINCE2 Certification Training Certificate",
     "careerOutcomes": [
       "Project Manager",
       "PMO Analyst",
@@ -33663,7 +33663,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -33696,8 +33696,8 @@
       "Certification",
       "PMO"
     ],
-    "metaTitle": "PRINCE2 Certification Training Training | Global Minds Academy",
-    "metaDescription": "Learn PRINCE2 Certification Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "PRINCE2 Certification Training Training | Global Minds Technologies",
+    "metaDescription": "Learn PRINCE2 Certification Training with hands-on projects at Global Minds Technologies.",
     "id": "cm43",
     "slug": "prince2",
     "title": "PRINCE2 Certification Training",
@@ -33802,7 +33802,7 @@
     "projects": [
       "ITIL 4 Foundation real-world project"
     ],
-    "certification": "Global Minds Academy ITIL 4 Foundation Certificate",
+    "certification": "Global Minds Technologies ITIL 4 Foundation Certificate",
     "careerOutcomes": [
       "IT Service Manager",
       "ITSM Analyst",
@@ -33881,7 +33881,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -33915,8 +33915,8 @@
       "Certification",
       "IT Operations"
     ],
-    "metaTitle": "ITIL 4 Foundation Training | Global Minds Academy",
-    "metaDescription": "Learn ITIL 4 Foundation with hands-on projects at Global Minds Academy.",
+    "metaTitle": "ITIL 4 Foundation Training | Global Minds Technologies",
+    "metaDescription": "Learn ITIL 4 Foundation with hands-on projects at Global Minds Technologies.",
     "id": "cm44",
     "slug": "itil",
     "title": "ITIL 4 Foundation",
@@ -34036,7 +34036,7 @@
     "projects": [
       "Tableau Advanced Training real-world project"
     ],
-    "certification": "Global Minds Academy Tableau Advanced Training Certificate",
+    "certification": "Global Minds Technologies Tableau Advanced Training Certificate",
     "careerOutcomes": [
       "Senior Tableau Developer",
       "BI Architect",
@@ -34114,7 +34114,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -34148,8 +34148,8 @@
       "BI",
       "Data Visualisation"
     ],
-    "metaTitle": "Tableau Advanced Training Training | Global Minds Academy",
-    "metaDescription": "Learn Tableau Advanced Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Tableau Advanced Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Tableau Advanced Training with hands-on projects at Global Minds Technologies.",
     "id": "cm45",
     "slug": "tableau-advanced",
     "title": "Tableau Advanced Training",
@@ -34272,7 +34272,7 @@
     "projects": [
       "Advanced Excel Training real-world project"
     ],
-    "certification": "Global Minds Academy Advanced Excel Training Certificate",
+    "certification": "Global Minds Technologies Advanced Excel Training Certificate",
     "careerOutcomes": [
       "Data Analyst",
       "Business Analyst",
@@ -34351,7 +34351,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate."
+        "answer": "Yes — Global Minds Technologies completion certificate."
       },
       {
         "id": "f4",
@@ -34387,8 +34387,8 @@
       "Macros",
       "Data Analysis"
     ],
-    "metaTitle": "Advanced Excel Training Training | Global Minds Academy",
-    "metaDescription": "Learn Advanced Excel Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Advanced Excel Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Advanced Excel Training with hands-on projects at Global Minds Technologies.",
     "id": "cm46",
     "slug": "excel-advanced",
     "title": "Advanced Excel Training",
@@ -34530,7 +34530,7 @@
       "Web log analysis pipeline",
       "Retail analytics on Hadoop"
     ],
-    "certification": "Global Minds Academy Hadoop Training Certificate",
+    "certification": "Global Minds Technologies Hadoop Training Certificate",
     "careerOutcomes": [
       "Big Data Engineer",
       "Hadoop Developer",
@@ -34609,7 +34609,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -34646,8 +34646,8 @@
       "MapReduce",
       "Big Data"
     ],
-    "metaTitle": "Hadoop Training Training | Global Minds Academy",
-    "metaDescription": "Learn Hadoop Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Hadoop Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Hadoop Training with hands-on projects at Global Minds Technologies.",
     "id": "cf1",
     "slug": "hadoop",
     "title": "Hadoop Training",
@@ -34786,7 +34786,7 @@
       "Clinical trial data analysis",
       "Customer segmentation with SAS EM"
     ],
-    "certification": "Global Minds Academy SAS Training Certificate",
+    "certification": "Global Minds Technologies SAS Training Certificate",
     "careerOutcomes": [
       "SAS Programmer",
       "Statistical Analyst",
@@ -34865,7 +34865,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -34900,8 +34900,8 @@
       "Clinical SAS",
       "Base SAS Certification"
     ],
-    "metaTitle": "SAS Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAS Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAS Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAS Training with hands-on projects at Global Minds Technologies.",
     "id": "cf2",
     "slug": "sas",
     "title": "SAS Training",
@@ -35036,7 +35036,7 @@
       "SOC dashboard for threat detection",
       "Log analysis and anomaly detection system"
     ],
-    "certification": "Global Minds Academy Splunk Training Certificate",
+    "certification": "Global Minds Technologies Splunk Training Certificate",
     "careerOutcomes": [
       "Splunk Engineer",
       "SOC Analyst",
@@ -35115,7 +35115,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -35150,8 +35150,8 @@
       "Security Analytics",
       "SPL"
     ],
-    "metaTitle": "Splunk Training Training | Global Minds Academy",
-    "metaDescription": "Learn Splunk Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Splunk Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Splunk Training with hands-on projects at Global Minds Technologies.",
     "id": "cf3",
     "slug": "splunk",
     "title": "Splunk Training",
@@ -35277,7 +35277,7 @@
     "projects": [
       "Palo Alto Networks NGFW real-world project"
     ],
-    "certification": "Global Minds Academy Palo Alto Networks NGFW Certificate",
+    "certification": "Global Minds Technologies Palo Alto Networks NGFW Certificate",
     "careerOutcomes": [
       "Network Security Engineer",
       "Firewall Engineer",
@@ -35356,7 +35356,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -35391,8 +35391,8 @@
       "PCNSA",
       "Network Security"
     ],
-    "metaTitle": "Palo Alto Networks NGFW Training | Global Minds Academy",
-    "metaDescription": "Learn Palo Alto Networks NGFW with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Palo Alto Networks NGFW Training | Global Minds Technologies",
+    "metaDescription": "Learn Palo Alto Networks NGFW with hands-on projects at Global Minds Technologies.",
     "id": "cf4",
     "slug": "palo-alto",
     "title": "Palo Alto Networks NGFW",
@@ -35531,7 +35531,7 @@
     "projects": [
       "VMware vSphere Training real-world project"
     ],
-    "certification": "Global Minds Academy VMware vSphere Training Certificate",
+    "certification": "Global Minds Technologies VMware vSphere Training Certificate",
     "careerOutcomes": [
       "VMware Administrator",
       "Cloud Infrastructure Engineer",
@@ -35610,7 +35610,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -35645,8 +35645,8 @@
       "ESXi",
       "VCP-DCV"
     ],
-    "metaTitle": "VMware vSphere Training Training | Global Minds Academy",
-    "metaDescription": "Learn VMware vSphere Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "VMware vSphere Training Training | Global Minds Technologies",
+    "metaDescription": "Learn VMware vSphere Training with hands-on projects at Global Minds Technologies.",
     "id": "cf5",
     "slug": "vmware-vsphere",
     "title": "VMware vSphere Training",
@@ -35768,7 +35768,7 @@
     "projects": [
       "SAP HCM Training real-world project"
     ],
-    "certification": "Global Minds Academy SAP HCM Training Certificate",
+    "certification": "Global Minds Technologies SAP HCM Training Certificate",
     "careerOutcomes": [
       "SAP HCM Consultant",
       "SAP SuccessFactors Consultant",
@@ -35846,7 +35846,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -35881,8 +35881,8 @@
       "Payroll",
       "ERP"
     ],
-    "metaTitle": "SAP HCM Training Training | Global Minds Academy",
-    "metaDescription": "Learn SAP HCM Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "SAP HCM Training Training | Global Minds Technologies",
+    "metaDescription": "Learn SAP HCM Training with hands-on projects at Global Minds Technologies.",
     "id": "cf6",
     "slug": "sap-hcm",
     "title": "SAP HCM Training",
@@ -36005,7 +36005,7 @@
     "projects": [
       "Workday HCM Training real-world project"
     ],
-    "certification": "Global Minds Academy Workday HCM Training Certificate",
+    "certification": "Global Minds Technologies Workday HCM Training Certificate",
     "careerOutcomes": [
       "Workday Consultant",
       "HRIS Analyst",
@@ -36083,7 +36083,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -36117,8 +36117,8 @@
       "Payroll",
       "HRIS"
     ],
-    "metaTitle": "Workday HCM Training Training | Global Minds Academy",
-    "metaDescription": "Learn Workday HCM Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Workday HCM Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Workday HCM Training with hands-on projects at Global Minds Technologies.",
     "id": "cf7",
     "slug": "workday",
     "title": "Workday HCM Training",
@@ -36260,7 +36260,7 @@
       "Full penetration test of vulnerable lab network",
       "Web app security assessment report"
     ],
-    "certification": "Global Minds Academy Advanced Penetration Testing Certificate",
+    "certification": "Global Minds Technologies Advanced Penetration Testing Certificate",
     "careerOutcomes": [
       "Senior Penetration Tester",
       "Red Team Analyst",
@@ -36339,7 +36339,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -36373,8 +36373,8 @@
       "Red Team",
       "Advanced Security"
     ],
-    "metaTitle": "Advanced Penetration Testing Training | Global Minds Academy",
-    "metaDescription": "Learn Advanced Penetration Testing with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Advanced Penetration Testing Training | Global Minds Technologies",
+    "metaDescription": "Learn Advanced Penetration Testing with hands-on projects at Global Minds Technologies.",
     "id": "cf8",
     "slug": "penetration-testing",
     "title": "Advanced Penetration Testing",
@@ -36510,7 +36510,7 @@
     "projects": [
       "Digital Forensics & Incident Response real-world project"
     ],
-    "certification": "Global Minds Academy Digital Forensics & Incident Response Certificate",
+    "certification": "Global Minds Technologies Digital Forensics & Incident Response Certificate",
     "careerOutcomes": [
       "Digital Forensics Analyst",
       "Incident Responder",
@@ -36589,7 +36589,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -36623,8 +36623,8 @@
       "Malware Analysis",
       "Volatility"
     ],
-    "metaTitle": "Digital Forensics & Incident Response Training | Global Minds Academy",
-    "metaDescription": "Learn Digital Forensics & Incident Response with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Digital Forensics & Incident Response Training | Global Minds Technologies",
+    "metaDescription": "Learn Digital Forensics & Incident Response with hands-on projects at Global Minds Technologies.",
     "id": "cf9",
     "slug": "digital-forensics",
     "title": "Digital Forensics & Incident Response",
@@ -36758,7 +36758,7 @@
     "projects": [
       "AWS Security Specialty real-world project"
     ],
-    "certification": "Global Minds Academy AWS Security Specialty Certificate",
+    "certification": "Global Minds Technologies AWS Security Specialty Certificate",
     "careerOutcomes": [
       "AWS Security Specialist",
       "Cloud Security Engineer",
@@ -36836,7 +36836,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -36871,8 +36871,8 @@
       "GuardDuty",
       "KMS"
     ],
-    "metaTitle": "AWS Security Specialty Training | Global Minds Academy",
-    "metaDescription": "Learn AWS Security Specialty with hands-on projects at Global Minds Academy.",
+    "metaTitle": "AWS Security Specialty Training | Global Minds Technologies",
+    "metaDescription": "Learn AWS Security Specialty with hands-on projects at Global Minds Technologies.",
     "id": "cf10",
     "slug": "aws-security",
     "title": "AWS Security Specialty",
@@ -36994,7 +36994,7 @@
     "projects": [
       "Terraform Advanced & HashiCorp real-world project"
     ],
-    "certification": "Global Minds Academy Terraform Advanced & HashiCorp Certificate",
+    "certification": "Global Minds Technologies Terraform Advanced & HashiCorp Certificate",
     "careerOutcomes": [
       "Senior DevOps Engineer",
       "Platform Engineer",
@@ -37072,7 +37072,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -37107,8 +37107,8 @@
       "Sentinel",
       "Platform Engineering"
     ],
-    "metaTitle": "Terraform Advanced & HashiCorp Training | Global Minds Academy",
-    "metaDescription": "Learn Terraform Advanced & HashiCorp with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Terraform Advanced & HashiCorp Training | Global Minds Technologies",
+    "metaDescription": "Learn Terraform Advanced & HashiCorp with hands-on projects at Global Minds Technologies.",
     "id": "cf11",
     "slug": "terraform-advanced",
     "title": "Terraform Advanced & HashiCorp",
@@ -37248,7 +37248,7 @@
       "Define SLOs for microservices app",
       "Chaos experiment with post-mortem report"
     ],
-    "certification": "Global Minds Academy Site Reliability Engineering (SRE) Certificate",
+    "certification": "Global Minds Technologies Site Reliability Engineering (SRE) Certificate",
     "careerOutcomes": [
       "Site Reliability Engineer",
       "DevOps Engineer",
@@ -37327,7 +37327,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -37362,8 +37362,8 @@
       "Chaos Engineering",
       "Incident Management"
     ],
-    "metaTitle": "Site Reliability Engineering (SRE) Training | Global Minds Academy",
-    "metaDescription": "Learn Site Reliability Engineering (SRE) with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Site Reliability Engineering (SRE) Training | Global Minds Technologies",
+    "metaDescription": "Learn Site Reliability Engineering (SRE) with hands-on projects at Global Minds Technologies.",
     "id": "cf12",
     "slug": "sre",
     "title": "Site Reliability Engineering (SRE)",
@@ -37505,7 +37505,7 @@
       "Secure DevOps pipeline with gates",
       "Container security posture dashboard"
     ],
-    "certification": "Global Minds Academy DevSecOps Training Certificate",
+    "certification": "Global Minds Technologies DevSecOps Training Certificate",
     "careerOutcomes": [
       "DevSecOps Engineer",
       "Application Security Engineer",
@@ -37583,7 +37583,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -37619,8 +37619,8 @@
       "Shift-Left",
       "Snyk"
     ],
-    "metaTitle": "DevSecOps Training Training | Global Minds Academy",
-    "metaDescription": "Learn DevSecOps Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "DevSecOps Training Training | Global Minds Technologies",
+    "metaDescription": "Learn DevSecOps Training with hands-on projects at Global Minds Technologies.",
     "id": "cf13",
     "slug": "devsecops",
     "title": "DevSecOps Training",
@@ -37746,7 +37746,7 @@
     "projects": [
       "Looker & LookML Training real-world project"
     ],
-    "certification": "Global Minds Academy Looker & LookML Training Certificate",
+    "certification": "Global Minds Technologies Looker & LookML Training Certificate",
     "careerOutcomes": [
       "Looker Developer",
       "BI Developer",
@@ -37824,7 +37824,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -37859,8 +37859,8 @@
       "Google Cloud",
       "Data Analytics"
     ],
-    "metaTitle": "Looker & LookML Training Training | Global Minds Academy",
-    "metaDescription": "Learn Looker & LookML Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Looker & LookML Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Looker & LookML Training with hands-on projects at Global Minds Technologies.",
     "id": "cf14",
     "slug": "looker",
     "title": "Looker & LookML Training",
@@ -37987,7 +37987,7 @@
     "projects": [
       "Apache Flink Training real-world project"
     ],
-    "certification": "Global Minds Academy Apache Flink Training Certificate",
+    "certification": "Global Minds Technologies Apache Flink Training Certificate",
     "careerOutcomes": [
       "Stream Processing Engineer",
       "Data Engineer",
@@ -38065,7 +38065,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -38100,8 +38100,8 @@
       "Kafka",
       "Stateful Processing"
     ],
-    "metaTitle": "Apache Flink Training Training | Global Minds Academy",
-    "metaDescription": "Learn Apache Flink Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Apache Flink Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Apache Flink Training with hands-on projects at Global Minds Technologies.",
     "id": "cf15",
     "slug": "apache-flink",
     "title": "Apache Flink Training",
@@ -38224,7 +38224,7 @@
     "projects": [
       "Airbyte & Data Integration real-world project"
     ],
-    "certification": "Global Minds Academy Airbyte & Data Integration Certificate",
+    "certification": "Global Minds Technologies Airbyte & Data Integration Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "Analytics Engineer",
@@ -38302,7 +38302,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -38337,8 +38337,8 @@
       "Data Engineering",
       "Modern Data Stack"
     ],
-    "metaTitle": "Airbyte & Data Integration Training | Global Minds Academy",
-    "metaDescription": "Learn Airbyte & Data Integration with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Airbyte & Data Integration Training | Global Minds Technologies",
+    "metaDescription": "Learn Airbyte & Data Integration with hands-on projects at Global Minds Technologies.",
     "id": "cf16",
     "slug": "airbyte",
     "title": "Airbyte & Data Integration",
@@ -38468,7 +38468,7 @@
     "projects": [
       "Apache Airflow Training real-world project"
     ],
-    "certification": "Global Minds Academy Apache Airflow Training Certificate",
+    "certification": "Global Minds Technologies Apache Airflow Training Certificate",
     "careerOutcomes": [
       "Data Engineer",
       "MLOps Engineer",
@@ -38547,7 +38547,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -38582,8 +38582,8 @@
       "DAGs",
       "Pipeline"
     ],
-    "metaTitle": "Apache Airflow Training Training | Global Minds Academy",
-    "metaDescription": "Learn Apache Airflow Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Apache Airflow Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Apache Airflow Training with hands-on projects at Global Minds Technologies.",
     "id": "cf17",
     "slug": "apache-airflow",
     "title": "Apache Airflow Training",
@@ -38709,7 +38709,7 @@
     "projects": [
       "Certified Kubernetes Security (CKS) real-world project"
     ],
-    "certification": "Global Minds Academy Certified Kubernetes Security (CKS) Certificate",
+    "certification": "Global Minds Technologies Certified Kubernetes Security (CKS) Certificate",
     "careerOutcomes": [
       "Kubernetes Security Engineer",
       "Cloud Security Engineer",
@@ -38788,7 +38788,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -38824,8 +38824,8 @@
       "RBAC",
       "Container Security"
     ],
-    "metaTitle": "Certified Kubernetes Security (CKS) Training | Global Minds Academy",
-    "metaDescription": "Learn Certified Kubernetes Security (CKS) with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Certified Kubernetes Security (CKS) Training | Global Minds Technologies",
+    "metaDescription": "Learn Certified Kubernetes Security (CKS) with hands-on projects at Global Minds Technologies.",
     "id": "cf18",
     "slug": "cks-kubernetes-security",
     "title": "Certified Kubernetes Security (CKS)",
@@ -38957,7 +38957,7 @@
       "Design and build a complete e-commerce REST API",
       "API testing and documentation project"
     ],
-    "certification": "Global Minds Academy REST API Design & Development Certificate",
+    "certification": "Global Minds Technologies REST API Design & Development Certificate",
     "careerOutcomes": [
       "Backend Developer",
       "API Developer",
@@ -39035,7 +39035,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -39071,8 +39071,8 @@
       "OAuth",
       "API Design"
     ],
-    "metaTitle": "REST API Design & Development Training | Global Minds Academy",
-    "metaDescription": "Learn REST API Design & Development with hands-on projects at Global Minds Academy.",
+    "metaTitle": "REST API Design & Development Training | Global Minds Technologies",
+    "metaDescription": "Learn REST API Design & Development with hands-on projects at Global Minds Technologies.",
     "id": "cf19",
     "slug": "rest-api",
     "title": "REST API Design & Development",
@@ -39204,7 +39204,7 @@
       "News aggregator with Scrapy",
       "Job listing scraper with data pipeline"
     ],
-    "certification": "Global Minds Academy Web Scraping & Automation Certificate",
+    "certification": "Global Minds Technologies Web Scraping & Automation Certificate",
     "careerOutcomes": [
       "Python Developer",
       "Data Engineer",
@@ -39283,7 +39283,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -39319,8 +39319,8 @@
       "Automation",
       "BeautifulSoup"
     ],
-    "metaTitle": "Web Scraping & Automation Training | Global Minds Academy",
-    "metaDescription": "Learn Web Scraping & Automation with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Web Scraping & Automation Training | Global Minds Technologies",
+    "metaDescription": "Learn Web Scraping & Automation with hands-on projects at Global Minds Technologies.",
     "id": "cf20",
     "slug": "web-scraping",
     "title": "Web Scraping & Automation",
@@ -39447,7 +39447,7 @@
     "projects": [
       "Computer Architecture real-world project"
     ],
-    "certification": "Global Minds Academy Computer Architecture Certificate",
+    "certification": "Global Minds Technologies Computer Architecture Certificate",
     "careerOutcomes": [
       "Systems Programmer",
       "Embedded Engineer",
@@ -39526,7 +39526,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -39561,8 +39561,8 @@
       "Cache",
       "Digital Logic"
     ],
-    "metaTitle": "Computer Architecture Training | Global Minds Academy",
-    "metaDescription": "Learn Computer Architecture with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Computer Architecture Training | Global Minds Technologies",
+    "metaDescription": "Learn Computer Architecture with hands-on projects at Global Minds Technologies.",
     "id": "cf21",
     "slug": "computer-architecture",
     "title": "Computer Architecture",
@@ -39689,7 +39689,7 @@
       "Design schema for e-commerce platform",
       "NoSQL data model for social media app"
     ],
-    "certification": "Global Minds Academy Database Design & Modelling Certificate",
+    "certification": "Global Minds Technologies Database Design & Modelling Certificate",
     "careerOutcomes": [
       "Database Developer",
       "Backend Developer",
@@ -39768,7 +39768,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -39804,8 +39804,8 @@
       "NoSQL",
       "Schema Design"
     ],
-    "metaTitle": "Database Design & Modelling Training | Global Minds Academy",
-    "metaDescription": "Learn Database Design & Modelling with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Database Design & Modelling Training | Global Minds Technologies",
+    "metaDescription": "Learn Database Design & Modelling with hands-on projects at Global Minds Technologies.",
     "id": "cf22",
     "slug": "database-design",
     "title": "Database Design & Modelling",
@@ -39936,7 +39936,7 @@
       "Structured data extraction pipeline",
       "Prompt evaluation harness"
     ],
-    "certification": "Global Minds Academy Prompt Engineering Certificate",
+    "certification": "Global Minds Technologies Prompt Engineering Certificate",
     "careerOutcomes": [
       "Prompt Engineer",
       "AI Developer",
@@ -40015,7 +40015,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -40050,8 +40050,8 @@
       "OpenAI",
       "AI Engineering"
     ],
-    "metaTitle": "Prompt Engineering Training | Global Minds Academy",
-    "metaDescription": "Learn Prompt Engineering with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Prompt Engineering Training | Global Minds Technologies",
+    "metaDescription": "Learn Prompt Engineering with hands-on projects at Global Minds Technologies.",
     "id": "cf23",
     "slug": "prompt-engineering",
     "title": "Prompt Engineering",
@@ -40176,7 +40176,7 @@
     "projects": [
       "Network Security Training real-world project"
     ],
-    "certification": "Global Minds Academy Network Security Training Certificate",
+    "certification": "Global Minds Technologies Network Security Training Certificate",
     "careerOutcomes": [
       "Network Security Engineer",
       "Security Architect",
@@ -40254,7 +40254,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -40289,8 +40289,8 @@
       "Zero Trust",
       "VPN"
     ],
-    "metaTitle": "Network Security Training Training | Global Minds Academy",
-    "metaDescription": "Learn Network Security Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Network Security Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Network Security Training with hands-on projects at Global Minds Technologies.",
     "id": "cf24",
     "slug": "network-security",
     "title": "Network Security Training",
@@ -40415,7 +40415,7 @@
     "projects": [
       "Advanced TypeScript real-world project"
     ],
-    "certification": "Global Minds Academy Advanced TypeScript Certificate",
+    "certification": "Global Minds Technologies Advanced TypeScript Certificate",
     "careerOutcomes": [
       "Senior TypeScript Developer",
       "Full Stack Developer",
@@ -40493,7 +40493,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -40528,8 +40528,8 @@
       "tRPC",
       "Full Stack"
     ],
-    "metaTitle": "Advanced TypeScript Training | Global Minds Academy",
-    "metaDescription": "Learn Advanced TypeScript with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Advanced TypeScript Training | Global Minds Technologies",
+    "metaDescription": "Learn Advanced TypeScript with hands-on projects at Global Minds Technologies.",
     "id": "cf25",
     "slug": "typescript-advanced",
     "title": "Advanced TypeScript",
@@ -40660,7 +40660,7 @@
       "A/B test analysis for e-commerce",
       "Regression model for house price prediction"
     ],
-    "certification": "Global Minds Academy Statistics for Data Science Certificate",
+    "certification": "Global Minds Technologies Statistics for Data Science Certificate",
     "careerOutcomes": [
       "Data Scientist",
       "Data Analyst",
@@ -40739,7 +40739,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -40774,8 +40774,8 @@
       "A/B Testing",
       "Data Science"
     ],
-    "metaTitle": "Statistics for Data Science Training | Global Minds Academy",
-    "metaDescription": "Learn Statistics for Data Science with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Statistics for Data Science Training | Global Minds Technologies",
+    "metaDescription": "Learn Statistics for Data Science with hands-on projects at Global Minds Technologies.",
     "id": "cf26",
     "slug": "statistics-for-data-science",
     "title": "Statistics for Data Science",
@@ -40903,7 +40903,7 @@
       "Agile project setup for software team",
       "Jira automation for bug lifecycle"
     ],
-    "certification": "Global Minds Academy Jira & Confluence Training Certificate",
+    "certification": "Global Minds Technologies Jira & Confluence Training Certificate",
     "careerOutcomes": [
       "Scrum Master",
       "Project Manager",
@@ -40982,7 +40982,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -41018,8 +41018,8 @@
       "Project Management",
       "Atlassian"
     ],
-    "metaTitle": "Jira & Confluence Training Training | Global Minds Academy",
-    "metaDescription": "Learn Jira & Confluence Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Jira & Confluence Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Jira & Confluence Training with hands-on projects at Global Minds Technologies.",
     "id": "cf27",
     "slug": "jira",
     "title": "Jira & Confluence Training",
@@ -41148,7 +41148,7 @@
       "Open source contribution workflow",
       "Automated release pipeline with GitHub Actions"
     ],
-    "certification": "Global Minds Academy Git & GitHub Training Certificate",
+    "certification": "Global Minds Technologies Git & GitHub Training Certificate",
     "careerOutcomes": [
       "Software Developer",
       "DevOps Engineer",
@@ -41226,7 +41226,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -41262,8 +41262,8 @@
       "DevOps",
       "Collaboration"
     ],
-    "metaTitle": "Git & GitHub Training Training | Global Minds Academy",
-    "metaDescription": "Learn Git & GitHub Training with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Git & GitHub Training Training | Global Minds Technologies",
+    "metaDescription": "Learn Git & GitHub Training with hands-on projects at Global Minds Technologies.",
     "id": "cf28",
     "slug": "git-github",
     "title": "Git & GitHub Training",
@@ -41395,7 +41395,7 @@
     "projects": [
       "Certified Kubernetes Application Developer (CKAD) real-world project"
     ],
-    "certification": "Global Minds Academy Certified Kubernetes Application Developer (CKAD) Certificate",
+    "certification": "Global Minds Technologies Certified Kubernetes Application Developer (CKAD) Certificate",
     "careerOutcomes": [
       "Kubernetes Application Developer",
       "DevOps Engineer",
@@ -41474,7 +41474,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -41509,8 +41509,8 @@
       "Cloud Native",
       "CertificationPrep"
     ],
-    "metaTitle": "Certified Kubernetes Application Developer (CKAD) Training | Global Minds Academy",
-    "metaDescription": "Learn Certified Kubernetes Application Developer (CKAD) with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Certified Kubernetes Application Developer (CKAD) Training | Global Minds Technologies",
+    "metaDescription": "Learn Certified Kubernetes Application Developer (CKAD) with hands-on projects at Global Minds Technologies.",
     "id": "cf29",
     "slug": "ckad",
     "title": "Certified Kubernetes Application Developer (CKAD)",
@@ -41656,7 +41656,7 @@
       "Responsive landing page",
       "JavaScript to-do app"
     ],
-    "certification": "Global Minds Academy Web Development Foundations Certificate",
+    "certification": "Global Minds Technologies Web Development Foundations Certificate",
     "careerOutcomes": [
       "Junior Web Developer",
       "Frontend Developer",
@@ -41734,7 +41734,7 @@
       {
         "id": "f3",
         "question": "Is there a certificate?",
-        "answer": "Yes — Global Minds Academy completion certificate provided."
+        "answer": "Yes — Global Minds Technologies completion certificate provided."
       },
       {
         "id": "f4",
@@ -41772,8 +41772,8 @@
       "Bootstrap",
       "Beginner"
     ],
-    "metaTitle": "Web Development Foundations Training | Global Minds Academy",
-    "metaDescription": "Learn Web Development Foundations with hands-on projects at Global Minds Academy.",
+    "metaTitle": "Web Development Foundations Training | Global Minds Technologies",
+    "metaDescription": "Learn Web Development Foundations with hands-on projects at Global Minds Technologies.",
     "id": "cf30",
     "slug": "web-development-foundations",
     "title": "Web Development Foundations",

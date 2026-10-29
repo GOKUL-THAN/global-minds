@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, Clock, Monitor, MapPin, Users, ExternalLink, ChevronDown } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -6,6 +6,7 @@ import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { useCmsCollection } from '../hooks/useCmsCollection';
 import { siteConfig } from '../data/siteConfig';
+import { enquiryService } from '../services/enquiryService';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
@@ -202,6 +203,16 @@ export default function EventsPage() {
       `Email: ${regForm.email}`,
       `Phone: ${regForm.phone}`,
     ].join('\n');
+
+    void enquiryService.submitEnquiry({
+      fullName: regForm.name,
+      email: regForm.email,
+      phone: regForm.phone,
+      country: 'India',
+      consent: true,
+      course: `Event: ${event.title}`,
+      message: body,
+    });
 
     window.location.href = `mailto:${siteConfig.admissionsEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setRegistering(null);

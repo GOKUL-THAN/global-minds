@@ -70,9 +70,9 @@ function getFallbackOperationalRecords<T>(module: OperationalModule): T[] {
   }
   if (module === 'certificates') {
     return [
-      { id: 'crt-1', certificateId: 'GMA-2026-AWS-84920', studentName: 'Priya Sharma', courseName: 'AWS Certified Solutions Architect', issuedAt: '2026-10-20', status: 'active' },
-      { id: 'crt-2', certificateId: 'GMA-2026-FS-91283', studentName: 'Anjali Nair', courseName: 'Data Science & Machine Learning Master', issuedAt: '2026-10-01', status: 'active' },
-      { id: 'crt-3', certificateId: 'GMA-2026-PY-33419', studentName: 'Vikram Sundar', courseName: 'Python Full Stack Development', issuedAt: '2026-09-28', status: 'active' },
+      { id: 'crt-1', certificateId: 'GMT-2026-AWS-84920', studentName: 'Priya Sharma', courseName: 'AWS Certified Solutions Architect', issuedAt: '2026-10-20', status: 'active' },
+      { id: 'crt-2', certificateId: 'GMT-2026-FS-91283', studentName: 'Anjali Nair', courseName: 'Data Science & Machine Learning Master', issuedAt: '2026-10-01', status: 'active' },
+      { id: 'crt-3', certificateId: 'GMT-2026-PY-33419', studentName: 'Vikram Sundar', courseName: 'Python Full Stack Development', issuedAt: '2026-09-28', status: 'active' },
     ] as unknown as T[];
   }
   if (module === 'activity') {

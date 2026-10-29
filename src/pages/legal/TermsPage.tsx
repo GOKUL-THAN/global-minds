@@ -1,4 +1,4 @@
-﻿import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 
@@ -26,27 +26,51 @@ export default function TermsPage() {
       </div>
       <div className="container-xl py-12 max-w-3xl">
         <div className="prose text-surface-700 space-y-6">
-          <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-sm">
-            <strong>Note:</strong> Placeholder terms of service. Must be reviewed by a qualified legal professional before publication.
+          <p className="text-base leading-relaxed text-surface-700">
+            Welcome to Global Minds Technologies. By visiting our website, signing up for demo sessions, or enrolling in our professional certifications and Master Programs, you agree to be bound by the following terms and conditions.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">1. Acceptance of Terms</h2>
+          <p>
+            These Terms of Service govern your access to and use of all websites, student portals, learning materials, and live training sessions provided by Global Minds Technologies. If you do not agree to these terms, please refrain from using our platforms.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">2. Program Enrollment & Admissions</h2>
+          <p>
+            Admission to specific training cohorts, internship slots, and Master Programs is subject to prerequisite eligibility verification and seat availability. Enrollment is confirmed only upon successful receipt of the designated program fees or approved institutional sponsorship.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">3. Intellectual Property Rights</h2>
+          <p>
+            All training curricula, slide presentations, recorded video lectures, laboratory architecture blueprints, code repositories, and assessments provided during courses are the proprietary intellectual property of Global Minds Technologies. Enrolled students are granted a personal, non-transferable license to access the materials solely for personal educational purposes. Redistribution or commercial resale is strictly prohibited.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">4. Code of Conduct</h2>
+          <p>
+            Learners agree to engage professionally and respectfully during live mentor sessions, collaborative code reviews, and community channels. Any harassment, disruptive conduct, academic dishonesty, or unauthorized recording of live sessions will result in immediate termination of portal access without refund.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">5. Placement Assistance & Career Support</h2>
+          <p>
+            Global Minds Technologies provides comprehensive placement assistance—including resume reviews, mock interviews, and direct interviews with our network of 50+ hiring partners. Final job offers and salary packages depend entirely on candidate interview performance, technical assessment scores, and the hiring criteria of employer partners.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">6. Limitation of Liability</h2>
+          <p>
+            Global Minds Technologies shall not be liable for any indirect, incidental, or consequential damages resulting from platform downtime, internet disruptions, third-party certification vendor policy modifications, or independent employer hiring decisions.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">7. Governing Law & Jurisdiction</h2>
+          <p>
+            These terms shall be interpreted in accordance with the laws of India. Any disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the courts in Chennai, Tamil Nadu.
+          </p>
+
+          <div className="rounded-xl border border-surface-200 bg-surface-50 p-4 text-sm space-y-1">
+            <p><strong>Contact Admissions & Administration:</strong></p>
+            <p>Email: <a href="mailto:connect@globalmindstechnologies.com" className="text-brand-600 underline">connect@globalmindstechnologies.com</a></p>
+            <p>Phone: <a href="tel:+919597437333" className="text-brand-600 underline">+91 95974 37333</a></p>
+            <p>Address: Perumbakkam, Chennai, Tamil Nadu – 600100, India</p>
           </div>
-
-          <h2 className="font-display font-bold text-xl">1. Acceptance of Terms</h2>
-          <p>By accessing or using Global Minds Technologies's website and services, you agree to be bound by these Terms of Service. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">2. Course Enrollment</h2>
-          <p>Course enrollment is subject to availability and payment of applicable fees. Details are confirmed upon registration. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">3. Intellectual Property</h2>
-          <p>All course materials, videos, and content are the intellectual property of Global Minds Technologies and may not be reproduced without permission. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">4. User Conduct</h2>
-          <p>Users agree to use our platform for lawful purposes only and not to share course materials with unauthorised third parties. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">5. Limitation of Liability</h2>
-          <p>Global Minds Technologies is not liable for any indirect, incidental, or consequential damages arising from use of our services. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">6. Contact</h2>
-          <p>For terms-related queries: [EMAIL — PLACEHOLDER]</p>
         </div>
       </div>
     </div>

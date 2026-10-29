@@ -26,30 +26,63 @@ export default function PrivacyPolicyPage() {
       </div>
       <div className="container-xl py-12 max-w-3xl">
         <div className="prose prose-sm max-w-none text-surface-700 space-y-6">
-          <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-sm">
-            <strong>Note:</strong> This is placeholder privacy policy content. This document must be reviewed and approved by a qualified legal professional before publication. Replace all [PLACEHOLDER] sections with actual business information.
+          <p className="text-base leading-relaxed text-surface-700">
+            At Global Minds Technologies, we are committed to safeguarding your privacy and ensuring transparency in how your personal data is collected, processed, and secured when you use our website, enrollment portals, LMS, and training services.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">1. Information We Collect</h2>
+          <p>We collect information you provide directly to us when registering for programs, requesting free demo classes, contacting our admissions desk, or participating in webinars. This includes:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Contact details such as your full name, email address, mobile number, and city/country of residence.</li>
+            <li>Educational background, years of professional experience, and target career goals.</li>
+            <li>Course preferences, preferred learning mode (online, classroom, or hybrid), and batch timing choices.</li>
+            <li>Billing records and transaction confirmation identifiers (card details are processed directly by RBI-authorized payment gateways and are never stored on our servers).</li>
+          </ul>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">2. How We Use Your Information</h2>
+          <p>We utilize the collected information strictly for legitimate academic and administrative purposes:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Delivering live instruction, LMS courseware access, and hands-on lab sandbox provisioning.</li>
+            <li>Sending batch schedules, timetable updates, assignment reviews, and certificate issuance notifications.</li>
+            <li>Coordinating placement drives, resume forwarding to corporate hiring partners, and mock interviews.</li>
+            <li>Improving our website performance, training curriculum relevance, and technical support responsiveness.</li>
+          </ul>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">3. Data Sharing & Third Parties</h2>
+          <p>
+            Global Minds Technologies will never sell, lease, or monetize your personal information to third-party advertisers. Data is only shared with verified partners under strict data-protection agreements:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Accredited corporate recruitment partners when you opt in to placement assistance programs.</li>
+            <li>Infrastructure service providers (cloud hosting, transactional email delivery, and SMS notifications).</li>
+            <li>Statutory and regulatory bodies when mandatory under applicable Indian legislation.</li>
+          </ul>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">4. Cookies & Web Analytics</h2>
+          <p>
+            We use essential session cookies to manage user logins and security preferences, as well as aggregated analytical cookies to understand page navigation and optimize load speeds. You can configure your browser to reject cookies, though certain interactive features may be limited.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">5. Data Security</h2>
+          <p>
+            We enforce industry-standard security safeguards including TLS 1.3 encryption in transit, strict role-based access control (RBAC), and automated vulnerability monitoring across our digital infrastructure to prevent unauthorized access or disclosure.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">6. Your Rights</h2>
+          <p>
+            You have the right to inspect, update, or request the deletion of your personal data stored with Global Minds Technologies. You may also unsubscribe from marketing notifications at any time by clicking the unsubscribe link in our emails.
+          </p>
+
+          <h2 className="font-display font-bold text-xl text-surface-900">7. Contact Information</h2>
+          <p>
+            For privacy inquiries, data rectification, or grievance redressal, please contact our Data Governance Officer:
+          </p>
+          <div className="rounded-xl border border-surface-200 bg-surface-50 p-4 text-sm space-y-1">
+            <p><strong>Global Minds Technologies</strong></p>
+            <p>Email: <a href="mailto:connect@globalmindstechnologies.com" className="text-brand-600 underline">connect@globalmindstechnologies.com</a></p>
+            <p>Phone: <a href="tel:+919597437333" className="text-brand-600 underline">+91 95974 37333</a></p>
+            <p>Campus Address: Perumbakkam, Chennai, Tamil Nadu – 600100, India</p>
           </div>
-
-          <h2 className="font-display font-bold text-xl">1. Information We Collect</h2>
-          <p>We collect information you provide when registering, enrolling in courses, or contacting us. This includes: name, email address, phone number, country, educational background, and course preferences. [PLACEHOLDER — add complete list]</p>
-
-          <h2 className="font-display font-bold text-xl">2. How We Use Your Information</h2>
-          <p>We use the information collected to provide and improve our services, communicate about courses, send administrative notifications, and personalise your learning experience. [PLACEHOLDER — complete details required]</p>
-
-          <h2 className="font-display font-bold text-xl">3. Data Sharing</h2>
-          <p>We do not sell or rent your personal information to third parties. We may share information with service providers who assist in our operations, subject to confidentiality agreements. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">4. Cookies</h2>
-          <p>We use cookies to enhance your experience on our website. You can control cookie settings through your browser preferences. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">5. Data Security</h2>
-          <p>We implement appropriate security measures to protect your information. However, no transmission over the internet is completely secure. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">6. Your Rights</h2>
-          <p>You have the right to access, correct, or delete your personal information. Contact us at [EMAIL — PLACEHOLDER] to exercise these rights. [PLACEHOLDER]</p>
-
-          <h2 className="font-display font-bold text-xl">7. Contact</h2>
-          <p>For privacy-related queries, contact us at: [EMAIL — PLACEHOLDER] [ADDRESS — PLACEHOLDER]</p>
         </div>
       </div>
     </div>

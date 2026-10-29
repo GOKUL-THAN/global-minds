@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { CheckCircle, CreditCard, Percent, GraduationCap, Users, ArrowRight } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -6,6 +6,7 @@ import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { scholarships as defaultScholarships } from '../data/scholarships';
 import { useCmsCollection } from '../hooks/useCmsCollection';
+import { enquiryService } from '../services/enquiryService';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
@@ -61,6 +62,15 @@ export default function ScholarshipPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    void enquiryService.submitEnquiry({
+      fullName: form.name,
+      email: form.email,
+      phone: form.phone,
+      country: 'India',
+      consent: true,
+      course: `${form.course} (Scholarship: ${form.scholarshipType})`,
+      message: form.message,
+    });
     setSubmitted(true);
   };
 

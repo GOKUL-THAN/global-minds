@@ -111,7 +111,7 @@ const defaultStudentPortalData: StudentPortalData = {
   certificates: [
     {
       id: 'cert-1',
-      certificateId: 'GMA-2026-AWS-84920',
+      certificateId: 'GMT-2026-AWS-84920',
       courseName: 'AWS Certified Solutions Architect Associate Prep',
       issuedAt: '2026-10-20',
       status: 'active',

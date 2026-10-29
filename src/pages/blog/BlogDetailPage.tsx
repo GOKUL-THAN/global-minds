@@ -1,4 +1,4 @@
-﻿import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, Tag, ArrowLeft, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../../data/blogs';
 import { formatDate } from '../../utils/formatters';
@@ -86,18 +86,47 @@ export default function BlogDetailPage() {
 
         {/* Content */}
         <article className="prose prose-lg max-w-none text-surface-700 leading-relaxed mb-12">
-          <div className="p-6 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-sm mb-8">
-            <strong>Note:</strong> This is placeholder blog content. Replace with the actual article text.
+          <div className="space-y-5 text-base sm:text-lg leading-relaxed text-surface-700">
+            {post.content.split('\n\n').map((paragraph, idx) => {
+              const trimmed = paragraph.trim();
+              if (trimmed.startsWith('### ')) {
+                return (
+                  <h3 key={idx} className="font-display font-bold text-xl sm:text-2xl text-surface-900 mt-8 mb-3">
+                    {trimmed.replace('### ', '')}
+                  </h3>
+                );
+              }
+              if (trimmed.startsWith('* ') || trimmed.includes('\n* ')) {
+                const items = trimmed.split('\n').filter(l => l.trim().startsWith('* '));
+                return (
+                  <ul key={idx} className="list-disc pl-6 space-y-2 my-4">
+                    {items.map((it, i) => (
+                      <li key={i} className="text-surface-700">
+                        {it.replace(/^\*\s+/, '').replace(/\*\*(.*?)\*\*/g, '$1')}
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+              if (trimmed.match(/^\d+\.\s+/)) {
+                const items = trimmed.split('\n').filter(l => l.trim().match(/^\d+\.\s+/));
+                return (
+                  <ol key={idx} className="list-decimal pl-6 space-y-2 my-4">
+                    {items.map((it, i) => (
+                      <li key={i} className="text-surface-700">
+                        {it.replace(/^\d+\.\s+/, '').replace(/\*\*(.*?)\*\*/g, '$1')}
+                      </li>
+                    ))}
+                  </ol>
+                );
+              }
+              return (
+                <p key={idx} className="text-surface-700">
+                  {trimmed}
+                </p>
+              );
+            })}
           </div>
-          <p>{post.content}</p>
-          <p className="mt-6">
-            This article covers important aspects of {post.category} that every technology professional should understand. 
-            The content above is a placeholder and will be replaced with the full, real article text.
-          </p>
-          <p className="mt-4">
-            Stay tuned for more insights from the Global Minds Technologies blog — covering cloud computing, DevOps, AI, 
-            data science, software testing, career guidance and much more.
-          </p>
         </article>
 
         {/* Tags */}
@@ -124,7 +153,7 @@ export default function BlogDetailPage() {
             <p className="font-display font-bold text-surface-900 text-lg mb-1">{post.author.name}</p>
             <p className="text-brand-700 text-sm font-semibold mb-2">{post.author.role}</p>
             <p className="text-surface-600 text-sm font-medium leading-relaxed">
-              Expert instructor at Global Minds Technologies. Placeholder author bio — to be updated with real profile information.
+              Senior industry mentor and curriculum lead at Global Minds Technologies, dedicated to empowering tech professionals with hands-on, job-ready skills.
             </p>
           </div>
         </div>

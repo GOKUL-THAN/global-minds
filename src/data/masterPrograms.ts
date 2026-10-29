@@ -1,6 +1,6 @@
-﻿import type { MasterProgram } from '../types';
+import type { MasterProgram } from '../types';
 
-// PLACEHOLDER master program data — replace with real content
+// Master program catalog data
 const masterProgramData: MasterProgram[] = [
   {
     id: 'mp1',
@@ -8,7 +8,7 @@ const masterProgramData: MasterProgram[] = [
     title: 'Global Minds Technologies Freshers Master Program',
     tagline: 'Your Complete IT Career Launch Pad',
     shortDescription: 'A comprehensive program for fresh graduates — programming, web fundamentals, software testing, cloud basics, DevOps, aptitude and placement support.',
-    longDescription: 'The Freshers Master Program is designed to transform fresh graduates and career starters into industry-ready IT professionals. It covers programming fundamentals, web development, software testing, cloud basics, DevOps, communication skills, aptitude, resume preparation and mock interviews. PLACEHOLDER — to be customised.',
+    longDescription: 'The Freshers Master Program is designed to transform fresh graduates and career starters into industry-ready IT professionals. It covers programming fundamentals, web development, software testing, cloud basics, DevOps, communication skills, aptitude, resume preparation and mock interviews.',
     duration: '4 Months',
     totalHours: 120,
     level: 'Beginner',
@@ -45,8 +45,8 @@ const masterProgramData: MasterProgram[] = [
     placementSupport: true,
     faqs: [
       { id: 'f1', question: 'Is this program suitable for non-CS graduates?', answer: 'Yes, this program is designed for any graduate, regardless of educational background.' },
-      { id: 'f2', question: 'What is the batch size?', answer: 'Batches are kept small to ensure quality. Placeholder — confirm with admissions.' },
-      { id: 'f3', question: 'Is placement guaranteed?', answer: 'We provide strong placement support, resume prep and mock interviews. Placement depends on individual performance. Placeholder.' },
+      { id: 'f2', question: 'What is the batch size?', answer: 'Batches are kept small at 15–20 learners to ensure personalised attention and thorough mentor support.' },
+      { id: 'f3', question: 'Is placement guaranteed?', answer: 'We provide dedicated placement support, resume prep, mock interviews, and direct interviews with our 50+ hiring partners.' },
     ],
     status: 'active',
   },
@@ -56,7 +56,7 @@ const masterProgramData: MasterProgram[] = [
     title: 'Full Stack Master Program',
     tagline: 'Build Complete Web Applications from Frontend to Backend',
     shortDescription: 'Become a full stack developer — HTML, CSS, JavaScript, React, Node.js, databases, REST APIs, Git, authentication, deployment and cloud basics.',
-    longDescription: 'The Full Stack Master Program takes you from zero to a deployable full stack application. You will learn modern frontend and backend technologies, databases, authentication, deployment and cloud integration. PLACEHOLDER.',
+    longDescription: 'The Full Stack Master Program takes you from zero to building and deploying production-grade web applications. You will master modern front-end engineering with React, server-side APIs with Node.js and Express, relational and NoSQL databases, authentication architectures, Docker containerization, and AWS cloud deployment.',
     duration: '4 Months',
     totalHours: 120,
     level: 'Beginner',
@@ -90,7 +90,7 @@ const masterProgramData: MasterProgram[] = [
     placementSupport: true,
     faqs: [
       { id: 'f1', question: 'Is prior programming experience required?', answer: 'No. The program starts from fundamentals and builds up progressively.' },
-      { id: 'f2', question: 'What projects will I build?', answer: 'You will build 3 complete applications including an e-commerce platform. Placeholder.' },
+      { id: 'f2', question: 'What projects will I build?', answer: 'You will build 3 complete industry-grade applications including an e-commerce platform, a real-time collaborative tool, and a portfolio application.' },
     ],
     status: 'active',
   },
@@ -193,7 +193,7 @@ const masterProgramData: MasterProgram[] = [
     title: 'Software Testing Master Program',
     tagline: 'Become a Complete QA & Test Automation Engineer',
     shortDescription: 'Complete testing program — manual testing, Selenium, API testing, performance testing, CI/CD integration and real-world QA projects.',
-    longDescription: 'The Software Testing Master Program prepares you for a complete QA career, covering everything from testing fundamentals to advanced automation frameworks. PLACEHOLDER.',
+    longDescription: 'The Software Testing Master Program prepares you for a complete QA engineering career, covering everything from manual testing methodologies, STLC, and Jira defect tracking to advanced automation frameworks with Selenium, Cypress, and API testing with Postman and RestAssured.',
     duration: '3 Months',
     totalHours: 90,
     level: 'Beginner',

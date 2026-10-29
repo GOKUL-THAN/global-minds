@@ -499,7 +499,7 @@ app.post('/api/auth/register', requireSameOrigin, registrationLimiter, asyncHand
   try {
     await sendAccountEmail(
       email,
-      'Verify your Global Minds Academy account',
+      'Verify your Global Minds Technologies account',
       `Verify your email within ${config.verificationTokenTtlMinutes} minutes:\n\n${verificationLink(token)}\n\nIf you did not create this account, you can ignore this message.`,
     );
   } catch (error) {
@@ -609,7 +609,7 @@ app.post('/api/auth/resend-verification', requireSameOrigin, verificationLimiter
   try {
     await sendAccountEmail(
       email,
-      'Verify your Global Minds Academy account',
+      'Verify your Global Minds Technologies account',
       `Verify your email within ${config.verificationTokenTtlMinutes} minutes:\n\n${verificationLink(token)}`,
     );
   } catch (error) {
@@ -645,7 +645,7 @@ app.post('/api/auth/forgot-password', requireSameOrigin, recoveryLimiter, asyncH
     try {
       await sendAccountEmail(
         email,
-        'Reset your Global Minds Academy password',
+        'Reset your Global Minds Technologies password',
         `Reset your password within ${config.passwordResetTokenTtlMinutes} minutes:\n\n${passwordResetLink(token)}\n\nIf you did not request this, you can ignore this message.`,
       );
     } catch (error) {

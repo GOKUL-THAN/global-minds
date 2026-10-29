@@ -25,7 +25,9 @@ class EnquiryService {
     return result.enquiry;
   }
 
-  async submitEnquiry(data: EnquiryForm): Promise<EnquirySubmissionResult> {
+  async submitEnquiry(
+    data: Partial<EnquiryForm> & Pick<EnquiryForm, 'fullName' | 'email' | 'phone'>,
+  ): Promise<EnquirySubmissionResult> {
     return this.saveEnquiry({
       name: data.fullName,
       email: data.email,
