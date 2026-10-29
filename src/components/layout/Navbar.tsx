@@ -394,14 +394,20 @@ export function Navbar() {
 
           {/* Desktop CTA — Search + Login */}
           <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
-            <Link
-              to="/courses"
-              className="inline-flex items-center gap-1.5 rounded-lg p-2 text-surface-700 font-medium transition-colors hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-              aria-label="Search courses"
+            <button
+              type="button"
+              onClick={() => {
+                window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+              }}
+              className="inline-flex items-center gap-2 rounded-xl border border-surface-200 bg-surface-50 px-3 py-1.5 text-xs text-surface-500 font-medium transition-all hover:border-brand-300 hover:bg-white hover:text-brand-700 shadow-sm"
+              aria-label="Open command search"
             >
-              <Search className="h-5 w-5" />
-              <span className="hidden text-sm 2xl:inline">Search</span>
-            </Link>
+              <Search className="h-3.5 w-3.5 text-surface-400" />
+              <span className="hidden 2xl:inline">Quick Search...</span>
+              <kbd className="rounded border border-surface-200 bg-white px-1.5 py-0.5 text-[10px] font-semibold text-surface-600 shadow-xs">
+                Ctrl K
+              </kbd>
+            </button>
             <Link to="/login">
               <Magnetic>
                 <Button variant="ghost" size="sm" leftIcon={<User className="h-4 w-4" />}>Login</Button>

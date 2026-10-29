@@ -1,5 +1,7 @@
 import { BookOpenCheck, Code2, MapPin, Target, UsersRound } from 'lucide-react';
 import { SpotlightCard } from '../ui/SpotlightCard';
+import { DotPattern } from '../ui/DotPattern';
+import { ShinyText } from '../ui/ShinyText';
 
 const advantages = [
   {
@@ -26,10 +28,13 @@ const advantages = [
 
 export function WhyUsSection() {
   return (
-    <section className="section bg-white" aria-label="How we support your learning">
-      <div className="container-xl">
+    <section className="section bg-white relative overflow-hidden" aria-label="How we support your learning">
+      <DotPattern className="opacity-35" />
+      <div className="container-xl relative z-10">
         <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-700">Learn with confidence</p>
+          <p className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-700">
+            <ShinyText text="✨ Learn with confidence" shinyColor="rgba(23, 108, 115, 0.95)" />
+          </p>
           <h2 className="display-md text-surface-900">
             Practical learning, <span className="text-gradient">step by step</span>
           </h2>

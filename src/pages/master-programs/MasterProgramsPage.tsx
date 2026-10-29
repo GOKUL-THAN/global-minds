@@ -9,6 +9,8 @@ import { useCmsCollection } from '../../hooks/useCmsCollection';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { WaveBackground } from '../../components/ui/WaveBackground';
+import { Particles } from '../../components/ui/Particles';
 
 export default function MasterProgramsPage() {
   const programs = useCmsCollection('master-programs', masterPrograms);
@@ -19,7 +21,9 @@ export default function MasterProgramsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="page-hero-premium py-16">
+      <div className="page-hero-premium py-16 relative overflow-hidden">
+        <WaveBackground className="opacity-35" strokeColor="rgba(23, 108, 115, 0.2)" />
+        <Particles className="opacity-30" quantity={20} color="#0d9488" />
         <div className="container-xl relative z-10">
           <Breadcrumbs items={[{ label: 'Master Programs' }]} className="mb-4" />
           <div className="max-w-3xl">

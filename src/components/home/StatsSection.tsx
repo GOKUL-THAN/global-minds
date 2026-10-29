@@ -3,6 +3,7 @@ import { useIntersection } from '../../hooks/useIntersection';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CountUp } from '../ui/CountUp';
 import { SpotlightCard } from '../ui/SpotlightCard';
+import { WaveBackground } from '../ui/WaveBackground';
 
 const stats = [
   { label: 'Hiring Partners', value: '50+', detail: 'Career partnership network', icon: Briefcase },
@@ -21,7 +22,8 @@ export function StatsSection() {
       className="home-stats section relative overflow-hidden"
       aria-label="Global Minds Academy statistics"
     >
-      <div className="container-xl relative">
+      <WaveBackground className="opacity-45" strokeColor="rgba(13, 148, 136, 0.16)" />
+      <div className="container-xl relative z-10">
         <div className="home-stats-heading mb-8 text-center">
           <h2 className="display-md text-surface-900">
             Learning that moves your career <span className="home-hero-highlight">forward</span>

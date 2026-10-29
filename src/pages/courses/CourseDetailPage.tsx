@@ -13,6 +13,8 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
+import { StarBorder } from '../../components/ui/StarBorder';
+import { Particles } from '../../components/ui/Particles';
 import { formatPrice } from '../../utils/formatters';
 import { cn } from '../../utils/cn';
 import { usePageMeta } from '../../hooks/usePageMeta';
@@ -75,7 +77,8 @@ export default function CourseDetailPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="page-hero-premium py-14">
+      <div className="page-hero-premium py-14 relative overflow-hidden">
+        <Particles className="opacity-30" quantity={25} color="#0d9488" />
         <div className="container-xl relative z-10">
           <Breadcrumbs
             items={[

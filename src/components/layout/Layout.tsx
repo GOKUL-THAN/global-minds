@@ -5,6 +5,7 @@ import { ToastContainer } from '../ui/Toast';
 import { BackToTop } from '../ui/BackToTop';
 import { PageTransition } from './PageTransition';
 import { QuickContactAssistant } from './QuickContactAssistant';
+import { CommandMenu } from '../ui/CommandMenu';
 
 export function Layout() {
   return (
@@ -30,6 +31,7 @@ export function Layout() {
       <ToastContainer />
       <BackToTop />
       <QuickContactAssistant />
+      <CommandMenu />
     </>
   );
 }
