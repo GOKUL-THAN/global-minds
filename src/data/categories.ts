@@ -5,7 +5,7 @@ export const categories: Category[] = [
     id: 'cat-cloud',
     slug: 'cloud-computing',
     title: 'AWS / Cloud',
-    description: 'AWS / Cloud',
+    description: 'Cloud architecture, infrastructure as code, serverless compute, and AWS enterprise solutions.',
     icon: 'cloud',
     color: '#3b82f6',
     bgColor: '#eff6ff',
@@ -18,7 +18,7 @@ export const categories: Category[] = [
     id: 'cat-data',
     slug: 'data-science-analytics',
     title: 'Data Science',
-    description: 'Data Science',
+    description: 'Python, statistical analysis, machine learning algorithms, and enterprise business intelligence.',
     icon: 'bar-chart-2',
     color: '#f59e0b',
     bgColor: '#fffbeb',
@@ -28,15 +28,15 @@ export const categories: Category[] = [
     order: 2,
   },
   {
-    id: 'cat-ml',
-    slug: 'machine-learning',
-    title: 'Machine Learning',
-    description: 'Machine Learning',
+    id: 'cat-ai-ml',
+    slug: 'artificial-intelligence',
+    title: 'AI & Machine Learning',
+    description: 'Deep neural networks, computer vision, natural language processing, LLMs, and Generative AI.',
     icon: 'cpu',
     color: '#8b5cf6',
     bgColor: '#f5f3ff',
-    courseCount: 1,
-    courses: ['machine-learning'],
+    courseCount: 3,
+    courses: ['ai-ml-engineering', 'machine-learning', 'generative-ai'],
     featured: true,
     order: 3,
   },
@@ -44,7 +44,7 @@ export const categories: Category[] = [
     id: 'cat-fullstack',
     slug: 'full-stack-development',
     title: 'Full Stack Development',
-    description: 'Full Stack Development',
+    description: 'Modern front-end and back-end development with React, Node.js, databases, and cloud deployment.',
     icon: 'layers',
     color: '#10b981',
     bgColor: '#ecfdf5',
@@ -57,7 +57,7 @@ export const categories: Category[] = [
     id: 'cat-cyber',
     slug: 'cyber-security',
     title: 'Cyber Security',
-    description: 'Cyber Security',
+    description: 'Hands-on ethical hacking, penetration testing, network defense, SIEM, and vulnerability analysis.',
     icon: 'shield',
     color: '#ef4444',
     bgColor: '#fef2f2',
@@ -68,31 +68,41 @@ export const categories: Category[] = [
   },
   {
     id: 'cat-testing',
-    slug: 'software-testing',
-    title: 'Software Testing',
-    description: 'Software Testing',
+    slug: 'software-and-automation-testing',
+    title: 'Software & Automation Testing',
+    description: 'Unified manual testing, Selenium WebDriver, Cypress, API automation with Postman, and CI/CD pipelines.',
     icon: 'check-circle',
     color: '#06b6d4',
     bgColor: '#ecfeff',
     courseCount: 1,
-    courses: ['software-testing'],
+    courses: ['software-and-automation-testing'],
     featured: true,
     order: 6,
   },
   {
-    id: 'cat-automation-testing',
-    slug: 'automation-testing',
-    title: 'Automation Testing',
-    description: 'Automation Testing',
+    id: 'cat-bridge',
+    slug: 'career-development',
+    title: 'Bridge & Language Courses',
+    description: 'Campus-to-corporate transitional training, workplace communications, and professional English mastery.',
     icon: 'zap',
     color: '#f97316',
     bgColor: '#fff7ed',
-    courseCount: 1,
-    courses: ['automation-testing'],
+    courseCount: 2,
+    courses: ['campus-to-corporate-bridge-course', 'tech-communication-language'],
     featured: true,
     order: 7,
   },
 ];
 
-export const getCategoryBySlug = (slug: string) => categories.find(c => c.slug === slug);
+export const getCategoryBySlug = (slug: string): Category | undefined => {
+  // Alias mapping for backwards compatibility and merged courses
+  if (slug === 'software-testing' || slug === 'automation-testing') {
+    return categories.find(c => c.slug === 'software-and-automation-testing');
+  }
+  if (slug === 'machine-learning') {
+    return categories.find(c => c.slug === 'artificial-intelligence');
+  }
+  return categories.find(c => c.slug === slug);
+};
+
 export const getFeaturedCategories = () => categories.filter(c => c.featured).sort((a, b) => a.order - b.order);

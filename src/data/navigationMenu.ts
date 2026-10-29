@@ -68,8 +68,19 @@ export function readNavigationContent(value: unknown): NavigationContent | undef
   const isTrainerLink = (link: MenuLink) =>
     link.href.split(/[?#]/, 1)[0].replace(/\/+$/, '').toLowerCase() === '/trainers'
     || /^(expert )?trainers?$/i.test(link.label.trim());
-  const courseSlugs = new Set(publicCourseCatalog.map(course => course.sourceSlug));
-  const categorySlugs = new Set(publicCourseCatalog.map(course => course.category));
+  const courseSlugs = new Set([
+    ...publicCourseCatalog.map(course => course.sourceSlug),
+    'software-testing',
+    'automation-testing',
+    'software-and-automation-testing',
+  ]);
+  const categorySlugs = new Set([
+    ...publicCourseCatalog.map(course => course.category),
+    ...categories.map(c => c.slug),
+    'software-testing',
+    'automation-testing',
+    'software-and-automation-testing',
+  ]);
   const isAllowedLink = (link: MenuLink) => {
     const path = link.href.split(/[?#]/, 1)[0].replace(/\/+$/, '').toLowerCase();
     if (path === '/courses' || path === '') return true;

@@ -8,45 +8,70 @@ import { AdminAuthGate } from './components/admin/AdminAuthGate';
 // ── Eager — critical first-paint ──────────────────────────────
 import HomePage from './pages/HomePage';
 
-// ── Public pages (lazy) ───────────────────────────────────────
-const CoursesPage             = lazy(() => import('./pages/courses/CoursesPage'));
-const CourseDetailPage        = lazy(() => import('./pages/courses/CourseDetailPage'));
-const CertificationsPage      = lazy(() => import('./pages/CertificationsPage'));
-const MasterProgramsPage      = lazy(() => import('./pages/master-programs/MasterProgramsPage'));
-const MasterProgramDetailPage = lazy(() => import('./pages/master-programs/MasterProgramDetailPage'));
-const CategoryPage            = lazy(() => import('./pages/CategoryPage'));
-const OnlineTrainingPage      = lazy(() => import('./pages/OnlineTrainingPage'));
-const ClassroomTrainingPage   = lazy(() => import('./pages/ClassroomTrainingPage'));
-const CareerPage              = lazy(() => import('./pages/career/CareerPage'));
-const JobSupportPage          = lazy(() => import('./pages/career/JobSupportPage'));
-const InterviewPrepPage       = lazy(() => import('./pages/career/InterviewPrepPage'));
-const ResumePrepPage          = lazy(() => import('./pages/career/ResumePrepPage'));
-const MockInterviewPage       = lazy(() => import('./pages/career/MockInterviewPage'));
-const InternshipsPage         = lazy(() => import('./pages/InternshipsPage'));
-const InternshipDetailPage    = lazy(() => import('./pages/internships/InternshipDetailPage'));
-const CorporateTrainingPage   = lazy(() => import('./pages/CorporateTrainingPage'));
-const CollegesPage            = lazy(() => import('./pages/CollegesPage'));
-const AboutPage               = lazy(() => import('./pages/AboutPage'));
-const ContactPage             = lazy(() => import('./pages/ContactPage'));
-const TrainersPage            = lazy(() => import('./pages/TrainersPage'));
-const BlogPage                = lazy(() => import('./pages/blog/BlogPage'));
-const BlogDetailPage          = lazy(() => import('./pages/blog/BlogDetailPage'));
-const LocationsPage           = lazy(() => import('./pages/locations/LocationsPage'));
-const LocationDetailPage      = lazy(() => import('./pages/locations/LocationDetailPage'));
-const RegisterPage            = lazy(() => import('./pages/RegisterPage'));
-const PrivacyPolicyPage       = lazy(() => import('./pages/legal/PrivacyPolicyPage'));
-const TermsPage               = lazy(() => import('./pages/legal/TermsPage'));
-const RefundPolicyPage        = lazy(() => import('./pages/legal/RefundPolicyPage'));
-const CookiePolicyPage        = lazy(() => import('./pages/legal/CookiePolicyPage'));
-const NotFoundPage            = lazy(() => import('./pages/NotFoundPage'));
-const PlacementPage           = lazy(() => import('./pages/PlacementPage'));
-const BatchSchedulePage       = lazy(() => import('./pages/BatchSchedulePage'));
-const DemoClassPage           = lazy(() => import('./pages/DemoClassPage'));
-const SkillAssessmentPage     = lazy(() => import('./pages/SkillAssessmentPage'));
-const ScholarshipPage         = lazy(() => import('./pages/ScholarshipPage'));
-const EventsPage              = lazy(() => import('./pages/EventsPage'));
-const LiveProjectsPage        = lazy(() => import('./pages/LiveProjectsPage'));
-const ReferEarnPage           = lazy(() => import('./pages/ReferEarnPage'));
+// ── Dynamic Chunk Resilient Loader ───────────────────────────
+function lazyRetry<T extends React.ComponentType<any>>(
+  factory: () => Promise<{ default: T }>
+) {
+  return lazy(async () => {
+    try {
+      const module = await factory();
+      sessionStorage.removeItem('chunk_failed_reload');
+      return module;
+    } catch (error) {
+      const isChunkLoadFailed = error instanceof Error && (
+        error.message.includes('dynamically imported module') ||
+        error.message.includes('Loading chunk') ||
+        error.name === 'TypeError'
+      );
+      const hasReloaded = sessionStorage.getItem('chunk_failed_reload');
+      if (isChunkLoadFailed && !hasReloaded) {
+        sessionStorage.setItem('chunk_failed_reload', 'true');
+        window.location.reload();
+      }
+      throw error;
+    }
+  });
+}
+
+// ── Public pages (lazy with resilient auto-retry) ─────────────
+const CoursesPage             = lazyRetry(() => import('./pages/courses/CoursesPage'));
+const CourseDetailPage        = lazyRetry(() => import('./pages/courses/CourseDetailPage'));
+const CertificationsPage      = lazyRetry(() => import('./pages/CertificationsPage'));
+const MasterProgramsPage      = lazyRetry(() => import('./pages/master-programs/MasterProgramsPage'));
+const MasterProgramDetailPage = lazyRetry(() => import('./pages/master-programs/MasterProgramDetailPage'));
+const CategoryPage            = lazyRetry(() => import('./pages/CategoryPage'));
+const OnlineTrainingPage      = lazyRetry(() => import('./pages/OnlineTrainingPage'));
+const ClassroomTrainingPage   = lazyRetry(() => import('./pages/ClassroomTrainingPage'));
+const CareerPage              = lazyRetry(() => import('./pages/career/CareerPage'));
+const JobSupportPage          = lazyRetry(() => import('./pages/career/JobSupportPage'));
+const InterviewPrepPage       = lazyRetry(() => import('./pages/career/InterviewPrepPage'));
+const ResumePrepPage          = lazyRetry(() => import('./pages/career/ResumePrepPage'));
+const MockInterviewPage       = lazyRetry(() => import('./pages/career/MockInterviewPage'));
+const InternshipsPage         = lazyRetry(() => import('./pages/InternshipsPage'));
+const InternshipDetailPage    = lazyRetry(() => import('./pages/internships/InternshipDetailPage'));
+const CorporateTrainingPage   = lazyRetry(() => import('./pages/CorporateTrainingPage'));
+const CollegesPage            = lazyRetry(() => import('./pages/CollegesPage'));
+const AboutPage               = lazyRetry(() => import('./pages/AboutPage'));
+const ContactPage             = lazyRetry(() => import('./pages/ContactPage'));
+const TrainersPage            = lazyRetry(() => import('./pages/TrainersPage'));
+const BlogPage                = lazyRetry(() => import('./pages/blog/BlogPage'));
+const BlogDetailPage          = lazyRetry(() => import('./pages/blog/BlogDetailPage'));
+const LocationsPage           = lazyRetry(() => import('./pages/locations/LocationsPage'));
+const LocationDetailPage      = lazyRetry(() => import('./pages/locations/LocationDetailPage'));
+const RegisterPage            = lazyRetry(() => import('./pages/RegisterPage'));
+const PrivacyPolicyPage       = lazyRetry(() => import('./pages/legal/PrivacyPolicyPage'));
+const TermsPage               = lazyRetry(() => import('./pages/legal/TermsPage'));
+const RefundPolicyPage        = lazyRetry(() => import('./pages/legal/RefundPolicyPage'));
+const CookiePolicyPage        = lazyRetry(() => import('./pages/legal/CookiePolicyPage'));
+const NotFoundPage            = lazyRetry(() => import('./pages/NotFoundPage'));
+const PlacementPage           = lazyRetry(() => import('./pages/PlacementPage'));
+const BatchSchedulePage       = lazyRetry(() => import('./pages/BatchSchedulePage'));
+const DemoClassPage           = lazyRetry(() => import('./pages/DemoClassPage'));
+const SkillAssessmentPage     = lazyRetry(() => import('./pages/SkillAssessmentPage'));
+const ScholarshipPage         = lazyRetry(() => import('./pages/ScholarshipPage'));
+const EventsPage              = lazyRetry(() => import('./pages/EventsPage'));
+const LiveProjectsPage        = lazyRetry(() => import('./pages/LiveProjectsPage'));
+const ReferEarnPage           = lazyRetry(() => import('./pages/ReferEarnPage'));
 
 // ── Auth pages — default exports (lazy) ───────────────────────
 const LoginPage           = lazy(() => import('./pages/auth/LoginPage'));
@@ -164,9 +189,14 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
 
       // Courses
-      { path: 'courses',       element: <S><CoursesPage /></S> },
-      { path: 'courses/:slug', element: <S><CourseDetailPage /></S> },
-      { path: 'categories/:slug', element: <S><CategoryPage /></S> },
+      { path: 'courses',                             element: <S><CoursesPage /></S> },
+      { path: 'courses/software-testing',            element: <Navigate to="/courses/software-and-automation-testing" replace /> },
+      { path: 'courses/automation-testing',          element: <Navigate to="/courses/software-and-automation-testing" replace /> },
+      { path: 'courses/:slug',                       element: <S><CourseDetailPage /></S> },
+      { path: 'categories/software-testing',          element: <Navigate to="/categories/software-and-automation-testing" replace /> },
+      { path: 'categories/automation-testing',        element: <Navigate to="/categories/software-and-automation-testing" replace /> },
+      { path: 'categories/machine-learning',          element: <Navigate to="/categories/artificial-intelligence" replace /> },
+      { path: 'categories/:slug',                     element: <S><CategoryPage /></S> },
 
       // Master programs
       { path: 'master-programs',       element: <S><MasterProgramsPage /></S> },
@@ -179,7 +209,7 @@ const router = createBrowserRouter([
 
       // Career
       { path: 'career',                       element: <S><CareerPage /></S> },
-      { path: 'placement',                    element: <S><CareerPage /></S> },
+      { path: 'placement',                    element: <Navigate to="/placement-records" replace /> },
       { path: 'career/job-support',           element: <S><JobSupportPage /></S> },
       { path: 'job-support',                  element: <S><JobSupportPage /></S> },
       { path: 'career/interview-preparation', element: <S><InterviewPrepPage /></S> },
@@ -193,9 +223,13 @@ const router = createBrowserRouter([
       { path: 'internships',       element: <S><InternshipsPage /></S> },
       { path: 'internships/:slug', element: <S><InternshipDetailPage /></S> },
 
-      // Corporate / Colleges
+      // Corporate / Enterprise / Colleges
       { path: 'corporate-training', element: <S><CorporateTrainingPage /></S> },
+      { path: 'corporate',          element: <Navigate to="/corporate-training" replace /> },
+      { path: 'enterprise-services',element: <Navigate to="/corporate-training" replace /> },
+      { path: 'enterprise',         element: <Navigate to="/corporate-training" replace /> },
       { path: 'colleges',           element: <S><CollegesPage /></S> },
+      { path: 'college',            element: <Navigate to="/colleges" replace /> },
       { path: 'colleges/*',         element: <S><CollegesPage /></S> },
 
       // Company
@@ -229,6 +263,9 @@ const router = createBrowserRouter([
       { path: 'placement-records', element: <S><PlacementPage /></S> },
       { path: 'batch-schedule',    element: <S><BatchSchedulePage /></S> },
       { path: 'demo-class',        element: <S><DemoClassPage /></S> },
+      { path: 'free-demo',         element: <Navigate to="/demo-class" replace /> },
+      { path: 'book-demo',         element: <Navigate to="/demo-class" replace /> },
+      { path: 'book-a-free-demo',  element: <Navigate to="/demo-class" replace /> },
       { path: 'skill-assessment',  element: <S><SkillAssessmentPage /></S> },
       { path: 'scholarships',      element: <S><ScholarshipPage /></S> },
       { path: 'events',            element: <S><EventsPage /></S> },

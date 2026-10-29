@@ -322,16 +322,16 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-screen-2xl px-2 sm:px-3 lg:px-4">
         <div className="flex h-16 items-center justify-between lg:h-18">
-          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Global Minds Academy home">
+          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Global Minds Technologies home">
             <img
               src={siteConfig.logoUrl}
-              alt="Global Minds Academy logo"
+              alt="Global Minds Technologies logo"
               className="h-14 w-14 shrink-0 object-contain"
               onError={e => { e.currentTarget.style.display = 'none'; }}
             />
             <span className="whitespace-nowrap font-display text-base font-extrabold tracking-tight sm:text-lg">
               <span className="text-[#164e59]">Global</span>{' '}
-              <span className="text-[#176c73]">Minds Academy</span>
+              <span className="text-[#176c73]">Minds Technologies</span>
             </span>
           </Link>
 
@@ -392,7 +392,7 @@ export function Navbar() {
             )}
           </nav>
 
-          {/* Desktop CTA — Search + Login */}
+          {/* Desktop CTA — Search + Contact */}
           <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
             <button
               type="button"
@@ -408,9 +408,9 @@ export function Navbar() {
                 Ctrl K
               </kbd>
             </button>
-            <Link to="/login">
+            <Link to="/contact">
               <Magnetic>
-                <Button variant="ghost" size="sm" leftIcon={<User className="h-4 w-4" />}>Login</Button>
+                <Button variant="primary" size="sm">Contact Us</Button>
               </Magnetic>
             </Link>
           </div>
@@ -494,8 +494,8 @@ export function Navbar() {
                 )}
               </nav>
               <div className="mt-6 space-y-3 border-t border-surface-100 pt-4">
-                <Link to="/login" onClick={() => setMobileOpen(false)} className="block">
-                  <Button variant="secondary" size="lg" fullWidth leftIcon={<User className="h-4 w-4" />}>Login</Button>
+                <Link to="/contact" onClick={() => setMobileOpen(false)} className="block">
+                  <Button variant="primary" size="lg" fullWidth>Contact Us</Button>
                 </Link>
               </div>
             </div>

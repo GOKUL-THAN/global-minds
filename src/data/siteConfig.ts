@@ -1,27 +1,27 @@
 // ============================================================
-// GLOBAL MINDS ACADEMY — SITE CONFIGURATION
-// Real data sourced from globalmindsacademy.in
+// GLOBAL MINDS TECHNOLOGIES — SITE CONFIGURATION
+// Real data sourced from globalmindsacademy.in / globalmindstechnologies.com
 // ============================================================
 
 export const siteConfig = {
   // ── Brand ──────────────────────────────────────────────────
-  brandName: 'Global Minds Academy',
-  brandShortName: 'GMA',
+  brandName: 'Global Minds Technologies',
+  brandShortName: 'Global Minds',
   tagline: 'Build Skills Today for Tomorrow\'s Leaders',
-  subTagline: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
-  logoText: 'Global Minds Academy',
+  subTagline: 'AWS / Cloud, Data Science, AI & Machine Learning, Full Stack Development, Cyber Security, and Software & Automation Testing.',
+  logoText: 'Global Minds Technologies',
   logoUrl: '/logo.png',
   faviconUrl: '/logo.png',
   foundedYear: 2018,
 
   // ── Contact ────────────────────────────────────────────────
-  email: 'globalminds.learn@gmail.com',
-  supportEmail: 'support@globalmindsacademy.in',
-  admissionsEmail: 'admissions@globalmindsacademy.in',
+  email: 'connect@globalmindstechnologies.com',
+  supportEmail: 'connect@globalmindstechnologies.com',
+  admissionsEmail: 'connect@globalmindstechnologies.com',
   phone: '+91 95974 37333',
   phoneAlt: '+91 95974 37333',
   whatsapp: '+919597437333',
-  whatsappMessage: 'Hi, I want to know more about Global Minds Academy courses.',
+  whatsappMessage: 'Hi, I want to know more about Global Minds Technologies courses.',
 
   // ── Address ────────────────────────────────────────────────
   address: {
@@ -54,15 +54,16 @@ export const siteConfig = {
 
   // ── SEO Defaults ──────────────────────────────────────────
   seo: {
-    defaultTitle: 'Global Minds Academy | Build Skills. Own the Future.',
-    titleTemplate: '%s | Global Minds Academy',
-    defaultDescription: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Academy. 50+ hiring partners.',
+    defaultTitle: 'Global Minds Technologies | Build Skills. Own the Future.',
+    titleTemplate: '%s | Global Minds Technologies',
+    defaultDescription: 'Explore AWS / Cloud, Data Science, AI & Machine Learning, Full Stack Development, Cyber Security, and Software & Automation Testing at Global Minds Technologies. 50+ hiring partners.',
     defaultOgImage: 'https://globalmindsacademy.in/og-image.png',
     twitterHandle: '@globalmindsacad',
   },
 
   // ── Stats ──────────────────────────────────────────────────
   stats: [
+    { id: 's1', label: 'Students Placed', value: '1,000+', numericValue: 1000, suffix: '+', icon: 'users', description: 'Successful careers launched' },
     { id: 's2', label: 'Hiring Partners', value: '50+', numericValue: 50, suffix: '+', icon: 'briefcase', description: 'Top tech enterprises' },
   ],
 
@@ -112,7 +113,7 @@ export const siteConfig = {
     {
       icon: 'briefcase',
       title: '50+ Hiring Partners',
-      description: 'Global Minds Academy has 50+ hiring partners.',
+      description: 'Global Minds Technologies has 50+ hiring partners.',
     },
     {
       icon: 'layers',
@@ -122,14 +123,14 @@ export const siteConfig = {
     {
       icon: 'globe',
       title: 'Courses',
-      description: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
+      description: 'AWS / Cloud, Data Science, AI & Machine Learning, Full Stack Development, Cyber Security, and Software & Automation Testing.',
     },
   ],
 
   // ── Announcement Bar ───────────────────────────────────────
   announcementBar: {
     enabled: true,
-    message: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing. 50+ Hiring Partners.',
+    message: 'Explore AWS / Cloud, Data Science, AI & Machine Learning, Full Stack Development, Cyber Security, and Software & Automation Testing. 50+ Hiring Partners.',
     cta: 'Register Now',
     ctaHref: '/batch-schedule',
     dismissible: true,

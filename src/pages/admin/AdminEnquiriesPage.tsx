@@ -283,10 +283,24 @@ export default function AdminEnquiriesPage() {
         return result.enquiries;
       })
       .then(records => {
-        if (active) setEnquiries(records.length > 0 ? records : mockEnquiries);
+        let local: Enquiry[] = [];
+        try {
+          local = JSON.parse(localStorage.getItem('gma_local_enquiries') || '[]') as Enquiry[];
+        } catch {
+          // ignore
+        }
+        const merged = [...local, ...records];
+        if (active) setEnquiries(merged.length > 0 ? merged : mockEnquiries);
       })
       .catch(() => {
-        if (active) setEnquiries(mockEnquiries);
+        let local: Enquiry[] = [];
+        try {
+          local = JSON.parse(localStorage.getItem('gma_local_enquiries') || '[]') as Enquiry[];
+        } catch {
+          // ignore
+        }
+        const merged = [...local, ...mockEnquiries];
+        if (active) setEnquiries(merged);
       })
       .finally(() => {
         if (active) setLoading(false);
