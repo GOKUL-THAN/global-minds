@@ -55,7 +55,7 @@ export default function CookiePolicyPage() {
 
           <div className="rounded-xl border border-surface-200 bg-surface-50 p-4 text-sm space-y-1">
             <p><strong>Questions Regarding Cookies?</strong></p>
-            <p>Email: <a href="mailto:connect@globalmindstechnologies.com" className="text-brand-600 underline">connect@globalmindstechnologies.com</a></p>
+            <p>Email: <a href="mailto:globalminds.learn@gmail.com" className="text-brand-600 underline">globalminds.learn@gmail.com</a></p>
             <p>Global Minds Technologies, Perumbakkam, Chennai, Tamil Nadu – 600100</p>
           </div>
         </div>

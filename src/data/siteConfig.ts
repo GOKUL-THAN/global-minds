@@ -15,9 +15,9 @@ export const siteConfig = {
   foundedYear: 2018,
 
   // ── Contact ────────────────────────────────────────────────
-  email: 'connect@globalmindstechnologies.com',
-  supportEmail: 'connect@globalmindstechnologies.com',
-  admissionsEmail: 'connect@globalmindstechnologies.com',
+  email: 'globalminds.learn@gmail.com',
+  supportEmail: 'globalminds.learn@gmail.com',
+  admissionsEmail: 'globalminds.learn@gmail.com',
   phone: '+91 95974 37333',
   phoneAlt: '+91 95974 37333',
   whatsapp: '+919597437333',

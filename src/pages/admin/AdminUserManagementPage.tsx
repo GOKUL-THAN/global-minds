@@ -68,7 +68,7 @@ const DEFAULT_USERS: ManagedUser[] = [
     id: 'usr-1',
     first_name: 'Global Minds',
     last_name: 'Super Admin',
-    email: 'globalminds@gmail.com',
+    email: 'globalminds.learn@gmail.com',
     role: 'SUPER_ADMIN',
     is_active: 1,
     email_verified: 1,

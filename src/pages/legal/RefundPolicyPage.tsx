@@ -37,7 +37,7 @@ export default function RefundPolicyPage() {
 
           <h2 className="font-display font-bold text-xl text-surface-900">2. Refund Request Procedure</h2>
           <p className="text-sm leading-relaxed">
-            To initiate an eligible refund, please send an email from your registered email address to <a href="mailto:connect@globalmindstechnologies.com" className="text-brand-600 underline">connect@globalmindstechnologies.com</a> with the subject line <em>&ldquo;Refund Request - [Student ID] - [Course Name]&rdquo;</em>. Our admissions committee will review your request within 2 business days.
+            To initiate an eligible refund, please send an email from your registered email address to <a href="mailto:globalminds.learn@gmail.com" className="text-brand-600 underline">globalminds.learn@gmail.com</a> with the subject line <em>&ldquo;Refund Request - [Student ID] - [Course Name]&rdquo;</em>. Our admissions committee will review your request within 2 business days.
           </p>
 
           <h2 className="font-display font-bold text-xl text-surface-900">3. Non-Refundable Items & Exceptions</h2>
@@ -63,7 +63,7 @@ export default function RefundPolicyPage() {
 
           <div className="rounded-xl border border-surface-200 bg-surface-50 p-4 text-sm space-y-1">
             <p><strong>Admissions & Accounts Desk:</strong></p>
-            <p>Email: <a href="mailto:connect@globalmindstechnologies.com" className="text-brand-600 underline">connect@globalmindstechnologies.com</a></p>
+            <p>Email: <a href="mailto:globalminds.learn@gmail.com" className="text-brand-600 underline">globalminds.learn@gmail.com</a></p>
             <p>Phone: <a href="tel:+919597437333" className="text-brand-600 underline">+91 95974 37333</a></p>
             <p>Global Minds Technologies, Perumbakkam, Chennai, Tamil Nadu – 600100</p>
           </div>

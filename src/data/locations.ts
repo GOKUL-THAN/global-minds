@@ -9,7 +9,7 @@ export const locations: Location[] = [
     country: 'India',
     address: 'Nookampalayam Road, Perumbakkam, Chennai – 600 100, Tamil Nadu, India',
     phone: '+91 95974 37333',
-    email: 'connect@globalmindstechnologies.com',
+    email: 'globalminds.learn@gmail.com',
     mapUrl: 'https://maps.google.com',
     courses: [
       'aws-training',

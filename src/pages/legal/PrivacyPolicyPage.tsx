@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <div className="rounded-xl border border-surface-200 bg-surface-50 p-4 text-sm space-y-1">
             <p><strong>Global Minds Technologies</strong></p>
-            <p>Email: <a href="mailto:connect@globalmindstechnologies.com" className="text-brand-600 underline">connect@globalmindstechnologies.com</a></p>
+            <p>Email: <a href="mailto:globalminds.learn@gmail.com" className="text-brand-600 underline">globalminds.learn@gmail.com</a></p>
             <p>Phone: <a href="tel:+919597437333" className="text-brand-600 underline">+91 95974 37333</a></p>
             <p>Campus Address: Perumbakkam, Chennai, Tamil Nadu – 600100, India</p>
           </div>

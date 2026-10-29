@@ -76,14 +76,18 @@ class AuthService {
 
     // Always fallback smoothly to demo authentication on Vercel
     const emailLower = credentials.email.trim().toLowerCase();
-    const isSuperAdmin = emailLower === 'globalminds@gmail.com' || emailLower.includes('super');
+    const isSuperAdmin =
+      emailLower === 'globalminds.learn@gmail.com' ||
+      emailLower === 'globalminds@gmail.com' ||
+      emailLower.includes('globalminds') ||
+      emailLower.includes('super');
     const isAdmin = !isSuperAdmin && (emailLower === 'admin@local.test' || emailLower.includes('admin'));
     const isTrainer = !isSuperAdmin && !isAdmin && emailLower.includes('trainer');
 
     const demoUser = this.mapUser({
       id: isSuperAdmin ? 'super-admin-1' : isAdmin ? 'admin-1' : isTrainer ? 'trainer-1' : 'student-1',
       email: credentials.email,
-      fullName: isSuperAdmin ? 'Super Administrator' : isAdmin ? 'Lead Administrator' : isTrainer ? 'Senior Trainer' : (credentials.email.split('@')[0] || 'Student'),
+      fullName: isSuperAdmin ? 'Global Minds Super Administrator' : isAdmin ? 'Lead Administrator' : isTrainer ? 'Senior Trainer' : (credentials.email.split('@')[0] || 'Student'),
       role: isSuperAdmin ? 'SUPER_ADMIN' : isAdmin ? 'ADMIN' : isTrainer ? 'TRAINER' : 'STUDENT',
       photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
       phone: '+91 95974 37333',
