@@ -1,16 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://global-minds-academy.onrender.com/api/$1"
-    },
-    {
-      "source": "/health",
-      "destination": "https://global-minds-academy.onrender.com/health"
-    },
-    { "source": "/(.*)", "destination": "/index.html" }
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

@@ -73,17 +73,21 @@ class AuthService {
     const isAdmin = !isSuperAdmin && (emailLower === 'admin@local.test' || emailLower.includes('admin'));
     const isTrainer = !isSuperAdmin && !isAdmin && emailLower.includes('trainer');
 
-    const demoUser: User = {
+    const demoUser = this.mapUser({
       id: isSuperAdmin ? 'super-admin-1' : isAdmin ? 'admin-1' : isTrainer ? 'trainer-1' : 'student-1',
       email: credentials.email,
-      name: isSuperAdmin ? 'Super Administrator' : isAdmin ? 'Lead Administrator' : isTrainer ? 'Senior Trainer' : (credentials.email.split('@')[0] || 'Student'),
+      fullName: isSuperAdmin ? 'Super Administrator' : isAdmin ? 'Lead Administrator' : isTrainer ? 'Senior Trainer' : (credentials.email.split('@')[0] || 'Student'),
       role: isSuperAdmin ? 'SUPER_ADMIN' : isAdmin ? 'ADMIN' : isTrainer ? 'TRAINER' : 'STUDENT',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
       phone: '+91 95974 37333',
       city: 'Chennai',
       country: 'India',
       createdAt: new Date().toISOString(),
-    };
+      isActive: true,
+      emailVerified: true,
+      permissions: isSuperAdmin || isAdmin ? ['ALL'] : [],
+      enrolledCourses: ['aws-cloud-architect'],
+    });
 
     try {
       localStorage.setItem(DEMO_STORAGE_KEY, JSON.stringify(demoUser));

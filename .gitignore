@@ -25,3 +25,5 @@ WEBSITE GLOBALMINDS/demo1/server/data/*.sqlite-journal
 *.sqlite-journal
 server/data/*.sqlite
 server/data/*.sqlite-journal
+.vercel
+.env*
