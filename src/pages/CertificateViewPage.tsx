@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Award, Loader2, Printer } from 'lucide-react';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
@@ -47,7 +47,7 @@ export default function CertificateViewPage() {
         <SpotlightCard className={`border-8 bg-white p-8 text-center shadow-card sm:p-16 rounded-3xl ${certificate.valid ? 'border-brand-200' : 'border-red-200'}`}>
           <Award className={`mx-auto h-14 w-14 ${certificate.valid ? 'text-brand-600' : 'text-red-600'}`} />
           <p className="mt-6 text-sm font-bold uppercase tracking-[0.25em] text-surface-700">
-            <ShinyText text="Global Minds Academy" shinyColor="rgba(23, 108, 115, 0.9)" />
+            <ShinyText text="Global Minds Technologies" shinyColor="rgba(23, 108, 115, 0.9)" />
           </p>
           <h1 className="mt-5 font-display text-3xl font-bold text-surface-900 sm:text-5xl">Certificate of Achievement</h1>
           <p className="mt-8 text-surface-700 font-medium">This certifies that</p>

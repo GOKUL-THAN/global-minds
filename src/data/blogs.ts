@@ -1,4 +1,4 @@
-import type { BlogPost } from '../types';
+﻿import type { BlogPost } from '../types';
 
 // PLACEHOLDER blog content — replace with real articles
 export const blogPosts: BlogPost[] = [
@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-09-15',
     readTime: '8 min read',
     featured: true,
-    metaTitle: 'AWS Certification Roadmap 2026 | Global Minds Academy Blog',
+    metaTitle: 'AWS Certification Roadmap 2026 | Global Minds Technologies Blog',
     metaDescription: 'Complete guide to AWS certification paths and exam preparation for 2026.',
   },
   {
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-09-08',
     readTime: '5 min read',
     featured: false,
-    metaTitle: 'DevOps Engineer Salary 2026 | Global Minds Academy Blog',
+    metaTitle: 'DevOps Engineer Salary 2026 | Global Minds Technologies Blog',
     metaDescription: 'DevOps engineer salary trends for 2026 across experience levels and regions.',
   },
   {

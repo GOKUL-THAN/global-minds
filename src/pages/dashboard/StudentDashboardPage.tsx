@@ -133,7 +133,7 @@ export default function StudentDashboardPage() {
         <div className="container-xl py-4 flex flex-wrap items-center justify-between gap-3">
           <Link to="/" className="flex items-center gap-2 font-display font-bold text-surface-900">
             <GraduationCap className="w-6 h-6 text-brand-600" />
-            Global Minds Academy
+            Global Minds Technologies
           </Link>
           <div className="flex items-center gap-2">
             <button type="button" onClick={() => void refresh()} disabled={loading} className="btn-secondary btn flex items-center gap-2 text-sm">
@@ -217,7 +217,7 @@ export default function StudentDashboardPage() {
                 {course.thumbnail && <img src={course.thumbnail} alt="" className="h-16 w-24 rounded-lg object-cover" />}
                 <div className="min-w-0 flex-1"><Link to={`/courses/${course.slug}`} className="font-semibold text-brand-700 hover:underline">{course.title}</Link><p className="mt-1 line-clamp-2 text-sm text-surface-600 font-medium">{course.shortDescription || `Enrollment: ${course.status}`}</p><p className="mt-1 text-xs text-surface-600 font-medium">Enrolled {formatDate(course.enrolledAt)} · {course.status}</p></div>
               </li>
-            ))}</ul> : <p className="text-sm text-surface-600 font-medium">You do not have any course enrollments yet. Contact the academy if you think this is a mistake.</p>}
+            ))}</ul> : <p className="text-sm text-surface-600 font-medium">You do not have any course enrollments yet. Contact support if you think this is a mistake.</p>}
           </article>
 
           <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -79,7 +79,7 @@ export default function CorporateTrainingPage() {
       <section className="section">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <h2 className="display-md mb-4">Why Corporate Training with Global Minds Academy?</h2>
+            <h2 className="display-md mb-4">Why Corporate Training with Global Minds Technologies?</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {benefits.map(b => (
@@ -162,7 +162,7 @@ export default function CorporateTrainingPage() {
                       <option value="">Select mode</option>
                       <option value="Online">Online</option>
                       <option value="On-site">On-site at our premises</option>
-                      <option value="At Training Centre">At Global Minds Academy centre</option>
+                      <option value="At Training Centre">At Global Minds Technologies centre</option>
                       <option value="Hybrid">Hybrid</option>
                     </select>
                     {errors.trainingMode && <p className="form-error">{errors.trainingMode.message}</p>}

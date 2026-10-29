@@ -1,4 +1,4 @@
-import {
+﻿import {
   ArrowRight,
   Award,
   Briefcase,
@@ -191,7 +191,7 @@ const toneStyles: Record<string, { icon: string; card: string }> = {
 export default function PlacementPage() {
   usePageMeta({
     title: 'Placement Records & Hiring Partners',
-    description: 'Explore Global Minds Academy placement records, hiring partners, student success stories and career support.',
+    description: 'Explore Global Minds Technologies placement records, hiring partners, student success stories and career support.',
   });
 
   return (

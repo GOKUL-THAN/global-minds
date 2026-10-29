@@ -1,4 +1,4 @@
-# Global Minds Academy
+﻿# Global Minds Technologies
 
 **"Learn. Build. Certify. Grow Globally."**
 
@@ -280,7 +280,7 @@ npm run build:api     # Compile Express API with tsc → server/dist/
 | `/internships` | Internship listings |
 | `/internships/:slug` | Internship detail |
 | `/trainers` | Expert trainers |
-| `/about` | About Global Minds Academy |
+| `/about` | About Global Minds Technologies |
 | `/contact` | Contact form |
 | `/blog` | Blog listing |
 | `/blog/:slug` | Blog post detail |
@@ -583,4 +583,4 @@ New-Item -ItemType Directory -Path "server\data" -Force
 
 ---
 
-*Global Minds Academy — Replace placeholder content (prices, bios, testimonials, stats, phone numbers, legal text) with real information before public launch.*
+*Global Minds Technologies — Replace placeholder content (prices, bios, testimonials, stats, phone numbers, legal text) with real information before public launch.*

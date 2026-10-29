@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { FileText, Linkedin, Github, Star, ArrowRight, CheckCircle } from 'lucide-react';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
@@ -32,7 +32,7 @@ const sections = [
 export default function ResumePrepPage() {
   usePageMeta({
     title: 'Resume Preparation & ATS Optimisation',
-    description: 'Build an ATS-friendly, recruiter-ready IT resume with Global Minds Academy career support — tailored to your target role.',
+    description: 'Build an ATS-friendly, recruiter-ready IT resume with Global Minds Technologies career support — tailored to your target role.',
   });
 
   return (
@@ -132,7 +132,7 @@ export default function ResumePrepPage() {
                     </div>
                     <div>
                       <p className="font-bold text-white mb-1">PROFESSIONAL SUMMARY</p>
-                      <p className="leading-relaxed text-surface-200">Cloud-native Software Engineer trained at Global Minds Academy with hands-on mastery in AWS architecture, Spring Boot microservices, and React. Architected 3 production-grade capstones with 99.9% uptime SLA.</p>
+                      <p className="leading-relaxed text-surface-200">Cloud-native Software Engineer trained at Global Minds Technologies with hands-on mastery in AWS architecture, Spring Boot microservices, and React. Architected 3 production-grade capstones with 99.9% uptime SLA.</p>
                     </div>
                     <div>
                       <p className="font-bold text-white mb-1">CORE COMPETENCIES</p>

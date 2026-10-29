@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 import { HomeContactForm } from './HomeContactForm';
@@ -9,7 +9,7 @@ export function HomeContactSection() {
   const address = `${siteConfig.address.line1}, ${siteConfig.address.line2}`;
 
   return (
-    <section className="home-contact section" aria-label="Contact Global Minds Academy">
+    <section className="home-contact section" aria-label="Contact Global Minds Technologies">
       <div className="container-xl">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>

@@ -15,7 +15,7 @@ import { ShinyText } from '../../components/ui/ShinyText';
 // Demo student data — replace with real API data when backend is connected
 const mockStudent = {
   name: 'Demo Student',
-  email: 'demo@globalacademy.com',
+  email: 'demo@globalmindstechnologies.com',
   phone: '+91 99999 00000',
   country: 'India',
   city: 'Chennai',
@@ -431,7 +431,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <p className="font-display font-bold text-sm text-surface-900">My Dashboard</p>
-            <p className="text-xs text-surface-600 font-medium">Global Minds Academy</p>
+            <p className="text-xs text-surface-600 font-medium">Global Minds Technologies</p>
           </div>
         </div>
         <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-surface-600 hover:text-surface-950">

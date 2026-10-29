@@ -8,9 +8,9 @@ import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { TiltedCard } from '../components/ui/TiltedCard';
 
 const certTypes = [
-  { icon: BadgeCheck, title: 'Course Completion Certificate', desc: 'Issued upon completing any Global Minds Academy course or master program.', color: 'bg-brand-50 text-brand-600', href: '/courses' },
+  { icon: BadgeCheck, title: 'Course Completion Certificate', desc: 'Issued upon completing any Global Minds Technologies course or master program.', color: 'bg-brand-50 text-brand-600', href: '/courses' },
   { icon: Star, title: 'Project Certificate', desc: 'Awarded for successfully completing capstone and real-world projects.', color: 'bg-purple-50 text-purple-600', href: '/live-projects' },
-  { icon: Award, title: 'Internship Certificate', desc: 'Certificate for completing an internship through Global Minds Academy\'s internship program.', color: 'bg-green-50 text-green-600', href: '/internships' },
+  { icon: Award, title: 'Internship Certificate', desc: 'Certificate for completing an internship through Global Minds Technologies\'s internship program.', color: 'bg-green-50 text-green-600', href: '/internships' },
   { icon: CheckCircle, title: 'Skill Certification', desc: 'Skill-specific certificates for assessed competency in a technology area.', color: 'bg-accent-50 text-accent-600', href: '/skill-assessment' },
 ];
 
@@ -59,9 +59,9 @@ export default function CertificationsPage() {
 
       <section className="section">
         <div className="container-xl">
-          <h2 className="display-md text-center mb-4">Global Minds Academy Certificates</h2>
+          <h2 className="display-md text-center mb-4">Global Minds Technologies Certificates</h2>
           <p className="text-surface-600 font-medium text-center mb-12 max-w-xl mx-auto">
-            Every learner who completes a Global Minds Academy course receives a certificate. Additional certificates are available for projects and internships.
+            Every learner who completes a Global Minds Technologies course receives a certificate. Additional certificates are available for projects and internships.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certTypes.map(cert => (
@@ -85,7 +85,7 @@ export default function CertificationsPage() {
         <div className="container-xl">
           <h2 className="display-md text-center mb-4">Vendor Certification Preparation</h2>
           <p className="text-surface-600 font-medium text-center mb-12 max-w-xl mx-auto">
-            Explore preparation for these official vendor credentials. Select a card to view the related academy course; vendor exams and credentials are provided by their respective organisations.
+            Explore preparation for these official vendor credentials. Select a card to view the related training course; vendor exams and credentials are provided by their respective organisations.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {vendorCerts.map(cert => (
@@ -118,7 +118,7 @@ export default function CertificationsPage() {
       </section>
 
       <CTASection
-        title="Get Certified with Global Minds Academy"
+        title="Get Certified with Global Minds Technologies"
         subtitle="Start your certification journey today with expert-led training and practical projects."
         primaryLabel="Browse Courses"
         primaryHref="/courses"

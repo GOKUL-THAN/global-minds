@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Calendar, Clock, Monitor, MapPin, Users, ExternalLink, ChevronDown } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -72,7 +72,7 @@ const defaultEvents: Event[] = [
     date: '2026-10-24',
     time: '9:00 AM IST (48 hrs)',
     duration: '48 Hours',
-    speaker: 'Global Minds Academy Mentors',
+    speaker: 'Global Minds Technologies Mentors',
     speakerRole: 'Industry Expert Panel',
     mode: 'Hybrid',
     seats: 100,
@@ -178,7 +178,7 @@ export default function EventsPage() {
 
   usePageMeta({
     title: 'Events, Webinars & Workshops',
-    description: 'Attend free and paid webinars, workshops, hackathons and seminars at Global Minds Academy. Build skills, network with experts and accelerate your career.',
+    description: 'Attend free and paid webinars, workshops, hackathons and seminars at Global Minds Technologies. Build skills, network with experts and accelerate your career.',
   });
 
   const [filter, setFilter] = useState<EventType>('All');

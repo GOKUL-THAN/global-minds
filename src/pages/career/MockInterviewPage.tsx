@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Mic, Video, CheckCircle, Star, Clock, Calendar } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -59,7 +59,7 @@ export default function MockInterviewPage() {
 
   usePageMeta({
     title: 'Mock Interview Booking',
-    description: 'Book a realistic mock interview session with Global Minds Academy career experts — technical, HR or full interview loop with detailed feedback.',
+    description: 'Book a realistic mock interview session with Global Minds Technologies career experts — technical, HR or full interview loop with detailed feedback.',
   });
 
   const onSubmit = async (data: FormData) => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Gift, Copy, CheckCircle, Share2, Zap, ArrowRight, Trophy } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -90,7 +90,7 @@ const leaderboard = [
 const faqs = [
   {
     q: 'Who can refer?',
-    a: 'Anyone who has enrolled in at least one paid course at Global Minds Academy can join the Refer & Earn programme.',
+    a: 'Anyone who has enrolled in at least one paid course at Global Minds Technologies can join the Refer & Earn programme.',
   },
   {
     q: 'Is there a limit on how many people I can refer?',
@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: 'When do I receive my reward?',
-    a: 'Your ₹3,000+ reward is credited to your Global Minds Academy wallet within 7 business days after your referred friend completes payment.',
+    a: 'Your ₹3,000+ reward is credited to your Global Minds Technologies wallet within 7 business days after your referred friend completes payment.',
   },
   {
     q: 'How can I use my wallet balance?',
@@ -119,21 +119,21 @@ interface ReferForm { name: string; friendName: string; friendEmail: string; fri
 export default function ReferEarnPage() {
   usePageMeta({
     title: 'Refer & Earn',
-    description: 'Refer a friend to Global Minds Academy and earn up to ₹7,000 per referral. Your friend gets a discount too. Join the Refer & Earn programme today.',
+    description: 'Refer a friend to Global Minds Technologies and earn up to ₹7,000 per referral. Your friend gets a discount too. Join the Refer & Earn programme today.',
   });
 
   const referralCode = 'GA-DEMO-2026';
   const referralUrl = new URL('/register', siteConfig.siteUrl);
   referralUrl.searchParams.set('ref', referralCode);
   const referralLink = referralUrl.toString();
-  const invitationSubject = 'Join Global Minds Academy';
+  const invitationSubject = 'Join Global Minds Technologies';
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [form, setForm] = useState<ReferForm>({ name: '', friendName: '', friendEmail: '', friendPhone: '', course: '' });
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [selectedStep, setSelectedStep] = useState<number | null>(0);
-  const invitationBody = `Hi ${form.friendName || 'there'},\n\nI thought you might be interested in learning with Global Minds Academy. Use my sample referral link: ${referralLink}`;
+  const invitationBody = `Hi ${form.friendName || 'there'},\n\nI thought you might be interested in learning with Global Minds Technologies. Use my sample referral link: ${referralLink}`;
   const invitationEmailUrl = `mailto:${encodeURIComponent(form.friendEmail)}?subject=${encodeURIComponent(invitationSubject)}&body=${encodeURIComponent(invitationBody)}`;
 
   const handleCopy = async () => {
@@ -147,12 +147,12 @@ export default function ReferEarnPage() {
     }
   };
 
-  const shareText = `Join Global Minds Academy using my referral link: ${referralLink}`;
+  const shareText = `Join Global Minds Technologies using my referral link: ${referralLink}`;
   const shareLinks = [
     { channel: 'WhatsApp', href: `https://wa.me/?text=${encodeURIComponent(shareText)}` },
     { channel: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(referralLink)}` },
-    { channel: 'Email', href: `mailto:?subject=${encodeURIComponent('Join Global Minds Academy')}&body=${encodeURIComponent(shareText)}` },
-    { channel: 'Telegram', href: `https://t.me/share/url?url=${encodeURIComponent(referralLink)}&text=${encodeURIComponent('Join Global Minds Academy')}` },
+    { channel: 'Email', href: `mailto:?subject=${encodeURIComponent('Join Global Minds Technologies')}&body=${encodeURIComponent(shareText)}` },
+    { channel: 'Telegram', href: `https://t.me/share/url?url=${encodeURIComponent(referralLink)}&text=${encodeURIComponent('Join Global Minds Technologies')}` },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -189,7 +189,7 @@ export default function ReferEarnPage() {
                 />
               </h1>
               <p className="page-hero-desc text-xl mb-8 max-w-xl leading-relaxed">
-                Share Global Minds Academy with your friends. When they enroll, you earn ₹3,000 – ₹7,000 in your wallet and they get a discount on their course fee.
+                Share Global Minds Technologies with your friends. When they enroll, you earn ₹3,000 – ₹7,000 in your wallet and they get a discount on their course fee.
               </p>
 
               {/* Referral link card */}
@@ -253,7 +253,7 @@ export default function ReferEarnPage() {
           <div className="text-center mb-12">
             <span className="inline-block text-sm font-bold text-brand-700 uppercase tracking-wider mb-3">Simple Process</span>
             <h2 className="display-md mb-4">How It Works</h2>
-            <p className="text-surface-600 font-medium max-w-xl mx-auto">Four easy steps to start earning rewards for every friend you bring to Global Minds Academy.</p>
+            <p className="text-surface-600 font-medium max-w-xl mx-auto">Four easy steps to start earning rewards for every friend you bring to Global Minds Technologies.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {howItWorks.map((step, idx) => {
@@ -503,7 +503,7 @@ export default function ReferEarnPage() {
                 <ul className="space-y-2">
                   {[
                     'Free enrollment in any 1 course of your choice',
-                    'Global Minds Academy Alumni badge & certificate',
+                    'Global Minds Technologies Alumni badge & certificate',
                     'Priority support & dedicated account manager',
                     'Early access to new courses and events',
                   ].map(perk => (
@@ -549,7 +549,7 @@ export default function ReferEarnPage() {
       {/* Terms note */}
       <div className="container-xl py-4">
         <p className="text-xs text-surface-400 text-center">
-          * Refer & Earn programme terms apply. Rewards subject to referral verification. Global Minds Academy reserves the right to modify or discontinue the programme at any time.
+          * Refer & Earn programme terms apply. Rewards subject to referral verification. Global Minds Technologies reserves the right to modify or discontinue the programme at any time.
         </p>
       </div>
 

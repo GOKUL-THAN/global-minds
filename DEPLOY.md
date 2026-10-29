@@ -1,4 +1,4 @@
-# Deploy Guide — Global Minds Academy
+﻿# Deploy Guide — Global Minds Technologies
 
 The Vercel project serves the frontend and proxies `/api/*` to the Express API
 on Render. Render runs the API with PostgreSQL; its blueprint is configured at
@@ -50,7 +50,7 @@ git push origin main
 | `ADMIN_PASSWORD` | Min 14 characters — the password for `admin@local.test` |
 | `SUPER_ADMIN_PASSWORD` | Min 14 characters, **different** from ADMIN_PASSWORD — password for `globalminds@gmail.com` |
 | `RESEND_API_KEY` | Optional — only if you want email verification / password recovery |
-| `EMAIL_FROM` | Optional — e.g. `Global Minds Academy <accounts@globalmindsacademy.in>` |
+| `EMAIL_FROM` | Optional — e.g. `Global Minds Technologies <accounts@globalmindsacademy.in>` |
 
 6. Click **Apply**. Render provisions the database and deploys the web service.
    First build takes ~3–5 minutes.

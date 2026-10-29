@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Magnetic } from '../ui/Magnetic';
@@ -20,7 +20,7 @@ const trendingDomains = [
 export function HeroSection() {
   return (
     <>
-      <section className="home-hero relative overflow-hidden bg-white text-surface-900" aria-label="Global Minds Academy">
+      <section className="home-hero relative overflow-hidden bg-white text-surface-900" aria-label="Global Minds Technologies">
         <Particles className="opacity-45" quantity={40} color="#0d9488" />
         <div className="home-hero-pattern" aria-hidden="true" />
         <div className="home-hero-orb home-hero-orb-left" aria-hidden="true" />

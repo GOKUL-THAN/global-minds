@@ -1,4 +1,4 @@
-import { Award, Briefcase, MapPin, MonitorPlay } from 'lucide-react';
+﻿import { Award, Briefcase, MapPin, MonitorPlay } from 'lucide-react';
 import { useIntersection } from '../../hooks/useIntersection';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CountUp } from '../ui/CountUp';
@@ -20,7 +20,7 @@ export function StatsSection() {
     <section
       ref={ref as React.RefObject<HTMLElement>}
       className="home-stats section relative overflow-hidden"
-      aria-label="Global Minds Academy statistics"
+      aria-label="Global Minds Technologies statistics"
     >
       <WaveBackground className="opacity-45" strokeColor="rgba(13, 148, 136, 0.16)" />
       <div className="container-xl relative z-10">

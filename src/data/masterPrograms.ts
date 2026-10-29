@@ -1,11 +1,11 @@
-import type { MasterProgram } from '../types';
+﻿import type { MasterProgram } from '../types';
 
 // PLACEHOLDER master program data — replace with real content
 const masterProgramData: MasterProgram[] = [
   {
     id: 'mp1',
     slug: 'freshers-master-program',
-    title: 'Global Minds Academy Freshers Master Program',
+    title: 'Global Minds Technologies Freshers Master Program',
     tagline: 'Your Complete IT Career Launch Pad',
     shortDescription: 'A comprehensive program for fresh graduates — programming, web fundamentals, software testing, cloud basics, DevOps, aptitude and placement support.',
     longDescription: 'The Freshers Master Program is designed to transform fresh graduates and career starters into industry-ready IT professionals. It covers programming fundamentals, web development, software testing, cloud basics, DevOps, communication skills, aptitude, resume preparation and mock interviews. PLACEHOLDER — to be customised.',
@@ -28,7 +28,7 @@ const masterProgramData: MasterProgram[] = [
     skills: ['Python/Java', 'Web Development', 'SQL', 'Git', 'Software Testing', 'Cloud Basics', 'DevOps Basics', 'Communication', 'Problem Solving'],
     tools: ['Python/Java', 'MySQL', 'Git', 'JIRA', 'AWS', 'Docker', 'Jenkins', 'VS Code'],
     projects: 2,
-    certification: 'Global Minds Academy Freshers Program Certificate',
+    certification: 'Global Minds Technologies Freshers Program Certificate',
     careerOutcomes: ['Junior Developer', 'QA Engineer', 'Cloud Support Associate', 'Technical Support Engineer'],
     jobRoles: ['Junior Software Developer', 'QA Engineer', 'Technical Support', 'Cloud Support'],
     targetAudience: ['Fresh graduates (any stream)', 'Career starters', 'Non-IT professionals entering technology', 'Students in final year'],
@@ -73,7 +73,7 @@ const masterProgramData: MasterProgram[] = [
     skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'MongoDB', 'PostgreSQL', 'REST APIs', 'Docker', 'AWS', 'Git'],
     tools: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Docker', 'AWS', 'Git', 'GitHub'],
     projects: 3,
-    certification: 'Global Minds Academy Full Stack Developer Certificate',
+    certification: 'Global Minds Technologies Full Stack Developer Certificate',
     careerOutcomes: ['Full Stack Developer', 'React Developer', 'Node.js Developer', 'MERN Stack Developer', 'Web Developer'],
     jobRoles: ['Full Stack Developer', 'Frontend Developer', 'Backend Developer', 'MERN Developer'],
     targetAudience: ['Beginners wanting web development career', 'CS students', 'Developers wanting to go full stack', 'Entrepreneurs'],
@@ -118,7 +118,7 @@ const masterProgramData: MasterProgram[] = [
     skills: ['Python', 'Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'LLMs', 'LangChain', 'MLOps', 'PyTorch', 'TensorFlow'],
     tools: ['Python', 'Jupyter', 'Scikit-learn', 'TensorFlow', 'PyTorch', 'HuggingFace', 'LangChain', 'OpenCV', 'Docker', 'AWS SageMaker'],
     projects: 4,
-    certification: 'Global Minds Academy AI & ML Master Certificate',
+    certification: 'Global Minds Technologies AI & ML Master Certificate',
     careerOutcomes: ['AI Engineer', 'ML Engineer', 'Data Scientist', 'NLP Engineer', 'GenAI Developer', 'Computer Vision Engineer'],
     jobRoles: ['AI Engineer', 'ML Engineer', 'Data Scientist', 'NLP Engineer', 'GenAI Developer'],
     targetAudience: ['Fresh graduates', 'Software developers pivoting to AI', 'Data analysts', 'Professionals wanting AI skills'],
@@ -146,7 +146,7 @@ const masterProgramData: MasterProgram[] = [
     title: 'Data Science & Business Intelligence Master Program',
     tagline: 'From Raw Data to Business Decisions and AI Insights',
     shortDescription: 'Comprehensive program combining data science, analytics, BI tools and ML — Python, SQL, Power BI, Tableau, machine learning and data storytelling.',
-    longDescription: 'The Data Science & Business Intelligence Master Program is the most complete data career program at Global Minds Academy. It bridges the gap between BI reporting and AI-powered analytics, equipping you with Python, SQL, Power BI, Tableau, machine learning, and the ability to communicate data insights to business stakeholders.',
+    longDescription: 'The Data Science & Business Intelligence Master Program is the most complete data career program at Global Minds Technologies. It bridges the gap between BI reporting and AI-powered analytics, equipping you with Python, SQL, Power BI, Tableau, machine learning, and the ability to communicate data insights to business stakeholders.',
     duration: '4 Months',
     totalHours: 120,
     level: 'Beginner',
@@ -165,7 +165,7 @@ const masterProgramData: MasterProgram[] = [
     skills: ['Python', 'SQL', 'Power BI', 'Tableau', 'DAX', 'Machine Learning', 'ETL', 'Data Modelling', 'Data Visualisation', 'Statistics'],
     tools: ['Python', 'Jupyter', 'SQL Server', 'Power BI', 'Tableau', 'Scikit-learn', 'Excel', 'Azure Data Factory'],
     projects: 4,
-    certification: 'Global Minds Academy Data Science & BI Master Certificate',
+    certification: 'Global Minds Technologies Data Science & BI Master Certificate',
     careerOutcomes: ['Data Scientist', 'BI Developer', 'Data Analyst', 'Power BI Developer', 'ML Analyst', 'Business Analyst'],
     jobRoles: ['Data Scientist', 'BI Developer', 'Data Analyst', 'Power BI Developer', 'Reporting Analyst'],
     targetAudience: ['Fresh graduates', 'Finance and analytics professionals', 'Report developers', 'Business analysts', 'Developers pivoting to data'],
@@ -211,7 +211,7 @@ const masterProgramData: MasterProgram[] = [
     skills: ['Manual Testing', 'Selenium', 'TestNG', 'API Testing', 'JMeter', 'Postman', 'Jenkins', 'Cypress', 'Java for automation'],
     tools: ['Selenium', 'TestNG', 'Postman', 'JIRA', 'JMeter', 'Jenkins', 'Cypress', 'Maven'],
     projects: 3,
-    certification: 'Global Minds Academy Software Testing Master Certificate + ISTQB Guidance',
+    certification: 'Global Minds Technologies Software Testing Master Certificate + ISTQB Guidance',
     careerOutcomes: ['QA Engineer', 'Test Automation Engineer', 'SDET', 'Performance Test Engineer', 'QA Lead'],
     jobRoles: ['QA Engineer', 'Test Automation Engineer', 'SDET', 'Performance Tester'],
     targetAudience: ['Fresh graduates', 'Manual testers upgrading skills', 'Developers wanting QA skills', 'Career switchers'],

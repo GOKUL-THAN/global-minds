@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+﻿import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, Tag, ArrowLeft, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../../data/blogs';
 import { formatDate } from '../../utils/formatters';
@@ -95,7 +95,7 @@ export default function BlogDetailPage() {
             The content above is a placeholder and will be replaced with the full, real article text.
           </p>
           <p className="mt-4">
-            Stay tuned for more insights from the Global Minds Academy blog — covering cloud computing, DevOps, AI, 
+            Stay tuned for more insights from the Global Minds Technologies blog — covering cloud computing, DevOps, AI, 
             data science, software testing, career guidance and much more.
           </p>
         </article>
@@ -124,7 +124,7 @@ export default function BlogDetailPage() {
             <p className="font-display font-bold text-surface-900 text-lg mb-1">{post.author.name}</p>
             <p className="text-brand-700 text-sm font-semibold mb-2">{post.author.role}</p>
             <p className="text-surface-600 text-sm font-medium leading-relaxed">
-              Expert instructor at Global Minds Academy. Placeholder author bio — to be updated with real profile information.
+              Expert instructor at Global Minds Technologies. Placeholder author bio — to be updated with real profile information.
             </p>
           </div>
         </div>

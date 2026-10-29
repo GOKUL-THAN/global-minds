@@ -527,7 +527,7 @@ export default function AdminOperationalPage() {
       <header className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold mb-2">
-            <ShinyText text="Academy Operational Data" shinyColor="rgba(23, 108, 115, 0.9)" />
+            <ShinyText text="Enterprise Operational Data" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <h1 className="font-display text-2xl font-bold text-surface-900">{config.title}</h1>
           <p className="mt-1 text-sm text-surface-500">{config.description}</p>

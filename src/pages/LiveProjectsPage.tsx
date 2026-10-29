@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { Code2, Star, Trophy, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
@@ -201,7 +201,7 @@ export default function LiveProjectsPage() {
 
   usePageMeta({
     title: 'Live Industry Projects',
-    description: 'Work on real-world live projects at Global Minds Academy. Build your portfolio with full-stack, DevOps, data science and testing projects that impress employers.',
+    description: 'Work on real-world live projects at Global Minds Technologies. Build your portfolio with full-stack, DevOps, data science and testing projects that impress employers.',
   });
 
   return (

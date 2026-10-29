@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+﻿import { useRef, useState } from 'react';
 import { CheckCircle, Calendar, Clock, Users, Monitor, Play, Loader2 } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -49,7 +49,7 @@ interface FormData {
 export default function DemoClassPage() {
   usePageMeta({
     title: 'Book a Free Demo Class',
-    description: 'Book a free demo class at Global Minds Academy. Experience our teaching style, meet your trainer, and ask questions before enrolling in any course.',
+    description: 'Book a free demo class at Global Minds Technologies. Experience our teaching style, meet your trainer, and ask questions before enrolling in any course.',
   });
 
   const [submitted, setSubmitted] = useState(false);

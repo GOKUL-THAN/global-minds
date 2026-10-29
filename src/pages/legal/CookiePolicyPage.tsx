@@ -1,4 +1,4 @@
-import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+﻿import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 
@@ -29,7 +29,7 @@ export default function CookiePolicyPage() {
           <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-sm">
             <strong>Note:</strong> Placeholder cookie policy. Must be reviewed by legal counsel before publication.
           </div>
-          <p className="text-sm leading-relaxed">Global Minds Academy uses cookies and similar technologies to enhance your experience on our website. [PLACEHOLDER — complete cookie policy details required]</p>
+          <p className="text-sm leading-relaxed">Global Minds Technologies uses cookies and similar technologies to enhance your experience on our website. [PLACEHOLDER — complete cookie policy details required]</p>
           <h2 className="font-display font-bold text-xl">Types of Cookies We Use</h2>
           <ul className="text-sm space-y-2">
             <li><strong>Essential cookies:</strong> Required for basic website functionality. [PLACEHOLDER]</li>

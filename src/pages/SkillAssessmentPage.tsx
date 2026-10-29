@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { CheckCircle, XCircle, RotateCcw, TrendingUp, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
@@ -151,7 +151,7 @@ function CourseRecommendation({ topicId, score, total }: { topicId: string; scor
 export default function SkillAssessmentPage() {
   usePageMeta({
     title: 'Free Skill Assessment Quiz',
-    description: 'Test your IT knowledge with Global Minds Academy\'s free skill assessment quizzes. Get instant results and course recommendations.',
+    description: 'Test your IT knowledge with Global Minds Technologies\'s free skill assessment quizzes. Get instant results and course recommendations.',
   });
 
   const [state, setState] = useState<QuizState>('select');

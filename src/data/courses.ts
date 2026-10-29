@@ -1,8 +1,8 @@
-import type { Course } from '../types';
+﻿import type { Course } from '../types';
 import { instructors } from './instructors';
 
 // ============================================================
-// Global Minds Academy — COURSE DATA
+// Global Minds Technologies — COURSE DATA
 // Sourced from https://globalmindsacademy.in/courses API
 // ============================================================
 
@@ -16,7 +16,7 @@ const defaultBatches = [
 const defaultFAQs = [
   { id: 'f1', question: 'Who is this course for?', answer: 'This course is designed for anyone looking to build practical skills in this technology — from fresh graduates to working professionals looking to upskill.' },
   { id: 'f2', question: 'Do I need prior experience?', answer: 'No prior experience is required for the beginner tracks. Intermediate and advanced courses do have prerequisites listed above.' },
-  { id: 'f3', question: 'Is there a certificate upon completion?', answer: 'Yes, Global Minds Academy provides a course completion certificate recognised by industry.' },
+  { id: 'f3', question: 'Is there a certificate upon completion?', answer: 'Yes, Global Minds Technologies provides a course completion certificate recognised by industry.' },
   { id: 'f4', question: 'What is the refund policy?', answer: 'Please refer to our refund policy page for full details.' },
   { id: 'f5', question: 'Is placement support available?', answer: 'Yes, our career team provides resume guidance, mock interviews and job search assistance.' },
 ];
@@ -88,8 +88,8 @@ export const courses: Course[] = [
     whoShouldJoin: ['Fresh graduates targeting data roles', 'Business analysts wanting to upskill in Python & ML', 'Professionals moving into data science from other fields', 'Entrepreneurs seeking data-driven decision-making skills'],
     learningObjectives: ['Master Python for end-to-end data analysis', 'Apply statistics and probability to real datasets', 'Build supervised and unsupervised ML models', 'Visualise data effectively for business communication', 'Complete a real-world data science capstone project'],
     tags: ['data-science', 'python', 'machine-learning', 'data-analysis', 'statistics'],
-    metaTitle: 'Data Science Course — Python, ML & Analytics | Global Minds Academy',
-    metaDescription: 'Comprehensive Data Science training with Python, Pandas, Machine Learning and Power BI. Certified by Global Minds Academy.',
+    metaTitle: 'Data Science Course — Python, ML & Analytics | Global Minds Technologies',
+    metaDescription: 'Comprehensive Data Science training with Python, Pandas, Machine Learning and Power BI. Certified by Global Minds Technologies.',
   },
 
   // ── 3. Machine Learning ──────────────────────────────────────
@@ -156,8 +156,8 @@ export const courses: Course[] = [
     whoShouldJoin: ['Data scientists looking to deepen ML expertise', 'Software engineers transitioning into AI/ML', 'Researchers applying ML to scientific problems', 'Professionals preparing for ML engineer roles'],
     learningObjectives: ['Implement core supervised and unsupervised ML algorithms from scratch', 'Build CNN and RNN models for vision and language tasks', 'Evaluate models rigorously and avoid common pitfalls', 'Deploy a trained model to production using AWS SageMaker', 'Understand MLOps principles for model lifecycle management'],
     tags: ['machine-learning', 'python', 'deep-learning', 'neural-networks', 'ai'],
-    metaTitle: 'Machine Learning Course — Deep Learning, NLP, CNN | Global Minds Academy',
-    metaDescription: 'Deep dive into Machine Learning with Python, TensorFlow and AWS SageMaker. Industry-recognised certification from Global Minds Academy.',
+    metaTitle: 'Machine Learning Course — Deep Learning, NLP, CNN | Global Minds Technologies',
+    metaDescription: 'Deep dive into Machine Learning with Python, TensorFlow and AWS SageMaker. Industry-recognised certification from Global Minds Technologies.',
   },
 
   // ── 4. Software & Automation Testing (Unified) ─────────────
@@ -413,8 +413,8 @@ export const courses: Course[] = [
     whoShouldJoin: ['IT professionals moving into cloud computing', 'Developers wanting to deploy on AWS', 'System administrators modernising to cloud ops', 'Students preparing for AWS certifications'],
     learningObjectives: ['Navigate and configure core AWS services confidently', 'Design secure, scalable VPC network architectures', 'Deploy serverless applications using Lambda and API Gateway', 'Provision infrastructure with CloudFormation', 'Prepare for the AWS Cloud Practitioner certification'],
     tags: ['aws', 'cloud', 'ec2', 's3', 'lambda', 'cloud-computing', 'certification'],
-    metaTitle: 'AWS / Cloud Course — EC2, S3, Lambda, VPC | Global Minds Academy',
-    metaDescription: 'Hands-on AWS training covering EC2, S3, Lambda, VPC and certification prep. Start your cloud career with Global Minds Academy.',
+    metaTitle: 'AWS / Cloud Course — EC2, S3, Lambda, VPC | Global Minds Technologies',
+    metaDescription: 'Hands-on AWS training covering EC2, S3, Lambda, VPC and certification prep. Start your cloud career with Global Minds Technologies.',
   },
 
   // ── 7. Generative AI ─────────────────────────────────────────
@@ -444,7 +444,7 @@ export const courses: Course[] = [
     skills: ['Prompt Engineering', 'LangChain', 'RAG', 'OpenAI API', 'HuggingFace', 'AI Agents', 'Vector Databases', 'Fine-tuning'],
     tools: ['Python', 'LangChain', 'OpenAI API', 'HuggingFace', 'ChromaDB', 'FastAPI'],
     projects: ['RAG-powered chatbot', 'AI agent with tool use', 'Fine-tuned domain model'],
-    certification: 'Global Minds Academy Generative AI Certificate',
+    certification: 'Global Minds Technologies Generative AI Certificate',
     careerOutcomes: ['AI Engineer', 'GenAI Developer', 'ML Engineer', 'Prompt Engineer', 'AI Solutions Architect'],
     jobRoles: ['AI Engineer', 'GenAI Developer', 'LLM Engineer', 'Prompt Engineer'],
     placementSupport: true,
@@ -470,8 +470,8 @@ export const courses: Course[] = [
     whoShouldJoin: ['Python developers', 'ML engineers', 'Data scientists', 'Software developers interested in AI'],
     learningObjectives: ['Build LLM-powered apps', 'Design RAG pipelines', 'Create AI agents with LangChain', 'Fine-tune open-source models'],
     tags: ['Generative AI', 'LLMs', 'LangChain', 'RAG', 'OpenAI', 'HuggingFace', 'Prompt Engineering'],
-    metaTitle: 'Generative AI Course — LLMs, RAG, LangChain & OpenAI | Global Minds Academy',
-    metaDescription: 'Master Generative AI with LLMs, prompt engineering, RAG, LangChain and AI agents. Build production-ready AI apps at Global Minds Academy.',
+    metaTitle: 'Generative AI Course — LLMs, RAG, LangChain & OpenAI | Global Minds Technologies',
+    metaDescription: 'Master Generative AI with LLMs, prompt engineering, RAG, LangChain and AI agents. Build production-ready AI apps at Global Minds Technologies.',
   },
 
 
@@ -543,8 +543,8 @@ export const courses: Course[] = [
     whoShouldJoin: ['Complete beginners who want to become developers', 'Front-end developers expanding to the back-end', 'Back-end developers learning modern front-end frameworks', 'Entrepreneurs wanting to build their own web products'],
     learningObjectives: ['Build responsive front-end UIs with React', 'Design and implement RESTful APIs with Node.js and Express', 'Model and query data with MongoDB and PostgreSQL', 'Secure web applications with JWT and OAuth 2.0', 'Deploy full stack applications to AWS using Docker and CI/CD'],
     tags: ['full-stack', 'react', 'nodejs', 'javascript', 'mongodb', 'web-development'],
-    metaTitle: 'Full Stack Development Course — React, Node.js, MongoDB | Global Minds Academy',
-    metaDescription: 'Become a job-ready full stack developer with React, Node.js, MongoDB and AWS. 6-month certified programme at Global Minds Academy.',
+    metaTitle: 'Full Stack Development Course — React, Node.js, MongoDB | Global Minds Technologies',
+    metaDescription: 'Become a job-ready full stack developer with React, Node.js, MongoDB and AWS. 6-month certified programme at Global Minds Technologies.',
   },
 
   // ── 9. Cyber Security ────────────────────────────────────────

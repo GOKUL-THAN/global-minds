@@ -1,4 +1,4 @@
-import { FileText, Users, Mic, BookOpen, Linkedin, Github, Target, CheckCircle } from 'lucide-react';
+﻿import { FileText, Users, Mic, BookOpen, Linkedin, Github, Target, CheckCircle } from 'lucide-react';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { CTASection } from '../../components/home/CTASection';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
@@ -101,7 +101,7 @@ export default function CareerPage() {
 
       <CTASection
         title="Ready to Launch Your IT Career?"
-        subtitle="Join a Global Minds Academy course and get full career support from day one."
+        subtitle="Join a Global Minds Technologies course and get full career support from day one."
         primaryLabel="Explore Courses"
         primaryHref="/courses"
         secondaryLabel="Book Free Counseling"

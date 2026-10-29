@@ -9,7 +9,7 @@ export const locations: Location[] = [
     country: 'India',
     address: '123 IT Corridor, Placeholder Area, Chennai – 600001. [PLACEHOLDER — update with real address]',
     phone: '+91 99999 00001',
-    email: 'chennai@globalacademy.com',
+    email: 'chennai@globalmindstechnologies.com',
     mapUrl: 'https://maps.google.com',
     courses: [
       'aws-training',

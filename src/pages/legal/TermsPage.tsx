@@ -1,4 +1,4 @@
-import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
+﻿import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 
@@ -31,19 +31,19 @@ export default function TermsPage() {
           </div>
 
           <h2 className="font-display font-bold text-xl">1. Acceptance of Terms</h2>
-          <p>By accessing or using Global Minds Academy's website and services, you agree to be bound by these Terms of Service. [PLACEHOLDER]</p>
+          <p>By accessing or using Global Minds Technologies's website and services, you agree to be bound by these Terms of Service. [PLACEHOLDER]</p>
 
           <h2 className="font-display font-bold text-xl">2. Course Enrollment</h2>
           <p>Course enrollment is subject to availability and payment of applicable fees. Details are confirmed upon registration. [PLACEHOLDER]</p>
 
           <h2 className="font-display font-bold text-xl">3. Intellectual Property</h2>
-          <p>All course materials, videos, and content are the intellectual property of Global Minds Academy and may not be reproduced without permission. [PLACEHOLDER]</p>
+          <p>All course materials, videos, and content are the intellectual property of Global Minds Technologies and may not be reproduced without permission. [PLACEHOLDER]</p>
 
           <h2 className="font-display font-bold text-xl">4. User Conduct</h2>
           <p>Users agree to use our platform for lawful purposes only and not to share course materials with unauthorised third parties. [PLACEHOLDER]</p>
 
           <h2 className="font-display font-bold text-xl">5. Limitation of Liability</h2>
-          <p>Global Minds Academy is not liable for any indirect, incidental, or consequential damages arising from use of our services. [PLACEHOLDER]</p>
+          <p>Global Minds Technologies is not liable for any indirect, incidental, or consequential damages arising from use of our services. [PLACEHOLDER]</p>
 
           <h2 className="font-display font-bold text-xl">6. Contact</h2>
           <p>For terms-related queries: [EMAIL — PLACEHOLDER]</p>

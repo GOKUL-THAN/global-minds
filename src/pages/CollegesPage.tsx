@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -41,7 +41,7 @@ const benefits = [
   {
     icon: Handshake,
     title: 'MoU & Tie-up Programs',
-    desc: 'Formalise your institution\'s partnership with Global Minds Academy through a structured MoU agreement.',
+    desc: 'Formalise your institution\'s partnership with Global Minds Technologies through a structured MoU agreement.',
   },
   {
     icon: GraduationCap,
@@ -61,7 +61,7 @@ const benefits = [
   {
     icon: Award,
     title: 'Joint Certification',
-    desc: 'Students earn a co-branded Global Minds Academy certificate. Global Minds Academy has 50+ hiring partners.',
+    desc: 'Students earn a co-branded Global Minds Technologies certificate. Global Minds Technologies has 50+ hiring partners.',
   },
   {
     icon: Users,
@@ -148,7 +148,7 @@ export default function CollegesPage() {
                 <ShinyText text="Institutional Partnership Program" shinyColor="rgba(23, 108, 115, 0.9)" />
               </div>
               <h1 className="page-hero-title display-lg font-extrabold mb-4">
-                Partner with <DecryptedText text="Global Minds Academy" speed={30} maxIterations={10} className="page-hero-highlight" />
+                Partner with <DecryptedText text="Global Minds Technologies" speed={30} maxIterations={10} className="page-hero-highlight" />
               </h1>
               <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
                 Empower your students with industry-relevant skills in AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
@@ -439,7 +439,7 @@ export default function CollegesPage() {
 
       <CTASection
         title="Empower Your Students with Industry Skills"
-        subtitle="Partner with Global Minds Academy for MoU programs, student training, faculty development and campus placement."
+        subtitle="Partner with Global Minds Technologies for MoU programs, student training, faculty development and campus placement."
         primaryLabel="Submit Enquiry"
         primaryHref="#college-enquiry"
         secondaryLabel="View All Courses"

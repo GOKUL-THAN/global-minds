@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { Linkedin, Star, Users, Award, ArrowRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { instructors } from '../data/instructors';
@@ -17,7 +17,7 @@ export default function TrainersPage() {
 
   usePageMeta({
     title: 'Expert Trainers & Instructors',
-    description: 'Meet the Global Minds Academy expert trainers — certified industry professionals with real-world project experience in cloud, DevOps, AI, data science and more.',
+    description: 'Meet the Global Minds Technologies expert trainers — certified industry professionals with real-world project experience in cloud, DevOps, AI, data science and more.',
   });
 
   return (
@@ -176,7 +176,7 @@ export default function TrainersPage() {
               Are You an Industry Expert?
             </h2>
             <p className="text-surface-600 font-medium mb-6 max-w-xl mx-auto">
-              Global Minds Academy is always looking for passionate, certified industry professionals to join our trainer network. Contact us to learn more.
+              Global Minds Technologies is always looking for passionate, certified industry professionals to join our trainer network. Contact us to learn more.
             </p>
             <Link to="/contact">
               <button className="btn-primary btn inline-flex items-center gap-2">

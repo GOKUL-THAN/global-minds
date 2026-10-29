@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Code2, Users, Brain, Target, CheckCircle, ArrowRight, BookOpen } from 'lucide-react';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
@@ -15,7 +15,7 @@ const topics = [
     icon: Code2,
     color: 'bg-brand-50 text-brand-600',
     href: '/master-programs/freshers-master-program',
-    details: 'Global Minds Academy Freshers Master Program builds core technical fundamentals through data structures, algorithms, object-oriented programming, SQL, and networking essentials—designed for freshers preparing for real IT roles and technical interviews.',
+    details: 'Global Minds Technologies Freshers Master Program builds core technical fundamentals through data structures, algorithms, object-oriented programming, SQL, and networking essentials—designed for freshers preparing for real IT roles and technical interviews.',
     items: ['Data Structures & Algorithms', 'System Design basics', 'Object-Oriented Programming', 'SQL & databases', 'Computer Networks basics'],
   },
   {

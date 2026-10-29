@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -71,10 +71,10 @@ export default function RegisterPage() {
             <ShinyText text="🎓 Free Student Registration • Instant Access" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <Link to="/" className="inline-flex items-center gap-2 mb-4 block">
-            <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain mx-auto" />
+            <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="h-20 w-20 object-contain mx-auto" />
           </Link>
           <h1 className="font-display font-bold text-2xl">Create Your Account</h1>
-          <p className="text-surface-600 font-medium mt-1">Join Global Minds Academy and start your learning journey.</p>
+          <p className="text-surface-600 font-medium mt-1">Join Global Minds Technologies and start your learning journey.</p>
           <p className="text-xs text-surface-600 font-medium mt-1">Student accounts require email verification before sign-in.</p>
         </div>
 
@@ -180,7 +180,7 @@ export default function RegisterPage() {
               <Link to="/terms" className="text-brand-700 font-bold hover:underline">Terms of Service</Link>{' '}
               and{' '}
               <Link to="/privacy-policy" className="text-brand-700 font-bold hover:underline">Privacy Policy</Link>,
-              and consent to being contacted by Global Minds Academy.
+              and consent to being contacted by Global Minds Technologies.
             </span>
           </label>
           {errors.consent && <p className="form-error">{errors.consent.message}</p>}

@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+﻿import { useParams, Link } from 'react-router-dom';
 import {
   Clock, BarChart2, Monitor, MapPin, BadgeCheck,
   ChevronDown, ArrowRight, Phone, Download,
@@ -457,7 +457,7 @@ export default function CourseDetailPage() {
         {/* Final CTA */}
         <div className="cta-section-banner mt-16 p-10 rounded-3xl bg-gradient-to-r from-brand-800 to-brand-700 text-white text-center">
           <h2 className="text-2xl font-display font-extrabold text-white mb-3">Ready to Start?</h2>
-          <p className="text-white/90 mb-6 max-w-xl mx-auto">Build practical skills and take the next step in your career with Global Minds Academy.</p>
+          <p className="text-white/90 mb-6 max-w-xl mx-auto">Build practical skills and take the next step in your career with Global Minds Technologies.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
               <Button className="bg-white text-brand-900 hover:bg-brand-50 font-bold shadow-md" size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>

@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+﻿import { useParams, Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Monitor, ArrowRight, CheckCircle } from 'lucide-react';
 import { locations } from '../../data/locations';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
@@ -21,7 +21,7 @@ export default function LocationDetailPage() {
   usePageMeta({
     title: location ? `${location.city} Training Centre` : undefined,
     description: location
-      ? `Global Minds Academy ${location.city} classroom training centre.`
+      ? `Global Minds Technologies ${location.city} classroom training centre.`
       : undefined,
   });
 
@@ -48,7 +48,7 @@ export default function LocationDetailPage() {
             </Badge>
           </div>
           <h1 className="page-hero-title mb-2">
-            Global Minds Academy{' '}
+            Global Minds Technologies{' '}
             <DecryptedText
               text={location.city}
               speed={40}
@@ -69,7 +69,7 @@ export default function LocationDetailPage() {
             {/* Photo */}
             <img
               src={location.image}
-              alt={`Global Minds Academy ${location.city} training centre`}
+              alt={`Global Minds Technologies ${location.city} training centre`}
               className="w-full h-72 object-cover rounded-3xl"
               loading="eager"
             />

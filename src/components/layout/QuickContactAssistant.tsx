@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+﻿import { useState, type FormEvent } from 'react';
 import { Bot, Mail, MessageCircle, Send, X, Sparkles, CheckCircle2, ChevronRight, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { publicCourseCatalog } from '../../data/publicCourseCatalog';
@@ -29,7 +29,7 @@ function getAssistantResponse(question: string): { text: string; toolCall?: stri
 
   if (/\b(location|located|address|where|centre|center|chennai)\b/.test(normalizedQuestion)) {
     return {
-      text: `Global Minds Academy has our flagship campus at ${siteConfig.address.line1}, ${siteConfig.address.city}, ${siteConfig.address.state}, ${siteConfig.address.country}. We also offer full live interactive online batches across the globe.`,
+      text: `Global Minds Technologies has our flagship campus at ${siteConfig.address.line1}, ${siteConfig.address.city}, ${siteConfig.address.state}, ${siteConfig.address.country}. We also offer full live interactive online batches across the globe.`,
       toolCall: 'locationService.getCampusDetails()',
     };
   }
@@ -84,7 +84,7 @@ function getAssistantResponse(question: string): { text: string; toolCall?: stri
   }
 
   return {
-    text: `Global Minds Academy offers industry-aligned programs in Cloud Architecture, AI & Data Science, Full Stack Engineering, and Cyber Security. Let me know which skill track or career goal you want to explore!`,
+    text: `Global Minds Technologies offers industry-aligned programs in Cloud Architecture, AI & Data Science, Full Stack Engineering, and Cyber Security. Let me know which skill track or career goal you want to explore!`,
     toolCall: 'aiAgent.generalSearch()',
   };
 }

@@ -1,4 +1,4 @@
-import type { Testimonial } from '../types';
+﻿import type { Testimonial } from '../types';
 
 // Real student reviews sourced from globalmindsacademy.in (Google Reviews)
 export const testimonials: Testimonial[] = [
@@ -11,7 +11,7 @@ export const testimonials: Testimonial[] = [
     location: 'Chennai',
     country: 'India',
     rating: 5,
-    review: 'I enrolled in Data Warehousing and Tableau at the Global Minds Perumbakkam center. The faculty members are friendly and provide excellent, detailed training. The hands-on approach and real-time scenarios really helped me understand the concepts deeply. Highly recommend Global Minds Academy.',
+    review: 'I enrolled in Data Warehousing and Tableau at the Global Minds Perumbakkam center. The faculty members are friendly and provide excellent, detailed training. The hands-on approach and real-time scenarios really helped me understand the concepts deeply. Highly recommend Global Minds Technologies.',
     date: '2026-04-10',
     featured: false,
     type: 'text',
@@ -26,7 +26,7 @@ export const testimonials: Testimonial[] = [
     location: 'Chennai',
     country: 'India',
     rating: 5,
-    review: 'The AWS and Power BI training was very detailed and practical. The instructors focus on industry requirements and real-time scenarios. I was able to apply what I learned directly to my work. Global Minds Academy truly prepares you for the job market.',
+    review: 'The AWS and Power BI training was very detailed and practical. The instructors focus on industry requirements and real-time scenarios. I was able to apply what I learned directly to my work. Global Minds Technologies truly prepares you for the job market.',
     date: '2026-04-08',
     featured: false,
     type: 'text',
@@ -41,7 +41,7 @@ export const testimonials: Testimonial[] = [
     location: 'Chennai',
     country: 'India',
     rating: 5,
-    review: 'I completed React JS and Node.js training here. The hands-on projects and interview preparation sessions helped me gain confidence and practical skills. The trainers are extremely supportive and always ready to clarify doubts. Global Minds Academy is the best decision I made for my career.',
+    review: 'I completed React JS and Node.js training here. The hands-on projects and interview preparation sessions helped me gain confidence and practical skills. The trainers are extremely supportive and always ready to clarify doubts. Global Minds Technologies is the best decision I made for my career.',
     date: '2026-04-05',
     featured: true,
     type: 'text',
@@ -140,7 +140,7 @@ export const testimonials: Testimonial[] = [
     location: 'Chennai',
     country: 'India',
     rating: 5,
-    review: 'From a fresher with no experience to a placed software engineer — Global Minds Academy made it happen. The curriculum is designed directly by industry professionals. The Spring Boot REST API project and React frontend I built here became the talking points in every interview.',
+    review: 'From a fresher with no experience to a placed software engineer — Global Minds Technologies made it happen. The curriculum is designed directly by industry professionals. The Spring Boot REST API project and React frontend I built here became the talking points in every interview.',
     date: '2025-12-30',
     featured: false,
     type: 'text',

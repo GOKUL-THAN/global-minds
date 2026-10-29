@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { CheckCircle, Loader2 } from 'lucide-react';
 import { authService } from '../../services/authService';
@@ -12,8 +12,8 @@ function AuthPageShell({ title, children }: { title: string; children: React.Rea
       <SpotlightCard className="max-w-md w-full">
         <section className="bg-white rounded-3xl p-8 w-full shadow-card-xl border border-surface-200">
           <div className="text-center mb-8">
-            <Link to="/" className="inline-flex items-center gap-2 mb-4" aria-label="Global Minds Academy home">
-              <img src={siteConfig.logoUrl} alt="Global Minds Academy logo" className="h-20 w-20 object-contain" />
+            <Link to="/" className="inline-flex items-center gap-2 mb-4" aria-label="Global Minds Technologies home">
+              <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="h-20 w-20 object-contain" />
             </Link>
             <h1 className="font-display font-bold text-2xl">
               <ShinyText text={title} shinyColor="rgba(23, 108, 115, 0.9)" />

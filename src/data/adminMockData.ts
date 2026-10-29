@@ -1,5 +1,5 @@
-// ============================================================
-// Global Minds Academy — ADMIN MOCK DATA
+﻿// ============================================================
+// Global Minds Technologies — ADMIN MOCK DATA
 // Realistic placeholder data for admin UI demonstration.
 // Replace with real API calls when backend is connected.
 // ============================================================
