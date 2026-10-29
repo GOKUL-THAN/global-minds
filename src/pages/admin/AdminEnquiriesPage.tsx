@@ -254,8 +254,8 @@ export default function AdminEnquiriesPage() {
     let active = true;
     fetch('/api/admin/enquiries', { credentials: 'same-origin' })
       .then(async response => {
-        const result = await response.json() as { enquiries?: Enquiry[]; message?: string };
-        if (!response.ok) throw new Error(result.message ?? 'Unable to load enquiries.');
+        const result = await response.json().catch(() => ({})) as { enquiries?: Enquiry[]; message?: string };
+        if (!response.ok) throw new Error(result.message ?? `Unable to load enquiries (${response.status}).`);
         return result.enquiries ?? [];
       })
       .then(records => {

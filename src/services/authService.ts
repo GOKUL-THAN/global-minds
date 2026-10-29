@@ -18,7 +18,16 @@ interface ApiResult {
 }
 
 async function readApiResult(response: Response): Promise<ApiResult> {
-  return await response.json() as ApiResult;
+  try {
+    return await response.json() as ApiResult;
+  } catch {
+    return {
+      success: false,
+      message: response.status >= 500
+        ? 'The server is temporarily unavailable. Please try again shortly.'
+        : `Request failed (${response.status})`,
+    };
+  }
 }
 
 function apiError(result: ApiResult, fallback: string): string {
