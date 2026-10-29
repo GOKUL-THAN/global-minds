@@ -45,29 +45,36 @@ class AuthService {
         credentials: 'same-origin',
         body: JSON.stringify(credentials),
       });
-      const result = await readApiResult(response) as ApiResult & {
-        user?: Partial<User> & Pick<User, 'id' | 'email' | 'role'>;
-      };
 
-      if (response.ok && result.success && result.user) {
-        try { localStorage.removeItem(DEMO_STORAGE_KEY); } catch { /* ignore */ }
-        const user = this.mapUser(result.user);
-        return { success: true, user, message: 'Login successful.' };
+      const contentType = response.headers.get('content-type') || '';
+      if (response.ok && contentType.includes('application/json')) {
+        const result = await response.json() as ApiResult & {
+          user?: Partial<User> & Pick<User, 'id' | 'email' | 'role'>;
+        };
+
+        if (result.success && result.user) {
+          try { localStorage.removeItem(DEMO_STORAGE_KEY); } catch { /* ignore */ }
+          const user = this.mapUser(result.user);
+          return { success: true, user, message: 'Login successful.' };
+        }
       }
 
-      // If backend returned explicit authentication rejection with json message
-      if (response.status === 401 && result.message && result.message !== 'Request failed (401)') {
-        return {
-          success: false,
-          code: result.error?.code ?? result.code,
-          message: apiError(result, 'Invalid email or password.'),
-        };
+      // If backend explicitly rejected credentials with 401 JSON
+      if (response.status === 401 && contentType.includes('application/json')) {
+        const result = await response.json().catch(() => ({})) as ApiResult;
+        if (result.message && result.message !== 'Request failed (401)') {
+          return {
+            success: false,
+            code: result.error?.code ?? result.code,
+            message: apiError(result, 'Invalid email or password.'),
+          };
+        }
       }
     } catch {
       // Backend is offline or unreachable
     }
 
-    // Resilient fallback for Vercel preview & offline evaluation
+    // Always fallback smoothly to demo authentication on Vercel
     const emailLower = credentials.email.trim().toLowerCase();
     const isSuperAdmin = emailLower === 'globalminds@gmail.com' || emailLower.includes('super');
     const isAdmin = !isSuperAdmin && (emailLower === 'admin@local.test' || emailLower.includes('admin'));
