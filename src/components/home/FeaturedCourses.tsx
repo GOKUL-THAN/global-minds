@@ -9,7 +9,12 @@ import { SpotlightCard } from '../ui/SpotlightCard';
 
 const homepageCourseImages: Record<string, string> = {
   'data-science': '/images/courses/data-science.jpg',
+  'data-analytics': '/images/courses/data-analytics.jpg',
+  'python': '/images/courses/python.jpg',
+  'ai-data-science': '/images/courses/ai-data-science.jpg',
   'aiml': '/images/courses/aiml.jpg',
+  'generative-ai': '/images/courses/generative-ai.jpg',
+  'digital-marketing': '/images/courses/digital-marketing.jpg',
   'automation-testing': '/images/courses/automation-testing.jpg',
 };
 
