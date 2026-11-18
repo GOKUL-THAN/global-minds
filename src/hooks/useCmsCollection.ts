@@ -14,7 +14,7 @@ function getSlug(record: unknown): string | undefined {
 
 export function useCmsCollection<T extends object>(
   section: CmsSection,
-  staticRecords: readonly T[],
+  staticRecords: readonly T[] = [],
 ): T[] {
   const [published, setPublished] = useState<PublicCmsRecord[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);

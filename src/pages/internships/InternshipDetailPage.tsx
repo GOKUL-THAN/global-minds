@@ -1,7 +1,5 @@
-import { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Clock, Briefcase, CheckCircle, Calendar, ArrowRight, Users } from 'lucide-react';
-import { allowedInternshipCategories, internships } from '../../data/internships';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { Badge } from '../../components/ui/Badge';
 import { EnquiryForm } from '../../components/ui/EnquiryForm';
@@ -12,20 +10,12 @@ import { usePageMeta } from '../../hooks/usePageMeta';
 import { formatDate } from '../../utils/formatters';
 import NotFoundPage from '../NotFoundPage';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
-import { dateService, useDateSystem } from '../../services/dateService';
+import { internships } from '../../data/internships';
+import type { Internship } from '../../types';
 
 export default function InternshipDetailPage() {
-  const { todayString } = useDateSystem();
   const { slug } = useParams<{ slug: string }>();
-  const dynamicInternships = useMemo(() => {
-    const deadline = dateService.getCycleDeadline(1).deadlineDate;
-    return internships.map(internship => ({
-      ...internship,
-      applicationDeadline: internship.status === 'open' ? deadline : internship.applicationDeadline,
-    }));
-  }, [todayString]);
-  const visibleInternships = useCmsCollection('internships', dynamicInternships)
-    .filter(item => allowedInternshipCategories.includes(item.category));
+  const visibleInternships = useCmsCollection<Internship>('internships', internships);
   const internship = visibleInternships.find(item => item.slug === (slug || ''));
 
   usePageMeta({

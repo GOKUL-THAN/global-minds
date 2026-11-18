@@ -1,7 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, MapPin, Clock, CheckCircle, ArrowRight, Search, Filter } from 'lucide-react';
-import { allowedInternshipCategories, internships } from '../data/internships';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { CTASection } from '../components/home/CTASection';
 import { Badge } from '../components/ui/Badge';
@@ -12,22 +11,14 @@ import { useCmsCollection } from '../hooks/useCmsCollection';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
-import { dateService, useDateSystem } from '../services/dateService';
+import { internships } from '../data/internships';
+import type { Internship } from '../types';
 
-const categories = ['All', ...allowedInternshipCategories];
 const modes = ['All', 'Online', 'Classroom', 'Both'];
 
 export default function InternshipsPage() {
-  const { todayString } = useDateSystem();
-  const dynamicInternships = useMemo(() => {
-    const deadline = dateService.getCycleDeadline(1).deadlineDate;
-    return internships.map(internship => ({
-      ...internship,
-      applicationDeadline: internship.status === 'open' ? deadline : internship.applicationDeadline,
-    }));
-  }, [todayString]);
-  const visibleInternships = useCmsCollection('internships', dynamicInternships)
-    .filter(internship => allowedInternshipCategories.includes(internship.category));
+  const visibleInternships = useCmsCollection<Internship>('internships', internships);
+  const categories = ['All', ...new Set(visibleInternships.map(internship => internship.category).filter(Boolean))];
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedMode, setSelectedMode] = useState('All');
