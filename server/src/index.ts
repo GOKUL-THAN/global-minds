@@ -9,6 +9,7 @@ import { rateLimit } from 'express-rate-limit';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { config } from './config.js';
+import { getBackendDateCycleInfo } from './dateService.js';
 import {
   archiveCmsRecord,
   cmsSections,
@@ -318,6 +319,9 @@ function requireCmsPermission(action: 'read' | 'create' | 'update' | 'publish' |
 }
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+app.get('/api/system/date-cycle', (_req, res) => {
+  res.json({ success: true, data: getBackendDateCycleInfo() });
+});
 app.use(['/api/auth', '/api/admin'], (_req, res, next) => {
   res.setHeader('Cache-Control', 'no-store');
   next();

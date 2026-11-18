@@ -6,6 +6,7 @@ import { adminOperationsService, type OperationalModule, type OperationalStatus,
 import { CountUp } from '../../components/ui/CountUp';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { DateCycleBadge } from '../../components/common/DateCycleBadge';
 
 const adminTools = [
   {
@@ -93,6 +94,8 @@ export default function AdminDashboardPage() {
           Signed in as {user.fullName} ({user.role.replace(/_/g, ' ').toLowerCase()}).
         </p>
       </header>
+
+      <DateCycleBadge variant="banner" />
 
       {['ADMIN', 'SUPER_ADMIN'].includes(user.role) && <section className="rounded-2xl border border-surface-200 bg-white p-4">
         <h2 className="font-semibold text-surface-900">Operational module status</h2>

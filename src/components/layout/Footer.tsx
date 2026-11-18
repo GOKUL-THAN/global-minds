@@ -8,6 +8,7 @@ import { enquiryService } from '../../services/enquiryService';
 import { cn } from '../../utils/cn';
 import { Magnetic } from '../ui/Magnetic';
 import { ShinyText } from '../ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 const footerLinks = {
   Courses: [
@@ -229,8 +230,10 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-surface-200">
         <div className="container-xl py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-surface-600 text-center sm:text-left font-medium">
-            © {new Date().getFullYear()} Global Minds Technologies. All rights reserved.
+          <p className="text-xs text-surface-600 text-center sm:text-left font-medium flex items-center gap-2 flex-wrap">
+            <span>© {dateService.getDateCycleInfo().currentYear} Global Minds Technologies. All rights reserved.</span>
+            <span className="hidden md:inline text-surface-400">·</span>
+            <span className="hidden md:inline text-[11px] text-surface-500 font-medium">Academic Cycle: {dateService.getDateCycleInfo().cycleLabel}</span>
           </p>
 
           <div className="flex items-center flex-wrap justify-center gap-4">

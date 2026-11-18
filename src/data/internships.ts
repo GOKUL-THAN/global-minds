@@ -1,6 +1,10 @@
 import type { Internship } from '../types';
+import { dateService } from '../services/dateService';
 
-// PLACEHOLDER internship data — replace with real listings
+// Automatically advances deadline to the end of the active 15-day application cycle
+const getActiveDeadline = () => dateService.getCycleDeadline(1).deadlineDate;
+
+// Dynamic internship listings with active 15-day cycle deadlines
 export const internships: Internship[] = [
   {
     id: 'int1',
@@ -15,7 +19,7 @@ export const internships: Internship[] = [
     responsibilities: ['Assist in cloud infrastructure management', 'Participate in CI/CD pipeline tasks', 'Document cloud configurations', 'Participate in team stand-ups and reviews'],
     certificate: true,
     stipend: 'Stipend details — PLACEHOLDER',
-    applicationDeadline: '2026-11-30',
+    applicationDeadline: getActiveDeadline(),
     status: 'open',
     category: 'AWS / Cloud',
     thumbnail: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop',
@@ -33,7 +37,7 @@ export const internships: Internship[] = [
     responsibilities: ['Create and maintain automated test scripts', 'Run regression test suites', 'Report and track defects', 'Participate in QA reviews'],
     certificate: true,
     stipend: 'Stipend details — PLACEHOLDER',
-    applicationDeadline: '2026-11-30',
+    applicationDeadline: getActiveDeadline(),
     status: 'open',
     category: 'Automation Testing',
     thumbnail: 'https://images.unsplash.com/photo-1596496181871-9681eacf9764?w=600&h=400&fit=crop',
@@ -51,7 +55,7 @@ export const internships: Internship[] = [
     responsibilities: ['Build and maintain web application features', 'Collaborate with senior developers', 'Write clean, documented code', 'Participate in code reviews'],
     certificate: true,
     stipend: 'Stipend details — PLACEHOLDER',
-    applicationDeadline: '2026-11-30',
+    applicationDeadline: getActiveDeadline(),
     status: 'open',
     category: 'Full Stack Development',
     thumbnail: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&h=400&fit=crop',
@@ -69,7 +73,7 @@ export const internships: Internship[] = [
     responsibilities: ['Data collection and preprocessing', 'Build and evaluate ML models', 'Create visualisation reports', 'Support data team activities'],
     certificate: true,
     stipend: 'Stipend details — PLACEHOLDER',
-    applicationDeadline: '2026-11-30',
+    applicationDeadline: getActiveDeadline(),
     status: 'open',
     category: 'Data Science',
     thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
@@ -87,7 +91,7 @@ export const internships: Internship[] = [
     responsibilities: ['Write and execute test cases', 'Report and track bugs in JIRA', 'Assist in regression testing', 'Participate in QA team activities'],
     certificate: true,
     stipend: 'Stipend details — PLACEHOLDER',
-    applicationDeadline: '2026-11-30',
+    applicationDeadline: getActiveDeadline(),
     status: 'open',
     category: 'Software Testing',
     thumbnail: 'https://images.unsplash.com/photo-1596496181871-9681eacf9764?w=600&h=400&fit=crop',
@@ -105,7 +109,7 @@ export const internships: Internship[] = [
     responsibilities: ['Prepare datasets for model training', 'Build and evaluate ML models', 'Document experiments and results', 'Support model deployment tasks'],
     certificate: true,
     stipend: 'Stipend details — PLACEHOLDER',
-    applicationDeadline: '2026-11-30',
+    applicationDeadline: getActiveDeadline(),
     status: 'open',
     category: 'Machine Learning',
     thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',

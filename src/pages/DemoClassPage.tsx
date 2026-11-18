@@ -7,6 +7,8 @@ import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { enquiryService } from '../services/enquiryService';
+import { dateService, useDateSystem } from '../services/dateService';
+import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 const popularDemoCourses = [
   { id: 'aws', title: 'AWS / Cloud', duration: '1.5 Hrs', category: 'AWS / Cloud', icon: '☁️' },
@@ -18,13 +20,7 @@ const popularDemoCourses = [
   { id: 'automation-testing', title: 'Automation Testing', duration: '1.5 Hrs', category: 'Automation Testing', icon: '⚙️' },
 ];
 
-const upcomingDemos = [
-  { course: 'AWS / Cloud', trainer: 'Rajesh Kumar', date: 'Oct 10, 2026', dateValue: '2026-10-10', time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
-  { course: 'Full Stack Development', trainer: 'Priya Nair', date: 'Oct 11, 2026', dateValue: '2026-10-11', time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 7 },
-  { course: 'Data Science', trainer: 'Anitha Reddy', date: 'Oct 12, 2026', dateValue: '2026-10-12', time: '7:00 PM IST', mode: 'Online (Zoom)', seats: 10 },
-  { course: 'Machine Learning', trainer: 'Suresh Anand', date: 'Oct 13, 2026', dateValue: '2026-10-13', time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 3 },
-  { course: 'Cyber Security', trainer: 'Arjun Singh', date: 'Oct 14, 2026', dateValue: '2026-10-14', time: '6:00 PM IST', mode: 'Online (Zoom)', seats: 12 },
-];
+
 
 const benefits = [
   'Meet your trainer before committing',
@@ -47,6 +43,8 @@ interface FormData {
 }
 
 export default function DemoClassPage() {
+  const { todayString } = useDateSystem();
+  const upcomingDemos = dateService.getUpcomingDemoSlots();
   usePageMeta({
     title: 'Book a Free Demo Class',
     description: 'Book a free demo class at Global Minds Technologies. Experience our teaching style, meet your trainer, and ask questions before enrolling in any course.',
@@ -230,6 +228,7 @@ export default function DemoClassPage() {
                         <input
                           type="date"
                           name="preferredDate"
+                          min={todayString}
                           value={form.preferredDate}
                           onChange={handleChange}
                           className="w-full border border-surface-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-300"

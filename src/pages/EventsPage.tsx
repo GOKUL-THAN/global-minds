@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Calendar, Clock, Monitor, MapPin, Users, ExternalLink, ChevronDown } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -9,6 +9,8 @@ import { siteConfig } from '../data/siteConfig';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { dateService, useDateSystem } from '../services/dateService';
+import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 type EventType = 'All' | 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
 
@@ -186,7 +188,20 @@ export default function EventsPage() {
   const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
   const [regForm, setRegForm] = useState<RegisterForm>({ name: '', email: '', phone: '' });
 
-  const filtered = events.filter(e => filter === 'All' || e.type === filter);
+  const dynamicEvents = useMemo(() => {
+    const today = new Date();
+    return events.map((e, idx) => {
+      const eventDate = new Date(e.date);
+      if (isNaN(eventDate.getTime()) || eventDate < today) {
+        const d = new Date(today);
+        d.setDate(d.getDate() + 3 + (idx * 4));
+        return { ...e, date: dateService.getTodayString(d) };
+      }
+      return e;
+    });
+  }, [events]);
+
+  const filtered = dynamicEvents.filter(e => filter === 'All' || e.type === filter);
 
   const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -255,6 +270,7 @@ export default function EventsPage() {
       {/* Events Grid */}
       <section className="section bg-surface-50">
         <div className="container-xl">
+          <DateCycleBadge variant="banner" className="mb-8" />
           <div className="grid md:grid-cols-2 gap-6">
             {filtered.map(event => {
               const isExpanded = expandedEvents.has(event.id);

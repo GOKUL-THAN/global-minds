@@ -10,6 +10,7 @@ import { cn } from '../../utils/cn';
 import type { Course } from '../../types';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { useCourseCatalog } from '../../hooks/useCourseCatalog';
+import { DateCycleBadge } from '../../components/common/DateCycleBadge';
 
 const modes = ['Online', 'Classroom', 'Both'];
 const sortOptions = [
@@ -145,6 +146,9 @@ export default function CoursesPage() {
           <p className="page-hero-desc max-w-2xl text-base sm:text-lg">
             Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
           </p>
+          <div className="mt-4">
+            <DateCycleBadge variant="compact" />
+          </div>
         </div>
       </div>
 

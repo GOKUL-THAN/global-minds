@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Calendar, Clock, Monitor, MapPin, Users, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
@@ -8,6 +8,8 @@ import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { dateService, useDateSystem } from '../services/dateService';
+import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 type Mode = 'All' | 'Online' | 'Classroom' | 'Hybrid' | 'Both';
 type BatchType = 'All' | 'Weekday' | 'Weekend' | 'Fast-Track';
@@ -29,17 +31,7 @@ interface Batch {
   badge?: string;
 }
 
-const upcomingBatches: Batch[] = [
-  { id: 'b1', course: 'AWS / Cloud', category: 'AWS / Cloud', instructor: 'Rajesh Kumar', startDate: '2026-10-15', days: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', duration: '60 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 8, fee: '₹18,999', badge: 'Filling Fast' },
-  { id: 'b2', course: 'Full Stack Development', category: 'Full Stack Development', instructor: 'Priya Nair', startDate: '2026-10-18', days: 'Sat / Sun', time: '10:00 AM – 1:00 PM', duration: '90 Hrs', mode: 'Both', type: 'Weekend', seatsTotal: 20, seatsLeft: 14, fee: '₹22,999', badge: 'New Batch' },
-  { id: 'b3', course: 'Machine Learning', category: 'Machine Learning', instructor: 'Suresh Anand', startDate: '2026-10-20', days: 'Tue / Thu', time: '7:00 PM – 9:00 PM', duration: '50 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 30, seatsLeft: 20, fee: '₹16,999' },
-  { id: 'b4', course: 'Data Science', category: 'Data Science', instructor: 'Anitha Reddy', startDate: '2026-10-22', days: 'Mon – Fri', time: '10:00 AM – 4:00 PM', duration: '80 Hrs', mode: 'Classroom', type: 'Fast-Track', seatsTotal: 15, seatsLeft: 5, fee: '₹24,999', badge: 'Last 5 Seats' },
-  { id: 'b5', course: 'Automation Testing', category: 'Automation Testing', instructor: 'Kiran Babu', startDate: '2026-10-25', days: 'Sat / Sun', time: '2:00 PM – 5:00 PM', duration: '40 Hrs', mode: 'Online', type: 'Weekend', seatsTotal: 25, seatsLeft: 18, fee: '₹12,999' },
-  { id: 'b9', course: 'Cyber Security', category: 'Cyber Security', instructor: 'Venkat Rao', startDate: '2026-11-12', days: 'Tue / Thu', time: '6:00 PM – 8:00 PM', duration: '45 Hrs', mode: 'Hybrid', type: 'Weekday', seatsTotal: 20, seatsLeft: 15, fee: '₹15,999' },
-  { id: 'b11', course: 'Software Testing', category: 'Software Testing', instructor: 'Ramya Subramanian', startDate: '2026-11-18', days: 'Mon / Wed / Fri', time: '7:00 PM – 9:00 PM', duration: '40 Hrs', mode: 'Online', type: 'Weekday', seatsTotal: 25, seatsLeft: 19, fee: '₹11,999' },
-];
-
-const categories = ['All', 'AWS / Cloud', 'Data Science', 'Machine Learning', 'Full Stack Development', 'Cyber Security', 'Software Testing', 'Automation Testing'];
+const categories = ['All', 'Cloud', 'Data Science', 'AI / ML', 'Full Stack', 'Security', 'Software Testing', 'DevOps', 'Programming'];
 
 function seatColor(left: number, total: number) {
   const pct = left / total;
@@ -56,6 +48,9 @@ function badgeColor(badge?: string) {
 }
 
 export default function BatchSchedulePage() {
+  const { dateInfo } = useDateSystem();
+  const upcomingBatches = useMemo(() => dateService.getUpcomingBatches(), [dateInfo.currentDate]);
+
   usePageMeta({
     title: 'Batch Schedule & Upcoming Classes',
     description: 'View all upcoming training batch schedules at Global Minds Technologies. Online, classroom and hybrid batches for all courses. Enroll now — limited seats.',
@@ -162,6 +157,7 @@ export default function BatchSchedulePage() {
       {/* Batch List */}
       <section className="section bg-surface-50">
         <div className="container-xl">
+          <DateCycleBadge variant="banner" className="mb-6" />
           {filtered.length === 0 ? (
             <div className="text-center py-20">
               <div className="text-5xl mb-4">📅</div>

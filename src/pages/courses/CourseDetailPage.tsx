@@ -19,6 +19,7 @@ import { usePageMeta } from '../../hooks/usePageMeta';
 import { courseSchema, faqPageSchema, breadcrumbSchema, injectStructuredData } from '../../utils/structuredData';
 import { siteConfig } from '../../data/siteConfig';
 import { useCourseCatalog } from '../../hooks/useCourseCatalog';
+import { dateService, useDateSystem } from '../../services/dateService';
 
 export default function CourseDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -416,7 +417,12 @@ export default function CourseDetailPage() {
 
               {/* Batch schedule */}
               <div className="border-t border-surface-100 pt-5">
-                <p className="text-xs font-semibold text-surface-500 uppercase mb-3">Available Batches</p>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-xs font-semibold text-surface-500 uppercase">Available Batches</p>
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                    Next Batch: {dateService.formatDate(dateService.getDateCycleInfo().nextUpdateDate, 'short')}
+                  </span>
+                </div>
                 <div className="space-y-2">
                   {course.batchSchedule.slice(0, 3).map(batch => (
                     <div key={batch.id} className="flex items-center justify-between text-xs text-surface-600 bg-surface-50 rounded-lg px-3 py-2">

@@ -1,6 +1,7 @@
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
+import { dateService } from '../../services/dateService';
 
 export default function RefundPolicyPage() {
   return (
@@ -21,7 +22,7 @@ export default function RefundPolicyPage() {
               className="page-hero-highlight"
             />
           </h1>
-          <p className="text-surface-600 font-semibold text-sm">Last updated: October 2026</p>
+          <p className="text-surface-600 font-semibold text-sm">Last updated: {dateService.getPolicyLastUpdated()}</p>
         </div>
       </div>
       <div className="container-xl py-12 max-w-3xl">

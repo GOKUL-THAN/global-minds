@@ -5,6 +5,8 @@ import { adminOperationsService, type OperationalModule } from '../../services/a
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
 import type { User } from '../../types';
+import { dateService } from '../../services/dateService';
+import { DateCycleBadge } from '../../components/common/DateCycleBadge';
 
 type FormField = { name: string; label: string; type?: 'text' | 'email' | 'password' | 'tel' | 'date' | 'number' | 'textarea' | 'select' | 'image'; options?: string[]; required?: boolean };
 type Row = Record<string, unknown> & { id: string; archivedAt?: string | null; status?: string };
@@ -531,6 +533,9 @@ export default function AdminOperationalPage() {
           </div>
           <h1 className="font-display text-2xl font-bold text-surface-900">{config.title}</h1>
           <p className="mt-1 text-sm text-surface-500">{config.description}</p>
+          <div className="mt-2">
+            <DateCycleBadge variant="compact" />
+          </div>
         </div>
         <div className="flex gap-2">
           <button type="button" onClick={() => exportCsv(module, records, config.columns)} className="btn-secondary btn" disabled={loading || records.length === 0}>
@@ -625,7 +630,9 @@ export default function AdminOperationalPage() {
                       ? Array.isArray((selectedRecord?.schedule as Record<string, unknown> | undefined)?.days) ? ((selectedRecord?.schedule as Record<string, unknown>).days as string[]).join(', ') : ''
                       : field.name === 'scheduleTime'
                         ? String((selectedRecord?.schedule as Record<string, unknown> | undefined)?.time ?? '')
-                        : String(selectedRecord?.[field.name] ?? '')}
+                        : field.name === 'attendanceDate'
+                          ? String(selectedRecord?.attendanceDate ?? dateService.getTodayString())
+                          : String(selectedRecord?.[field.name] ?? '')}
                     className="form-input w-full"
                   />
                 )}

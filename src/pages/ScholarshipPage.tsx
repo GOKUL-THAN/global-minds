@@ -10,6 +10,7 @@ import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CountUp } from '../components/ui/CountUp';
+import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 // ── Course Fee Table ───────────────────────────────────────
 const courseFees = [
@@ -117,6 +118,7 @@ export default function ScholarshipPage() {
       {/* Scholarships */}
       <section id="scholarships" className="section bg-surface-50">
         <div className="container-xl">
+          <DateCycleBadge variant="banner" className="mb-8" />
           <div className="text-center mb-12">
             <span className="inline-block text-sm font-bold text-brand-700 uppercase tracking-wider mb-3">Financial Aid</span>
             <h2 className="display-md mb-4">Available Scholarships &amp; Discounts</h2>

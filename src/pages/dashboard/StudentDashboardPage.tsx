@@ -9,9 +9,11 @@ import { studentPortalService, type StudentPortalData, type StudentProfile } fro
 import { CountUp } from '../../components/ui/CountUp';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
+import { DateCycleBadge } from '../../components/common/DateCycleBadge';
 
 const formatDate = (value: string | null | undefined) => value
-  ? new Date(value).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+  ? dateService.formatDate(value, 'short')
   : 'Not scheduled';
 
 const formatSchedule = (value: unknown): string => {
@@ -159,6 +161,8 @@ export default function StudentDashboardPage() {
           <h1 className="font-display font-bold text-3xl mt-1">Welcome, {profile.firstName} {profile.lastName}</h1>
           <p className="text-brand-100 mt-2">{profile.email}</p>
         </section>
+
+        <DateCycleBadge variant="banner" />
 
         <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Learning overview">
           {[

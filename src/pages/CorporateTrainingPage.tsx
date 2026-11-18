@@ -10,6 +10,7 @@ import { cn } from '../utils/cn';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { dateService } from '../services/dateService';
 
 const schema = z.object({
   companyName: z.string().min(2, 'Company name required'),
@@ -180,7 +181,7 @@ export default function CorporateTrainingPage() {
                   </div>
                   <div>
                     <label className="form-label">Preferred Timeline</label>
-                    <input type="text" placeholder="e.g. Q4 2026, ASAP, January 2027" className="form-input" {...register('timeline')} />
+                    <input type="text" placeholder={`e.g. ${dateService.getDateCycleInfo().reportingQuarter}, ASAP, Next Month`} className="form-input" {...register('timeline')} />
                   </div>
                   <div>
                     <label className="form-label">Message / Requirements</label>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Megaphone, Pencil, Save, X } from 'lucide-react';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 type Announcement = { id: string; title: string; body: string; status: 'draft' | 'published' | 'archived'; createdAt: string; updatedAt: string; publishedAt: string | null };
 type ApiResponse<T> = { success?: boolean; data?: T; error?: { message?: string }; message?: string };
@@ -28,35 +29,38 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
   return result.data;
 }
 
-const DEFAULT_ANNOUNCEMENTS: Announcement[] = [
-  {
-    id: 'ann-1',
-    title: 'Admissions Open for Q4 2026 Batches',
-    body: 'Registrations are now open for AWS Cloud Architect, Python Full Stack, and Data Science cohorts starting in November.',
-    status: 'published',
-    createdAt: '2026-10-15T08:00:00Z',
-    updatedAt: '2026-10-15T08:00:00Z',
-    publishedAt: '2026-10-15T08:00:00Z',
-  },
-  {
-    id: 'ann-2',
-    title: 'Campus Hiring Drive with 20+ Tech Partners',
-    body: 'Leading enterprise recruiters including TCS, Cognizant, and MindScale AI are conducting offline & virtual recruitment drives next month.',
-    status: 'published',
-    createdAt: '2026-10-18T10:00:00Z',
-    updatedAt: '2026-10-18T10:00:00Z',
-    publishedAt: '2026-10-18T10:00:00Z',
-  },
-  {
-    id: 'ann-3',
-    title: 'Scheduled LMS Platform Maintenance',
-    body: 'The student learning portal will undergo scheduled maintenance this Sunday from 2:00 AM to 4:00 AM IST.',
-    status: 'draft',
-    createdAt: '2026-10-24T12:00:00Z',
-    updatedAt: '2026-10-24T12:00:00Z',
-    publishedAt: null,
-  },
-];
+const getInitialAnnouncements = (): Announcement[] => {
+  const info = dateService.getDateCycleInfo();
+  return [
+    {
+      id: 'ann-1',
+      title: `Admissions Open for ${info.reportingQuarter} Batches`,
+      body: `Registrations are now open for AWS Cloud Architect, Python Full Stack, and Data Science cohorts starting in ${info.currentMonthName}.`,
+      status: 'published',
+      createdAt: info.currentTimestamp,
+      updatedAt: info.currentTimestamp,
+      publishedAt: info.currentTimestamp,
+    },
+    {
+      id: 'ann-2',
+      title: 'Campus Hiring Drive with 20+ Tech Partners',
+      body: 'Leading enterprise recruiters including TCS, Cognizant, and MindScale AI are conducting offline & virtual recruitment drives next month.',
+      status: 'published',
+      createdAt: info.currentTimestamp,
+      updatedAt: info.currentTimestamp,
+      publishedAt: info.currentTimestamp,
+    },
+    {
+      id: 'ann-3',
+      title: 'Scheduled LMS Platform Maintenance',
+      body: 'The student learning portal will undergo scheduled maintenance this Sunday from 2:00 AM to 4:00 AM IST.',
+      status: 'draft',
+      createdAt: info.currentTimestamp,
+      updatedAt: info.currentTimestamp,
+      publishedAt: null,
+    },
+  ];
+};
 
 export default function AdminAnnouncementsPage() {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
@@ -74,7 +78,7 @@ export default function AdminAnnouncementsPage() {
       setAnnouncements(result.announcements);
     } catch {
       // Backend offline fallback
-      setAnnouncements(DEFAULT_ANNOUNCEMENTS);
+      setAnnouncements(getInitialAnnouncements());
     } finally {
       setLoading(false);
     }

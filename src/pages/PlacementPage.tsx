@@ -16,6 +16,7 @@ import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CountUp } from '../components/ui/CountUp';
+import { dateService, useDateSystem } from '../services/dateService';
 
 const placementStats = [
   { icon: Users, value: '1,000+', label: 'Students Placed', tone: 'teal' },
@@ -67,7 +68,7 @@ const packageRanges = [
 const placementHighlights = [
   { icon: '🏆', label: 'Highest Package Secured', value: '22 LPA' },
   { icon: '📊', label: 'Average Package', value: '8.5 LPA' },
-  { icon: '🏢', label: 'Companies Visited in 2025', value: '120+' },
+  { icon: '🏢', label: `Companies Visited in ${dateService.getDateCycleInfo().currentYear}`, value: '120+' },
   { icon: '🚀', label: 'Off-Campus Drives Conducted', value: '45+' },
   { icon: '⚡', label: 'Students in Product Companies', value: '150+' },
   { icon: '🌍', label: 'International Placements', value: '25+' },
@@ -141,6 +142,8 @@ const toneStyles: Record<string, { icon: string; card: string }> = {
 };
 
 export default function PlacementPage() {
+  const { currentYear } = useDateSystem();
+
   usePageMeta({
     title: 'Placement Records & Hiring Partners',
     description: 'Explore Global Minds Technologies placement records, hiring partners, student success stories and career support.',
@@ -154,7 +157,7 @@ export default function PlacementPage() {
             <Breadcrumbs items={[{ label: 'Placement Records' }]} className="mb-5" />
             <div className="page-hero-badge mb-6">
               <TrendingUp className="h-4 w-4 text-teal-600" aria-hidden="true" />
-              <ShinyText text="85% Placement Rate — 2024 Batch" shinyColor="rgba(23, 108, 115, 0.9)" />
+              <ShinyText text={`85% Placement Rate — ${currentYear - 1}–${currentYear} Batches`} shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
             <h1 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl text-surface-900">
               Placement Records &amp; <DecryptedText text="Hiring Partners" speed={30} maxIterations={10} className="page-hero-highlight" />
