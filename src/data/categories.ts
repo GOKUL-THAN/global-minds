@@ -147,8 +147,8 @@ export const categories: Category[] = [
   {
     id: 'cat-automation-testing',
     slug: 'automation-testing',
-    title: 'Automation Testing',
-    description: 'Automation Testing',
+    title: 'AI Automation Testing',
+    description: 'AI Automation Testing',
     icon: 'zap',
     color: '#f97316',
     bgColor: '#fff7ed',

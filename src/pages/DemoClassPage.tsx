@@ -17,7 +17,7 @@ const popularDemoCourses = [
   { id: 'fullstack', title: 'Full Stack Development', duration: '1.5 Hrs', category: 'Full Stack Development', icon: '💻' },
   { id: 'cyber-security', title: 'Cyber Security', duration: '1.5 Hrs', category: 'Cyber Security', icon: '🛡️' },
   { id: 'testing', title: 'Software Testing', duration: '1.5 Hrs', category: 'Software Testing', icon: '🧪' },
-  { id: 'automation-testing', title: 'Automation Testing', duration: '1.5 Hrs', category: 'Automation Testing', icon: '⚙️' },
+  { id: 'automation-testing', title: 'AI Automation Testing', duration: '1.5 Hrs', category: 'AI Automation Testing', icon: '🤖' },
 ];
 
 

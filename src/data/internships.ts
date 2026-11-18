@@ -27,7 +27,7 @@ export const internships: Internship[] = [
   {
     id: 'int2',
     slug: 'automation-testing-internship',
-    title: 'Automation Testing Intern',
+    title: 'AI Automation Testing Intern',
     company: 'Placeholder Software QA',
     duration: '2 Months',
     location: 'Remote',
@@ -39,7 +39,7 @@ export const internships: Internship[] = [
     stipend: 'Stipend details — PLACEHOLDER',
     applicationDeadline: getActiveDeadline(),
     status: 'open',
-    category: 'Automation Testing',
+    category: 'AI Automation Testing',
     thumbnail: 'https://images.unsplash.com/photo-1596496181871-9681eacf9764?w=600&h=400&fit=crop',
   },
   {
@@ -124,5 +124,5 @@ export const allowedInternshipCategories: string[] = [
   'AIML',
   'Full Stack Development',
   'Software Testing',
-  'Automation Testing',
+  'AI Automation Testing',
 ] as const;

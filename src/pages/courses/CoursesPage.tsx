@@ -30,7 +30,7 @@ export default function CoursesPage() {
   const { courses: visibleCourses, loading: coursesLoading, error: coursesError } = useCourseCatalog();
   usePageMeta({
     title: 'Courses',
-    description: 'Browse AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing courses.',
+    description: 'Browse AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and AI Automation Testing courses.',
   });
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -101,7 +101,7 @@ export default function CoursesPage() {
             Explore <DecryptedText text="All Courses" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc max-w-2xl text-base sm:text-lg">
-            Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
+            Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and AI Automation Testing.
           </p>
           <div className="mt-4">
             <DateCycleBadge variant="compact" />

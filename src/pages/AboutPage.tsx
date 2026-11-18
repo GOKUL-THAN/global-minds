@@ -143,7 +143,7 @@ export default function AboutPage() {
 
       <CTASection
         title="Join Global Minds Technologies"
-        subtitle="AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing."
+        subtitle="AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and AI Automation Testing."
         primaryLabel="Book Free Demo Class"
         primaryHref="/demo-class"
         secondaryLabel="View All Courses"

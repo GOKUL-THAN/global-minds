@@ -464,7 +464,7 @@ class DateService {
       },
       {
         id: 'b5',
-        course: 'Automation Testing (Selenium)',
+        course: 'AI Automation Testing (Selenium)',
         category: 'Software Testing',
         dayOffset: 11,
         startWeekdays: [6],

@@ -23,7 +23,7 @@ const footerLinks = {
     { label: 'Full Stack Development', href: '/courses/full-stack-development' },
     { label: 'Cyber Security', href: '/courses/cyber-security' },
     { label: 'Software Testing', href: '/courses/software-testing' },
-    { label: 'Automation Testing', href: '/courses/automation-testing' },
+    { label: 'AI Automation Testing', href: '/courses/automation-testing' },
     { label: 'All Courses', href: '/courses' },
   ],
   'Training & Learning': [

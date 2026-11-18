@@ -8671,8 +8671,8 @@
     "subCategory": "Business Intelligence"
   },
   {
-    "shortDescription": "Learn automation testing — Selenium, TestNG, Page Object Model, data-driven testing, Maven and CI/CD integration. PLACEHOLDER.",
-    "longDescription": "This Automation Testing course provides practical, industry-focused training. PLACEHOLDER — replace with the actual course description.",
+    "shortDescription": "Automate UI, API and regression testing with AI-assisted test generation, Selenium, Cypress, Playwright and CI/CD pipelines.",
+    "longDescription": "AI-powered automation testing course covering Selenium, Cypress, Playwright, self-healing locators, AI test generation, visual testing, API testing and CI/CD.",
     "level": "Beginner",
     "duration": "40 Hours",
     "totalHours": 40,
@@ -8842,9 +8842,9 @@
     ],
     "id": "cx28",
     "slug": "automation-testing",
-    "title": "Automation Testing",
+    "title": "AI Automation Testing",
     "category": "software-testing",
-    "subCategory": "Automation Testing"
+    "subCategory": "AI Automation Testing"
   },
   {
     "shortDescription": "Complete Selenium WebDriver — locators, waits, POM, cross-browser testing, TestNG and Cucumber BDD. PLACEHOLDER.",

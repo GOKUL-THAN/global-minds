@@ -9,7 +9,7 @@ const achievements = [
   { icon: Code, title: 'Full Stack Development' },
   { icon: ShieldCheck, title: 'Cyber Security' },
   { icon: TestTube2, title: 'Software Testing' },
-  { icon: TestTube2, title: 'Automation Testing' },
+  { icon: TestTube2, title: 'AI Automation Testing' },
   { icon: Briefcase, title: '50+ Hiring Partners' },
 ];
 

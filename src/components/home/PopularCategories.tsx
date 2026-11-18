@@ -35,7 +35,7 @@ export function PopularCategories() {
             <span className="text-gradient">Courses</span>
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-lg text-surface-700 font-medium">
-            AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
+            AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and AI Automation Testing.
           </p>
         </div>
 

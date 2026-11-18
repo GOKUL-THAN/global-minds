@@ -7,7 +7,7 @@ const hiringPartners = [
   { name: 'Google Cloud Platform', tag: 'Data & Cloud' },
   { name: 'TCS', tag: 'Enterprise IT' },
   { name: 'Infosys', tag: 'Full Stack' },
-  { name: 'Cognizant', tag: 'Automation Testing' },
+  { name: 'Cognizant', tag: 'AI Automation Testing' },
   { name: 'Wipro', tag: 'Cloud & Cyber' },
   { name: 'HCLTech', tag: 'Software Testing' },
   { name: 'Accenture', tag: 'AI & Data Science' },

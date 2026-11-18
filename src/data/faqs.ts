@@ -4,7 +4,7 @@ export const globalFAQs: FAQ[] = [
   {
     id: 'gf-courses',
     question: 'What courses does Global Minds Technologies offer?',
-    answer: 'AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
+    answer: 'AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and AI Automation Testing.',
     category: 'Courses',
   },
   {

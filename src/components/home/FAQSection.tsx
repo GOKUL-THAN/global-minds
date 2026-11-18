@@ -7,7 +7,7 @@ import { ShinyText } from '../ui/ShinyText';
 const faqs = [
   {
     question: 'What courses are available?',
-    answer: 'AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
+    answer: 'AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and AI Automation Testing.',
   },
   {
     question: 'How many hiring partners does Global Minds Technologies have?',

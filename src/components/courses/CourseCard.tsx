@@ -42,6 +42,7 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
               <div className="flex gap-2 mb-1.5">
                 {course.trending && <Badge variant="accent">Trending</Badge>}
                 {course.featured && <Badge variant="brand">Featured</Badge>}
+                {course.slug === 'automation-testing' && <Badge variant="brand">AI Powered</Badge>}
               </div>
               <h3 className="font-display font-bold text-surface-900 group-hover:text-brand-700 transition-colors line-clamp-1">
                 {course.title}
@@ -90,6 +91,7 @@ export function CourseCard({ course, layout = 'grid', className }: CourseCardPro
         <div className="absolute top-3 left-3 flex gap-1.5">
           {course.trending && <Badge variant="accent">Trending</Badge>}
           {course.featured && !course.trending && <Badge variant="brand">Featured</Badge>}
+          {course.slug === 'automation-testing' && <Badge variant="brand">AI Powered</Badge>}
         </div>
 
         {/* Discount badge */}

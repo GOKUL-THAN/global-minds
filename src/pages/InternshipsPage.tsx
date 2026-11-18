@@ -26,7 +26,7 @@ export default function InternshipsPage() {
 
   usePageMeta({
     title: 'Course Internships — AWS / Cloud, Data Analytics, Python & More',
-    description: 'Explore internships related to AWS / Cloud, Data Analytics, Python, AIML, Digital Marketing, Full Stack Development, Software Testing, and Automation Testing.',
+    description: 'Explore internships related to AWS / Cloud, Data Analytics, Python, AIML, Digital Marketing, Full Stack Development, Software Testing, and AI Automation Testing.',
   });
 
   const filtered = visibleInternships.filter(i => {
@@ -55,7 +55,7 @@ export default function InternshipsPage() {
             Industry-Ready <DecryptedText text="Internships" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-xl max-w-2xl leading-relaxed mb-6">
-            Gain real industry experience through internships related to AWS / Cloud, Data Analytics, Python, AIML, Digital Marketing, Full Stack Development, Software Testing, and Automation Testing.
+            Gain real industry experience through internships related to AWS / Cloud, Data Analytics, Python, AIML, Digital Marketing, Full Stack Development, Software Testing, and AI Automation Testing.
           </p>
           <div className="flex flex-wrap gap-3">
             <div className="page-hero-chip font-semibold text-emerald-800 border-emerald-300 bg-emerald-50">
