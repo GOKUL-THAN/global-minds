@@ -10,7 +10,7 @@ export const siteConfig = {
   tagline: 'Build Skills Today for Tomorrow\'s Leaders',
   subTagline: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
   logoText: 'Global Minds Technologies',
-  logoUrl: '/logo.jpg',
+  logoUrl: '/logo-borderless.png',
   faviconUrl: '/logo.jpg',
   foundedYear: 2018,
 
