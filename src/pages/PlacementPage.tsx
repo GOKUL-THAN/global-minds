@@ -22,7 +22,7 @@ const placementStats = [
   { icon: Building2, value: '50+', label: 'Hiring Partners', tone: 'amber' },
   { icon: TrendingUp, value: '4.8 LPA', label: 'Avg. Starting Package', tone: 'green' },
   { icon: Star, value: '22 LPA', label: 'Highest Package', tone: 'gold' },
-  { icon: Award, value: '80%', label: 'Placement Rate', tone: 'purple' },
+  { icon: Award, value: '85%', label: 'Placement Rate', tone: 'purple' },
   { icon: CheckCircle2, value: '30 Days', label: 'Avg. Time to Offer', tone: 'blue' },
 ];
 
@@ -143,7 +143,7 @@ const toneStyles: Record<string, { icon: string; card: string }> = {
 export default function PlacementPage() {
   usePageMeta({
     title: 'Placement Records & Hiring Partners',
-    description: 'Explore Global Minds Academy placement records, hiring partners, student success stories and career support.',
+    description: 'Explore Global Minds Technologies placement records, hiring partners, student success stories and career support.',
   });
 
   return (
@@ -154,7 +154,7 @@ export default function PlacementPage() {
             <Breadcrumbs items={[{ label: 'Placement Records' }]} className="mb-5" />
             <div className="page-hero-badge mb-6">
               <TrendingUp className="h-4 w-4 text-teal-600" aria-hidden="true" />
-              <ShinyText text="80% Placement Rate — 2024 Batch" shinyColor="rgba(23, 108, 115, 0.9)" />
+              <ShinyText text="85% Placement Rate — 2024 Batch" shinyColor="rgba(23, 108, 115, 0.9)" />
             </div>
             <h1 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl text-surface-900">
               Placement Records &amp; <DecryptedText text="Hiring Partners" speed={30} maxIterations={10} className="page-hero-highlight" />
@@ -192,7 +192,7 @@ export default function PlacementPage() {
                   <p className="text-2xl font-extrabold tracking-tight text-surface-950 sm:text-3xl">
                     {value === '1,000+' ? <CountUp end={1000} suffix="+" start />
                       : value === '50+' ? <CountUp end={50} suffix="+" start />
-                      : value === '80%' ? <CountUp end={80} suffix="%" start />
+                      : value === '85%' ? <CountUp end={85} suffix="%" start />
                       : value}
                   </p>
                 </div>

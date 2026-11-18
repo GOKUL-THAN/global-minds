@@ -31,7 +31,7 @@ const sections = [
 export default function ResumePrepPage() {
   usePageMeta({
     title: 'Resume Preparation & ATS Optimisation',
-    description: 'Build an ATS-friendly, recruiter-ready IT resume with Global Minds Academy career support — tailored to your target role.',
+    description: 'Build an ATS-friendly, recruiter-ready IT resume with Global Minds Technologies career support — tailored to your target role.',
   });
 
   return (

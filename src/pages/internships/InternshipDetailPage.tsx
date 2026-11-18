@@ -190,7 +190,7 @@ export default function InternshipDetailPage() {
               <div className="bg-brand-50 border border-brand-200 rounded-2xl p-5">
                 <h3 className="font-semibold text-brand-900 mb-2">Complete a Course First</h3>
                 <p className="text-brand-800 font-medium text-sm mb-4 leading-relaxed">
-                  Most internships require completing a relevant Global Minds Academy course. Browse our courses to get started.
+                  Most internships require completing a relevant Global Minds Technologies course. Browse our courses to get started.
                 </p>
                 <Link to="/courses">
                   <button className="btn-secondary btn w-full text-sm">Browse Courses</button>

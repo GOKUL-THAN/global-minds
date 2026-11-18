@@ -1,17 +1,17 @@
 // ============================================================
-// GLOBAL MINDS ACADEMY — SITE CONFIGURATION
+// GLOBAL MINDS TECHNOLOGIES — SITE CONFIGURATION
 // Real data sourced from globalmindsacademy.in
 // ============================================================
 
 export const siteConfig = {
   // ── Brand ──────────────────────────────────────────────────
-  brandName: 'Global Minds Academy',
-  brandShortName: 'GMA',
+  brandName: 'Global Minds Technologies',
+  brandShortName: 'GMT',
   tagline: 'Build Skills Today for Tomorrow\'s Leaders',
   subTagline: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
-  logoText: 'Global Minds Academy',
-  logoUrl: '/logo.png',
-  faviconUrl: '/logo.png',
+  logoText: 'Global Minds Technologies',
+  logoUrl: '/logo.jpg',
+  faviconUrl: '/logo.jpg',
   foundedYear: 2018,
 
   // ── Contact ────────────────────────────────────────────────
@@ -21,7 +21,7 @@ export const siteConfig = {
   phone: '+91 95974 37333',
   phoneAlt: '+91 95974 37333',
   whatsapp: '+919597437333',
-  whatsappMessage: 'Hi, I want to know more about Global Minds Academy courses.',
+  whatsappMessage: 'Hi, I want to know more about Global Minds Technologies courses.',
 
   // ── Address ────────────────────────────────────────────────
   address: {
@@ -54,9 +54,9 @@ export const siteConfig = {
 
   // ── SEO Defaults ──────────────────────────────────────────
   seo: {
-    defaultTitle: 'Global Minds Academy | Build Skills. Own the Future.',
-    titleTemplate: '%s | Global Minds Academy',
-    defaultDescription: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Academy. 50+ hiring partners.',
+    defaultTitle: 'Global Minds Technologies | Build Skills. Own the Future.',
+    titleTemplate: '%s | Global Minds Technologies',
+    defaultDescription: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Technologies. 50+ hiring partners.',
     defaultOgImage: 'https://globalmindsacademy.in/og-image.png',
     twitterHandle: '@globalmindsacad',
   },
@@ -92,7 +92,7 @@ export const siteConfig = {
     { code: 'AUD', symbol: 'A$', name: 'Australian Dollar' },
   ],
 
-  // ── Why Us — real GMA differentiators ─────────────────────
+  // ── Why Us — GMT differentiators ───────────────────────────
   whyUs: [
     {
       icon: 'flask',
@@ -112,7 +112,7 @@ export const siteConfig = {
     {
       icon: 'briefcase',
       title: '50+ Hiring Partners',
-      description: 'Global Minds Academy has 50+ hiring partners.',
+      description: 'Global Minds Technologies has 50+ hiring partners.',
     },
     {
       icon: 'layers',

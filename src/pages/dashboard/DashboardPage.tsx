@@ -431,7 +431,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <p className="font-display font-bold text-sm text-surface-900">My Dashboard</p>
-            <p className="text-xs text-surface-600 font-medium">Global Minds Academy</p>
+            <p className="text-xs text-surface-600 font-medium">Global Minds Technologies</p>
           </div>
         </div>
         <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-surface-600 hover:text-surface-950">

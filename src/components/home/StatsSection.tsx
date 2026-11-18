@@ -6,7 +6,7 @@ import { SpotlightCard } from '../ui/SpotlightCard';
 
 const stats = [
   { label: 'Hiring Partners', value: '50+', detail: 'Career partnership network', icon: Briefcase },
-  { label: 'Placement Success', value: '80%', detail: 'Career placement support', icon: Award },
+  { label: 'Placement Success', value: '85%', detail: 'Career placement support', icon: Award },
   { label: 'Learning Mode', value: 'Online', detail: 'Learn from anywhere', icon: MonitorPlay },
   { label: 'Classroom Training', value: 'Chennai', detail: 'Our in-person location', icon: MapPin },
 ];
@@ -19,7 +19,7 @@ export function StatsSection() {
     <section
       ref={ref as React.RefObject<HTMLElement>}
       className="home-stats section relative overflow-hidden"
-      aria-label="Global Minds Academy statistics"
+      aria-label="Global Minds Technologies statistics"
     >
       <div className="container-xl relative">
         <div className="home-stats-heading mb-8 text-center">
@@ -46,7 +46,7 @@ export function StatsSection() {
                 </div>
                 <div className="home-stat-value mb-1 font-display text-2xl font-bold sm:text-3xl">
                   {stat.value === '50+' ? <CountUp end={50} suffix="+" start={isVisible} />
-                    : stat.value === '80%' ? <CountUp end={80} suffix="%" start={isVisible} />
+                    : stat.value === '85%' ? <CountUp end={85} suffix="%" start={isVisible} />
                       : stat.value}
                 </div>
                 <p className="mb-0.5 text-sm font-bold text-surface-900">{stat.label}</p>

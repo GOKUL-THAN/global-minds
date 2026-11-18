@@ -8,9 +8,11 @@ const modes = [
     icon: Monitor,
     title: 'Online Training',
     href: '/online-training',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=700&fit=crop',
+    imageAlt: 'Learner attending an online class at a laptop',
     description: 'Live instructor-led classes from anywhere in the world. Includes recorded sessions, doubt clearing and LMS access.',
     features: ['Live classes', 'Recorded sessions', 'Global access', 'LMS portal', 'Doubt sessions'],
-    color: 'from-brand-600 to-brand-500',
+    overlay: 'from-teal-950/90 via-teal-900/75 to-teal-700/65',
     lightColor: 'bg-brand-50',
     textColor: 'text-brand-600',
     badge: 'Learn from anywhere',
@@ -19,9 +21,11 @@ const modes = [
     icon: MapPin,
     title: 'Classroom Training',
     href: '/classroom-training',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=700&fit=crop',
+    imageAlt: 'Students learning together in a classroom',
     description: 'Hands-on classroom training at our Chennai centre with fully equipped computer labs.',
     features: ['Physical labs', 'Face-to-face mentoring', 'Group projects', 'Networking events', 'Placement support'],
-    color: 'from-green-600 to-green-500',
+    overlay: 'from-green-950/90 via-green-900/75 to-green-700/65',
     lightColor: 'bg-green-50',
     textColor: 'text-green-600',
     badge: 'Hands-on experience',
@@ -30,9 +34,11 @@ const modes = [
     icon: User,
     title: 'One-to-One Training',
     href: '/online-training',
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=700&fit=crop',
+    imageAlt: 'Instructor and learners collaborating in a mentoring session',
     description: 'Personalised one-to-one sessions designed around your pace, schedule and specific goals.',
     features: ['Custom curriculum', 'Flexible timing', 'Personal mentor', 'Rapid progress', 'Interview prep'],
-    color: 'from-accent-500 to-accent-400',
+    overlay: 'from-amber-950/90 via-amber-900/75 to-amber-700/65',
     lightColor: 'bg-accent-50',
     textColor: 'text-accent-600',
     badge: 'Personalised learning',
@@ -65,7 +71,14 @@ export function LearningModesSection() {
               className="group rounded-3xl overflow-hidden border border-surface-200 hover:shadow-card-xl transition-all duration-300 hover:-translate-y-1 h-full"
             >
               {/* Card top */}
-              <div className={cn('p-8 bg-gradient-to-br', mode.color)}>
+              <div className="relative isolate flex min-h-[320px] flex-col justify-end overflow-hidden p-8">
+                <img
+                  src={mode.image}
+                  alt={mode.imageAlt}
+                  loading="lazy"
+                  className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className={cn('absolute inset-0 -z-10 bg-gradient-to-br', mode.overlay)} aria-hidden="true" />
                 <div className="w-14 h-14 rounded-2xl bg-white/25 flex items-center justify-center mb-4">
                   <mode.icon className="w-7 h-7 text-white" />
                 </div>

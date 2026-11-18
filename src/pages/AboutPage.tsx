@@ -5,6 +5,7 @@ import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CountUp } from '../components/ui/CountUp';
 import { CTASection } from '../components/home/CTASection';
+import { siteConfig } from '../data/siteConfig';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const coreStats = [
@@ -31,7 +32,7 @@ const features = [
 export default function AboutPage() {
   usePageMeta({
     title: 'About Us',
-    description: 'At Global Minds Academy, we offer specialized training programs designed to meet industry standards and future career demands. 100% placement opportunity.',
+    description: 'At Global Minds Technologies, we offer specialized training programs designed to meet industry standards and future career demands. 100% placement opportunity.',
   });
 
   return (
@@ -56,7 +57,7 @@ export default function AboutPage() {
               />
             </h1>
             <p className="page-hero-desc max-w-3xl text-lg sm:text-xl leading-relaxed mb-4">
-              At Global Minds Academy, we offer specialized training programs designed to meet industry standards and future career demands. Our courses include advanced IT technologies such as Python, Java, React JS, Node.js, AWS, Data Science, Data Warehousing, Blockchain, Dot Net, Selenium, Hadoop, Tableau, Power BI, and more.
+              At Global Minds Technologies, we offer specialized training programs designed to meet industry standards and future career demands. Our courses include advanced IT technologies such as Python, Java, React JS, Node.js, AWS, Data Science, Data Warehousing, Blockchain, Dot Net, Selenium, Hadoop, Tableau, Power BI, and more.
             </p>
             <p className="max-w-3xl text-base leading-relaxed text-surface-700 font-semibold">
               All programs are industry-oriented, certification-backed, and come with 100% placement opportunity.
@@ -93,8 +94,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-3xl border border-brand-200 bg-white p-6 shadow-[0_20px_40px_-10px_rgba(13,148,136,0.12)]">
-              <img src="/logo.png" alt="Global Minds Academy emblem" className="mx-auto mb-6 h-28 w-28 object-contain" />
-              <h3 className="text-center text-2xl font-black tracking-[0.12em] text-surface-900">GLOBAL MINDS ACADEMY</h3>
+              <img src={siteConfig.logoUrl} alt="Global Minds Technologies emblem" className="mx-auto mb-6 h-28 w-28 object-contain" />
+              <h3 className="text-center text-2xl font-black tracking-[0.12em] text-surface-900">GLOBAL MINDS TECHNOLOGIES</h3>
               <p className="mt-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
                 Build Skills | Own the Future
               </p>
@@ -141,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       <CTASection
-        title="Join Global Minds Academy"
+        title="Join Global Minds Technologies"
         subtitle="AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing."
         primaryLabel="Book Free Demo Class"
         primaryHref="/demo-class"

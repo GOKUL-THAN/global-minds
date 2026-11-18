@@ -14,7 +14,7 @@ const features = [
   { icon: Clock, title: 'Recorded Session Access', desc: 'Recordings of every class available so you can revise at your own pace.' },
   { icon: Users, title: 'Interactive Learning', desc: 'Ask questions, participate in discussions and collaborate with classmates.' },
   { icon: MessageCircle, title: 'Doubt Clearing Sessions', desc: 'Dedicated doubt-clearing sessions to ensure no question goes unanswered.' },
-  { icon: Award, title: 'Certificate on Completion', desc: 'Earn your Global Minds Academy certificate upon successful course completion.' },
+  { icon: Award, title: 'Certificate on Completion', desc: 'Earn your Global Minds Technologies certificate upon successful course completion.' },
   { icon: Globe, title: 'Global Access', desc: 'Learn from anywhere in the world with a stable internet connection.' },
 ];
 
@@ -44,7 +44,7 @@ export default function OnlineTrainingPage() {
       <section className="section">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <h2 className="display-md mb-4">Why Online Training at Global Minds Academy?</h2>
+            <h2 className="display-md mb-4">Why Online Training at Global Minds Technologies?</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map(f => (

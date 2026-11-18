@@ -1,7 +1,7 @@
 # Phase 1 — System Audit & Foundation
 
 **Audit date:** 2026-10-08  
-**Scope:** Existing Global Minds Academy application in this workspace. This
+**Scope:** Existing Global Minds Technologies application in this workspace. This
 report covers Phase 1 only; it does not implement or approve later phases.
 
 ## Executive summary

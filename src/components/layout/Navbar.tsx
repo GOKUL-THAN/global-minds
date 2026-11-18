@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Home, Menu, Search, User, X } from 'lucide-react';
+import { ChevronDown, Home, Menu, User, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { siteConfig } from '../../data/siteConfig';
 import { defaultNavigation, readNavigationContent, type MenuItem, type NavigationContent } from '../../data/navigationMenu';
@@ -322,16 +322,16 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-screen-2xl px-2 sm:px-3 lg:px-4">
         <div className="flex h-16 items-center justify-between lg:h-18">
-          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Global Minds Academy home">
+          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label={`${siteConfig.brandName} home`}>
             <img
               src={siteConfig.logoUrl}
-              alt="Global Minds Academy logo"
+              alt={`${siteConfig.brandName} logo`}
               className="h-14 w-14 shrink-0 object-contain"
               onError={e => { e.currentTarget.style.display = 'none'; }}
             />
             <span className="whitespace-nowrap font-display text-base font-extrabold tracking-tight sm:text-lg">
               <span className="text-[#164e59]">Global</span>{' '}
-              <span className="text-[#176c73]">Minds Academy</span>
+              <span className="text-[#176c73]">Minds Technologies</span>
             </span>
           </Link>
 
@@ -392,16 +392,8 @@ export function Navbar() {
             )}
           </nav>
 
-          {/* Desktop CTA — Search + Login */}
+          {/* Desktop CTA — Login */}
           <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
-            <Link
-              to="/courses"
-              className="inline-flex items-center gap-1.5 rounded-lg p-2 text-surface-700 font-medium transition-colors hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-              aria-label="Search courses"
-            >
-              <Search className="h-5 w-5" />
-              <span className="hidden text-sm 2xl:inline">Search</span>
-            </Link>
             <Link to="/login">
               <Magnetic>
                 <Button variant="ghost" size="sm" leftIcon={<User className="h-4 w-4" />}>Login</Button>
@@ -458,14 +450,6 @@ export function Navbar() {
             }}
           >
             <div className="container-xl space-y-1 py-4">
-              <Link
-                to="/courses"
-                onClick={() => setMobileOpen(false)}
-                className="mb-4 flex items-center gap-3 rounded-xl bg-surface-50 p-3 text-surface-700 font-medium border border-surface-200"
-              >
-                <Search className="h-5 w-5" />
-                <span className="text-sm">Search courses...</span>
-              </Link>
               <nav aria-label="Mobile navigation" className="space-y-1">
                 <Link
                   to="/"

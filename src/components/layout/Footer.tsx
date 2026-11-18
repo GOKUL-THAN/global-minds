@@ -39,7 +39,6 @@ const footerLinks = {
     { label: 'Resume Prep', href: '/career/resume-preparation' },
     { label: 'Mock Interview', href: '/career/mock-interview' },
     { label: 'Events & Webinars', href: '/events' },
-    { label: 'Scholarships', href: '/scholarships' },
     { label: 'Refer & Earn', href: '/refer-earn' },
   ],
 
@@ -90,13 +89,13 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
               <img
-                src="/logo.png"
-                alt="Global Minds Academy logo"
+                src={siteConfig.logoUrl}
+                alt={`${siteConfig.brandName} logo`}
                 className="h-12 w-12 object-contain rounded-xl bg-surface-50 border border-surface-200 p-1"
                 onError={e => { e.currentTarget.style.display = 'none'; }}
               />
               <span className="font-display font-extrabold text-xl text-surface-900">
-                Global <span className="text-brand-600">Minds Academy</span>
+                Global <span className="text-brand-600">Minds Technologies</span>
               </span>
             </Link>
 
@@ -231,7 +230,7 @@ export function Footer() {
       <div className="border-t border-surface-200">
         <div className="container-xl py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-surface-600 text-center sm:text-left font-medium">
-            © {new Date().getFullYear()} Global Minds Academy. All rights reserved.
+            © {new Date().getFullYear()} Global Minds Technologies. All rights reserved.
           </p>
 
           <div className="flex items-center flex-wrap justify-center gap-4">

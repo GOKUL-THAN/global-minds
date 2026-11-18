@@ -13,7 +13,7 @@ export function organizationSchema() {
     '@type': 'EducationalOrganization',
     name: siteConfig.brandName,
     url: siteConfig.siteUrl,
-    logo: `${siteConfig.siteUrl}/logo.png`,
+    logo: `${siteConfig.siteUrl}${siteConfig.logoUrl}`,
     description: siteConfig.seo.defaultDescription,
     telephone: siteConfig.phone,
     email: siteConfig.email,

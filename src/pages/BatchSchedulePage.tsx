@@ -58,7 +58,7 @@ function badgeColor(badge?: string) {
 export default function BatchSchedulePage() {
   usePageMeta({
     title: 'Batch Schedule & Upcoming Classes',
-    description: 'View all upcoming training batch schedules at Global Minds Academy. Online, classroom and hybrid batches for all courses. Enroll now — limited seats.',
+    description: 'View all upcoming training batch schedules at Global Minds Technologies. Online, classroom and hybrid batches for all courses. Enroll now — limited seats.',
   });
 
   const [modeFilter, setModeFilter] = useState<Mode>('All');

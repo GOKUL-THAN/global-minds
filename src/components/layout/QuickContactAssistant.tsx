@@ -15,14 +15,14 @@ const suggestedQuestions = [
   'What capstone projects will I build?',
   'How does the training work?',
   'What career support is available?',
-  'How can I contact the academy?',
+  'How can I contact the team?',
 ];
 
 function getAssistantResponse(question: string): string {
   const normalizedQuestion = question.toLowerCase();
 
   if (/\b(location|located|address|where|centre|center)\b/.test(normalizedQuestion)) {
-    return `Global Minds Academy is located at ${siteConfig.address.line1}, ${siteConfig.address.city}, ${siteConfig.address.state}, ${siteConfig.address.country}. You can contact the team at ${siteConfig.phone} or ${siteConfig.email}.`;
+    return `Global Minds Technologies is located at ${siteConfig.address.line1}, ${siteConfig.address.city}, ${siteConfig.address.state}, ${siteConfig.address.country}. You can contact the team at ${siteConfig.phone} or ${siteConfig.email}.`;
   }
 
   if (/\b(project|projects|capstone|portfolio)\b/.test(normalizedQuestion)) {
@@ -30,7 +30,7 @@ function getAssistantResponse(question: string): string {
   }
 
   if (/\b(teach|teaching|method|approach|practical|lab|mentor|mentorship|hands.on)\b/.test(normalizedQuestion)) {
-    return 'Global Minds Academy emphasizes practical labs, real-world capstone projects and 1-on-1 mentorship. The website describes guidance from senior software architects and AI researchers. Training options include online and classroom programs.';
+    return 'Global Minds Technologies emphasizes practical labs, real-world capstone projects and 1-on-1 mentorship. The website describes guidance from senior software architects and AI researchers. Training options include online and classroom programs.';
   }
 
   if (/\b(placement|career|job|hiring|resume|interview|support)\b/.test(normalizedQuestion)) {
@@ -41,12 +41,12 @@ function getAssistantResponse(question: string): string {
     return 'For current batch dates and timings, please check the Batch Schedule page or contact our admissions team.';
   }
 
-  if (/\b(fee|fees|price|cost|scholarship|discount)\b/.test(normalizedQuestion)) {
-    return 'Fees and scholarship availability can vary by course and batch. Please contact admissions for current pricing and eligibility details.';
+  if (/\b(fee|fees|price|cost|discount)\b/.test(normalizedQuestion)) {
+    return 'Fees and discounts can vary by course and batch. Please contact admissions for current pricing and eligibility details.';
   }
 
   if (/\b(contact|phone|call|whatsapp|email|speak|counsel|admissions)\b/.test(normalizedQuestion)) {
-    return `Contact Global Minds Academy by phone or WhatsApp at ${siteConfig.phone}, or email ${siteConfig.email}. The academy is in ${siteConfig.address.city}, ${siteConfig.address.state}.`;
+    return `Contact Global Minds Technologies by phone or WhatsApp at ${siteConfig.phone}, or email ${siteConfig.email}. The office is in ${siteConfig.address.city}, ${siteConfig.address.state}.`;
   }
 
   const matchedCourse = publicCourseCatalog.find(course => {
@@ -68,10 +68,10 @@ function getAssistantResponse(question: string): string {
   }
 
   if (/\b(corporate|enterprise|company|business|team training)\b/.test(normalizedQuestion)) {
-    return 'Global Minds Academy lists corporate training and enterprise technology services. Contact the team to discuss your organization’s technologies, learner group and training goals.';
+    return 'Global Minds Technologies lists corporate training and enterprise technology services. Contact the team to discuss your organization’s technologies, learner group and training goals.';
   }
 
-  return 'I can answer questions about courses and durations, practical training, capstone projects, career support, batch schedules, fees, corporate training and academy contact details. Try asking about a specific course or project.';
+  return 'I can answer questions about courses and durations, practical training, capstone projects, career support, batch schedules, fees, corporate training and contact details. Try asking about a specific course or project.';
 }
 
 export function QuickContactAssistant() {
@@ -81,7 +81,7 @@ export function QuickContactAssistant() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'assistant',
-      text: 'Hello! Welcome to Global Minds Academy. Ask me about courses, practical training, capstone projects, career support, schedules or admissions. Choose a suggested question or type your own.',
+      text: 'Hello! Welcome to Global Minds Technologies. Ask me about courses, practical training, capstone projects, career support, schedules or admissions. Choose a suggested question or type your own.',
     },
   ]);
 

@@ -7,7 +7,6 @@ import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { useCmsCollection } from '../hooks/useCmsCollection';
 import { ShinyText } from '../components/ui/ShinyText';
-import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { PixelCard } from '../components/ui/PixelCard';
 import { CountUp } from '../components/ui/CountUp';
@@ -25,6 +24,7 @@ const projectCategories = [
     projects: [
       {
         title: 'E-Commerce Platform',
+        image: '/images/courses/mern-stack.jpg',
         stack: ['React', 'Node.js', 'MongoDB', 'Stripe'],
         difficulty: 'Advanced',
         description: 'Full-featured online store with product catalog, cart, checkout, payments and admin dashboard.',
@@ -32,6 +32,7 @@ const projectCategories = [
       },
       {
         title: 'Job Portal Application',
+        image: '/images/courses/java-full-stack.jpg',
         stack: ['Next.js', 'PostgreSQL', 'Prisma', 'Tailwind'],
         difficulty: 'Intermediate',
         description: 'Job listing and application portal with recruiter and candidate portals, search and filters.',
@@ -39,6 +40,7 @@ const projectCategories = [
       },
       {
         title: 'Real-Time Chat App',
+        image: '/images/courses/node-js.jpg',
         stack: ['React', 'Socket.io', 'Node.js', 'Redis'],
         difficulty: 'Intermediate',
         description: 'Slack-style group chat with private messages, channels, file sharing and online status.',
@@ -57,6 +59,7 @@ const projectCategories = [
     projects: [
       {
         title: 'CI/CD Pipeline on AWS',
+        image: '/images/courses/github-actions.jpg',
         stack: ['GitHub Actions', 'Docker', 'ECR', 'ECS'],
         difficulty: 'Intermediate',
         description: 'End-to-end CI/CD pipeline that builds, tests and deploys a Node.js app to AWS ECS on every commit.',
@@ -64,6 +67,7 @@ const projectCategories = [
       },
       {
         title: 'Infrastructure as Code with Terraform',
+        image: '/images/courses/terraform.jpg',
         stack: ['Terraform', 'AWS', 'VPC', 'EC2'],
         difficulty: 'Advanced',
         description: 'Provision a complete AWS VPC with subnets, security groups, EC2 instances and RDS using Terraform.',
@@ -71,6 +75,7 @@ const projectCategories = [
       },
       {
         title: 'Kubernetes Microservices Deployment',
+        image: '/images/courses/kubernetes.jpg',
         stack: ['Kubernetes', 'Helm', 'Prometheus', 'Grafana'],
         difficulty: 'Advanced',
         description: 'Deploy a multi-service application on Kubernetes with autoscaling, service mesh and monitoring.',
@@ -89,6 +94,7 @@ const projectCategories = [
     projects: [
       {
         title: 'Customer Churn Prediction',
+        image: '/images/courses/machine-learning.jpg',
         stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'],
         difficulty: 'Intermediate',
         description: 'Predict telecom customer churn using machine learning and deploy an interactive Streamlit dashboard.',
@@ -96,6 +102,7 @@ const projectCategories = [
       },
       {
         title: 'Sentiment Analysis Pipeline',
+        image: '/images/courses/nlp.jpg',
         stack: ['Python', 'BERT', 'Hugging Face', 'FastAPI'],
         difficulty: 'Advanced',
         description: 'NLP pipeline that classifies product reviews as positive/negative/neutral using BERT fine-tuning.',
@@ -103,6 +110,7 @@ const projectCategories = [
       },
       {
         title: 'Sales Dashboard with Power BI',
+        image: '/images/courses/power-bi.jpg',
         stack: ['Power BI', 'DAX', 'SQL', 'Excel'],
         difficulty: 'Beginner',
         description: 'Interactive sales analytics dashboard with KPIs, drill-downs, and forecasting using Power BI.',
@@ -121,6 +129,7 @@ const projectCategories = [
     projects: [
       {
         title: 'Selenium Test Automation Framework',
+        image: '/images/courses/selenium.jpg',
         stack: ['Selenium', 'TestNG', 'Java', 'Maven'],
         difficulty: 'Intermediate',
         description: 'Page Object Model-based automation framework for an e-commerce site with reports and CI integration.',
@@ -128,6 +137,7 @@ const projectCategories = [
       },
       {
         title: 'API Testing with Rest Assured',
+        image: '/images/courses/api-testing.jpg',
         stack: ['Rest Assured', 'Java', 'Postman', 'Newman'],
         difficulty: 'Intermediate',
         description: 'Comprehensive API test suite covering CRUD operations, authentication and error scenarios.',
@@ -135,6 +145,7 @@ const projectCategories = [
       },
       {
         title: 'Performance Testing with JMeter',
+        image: '/images/courses/performance-testing.jpg',
         stack: ['JMeter', 'Grafana', 'InfluxDB', 'BlazeMeter'],
         difficulty: 'Advanced',
         description: 'Load and stress testing a REST API with real-time performance monitoring and reporting.',
@@ -152,7 +163,6 @@ const alumniProjects = [
     course: 'Full Stack Development',
     stack: ['React', 'Node.js', 'MongoDB'],
     stars: 142,
-    placed: 'Amazon',
     color: 'bg-brand-500',
   },
   {
@@ -161,7 +171,6 @@ const alumniProjects = [
     course: 'DevOps Training',
     stack: ['Python', 'Kubernetes', 'Terraform'],
     stars: 89,
-    placed: 'Microsoft',
     color: 'bg-orange-500',
   },
   {
@@ -170,7 +179,6 @@ const alumniProjects = [
     course: 'Data Science & AI',
     stack: ['Python', 'LSTM', 'Streamlit'],
     stars: 213,
-    placed: 'Google',
     color: 'bg-purple-500',
   },
   {
@@ -179,7 +187,6 @@ const alumniProjects = [
     course: 'Software Testing',
     stack: ['Selenium', 'Python', 'Jira API'],
     stars: 67,
-    placed: 'Infosys',
     color: 'bg-green-500',
   },
 ];
@@ -199,7 +206,7 @@ export default function LiveProjectsPage() {
 
   usePageMeta({
     title: 'Live Industry Projects',
-    description: 'Work on real-world live projects at Global Minds Academy. Build your portfolio with full-stack, DevOps, data science and testing projects that impress employers.',
+    description: 'Work on real-world live projects at Global Minds Technologies. Build your portfolio with full-stack, DevOps, data science and testing projects that impress employers.',
   });
 
   return (
@@ -213,14 +220,13 @@ export default function LiveProjectsPage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="page-hero-badge inline-flex items-center gap-2 mb-6">
               <Trophy className="w-4 h-4 text-amber-300" />
-              <ShinyText text="50+ Industry-Grade Projects" shinyColor="rgba(217, 161, 11, 0.95)" />
+              <ShinyText text="Real-World Capstone Portfolio" shinyColor="rgba(217, 161, 11, 0.95)" />
             </div>
             <h1 className="page-hero-title mb-5">
-              Build Real Projects.<br />
-              <DecryptedText text="Impress Employers." speed={30} maxIterations={10} className="page-hero-highlight" />
+              All Industry Capstone Projects
             </h1>
             <p className="page-hero-desc mx-auto max-w-3xl text-lg sm:text-xl mb-8 leading-relaxed">
-              Every course includes live, industry-grade projects designed to fill your GitHub portfolio and give you the practical experience that gets you hired.
+              Every course includes hands-on, industry-grade capstone projects designed to help you build an impressive GitHub portfolio and prepare for your next opportunity.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <Link to="/courses"><Button className="bg-teal-700 hover:bg-teal-800 text-white font-bold shadow-md shadow-teal-900/20">Explore Courses</Button></Link>
@@ -319,6 +325,12 @@ export default function LiveProjectsPage() {
                   {cat.projects.map(proj => (
                     <SpotlightCard key={proj.title} className="h-full">
                       <div className={`rounded-2xl border-2 p-6 ${cat.color} hover:shadow-card-md transition-shadow bg-white h-full flex flex-col justify-between`}>
+                        <img
+                          src={proj.image}
+                          alt={`Project illustration for ${proj.title}`}
+                          loading="lazy"
+                          className="mb-5 aspect-video w-full rounded-xl object-cover"
+                        />
                         <div>
                           <div className="flex items-start justify-between mb-3">
                             <h4 className="font-semibold text-surface-900 flex-1 leading-snug">{proj.title}</h4>
@@ -386,7 +398,7 @@ export default function LiveProjectsPage() {
                     {p.stars} stars
                   </div>
                   <span className="text-xs font-bold text-green-800 bg-green-50 px-2.5 py-1 rounded-full border border-green-200">
-                    Placed @ {p.placed}
+                    Portfolio project
                   </span>
                 </div>
               </div>

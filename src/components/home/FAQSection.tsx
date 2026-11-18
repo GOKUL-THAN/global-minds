@@ -10,8 +10,8 @@ const faqs = [
     answer: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
   },
   {
-    question: 'How many hiring partners does Global Minds Academy have?',
-    answer: 'Global Minds Academy has 50+ hiring partners.',
+    question: 'How many hiring partners does Global Minds Technologies have?',
+    answer: 'Global Minds Technologies has 50+ hiring partners.',
   },
 ];
 

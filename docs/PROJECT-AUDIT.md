@@ -1,4 +1,4 @@
-# Global Academy — Project Audit (Superseded Snapshot)
+# Global Minds Technologies — Project Audit (Superseded Snapshot)
 
 > **This document is an older snapshot and is not the current audit.** Its
 > implementation claims predate the present auth/session/RBAC and CMS changes.
@@ -73,7 +73,7 @@ src/
   types/index.ts        – All TypeScript types
   utils/                – cn, formatters, structuredData
 public/
-  favicon.svg
+  logo.jpg
   robots.txt
   sitemap.xml
 docs/

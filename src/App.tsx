@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 
 // ── Public pages (lazy) ───────────────────────────────────────
 const CoursesPage             = lazy(() => import('./pages/courses/CoursesPage'));
+const SearchPage              = lazy(() => import('./pages/SearchPage'));
 const CourseDetailPage        = lazy(() => import('./pages/courses/CourseDetailPage'));
 const CertificationsPage      = lazy(() => import('./pages/CertificationsPage'));
 const MasterProgramsPage      = lazy(() => import('./pages/master-programs/MasterProgramsPage'));
@@ -43,7 +44,6 @@ const PlacementPage           = lazy(() => import('./pages/PlacementPage'));
 const BatchSchedulePage       = lazy(() => import('./pages/BatchSchedulePage'));
 const DemoClassPage           = lazy(() => import('./pages/DemoClassPage'));
 const SkillAssessmentPage     = lazy(() => import('./pages/SkillAssessmentPage'));
-const ScholarshipPage         = lazy(() => import('./pages/ScholarshipPage'));
 const EventsPage              = lazy(() => import('./pages/EventsPage'));
 const LiveProjectsPage        = lazy(() => import('./pages/LiveProjectsPage'));
 const ReferEarnPage           = lazy(() => import('./pages/ReferEarnPage'));
@@ -164,6 +164,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
 
       // Courses
+      { path: 'search',        element: <S><SearchPage /></S> },
       { path: 'courses',       element: <S><CoursesPage /></S> },
       { path: 'courses/:slug', element: <S><CourseDetailPage /></S> },
       { path: 'categories/:slug', element: <S><CategoryPage /></S> },
@@ -230,7 +231,6 @@ const router = createBrowserRouter([
       { path: 'batch-schedule',    element: <S><BatchSchedulePage /></S> },
       { path: 'demo-class',        element: <S><DemoClassPage /></S> },
       { path: 'skill-assessment',  element: <S><SkillAssessmentPage /></S> },
-      { path: 'scholarships',      element: <S><ScholarshipPage /></S> },
       { path: 'events',            element: <S><EventsPage /></S> },
       { path: 'live-projects',     element: <S><LiveProjectsPage /></S> },
       { path: 'projects',          element: <S><LiveProjectsPage /></S> },

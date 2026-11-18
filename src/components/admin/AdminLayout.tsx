@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { authService } from '../../services/authService';
+import { siteConfig } from '../../data/siteConfig';
 import type { User } from '../../types';
 import { PageTransition } from '../layout/PageTransition';
 import { ShinyText } from '../ui/ShinyText';
@@ -215,9 +216,9 @@ export function AdminLayout() {
       {/* Logo */}
       <div className="flex items-center justify-between p-5 border-b border-surface-800">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src="/logo.png" alt="Global Minds Academy logo" className="h-14 w-auto max-w-[115px] object-contain" />
+          <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="h-14 w-auto max-w-[115px] object-contain" />
           <div>
-            <p className="font-display font-bold text-sm">Global Minds Academy</p>
+            <p className="font-display font-bold text-sm">Global Minds Technologies</p>
             <p className="text-xs text-brand-300 font-semibold">
               <ShinyText text="Admin Portal" shinyColor="rgba(45, 212, 191, 0.95)" />
             </p>
@@ -337,7 +338,7 @@ export function AdminLayout() {
               <p className="font-semibold text-surface-900 text-sm">
                 {visibleNavGroups.flatMap(g => g.items).find(i => isActive(i.href))?.label ?? 'Admin'}
               </p>
-              <p className="text-xs text-surface-600 font-medium">Global Minds Academy Admin Portal</p>
+              <p className="text-xs text-surface-600 font-medium">Global Minds Technologies Admin Portal</p>
             </div>
           </div>
 

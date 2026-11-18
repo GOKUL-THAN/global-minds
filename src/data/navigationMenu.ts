@@ -195,7 +195,6 @@ export const defaultNavigation: NavigationContent = {
     ['Contact', '/contact'],
     ['Certifications', '/certifications'],
     ['Internships', '/internships'],
-    ['Scholarships', '/scholarships'],
     ['Online Training', '/online-training'],
     ['Classroom Training', '/classroom-training'],
     ['Free Demo Class', '/demo-class'],

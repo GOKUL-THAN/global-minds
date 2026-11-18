@@ -49,7 +49,7 @@ export default function ScholarshipPage() {
 
   usePageMeta({
     title: 'Scholarships & Fee Structure',
-    description: 'Explore Global Minds Academy scholarships, fee structure, EMI options and discounts. Up to 50% off for merit, freshers, women in tech and early bird enrollments.',
+    description: 'Explore Global Minds Technologies scholarships, fee structure, EMI options and discounts. Up to 50% off for merit, freshers, women in tech and early bird enrollments.',
   });
 
   const [submitted, setSubmitted] = useState(false);

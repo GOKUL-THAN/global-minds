@@ -5,7 +5,6 @@ import { StatsSection } from '../components/home/StatsSection';
 import { FeaturedCourses } from '../components/home/FeaturedCourses';
 import { MasterProgramsSection } from '../components/home/MasterProgramsSection';
 import { CapstoneProjectsSection } from '../components/home/CapstoneProjectsSection';
-import { WhyUsSection } from '../components/home/WhyUsSection';
 import { LearningModesSection } from '../components/home/LearningModesSection';
 import { TestimonialsSection } from '../components/home/TestimonialsSection';
 import { GoogleReviewsCarousel } from '../components/home/GoogleReviewsCarousel';
@@ -71,7 +70,6 @@ export default function HomePage() {
       <FeaturedCourses />
       <MasterProgramsSection />
       <CapstoneProjectsSection />
-      <WhyUsSection />
 
       {/* Learning options */}
       <LearningModesSection />

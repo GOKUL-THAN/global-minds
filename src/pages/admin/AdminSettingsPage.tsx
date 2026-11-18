@@ -10,7 +10,7 @@ export default function AdminSettingsPage() {
         <h1 className="font-display font-bold text-2xl text-surface-900">
           <ShinyText text="Settings" shinyColor="rgba(23, 108, 115, 0.9)" />
         </h1>
-        <p className="text-surface-500 text-sm mt-0.5 font-medium">Global Minds Academy site configuration — edit <code className="bg-surface-100 px-1 rounded">src/data/siteConfig.ts</code> to update</p>
+        <p className="text-surface-500 text-sm mt-0.5 font-medium">Global Minds Technologies site configuration — edit <code className="bg-surface-100 px-1 rounded">src/data/siteConfig.ts</code> to update</p>
       </div>
 
       <SpotlightCard>

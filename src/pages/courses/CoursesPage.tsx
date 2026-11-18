@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Search, SlidersHorizontal, X, Grid, List, BookOpen } from 'lucide-react';
 import { CourseCard } from '../../components/courses/CourseCard';
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
@@ -51,6 +51,7 @@ export default function CoursesPage() {
     description: 'Browse AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing courses.',
   });
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [layout, setLayout] = useState<'grid' | 'list'>('grid');
   const [filterOpen, setFilterOpen] = useState(false);
   const [filtered, setFiltered] = useState<Course[]>([]);
@@ -159,7 +160,8 @@ export default function CoursesPage() {
           role="search"
           onSubmit={event => {
             event.preventDefault();
-            setParam('q', localSearch.trim());
+            const query = localSearch.trim();
+            navigate(query ? `/search?q=${encodeURIComponent(query)}` : '/search');
           }}
           className="mb-4"
         >

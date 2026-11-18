@@ -219,7 +219,7 @@ export function EnquiryForm({
               {...register('consent')}
             />
             <span className="text-xs text-surface-600 leading-relaxed font-medium">
-              I agree to be contacted by Global Minds Academy via phone, email or WhatsApp for course-related enquiries.
+              I agree to be contacted by Global Minds Technologies via phone, email or WhatsApp for course-related enquiries.
               I have read and accept the{' '}
               <a href="/privacy-policy" className="text-brand-700 font-semibold hover:underline">Privacy Policy</a>.
             </span>
