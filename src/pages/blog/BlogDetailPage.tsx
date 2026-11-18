@@ -124,7 +124,7 @@ export default function BlogDetailPage() {
             <p className="font-display font-bold text-surface-900 text-lg mb-1">{post.author.name}</p>
             <p className="text-brand-700 text-sm font-semibold mb-2">{post.author.role}</p>
             <p className="text-surface-600 text-sm font-medium leading-relaxed">
-              Expert instructor at Global Minds Technologies. Placeholder author bio — to be updated with real profile information.
+              Global Minds Technologies learning resource author. Placeholder author bio — to be updated with real profile information.
             </p>
           </div>
         </div>

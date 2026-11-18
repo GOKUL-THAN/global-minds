@@ -134,7 +134,6 @@ const publicCmsSections = new Set<CmsSection>([
   'placement-records',
   'interview-preparation',
   'mock-interview',
-  'instructors',
   'internships',
   'locations',
   'blog',
@@ -2584,6 +2583,42 @@ app.patch('/api/admin/enquiries/:id', requirePermission('enquiries.update'), asy
   res.json({ enquiry });
 }));
 
+app.get('/api/batches', asyncHandler(async (_req, res) => {
+  const today = getTodayString();
+  const result = await operationalDb().query<{
+    id: string;
+    name: string;
+    description: string;
+    startDate: string | null;
+    endDate: string | null;
+    scheduleJson: string;
+    status: 'planned' | 'active';
+  }>(
+    `SELECT id, name, description, start_date AS "startDate", end_date AS "endDate",
+      schedule_json AS "scheduleJson", status
+     FROM batches
+     WHERE status IN ('planned', 'active') AND archived_at IS NULL
+       AND start_date IS NOT NULL
+       AND (start_date >= ? OR (status = 'active' AND (end_date IS NULL OR end_date >= ?)))
+     ORDER BY start_date ASC, created_at DESC`,
+    [today, today],
+  );
+  const batches = result.rows.map(batch => {
+    let schedule: Record<string, unknown> = {};
+    try {
+      const parsed: unknown = JSON.parse(batch.scheduleJson);
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+        schedule = parsed as Record<string, unknown>;
+      }
+    } catch {
+      console.error(`[batches] Invalid schedule JSON for batch ${batch.id}.`);
+    }
+    const { scheduleJson: _scheduleJson, ...publicBatch } = batch;
+    return { ...publicBatch, schedule };
+  });
+  res.json({ success: true, data: { batches } });
+}));
+
 app.get('/api/content/:section', asyncHandler(async (req, res) => {
   const section = routeParam(req.params.section);
   if (!isPublicCmsSection(section)) {
@@ -2601,7 +2636,10 @@ app.get('/api/content/:section/:slug', asyncHandler(async (req, res) => {
     return;
   }
   const record = await findCmsRecord(section, slug);
-  if (!record || record.status !== 'published' || !record.publishedContent) {
+  if (!record || record.status !== 'published' || !record.publishedContent
+    || (section === 'courses'
+      && record.createdBy === 'system-course-catalog'
+      && record.publishedAt === record.createdAt)) {
     res.status(404).json({ message: 'Content not found.' });
     return;
   }

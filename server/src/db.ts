@@ -109,7 +109,6 @@ export const cmsSections = [
   'interview-preparation',
   'mock-interview',
   'students',
-  'instructors',
   'enquiries',
   'internships',
   'batches',

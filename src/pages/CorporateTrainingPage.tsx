@@ -10,7 +10,7 @@ import { cn } from '../utils/cn';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
-import { useDateSystem } from '../services/dateService';
+import { dateService } from '../services/dateService';
 
 const schema = z.object({
   companyName: z.string().min(2, 'Company name required'),
@@ -31,7 +31,6 @@ const techOptions = ['AWS', 'Azure', 'GCP', 'DevOps', 'Kubernetes', 'Docker', 'T
 
 const benefits = [
   { icon: Target, title: 'Customised Curriculum', desc: 'Training designed around your team\'s specific technology stack and goals.' },
-  { icon: Users, title: 'Dedicated Trainer', desc: 'Industry expert assigned specifically to your corporate batch.' },
   { icon: Clock, title: 'Flexible Scheduling', desc: 'Training scheduled around your team\'s working hours.' },
   { icon: Award, title: 'Certification Support', desc: 'Guidance for relevant vendor certification exams.' },
   { icon: Building2, title: 'On-site or Online', desc: 'Deliver training at your premises or online globally.' },
@@ -39,7 +38,6 @@ const benefits = [
 ];
 
 export default function CorporateTrainingPage() {
-  const { dateInfo } = useDateSystem();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({ resolver: zodResolver(schema) });
@@ -182,7 +180,7 @@ export default function CorporateTrainingPage() {
                   </div>
                   <div>
                     <label className="form-label">Preferred Timeline</label>
-                    <input type="text" placeholder={`e.g. ${dateInfo.reportingQuarter}, ASAP, Next Month`} className="form-input" {...register('timeline')} />
+                    <input type="text" placeholder={`e.g. ${dateService.getDateCycleInfo().reportingQuarter}, ASAP, Next Month`} className="form-input" {...register('timeline')} />
                   </div>
                   <div>
                     <label className="form-label">Message / Requirements</label>

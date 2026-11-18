@@ -50,7 +50,7 @@ function getFallbackOperationalRecords<T>(module: OperationalModule): T[] {
       code: b.id.toUpperCase(),
       startDate: b.startDate,
       status: b.status,
-      description: `${b.course} cohort led by ${b.instructor}`,
+      description: `${b.course} cohort`,
     })) as unknown as T[];
   }
   if (module === 'attendance') {
@@ -137,19 +137,14 @@ export const adminOperationsService = {
   getSystemHealth: () => request<SystemHealth>('/api/admin/system/health'),
   getAttendanceReport: (params: URLSearchParams) =>
     request<{ report: Array<Record<string, unknown>>; total: number }>(`/api/admin/attendance/report?${params.toString()}`),
-  async listUsers<T>(role: 'TRAINER' | 'STUDENT') {
+  async listUsers<T>(role: 'STUDENT') {
     try {
       const result = await request<{ users: T[]; total: number }>(`/api/admin/users?role=${role}&page=1&pageSize=100`);
       if (result && Array.isArray(result.users)) return result;
     } catch {
       // Backend offline fallback
     }
-    const fallbackTrainers = [
-      { id: 'tr-1', fullName: 'Alex Johnson', email: 'alex.cloud@email.com', role: 'TRAINER' },
-      { id: 'tr-2', fullName: 'Priya Sharma', email: 'priya.data@email.com', role: 'TRAINER' },
-      { id: 'tr-3', fullName: 'Rahul Verma', email: 'rahul.devops@email.com', role: 'TRAINER' },
-    ] as unknown as T[];
-    return { users: fallbackTrainers, total: fallbackTrainers.length };
+    return { users: [] as unknown as T[], total: 0 };
   },
   async updateAccount<T>(id: string, changes: { isActive?: boolean; role?: string }) {
     try {
@@ -280,7 +275,7 @@ export const adminOperationsService = {
       return { id, ...payload } as unknown as T;
     }
   },
-  async assignBatch<T>(batchId: string, kind: 'students' | 'trainers', ids: string[]) {
+  async assignBatch<T>(batchId: string, kind: 'students', ids: string[]) {
     try {
       return await request<T>(`/api/admin/batches/${encodeURIComponent(batchId)}/${kind}`, {
         method: 'PUT',

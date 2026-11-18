@@ -12,7 +12,7 @@ const searchablePages = [
   { title: 'Live Projects', description: 'Explore practical projects based on real industry scenarios.', href: '/projects', terms: 'live industry projects portfolio practice' },
   { title: 'Internships', description: 'Explore internship opportunities and practical experience.', href: '/internships', terms: 'internship opportunities experience' },
   { title: 'Online Training', description: 'Learn remotely with flexible online training programs.', href: '/online-training', terms: 'online remote virtual training' },
-  { title: 'Classroom Training', description: 'Explore instructor-led classroom training options.', href: '/classroom-training', terms: 'classroom in-person instructor training' },
+  { title: 'Classroom Training', description: 'Explore classroom training options.', href: '/classroom-training', terms: 'classroom in-person training' },
   { title: 'Corporate Training', description: 'Training programs for teams and organizations.', href: '/corporate-training', terms: 'corporate business teams organization' },
   { title: 'College Programs', description: 'Explore training and learning programs for colleges.', href: '/colleges', terms: 'college campus students' },
   { title: 'About Us', description: 'Learn about Global Minds Technologies and our approach to education.', href: '/about', terms: 'about technologies company' },

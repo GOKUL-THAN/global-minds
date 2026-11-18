@@ -42,7 +42,7 @@ export default function LoginPage() {
           navigate('/dashboard', { replace: true });
           return;
         }
-        if (!['ADMIN', 'SUPER_ADMIN', 'CONTENT_MANAGER', 'TRAINER'].includes(result.user.role)) {
+        if (!['ADMIN', 'SUPER_ADMIN', 'CONTENT_MANAGER'].includes(result.user.role)) {
           setError('This account is not authorized to access the admin portal.');
           return;
         }

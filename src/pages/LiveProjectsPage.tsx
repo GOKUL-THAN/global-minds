@@ -416,7 +416,7 @@ export default function LiveProjectsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: '01', icon: '🎓', title: 'Enroll in a Course', desc: 'Every course comes with 2–3 live project assignments built into the curriculum.' },
-              { step: '02', icon: '📋', title: 'Choose Your Project', desc: 'Pick from the project library or work on an assigned project with your trainer.' },
+              { step: '02', icon: '📋', title: 'Choose Your Project', desc: 'Pick from the project library or work on an assigned project.' },
               { step: '03', icon: '💻', title: 'Build & Submit', desc: 'Code the project with guided sessions, code reviews and mentor check-ins.' },
               { step: '04', icon: '🚀', title: 'Deploy & Showcase', desc: 'Deploy your project live and add it to your GitHub portfolio and resume.' },
             ].map(s => (

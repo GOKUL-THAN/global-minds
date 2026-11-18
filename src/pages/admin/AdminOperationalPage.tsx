@@ -49,7 +49,7 @@ const configs: Record<OperationalModule, { title: string; description: string; c
   },
   batches: {
     title: 'Batches',
-    description: 'Create and manage schedules, trainers, enrolments, and batch status.',
+    description: 'Create and manage schedules, enrolments, and batch status.',
     collectionKey: 'batches',
     itemKey: 'batch',
     fields: [
@@ -58,6 +58,13 @@ const configs: Record<OperationalModule, { title: string; description: string; c
       { name: 'description', label: 'Description', type: 'textarea' },
       { name: 'scheduleDays', label: 'Schedule days (comma-separated)' },
       { name: 'scheduleTime', label: 'Schedule time' },
+      { name: 'schedule.category', label: 'Category' },
+      { name: 'schedule.mode', label: 'Mode', type: 'select', options: ['Online', 'Classroom', 'Hybrid'] },
+      { name: 'schedule.type', label: 'Batch type', type: 'select', options: ['Weekday', 'Weekend', 'Fast-Track'] },
+      { name: 'schedule.duration', label: 'Duration' },
+      { name: 'schedule.fee', label: 'Fee' },
+      { name: 'schedule.seatsTotal', label: 'Total seats', type: 'number' },
+      { name: 'schedule.seatsLeft', label: 'Available seats', type: 'number' },
       { name: 'startDate', label: 'Start date', type: 'date' },
       { name: 'endDate', label: 'End date', type: 'date' },
       { name: 'status', label: 'Status', type: 'select', options: ['planned', 'active', 'completed', 'cancelled', 'archived'] },
@@ -166,6 +173,7 @@ function asPayload(fields: FormField[], form: FormData): Record<string, unknown>
   const payload: Record<string, unknown> = {};
   const scheduleDays: string[] = [];
   let scheduleTime = '';
+  const schedule: Record<string, unknown> = {};
   for (const field of fields) {
     const value = String(form.get(field.name) ?? '').trim();
     if (field.name === 'scheduleDays') {
@@ -176,11 +184,19 @@ function asPayload(fields: FormField[], form: FormData): Record<string, unknown>
       scheduleTime = value;
       continue;
     }
+    if (field.name.startsWith('schedule.')) {
+      if (value) schedule[field.name.slice('schedule.'.length)] = field.type === 'number' ? Number(value) : value;
+      continue;
+    }
     if (field.type === 'number') payload[field.name] = Number(value);
     else payload[field.name] = value;
   }
   if (fields.some(field => field.name === 'scheduleDays' || field.name === 'scheduleTime')) {
-    payload.schedule = { days: scheduleDays, time: scheduleTime };
+    schedule.days = scheduleDays;
+    schedule.time = scheduleTime;
+  }
+  if (Object.keys(schedule).length) {
+    payload.schedule = schedule;
   }
   return payload;
 }
@@ -231,7 +247,6 @@ export default function AdminOperationalPage() {
   const [records, setRecords] = useState<Row[]>([]);
   const [studentOptions, setStudentOptions] = useState<Row[]>([]);
   const [batchOptions, setBatchOptions] = useState<Row[]>([]);
-  const [trainerOptions, setTrainerOptions] = useState<Row[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
@@ -254,7 +269,6 @@ export default function AdminOperationalPage() {
   const [courseSlug, setCourseSlug] = useState('');
   const [applicationFor, setApplicationFor] = useState<Row | null>(null);
   const [assignmentFor, setAssignmentFor] = useState<Row | null>(null);
-  const [assignmentKind, setAssignmentKind] = useState<'students' | 'trainers'>('students');
   const [showApplicationsFor, setShowApplicationsFor] = useState<Row | null>(null);
   const [applications, setApplications] = useState<Row[]>([]);
   const [applicationsLoading, setApplicationsLoading] = useState(false);
@@ -367,7 +381,6 @@ export default function AdminOperationalPage() {
     let active = true;
     const needsStudents = ['attendance', 'batches', 'internships', 'certificates'].includes(module);
     const needsBatches = module === 'attendance';
-    const needsTrainers = module === 'batches' && user.role !== 'TRAINER';
     const pageParams = new URLSearchParams({ page: '1', pageSize: '100' });
     const tasks: Array<Promise<void>> = [];
     if (needsStudents) {
@@ -378,14 +391,6 @@ export default function AdminOperationalPage() {
     if (needsBatches) {
       tasks.push(adminOperationsService.list<Row>('batches', pageParams).then(result => {
         if (active) setBatchOptions(result.records);
-      }));
-    }
-    if (needsTrainers) {
-      tasks.push(adminOperationsService.listUsers<Row>('TRAINER').then(result => {
-        if (active) setTrainerOptions(result.users.map(trainer => ({
-          ...trainer,
-          fullName: `${String(trainer.first_name ?? '')} ${String(trainer.last_name ?? '')}`.trim(),
-        })));
       }));
     }
     Promise.all(tasks).catch(cause => {
@@ -491,13 +496,13 @@ export default function AdminOperationalPage() {
 
   const saveAssignment = async (form: HTMLFormElement) => {
     if (!assignmentFor) return;
-    const fieldName = assignmentKind === 'students' ? 'studentIds' : 'trainerIds';
+    const fieldName = 'studentIds';
     const ids = new FormData(form).getAll(fieldName).map(value => String(value).trim()).filter(Boolean);
     setSaving(true);
     setError('');
     try {
-      await adminOperationsService.assignBatch(assignmentFor.id, assignmentKind, ids);
-      setNotice(`${assignmentKind === 'students' ? 'Students' : 'Trainers'} assigned.`);
+      await adminOperationsService.assignBatch(assignmentFor.id, 'students', ids);
+      setNotice('Students assigned.');
       setAssignmentFor(null);
       await load();
     } catch (cause) {
@@ -630,6 +635,8 @@ export default function AdminOperationalPage() {
                       ? Array.isArray((selectedRecord?.schedule as Record<string, unknown> | undefined)?.days) ? ((selectedRecord?.schedule as Record<string, unknown>).days as string[]).join(', ') : ''
                       : field.name === 'scheduleTime'
                         ? String((selectedRecord?.schedule as Record<string, unknown> | undefined)?.time ?? '')
+                        : field.name.startsWith('schedule.')
+                          ? String((selectedRecord?.schedule as Record<string, unknown> | undefined)?.[field.name.slice('schedule.'.length)] ?? '')
                         : field.name === 'attendanceDate'
                           ? String(selectedRecord?.attendanceDate ?? dateService.getTodayString())
                           : String(selectedRecord?.[field.name] ?? '')}
@@ -707,19 +714,19 @@ export default function AdminOperationalPage() {
       {assignmentFor && module === 'batches' && hasPermission('batches.assign') && (
         <form className="rounded-2xl border border-brand-200 bg-brand-50 p-5" onSubmit={event => { event.preventDefault(); void saveAssignment(event.currentTarget); }}>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold text-surface-900">Assign {assignmentKind} — {asDisplay(assignmentFor.name)}</h2>
+            <h2 className="font-semibold text-surface-900">Assign students — {asDisplay(assignmentFor.name)}</h2>
             <button type="button" onClick={() => setAssignmentFor(null)} className="text-sm text-surface-500">Cancel</button>
           </div>
           <label className="block max-w-2xl">
-            <span className="form-label">Assigned {assignmentKind}</span>
+            <span className="form-label">Assigned students</span>
             <select
-              name={assignmentKind === 'students' ? 'studentIds' : 'trainerIds'}
+              name="studentIds"
               multiple
-              size={Math.min(8, Math.max(3, (assignmentKind === 'students' ? studentOptions : trainerOptions).length))}
+              size={Math.min(8, Math.max(3, studentOptions.length))}
               className="form-select w-full"
-              defaultValue={(assignmentFor[assignmentKind === 'students' ? 'studentIds' : 'trainerIds'] as string[] | undefined) ?? []}
+              defaultValue={(assignmentFor.studentIds as string[] | undefined) ?? []}
             >
-              {(assignmentKind === 'students' ? studentOptions : trainerOptions).map(option => (
+              {studentOptions.map(option => (
                 <option key={option.id} value={option.id}>{asDisplay(option.fullName)}{option.email ? ` — ${String(option.email)}` : ''}</option>
               ))}
             </select>
@@ -744,10 +751,6 @@ export default function AdminOperationalPage() {
                     {['applied', 'reviewing', 'accepted', 'rejected', 'in_progress', 'completed'].map(status => <option key={status} value={status}>{status.replace('_', ' ')}</option>)}
                   </select>
                   <input name="progress" type="number" min="0" max="100" defaultValue={Number(application.progress ?? 0)} className="form-input" aria-label="Progress percentage" />
-                  <select name="supervisorId" defaultValue={String(application.supervisorId ?? '')} className="form-select" aria-label="Assigned supervisor">
-                    <option value="">No supervisor</option>
-                    {trainerOptions.map(trainer => <option key={trainer.id} value={trainer.id}>{asDisplay(trainer.fullName)} — {asDisplay(trainer.email)}</option>)}
-                  </select>
                   <div className="flex gap-2"><input name="notes" defaultValue={String(application.notes ?? '')} className="form-input min-w-0 flex-1" placeholder="Notes" aria-label="Notes" /><button type="submit" disabled={saving} className="btn-primary btn">Save</button></div>
                 </form>
               ))}
@@ -782,8 +785,6 @@ export default function AdminOperationalPage() {
                         {canManageEnrollments && <button type="button" onClick={() => void loadEnrollments(record)} className="rounded-lg px-2 py-1 text-xs font-medium text-brand-700 hover:bg-brand-50">Courses</button>}
                         {module === 'internships' && hasPermission('applications.read') && <>{hasPermission('applications.manage') && <button type="button" disabled={record.status !== 'open'} onClick={() => setApplicationFor(record)} className="rounded-lg px-2 py-1 text-xs font-medium text-brand-700 hover:bg-brand-50 disabled:opacity-40">Add applicant</button>}<button type="button" onClick={() => void loadApplications(record)} className="rounded-lg px-2 py-1 text-xs font-medium text-brand-700 hover:bg-brand-50">Applications</button></>}
                         {module === 'certificates' && <a href={`/api/certificates/verify/${encodeURIComponent(String(record.certificateId ?? ''))}`} target="_blank" rel="noreferrer" className="rounded-lg px-2 py-1 text-xs font-medium text-brand-700 hover:bg-brand-50">Verify</a>}
-                        {module === 'batches' && hasPermission('batches.assign') && <button type="button" onClick={() => { setAssignmentFor(record); setAssignmentKind('students'); }} className="rounded-lg px-2 py-1 text-xs font-medium text-brand-700 hover:bg-brand-50">Assign students</button>}
-                        {module === 'batches' && hasPermission('batches.assign') && <button type="button" onClick={() => { setAssignmentFor(record); setAssignmentKind('trainers'); }} className="rounded-lg px-2 py-1 text-xs font-medium text-brand-700 hover:bg-brand-50">Assign trainers</button>}
                         {module === 'students' && hasPermission(record.archivedAt ? 'students.restore' : 'students.archive') && (
                           <button type="button" onClick={() => void perform(record, record.archivedAt ? 'restore' : 'archive')} className="rounded-lg p-2 text-surface-500 hover:bg-surface-100" aria-label={record.archivedAt ? 'Restore student' : 'Archive student'}>
                             {record.archivedAt ? <RotateCcw className="h-4 w-4" /> : <Archive className="h-4 w-4" />}

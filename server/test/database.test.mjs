@@ -190,6 +190,8 @@ test('applies versioned migrations and preserves existing SQLite records', async
   assert.ok((await database.listIdentityPermissions('SUPER_ADMIN')).includes('students.delete'));
   const migratedCourse = await database.findCmsRecord('courses', 'legacy-course');
   assert.equal(migratedCourse?.id, 'legacy-course-record');
+  const publicCourses = await database.listPublishedCmsRecords('courses');
+  assert.ok(publicCourses.some(course => course.slug === 'legacy-course'));
   const migratedStructure = await database.getCourseStructure('legacy-course-record');
   assert.equal(migratedStructure[0].title, 'Legacy module');
   assert.equal(migratedStructure[0].lessons[0].title, 'Legacy lesson');
@@ -207,10 +209,8 @@ test('applies versioned migrations and preserves existing SQLite records', async
   assert.equal(backfilledCourse?.publishedContent.rating, backfillSeedCourse.rating);
   assert.equal(backfilledCourse?.publishedContent.longDescription, backfillSeedCourse.longDescription);
   assert.deepEqual(backfilledCourse?.publishedContent.modules, backfillSeedCourse.modules);
-  assert.equal(
-    backfilledCourse?.publishedContent.instructor?.name,
-    backfillSeedCourse.instructor.name,
-  );
+  assert.equal(backfilledCourse?.publishedContent.instructor, undefined);
+  assert.equal(backfillSeedCourse.instructor, undefined);
   assert.equal(backfilledCourse?.content.title, 'Admin-edited title');
   assert.equal(backfilledCourse?.publishedContent.title, 'Admin-edited title');
   const seededCourse = await database.findCmsRecord('courses', relationalSeedCourse.slug);

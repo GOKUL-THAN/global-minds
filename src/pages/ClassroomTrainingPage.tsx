@@ -25,7 +25,7 @@ export default function ClassroomTrainingPage() {
             Classroom <DecryptedText text="Training" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
-            Immersive, hands-on classroom training at our Chennai centre with expert instructors and fully equipped high-performance labs.
+            Immersive, hands-on classroom training at our Chennai centre with fully equipped high-performance labs.
           </p>
         </div>
       </div>

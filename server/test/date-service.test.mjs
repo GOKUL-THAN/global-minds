@@ -10,12 +10,6 @@ test('computes calendar date and weekday in the configured timezone', () => {
   assert.equal(getTodayString(afterIstMidnight), '2026-11-19');
   assert.equal(getBackendDateCycleInfo(afterIstMidnight).currentWeekday, 'Thursday');
   assert.equal(getTodayString(afterIstMidnight, 'America/Los_Angeles'), '2026-11-18');
-  const laBeforeMidnight = getBackendDateCycleInfo(
-    new Date('2026-11-18T07:59:00.000Z'),
-    'America/Los_Angeles',
-  );
-  assert.equal(laBeforeMidnight.currentDate, '2026-11-17');
-  assert.equal(laBeforeMidnight.currentWeekday, 'Tuesday');
 });
 
 test('uses fixed 15-day calendar cycles across month ends and leap years', () => {

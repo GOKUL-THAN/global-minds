@@ -8,7 +8,7 @@ import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CTASection } from '../components/home/CTASection';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { siteConfig } from '../data/siteConfig';
-import { useDateSystem } from '../services/dateService';
+import { dateService } from '../services/dateService';
 
 // ── How it works steps ─────────────────────────────────────
 const howItWorks = [
@@ -118,13 +118,12 @@ const faqs = [
 interface ReferForm { name: string; friendName: string; friendEmail: string; friendPhone: string; course: string }
 
 export default function ReferEarnPage() {
-  const { currentYear } = useDateSystem();
   usePageMeta({
     title: 'Refer & Earn',
     description: 'Refer a friend to Global Minds Technologies and earn up to ₹7,000 per referral. Your friend gets a discount too. Join the Refer & Earn programme today.',
   });
 
-  const referralCode = `GA-DEMO-${currentYear}`;
+  const referralCode = `GA-DEMO-${dateService.getDateCycleInfo().currentYear}`;
   const referralUrl = new URL('/register', siteConfig.siteUrl);
   referralUrl.searchParams.set('ref', referralCode);
   const referralLink = referralUrl.toString();

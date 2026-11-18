@@ -12,9 +12,9 @@ export interface CmsRecord<T = Record<string, unknown>> {
   hasDraft: boolean;
   archivedFromStatus: 'draft' | 'published' | null;
   createdBy: string;
-  createdRole: 'ADMIN' | 'SUPER_ADMIN' | 'CONTENT_MANAGER' | 'TRAINER';
+  createdRole: 'ADMIN' | 'SUPER_ADMIN' | 'CONTENT_MANAGER';
   updatedBy: string;
-  updatedRole: 'ADMIN' | 'SUPER_ADMIN' | 'CONTENT_MANAGER' | 'TRAINER';
+  updatedRole: 'ADMIN' | 'SUPER_ADMIN' | 'CONTENT_MANAGER';
   createdAt: string;
   updatedAt: string;
   publishedAt: string | null;

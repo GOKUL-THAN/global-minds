@@ -29,7 +29,6 @@ const CorporateTrainingPage   = lazy(() => import('./pages/CorporateTrainingPage
 const CollegesPage            = lazy(() => import('./pages/CollegesPage'));
 const AboutPage               = lazy(() => import('./pages/AboutPage'));
 const ContactPage             = lazy(() => import('./pages/ContactPage'));
-const TrainersPage            = lazy(() => import('./pages/TrainersPage'));
 const BlogPage                = lazy(() => import('./pages/blog/BlogPage'));
 const BlogDetailPage          = lazy(() => import('./pages/blog/BlogDetailPage'));
 const LocationsPage           = lazy(() => import('./pages/locations/LocationsPage'));
@@ -202,7 +201,6 @@ const router = createBrowserRouter([
       // Company
       { path: 'about',    element: <S><AboutPage /></S> },
       { path: 'contact',  element: <S><ContactPage /></S> },
-      { path: 'trainers', element: <S><TrainersPage /></S> },
 
       // Blog
       { path: 'blog',       element: <S><BlogPage /></S> },
@@ -296,7 +294,6 @@ const router = createBrowserRouter([
           { path: 'studio',               element: <S><AdminContentStudioPage /></S> },
           { path: 'website/website-menu', element: <S><AdminNavigationPage /></S> },
           { path: 'website/:section',     element: <S><AdminContentStudioPage /></S> },
-          { path: 'instructors',          element: <Navigate to="/admin/website/instructors" replace /> },
           { path: 'enquiries',            element: <S><AdminEnquiriesPage /></S> },
           { path: 'internships',          element: <S><AdminOperationalPage /></S> },
           { path: 'batches',              element: <S><AdminOperationalPage /></S> },

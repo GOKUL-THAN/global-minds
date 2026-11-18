@@ -54,7 +54,7 @@ const benefits = [
   {
     icon: BookOpen,
     title: 'Curriculum Integration',
-    desc: 'Integrate industry-relevant modules into your existing curriculum with support from our senior trainers.',
+    desc: 'Integrate industry-relevant modules into your existing curriculum with expert academic support.',
   },
   {
     icon: Award,
@@ -64,7 +64,7 @@ const benefits = [
   {
     icon: Users,
     title: 'Faculty Development',
-    desc: 'Upskill your faculty with hands-on workshops, train-the-trainer programs and research collaborations.',
+    desc: 'Upskill your faculty with hands-on workshops and research collaborations.',
   },
 ];
 
@@ -95,7 +95,7 @@ const offerings = [
     icon: Star,
     title: 'Faculty Development',
     subtitle: 'Empower your teaching staff',
-    items: ['Faculty training & workshops', 'Workshop series on latest tech', 'Research collaboration support', 'Train-the-trainer certification', 'Curriculum design consulting', 'Ongoing academic mentorship'],
+    items: ['Faculty training & workshops', 'Workshop series on latest tech', 'Research collaboration support', 'Curriculum design consulting', 'Ongoing academic mentorship'],
   },
 ];
 

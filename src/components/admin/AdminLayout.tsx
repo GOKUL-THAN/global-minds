@@ -50,7 +50,6 @@ const navGroups: NavGroup[] = [
     { icon: Award, label: 'Scholarships', href: '/admin/website/scholarships' },
       { icon: Star, label: 'Refer & Earn', href: '/admin/website/refer-earn' },
       { icon: Briefcase, label: 'Corporate Training', href: '/admin/website/corporate-training' },
-      { icon: UserCheck, label: 'Expert Trainers', href: '/admin/website/instructors' },
       { icon: Newspaper, label: 'Blog', href: '/admin/website/blog' },
       { icon: Activity, label: 'About Us', href: '/admin/website/about' },
       { icon: MessageSquare, label: 'Contact', href: '/admin/website/contact' },
@@ -75,7 +74,6 @@ const navGroups: NavGroup[] = [
   {
     label: 'People',
     items: [
-      { icon: UserCheck, label: 'Instructors', href: '/admin/instructors' },
       { icon: MessageSquare, label: 'Enquiries', href: '/admin/enquiries' },
       { icon: Megaphone, label: 'Student announcements', href: '/admin/announcements' },
       { icon: Shield, label: 'Accounts & permissions', href: '/admin/users' },
@@ -148,11 +146,9 @@ export function AdminLayout() {
     ? new Set([
       '/admin', '/admin/courses', '/admin/categories', '/admin/master-programs',
       '/admin/blog', '/admin/faqs', '/admin/testimonials', '/admin/studio',
-      '/admin/instructors', '/admin/navigation', '/account/security',
+      '/admin/navigation', '/account/security',
     ])
-    : user.role === 'TRAINER'
-      ? new Set(['/admin', '/admin/batches', '/admin/attendance', '/admin/students', '/account/security'])
-      : undefined;
+    : undefined;
   const visibleNavGroups = navGroups
     .map(group => ({
       ...group,
@@ -288,7 +284,6 @@ export function AdminLayout() {
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-semibold text-white truncate">
-              {user.role === 'SUPER_ADMIN' ? 'Super Admin' : user.role === 'CONTENT_MANAGER' ? 'Content Manager' : user.role === 'TRAINER' ? 'Trainer' : 'Admin'}
             </p>
             <p className="text-xs text-surface-300 truncate">{user.email}</p>
           </div>

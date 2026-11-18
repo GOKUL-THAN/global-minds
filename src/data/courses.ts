@@ -1,5 +1,4 @@
 import type { Course } from '../types';
-import { instructors } from './instructors';
 
 // ============================================================
 // Global Minds Technologies — COURSE DATA
@@ -36,7 +35,6 @@ export const courses: Course[] = [
     totalHours: 100,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[1],
     syllabus: [
       'Python for Data Science',
       'Statistics & Probability Fundamentals',
@@ -106,7 +104,6 @@ export const courses: Course[] = [
     totalHours: 80,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[1],
     syllabus: [
       'Python & Math Refresher for ML',
       'Supervised Learning — Regression & Classification',
@@ -174,7 +171,6 @@ export const courses: Course[] = [
     totalHours: 60,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[4],
     syllabus: [
       'Introduction to Software Testing & SDLC',
       'STLC — Software Testing Life Cycle',
@@ -242,7 +238,6 @@ export const courses: Course[] = [
     totalHours: 80,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[4],
     syllabus: [
       'Automation Testing Fundamentals & Frameworks',
       'Selenium WebDriver with Java',
@@ -310,7 +305,6 @@ export const courses: Course[] = [
     totalHours: 60,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[0],
     syllabus: [
       'AWS Cloud Fundamentals & Global Infrastructure',
       'IAM — Identity & Access Management',
@@ -378,7 +372,6 @@ export const courses: Course[] = [
     totalHours: 80,
     mode: 'Both' as const,
     language: 'English',
-    instructor: instructors[1],
     syllabus: ['LLM Fundamentals', 'Prompt Engineering', 'OpenAI API', 'HuggingFace', 'LangChain', 'RAG Pipelines', 'Vector Databases', 'AI Agents', 'Fine-tuning', 'Deployment'],
     modules: [
       { id: 'mg1', title: 'LLMs & Prompt Engineering', duration: '2 weeks', topics: ['LLM architecture', 'Prompt techniques', 'ChatGPT API', 'System prompts', 'Few-shot learning'] },
@@ -437,7 +430,6 @@ export const courses: Course[] = [
     totalHours: 150,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[3],
     syllabus: [
       'HTML5 & CSS3 Fundamentals',
       'JavaScript (ES6+) — Core & Advanced',
@@ -508,7 +500,6 @@ export const courses: Course[] = [
     totalHours: 80,
     mode: 'Both',
     language: 'English',
-    instructor: instructors[5],
     syllabus: [
       'Cyber Security Fundamentals & Threat Landscape',
       'Network Security — Protocols, Firewalls & IDS/IPS',

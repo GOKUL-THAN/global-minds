@@ -36,25 +36,6 @@ function booleanValue(record: Record<string, unknown>, key: string): boolean {
 
 export function mapPublishedCourse(record: Extract<PublicCmsRecord, { status: 'published' }>): Course {
   const content = record.content as Record<string, unknown>;
-  const rawInstructor = content.instructor && typeof content.instructor === 'object' && !Array.isArray(content.instructor)
-    ? content.instructor as Record<string, unknown>
-    : {};
-  const instructor = {
-    id: stringValue(rawInstructor, 'id'),
-    name: stringValue(rawInstructor, 'name'),
-    slug: stringValue(rawInstructor, 'slug'),
-    photo: stringValue(rawInstructor, 'photo'),
-    designation: stringValue(rawInstructor, 'designation'),
-    expertise: listValue(rawInstructor, 'expertise') as string[],
-    experience: stringValue(rawInstructor, 'experience'),
-    certifications: listValue(rawInstructor, 'certifications') as string[],
-    courses: listValue(rawInstructor, 'courses') as string[],
-    bio: stringValue(rawInstructor, 'bio'),
-    linkedIn: stringValue(rawInstructor, 'linkedIn') || undefined,
-    rating: typeof rawInstructor.rating === 'number' ? rawInstructor.rating : undefined,
-    totalStudents: typeof rawInstructor.totalStudents === 'number' ? rawInstructor.totalStudents : undefined,
-  };
-
   return {
     ...content,
     id: stringValue(content, 'id', record.id),
@@ -69,7 +50,6 @@ export function mapPublishedCourse(record: Extract<PublicCmsRecord, { status: 'p
     totalHours: numberValue(content, 'totalHours'),
     mode: stringValue(content, 'mode', 'Online') as Course['mode'],
     language: stringValue(content, 'language'),
-    instructor,
     syllabus: listValue(content, 'syllabus') as string[],
     modules: listValue(content, 'modules') as Course['modules'],
     prerequisites: listValue(content, 'prerequisites') as string[],
@@ -132,9 +112,6 @@ class CourseService {
           banner: typeof content.banner === 'string' && content.banner.trim()
             ? content.banner
             : source?.banner ?? '',
-          instructor: content.instructor && typeof content.instructor === 'object' && !Array.isArray(content.instructor)
-            ? { ...source?.instructor, ...content.instructor }
-            : source?.instructor,
         };
         return [applyPublicCourseListing(mapPublishedCourse({ ...record, content: mergedContent }), listing)];
       }

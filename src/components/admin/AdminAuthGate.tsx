@@ -12,7 +12,6 @@ const contentManagerRoutes = new Set([
   '/admin/faqs',
   '/admin/testimonials',
   '/admin/studio',
-  '/admin/instructors',
   '/admin/navigation',
   '/admin/locations',
 ]);
@@ -25,7 +24,6 @@ const contentManagerWebsiteSections = new Set([
   'refer-earn',
   'corporate-training',
   'categories',
-  'instructors',
   'blog',
   'faqs',
   'testimonials',
@@ -55,7 +53,6 @@ const contentManagerStudioSections = new Set([
   'scholarships',
   'refer-earn',
   'corporate-training',
-  'instructors',
   'about',
   'contact',
   'online-training',
@@ -74,13 +71,6 @@ const contentManagerStudioSections = new Set([
   'mock-interview',
 ]);
 
-const trainerRoutes = new Set([
-  '/admin',
-  '/admin/batches',
-  '/admin/attendance',
-  '/admin/students',
-]);
-
 const routePermissions: Record<string, string> = {
   '/admin/students': 'students.read',
   '/admin/attendance': 'attendance.read',
@@ -91,7 +81,6 @@ const routePermissions: Record<string, string> = {
   '/admin/courses': 'courses.read',
   '/admin/categories': 'categories.manage',
   '/admin/master-programs': 'content.read',
-  '/admin/instructors': 'content.read',
   '/admin/blog': 'content.read',
   '/admin/faqs': 'content.read',
   '/admin/testimonials': 'content.read',
@@ -118,9 +107,6 @@ function canAccessRoute(user: User, pathname: string, search: string): boolean {
       : '';
     return contentManagerRoutes.has(pathname) || contentManagerWebsiteSections.has(websiteSection);
   }
-  if (user.role === 'TRAINER') {
-    return trainerRoutes.has(pathname);
-  }
   return false;
 }
 
@@ -138,7 +124,7 @@ export function AdminAuthGate() {
     authService.getCurrentUser()
       .then(currentUser => {
         if (!active) return;
-        if (currentUser && ['SUPER_ADMIN', 'ADMIN', 'CONTENT_MANAGER', 'TRAINER'].includes(currentUser.role)) {
+        if (currentUser && ['SUPER_ADMIN', 'ADMIN', 'CONTENT_MANAGER'].includes(currentUser.role)) {
           setUser(currentUser);
         } else {
           setUser(null);

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 import { AlertTriangle, Archive, Check, FileText, Plus, RotateCcw, Save, Send, Trash2, X } from 'lucide-react';
-import { cmsSections, cmsSeeds, type CmsSection } from '../../data/cmsSeeds';
+import { cmsSections, type CmsSection } from '../../data/cmsSeeds';
 import { cmsService, type CmsRecord, type CmsStatus } from '../../services/cmsService';
 import type { User } from '../../types';
 import { Link, Navigate, useNavigate, useOutletContext, useParams, useSearchParams } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { dateService } from '../../services/dateService';
 interface StudioEntry {
   slug: string;
   content: Record<string, unknown>;
-  record?: CmsRecord;
+  record: CmsRecord;
 }
 
 function slugify(value: string): string {
@@ -25,17 +25,6 @@ function asContent(value: unknown): Record<string, unknown> {
   return value && typeof value === 'object' && !Array.isArray(value)
     ? value as Record<string, unknown>
     : { value };
-}
-
-function staticEntries(section: CmsSection): StudioEntry[] {
-  return (cmsSeeds[section] ?? []).flatMap((value, index) => {
-    if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
-    const item = value as Record<string, unknown>;
-    const key = [item.slug, item.id, item.name, item.title, item.question]
-      .find(part => typeof part === 'string' && part.trim());
-    const slug = slugify(typeof key === 'string' ? key : `item-${index + 1}`);
-    return slug ? [{ slug, content: item }] : [];
-  });
 }
 
 function newRecordTemplate(section: CmsSection): Record<string, unknown> {
@@ -58,8 +47,7 @@ function newRecordTemplate(section: CmsSection): Record<string, unknown> {
   return {};
 }
 
-function statusLabel(record?: CmsRecord): string {
-  if (!record) return 'Static seed · not saved';
+function statusLabel(record: CmsRecord): string {
   return record.status === 'published' && record.hasDraft
     ? 'Published · draft changes'
     : record.status;
@@ -405,30 +393,20 @@ function AdminContentStudioEditor() {
   }, [section, refresh]);
 
   const entries = useMemo(() => {
-    const staticItems = staticEntries(section);
-    const known = new Set<string>();
-    const merged: StudioEntry[] = records.map(record => {
-      known.add(record.slug);
-      return { slug: record.slug, content: record.content, record };
-    });
-    for (const item of staticItems) {
-      if (!known.has(item.slug)) merged.push(item);
-    }
-    return merged.filter(item => {
+    return records.map(record => ({ slug: record.slug, content: record.content, record })).filter(item => {
       const query = recordSearch.trim().toLowerCase();
       const searchable = `${item.slug} ${String(item.content.title ?? '')} ${String(item.content.name ?? '')} ${String(item.content.category ?? '')} ${String(item.content.id ?? '')}`.toLowerCase();
       if (query && !searchable.includes(query)) return false;
       if (statusFilter === 'all') return true;
-      if (!item.record) return statusFilter === 'draft';
       if (statusFilter === 'draft') return item.record.status === 'draft'
         || (item.record.status === 'published' && item.record.hasDraft);
       return item.record.status === statusFilter;
     });
-  }, [records, section, statusFilter, recordSearch]);
+  }, [records, statusFilter, recordSearch]);
 
   const selected = entries.find(item => item.slug === selectedSlug);
   const restrictedCourseFields = section === 'courses' || section === 'master-programs'
-    ? new Set(['instructor', 'learnercount', 'learners', 'rating', 'reviewcount', 'reviews', 'stars'])
+    ? new Set(['learnercount', 'learners', 'rating', 'reviewcount', 'reviews', 'stars'])
     : undefined;
 
   useEffect(() => {
@@ -687,9 +665,7 @@ function AdminContentStudioEditor() {
                     className="min-w-0 flex-1 p-3 text-left">
                     <span className="flex items-center justify-between gap-3">
                       <span className="truncate font-mono text-sm text-surface-900">{item.slug}</span>
-                      {item.record
-                        ? <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${statusStyles[item.record.status]}`}>{statusLabel(item.record)}</span>
-                        : <span className="shrink-0 rounded-full bg-surface-100 px-2 py-0.5 text-[10px] font-semibold text-surface-600">STATIC SEED</span>}
+                      <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${statusStyles[item.record.status]}`}>{statusLabel(item.record)}</span>
                     </span>
                     <span className="mt-1 block truncate text-xs text-surface-500">
                       {typeof item.content.title === 'string' ? item.content.title
@@ -702,7 +678,7 @@ function AdminContentStudioEditor() {
                     type="button"
                     onClick={(event) => { event.stopPropagation(); void quickRemoveEntry(item); }}
                     aria-label={`Remove ${item.slug}`}
-                    title={item.record ? 'Delete permanently' : 'Remove from website'}
+                    title="Delete permanently"
                     className="mr-2 shrink-0 rounded-lg p-1.5 text-surface-400 opacity-0 transition-all hover:bg-red-50 hover:text-red-600 group-hover:opacity-100 focus-visible:opacity-100"
                   >
                     <Trash2 className="h-3.5 w-3.5" />

@@ -44,7 +44,7 @@ export default function StudentDashboardPage() {
       navigate('/login', { replace: true });
       return;
     }
-    if (account.role === 'ADMIN' || account.role === 'SUPER_ADMIN' || account.role === 'CONTENT_MANAGER' || account.role === 'TRAINER') {
+    if (account.role === 'ADMIN' || account.role === 'SUPER_ADMIN' || account.role === 'CONTENT_MANAGER') {
       navigate('/admin', { replace: true });
       return;
     }
@@ -226,7 +226,7 @@ export default function StudentDashboardPage() {
 
           <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 flex items-center gap-2 font-semibold text-surface-900"><CalendarDays className="h-5 w-5 text-brand-600" /> Your batches & schedules</h2>
-            {portal.batches.length ? <ul className="space-y-3">{portal.batches.map(batch => <li key={batch.id} className="rounded-xl border border-surface-200 p-4"><div className="flex flex-wrap justify-between gap-2"><h3 className="font-semibold text-surface-900">{batch.name}</h3><span className="text-xs font-bold capitalize text-brand-700">{batch.status}</span></div><p className="mt-1 text-xs text-surface-600 font-medium">{batch.code} · {formatDate(batch.startDate)} – {formatDate(batch.endDate)}</p><p className="mt-2 whitespace-pre-wrap break-words text-sm text-surface-700 font-medium">{formatSchedule(batch.schedule) || batch.description || 'Schedule details will be shared by your trainer.'}</p></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">No batch has been assigned to your account yet.</p>}
+            {portal.batches.length ? <ul className="space-y-3">{portal.batches.map(batch => <li key={batch.id} className="rounded-xl border border-surface-200 p-4"><div className="flex flex-wrap justify-between gap-2"><h3 className="font-semibold text-surface-900">{batch.name}</h3><span className="text-xs font-bold capitalize text-brand-700">{batch.status}</span></div><p className="mt-1 text-xs text-surface-600 font-medium">{batch.code} · {formatDate(batch.startDate)} – {formatDate(batch.endDate)}</p><p className="mt-2 whitespace-pre-wrap break-words text-sm text-surface-700 font-medium">{formatSchedule(batch.schedule) || batch.description || 'Schedule details will be shared with you.'}</p></li>)}</ul> : <p className="text-sm text-surface-600 font-medium">No batch has been assigned to your account yet.</p>}
           </article>
 
           <article className="rounded-2xl border border-surface-200 bg-white p-6 shadow-sm">

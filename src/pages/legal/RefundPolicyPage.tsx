@@ -23,7 +23,7 @@ export default function RefundPolicyPage() {
               className="page-hero-highlight"
             />
           </h1>
-          <p className="text-surface-600 font-semibold text-sm">Current reference month: {currentMonth} {currentYear}</p>
+          <p className="text-surface-600 font-semibold text-sm">Last updated: {currentMonth} {currentYear}</p>
         </div>
       </div>
       <div className="container-xl py-12 max-w-3xl">

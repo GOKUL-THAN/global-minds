@@ -8,22 +8,6 @@ export type TrainingMode = 'Online' | 'Classroom' | 'Both' | 'Corporate';
 export type CourseStatus = 'active' | 'draft' | 'coming-soon' | 'archived';
 export type Currency = 'INR' | 'USD' | 'GBP' | 'EUR' | 'AED' | 'CAD' | 'AUD';
 
-export interface Instructor {
-  id: string;
-  name: string;
-  slug: string;
-  photo: string;
-  designation: string;
-  expertise: string[];
-  experience: string;
-  certifications: string[];
-  courses: string[];
-  bio: string;
-  linkedIn?: string;
-  rating?: number;
-  totalStudents?: number;
-}
-
 export interface BatchSchedule {
   id: string;
   day: string;
@@ -65,7 +49,6 @@ export interface Course {
   totalHours: number;
   mode: TrainingMode;
   language: string;
-  instructor: Instructor;
   syllabus: string[];
   modules: CourseModule[];
   prerequisites: string[];
@@ -264,7 +247,7 @@ export interface Stat {
 }
 
 // ── User / Auth ──────────────────────────────────────────────
-export type UserRole = 'SUPER_ADMIN' | 'ADMIN' | 'CONTENT_MANAGER' | 'TRAINER' | 'COUNSELOR' | 'STUDENT' | 'CORPORATE_USER';
+export type UserRole = 'SUPER_ADMIN' | 'ADMIN' | 'CONTENT_MANAGER' | 'COUNSELOR' | 'STUDENT' | 'CORPORATE_USER';
 
 export interface User {
   id: string;

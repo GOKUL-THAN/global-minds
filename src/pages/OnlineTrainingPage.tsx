@@ -10,7 +10,7 @@ import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 
 const features = [
-  { icon: Video, title: 'Live Instructor-Led Classes', desc: 'Attend live sessions with expert instructors in real time, not pre-recorded videos.' },
+  { icon: Video, title: 'Live Online Classes', desc: 'Attend live sessions in real time, not pre-recorded videos.' },
   { icon: Clock, title: 'Recorded Session Access', desc: 'Recordings of every class available so you can revise at your own pace.' },
   { icon: Users, title: 'Interactive Learning', desc: 'Ask questions, participate in discussions and collaborate with classmates.' },
   { icon: MessageCircle, title: 'Doubt Clearing Sessions', desc: 'Dedicated doubt-clearing sessions to ensure no question goes unanswered.' },
@@ -20,8 +20,8 @@ const features = [
 
 export default function OnlineTrainingPage() {
   usePageMeta({
-    title: 'Online Training — Live Instructor-Led Classes',
-    description: 'Learn from anywhere with live instructor-led online classes, recorded sessions, LMS access and doubt-clearing support.',
+    title: 'Online Training — Live Classes',
+    description: 'Learn from anywhere with live online classes, recorded sessions, LMS access and doubt-clearing support.',
   });
   return (
     <div className="min-h-screen bg-white">
@@ -36,7 +36,7 @@ export default function OnlineTrainingPage() {
             Online <DecryptedText text="Training" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
-            Learn from industry experts through live, instructor-led online classes. Study from anywhere in the world with 1-on-1 mentorship and full session recordings.
+            Learn through live online classes. Study from anywhere in the world with flexible support and full session recordings.
           </p>
         </div>
       </div>

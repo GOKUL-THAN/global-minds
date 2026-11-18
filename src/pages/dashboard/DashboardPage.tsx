@@ -38,7 +38,6 @@ const demoCourses = [
     totalLessons: 48,
     completedLessons: 17,
     thumbnail: '/images/courses/aws-training.jpg',
-    instructor: 'Alex Johnson',
     status: 'in-progress',
     nextClassDate: 'Tomorrow, 7:00 AM',
   },
@@ -50,7 +49,6 @@ const demoCourses = [
     totalLessons: 36,
     completedLessons: 22,
     thumbnail: '/images/courses/python-training.jpg',
-    instructor: 'Priya Sharma',
     status: 'in-progress',
     nextClassDate: 'Monday, 7:00 PM',
   },
@@ -222,7 +220,6 @@ function CoursesSection() {
                   <img src={course.thumbnail} alt={course.title} className="w-full h-40 object-cover" />
                   <div className="p-5">
                     <h3 className="font-semibold text-surface-900 mb-1">{course.title}</h3>
-                    <p className="text-xs text-surface-600 font-medium mb-3">Instructor: {course.instructor}</p>
                     <div className="mb-3">
                       <div className="flex justify-between text-xs text-surface-600 font-medium mb-1">
                         <span>Progress</span><span className="font-bold text-brand-700">{course.progress}%</span>

@@ -49,7 +49,6 @@ export interface UpcomingBatchSchedule {
   id: string;
   course: string;
   category: string;
-  instructor: string;
   startDate: string;             // YYYY-MM-DD
   formattedStartDate: string;    // e.g. "20 Nov 2026"
   days: string;
@@ -66,7 +65,6 @@ export interface UpcomingBatchSchedule {
 export interface UpcomingDemoSlot {
   id: string;
   course: string;
-  trainer: string;
   date: string;                  // e.g. "Nov 20, 2026"
   dateValue: string;             // YYYY-MM-DD
   dayOfWeek: string;             // e.g. "Friday"
@@ -405,7 +403,6 @@ class DateService {
         id: 'b1',
         course: 'AWS Cloud Solutions Architect',
         category: 'Cloud',
-        instructor: 'Rajesh Kumar',
         dayOffset: 3,
         startWeekdays: [1],
         days: 'Mon / Wed / Fri',
@@ -422,7 +419,6 @@ class DateService {
         id: 'b2',
         course: 'Full Stack Development (MERN)',
         category: 'Full Stack',
-        instructor: 'Priya Nair',
         dayOffset: 5,
         startWeekdays: [6],
         days: 'Sat / Sun',
@@ -439,7 +435,6 @@ class DateService {
         id: 'b3',
         course: 'Machine Learning & AI',
         category: 'AI / ML',
-        instructor: 'Suresh Anand',
         dayOffset: 7,
         startWeekdays: [2],
         days: 'Tue / Thu',
@@ -455,7 +450,6 @@ class DateService {
         id: 'b4',
         course: 'Data Science & Analytics',
         category: 'Data Science',
-        instructor: 'Anitha Reddy',
         dayOffset: 9,
         startWeekdays: [1],
         days: 'Mon – Fri',
@@ -472,7 +466,6 @@ class DateService {
         id: 'b5',
         course: 'Automation Testing (Selenium)',
         category: 'Software Testing',
-        instructor: 'Kiran Babu',
         dayOffset: 11,
         startWeekdays: [6],
         days: 'Sat / Sun',
@@ -488,7 +481,6 @@ class DateService {
         id: 'b6',
         course: 'DevOps & Kubernetes',
         category: 'DevOps',
-        instructor: 'Venkatesh Rao',
         dayOffset: 13,
         startWeekdays: [1],
         days: 'Mon / Wed / Fri',
@@ -505,7 +497,6 @@ class DateService {
         id: 'b7',
         course: 'Cyber Security & Ethical Hacking',
         category: 'Security',
-        instructor: 'Arjun Singh',
         dayOffset: 15,
         startWeekdays: [6],
         days: 'Sat / Sun',
@@ -521,7 +512,6 @@ class DateService {
         id: 'b8',
         course: 'Python & Django Full Stack',
         category: 'Programming',
-        instructor: 'Divya Krishnan',
         dayOffset: 17,
         startWeekdays: [1],
         days: 'Mon / Wed / Fri',
@@ -547,7 +537,6 @@ class DateService {
         id: b.id,
         course: b.course,
         category: b.category,
-        instructor: b.instructor,
         startDate: dateStr,
         formattedStartDate: this.formatDate(dateStr, 'short'),
         days: b.days,
@@ -569,12 +558,12 @@ class DateService {
   public getUpcomingDemoSlots(): UpcomingDemoSlot[] {
     const today = this.getTodayString();
     const slots = [
-      { course: 'AWS / Cloud', trainer: 'Rajesh Kumar', offsetDays: 1, time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 5 },
-      { course: 'Full Stack Development', trainer: 'Priya Nair', offsetDays: 2, time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 8 },
-      { course: 'Data Science & AI', trainer: 'Anitha Reddy', offsetDays: 3, time: '7:00 PM IST', mode: 'Online (Zoom)', seats: 12 },
-      { course: 'Machine Learning', trainer: 'Suresh Anand', offsetDays: 4, time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
-      { course: 'Cyber Security', trainer: 'Arjun Singh', offsetDays: 5, time: '6:00 PM IST', mode: 'Online (Zoom)', seats: 10 },
-      { course: 'DevOps & Docker', trainer: 'Venkatesh Rao', offsetDays: 6, time: '8:00 PM IST', mode: 'Online (Zoom)', seats: 7 },
+      { course: 'AWS / Cloud', offsetDays: 1, time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 5 },
+      { course: 'Full Stack Development', offsetDays: 2, time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 8 },
+      { course: 'Data Science & AI', offsetDays: 3, time: '7:00 PM IST', mode: 'Online (Zoom)', seats: 12 },
+      { course: 'Machine Learning', offsetDays: 4, time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
+      { course: 'Cyber Security', offsetDays: 5, time: '6:00 PM IST', mode: 'Online (Zoom)', seats: 10 },
+      { course: 'DevOps & Docker', offsetDays: 6, time: '8:00 PM IST', mode: 'Online (Zoom)', seats: 7 },
     ];
 
     return slots.map((s, idx) => {
@@ -586,7 +575,6 @@ class DateService {
       return {
         id: `demo-${idx + 1}`,
         course: s.course,
-        trainer: s.trainer,
         date: formatted,
         dateValue,
         dayOfWeek,

@@ -14,8 +14,8 @@ const advantages = [
   },
   {
     icon: UsersRound,
-    title: 'Instructor guidance',
-    description: 'Get support from instructors as you work through your course.',
+    title: 'Learner guidance',
+    description: 'Get support as you work through your course.',
   },
   {
     icon: Target,

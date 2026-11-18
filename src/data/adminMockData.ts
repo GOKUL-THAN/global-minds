@@ -67,7 +67,6 @@ export interface AdminBatch {
   name: string;
   course: string;
   category: string;
-  instructor: string;
   startDate: string;
   endDate: string;
   schedule: string;
@@ -86,7 +85,7 @@ export interface SiteActivity {
   id: string;
   type: ActivityType;
   actor: string;
-  actorRole: 'student' | 'admin' | 'instructor' | 'system';
+  actorRole: 'student' | 'admin' | 'system';
   description: string;
   timestamp: string;
   ip?: string;
@@ -245,14 +244,14 @@ export const mockEnquiries: Enquiry[] = [
 
 // ── Batches ────────────────────────────────────────────────
 export const mockBatches: AdminBatch[] = [
-  { id: 'bt1', name: 'AWS Oct 2026 Weekday', course: 'AWS / Cloud', category: 'Cloud', instructor: 'Rajesh Kumar', startDate: '2026-10-15', endDate: '2026-12-15', schedule: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming', capacity: 25, enrolled: 18, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 18999 },
-  { id: 'bt2', name: 'Full Stack Oct 2026 Weekend', course: 'Full Stack Development', category: 'Full Stack', instructor: 'Priya Nair', startDate: '2026-10-18', endDate: '2027-01-18', schedule: 'Sat / Sun', time: '10:00 AM – 1:00 PM', mode: 'Hybrid', status: 'upcoming', capacity: 20, enrolled: 14, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 22999 },
-  { id: 'bt3', name: 'Data Science Sep 2026', course: 'Data Science & AI', category: 'AI / ML', instructor: 'Anitha Reddy', startDate: '2026-09-01', endDate: '2026-11-30', schedule: 'Mon / Wed / Fri', time: '8:00 AM – 10:00 AM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 19, completed: 4, avgProgress: 68, avgAttendance: 87, fee: 24999 },
-  { id: 'bt4', name: 'Testing Oct 2026 Weekend', course: 'Software Testing', category: 'QA', instructor: 'Kiran Babu', startDate: '2026-10-04', endDate: '2026-12-01', schedule: 'Sat / Sun', time: '2:00 PM – 5:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 22, completed: 0, avgProgress: 24, avgAttendance: 71, fee: 12999 },
-  { id: 'bt5', name: 'Python Oct 2026 Weekday', course: 'Python Training', category: 'Programming', instructor: 'Arjun Singh', startDate: '2026-10-08', endDate: '2026-11-25', schedule: 'Mon / Wed / Fri', time: '7:00 PM – 9:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 21, completed: 0, avgProgress: 42, avgAttendance: 89, fee: 9999 },
-  { id: 'bt6', name: 'Cyber Security Oct 2026', course: 'Cyber Security Training', category: 'Security', instructor: 'Venkat Rao', startDate: '2026-10-01', endDate: '2026-12-15', schedule: 'Tue / Thu', time: '6:00 PM – 8:00 PM', mode: 'Hybrid', status: 'ongoing', capacity: 20, enrolled: 16, completed: 0, avgProgress: 31, avgAttendance: 84, fee: 15999 },
-  { id: 'bt7', name: 'ML Oct 2026 Weekend', course: 'Machine Learning', category: 'AI / ML', instructor: 'Deepa Krishnan', startDate: '2026-10-05', endDate: '2027-01-05', schedule: 'Sat / Sun', time: '11:00 AM – 2:00 PM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 17, completed: 0, avgProgress: 38, avgAttendance: 80, fee: 19999 },
-  { id: 'bt8', name: 'DevOps Aug 2026 Fast-Track', course: 'DevOps Training', category: 'DevOps', instructor: 'Suresh Anand', startDate: '2026-08-01', endDate: '2026-09-30', schedule: 'Mon – Fri', time: '10:00 AM – 4:00 PM', mode: 'Classroom', status: 'completed', capacity: 15, enrolled: 15, completed: 13, avgProgress: 100, avgAttendance: 91, fee: 16999 },
+  { id: 'bt1', name: 'AWS Oct 2026 Weekday', course: 'AWS / Cloud', category: 'Cloud', startDate: '2026-10-15', endDate: '2026-12-15', schedule: 'Mon / Wed / Fri', time: '7:00 AM – 9:00 AM', mode: 'Online', status: 'upcoming', capacity: 25, enrolled: 18, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 18999 },
+  { id: 'bt2', name: 'Full Stack Oct 2026 Weekend', course: 'Full Stack Development', category: 'Full Stack', startDate: '2026-10-18', endDate: '2027-01-18', schedule: 'Sat / Sun', time: '10:00 AM – 1:00 PM', mode: 'Hybrid', status: 'upcoming', capacity: 20, enrolled: 14, completed: 0, avgProgress: 0, avgAttendance: 0, fee: 22999 },
+  { id: 'bt3', name: 'Data Science Sep 2026', course: 'Data Science & AI', category: 'AI / ML', startDate: '2026-09-01', endDate: '2026-11-30', schedule: 'Mon / Wed / Fri', time: '8:00 AM – 10:00 AM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 19, completed: 4, avgProgress: 68, avgAttendance: 87, fee: 24999 },
+  { id: 'bt4', name: 'Testing Oct 2026 Weekend', course: 'Software Testing', category: 'QA', startDate: '2026-10-04', endDate: '2026-12-01', schedule: 'Sat / Sun', time: '2:00 PM – 5:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 22, completed: 0, avgProgress: 24, avgAttendance: 71, fee: 12999 },
+  { id: 'bt5', name: 'Python Oct 2026 Weekday', course: 'Python Training', category: 'Programming', startDate: '2026-10-08', endDate: '2026-11-25', schedule: 'Mon / Wed / Fri', time: '7:00 PM – 9:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 21, completed: 0, avgProgress: 42, avgAttendance: 89, fee: 9999 },
+  { id: 'bt6', name: 'Cyber Security Oct 2026', course: 'Cyber Security Training', category: 'Security', startDate: '2026-10-01', endDate: '2026-12-15', schedule: 'Tue / Thu', time: '6:00 PM – 8:00 PM', mode: 'Hybrid', status: 'ongoing', capacity: 20, enrolled: 16, completed: 0, avgProgress: 31, avgAttendance: 84, fee: 15999 },
+  { id: 'bt7', name: 'ML Oct 2026 Weekend', course: 'Machine Learning', category: 'AI / ML', startDate: '2026-10-05', endDate: '2027-01-05', schedule: 'Sat / Sun', time: '11:00 AM – 2:00 PM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 17, completed: 0, avgProgress: 38, avgAttendance: 80, fee: 19999 },
+  { id: 'bt8', name: 'DevOps Aug 2026 Fast-Track', course: 'DevOps Training', category: 'DevOps', startDate: '2026-08-01', endDate: '2026-09-30', schedule: 'Mon – Fri', time: '10:00 AM – 4:00 PM', mode: 'Classroom', status: 'completed', capacity: 15, enrolled: 15, completed: 13, avgProgress: 100, avgAttendance: 91, fee: 16999 },
 ];
 
 // ── Site Activity Log ──────────────────────────────────────

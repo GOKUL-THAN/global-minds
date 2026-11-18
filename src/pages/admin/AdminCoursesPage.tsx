@@ -56,9 +56,6 @@ export default function AdminCoursesPage() {
     const category = contentString(entry.content, 'category');
     const level = contentString(entry.content, 'level');
     const query = search.trim().toLowerCase();
-    const instructor = entry.content.instructor && typeof entry.content.instructor === 'object'
-      ? (entry.content.instructor as Record<string, unknown>).name
-      : '';
     const matchesSearch = !query || [
       title,
       subCategory,
@@ -66,7 +63,6 @@ export default function AdminCoursesPage() {
       contentString(entry.content, 'shortDescription'),
       contentString(entry.content, 'longDescription'),
       contentString(entry.content, 'level'),
-      typeof instructor === 'string' ? instructor : '',
       ...(Array.isArray(entry.content.tags) ? entry.content.tags.filter((tag): tag is string => typeof tag === 'string') : []),
     ].join(' ').toLowerCase().includes(query);
     const matchesCategory = catFilter === 'all' || category === catFilter;

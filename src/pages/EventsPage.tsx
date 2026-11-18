@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Calendar, Clock, Monitor, MapPin, Users, ExternalLink, ChevronDown } from 'lucide-react';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Button } from '../components/ui/Button';
@@ -9,7 +9,7 @@ import { siteConfig } from '../data/siteConfig';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
-import { addCalendarDays, dateService, useDateSystem } from '../services/dateService';
+import { dateService, useDateSystem } from '../services/dateService';
 import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 type EventType = 'All' | 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
@@ -32,132 +32,6 @@ interface Event {
   badge?: string;
 }
 
-const defaultEvents: Event[] = [
-  {
-    id: 'e1',
-    title: 'Cloud Architecture Masterclass: Designing Scalable AWS Solutions',
-    type: 'Webinar',
-    date: '',
-    time: '7:00 PM – 9:00 PM IST',
-    duration: '2 Hours',
-    speaker: 'Rajesh Kumar',
-    speakerRole: 'AWS Solutions Architect, 12 yrs exp',
-    mode: 'Online',
-    seats: 200,
-    seatsLeft: 47,
-    fee: 'Free',
-    description: 'Deep-dive into designing fault-tolerant, highly available and cost-optimised AWS architectures. Includes live Q&A.',
-    topics: ['Multi-AZ architecture', 'Cost optimisation', 'High availability patterns', 'Security best practices'],
-    badge: 'Filling Fast',
-  },
-  {
-    id: 'e2',
-    title: 'Hands-on DevOps Workshop: CI/CD Pipeline from Scratch',
-    type: 'Workshop',
-    date: '',
-    time: '10:00 AM – 4:00 PM IST',
-    duration: '6 Hours',
-    speaker: 'Suresh Anand',
-    speakerRole: 'DevOps Lead, Ex-Google',
-    mode: 'Hybrid',
-    seats: 50,
-    seatsLeft: 12,
-    fee: '₹499',
-    description: 'Build a complete CI/CD pipeline using GitHub Actions, Docker, and Kubernetes. Hands-on lab with guided exercises.',
-    topics: ['GitHub Actions', 'Docker containerisation', 'Kubernetes deployment', 'Monitoring with Grafana'],
-    badge: 'Last 12 Seats',
-  },
-  {
-    id: 'e4',
-    title: '48-Hour Full Stack Hackathon',
-    type: 'Hackathon',
-    date: '',
-    time: '9:00 AM IST (48 hrs)',
-    duration: '48 Hours',
-    speaker: 'Global Minds Technologies Mentors',
-    speakerRole: 'Industry Expert Panel',
-    mode: 'Hybrid',
-    seats: 100,
-    seatsLeft: 35,
-    fee: 'Free',
-    description: 'Build a full-stack web application in 48 hours. Top 3 teams win prizes worth ₹1 lakh. Open to all skill levels.',
-    topics: ['React / Next.js', 'Node.js / Python backend', 'Database design', 'UI/UX fundamentals'],
-    badge: 'Prize: ₹1 Lakh',
-  },
-  {
-    id: 'e5',
-    title: 'Data Science Bootcamp: From Zero to Hero',
-    type: 'Workshop',
-    date: '',
-    time: '10:00 AM – 5:00 PM IST',
-    duration: '7 Hours',
-    speaker: 'Anitha Reddy',
-    speakerRole: 'Principal Data Scientist, Infosys',
-    mode: 'Online',
-    seats: 80,
-    seatsLeft: 62,
-    fee: '₹299',
-    description: 'A comprehensive one-day workshop covering Python for data science, Pandas, Matplotlib, Scikit-learn and building your first ML model.',
-    topics: ['Python for data science', 'EDA with Pandas', 'Visualisation', 'Building ML models'],
-    badge: 'New',
-  },
-  {
-    id: 'e6',
-    title: 'Resume & LinkedIn Masterclass for IT Professionals',
-    type: 'Webinar',
-    date: '',
-    time: '7:00 PM – 8:30 PM IST',
-    duration: '1.5 Hours',
-    speaker: 'Meena Pillai',
-    speakerRole: 'HR Manager, TCS | Career Coach',
-    mode: 'Online',
-    seats: 250,
-    seatsLeft: 210,
-    fee: 'Free',
-    description: 'Learn what hiring managers actually look for. Build an ATS-proof resume and a standout LinkedIn profile live during the session.',
-    topics: ['ATS-friendly resume structure', 'LinkedIn profile optimisation', 'Personal branding', 'Common resume mistakes'],
-  },
-  {
-    id: 'e7',
-    title: 'Cyber Security Awareness Workshop',
-    type: 'Workshop',
-    date: '',
-    time: '10:00 AM – 1:00 PM IST',
-    duration: '3 Hours',
-    speaker: 'Venkat Rao',
-    speakerRole: 'CISSP | Cyber Security Lead',
-    mode: 'Offline',
-    seats: 40,
-    seatsLeft: 22,
-    fee: '₹199',
-    description: 'Practical session on ethical hacking fundamentals, common vulnerabilities, and how to protect applications. Includes hands-on CTF challenge.',
-    topics: ['OWASP Top 10', 'Ethical hacking basics', 'CTF challenge', 'Security careers'],
-  },
-  {
-    id: 'e8',
-    title: 'Freshers Career Panel: Landing Your First IT Job',
-    type: 'Seminar',
-    date: '',
-    time: '5:00 PM – 7:00 PM IST',
-    duration: '2 Hours',
-    speaker: 'Panel of 5 Industry Experts',
-    speakerRole: 'HR Leaders from Top MNCs',
-    mode: 'Hybrid',
-    seats: 300,
-    seatsLeft: 245,
-    fee: 'Free',
-    description: 'A candid panel discussion with HR leaders and senior developers on what it takes to land your first IT job as a fresher in 2026.',
-    topics: ['What recruiters want', 'Interview tips', 'Package negotiation', 'Career growth paths'],
-  },
-];
-
-const pastEvents = [
-  { title: 'Kubernetes Deep Dive Workshop', date: 'Sep 2026', attendees: 87, rating: 4.9 },
-  { title: 'Full Stack Hackathon Summer 2026', date: 'Jul 2026', attendees: 96, rating: 4.9 },
-  { title: 'Power BI Masterclass', date: 'Jul 2026', attendees: 143, rating: 4.7 },
-  { title: 'Career Fair – IT Placements 2026', date: 'Jun 2026', attendees: 320, rating: 4.8 },
-];
-
 function typeBadgeColor(type: Event['type']) {
   switch (type) {
     case 'Webinar': return 'bg-brand-100 text-brand-700';
@@ -177,14 +51,7 @@ interface RegisterForm { name: string; email: string; phone: string }
 
 export default function EventsPage() {
   const { todayString } = useDateSystem();
-  const dynamicDefaults = useMemo(
-    () => defaultEvents.map((event, index) => ({
-      ...event,
-      date: addCalendarDays(todayString, 3 + index * 4),
-    })),
-    [todayString],
-  );
-  const events = useCmsCollection<Event>('events', dynamicDefaults);
+  const events = useCmsCollection<Event>('events');
 
   usePageMeta({
     title: 'Events, Webinars & Workshops',
@@ -269,7 +136,7 @@ export default function EventsPage() {
       <section className="section bg-surface-50">
         <div className="container-xl">
           <DateCycleBadge variant="banner" className="mb-8" />
-          <div className="grid md:grid-cols-2 gap-6">
+          {filtered.length ? <div className="grid md:grid-cols-2 gap-6">
             {filtered.map(event => {
               const isExpanded = expandedEvents.has(event.id);
               return (
@@ -378,39 +245,7 @@ export default function EventsPage() {
               </SpotlightCard>
             );
           })}
-          </div>
-        </div>
-      </section>
-
-      {/* Past Events */}
-      <section className="section bg-white">
-        <div className="container-xl">
-          <div className="text-center mb-10">
-            <h2 className="display-sm mb-3">Past Events</h2>
-            <p className="text-surface-500">Request a past-event recording by email; access depends on availability.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {pastEvents.map(e => {
-              const subject = `Past event recording request: ${e.title}`;
-              const body = `Hello, I would like to request access to the recording for "${e.title}".`;
-              return (
-                <article key={e.title} className="block bg-surface-50 rounded-2xl p-4 text-center hover:shadow-card-md hover:-translate-y-0.5 transition-all">
-                  <p className="font-semibold text-surface-900 text-sm mb-1">{e.title}</p>
-                  <p className="text-xs text-surface-500 mb-2">{e.date}</p>
-                  <div className="flex items-center justify-center gap-3 text-xs text-surface-500 mb-3">
-                    <span>👥 {e.attendees}</span>
-                    <span>⭐ {e.rating}</span>
-                  </div>
-                  <a
-                    href={`mailto:${siteConfig.admissionsEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
-                    className="text-xs font-semibold text-brand-700 hover:text-brand-800 underline"
-                  >
-                    Request recording
-                  </a>
-                </article>
-              );
-            })}
-          </div>
+          </div> : <p className="text-center text-surface-600">No upcoming events have been published yet.</p>}
         </div>
       </section>
 

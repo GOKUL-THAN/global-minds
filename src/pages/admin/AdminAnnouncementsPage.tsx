@@ -29,39 +29,6 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
   return result.data;
 }
 
-const getInitialAnnouncements = (): Announcement[] => {
-  const info = dateService.getDateCycleInfo();
-  return [
-    {
-      id: 'ann-1',
-      title: `Admissions Open for ${info.reportingQuarter} Batches`,
-      body: `Registrations are now open for AWS Cloud Architect, Python Full Stack, and Data Science cohorts starting in ${info.currentMonthName}.`,
-      status: 'published',
-      createdAt: info.currentTimestamp,
-      updatedAt: info.currentTimestamp,
-      publishedAt: info.currentTimestamp,
-    },
-    {
-      id: 'ann-2',
-      title: 'Campus Hiring Drive with 20+ Tech Partners',
-      body: 'Recruitment schedules are shared directly with eligible learners through the student dashboard.',
-      status: 'published',
-      createdAt: info.currentTimestamp,
-      updatedAt: info.currentTimestamp,
-      publishedAt: info.currentTimestamp,
-    },
-    {
-      id: 'ann-3',
-      title: 'Scheduled LMS Platform Maintenance',
-      body: 'The planned maintenance window will be announced in the student dashboard before work begins.',
-      status: 'draft',
-      createdAt: info.currentTimestamp,
-      updatedAt: info.currentTimestamp,
-      publishedAt: null,
-    },
-  ];
-};
-
 export default function AdminAnnouncementsPage() {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [loading, setLoading] = useState(true);
@@ -76,9 +43,9 @@ export default function AdminAnnouncementsPage() {
     try {
       const result = await request<{ announcements: Announcement[] }>('/api/admin/announcements?page=1&pageSize=100');
       setAnnouncements(result.announcements);
-    } catch {
-      // Backend offline fallback
-      setAnnouncements(getInitialAnnouncements());
+    } catch (cause) {
+      setAnnouncements([]);
+      setError(cause instanceof Error ? cause.message : 'Unable to load announcements.');
     } finally {
       setLoading(false);
     }
@@ -103,19 +70,8 @@ export default function AdminAnnouncementsPage() {
       formElement.reset();
       setNotice('Announcement saved.');
       await load();
-    } catch {
-      const newAnn: Announcement = {
-        id: `ann-${Date.now()}`,
-        title: payload.title,
-        body: payload.body,
-        status: payload.status,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-        publishedAt: payload.status === 'published' ? new Date().toISOString() : null,
-      };
-      setAnnouncements(prev => [newAnn, ...prev]);
-      formElement.reset();
-      setNotice('Announcement saved.');
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'Unable to save announcement.');
     } finally {
       setSaving(false);
     }
@@ -132,9 +88,8 @@ export default function AdminAnnouncementsPage() {
       });
       setNotice('Announcement status updated.');
       await load();
-    } catch {
-      setAnnouncements(prev => prev.map(a => (a.id === announcement.id ? { ...a, status, publishedAt: status === 'published' ? (a.publishedAt || new Date().toISOString()) : a.publishedAt } : a)));
-      setNotice('Announcement status updated.');
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'Unable to update announcement status.');
     } finally {
       setSaving(false);
     }
@@ -156,10 +111,8 @@ export default function AdminAnnouncementsPage() {
       setEditingId(null);
       setNotice('Announcement updated.');
       await load();
-    } catch {
-      setAnnouncements(prev => prev.map(a => (a.id === announcement.id ? { ...a, title, body, updatedAt: new Date().toISOString() } : a)));
-      setEditingId(null);
-      setNotice('Announcement updated.');
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'Unable to update announcement.');
     } finally {
       setSaving(false);
     }

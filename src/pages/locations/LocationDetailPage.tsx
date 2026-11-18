@@ -122,7 +122,7 @@ export default function LocationDetailPage() {
               <div>
                 <h3 className="font-semibold text-brand-900 mb-1">Can't visit in person?</h3>
                 <p className="text-brand-800 font-medium text-sm mb-3">
-                  All our courses are also available online. Live instructor-led sessions accessible from anywhere in the world.
+                  All our courses are also available online. Live sessions are accessible from anywhere in the world.
                 </p>
                 <Link to="/online-training">
                   <button className="btn-primary btn text-sm flex items-center gap-2">

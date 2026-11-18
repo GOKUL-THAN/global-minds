@@ -65,9 +65,6 @@ export function readNavigationContent(value: unknown): NavigationContent | undef
   const more = readMenuItems(content.more, 'more');
   if (!primary || !more) return undefined;
 
-  const isTrainerLink = (link: MenuLink) =>
-    link.href.split(/[?#]/, 1)[0].replace(/\/+$/, '').toLowerCase() === '/trainers'
-    || /^(expert )?trainers?$/i.test(link.label.trim());
   const courseSlugs = new Set(publicCourseCatalog.map(course => course.sourceSlug));
   const categorySlugs = new Set(publicCourseCatalog.map(course => course.category));
   const isAllowedLink = (link: MenuLink) => {
@@ -92,16 +89,16 @@ export function readNavigationContent(value: unknown): NavigationContent | undef
     return link;
   };
   const normalizedPrimary = primary
-      .filter(item => !isTrainerLink(item) && isAllowedLink(item))
+      .filter(item => isAllowedLink(item))
       .map(item => ({
         ...normalizeCourseLink(item),
         section: item.section,
         children: item.children
-          .filter(child => !isTrainerLink(child) && isAllowedLink(child))
+          .filter(child => isAllowedLink(child))
           .map(normalizeCourseLink),
       }));
   const normalizedMore = more
-    .filter(item => !isTrainerLink(item) && isAllowedLink(item))
+    .filter(item => isAllowedLink(item))
     .map(item => ({
       ...normalizeCourseLink(item),
       section: item.section,

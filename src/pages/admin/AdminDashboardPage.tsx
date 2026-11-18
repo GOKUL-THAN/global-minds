@@ -82,9 +82,7 @@ export default function AdminDashboardPage() {
   }, [user.role]);
   const tools = user.role === 'CONTENT_MANAGER'
     ? adminTools.filter(tool => tool.href !== '/admin/enquiries')
-    : user.role === 'TRAINER'
-      ? []
-      : adminTools;
+    : adminTools;
 
   return (
     <div className="space-y-6">

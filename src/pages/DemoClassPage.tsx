@@ -23,7 +23,7 @@ const popularDemoCourses = [
 
 
 const benefits = [
-  'Meet your trainer before committing',
+  'Meet the admissions team before committing',
   'See the teaching style and course structure',
   'Ask questions directly to the expert',
   'Understand the batch schedule and timings',
@@ -47,7 +47,7 @@ export default function DemoClassPage() {
   const upcomingDemos = dateService.getUpcomingDemoSlots();
   usePageMeta({
     title: 'Book a Free Demo Class',
-    description: 'Book a free demo class at Global Minds Technologies. Experience our teaching style, meet your trainer, and ask questions before enrolling in any course.',
+    description: 'Book a free demo class at Global Minds Technologies. Experience our teaching style and ask questions before enrolling in any course.',
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -103,7 +103,7 @@ export default function DemoClassPage() {
       course: demo.course,
       preferredDate: demo.dateValue,
       mode: demo.mode.startsWith('Classroom') ? 'Classroom' : 'Online',
-      message: `Scheduled demo with ${demo.trainer} at ${demo.time} (${demo.mode}).`,
+      message: `Scheduled demo at ${demo.time} (${demo.mode}).`,
     }));
     bookingFormRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
@@ -132,7 +132,7 @@ export default function DemoClassPage() {
                 />
               </h1>
               <p className="page-hero-desc text-lg sm:text-xl mb-8 leading-relaxed">
-                Experience our teaching quality before enrolling. Attend a free live demo session with our expert trainers — ask questions, see the curriculum, and decide with confidence.
+                Experience our teaching quality before enrolling. Attend a free live demo session, ask questions, see the curriculum, and decide with confidence.
               </p>
               <ul className="space-y-3">
                 {benefits.map(b => (
@@ -298,7 +298,6 @@ export default function DemoClassPage() {
             {upcomingDemos.map(d => (
               <SpotlightCard key={d.course + d.date} className="h-full bg-white rounded-2xl border border-surface-200 p-5 hover:border-brand-300 hover:shadow-card-md transition-all">
                 <h3 className="font-semibold text-surface-900 mb-1">{d.course}</h3>
-                <p className="text-sm text-surface-600 font-medium mb-4">Trainer: {d.trainer}</p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
                     <Calendar className="w-4 h-4 text-brand-600" />
@@ -355,9 +354,9 @@ export default function DemoClassPage() {
           <div className="space-y-4">
             {[
               { q: 'Is the demo class really free?', a: 'Yes, 100% free with no hidden charges or obligation to enroll after attending.' },
-              { q: 'How long is a demo class?', a: 'Demo sessions are typically 60–90 minutes. You\'ll get a solid overview of the course and can ask questions directly to the trainer.' },
+              { q: 'How long is a demo class?', a: 'Demo sessions are typically 60–90 minutes. You\'ll get a solid overview of the course and can ask questions directly.' },
               { q: 'Can I attend multiple demo sessions?', a: 'Absolutely! We encourage you to attend demos for different courses if you\'re exploring options.' },
-              { q: 'What is covered in the demo?', a: 'The trainer covers course overview, curriculum highlights, career scope, real-world use cases, and answers all your queries.' },
+              { q: 'What is covered in the demo?', a: 'The session covers course overview, curriculum highlights, career scope, real-world use cases, and answers your queries.' },
               { q: 'Is it online or offline?', a: 'We offer both. Online demos happen via Zoom/Google Meet. Offline demos are available at our Chennai centre.' },
             ].map(faq => (
               <SpotlightCard key={faq.q} className="bg-white rounded-2xl p-5 border border-surface-200">

@@ -173,7 +173,7 @@ export default function BatchSchedulePage() {
                                 </span>
                               )}
                             </div>
-                            <p className="text-sm text-surface-600 font-medium">{batch.category} · Trainer: {batch.instructor}</p>
+                            <p className="text-sm text-surface-600 font-medium">{batch.category}</p>
                           </div>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">

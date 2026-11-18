@@ -60,7 +60,6 @@ const DEFAULT_ROLES: ManagedRole[] = [
   { name: 'SUPER_ADMIN', description: 'Full system privileges across all modules and infrastructure', permissions: ['ALL'] },
   { name: 'ADMIN', description: 'Manage courses, learners, batches, and operations', permissions: ['MANAGE_USERS', 'MANAGE_COURSES', 'MANAGE_CONTENT', 'MANAGE_STUDENTS', 'MANAGE_BATCHES', 'MANAGE_ATTENDANCE', 'MANAGE_INTERNSHIPS', 'MANAGE_CERTIFICATES', 'VIEW_AUDIT_LOGS', 'VIEW_ANALYTICS'] },
   { name: 'CONTENT_MANAGER', description: 'Curate course syllabus, blog articles, and website banners', permissions: ['MANAGE_COURSES', 'MANAGE_CONTENT'] },
-  { name: 'TRAINER', description: 'Manage assigned cohorts, track attendance, and student progress', permissions: ['MANAGE_ATTENDANCE', 'MANAGE_STUDENTS'] },
   { name: 'STUDENT', description: 'Access course portal, practice resources, and certificates', permissions: [] },
 ];
 
@@ -94,16 +93,6 @@ const DEFAULT_USERS: ManagedUser[] = [
     is_active: 1,
     email_verified: 1,
     created_at: '2026-03-01T00:00:00Z',
-  },
-  {
-    id: 'usr-4',
-    first_name: 'Alex',
-    last_name: 'Johnson (Trainer)',
-    email: 'alex.cloud@globalminds.org',
-    role: 'TRAINER',
-    is_active: 1,
-    email_verified: 1,
-    created_at: '2026-04-10T00:00:00Z',
   },
   {
     id: 'usr-5',
@@ -261,7 +250,7 @@ export default function AdminUserManagementPage() {
             <label><span className="form-label">Full name</span><input name="fullName" required minLength={2} maxLength={120} className="form-input w-full" /></label>
             <label><span className="form-label">Email</span><input name="email" required type="email" maxLength={254} className="form-input w-full" /></label>
             <label><span className="form-label">Initial password (12+ characters)</span><input name="password" required type="password" minLength={12} maxLength={72} autoComplete="new-password" className="form-input w-full" /></label>
-            <label><span className="form-label">Role</span><select name="role" className="form-select w-full" defaultValue="ADMIN"><option value="ADMIN">Admin</option><option value="CONTENT_MANAGER">Content Manager</option><option value="TRAINER">Trainer</option><option value="STUDENT">Student</option></select></label>
+            <label><span className="form-label">Role</span><select name="role" className="form-select w-full" defaultValue="ADMIN"><option value="ADMIN">Admin</option><option value="CONTENT_MANAGER">Content Manager</option><option value="STUDENT">Student</option></select></label>
             <button type="submit" disabled={saving} className="btn-primary btn self-end">{saving ? 'Creating...' : 'Create account'}</button>
           </form>
           <p className="mt-3 text-xs text-surface-500">New student accounts must have their account details communicated securely to them. Never share passwords over public channels.</p>
@@ -288,7 +277,7 @@ export default function AdminUserManagementPage() {
               <tbody className="divide-y divide-surface-100">{users.map(user => <tr key={user.id}>
                 <td className="px-4 py-3"><p className="font-medium text-surface-900">{user.first_name} {user.last_name}</p><p className="text-xs text-surface-500">{user.email}</p></td>
                 <td className="px-4 py-3"><select aria-label={`Role for ${user.email}`} disabled={saving || user.role === 'SUPER_ADMIN'} value={user.role} onChange={event => void updateUser(user, { role: event.target.value })} className="form-select min-w-40">
-                  {['STUDENT', 'TRAINER', 'CONTENT_MANAGER', 'ADMIN', 'SUPER_ADMIN'].map(role => <option key={role} value={role}>{role.replace(/_/g, ' ')}</option>)}
+                  {['STUDENT', 'CONTENT_MANAGER', 'ADMIN', 'SUPER_ADMIN'].map(role => <option key={role} value={role}>{role.replace(/_/g, ' ')}</option>)}
                 </select></td>
                 <td className="px-4 py-3"><span className={user.is_active ? 'text-green-700' : 'text-red-700'}>{user.is_active ? 'Active' : 'Inactive'}</span></td>
                 <td className="px-4 py-3 text-surface-500">{dateService.formatDate(user.created_at, 'short')}</td>
