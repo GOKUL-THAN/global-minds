@@ -9,7 +9,7 @@ import { SpotlightCard } from '../ui/SpotlightCard';
 const iconMap: Record<string, React.ElementType> = {
   'aws-training': Cloud,
   'data-science': BookOpen,
-  'machine-learning': Cpu,
+  'aiml': Cpu,
   'full-stack-development': Code2,
   'cyber-security': Shield,
   'software-testing': TestTube2,
@@ -20,7 +20,7 @@ export function PopularCategories() {
   const cardStyles: Record<string, { iconBg: string; iconColor: string; border: string }> = {
     'aws-training': { iconBg: 'bg-slate-100', iconColor: 'text-slate-700', border: 'border-slate-200' },
     'data-science': { iconBg: 'bg-emerald-50', iconColor: 'text-emerald-700', border: 'border-emerald-200' },
-    'machine-learning': { iconBg: 'bg-pink-50', iconColor: 'text-pink-700', border: 'border-pink-200' },
+    'aiml': { iconBg: 'bg-pink-50', iconColor: 'text-pink-700', border: 'border-pink-200' },
     'full-stack-development': { iconBg: 'bg-blue-50', iconColor: 'text-blue-700', border: 'border-blue-200' },
     'cyber-security': { iconBg: 'bg-teal-50', iconColor: 'text-teal-700', border: 'border-teal-200' },
     'software-testing': { iconBg: 'bg-amber-50', iconColor: 'text-amber-700', border: 'border-amber-200' },
@@ -35,7 +35,7 @@ export function PopularCategories() {
             <span className="text-gradient">Courses</span>
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-lg text-surface-700 font-medium">
-            AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
+            AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
           </p>
         </div>
 

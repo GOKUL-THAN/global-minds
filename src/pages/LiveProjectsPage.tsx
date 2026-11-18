@@ -94,10 +94,10 @@ const projectCategories = [
     projects: [
       {
         title: 'Customer Churn Prediction',
-        image: '/images/courses/machine-learning.jpg',
+        image: '/images/courses/aiml.jpg',
         stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'],
         difficulty: 'Intermediate',
-        description: 'Predict telecom customer churn using machine learning and deploy an interactive Streamlit dashboard.',
+        description: 'Predict telecom customer churn using AIML and deploy an interactive Streamlit dashboard.',
         outcomes: ['EDA', 'Feature engineering', 'Model selection', 'Deployment with Streamlit'],
       },
       {

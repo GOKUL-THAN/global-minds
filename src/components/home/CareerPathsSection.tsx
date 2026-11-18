@@ -17,7 +17,7 @@ const paths = [
   {
     title: 'Career Switch to Data Science',
     duration: '5 months',
-    steps: ['Python & Stats', 'Data Analysis & SQL', 'Machine Learning', 'Deep Learning', 'NLP & Gen AI', 'Portfolio + Placement'],
+    steps: ['Python & Stats', 'Data Analysis & SQL', 'AIML', 'Deep Learning', 'NLP & Gen AI', 'Portfolio + Placement'],
     salary: '₹6–15 LPA',
     href: '/master-programs/data-science-business-intelligence',
     gradient: 'from-purple-600 to-purple-400',

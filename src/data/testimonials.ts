@@ -66,7 +66,7 @@ export const testimonials: Testimonial[] = [
     name: 'Priya Devi',
     role: 'ML Engineer',
     company: '',
-    course: 'Machine Learning',
+    course: 'AIML',
     location: 'Bangalore',
     country: 'India',
     rating: 5,

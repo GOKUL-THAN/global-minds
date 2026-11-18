@@ -31,7 +31,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const programOptions = [
-  'AWS / Cloud', 'Data Science', 'Machine Learning', 'Full Stack Development',
+  'AWS / Cloud', 'Data Analytics', 'Python', 'Gen AI / Agent AI', 'AIDS', 'AIML', 'Digital Marketing', 'Full Stack Development',
   'Cyber Security', 'Software Testing', 'Automation Testing',
 ];
 
@@ -147,7 +147,7 @@ export default function CollegesPage() {
                 Partner with <DecryptedText text="Global Minds Technologies" speed={30} maxIterations={10} className="page-hero-highlight" />
               </h1>
               <p className="page-hero-desc text-lg sm:text-xl max-w-2xl">
-                Empower your students with industry-relevant skills in AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
+                Empower your students with industry-relevant skills in AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
                 <a href="#college-enquiry" className="btn-primary btn rounded-xl shadow-md">

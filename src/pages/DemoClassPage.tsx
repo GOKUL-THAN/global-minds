@@ -13,7 +13,7 @@ import { DateCycleBadge } from '../components/common/DateCycleBadge';
 const popularDemoCourses = [
   { id: 'aws', title: 'AWS / Cloud', duration: '1.5 Hrs', category: 'AWS / Cloud', icon: '☁️' },
   { id: 'datascience', title: 'Data Science', duration: '1.5 Hrs', category: 'Data Science', icon: '📊' },
-  { id: 'machine-learning', title: 'Machine Learning', duration: '1.5 Hrs', category: 'Machine Learning', icon: '🧠' },
+  { id: 'aiml', title: 'AIML', duration: '1.5 Hrs', category: 'AIML', icon: '🧠' },
   { id: 'fullstack', title: 'Full Stack Development', duration: '1.5 Hrs', category: 'Full Stack Development', icon: '💻' },
   { id: 'cyber-security', title: 'Cyber Security', duration: '1.5 Hrs', category: 'Cyber Security', icon: '🛡️' },
   { id: 'testing', title: 'Software Testing', duration: '1.5 Hrs', category: 'Software Testing', icon: '🧪' },

@@ -5,7 +5,7 @@ import { SpotlightCard } from '../ui/SpotlightCard';
 const achievements = [
   { icon: Cloud, title: 'AWS / Cloud' },
   { icon: BookOpen, title: 'Data Science' },
-  { icon: Cpu, title: 'Machine Learning' },
+  { icon: Cpu, title: 'AIML' },
   { icon: Code, title: 'Full Stack Development' },
   { icon: ShieldCheck, title: 'Cyber Security' },
   { icon: TestTube2, title: 'Software Testing' },

@@ -676,7 +676,7 @@
     ],
     "relatedCourses": [
       "data-science",
-      "machine-learning",
+      "aiml",
       "django",
       "full-stack-development"
     ],
@@ -1488,7 +1488,7 @@
       },
       {
         "id": "m4",
-        "title": "Machine Learning",
+        "title": "AIML",
         "duration": "20 Hours",
         "topics": [
           "Supervised learning",
@@ -1541,7 +1541,7 @@
       "Statistics",
       "NumPy",
       "Pandas",
-      "Machine Learning",
+      "AIML",
       "Deep Learning",
       "Data Visualization",
       "Scikit-learn",
@@ -1658,7 +1658,7 @@
       }
     ],
     "relatedCourses": [
-      "machine-learning",
+      "aiml",
       "generative-ai",
       "data-analytics",
       "python-training"
@@ -1678,7 +1678,7 @@
     "tags": [
       "Data Science",
       "Python",
-      "Machine Learning",
+      "AIML",
       "AI",
       "Deep Learning"
     ],
@@ -2208,285 +2208,6 @@
     "metaDescription": "Master Kubernetes container orchestration with hands-on labs and CKA exam preparation."
   },
   {
-    "id": "cn7",
-    "slug": "machine-learning",
-    "title": "Machine Learning",
-    "shortDescription": "Master machine learning — supervised & unsupervised algorithms, model evaluation, feature engineering, Scikit-learn and MLOps fundamentals.",
-    "longDescription": "Machine learning is the foundation of modern AI applications. This course provides a rigorous yet practical approach to ML — covering the mathematical foundations, all major supervised and unsupervised learning algorithms, model evaluation and selection, feature engineering, ensemble methods, and an introduction to MLOps for deploying models at scale.",
-    "category": "artificial-intelligence",
-    "subCategory": "Machine Learning",
-    "level": "Intermediate",
-    "duration": "70 Hours",
-    "totalHours": 70,
-    "mode": "Both",
-    "language": "English",
-    "syllabus": [
-      "ML fundamentals",
-      "Linear regression",
-      "Logistic regression",
-      "Decision trees",
-      "Random forest",
-      "SVM",
-      "KNN",
-      "Naive Bayes",
-      "K-means",
-      "PCA",
-      "Ensemble methods",
-      "Feature engineering",
-      "Model evaluation",
-      "Cross-validation",
-      "Hyperparameter tuning",
-      "MLOps basics"
-    ],
-    "modules": [
-      {
-        "id": "m1",
-        "title": "ML Foundations",
-        "duration": "8 Hours",
-        "topics": [
-          "What is ML",
-          "Types of ML",
-          "ML workflow",
-          "Python ML stack",
-          "Numpy/Pandas review",
-          "EDA"
-        ]
-      },
-      {
-        "id": "m2",
-        "title": "Supervised Learning — Regression",
-        "duration": "10 Hours",
-        "topics": [
-          "Linear regression",
-          "Polynomial regression",
-          "Ridge/Lasso",
-          "Gradient descent",
-          "Regularisation"
-        ]
-      },
-      {
-        "id": "m3",
-        "title": "Supervised Learning — Classification",
-        "duration": "12 Hours",
-        "topics": [
-          "Logistic regression",
-          "Decision trees",
-          "Random forest",
-          "SVM",
-          "KNN",
-          "Naive Bayes",
-          "Gradient boosting",
-          "XGBoost"
-        ]
-      },
-      {
-        "id": "m4",
-        "title": "Unsupervised Learning",
-        "duration": "8 Hours",
-        "topics": [
-          "K-means clustering",
-          "Hierarchical clustering",
-          "DBSCAN",
-          "PCA",
-          "Autoencoders intro",
-          "Anomaly detection"
-        ]
-      },
-      {
-        "id": "m5",
-        "title": "Model Evaluation & Engineering",
-        "duration": "12 Hours",
-        "topics": [
-          "Train-test split",
-          "Cross-validation",
-          "Confusion matrix",
-          "ROC-AUC",
-          "Feature selection",
-          "Feature engineering",
-          "Pipeline"
-        ]
-      },
-      {
-        "id": "m6",
-        "title": "Ensemble Methods & Advanced",
-        "duration": "10 Hours",
-        "topics": [
-          "Bagging",
-          "Boosting",
-          "Stacking",
-          "XGBoost",
-          "LightGBM",
-          "CatBoost",
-          "Hyperparameter tuning"
-        ]
-      },
-      {
-        "id": "m7",
-        "title": "MLOps & Deployment",
-        "duration": "10 Hours",
-        "topics": [
-          "ML experiment tracking with MLflow",
-          "Model registry",
-          "Model serving with FastAPI",
-          "Streamlit apps",
-          "CI/CD for ML"
-        ]
-      }
-    ],
-    "prerequisites": [
-      "Python programming",
-      "Basic statistics and mathematics"
-    ],
-    "skills": [
-      "Scikit-learn",
-      "Regression",
-      "Classification",
-      "Clustering",
-      "Feature Engineering",
-      "Model Evaluation",
-      "XGBoost",
-      "MLflow",
-      "FastAPI"
-    ],
-    "tools": [
-      "Python",
-      "Scikit-learn",
-      "XGBoost",
-      "MLflow",
-      "FastAPI",
-      "Streamlit",
-      "Jupyter Notebook"
-    ],
-    "projects": [
-      "House price prediction model",
-      "Customer churn classifier",
-      "Customer segmentation system",
-      "End-to-end ML pipeline with MLflow"
-    ],
-    "certification": "Global Minds Technologies Machine Learning Certificate",
-    "careerOutcomes": [
-      "Machine Learning Engineer",
-      "Data Scientist",
-      "AI Engineer",
-      "ML Researcher",
-      "Analytics Engineer"
-    ],
-    "jobRoles": [
-      "ML Engineer",
-      "Data Scientist",
-      "AI Engineer"
-    ],
-    "placementSupport": true,
-    "batchSchedule": [
-      {
-        "id": "b1",
-        "day": "Monday / Wednesday / Friday",
-        "time": "7:00 AM – 9:00 AM",
-        "mode": "Online",
-        "seats": 20,
-        "startDate": "Flexible",
-        "type": "Weekday"
-      },
-      {
-        "id": "b2",
-        "day": "Tuesday / Thursday",
-        "time": "7:00 PM – 9:00 PM",
-        "mode": "Online",
-        "seats": 20,
-        "startDate": "Flexible",
-        "type": "Weekday"
-      },
-      {
-        "id": "b3",
-        "day": "Saturday / Sunday",
-        "time": "10:00 AM – 1:00 PM",
-        "mode": "Both",
-        "seats": 15,
-        "startDate": "Flexible",
-        "type": "Weekend"
-      },
-      {
-        "id": "b4",
-        "day": "Monday – Friday",
-        "time": "10:00 AM – 4:00 PM",
-        "mode": "Both",
-        "seats": 10,
-        "startDate": "Flexible",
-        "type": "Fast-Track"
-      }
-    ],
-    "onlineAvailable": true,
-    "classroomAvailable": true,
-    "oneToOneAvailable": true,
-    "price": 38000,
-    "discountPrice": 27999,
-    "currency": "INR",
-    "discountPercentage": 26,
-    "thumbnail": "/images/courses/machine-learning.jpg",
-    "banner": "/images/courses/machine-learning.jpg",
-    "rating": 4.9,
-    "reviewCount": 1340,
-    "learnerCount": 8900,
-    "featured": true,
-    "trending": true,
-    "popular": true,
-    "status": "active",
-    "faqs": [
-      {
-        "id": "f1",
-        "question": "Who is this course for?",
-        "answer": "This course is designed for anyone looking to build practical skills in this technology. Prerequisites are listed above."
-      },
-      {
-        "id": "f2",
-        "question": "Do I need prior experience?",
-        "answer": "Prerequisites are listed above. Beginner tracks start from scratch and no prior coding experience is needed."
-      },
-      {
-        "id": "f3",
-        "question": "Is there a certificate upon completion?",
-        "answer": "Yes — Global Minds Technologies provides a course completion certificate upon finishing the course and projects."
-      },
-      {
-        "id": "f4",
-        "question": "What is the refund policy?",
-        "answer": "Please refer to our refund policy page for full details."
-      },
-      {
-        "id": "f5",
-        "question": "Is placement support available?",
-        "answer": "Yes, our career team provides resume guidance, mock interviews and job search assistance for all enrolled students."
-      }
-    ],
-    "relatedCourses": [
-      "data-science",
-      "deep-learning",
-      "python-training",
-      "generative-ai"
-    ],
-    "whoShouldJoin": [
-      "Data analysts wanting to move into ML",
-      "Software developers adding ML skills",
-      "Students in data science or AI",
-      "Professionals targeting ML engineering roles"
-    ],
-    "learningObjectives": [
-      "Apply supervised and unsupervised ML algorithms",
-      "Engineer meaningful features from raw data",
-      "Evaluate and optimise model performance",
-      "Deploy ML models using FastAPI and MLflow"
-    ],
-    "tags": [
-      "Machine Learning",
-      "Scikit-learn",
-      "XGBoost",
-      "MLOps",
-      "Python"
-    ],
-    "metaTitle": "Machine Learning Training | Global Minds Technologies",
-    "metaDescription": "Master machine learning with Scikit-learn, XGBoost, feature engineering, model evaluation and MLOps."
-  },
-  {
     "id": "cn1",
     "slug": "generative-ai",
     "title": "Generative AI",
@@ -2713,7 +2434,7 @@
     ],
     "relatedCourses": [
       "data-science",
-      "machine-learning",
+      "aiml",
       "python-training",
       "deep-learning"
     ],
@@ -7784,7 +7505,7 @@
     ],
     "skills": [
       "AI fundamentals",
-      "Machine Learning",
+      "AIML",
       "NLP",
       "Computer Vision",
       "AI Ethics"
@@ -24123,7 +23844,7 @@
       "apache-spark",
       "snowflake",
       "dbt",
-      "machine-learning"
+      "aiml"
     ],
     "whoShouldJoin": [
       "Students",
@@ -26855,7 +26576,7 @@
     "relatedCourses": [
       "data-science",
       "python-training",
-      "machine-learning",
+      "aiml",
       "statistics"
     ],
     "whoShouldJoin": [
@@ -27283,7 +27004,7 @@
       }
     ],
     "relatedCourses": [
-      "machine-learning",
+      "aiml",
       "kubernetes",
       "devops-training",
       "databricks"
@@ -27504,7 +27225,7 @@
     "relatedCourses": [
       "generative-ai",
       "mlops",
-      "machine-learning"
+      "aiml"
     ],
     "whoShouldJoin": [
       "Students",
@@ -27712,7 +27433,7 @@
     ],
     "relatedCourses": [
       "deep-learning",
-      "machine-learning",
+      "aiml",
       "generative-ai"
     ],
     "whoShouldJoin": [
@@ -28342,7 +28063,7 @@
     "relatedCourses": [
       "computer-vision",
       "deep-learning",
-      "machine-learning"
+      "aiml"
     ],
     "whoShouldJoin": [
       "Students",
@@ -28554,7 +28275,7 @@
       "generative-ai",
       "nlp",
       "deep-learning",
-      "machine-learning"
+      "aiml"
     ],
     "whoShouldJoin": [
       "Students",
@@ -34939,7 +34660,7 @@
     "relatedCourses": [
       "generative-ai",
       "llmops",
-      "machine-learning",
+      "aiml",
       "hugging-face"
     ],
     "whoShouldJoin": [
@@ -35572,7 +35293,7 @@
     ],
     "relatedCourses": [
       "data-science",
-      "machine-learning",
+      "aiml",
       "r-programming",
       "python-training"
     ],

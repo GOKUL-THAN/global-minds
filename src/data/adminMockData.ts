@@ -215,8 +215,8 @@ export const mockStudents: Student[] = [
   {
     id: 'st8', name: 'Vikram Sharma', email: 'vikram.sharma@email.com', phone: '+91 21098 76543',
     avatar: 'VS', avatarColor: 'bg-red-500', status: 'active',
-    enrolledCourses: ['Machine Learning'],
-    activeCourse: 'Machine Learning', batchId: 'bt7', batchName: 'ML Oct 2026 Weekend',
+    enrolledCourses: ['AIML'],
+    activeCourse: 'AIML', batchId: 'bt7', batchName: 'AIML Oct 2026 Weekend',
     progress: 55, attendance: 82, assignmentsSubmitted: 6, assignmentsTotal: 10,
     quizzesPassed: 4, quizzesTotal: 6, lastActive: '2026-10-06T07:30:00',
     joinedDate: '2026-09-12', location: 'Delhi', source: 'referral',
@@ -250,7 +250,7 @@ export const mockBatches: AdminBatch[] = [
   { id: 'bt4', name: 'Testing Oct 2026 Weekend', course: 'Software Testing', category: 'QA', startDate: '2026-10-04', endDate: '2026-12-01', schedule: 'Sat / Sun', time: '2:00 PM – 5:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 22, completed: 0, avgProgress: 24, avgAttendance: 71, fee: 12999 },
   { id: 'bt5', name: 'Python Oct 2026 Weekday', course: 'Python Training', category: 'Programming', startDate: '2026-10-08', endDate: '2026-11-25', schedule: 'Mon / Wed / Fri', time: '7:00 PM – 9:00 PM', mode: 'Online', status: 'ongoing', capacity: 25, enrolled: 21, completed: 0, avgProgress: 42, avgAttendance: 89, fee: 9999 },
   { id: 'bt6', name: 'Cyber Security Oct 2026', course: 'Cyber Security Training', category: 'Security', startDate: '2026-10-01', endDate: '2026-12-15', schedule: 'Tue / Thu', time: '6:00 PM – 8:00 PM', mode: 'Hybrid', status: 'ongoing', capacity: 20, enrolled: 16, completed: 0, avgProgress: 31, avgAttendance: 84, fee: 15999 },
-  { id: 'bt7', name: 'ML Oct 2026 Weekend', course: 'Machine Learning', category: 'AI / ML', startDate: '2026-10-05', endDate: '2027-01-05', schedule: 'Sat / Sun', time: '11:00 AM – 2:00 PM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 17, completed: 0, avgProgress: 38, avgAttendance: 80, fee: 19999 },
+  { id: 'bt7', name: 'AIML Oct 2026 Weekend', course: 'AIML', category: 'AIML', startDate: '2026-10-05', endDate: '2027-01-05', schedule: 'Sat / Sun', time: '11:00 AM – 2:00 PM', mode: 'Online', status: 'ongoing', capacity: 20, enrolled: 17, completed: 0, avgProgress: 38, avgAttendance: 80, fee: 19999 },
   { id: 'bt8', name: 'DevOps Aug 2026 Fast-Track', course: 'DevOps Training', category: 'DevOps', startDate: '2026-08-01', endDate: '2026-09-30', schedule: 'Mon – Fri', time: '10:00 AM – 4:00 PM', mode: 'Classroom', status: 'completed', capacity: 15, enrolled: 15, completed: 13, avgProgress: 100, avgAttendance: 91, fee: 16999 },
 ];
 
@@ -259,7 +259,7 @@ export const mockSiteActivity: SiteActivity[] = [
   { id: 'sa1', type: 'login', actor: 'Priya Sharma', actorRole: 'student', description: 'Student logged in from Chennai', timestamp: '2026-10-06T09:15:00', ip: '103.21.x.x', module: 'Auth' },
   { id: 'sa2', type: 'enquiry', actor: 'Pooja Iyer', actorRole: 'student', description: 'New enquiry submitted for Python Training', timestamp: '2026-10-06T11:00:00', module: 'Enquiries' },
   { id: 'sa3', type: 'enrollment', actor: 'Kavitha Reddy', actorRole: 'student', description: 'Enrolled in Python Training — Oct Weekday Batch', timestamp: '2026-10-06T10:30:00', module: 'Enrollments' },
-  { id: 'sa4', type: 'payment', actor: 'Vikram Sharma', actorRole: 'student', description: 'Payment received ₹27,999 for Machine Learning', timestamp: '2026-10-06T08:00:00', module: 'Payments' },
+  { id: 'sa4', type: 'payment', actor: 'Vikram Sharma', actorRole: 'student', description: 'Payment received ₹27,999 for AIML', timestamp: '2026-10-06T08:00:00', module: 'Payments' },
   { id: 'sa5', type: 'lesson', actor: 'Priya Sharma', actorRole: 'student', description: 'Completed Module 5: VPC Networking (AWS / Cloud)', timestamp: '2026-10-06T09:15:00', module: 'Learning' },
   { id: 'sa6', type: 'quiz', actor: 'Priya Sharma', actorRole: 'student', description: 'Passed EC2 & Auto Scaling quiz — Score: 90%', timestamp: '2026-10-05T18:30:00', module: 'Assessments' },
   { id: 'sa7', type: 'enquiry', actor: 'Ananya Krishnamurthy', actorRole: 'student', description: 'New enquiry submitted for Microsoft Azure', timestamp: '2026-10-06T12:00:00', module: 'Enquiries' },

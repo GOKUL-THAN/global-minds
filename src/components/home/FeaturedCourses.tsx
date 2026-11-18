@@ -9,7 +9,7 @@ import { SpotlightCard } from '../ui/SpotlightCard';
 
 const homepageCourseImages: Record<string, string> = {
   'data-science': '/images/courses/data-science.jpg',
-  'machine-learning': '/images/courses/machine-learning.jpg',
+  'aiml': '/images/courses/aiml.jpg',
   'automation-testing': '/images/courses/automation-testing.jpg',
 };
 
@@ -80,8 +80,8 @@ export function FeaturedCourses() {
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-4">
                   <p className="mb-1 text-xs font-bold uppercase tracking-wide text-brand-700">
-                    {course.category === 'machine-learning'
-                      ? 'AI & ML'
+                    {course.category === 'aiml'
+                      ? 'AIML'
                       : course.category === 'automation-testing'
                         ? 'QA & Testing'
                         : course.subCategory || course.category}

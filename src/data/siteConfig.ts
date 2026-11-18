@@ -8,7 +8,7 @@ export const siteConfig = {
   brandName: 'Global Minds Technologies',
   brandShortName: 'GMT',
   tagline: 'Build Skills Today for Tomorrow\'s Leaders',
-  subTagline: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
+  subTagline: 'AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
   logoText: 'Global Minds Technologies',
   logoUrl: '/logo-borderless.png',
   faviconUrl: '/logo.jpg',
@@ -56,7 +56,7 @@ export const siteConfig = {
   seo: {
     defaultTitle: 'Global Minds Technologies | Build Skills. Own the Future.',
     titleTemplate: '%s | Global Minds Technologies',
-    defaultDescription: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Technologies. 50+ hiring partners.',
+    defaultDescription: 'Explore AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing at Global Minds Technologies.',
     defaultOgImage: 'https://globalmindsacademy.in/og-image.png',
     twitterHandle: '@globalmindsacad',
   },
@@ -122,14 +122,14 @@ export const siteConfig = {
     {
       icon: 'globe',
       title: 'Courses',
-      description: 'AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
+      description: 'AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
     },
   ],
 
   // ── Announcement Bar ───────────────────────────────────────
   announcementBar: {
     enabled: true,
-    message: 'Explore AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing. 50+ Hiring Partners.',
+    message: 'Explore AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.',
     cta: 'Register Now',
     ctaHref: '/batch-schedule',
     dismissible: true,

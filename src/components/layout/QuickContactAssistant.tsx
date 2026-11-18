@@ -54,7 +54,7 @@ function getAssistantResponse(question: string): string {
     if (normalizedQuestion.includes(title)) return true;
     if (title === 'aws / cloud' && /\b(aws|cloud)\b/.test(normalizedQuestion)) return true;
     if (title === 'full stack development' && /\b(full.stack|react|node.js)\b/.test(normalizedQuestion)) return true;
-    if (title === 'machine learning' && /\b(ai|artificial intelligence|ml)\b/.test(normalizedQuestion)) return true;
+    if (title === 'aiml' && /\b(ai|artificial intelligence|aiml)\b/.test(normalizedQuestion)) return true;
     if (title === 'cyber security' && /\b(cybersecurity|ethical hacking|security)\b/.test(normalizedQuestion)) return true;
     return false;
   });

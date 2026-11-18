@@ -205,7 +205,7 @@ test('auth routes enforce sessions, role permissions, expiry, and login throttli
   const seededCatalogResponse = await fetch(`${baseUrl}/api/content/courses`);
   assert.equal(seededCatalogResponse.status, 200);
   const seededCatalog = await seededCatalogResponse.json();
-  assert.equal(seededCatalog.records.length, 175);
+  assert.equal(seededCatalog.records.length, 174);
   assert.ok(seededCatalog.records.some(record => record.slug === 'aws-training'));
 
   const unauthenticated = await fetch(`${baseUrl}/api/admin/session`);

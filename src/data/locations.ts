@@ -14,7 +14,7 @@ export const locations: Location[] = [
     courses: [
       'aws-training',
       'data-science',
-      'machine-learning',
+      'aiml',
       'full-stack-development',
       'cyber-security',
       'software-testing',

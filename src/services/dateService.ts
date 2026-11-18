@@ -433,7 +433,7 @@ class DateService {
       },
       {
         id: 'b3',
-        course: 'Machine Learning & AI',
+        course: 'AIML',
         category: 'AI / ML',
         dayOffset: 7,
         startWeekdays: [2],
@@ -561,7 +561,7 @@ class DateService {
       { course: 'AWS / Cloud', offsetDays: 1, time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 5 },
       { course: 'Full Stack Development', offsetDays: 2, time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 8 },
       { course: 'Data Science & AI', offsetDays: 3, time: '7:00 PM IST', mode: 'Online (Zoom)', seats: 12 },
-      { course: 'Machine Learning', offsetDays: 4, time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
+      { course: 'AIML', offsetDays: 4, time: '9:00 AM IST', mode: 'Online (Zoom)', seats: 4 },
       { course: 'Cyber Security', offsetDays: 5, time: '6:00 PM IST', mode: 'Online (Zoom)', seats: 10 },
       { course: 'DevOps & Docker', offsetDays: 6, time: '8:00 PM IST', mode: 'Online (Zoom)', seats: 7 },
     ];

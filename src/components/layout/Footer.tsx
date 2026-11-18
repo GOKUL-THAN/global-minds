@@ -14,7 +14,12 @@ const footerLinks = {
   Courses: [
     { label: 'AWS / Cloud', href: '/courses/aws-training' },
     { label: 'Data Science', href: '/courses/data-science' },
-    { label: 'Machine Learning', href: '/courses/machine-learning' },
+    { label: 'Data Analytics', href: '/courses/data-analytics' },
+    { label: 'Python', href: '/courses/python' },
+    { label: 'Gen AI / Agent AI', href: '/courses/generative-ai' },
+    { label: 'AIDS', href: '/courses/ai-data-science' },
+    { label: 'AIML', href: '/courses/aiml' },
+    { label: 'Digital Marketing', href: '/courses/digital-marketing' },
     { label: 'Full Stack Development', href: '/courses/full-stack-development' },
     { label: 'Cyber Security', href: '/courses/cyber-security' },
     { label: 'Software Testing', href: '/courses/software-testing' },

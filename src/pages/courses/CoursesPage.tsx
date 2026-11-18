@@ -23,7 +23,12 @@ const quickFilters = [
   { label: 'All Courses', category: '' },
   { label: 'AWS / Cloud', category: 'cloud-computing' },
   { label: 'Data Science', category: 'data-science-analytics' },
-  { label: 'Machine Learning', category: 'machine-learning' },
+  { label: 'Data Analytics', category: 'data-analytics' },
+  { label: 'Python', category: 'python' },
+  { label: 'Gen AI / Agent AI', category: 'gen-ai-agent-ai' },
+  { label: 'AIDS', category: 'ai-data-science' },
+  { label: 'AIML', category: 'aiml' },
+  { label: 'Digital Marketing', category: 'digital-marketing' },
   { label: 'Full Stack Development', category: 'full-stack-development' },
   { label: 'Cyber Security', category: 'cyber-security' },
   { label: 'Software Testing', category: 'software-testing' },
@@ -49,7 +54,7 @@ export default function CoursesPage() {
     .filter(category => category.courseCount > 0), [visibleCourses]);
   usePageMeta({
     title: 'Courses',
-    description: 'Browse AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing courses.',
+    description: 'Browse AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing courses.',
   });
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -144,7 +149,7 @@ export default function CoursesPage() {
             Explore <DecryptedText text="All Courses" speed={30} maxIterations={10} className="page-hero-highlight" />
           </h1>
           <p className="page-hero-desc max-w-2xl text-base sm:text-lg">
-            Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Science, Machine Learning, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
+            Discover {visibleCourses.length} industry-focused courses: AWS / Cloud, Data Analytics, Python, Gen AI / Agent AI, AIDS, AIML, Digital Marketing, Full Stack Development, Cyber Security, Software Testing, and Automation Testing.
           </p>
           <div className="mt-4">
             <DateCycleBadge variant="compact" />
