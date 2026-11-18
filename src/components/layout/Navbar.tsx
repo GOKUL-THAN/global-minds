@@ -326,7 +326,7 @@ export function Navbar() {
             <img
               src={siteConfig.logoUrl}
               alt={`${siteConfig.brandName} logo`}
-              className="h-14 w-14 shrink-0 object-contain"
+              className="brand-logo h-14 w-14 shrink-0 object-contain"
               onError={e => { e.currentTarget.style.display = 'none'; }}
             />
             <span className="whitespace-nowrap font-display text-base font-extrabold tracking-tight sm:text-lg">

@@ -216,7 +216,7 @@ export function AdminLayout() {
       {/* Logo */}
       <div className="flex items-center justify-between p-5 border-b border-surface-800">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="h-14 w-auto max-w-[115px] object-contain" />
+          <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="brand-logo h-14 w-auto max-w-[115px] object-contain" />
           <div>
             <p className="font-display font-bold text-sm">Global Minds Technologies</p>
             <p className="text-xs text-brand-300 font-semibold">

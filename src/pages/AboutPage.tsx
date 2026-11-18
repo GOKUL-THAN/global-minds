@@ -93,8 +93,8 @@ export default function AboutPage() {
                 We help learners build job-ready skills through practical, industry-led training and mentor support.
               </p>
             </div>
-            <div className="rounded-3xl border border-brand-200 bg-white p-6 shadow-[0_20px_40px_-10px_rgba(13,148,136,0.12)]">
-              <img src={siteConfig.logoUrl} alt="Global Minds Technologies emblem" className="mx-auto mb-6 h-28 w-28 object-contain" />
+            <div className="p-6">
+              <img src={siteConfig.logoUrl} alt="Global Minds Technologies emblem" className="brand-logo mx-auto mb-6 h-28 w-28 object-contain" />
               <h3 className="text-center text-2xl font-black tracking-[0.12em] text-surface-900">GLOBAL MINDS TECHNOLOGIES</h3>
               <p className="mt-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-brand-700">
                 Build Skills | Own the Future

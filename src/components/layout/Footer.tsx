@@ -93,7 +93,7 @@ export function Footer() {
               <img
                 src={siteConfig.logoUrl}
                 alt={`${siteConfig.brandName} logo`}
-                className="h-12 w-12 object-contain rounded-xl bg-surface-50 border border-surface-200 p-1"
+                className="brand-logo h-12 w-12 object-contain"
                 onError={e => { e.currentTarget.style.display = 'none'; }}
               />
               <span className="font-display font-extrabold text-xl text-surface-900">

@@ -71,7 +71,7 @@ export default function RegisterPage() {
             <ShinyText text="🎓 Free Student Registration • Instant Access" shinyColor="rgba(23, 108, 115, 0.9)" />
           </div>
           <Link to="/" className="inline-flex items-center gap-2 mb-4 block">
-            <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="h-20 w-20 object-contain mx-auto" />
+            <img src={siteConfig.logoUrl} alt="Global Minds Technologies logo" className="brand-logo h-20 w-20 object-contain mx-auto" />
           </Link>
           <h1 className="font-display font-bold text-2xl">Create Your Account</h1>
           <p className="text-surface-600 font-medium mt-1">Join Global Minds Technologies and start your learning journey.</p>

@@ -39,6 +39,14 @@
     height: auto;
   }
 
+  .brand-logo {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
   button {
     cursor: pointer;
   }
