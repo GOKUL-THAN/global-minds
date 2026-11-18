@@ -6,6 +6,7 @@ import type { User } from '../../types';
 import { Link, Navigate, useNavigate, useOutletContext, useParams, useSearchParams } from 'react-router-dom';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 interface StudioEntry {
   slug: string;
@@ -752,8 +753,8 @@ function AdminContentStudioEditor() {
               <dl className="grid gap-x-5 gap-y-1 rounded-xl bg-surface-50 p-3 text-xs sm:grid-cols-2">
                 <div><dt className="inline text-surface-500">Created by: </dt><dd className="inline text-surface-700">{selected.record.createdBy} ({selected.record.createdRole})</dd></div>
                 <div><dt className="inline text-surface-500">Updated by: </dt><dd className="inline text-surface-700">{selected.record.updatedBy} ({selected.record.updatedRole})</dd></div>
-                <div><dt className="inline text-surface-500">Created: </dt><dd className="inline text-surface-700">{new Date(selected.record.createdAt).toLocaleString()}</dd></div>
-                <div><dt className="inline text-surface-500">Published: </dt><dd className="inline text-surface-700">{selected.record.publishedAt ? new Date(selected.record.publishedAt).toLocaleString() : 'Never'}</dd></div>
+                <div><dt className="inline text-surface-500">Created: </dt><dd className="inline text-surface-700">{dateService.formatDateTime(selected.record.createdAt)}</dd></div>
+                <div><dt className="inline text-surface-500">Published: </dt><dd className="inline text-surface-700">{selected.record.publishedAt ? dateService.formatDateTime(selected.record.publishedAt) : 'Never'}</dd></div>
               </dl>
             )}
             <div className="flex flex-wrap gap-2 border-t border-surface-100 pt-4">

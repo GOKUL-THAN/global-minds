@@ -12,6 +12,7 @@ import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { StarBorder } from '../../components/ui/StarBorder';
+import { dateService } from '../../services/dateService';
 
 const schema = z.object({
   fullName: z.string().min(2, 'Name required'),
@@ -224,7 +225,7 @@ export default function MockInterviewPage() {
                   </div>
                   <div>
                     <label className="form-label">Preferred Date</label>
-                    <input type="date" className="form-input" {...register('preferredDate')} min={new Date().toISOString().split('T')[0]} />
+                    <input type="date" className="form-input" {...register('preferredDate')} min={dateService.getTodayString()} />
                   </div>
                   <div>
                     <label className="form-label">Additional Notes</label>

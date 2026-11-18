@@ -16,7 +16,7 @@ import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { CountUp } from '../components/ui/CountUp';
-import { dateService, useDateSystem } from '../services/dateService';
+import { useDateSystem } from '../services/dateService';
 
 const placementStats = [
   { icon: Users, value: '1,000+', label: 'Students Placed', tone: 'teal' },
@@ -68,7 +68,7 @@ const packageRanges = [
 const placementHighlights = [
   { icon: '🏆', label: 'Highest Package Secured', value: '22 LPA' },
   { icon: '📊', label: 'Average Package', value: '8.5 LPA' },
-  { icon: '🏢', label: `Companies Visited in ${dateService.getDateCycleInfo().currentYear}`, value: '120+' },
+  { icon: '🏢', label: 'Companies Visited in {year}', value: '120+' },
   { icon: '🚀', label: 'Off-Campus Drives Conducted', value: '45+' },
   { icon: '⚡', label: 'Students in Product Companies', value: '150+' },
   { icon: '🌍', label: 'International Placements', value: '25+' },
@@ -284,7 +284,7 @@ export default function PlacementPage() {
               {placementHighlights.map(item => (
                 <div key={item.label} className="flex items-center gap-3 rounded-2xl bg-white px-4 py-4 shadow-sm">
                   <span className="text-xl" aria-hidden="true">{item.icon}</span>
-                  <span className="min-w-0 flex-1 text-sm text-surface-700 sm:text-base">{item.label}</span>
+                  <span className="min-w-0 flex-1 text-sm text-surface-700 sm:text-base">{item.label.replace('{year}', String(currentYear))}</span>
                   <span className="whitespace-nowrap font-bold text-teal-800">{item.value}</span>
                 </div>
               ))}

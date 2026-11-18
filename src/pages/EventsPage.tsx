@@ -9,7 +9,7 @@ import { siteConfig } from '../data/siteConfig';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
-import { dateService, useDateSystem } from '../services/dateService';
+import { addCalendarDays, dateService, useDateSystem } from '../services/dateService';
 import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 type EventType = 'All' | 'Webinar' | 'Workshop' | 'Hackathon' | 'Seminar';
@@ -37,7 +37,7 @@ const defaultEvents: Event[] = [
     id: 'e1',
     title: 'Cloud Architecture Masterclass: Designing Scalable AWS Solutions',
     type: 'Webinar',
-    date: '2026-10-14',
+    date: '',
     time: '7:00 PM – 9:00 PM IST',
     duration: '2 Hours',
     speaker: 'Rajesh Kumar',
@@ -54,7 +54,7 @@ const defaultEvents: Event[] = [
     id: 'e2',
     title: 'Hands-on DevOps Workshop: CI/CD Pipeline from Scratch',
     type: 'Workshop',
-    date: '2026-10-18',
+    date: '',
     time: '10:00 AM – 4:00 PM IST',
     duration: '6 Hours',
     speaker: 'Suresh Anand',
@@ -71,7 +71,7 @@ const defaultEvents: Event[] = [
     id: 'e4',
     title: '48-Hour Full Stack Hackathon',
     type: 'Hackathon',
-    date: '2026-10-24',
+    date: '',
     time: '9:00 AM IST (48 hrs)',
     duration: '48 Hours',
     speaker: 'Global Minds Technologies Mentors',
@@ -88,7 +88,7 @@ const defaultEvents: Event[] = [
     id: 'e5',
     title: 'Data Science Bootcamp: From Zero to Hero',
     type: 'Workshop',
-    date: '2026-11-01',
+    date: '',
     time: '10:00 AM – 5:00 PM IST',
     duration: '7 Hours',
     speaker: 'Anitha Reddy',
@@ -105,7 +105,7 @@ const defaultEvents: Event[] = [
     id: 'e6',
     title: 'Resume & LinkedIn Masterclass for IT Professionals',
     type: 'Webinar',
-    date: '2026-11-07',
+    date: '',
     time: '7:00 PM – 8:30 PM IST',
     duration: '1.5 Hours',
     speaker: 'Meena Pillai',
@@ -121,7 +121,7 @@ const defaultEvents: Event[] = [
     id: 'e7',
     title: 'Cyber Security Awareness Workshop',
     type: 'Workshop',
-    date: '2026-11-12',
+    date: '',
     time: '10:00 AM – 1:00 PM IST',
     duration: '3 Hours',
     speaker: 'Venkat Rao',
@@ -137,7 +137,7 @@ const defaultEvents: Event[] = [
     id: 'e8',
     title: 'Freshers Career Panel: Landing Your First IT Job',
     type: 'Seminar',
-    date: '2026-11-18',
+    date: '',
     time: '5:00 PM – 7:00 PM IST',
     duration: '2 Hours',
     speaker: 'Panel of 5 Industry Experts',
@@ -176,7 +176,15 @@ function feeBadge(fee: string) {
 interface RegisterForm { name: string; email: string; phone: string }
 
 export default function EventsPage() {
-  const events = useCmsCollection<Event>('events', defaultEvents);
+  const { todayString } = useDateSystem();
+  const dynamicDefaults = useMemo(
+    () => defaultEvents.map((event, index) => ({
+      ...event,
+      date: addCalendarDays(todayString, 3 + index * 4),
+    })),
+    [todayString],
+  );
+  const events = useCmsCollection<Event>('events', dynamicDefaults);
 
   usePageMeta({
     title: 'Events, Webinars & Workshops',
@@ -188,20 +196,10 @@ export default function EventsPage() {
   const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
   const [regForm, setRegForm] = useState<RegisterForm>({ name: '', email: '', phone: '' });
 
-  const dynamicEvents = useMemo(() => {
-    const today = new Date();
-    return events.map((e, idx) => {
-      const eventDate = new Date(e.date);
-      if (isNaN(eventDate.getTime()) || eventDate < today) {
-        const d = new Date(today);
-        d.setDate(d.getDate() + 3 + (idx * 4));
-        return { ...e, date: dateService.getTodayString(d) };
-      }
-      return e;
-    });
-  }, [events]);
-
-  const filtered = dynamicEvents.filter(e => filter === 'All' || e.type === filter);
+  const filtered = events
+    .filter(event => /^\d{4}-\d{2}-\d{2}$/.test(event.date) && event.date >= todayString)
+    .filter(event => filter === 'All' || event.type === filter)
+    .sort((a, b) => a.date.localeCompare(b.date));
 
   const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -302,7 +300,7 @@ export default function EventsPage() {
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       <div className="flex items-center gap-2 text-xs text-surface-700 font-medium">
                         <Calendar className="w-3.5 h-3.5 text-brand-600" />
-                        {new Date(event.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        {dateService.formatDate(event.date, 'long')}
                       </div>
                       <div className="flex items-center gap-2 text-xs text-surface-700 font-medium">
                         <Clock className="w-3.5 h-3.5 text-brand-600" />

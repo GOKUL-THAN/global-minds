@@ -1,3 +1,5 @@
+import { dateService } from '../services/dateService';
+
 /** Format a price number to currency string */
 export function formatPrice(price: number, currency = 'INR'): string {
   const symbols: Record<string, string> = {
@@ -16,9 +18,7 @@ export function formatNumber(num: number): string {
 
 /** Format a date string to readable format */
 export function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-IN', {
-    year: 'numeric', month: 'long', day: 'numeric',
-  });
+  return dateService.formatDate(dateStr, 'long');
 }
 
 /** Truncate a string with ellipsis */

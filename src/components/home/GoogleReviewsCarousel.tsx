@@ -3,6 +3,7 @@ import { BadgeCheck, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { testimonials } from '../../data/testimonials';
 import { useCmsCollection } from '../../hooks/useCmsCollection';
 import { SpotlightCard } from '../ui/SpotlightCard';
+import { dateService } from '../../services/dateService';
 
 function GoogleWordmark() {
   return (
@@ -65,7 +66,7 @@ export function GoogleReviewsCarousel() {
                     <div className="min-w-0 flex-1">
                       <h3 className="truncate font-bold text-surface-900">{review.name}</h3>
                       <p className="text-sm text-surface-600 font-medium">
-                        {new Date(`${review.date}T00:00:00`).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}
+                        {dateService.formatDate(review.date, 'month-year')}
                       </p>
                     </div>
                     <span aria-label="Google review" className="text-2xl font-bold text-[#4285F4]">G</span>

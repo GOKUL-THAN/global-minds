@@ -6,6 +6,7 @@ import { MockDataNotice } from '../../components/admin/MockDataNotice';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { CountUp } from '../../components/ui/CountUp';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 type PayStatus = 'paid' | 'partial' | 'pending';
 
@@ -40,7 +41,7 @@ const paymentRecords: PaymentRecord[] = mockStudents.map(s => {
     pending: s.feePending,
     status,
     lastPaymentDate: status !== 'pending'
-      ? new Date(s.joinedDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+      ? dateService.formatDate(s.joinedDate, 'short')
       : '—',
     avatar: s.avatar,
     avatarColor: s.avatarColor,

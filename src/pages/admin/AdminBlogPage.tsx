@@ -6,6 +6,7 @@ import { formatDate } from '../../utils/formatters';
 import type { BlogPost } from '../../types';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 type LocalPost = BlogPost & { status: 'published' | 'draft' };
 
@@ -97,7 +98,7 @@ export default function AdminBlogPage() {
         featuredImage: '',
         readTime: '',
         featured: false,
-        publishedAt: new Date().toISOString().split('T')[0],
+        publishedAt: dateService.getTodayString(),
         status: form.status,
       };
       setItems(prev => [newPost, ...prev]);

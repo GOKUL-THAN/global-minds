@@ -19,20 +19,20 @@ export interface DateCycleInfo {
   currentTimestamp: string;      // ISO 8601
   timezone: string;              // 'Asia/Kolkata'
 
-  // Semi-Monthly 15-Day Cycle (1st-15th, 16th-End of Month)
-  cycleIndex: 1 | 2;             // 1 = 1st-15th, 2 = 16th-End
-  cycleId: string;               // e.g. "2026-11-C2"
-  cycleLabel: string;            // e.g. "Cycle 2 (16 Nov – 30 Nov 2026)"
-  cycleStartDate: string;        // '2026-11-16'
-  cycleEndDate: string;          // '2026-11-30'
-  nextUpdateDate: string;        // '2026-12-01'
+  // Fixed rolling 15-day cycle
+  cycleIndex: number;
+  cycleId: string;               // e.g. "ROLL-22"
+  cycleLabel: string;
+  cycleStartDate: string;        // YYYY-MM-DD
+  cycleEndDate: string;          // YYYY-MM-DD, inclusive
+  nextUpdateDate: string;        // YYYY-MM-DD
   totalDaysInCycle: number;      // 15
   elapsedDaysInCycle: number;    // 3
   daysRemainingInCycle: number;  // 12
   cycleProgressPct: number;      // 20 (%)
 
-  // Continuous Rolling 15-Day Cycle (from fixed anchor epoch)
-  rollingCycleId: string;        // e.g. "ROLL-21"
+  // Continuous rolling 15-day cycle
+  rollingCycleId: string;        // e.g. "ROLL-22"
   rollingStartDate: string;      // YYYY-MM-DD
   rollingEndDate: string;        // YYYY-MM-DD
   nextRollingUpdateDate: string; // YYYY-MM-DD
@@ -94,9 +94,64 @@ const WEEKDAY_NAMES_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 // Default to Indian Standard Time (IST) for Global Minds Academy
 const DEFAULT_TIMEZONE = 'Asia/Kolkata';
 
-// Anchor epoch for deterministic 15-day rolling cycles (Jan 1, 2026 00:00:00 UTC)
-const ROLLING_ANCHOR_EPOCH_MS = Date.UTC(2026, 0, 1);
+const ROLLING_ANCHOR_DATE = '2026-01-01';
+const DAY_MS = 24 * 60 * 60 * 1000;
 const FIFTEEN_DAYS_MS = 15 * 24 * 60 * 60 * 1000;
+
+function dateOnlyEpoch(date: string): number {
+  const [year, month, day] = date.split('-').map(Number);
+  return Date.UTC(year, month - 1, day);
+}
+
+function dateOnlyString(epoch: number): string {
+  return new Date(epoch).toISOString().slice(0, 10);
+}
+
+function zonedMidnightEpoch(date: string, timeZone: string): number {
+  const [year, month, day] = date.split('-').map(Number);
+  const targetEpoch = Date.UTC(year, month - 1, day);
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hourCycle: 'h23',
+  });
+  let guess = targetEpoch;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const parts = Object.fromEntries(
+      formatter.formatToParts(new Date(guess)).map(part => [part.type, Number(part.value)]),
+    );
+    const representedEpoch = Date.UTC(
+      parts.year,
+      parts.month - 1,
+      parts.day,
+      parts.hour,
+      parts.minute,
+      parts.second,
+    );
+    guess += targetEpoch - representedEpoch;
+  }
+  return guess;
+}
+
+function weekdayIndex(date: string): number {
+  return new Date(dateOnlyEpoch(date)).getUTCDay();
+}
+
+function parseDateInput(input: string | Date): Date {
+  if (typeof input === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(input)) {
+    return new Date(`${input}T12:00:00.000Z`);
+  }
+  return typeof input === 'string' ? new Date(input) : input;
+}
+
+export function addCalendarDays(date: string, days: number): string {
+  return dateOnlyString(dateOnlyEpoch(date) + days * DAY_MS);
+}
 
 class DateService {
   private timezone: string = DEFAULT_TIMEZONE;
@@ -137,6 +192,7 @@ class DateService {
   }
 
   public setTimezone(tz: string): void {
+    new Intl.DateTimeFormat('en', { timeZone: tz });
     this.timezone = tz;
     this.notifySubscribers();
   }
@@ -165,17 +221,14 @@ class DateService {
    */
   public getTodayString(refDate?: Date): string {
     const d = refDate || this.now();
-    try {
-      const formatter = new Intl.DateTimeFormat('en-CA', {
-        timeZone: this.timezone,
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-      });
-      return formatter.format(d);
-    } catch {
-      return d.toISOString().slice(0, 10);
-    }
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: this.timezone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).formatToParts(d);
+    const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+    return `${values.year}-${values.month}-${values.day}`;
   }
 
   /**
@@ -190,53 +243,35 @@ class DateService {
     const month = parseInt(monthStr, 10); // 1-12
     const day = parseInt(dayStr, 10);     // 1-31
 
-    const daysInMonth = this.getDaysInMonth(year, month);
-    const weekdayIdx = date.getDay(); // 0-6
+    const calendarEpoch = dateOnlyEpoch(todayStr);
+    const weekdayIdx = new Date(calendarEpoch).getUTCDay();
     const monthName = MONTH_NAMES_LONG[month - 1] || '';
     const monthShort = MONTH_NAMES_SHORT[month - 1] || '';
     const weekdayName = WEEKDAY_NAMES_LONG[weekdayIdx] || '';
     const weekdayShort = WEEKDAY_NAMES_SHORT[weekdayIdx] || '';
 
-    // Semi-Monthly 15-day cycle:
-    // Cycle 1: 1st to 15th
-    // Cycle 2: 16th to end of month (28, 29, 30, or 31)
-    const cycleIndex: 1 | 2 = day <= 15 ? 1 : 2;
-    const cycleStartDay = cycleIndex === 1 ? 1 : 16;
-    const cycleEndDay = cycleIndex === 1 ? 15 : daysInMonth;
+    const anchorEpoch = dateOnlyEpoch(ROLLING_ANCHOR_DATE);
+    const cycleIndex = Math.floor((calendarEpoch - anchorEpoch) / FIFTEEN_DAYS_MS);
+    const cycleStartEpoch = anchorEpoch + cycleIndex * FIFTEEN_DAYS_MS;
+    const cycleEndEpoch = cycleStartEpoch + FIFTEEN_DAYS_MS - DAY_MS;
+    const nextUpdateEpoch = cycleStartEpoch + FIFTEEN_DAYS_MS;
+    const cycleStartDate = dateOnlyString(cycleStartEpoch);
+    const cycleEndDate = dateOnlyString(cycleEndEpoch);
+    const nextUpdateDate = dateOnlyString(nextUpdateEpoch);
 
-    const cycleStartDate = `${year}-${String(month).padStart(2, '0')}-${String(cycleStartDay).padStart(2, '0')}`;
-    const cycleEndDate = `${year}-${String(month).padStart(2, '0')}-${String(cycleEndDay).padStart(2, '0')}`;
-
-    let nextUpdateDate: string;
-    if (cycleIndex === 1) {
-      nextUpdateDate = `${year}-${String(month).padStart(2, '0')}-16`;
-    } else {
-      const nextMonth = month === 12 ? 1 : month + 1;
-      const nextYear = month === 12 ? year + 1 : year;
-      nextUpdateDate = `${nextYear}-${String(nextMonth).padStart(2, '0')}-01`;
-    }
-
-    const totalDaysInCycle = cycleEndDay - cycleStartDay + 1;
-    const elapsedDaysInCycle = day - cycleStartDay + 1;
+    const totalDaysInCycle = 15;
+    const elapsedDaysInCycle = Math.floor((calendarEpoch - cycleStartEpoch) / DAY_MS) + 1;
     const daysRemainingInCycle = Math.max(0, totalDaysInCycle - elapsedDaysInCycle);
     const cycleProgressPct = Math.min(100, Math.round((elapsedDaysInCycle / totalDaysInCycle) * 100));
 
-    const cycleId = `${year}-${String(month).padStart(2, '0')}-C${cycleIndex}`;
-    const cycleLabel = `Cycle ${cycleIndex} (${cycleStartDay} ${monthShort} – ${cycleEndDay} ${monthShort} ${year})`;
-
-    // Continuous Rolling 15-day cycle from anchor
-    const currentMs = date.getTime();
-    const diffMs = Math.max(0, currentMs - ROLLING_ANCHOR_EPOCH_MS);
-    const rollingCycleIndex = Math.floor(diffMs / FIFTEEN_DAYS_MS);
-    const rollingStartMs = ROLLING_ANCHOR_EPOCH_MS + (rollingCycleIndex * FIFTEEN_DAYS_MS);
-    const rollingEndMs = rollingStartMs + FIFTEEN_DAYS_MS - 1;
-    const nextRollingMs = rollingStartMs + FIFTEEN_DAYS_MS;
-
-    const rollingCycleId = `ROLL-${rollingCycleIndex + 1}`;
-    const rollingStartDate = new Date(rollingStartMs).toISOString().slice(0, 10);
-    const rollingEndDate = new Date(rollingEndMs).toISOString().slice(0, 10);
-    const nextRollingUpdateDate = new Date(nextRollingMs).toISOString().slice(0, 10);
-    const daysRemainingInRollingCycle = Math.max(0, Math.ceil((nextRollingMs - currentMs) / (24 * 60 * 60 * 1000)));
+    const cycleId = `ROLL-${cycleIndex + 1}`;
+    const cycleLabel = `15-day cycle (${this.formatDate(cycleStartDate, 'short')} – ${this.formatDate(cycleEndDate, 'short')})`;
+    const rollingCycleId = cycleId;
+    const rollingStartDate = cycleStartDate;
+    const rollingEndDate = cycleEndDate;
+    const nextRollingUpdateDate = nextUpdateDate;
+    const nextRollingUpdateEpoch = zonedMidnightEpoch(nextUpdateDate, this.timezone);
+    const daysRemainingInRollingCycle = Math.max(0, Math.ceil((nextRollingUpdateEpoch - date.getTime()) / DAY_MS));
 
     // Quarter calculation
     const quarterNumber = Math.ceil(month / 3);
@@ -288,7 +323,7 @@ class DateService {
     format: 'short' | 'long' | 'input' | 'month-year' | 'relative' = 'short'
   ): string {
     if (!input) return '';
-    const date = typeof input === 'string' ? new Date(input) : input;
+    const date = parseDateInput(input);
     if (isNaN(date.getTime())) return String(input);
 
     if (format === 'relative') {
@@ -344,22 +379,27 @@ class DateService {
     return this.formatDate(date, 'short');
   }
 
+  public formatDateTime(input: string | Date | null | undefined): string {
+    if (!input) return '';
+    const date = parseDateInput(input);
+    if (Number.isNaN(date.getTime())) return String(input);
+    return date.toLocaleString('en-IN', {
+      timeZone: this.timezone,
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+
   /**
-   * Generates dynamic upcoming batch schedules anchored to the current/next 15-day cycle.
+   * Generates upcoming batch dates from the current IST date and recurring class days.
    * Eliminates stale hardcoded dates so batches are ALWAYS upcoming and active.
    */
   public getUpcomingBatches(): UpcomingBatchSchedule[] {
-    const cycle = this.getDateCycleInfo();
-    const today = new Date();
+    const today = this.getTodayString();
 
-    // Calculate dates within the current cycle and upcoming 15-day window
-    const addDays = (base: Date, days: number): Date => {
-      const res = new Date(base);
-      res.setDate(res.getDate() + days);
-      return res;
-    };
-
-    // Stagger dates realistically: next Monday, next Wed, next Saturday, etc.
     const batchTemplates = [
       {
         id: 'b1',
@@ -367,6 +407,7 @@ class DateService {
         category: 'Cloud',
         instructor: 'Rajesh Kumar',
         dayOffset: 3,
+        startWeekdays: [1],
         days: 'Mon / Wed / Fri',
         time: '7:00 AM – 9:00 AM',
         duration: '60 Hrs',
@@ -383,6 +424,7 @@ class DateService {
         category: 'Full Stack',
         instructor: 'Priya Nair',
         dayOffset: 5,
+        startWeekdays: [6],
         days: 'Sat / Sun',
         time: '10:00 AM – 1:00 PM',
         duration: '90 Hrs',
@@ -399,6 +441,7 @@ class DateService {
         category: 'AI / ML',
         instructor: 'Suresh Anand',
         dayOffset: 7,
+        startWeekdays: [2],
         days: 'Tue / Thu',
         time: '7:00 PM – 9:00 PM',
         duration: '50 Hrs',
@@ -414,6 +457,7 @@ class DateService {
         category: 'Data Science',
         instructor: 'Anitha Reddy',
         dayOffset: 9,
+        startWeekdays: [1],
         days: 'Mon – Fri',
         time: '10:00 AM – 4:00 PM',
         duration: '80 Hrs',
@@ -430,6 +474,7 @@ class DateService {
         category: 'Software Testing',
         instructor: 'Kiran Babu',
         dayOffset: 11,
+        startWeekdays: [6],
         days: 'Sat / Sun',
         time: '2:00 PM – 5:00 PM',
         duration: '40 Hrs',
@@ -445,6 +490,7 @@ class DateService {
         category: 'DevOps',
         instructor: 'Venkatesh Rao',
         dayOffset: 13,
+        startWeekdays: [1],
         days: 'Mon / Wed / Fri',
         time: '8:00 PM – 10:00 PM',
         duration: '50 Hrs',
@@ -461,6 +507,7 @@ class DateService {
         category: 'Security',
         instructor: 'Arjun Singh',
         dayOffset: 15,
+        startWeekdays: [6],
         days: 'Sat / Sun',
         time: '10:00 AM – 1:00 PM',
         duration: '45 Hrs',
@@ -476,6 +523,7 @@ class DateService {
         category: 'Programming',
         instructor: 'Divya Krishnan',
         dayOffset: 17,
+        startWeekdays: [1],
         days: 'Mon / Wed / Fri',
         time: '7:00 AM – 8:30 AM',
         duration: '45 Hrs',
@@ -488,16 +536,20 @@ class DateService {
       },
     ];
 
+    let lastScheduledDate = today;
     return batchTemplates.map(b => {
-      const batchDate = addDays(today, b.dayOffset);
-      const dateStr = this.getTodayString(batchDate);
+      let dateStr = addCalendarDays(today, b.dayOffset);
+      while (!b.startWeekdays.includes(weekdayIndex(dateStr)) || dateStr <= lastScheduledDate) {
+        dateStr = addCalendarDays(dateStr, 1);
+      }
+      lastScheduledDate = dateStr;
       return {
         id: b.id,
         course: b.course,
         category: b.category,
         instructor: b.instructor,
         startDate: dateStr,
-        formattedStartDate: this.formatDate(batchDate, 'short'),
+        formattedStartDate: this.formatDate(dateStr, 'short'),
         days: b.days,
         time: b.time,
         duration: b.duration,
@@ -515,7 +567,7 @@ class DateService {
    * Generates dynamic upcoming demo class slots starting from tomorrow.
    */
   public getUpcomingDemoSlots(): UpcomingDemoSlot[] {
-    const today = new Date();
+    const today = this.getTodayString();
     const slots = [
       { course: 'AWS / Cloud', trainer: 'Rajesh Kumar', offsetDays: 1, time: '10:00 AM IST', mode: 'Online (Zoom)', seats: 5 },
       { course: 'Full Stack Development', trainer: 'Priya Nair', offsetDays: 2, time: '11:00 AM IST', mode: 'Online (Zoom)', seats: 8 },
@@ -526,11 +578,10 @@ class DateService {
     ];
 
     return slots.map((s, idx) => {
-      const slotDate = new Date(today);
-      slotDate.setDate(slotDate.getDate() + s.offsetDays);
-      const dateValue = this.getTodayString(slotDate);
-      const formatted = this.formatDate(slotDate, 'short');
-      const dayOfWeek = WEEKDAY_NAMES_LONG[slotDate.getDay()];
+      const dateValue = addCalendarDays(today, s.offsetDays);
+      const formatted = this.formatDate(dateValue, 'short');
+      const [year, month, day] = dateValue.split('-').map(Number);
+      const dayOfWeek = WEEKDAY_NAMES_LONG[new Date(Date.UTC(year, month - 1, day)).getUTCDay()];
 
       return {
         id: `demo-${idx + 1}`,

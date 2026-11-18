@@ -9,7 +9,8 @@ import { rateLimit } from 'express-rate-limit';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { config } from './config.js';
-import { getBackendDateCycleInfo } from './dateService.js';
+import { getBackendDateCycleInfo, getTodayString } from './dateService.js';
+import { getDateCycleSchedule, startDateCycleScheduler, synchronizeDateCycle } from './dateCycleScheduler.js';
 import {
   archiveCmsRecord,
   cmsSections,
@@ -319,9 +320,14 @@ function requireCmsPermission(action: 'read' | 'create' | 'update' | 'publish' |
 }
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
-app.get('/api/system/date-cycle', (_req, res) => {
-  res.json({ success: true, data: getBackendDateCycleInfo() });
-});
+app.get('/api/system/date-cycle', asyncHandler(async (_req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  res.json({
+    success: true,
+    data: getBackendDateCycleInfo(),
+    schedule: await getDateCycleSchedule(getDataDatabase()),
+  });
+}));
 app.use(['/api/auth', '/api/admin'], (_req, res, next) => {
   res.setHeader('Cache-Control', 'no-store');
   next();
@@ -1028,7 +1034,7 @@ app.get('/api/admin/operations/summary', requirePermission('users.read'), asyncH
     database.query<{ total: number }>("SELECT COUNT(*) AS total FROM batches WHERE status = 'active'"),
     database.query<{ total: number }>(
       'SELECT COUNT(*) AS total FROM attendance WHERE attendance_date = ?',
-      [new Date().toISOString().slice(0, 10)],
+      [getTodayString()],
     ),
     database.query<{ total: number }>("SELECT COUNT(*) AS total FROM internships WHERE status = 'open'"),
     database.query<{ total: number }>("SELECT COUNT(*) AS total FROM certificates WHERE status = 'active'"),
@@ -2847,6 +2853,11 @@ if (existsSync(clientDistPath)) {
 
 async function start(): Promise<void> {
   await initializeDatabase();
+  const schedule = await synchronizeDateCycle(getDataDatabase());
+  console.info(
+    `[date-cycle] Startup check complete; last success at ${schedule.lastSuccessfulExecution ?? 'none'}, next run at ${schedule.nextScheduledExecution}`,
+  );
+  const stopDateCycleScheduler = startDateCycleScheduler(getDataDatabase());
   const server = app.listen(config.port, () => {
     console.log(`Auth API listening on port ${config.port}`);
   });
@@ -2855,6 +2866,7 @@ async function start(): Promise<void> {
   const shutdown = (): void => {
     if (shuttingDown) return;
     shuttingDown = true;
+    stopDateCycleScheduler();
     server.close(error => {
       if (error) {
         console.error('[shutdown] HTTP server failed to close cleanly:', error);

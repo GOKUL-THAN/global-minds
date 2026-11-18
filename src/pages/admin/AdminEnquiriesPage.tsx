@@ -9,6 +9,7 @@ import { cn } from '../../utils/cn';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { enquiryService } from '../../services/enquiryService';
+import { dateService } from '../../services/dateService';
 
 function AddEnquiryModal({
   onClose,
@@ -240,8 +241,8 @@ function EnquiryDetailModal({
 
           {/* Dates */}
           <div className="grid grid-cols-2 gap-4 text-xs text-surface-500">
-            <div>Created: {new Date(enquiry.createdAt).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</div>
-            <div>Updated: {new Date(enquiry.updatedAt).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</div>
+            <div>Created: {dateService.formatDateTime(enquiry.createdAt)}</div>
+            <div>Updated: {dateService.formatDateTime(enquiry.updatedAt)}</div>
           </div>
 
           {/* Actions */}
@@ -429,13 +430,13 @@ export default function AdminEnquiriesPage() {
                       {enq.followUpDate ? (
                         <span className="text-xs flex items-center gap-1 text-orange-600">
                           <Calendar className="w-3.5 h-3.5" />
-                          {new Date(enq.followUpDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
+                          {dateService.formatDate(enq.followUpDate, 'short')}
                         </span>
                       ) : <span className="text-xs text-surface-300">—</span>}
                     </td>
                     <td className="px-4 py-3">
                       <span className="text-xs text-surface-500">
-                        {new Date(enq.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
+                        {dateService.formatDate(enq.createdAt, 'short')}
                       </span>
                     </td>
                     <td className="px-4 py-3">

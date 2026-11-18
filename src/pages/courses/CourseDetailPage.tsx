@@ -22,6 +22,7 @@ import { useCourseCatalog } from '../../hooks/useCourseCatalog';
 import { dateService, useDateSystem } from '../../services/dateService';
 
 export default function CourseDetailPage() {
+  useDateSystem();
   const { slug } = useParams<{ slug: string }>();
   const { courses, loading: coursesLoading, error: coursesError } = useCourseCatalog();
   const course = courses.find(item => item.slug === (slug || ''));
@@ -72,6 +73,10 @@ export default function CourseDetailPage() {
   const relatedCourses = courses.filter(item => item.slug !== course.slug
     && (course.relatedCourses.includes(item.slug) || item.category === course.category)).slice(0, 4);
   const savings = course.price - course.discountPrice;
+  const nextBatchDate = dateService.getUpcomingBatches().find(batch =>
+    batch.category.toLowerCase() === course.category.toLowerCase()
+    || batch.course.toLowerCase().includes(course.category.toLowerCase()),
+  )?.formattedStartDate;
 
   return (
     <div className="min-h-screen bg-white">
@@ -419,9 +424,11 @@ export default function CourseDetailPage() {
               <div className="border-t border-surface-100 pt-5">
                 <div className="flex items-center justify-between mb-3">
                   <p className="text-xs font-semibold text-surface-500 uppercase">Available Batches</p>
-                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
-                    Next Batch: {dateService.formatDate(dateService.getDateCycleInfo().nextUpdateDate, 'short')}
-                  </span>
+                  {nextBatchDate && (
+                    <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                      Next Batch: {nextBatchDate}
+                    </span>
+                  )}
                 </div>
                 <div className="space-y-2">
                   {course.batchSchedule.slice(0, 3).map(batch => (

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Award, Loader2, Printer } from 'lucide-react';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
 import { ShinyText } from '../components/ui/ShinyText';
+import { dateService } from '../services/dateService';
 
 type Certificate = {
   certificateId: string;
@@ -54,7 +55,7 @@ export default function CertificateViewPage() {
           <p className="mt-2 font-display text-3xl font-semibold text-brand-800">{certificate.studentName}</p>
           <p className="mt-6 text-surface-700 font-medium">has successfully completed</p>
           <p className="mt-2 text-2xl font-bold text-surface-900">{certificate.courseName}</p>
-          <p className="mt-8 text-sm text-surface-600 font-medium">Issued {new Date(certificate.issuedAt).toLocaleDateString()}</p>
+          <p className="mt-8 text-sm text-surface-600 font-medium">Issued {dateService.formatDate(certificate.issuedAt, 'long')}</p>
           <p className="mt-2 text-xs text-surface-600 font-medium">Certificate ID: {certificate.certificateId}</p>
           <p className={`mt-6 text-sm font-bold uppercase tracking-wide ${certificate.valid ? 'text-green-700' : 'text-red-700'}`}>{certificate.valid ? '✓ Verified and valid' : 'Revoked — not valid'}</p>
         </SpotlightCard>

@@ -177,6 +177,7 @@ test('applies versioned migrations and preserves existing SQLite records', async
     '007_operational_modules',
     '008_student_portal',
     '009_student_profile_photo',
+    '010_automatic_date_cycles',
   ]);
 
   const identity = await database.findIdentityByEmail('admin@example.test');
@@ -252,6 +253,31 @@ test('applies versioned migrations and preserves existing SQLite records', async
   await assert.rejects(database.initializeDatabase(), /already been initialized/);
 });
 
+test('persists idempotent 15-day date-cycle executions', async () => {
+  const dataLayer = await import('../dist/database.js');
+  const scheduler = await import('../dist/dateCycleScheduler.js');
+  const dataDatabase = dataLayer.getDataDatabase();
+  const initial = await scheduler.synchronizeDateCycle(
+    dataDatabase,
+    new Date('2026-02-20T06:30:00.000Z'),
+  );
+  assert.equal(initial.lastCycleId, null);
+  assert.equal(initial.lastSuccessfulExecution, null);
+  assert.equal(initial.nextScheduledExecution, '2026-03-01T18:30:00.000Z');
+
+  const dueAt = new Date(initial.nextScheduledExecution);
+  const [executed, repeated] = await Promise.all([
+    scheduler.synchronizeDateCycle(dataDatabase, dueAt),
+    scheduler.synchronizeDateCycle(dataDatabase, dueAt),
+  ]);
+  assert.equal(executed.lastCycleId, 'ROLL-5');
+  assert.equal(executed.lastSuccessfulExecution, dueAt.toISOString());
+  assert.equal(executed.nextScheduledExecution, '2026-03-16T18:30:00.000Z');
+  assert.deepEqual(repeated, executed);
+  const runs = await dataDatabase.query('SELECT cycle_id FROM date_cycle_runs');
+  assert.deepEqual(runs.rows.map(row => row.cycle_id), ['ROLL-5']);
+});
+
 test('does not replace existing admin credentials from environment on restart', async () => {
   await database.closeDataDatabase();
   await database.initializeDatabase();
@@ -260,6 +286,12 @@ test('does not replace existing admin credentials from environment on restart', 
   assert.ok(admin);
   assert.equal(await bcrypt.compare('OldTestPassword123!', admin.password_hash), true);
   assert.equal(await bcrypt.compare('TestAdminPassword123!', admin.password_hash), false);
+
+  const dataLayer = await import('../dist/database.js');
+  const scheduler = await import('../dist/dateCycleScheduler.js');
+  const schedule = await scheduler.getDateCycleSchedule(dataLayer.getDataDatabase());
+  assert.equal(schedule.lastCycleId, 'ROLL-5');
+  assert.equal(schedule.nextScheduledExecution, '2026-03-16T18:30:00.000Z');
 });
 
 test('verification tokens are single-use and password reset revokes existing sessions', async () => {

@@ -13,6 +13,7 @@ server-side permissions.
 | Module | Method and URL | Authentication | Frontend consumer | Status |
 |---|---|---|---|---|
 | Health | `GET /health` | None | Operations/smoke checks | Working |
+| Date cycle | `GET /api/system/date-cycle` | None | Date/status consumers | Returns the current Asia/Kolkata calendar/15-day cycle plus persisted last-success and next-run timestamps; response is not cached |
 | Registration | `POST /api/auth/register` | None; rate limited | `/register` | Creates a `STUDENT` identity and sends verification email; requires configured Resend delivery |
 | Login | `POST /api/auth/login` | None; rate limited | `/login`, `/admin/login` | Authenticates active identities; students must verify email |
 | Verify email | `POST /api/auth/verify-email` | One-time token; same-origin | `/verify-email` | Consumes a hashed, expiring verification token |

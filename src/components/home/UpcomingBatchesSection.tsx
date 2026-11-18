@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, Users, ArrowRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
@@ -6,8 +7,8 @@ import { dateService, useDateSystem } from '../../services/dateService';
 import { DateCycleBadge } from '../common/DateCycleBadge';
 
 export function UpcomingBatchesSection() {
-  const { dateInfo } = useDateSystem();
-  const allBatches = dateService.getUpcomingBatches();
+  const { todayString } = useDateSystem();
+  const allBatches = useMemo(() => dateService.getUpcomingBatches(), [todayString]);
 
   const featuredBatches = [
     {

@@ -122,8 +122,8 @@ const defaultStudentPortalData: StudentPortalData = {
     { id: 'act-2', action: 'Submitted Assignment', resourceType: 'Assignment', resourceId: 'asg-3', metadata: 'Multi-AZ High Availability Architecture', createdAt: new Date().toISOString() },
   ],
   announcements: [
-    { id: 'ann-1', title: 'Upcoming Capstone Project Submission', body: 'The Phase 1 Cloud Architecture blueprint is due this Friday by 6 PM IST.', publishedAt: '2026-10-28' },
-    { id: 'ann-2', title: 'Guest Lecture by AWS Solutions Architect', body: 'Join us this Sunday at 11 AM IST for an interactive session on Serverless Microservices.', publishedAt: '2026-10-27' },
+    { id: 'ann-1', title: 'Capstone Project Submission', body: 'See the assignment workspace for the current submission deadline and requirements.', publishedAt: '2026-10-28' },
+    { id: 'ann-2', title: 'Guest Lecture by AWS Solutions Architect', body: 'Session date, time, and joining details are shared in the current course announcements.', publishedAt: '2026-10-27' },
   ],
 };
 

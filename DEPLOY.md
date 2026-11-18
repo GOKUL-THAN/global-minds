@@ -23,6 +23,16 @@ The Vercel project rewrites `/api/*` and `/health` to
 - one **PostgreSQL** database (free, expires in 90 days)
 - one **web service** for the Express API (it also serves the built frontend)
 
+The backend runs date-cycle migration `010_automatic_date_cycles` on startup.
+It persists the last successful 15-day cycle and next scheduled execution in
+PostgreSQL (`date_cycle_state`, with idempotent execution records in
+`date_cycle_runs`). Cycles are anchored to 1 January 2026 and run every 15
+calendar days at midnight Asia/Kolkata. If the service is asleep or redeployed
+at a boundary, startup catches up once and schedules the following boundary.
+Generated preview schedules use the current IST date; CMS-managed event dates,
+enrollment dates, certificates, audit timestamps, and other manually entered
+business dates are not rewritten.
+
 ### Step 1 — Push the repo to GitHub
 
 The repo is `GOKUL-THAN/global-minds` and deploys from `main`. Push changes:
@@ -65,6 +75,8 @@ The API must be live before the frontend can log in or save queries. Verify:
 
 - `https://global-minds-academy.onrender.com/health` returns `{"status":"ok"}`.
 - `https://global-minds-beta.vercel.app/health` returns the same JSON through the Vercel proxy.
+- `https://global-minds-academy.onrender.com/api/system/date-cycle` reports the
+  current IST date/cycle and persisted last/next scheduler execution.
 - Sign in and submit an enquiry on the Vercel site.
 
 ### Free-tier notes

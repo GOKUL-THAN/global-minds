@@ -198,7 +198,7 @@ function exportCsv(module: string, records: Row[], columns: Array<{ name: string
   const objectUrl = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
   const link = document.createElement('a');
   link.href = objectUrl;
-  link.download = `${module}-page-${new Date().toISOString().slice(0, 10)}.csv`;
+  link.download = `${module}-page-${dateService.getTodayString()}.csv`;
   document.body.append(link);
   link.click();
   link.remove();

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Calendar, Clock, Monitor, MapPin, Users, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
@@ -13,23 +13,6 @@ import { DateCycleBadge } from '../components/common/DateCycleBadge';
 
 type Mode = 'All' | 'Online' | 'Classroom' | 'Hybrid' | 'Both';
 type BatchType = 'All' | 'Weekday' | 'Weekend' | 'Fast-Track';
-
-interface Batch {
-  id: string;
-  course: string;
-  category: string;
-  instructor: string;
-  startDate: string;
-  days: string;
-  time: string;
-  duration: string;
-  mode: 'Online' | 'Classroom' | 'Hybrid' | 'Both';
-  type: 'Weekday' | 'Weekend' | 'Fast-Track';
-  seatsTotal: number;
-  seatsLeft: number;
-  fee: string;
-  badge?: string;
-}
 
 const categories = ['All', 'Cloud', 'Data Science', 'AI / ML', 'Full Stack', 'Security', 'Software Testing', 'DevOps', 'Programming'];
 
@@ -48,8 +31,8 @@ function badgeColor(badge?: string) {
 }
 
 export default function BatchSchedulePage() {
-  const { dateInfo } = useDateSystem();
-  const upcomingBatches = useMemo(() => dateService.getUpcomingBatches(), [dateInfo.currentDate]);
+  useDateSystem();
+  const upcomingBatches = dateService.getUpcomingBatches();
 
   usePageMeta({
     title: 'Batch Schedule & Upcoming Classes',
@@ -196,7 +179,7 @@ export default function BatchSchedulePage() {
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
                           <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
                             <Calendar className="w-4 h-4 text-brand-600 flex-shrink-0" />
-                            <span>{new Date(batch.startDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                            <span>{dateService.formatDate(batch.startDate, 'long')}</span>
                           </div>
                           <div className="flex items-center gap-2 text-sm text-surface-700 font-medium">
                             <Clock className="w-4 h-4 text-brand-600 flex-shrink-0" />

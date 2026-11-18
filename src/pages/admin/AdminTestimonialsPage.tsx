@@ -4,6 +4,7 @@ import { Badge } from '../../components/ui/Badge';
 import type { Testimonial } from '../../types';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 type LocalT = Testimonial & { hidden: boolean };
 
@@ -78,7 +79,7 @@ export default function AdminTestimonialsPage() {
         review: form.review,
         location: form.location,
         country: 'India',
-        date: new Date().toISOString().split('T')[0],
+        date: dateService.getTodayString(),
         featured: form.featured,
         type: 'text',
         hidden: false,

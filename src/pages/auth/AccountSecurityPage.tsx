@@ -5,6 +5,7 @@ import { authService } from '../../services/authService';
 import type { User } from '../../types';
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 type AccountSession = Awaited<ReturnType<typeof authService.getSessions>>[number];
 
@@ -156,8 +157,8 @@ export default function AccountSecurityPage() {
                       <Smartphone className="w-5 h-5 text-surface-500 mt-0.5" />
                       <div className="min-w-0">
                         <p className="text-sm font-semibold text-surface-900 break-all">{session.user_agent || 'Unknown device'}</p>
-                        <p className="text-xs text-surface-600 font-medium">IP {session.ip_address || 'unknown'} · Last active {new Date(session.last_seen_at).toLocaleString()}</p>
-                        <p className="text-xs text-surface-600 font-medium">Expires {new Date(session.expires_at).toLocaleString()}</p>
+                        <p className="text-xs text-surface-600 font-medium">IP {session.ip_address || 'unknown'} · Last active {dateService.formatDateTime(session.last_seen_at)}</p>
+                        <p className="text-xs text-surface-600 font-medium">Expires {dateService.formatDateTime(session.expires_at)}</p>
                       </div>
                     </div>
                     <button type="button" onClick={() => void revokeSession(session.id)} className="text-sm text-red-700 hover:text-red-900 font-semibold hover:underline">Revoke</button>

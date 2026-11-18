@@ -3,6 +3,7 @@ import { Loader2, RefreshCw, Save, Search, Shield, UserPlus } from 'lucide-react
 import { SpotlightCard } from '../../components/ui/SpotlightCard';
 import { CountUp } from '../../components/ui/CountUp';
 import { ShinyText } from '../../components/ui/ShinyText';
+import { dateService } from '../../services/dateService';
 
 type ManagedUser = {
   id: string;
@@ -290,7 +291,7 @@ export default function AdminUserManagementPage() {
                   {['STUDENT', 'TRAINER', 'CONTENT_MANAGER', 'ADMIN', 'SUPER_ADMIN'].map(role => <option key={role} value={role}>{role.replace(/_/g, ' ')}</option>)}
                 </select></td>
                 <td className="px-4 py-3"><span className={user.is_active ? 'text-green-700' : 'text-red-700'}>{user.is_active ? 'Active' : 'Inactive'}</span></td>
-                <td className="px-4 py-3 text-surface-500">{new Date(user.created_at).toLocaleDateString()}</td>
+                <td className="px-4 py-3 text-surface-500">{dateService.formatDate(user.created_at, 'short')}</td>
                 <td className="px-4 py-3"><button type="button" disabled={saving || user.role === 'SUPER_ADMIN'} onClick={() => void updateUser(user, { isActive: !user.is_active })} className="rounded-lg border border-surface-200 px-3 py-1.5 text-xs font-medium hover:bg-surface-50 disabled:opacity-40">{user.is_active ? 'Deactivate' : 'Activate'}</button></td>
               </tr>)}</tbody>
             </table></div>

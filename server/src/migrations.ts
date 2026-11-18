@@ -968,6 +968,27 @@ const migrations: Migration[] = [
       );
     },
   },
+  {
+    id: '010_automatic_date_cycles',
+    async up(database) {
+      await database.execute(`
+        CREATE TABLE date_cycle_state (
+          id TEXT PRIMARY KEY,
+          last_cycle_id TEXT,
+          last_success_at TEXT,
+          next_run_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        )
+      `);
+      await database.execute(`
+        CREATE TABLE date_cycle_runs (
+          cycle_id TEXT PRIMARY KEY,
+          executed_at TEXT NOT NULL,
+          next_run_at TEXT NOT NULL
+        )
+      `);
+    },
+  },
 ];
 
 export async function runMigrations(database: DataDatabase): Promise<void> {

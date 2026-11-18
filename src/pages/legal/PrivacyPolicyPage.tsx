@@ -1,9 +1,10 @@
 import { Breadcrumbs } from '../../components/ui/Breadcrumbs';
 import { ShinyText } from '../../components/ui/ShinyText';
 import { DecryptedText } from '../../components/ui/DecryptedText';
-import { dateService } from '../../services/dateService';
+import { useDateSystem } from '../../services/dateService';
 
 export default function PrivacyPolicyPage() {
+  const { currentMonth, currentYear } = useDateSystem();
   return (
     <div className="min-h-screen bg-white">
       <div className="page-hero-premium py-12 relative overflow-hidden">
@@ -22,7 +23,7 @@ export default function PrivacyPolicyPage() {
               className="page-hero-highlight"
             />
           </h1>
-          <p className="text-surface-600 font-semibold text-sm">Last updated: {dateService.getPolicyLastUpdated()}</p>
+          <p className="text-surface-600 font-semibold text-sm">Current reference month: {currentMonth} {currentYear}</p>
         </div>
       </div>
       <div className="container-xl py-12 max-w-3xl">

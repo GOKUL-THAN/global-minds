@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, MapPin, Clock, CheckCircle, ArrowRight, Search, Filter } from 'lucide-react';
 import { allowedInternshipCategories, internships } from '../data/internships';
@@ -12,12 +12,21 @@ import { useCmsCollection } from '../hooks/useCmsCollection';
 import { ShinyText } from '../components/ui/ShinyText';
 import { DecryptedText } from '../components/ui/DecryptedText';
 import { SpotlightCard } from '../components/ui/SpotlightCard';
+import { dateService, useDateSystem } from '../services/dateService';
 
 const categories = ['All', ...allowedInternshipCategories];
 const modes = ['All', 'Online', 'Classroom', 'Both'];
 
 export default function InternshipsPage() {
-  const visibleInternships = useCmsCollection('internships', internships)
+  const { todayString } = useDateSystem();
+  const dynamicInternships = useMemo(() => {
+    const deadline = dateService.getCycleDeadline(1).deadlineDate;
+    return internships.map(internship => ({
+      ...internship,
+      applicationDeadline: internship.status === 'open' ? deadline : internship.applicationDeadline,
+    }));
+  }, [todayString]);
+  const visibleInternships = useCmsCollection('internships', dynamicInternships)
     .filter(internship => allowedInternshipCategories.includes(internship.category));
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');

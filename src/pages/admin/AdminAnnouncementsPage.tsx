@@ -44,7 +44,7 @@ const getInitialAnnouncements = (): Announcement[] => {
     {
       id: 'ann-2',
       title: 'Campus Hiring Drive with 20+ Tech Partners',
-      body: 'Leading enterprise recruiters including TCS, Cognizant, and MindScale AI are conducting offline & virtual recruitment drives next month.',
+      body: 'Recruitment schedules are shared directly with eligible learners through the student dashboard.',
       status: 'published',
       createdAt: info.currentTimestamp,
       updatedAt: info.currentTimestamp,
@@ -53,7 +53,7 @@ const getInitialAnnouncements = (): Announcement[] => {
     {
       id: 'ann-3',
       title: 'Scheduled LMS Platform Maintenance',
-      body: 'The student learning portal will undergo scheduled maintenance this Sunday from 2:00 AM to 4:00 AM IST.',
+      body: 'The planned maintenance window will be announced in the student dashboard before work begins.',
       status: 'draft',
       createdAt: info.currentTimestamp,
       updatedAt: info.currentTimestamp,
@@ -190,7 +190,7 @@ export default function AdminAnnouncementsPage() {
         {loading ? <p role="status" className="rounded-xl bg-white p-6 text-sm text-surface-500">Loading announcements...</p> : announcements.length ? announcements.map(announcement => (
           <SpotlightCard key={announcement.id}>
             <article className="rounded-2xl border border-surface-200 bg-white p-5">
-              <div className="flex flex-wrap items-start justify-between gap-3"><div><h3 className="font-semibold text-surface-900">{announcement.title}</h3><time className="mt-1 block text-xs text-surface-500">{new Date(announcement.updatedAt).toLocaleString()}</time></div><div className="flex items-center gap-2"><select aria-label={`Status for ${announcement.title}`} disabled={saving} value={announcement.status} onChange={event => void updateStatus(announcement, event.target.value as Announcement['status'])} className="form-select w-auto"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select>{editingId !== announcement.id && <button type="button" onClick={() => setEditingId(announcement.id)} className="btn-secondary btn inline-flex items-center gap-1"><Pencil className="h-4 w-4" /> Edit</button>}</div></div>
+              <div className="flex flex-wrap items-start justify-between gap-3"><div><h3 className="font-semibold text-surface-900">{announcement.title}</h3><time className="mt-1 block text-xs text-surface-500">{dateService.formatDateTime(announcement.updatedAt)}</time></div><div className="flex items-center gap-2"><select aria-label={`Status for ${announcement.title}`} disabled={saving} value={announcement.status} onChange={event => void updateStatus(announcement, event.target.value as Announcement['status'])} className="form-select w-auto"><option value="draft">Draft</option><option value="published">Published</option><option value="archived">Archived</option></select>{editingId !== announcement.id && <button type="button" onClick={() => setEditingId(announcement.id)} className="btn-secondary btn inline-flex items-center gap-1"><Pencil className="h-4 w-4" /> Edit</button>}</div></div>
               {editingId === announcement.id ? <form className="mt-4 space-y-3" onSubmit={event => { void updateAnnouncement(event, announcement); }}><label className="block"><span className="form-label">Title</span><input name="title" required minLength={2} maxLength={160} defaultValue={announcement.title} className="form-input w-full" /></label><label className="block"><span className="form-label">Message</span><textarea name="body" required maxLength={10000} rows={4} defaultValue={announcement.body} className="form-input w-full" /></label><div className="flex gap-2"><button type="submit" disabled={saving} className="btn-primary btn inline-flex items-center gap-2"><Save className="h-4 w-4" /> Save</button><button type="button" disabled={saving} onClick={() => setEditingId(null)} className="btn-secondary btn inline-flex items-center gap-2"><X className="h-4 w-4" /> Cancel</button></div></form> : <p className="mt-3 whitespace-pre-wrap text-sm text-surface-700">{announcement.body}</p>}
             </article>
           </SpotlightCard>
