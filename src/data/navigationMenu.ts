@@ -121,6 +121,18 @@ export function readNavigationContent(value: unknown): NavigationContent | undef
       children: [],
     });
   }
+  const coursesItem = normalizedPrimary.find(item => item.href === '/courses');
+  if (coursesItem) {
+    coursesItem.visible = true;
+    coursesItem.children = categories.map((category, index) => ({
+      id: `course-category-${category.slug}`,
+      label: category.title,
+      href: `/categories/${category.slug}`,
+      visible: true,
+      order: index + 1,
+      icon: '',
+    }));
+  }
   const isCertificationsLink = (item: MenuLink) =>
     item.href.split(/[?#]/, 1)[0].replace(/\/+$/, '').toLowerCase() === '/certifications';
   const primaryCertificationsItem = normalizedPrimary.find(isCertificationsLink);
@@ -170,7 +182,7 @@ export const defaultNavigation: NavigationContent = {
       visible: true,
       order: 1,
       icon: '',
-      children: categories.slice(0, 8).map((category, index) => ({
+      children: categories.map((category, index) => ({
         id: `course-category-${category.slug}`,
         label: category.title,
         href: `/categories/${category.slug}`,

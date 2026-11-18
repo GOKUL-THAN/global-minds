@@ -87,6 +87,23 @@
     @apply bg-surface-400;
   }
 
+  .course-dropdown-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.brand.300') theme('colors.surface.100');
+  }
+
+  .course-dropdown-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .course-dropdown-scroll::-webkit-scrollbar-track {
+    @apply rounded-full bg-surface-100;
+  }
+
+  .course-dropdown-scroll::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-brand-300;
+  }
+
   /* Selection */
   ::selection {
     @apply bg-brand-100 text-brand-900;

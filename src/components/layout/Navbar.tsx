@@ -205,7 +205,7 @@ export function Navbar() {
           ) : (
             <div
               id={`submenu-${item.id}`}
-              className="absolute left-0 top-full z-50 mt-2 max-h-[min(70vh,36rem)] w-80 max-w-[90vw] overflow-y-auto rounded-xl border border-surface-100 bg-white p-2 shadow-card-lg"
+              className="course-dropdown-scroll absolute left-0 top-full z-50 mt-2 max-h-[240px] w-80 max-w-[90vw] overflow-y-auto overscroll-contain rounded-xl border border-surface-100 bg-white p-2 shadow-card-lg"
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <p className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-surface-800">{item.label}</p>
@@ -291,7 +291,7 @@ export function Navbar() {
             );
           }
           return (
-            <div className="ml-4 mt-1 space-y-1 border-l-2 border-brand-100 pl-4">
+            <div className="course-dropdown-scroll ml-4 mt-1 max-h-[220px] space-y-1 overflow-y-auto overscroll-contain border-l-2 border-brand-100 pl-4 pr-1">
               {children.map(child => (
                 <SiteLink
                   key={child.id}
